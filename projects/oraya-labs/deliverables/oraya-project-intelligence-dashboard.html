@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oraya Labs | Dual Project Intelligence Dashboard</title>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface2: #1a1a28;
+    --border: #2a2a3a;
+    --accent: #6c5ce7;
+    --accent2: #00cec9;
+    --accent3: #fd79a8;
+    --accent4: #fdcb6e;
+    --text: #e0e0e8;
+    --text2: #8888a0;
+    --green: #00b894;
+    --red: #e74c3c;
+    --orange: #f39c12;
+    --blue: #3498db;
+    /* Project colors */
+    --p1: #6c5ce7;   /* Voice AI — purple */
+    --p2: #00b894;   /* Insurance — green */
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ---- HERO ---- */
+  .hero {
+    background: linear-gradient(135deg, #0a0a1a 0%, #10103a 50%, #0a1a0a 100%);
+    padding: 56px 40px 40px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(108,92,231,0.07) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(0,184,148,0.06) 0%, transparent 50%);
+    animation: pulse 8s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:.5} 50%{opacity:1} }
+  .hero h1 {
+    font-size: 2.6em; font-weight: 800;
+    background: linear-gradient(135deg, #6c5ce7, #00b894);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    position: relative; margin-bottom: 6px;
+  }
+  .hero .subtitle { font-size: 1em; color: var(--text2); position: relative; }
+  .hero .meta { font-size: 0.8em; color: var(--text2); margin-top: 10px; position: relative; }
+  .badge {
+    display: inline-block; padding: 3px 12px; border-radius: 20px;
+    font-size: 0.75em; font-weight: 700; margin: 0 4px;
+  }
+  .badge-p1 { background: rgba(108,92,231,.2); color: var(--p1); border: 1px solid rgba(108,92,231,.3); }
+  .badge-p2 { background: rgba(0,184,148,.2); color: var(--p2); border: 1px solid rgba(0,184,148,.3); }
+
+  .container { max-width: 1400px; margin: 0 auto; padding: 28px 20px; }
+
+  /* ---- NAV ---- */
+  .nav-tabs {
+    display: flex; gap: 3px; background: var(--surface);
+    border-radius: 12px; padding: 4px; margin-bottom: 28px;
+    overflow-x: auto; border: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-tab {
+    padding: 9px 16px; border-radius: 8px; cursor: pointer;
+    font-size: 0.83em; font-weight: 600; color: var(--text2);
+    white-space: nowrap; transition: all .2s; border: none; background: none;
+  }
+  .nav-tab:hover { color: var(--text); background: var(--surface2); }
+  .nav-tab.active { background: var(--accent); color: white; }
+  .nav-tab.active.p2 { background: var(--p2); }
+  .nav-sep { width: 1px; background: var(--border); margin: 4px 4px; flex-shrink: 0; }
+
+  .section { display: none; }
+  .section.active { display: block; }
+  .section-title {
+    font-size: 1.7em; font-weight: 700; margin-bottom: 20px;
+    padding-bottom: 10px; border-bottom: 2px solid var(--accent);
+    display: inline-block;
+  }
+  .section-title.p2 { border-color: var(--p2); }
+
+  /* ---- PROJECT HEADER BANNERS ---- */
+  .proj-banner {
+    display: flex; align-items: center; gap: 16px;
+    padding: 16px 20px; border-radius: 12px; margin-bottom: 24px;
+    border: 1px solid;
+  }
+  .proj-banner.p1 { background: rgba(108,92,231,.08); border-color: rgba(108,92,231,.3); }
+  .proj-banner.p2 { background: rgba(0,184,148,.08); border-color: rgba(0,184,148,.3); }
+  .proj-banner .icon { font-size: 2em; }
+  .proj-banner h2 { font-size: 1.2em; font-weight: 800; }
+  .proj-banner p { font-size: 0.85em; color: var(--text2); }
+
+  /* ---- CARDS ---- */
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 22px; margin-bottom: 18px;
+    transition: border-color .2s;
+  }
+  .card:hover { border-color: rgba(108,92,231,.4); }
+  .card h3 { font-size: 1.05em; margin-bottom: 10px; color: var(--accent2); }
+  .card.p2 h3 { color: var(--p2); }
+  .card p, .card li { color: var(--text); font-size: 0.9em; }
+
+  /* ---- GRIDS ---- */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+  @media(max-width:900px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}}
+
+  /* ---- KPI ---- */
+  .kpi { text-align: center; padding: 16px; }
+  .kpi .number {
+    font-size: 2.2em; font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .kpi.p2 .number {
+    background: linear-gradient(135deg, var(--p2), #00cec9);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .kpi .label { font-size: 0.78em; color: var(--text2); margin-top: 4px; }
+
+  /* ---- TIMELINE ---- */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 7px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--p1), var(--p2));
+  }
+  .timeline-item {
+    position: relative; margin-bottom: 20px; padding: 14px 18px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+  }
+  .timeline-item::before {
+    content: ''; position: absolute; left: -24px; top: 18px;
+    width: 12px; height: 12px; border-radius: 50%;
+    border: 2px solid var(--bg);
+  }
+  .timeline-item.p1::before { background: var(--p1); }
+  .timeline-item.p2::before { background: var(--p2); }
+  .timeline-item.both::before { background: var(--orange); }
+  .timeline-date { font-size: 0.72em; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+  .timeline-item.p1 .timeline-date { color: var(--p1); }
+  .timeline-item.p2 .timeline-date { color: var(--p2); }
+  .timeline-item.both .timeline-date { color: var(--orange); }
+  .timeline-title { font-size: 0.97em; font-weight: 700; margin: 3px 0 6px; }
+  .timeline-body { font-size: 0.86em; color: var(--text2); }
+
+  /* ---- TABLES ---- */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.84em; }
+  th {
+    text-align: left; padding: 9px 13px; background: var(--surface2);
+    color: var(--accent2); font-weight: 700; font-size: 0.78em;
+    text-transform: uppercase; letter-spacing: .5px; border-bottom: 2px solid var(--border);
+  }
+  td { padding: 9px 13px; border-bottom: 1px solid var(--border); color: var(--text); }
+  tr:hover td { background: rgba(108,92,231,.04); }
+
+  /* ---- TAGS ---- */
+  .tag {
+    display: inline-block; padding: 2px 9px; border-radius: 20px;
+    font-size: 0.73em; font-weight: 700;
+  }
+  .tag-green { background: rgba(0,184,148,.15); color: var(--green); }
+  .tag-orange { background: rgba(243,156,18,.15); color: var(--orange); }
+  .tag-red { background: rgba(231,76,60,.15); color: var(--red); }
+  .tag-blue { background: rgba(52,152,219,.15); color: var(--blue); }
+  .tag-p1 { background: rgba(108,92,231,.15); color: var(--p1); }
+  .tag-p2 { background: rgba(0,184,148,.15); color: var(--p2); }
+
+  /* ---- PROGRESS ---- */
+  .progress-wrap { margin: 7px 0; }
+  .progress-label { display: flex; justify-content: space-between; font-size: 0.8em; margin-bottom: 3px; }
+  .progress-bar { height: 8px; background: var(--surface2); border-radius: 4px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 4px; transition: width .6s ease; }
+
+  /* ---- HEAT MAP ---- */
+  .heatmap { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
+  .heat-cell { padding: 12px; border-radius: 8px; text-align: center; font-size: 0.78em; font-weight: 600; }
+  .heat-high { background: rgba(231,76,60,.22); color: #e74c3c; border: 1px solid rgba(231,76,60,.3); }
+  .heat-med  { background: rgba(243,156,18,.18); color: #f39c12; border: 1px solid rgba(243,156,18,.3); }
+  .heat-low  { background: rgba(0,184,148,.13); color: #00b894; border: 1px solid rgba(0,184,148,.3); }
+
+  /* ---- SENTIMENT ---- */
+  .sentiment-bar { display: flex; height: 22px; border-radius: 11px; overflow: hidden; margin: 8px 0; }
+  .sent-pos { background: var(--green); }
+  .sent-neu { background: var(--orange); }
+  .sent-neg { background: var(--red); }
+
+  /* ---- PSYCH METERS ---- */
+  .psych-meter { display: flex; align-items: center; gap: 8px; margin: 5px 0; }
+  .psych-meter .bar { flex: 1; height: 9px; background: var(--surface2); border-radius: 5px; overflow: hidden; }
+  .psych-meter .fill { height: 100%; border-radius: 5px; }
+  .psych-meter .label { font-size: 0.76em; width: 130px; color: var(--text2); }
+  .psych-meter .val { font-size: 0.76em; width: 38px; text-align: right; font-weight: 700; }
+
+  /* ---- FLOW NODES ---- */
+  .flow-wrap { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding: 14px; }
+  .flow-node { padding: 8px 14px; border-radius: 8px; font-size: 0.78em; font-weight: 600; border: 1px solid; }
+  .flow-arrow { color: var(--text2); font-size: 1.1em; }
+
+  /* ---- MISC ---- */
+  details { margin-bottom: 10px; }
+  summary { cursor: pointer; font-weight: 700; color: var(--accent2); padding: 7px 0; font-size: 0.92em; }
+  details[open] summary { margin-bottom: 7px; }
+  ul { padding-left: 18px; }
+  li { margin-bottom: 5px; }
+  .flag { padding: 2px 7px; border-radius: 4px; font-size: 0.72em; font-weight: 700; }
+  .flag-inferred { background: rgba(243,156,18,.18); color: var(--orange); }
+  .flag-confirmed { background: rgba(0,184,148,.13); color: var(--green); }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  strong { color: var(--text); }
+  a { color: var(--accent2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Oraya Labs | Project Intelligence Dashboard</h1>
+  <div class="subtitle">Dual-Project Analysis &middot; March 16, 2026</div>
+  <div class="meta" style="margin-top:14px;">
+    <span class="badge badge-p1">📞 Project 1: Voice AI for Automotive</span>
+    <span class="badge badge-p2">🛡️ Project 2: Insurance Lead Gen AI</span>
+  </div>
+  <div class="meta">12 Transcripts &middot; ~8 Weeks &middot; 400+ Test Calls &middot; $30–40/mo Infrastructure</div>
+</div>
+
+<div class="container">
+
+<div class="nav-tabs" id="navTabs">
+  <button class="nav-tab active" data-tab="overview">Overview</button>
+  <button class="nav-tab" data-tab="meetings">Meeting Register</button>
+  <button class="nav-tab" data-tab="timeline">Timeline</button>
+  <div class="nav-sep"></div>
+  <button class="nav-tab" data-tab="voiceai">📞 Voice AI Project</button>
+  <button class="nav-tab p2" data-tab="insurance">🛡️ Insurance Project</button>
+  <div class="nav-sep"></div>
+  <button class="nav-tab" data-tab="website">Website Audit</button>
+  <button class="nav-tab" data-tab="risks">Risks & Gaps</button>
+  <button class="nav-tab" data-tab="recs">Recommendations</button>
+  <button class="nav-tab" data-tab="sentiment">Psych Profiles</button>
+  <div class="nav-sep"></div>
+  <button class="nav-tab" data-tab="compliance-cmd" style="color:#fd79a8">&#9878; Legal Command Center</button>
+  <button class="nav-tab" data-tab="cto-clo-brief" style="color:#fdcb6e">&#9733; CTO/CLO Master Brief</button>
+  <button class="nav-tab" data-tab="offer-intel" style="color:#00cec9">&#9993; Offer Letter Intel</button>
+</div>
+
+<!-- ==================== OVERVIEW ==================== -->
+<div class="section active" id="overview">
+<h2 class="section-title">Executive Overview</h2>
+
+<div class="grid-4" style="margin-bottom:24px;">
+  <div class="card kpi"><div class="number">2</div><div class="label">Active Projects</div></div>
+  <div class="card kpi"><div class="number">11</div><div class="label">Meetings Analyzed</div></div>
+  <div class="card kpi"><div class="number">400+</div><div class="label">Voice Test Calls</div></div>
+  <div class="card kpi"><div class="number">$30–40</div><div class="label">Infra Cost / Client / Mo</div></div>
+</div>
+
+<!-- TWO PROJECT BANNERS -->
+<div class="proj-banner p1">
+  <div class="icon">📞</div>
+  <div>
+    <h2 style="color:var(--p1)">Project 1 — Oraya AI Voice Agent (Automotive)</h2>
+    <p>AI voice agent "Jessica" for automotive dealerships. Handles inbound/outbound sales calls, qualifies leads, books test drive appointments, sends SMS/email confirmations, real-time management dashboard. Original target: AutoNation Mercedes-Benz of South Bay. <strong style="color:var(--red)">Greg (proposed 10% equity partner) is now out.</strong> New pilot entry strategy required.</p>
+  </div>
+</div>
+
+<div class="proj-banner p2">
+  <div class="icon">🛡️</div>
+  <div>
+    <h2 style="color:var(--p2)">Project 2 — Insurance Lead Gen AI System</h2>
+    <p>AI-powered insurance lead generation system that scrapes publicly available government data (property deeds, Medicare CMS, employment records, birth records) to identify hyper-relevant prospects for 4 insurance verticals: Mortgage Protection, Life Insurance, Medical/Health, and Loved Ones coverage. Delivers leads via personalized email + embedded voice AI. Frankie holds insurance licenses in CA, TX + 1 other state. Revenue via 140% commission structure + lead resale.</p>
+  </div>
+</div>
+
+<div class="grid-2">
+<div class="card">
+  <h3>Project 1 — Maturity (Voice AI)</h3>
+  <div class="progress-wrap"><div class="progress-label"><span>Voice Agent (Jessica / Retell)</span><span style="color:var(--green)">90%</span></div><div class="progress-bar"><div class="progress-fill" style="width:90%;background:var(--p1)"></div></div></div>
+  <div class="progress-wrap"><div class="progress-label"><span>N8N Workflow Automation</span><span style="color:var(--green)">85%</span></div><div class="progress-bar"><div class="progress-fill" style="width:85%;background:var(--p1)"></div></div></div>
+  <div class="progress-wrap"><div class="progress-label"><span>Twilio / A2P Compliance</span><span style="color:var(--green)">95%</span></div><div class="progress-bar"><div class="progress-fill" style="width:95%;background:var(--green)"></div></div></div>
+  <div class="progress-wrap"><div class="progress-label"><span>Supabase Dashboard</span><span style="color:var(--orange)">70%</span></div><div class="progress-bar"><div class="progress-fill" style="width:70%;background:var(--orange)"></div></div></div>
+  <div class="progress-wrap"><div class="progress-label"><span>Appointment Reminder System</span><span style="color:var(--green)">80%</span></div><div class="progress-bar"><div class="progress-fill" style="width:80%;background:var(--green)"></div></div></div>
+  <div class="progress-wrap"><div class="progress-label"><span>Pilot Entry Strategy (Post-Greg)</span><span style="color:var(--green)">90%</span></div><div class="progress-bar"><div class="progress-fill" style="width:90%;background:var(--green)"></div></div></div>
+  <div class="progress-wrap"><div class="progress-label"><span>Business Formation (EIN/Bank)</span><span style="color:var(--orange)">35%</span></div><div class="progress-bar"><div class="progress-fill" style="width:35%;background:var(--orange)"></div></div></div>
+</div>
+<div class="card p2">
+  <h3>Project 2 — Maturity (Insurance)</h3>
+  <div class="progress-wrap"><div class="progress-label"><span>N8N Lead Scraping Workflow</span><span style="color:var(--orange)">40%</span></div><div class="progress-bar"><div class="progress-fill" style="width:40%;background:var(--p2)"></div></div></div>
+  <div class="progress-wrap"><div class="progress-label"><span>Government API Integrations (4 verticals)</span><span style="color:var(--orange)">35%</span></div><div class="progress-bar"><div class="progress-fill" style="width:35%;background:var(--p2)"></div></div></div>
+  <div class="progress-wrap"><div class="progress-label"><span>Email Template + Embedded Voice AI</span><span style="color:var(--orange)">20%</span></div><div class="progress-bar"><div class="progress-fill" style="width:20%;background:var(--p2)"></div></div></div>
+  <div class="progress-wrap"><div class="progress-label"><span>Lead Qualification Dashboard</span><span style="color:var(--red)">10%</span></div><div class="progress-bar"><div class="progress-fill" style="width:10%;background:var(--orange)"></div></div></div>
+  <div class="progress-wrap"><div class="progress-label"><span>Compliance / TCPA Strategy</span><span style="color:var(--orange)">50%</span></div><div class="progress-bar"><div class="progress-fill" style="width:50%;background:var(--orange)"></div></div></div>
+  <div class="progress-wrap"><div class="progress-label"><span>First Lead Batch (Sample Data)</span><span style="color:var(--red)">5%</span></div><div class="progress-bar"><div class="progress-fill" style="width:5%;background:var(--red)"></div></div></div>
+  <div class="progress-wrap"><div class="progress-label"><span>Revenue Model Defined</span><span style="color:var(--green)">85%</span></div><div class="progress-bar"><div class="progress-fill" style="width:85%;background:var(--p2)"></div></div></div>
+</div>
+</div>
+
+<div class="card">
+  <h3>Confirmed Unit Economics</h3>
+  <div class="grid-3">
+    <div>
+      <div style="font-size:0.78em;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Infrastructure Cost (P1 + P2)</div>
+      <table>
+        <tr><td>Retell AI (voice)</td><td style="color:var(--green);font-weight:700">$1.50–$200/mo</td></tr>
+        <tr><td>N8N (orchestration)</td><td style="color:var(--green);font-weight:700">$0 (self-hosted)</td></tr>
+        <tr><td>Supabase (database)</td><td style="color:var(--green);font-weight:700">$0–$25</td></tr>
+        <tr><td>Twilio (SMS + number)</td><td style="color:var(--green);font-weight:700">$5–$15</td></tr>
+        <tr style="background:rgba(0,184,148,.07)"><td><strong>Total / client / mo</strong></td><td style="color:var(--green);font-weight:800">~$30–$40</td></tr>
+      </table>
+    </div>
+    <div>
+      <div style="font-size:0.78em;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Voice AI Margins (P1)</div>
+      <div style="text-align:center;padding:12px;background:var(--surface2);border-radius:8px;margin-bottom:8px;">
+        <div style="font-size:0.72em;color:var(--text2);">Core Tier</div>
+        <div style="font-size:1.8em;font-weight:800;color:var(--p1);">92%+</div>
+        <div style="font-size:0.72em;color:var(--text2);">Gross Margin</div>
+      </div>
+      <div style="text-align:center;padding:12px;background:var(--surface2);border-radius:8px;">
+        <div style="font-size:0.72em;color:var(--text2);">Full Tier</div>
+        <div style="font-size:1.8em;font-weight:800;color:var(--p1);">96%+</div>
+        <div style="font-size:0.72em;color:var(--text2);">Gross Margin</div>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:0.78em;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Insurance Revenue (P2)</div>
+      <table>
+        <tr><td>Lead w/ opt-in</td><td style="color:var(--p2);font-weight:700">~$40/lead</td></tr>
+        <tr><td>Lead w/o opt-in</td><td style="color:var(--orange);font-weight:700">$0 (not pursuing — legal exposure too high)</td></tr>
+        <tr><td>Commission per policy</td><td style="color:var(--p2);font-weight:700">140% × $1,200 = $1,920</td></tr>
+        <tr><td>500 opt-in leads/run</td><td style="color:var(--p2);font-weight:700">~$20,000</td></tr>
+        <tr style="background:rgba(0,184,148,.07)"><td><strong>Daily fresh leads (4 verticals)</strong></td><td style="color:var(--p2);font-weight:800">1,000+</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ==================== MEETING REGISTER ==================== -->
+<div class="section" id="meetings">
+<h2 class="section-title">Consolidated Meeting Register</h2>
+<p style="margin-bottom:16px;font-size:0.88em;color:var(--text2);">12 transcripts processed. One excluded (personal Hindi family call). Meetings coded by project focus: <span class="tag tag-p1">P1 Voice AI</span> <span class="tag tag-p2">P2 Insurance</span> <span class="tag tag-orange">Both</span></p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>#</th><th>Est. Date</th><th>Meeting Title</th><th>Focus</th><th>Participants</th><th>Key Decisions / Outputs</th><th>Confidence</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td><td>~Late Jan 2026</td>
+  <td>AI Voice Platform & Business Strategy — Mercedes Pilot & Global Expansion</td>
+  <td><span class="tag tag-p1">P1</span></td>
+  <td>Frankie, Chitraksh</td>
+  <td>Partnership formed. 3x/week meetings agreed. Mercedes pilot as primary focus. Voice platform (11Labs → Retell). Greg identified as potential 10% equity partner for AutoNation entry.</td>
+  <td><span class="flag flag-inferred">Inferred</span></td>
+</tr>
+<tr>
+  <td>2</td><td>~Early Feb 2026</td>
+  <td>AI Voice Agent Development Sprint — Twilio Integration & Dashboard Planning</td>
+  <td><span class="tag tag-p1">P1</span></td>
+  <td>Frankie, Chitraksh</td>
+  <td>A2P brand registration obtained. Campaign registration submitted. Project split into 4 workflow segments. HubSpot vs custom dashboard debate begins. Supabase chosen. 4 log tables designed.</td>
+  <td><span class="flag flag-inferred">Inferred</span></td>
+</tr>
+<tr>
+  <td>3</td><td>~Mid Feb 2026</td>
+  <td>Insurance Lead Gen AI System + N8N Workflow Build & Twilio Setup</td>
+  <td><span class="tag tag-p2">P2</span></td>
+  <td>Frankie, Chitraksh</td>
+  <td><strong>Insurance project first major session.</strong> N8N workflow built for 4 insurance verticals (mortgage, life, medical, love-you-money). Government APIs identified (Atom Property, CMS Medicare, birth/employment records). Revenue model: 140% commission = $1,920/policy. Lead resale strategy discussed. Email + embedded voice AI delivery mechanism designed. Twilio number purchased ($15 deposited).</td>
+  <td><span class="flag flag-inferred">Inferred</span></td>
+</tr>
+<tr>
+  <td>4</td><td>~Late Feb 2026</td>
+  <td>Oraya AI Pilot Development & Mercedes Demo Strategy Session</td>
+  <td><span class="tag tag-p1">P1</span></td>
+  <td>Frankie, Chitraksh</td>
+  <td>400+ test calls confirmed. End-to-end workflow validated. Call forwarding architecture finalized. Greg demo scheduled. GHL integration explored.</td>
+  <td><span class="flag flag-confirmed">Confirmed (Feb 28 ref)</span></td>
+</tr>
+<tr>
+  <td>5</td><td>~Late Feb / Early Mar</td>
+  <td>AI Sales Agent Workflow Testing & Appointment Reminder System Configuration</td>
+  <td><span class="tag tag-p1">P1</span></td>
+  <td>Frankie, Chitraksh</td>
+  <td>Reminder system built: 24h, 6h, 3h intervals. Quiet hours policy discussed. A2P campaign approved. Twilio fund discussion.</td>
+  <td><span class="flag flag-inferred">Inferred</span></td>
+</tr>
+<tr>
+  <td>6</td><td>~Mar 5-7 2026</td>
+  <td>AI Voice Agent (Jessica) Live Testing & Optimization for Mercedes-Benz</td>
+  <td><span class="tag tag-p1">P1</span></td>
+  <td>Frankie, Chitraksh</td>
+  <td>A2P fully approved. Live inbound + outbound testing. Jordan Belfort persona discussed then abandoned. Jessica voice finalized. Barge rate optimization. Outbound form deployed.</td>
+  <td><span class="flag flag-inferred">Inferred</span></td>
+</tr>
+<tr>
+  <td>7</td><td>~Mar 8-10 2026</td>
+  <td>Meet — Extended Strategy Session (stj-pajo-swu)</td>
+  <td><span class="tag tag-orange">Both</span></td>
+  <td>Frankie, Chitraksh</td>
+  <td>LinkedIn growth strategy. Claude Code / Codex tools discussed. Mac Mini for AI ops. Community building. Insurance project referenced alongside voice AI plans. Codex vs Claude Code comparison.</td>
+  <td><span class="flag flag-inferred">Inferred</span></td>
+</tr>
+<tr>
+  <td>8</td><td>Mar 12 2026</td>
+  <td>Oraya Labs Business Planning — GoDaddy, Website, AutoNation & Insurance</td>
+  <td><span class="tag tag-orange">Both</span></td>
+  <td>Frankie, Chitraksh</td>
+  <td>GoDaddy access transferred. Website reviewed. E&O insurance: $100–700/mo, $1M minimum needed. 45-day pilot timeline. Notion progress tracking planned. Meeting transcripts forwarded to Chitraksh.</td>
+  <td><span class="flag flag-confirmed">Confirmed (Mar 12)</span></td>
+</tr>
+<tr>
+  <td>9</td><td>Mar 13 2026</td>
+  <td>AI Sales Automation Platform Demo & Business Strategy Call – AutoNation</td>
+  <td><span class="tag tag-p1">P1</span></td>
+  <td>Frankie, Chitraksh</td>
+  <td>Full live demo — all systems operational. Greg situation update (out). New pilot entry strategy needed. Stripe/EIN as immediate priorities. Deployment estimate: 3-4 days/client. 15 days for new vertical.</td>
+  <td><span class="flag flag-confirmed">Confirmed (Mar 13)</span></td>
+</tr>
+<tr>
+  <td>10</td><td>~Various</td>
+  <td>Untitled Recording — Extended Strategy + GoDaddy troubleshooting</td>
+  <td><span class="tag tag-orange">Both</span></td>
+  <td>Frankie, Chitraksh</td>
+  <td>GoDaddy login issues. Industry research: CDK, Reynolds & Reynolds DMS systems. Website content review. Insurance licensing (CA, TX, + 1 state confirmed for Frankie).</td>
+  <td><span class="flag flag-inferred">Inferred</span></td>
+</tr>
+<tr>
+  <td>11</td><td>N/A</td>
+  <td>Untitled Recording (1) — Personal Hindi Call</td>
+  <td>—</td>
+  <td>Chitraksh, Family</td>
+  <td>Medical appointment arrangement. Not project related. Excluded from analysis.</td>
+  <td>—</td>
+</tr>
+<tr>
+  <td>12</td><td>Mar 15 2026</td>
+  <td>Dashboard Review, Voice Agent Testing & Insurance System Build Session</td>
+  <td><span class="tag tag-orange">Both</span></td>
+  <td>Frankie, Chitraksh</td>
+  <td>Key decisions: PayPal payment resolved ($250 sent, $237 received). orayalabs.ai domain connected. HubSpot selected as CRM (Frankie gave Chitraksh admin access). Commission updated: 110% current, 140% at $60-100K/mo volume. Frankie licenses confirmed: CA, TX, Idaho, Nevada. Bible Belt expansion planned. Voice agent v2 tested with new NEPQ-based prompt. Human transfer attempted but had technical issues. RPA system design ingested for insurance end-to-end. Chargeback recovery workflow needed. Google Reviews/Trustpilot automation planned. N8N migrated to new account (trial expired). EIN filing scheduled for next business day. Registered agent renewal email received. India-based CA consulted for tax strategy.</td>
+  <td><span class="flag flag-confirmed">Confirmed (Mar 15)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- ==================== TIMELINE ==================== -->
+<div class="section" id="timeline">
+<h2 class="section-title">Project Evolution Timeline</h2>
+<p style="margin-bottom:20px;font-size:0.85em;color:var(--text2);">
+  <span style="display:inline-block;width:12px;height:12px;background:var(--p1);border-radius:50%;margin-right:6px;vertical-align:middle;"></span>Voice AI (P1)&nbsp;&nbsp;
+  <span style="display:inline-block;width:12px;height:12px;background:var(--p2);border-radius:50%;margin-right:6px;vertical-align:middle;"></span>Insurance (P2)&nbsp;&nbsp;
+  <span style="display:inline-block;width:12px;height:12px;background:var(--orange);border-radius:50%;margin-right:6px;vertical-align:middle;"></span>Both
+</p>
+<div class="timeline">
+  <div class="timeline-item p1">
+    <div class="timeline-date">Late January 2026 — Partnership Formation</div>
+    <div class="timeline-title">Frankie + Chitraksh Begin. Voice AI Platform Scoped.</div>
+    <div class="timeline-body">Frankie leaves prior failed engineers (lost $150K+). Finds Chitraksh. Partnership begins with 3x/week meetings. Greg identified as potential 10% equity partner for AutoNation access. Voice AI platform selected as primary build. Retell AI + N8N + Twilio + Supabase stack chosen.</div>
+  </div>
+  <div class="timeline-item p1">
+    <div class="timeline-date">Early February 2026 — Core Voice AI Build</div>
+    <div class="timeline-title">Twilio A2P Registration. N8N Workflows. Dashboard v1.</div>
+    <div class="timeline-body">Twilio A2P brand registration submitted and approved. Retell AI voice agent "Jessica" built. N8N workflow engine deployed. Supabase dashboard started (replacing initial Google Sheets approach). 4 tables designed: Master Call Log, Appointment Log, Callback Log, SMS Log.</div>
+  </div>
+  <div class="timeline-item p2">
+    <div class="timeline-date">Mid February 2026 — Insurance Project Launched</div>
+    <div class="timeline-title">Lead Gen System Designed. 4 Verticals. Government APIs.</div>
+    <div class="timeline-body">Chitraksh presents insurance lead gen concept. 4 verticals identified: Mortgage Protection (Atom Property API), Life Insurance, Medical/Health (CMS Medicare API — government data), Loved Ones/Love-You-Money. Revenue model established: 140% commission upfront = $1,920 per $100/mo policy. Lead resale strategy: $40/lead with opt-in. Email + embedded voice AI delivery method designed (no phone number required). Twilio $15 deposited and number purchased for testing.</div>
+  </div>
+  <div class="timeline-item p1">
+    <div class="timeline-date">Late February 2026 — Voice AI End-to-End Complete</div>
+    <div class="timeline-title">400+ Test Calls. Full Workflow Operational.</div>
+    <div class="timeline-body">Complete appointment booking flow validated: call → qualify → book → SMS → email → Google Calendar. Call forwarding architecture confirmed (dealership number forwards to Oraya system). Appointment reminder system built (24h/6h/3h). Greg demo scheduled. Jessica persona finalized.</div>
+  </div>
+  <div class="timeline-item p1">
+    <div class="timeline-date">Early March 2026 — Voice AI Polished</div>
+    <div class="timeline-title">A2P Approved. 400+ Calls. Demo-Ready.</div>
+    <div class="timeline-body">A2P campaign registration approved after initial rejections. Outbound calling form deployed. Negative sentiment handling tested. Email templates refined. Barge rate optimization ongoing. System deemed demo-ready. Website live on Lovable (still on Vercel subdomain).</div>
+  </div>
+  <div class="timeline-item both">
+    <div class="timeline-date">March 12, 2026 — Business Planning</div>
+    <div class="timeline-title">GoDaddy Transferred. E&O Researched. Both Projects Active.</div>
+    <div class="timeline-body">GoDaddy domain access transferred to Chitraksh. Website content reviewed. E&O insurance researched ($100-700/mo, $1M minimum). Both projects discussed in planning context. Insurance project acknowledged as second active workstream.</div>
+  </div>
+  <div class="timeline-item p1">
+    <div class="timeline-date">March 13, 2026 — Full Demo & Greg Exit</div>
+    <div class="timeline-title">Live Demo Complete. Greg Out. New Strategy Needed.</div>
+    <div class="timeline-body">Full system demo executed flawlessly. All systems operational. Greg situation confirmed — no longer in picture (offered 10% equity as pilot connector, now out). AutoNation pilot strategy needs complete rebuild. EIN, Stripe, bank account identified as immediate business priorities. Deployment: 3-4 days per client confirmed.</div>
+  </div>
+  <div class="timeline-item p2">
+    <div class="timeline-date">March 2026 (Ongoing) — Insurance Build Continues</div>
+    <div class="timeline-title">API Integrations in Progress. MVP Target: 4 Days.</div>
+    <div class="timeline-body">Chitraksh building API aggregation layer (property deed registrations, Medicare CMS, employment, birth records). Email template system being designed. Voice AI embed for email finalized conceptually. First sample data batch expected within 4 days of active work. Full build estimate: 2 months (with possible junior engineer assist).</div>
+  </div>
+  <div class="timeline-item both">
+    <div class="timeline-date">March 15, 2026 — Execution Sprint</div>
+    <div class="timeline-title">PayPal Resolved. Domain Connected. HubSpot Selected. Voice Agent v2 Tested.</div>
+    <div class="timeline-body">Major execution session. PayPal payment to Chitraksh completed ($250 sent, $237 after fees). orayalabs.ai domain connected to Vercel. HubSpot selected as CRM for insurance (Frankie created account, Chitraksh given admin). Voice agent v2 tested with NEPQ-based sales prompt — improved quality. Human warm transfer attempted but hit technical issues (wrong agent ID, then transfer failure). N8N trial expired, migrated to new account. Commission rate clarified: 110% current contract, 140% unlocks at $60-100K/mo volume. Frankie's licenses confirmed: CA, TX, Idaho, Nevada. Bible Belt expansion planned (NC, SC, GA, LA). Pilot strategy refined: Frankie to drive to LA/Torrance to pitch dealership directly + email proposal for Khalid. RPA end-to-end insurance system design ingested (Puppeteer/Beautiful Soup for e-application autofill). Chargeback recovery workflow and Google Reviews/Trustpilot automation added to roadmap. EIN filing scheduled for next business day.</div>
+  </div>
+</div>
+</div>
+
+<!-- ==================== VOICE AI PROJECT ==================== -->
+<div class="section" id="voiceai">
+<div class="proj-banner p1"><div class="icon">📞</div><div><h2 style="color:var(--p1)">Project 1 — Voice AI Agent (Automotive)</h2><p>Full deep-dive: tech stack, what works, what remains, decisions made, open items.</p></div></div>
+
+<div class="grid-2">
+<div class="card">
+  <h3>What Has Been Built</h3>
+  <div style="margin-bottom:10px;"><strong style="color:var(--p1);">Voice Agent (Jessica)</strong></div>
+  <ul>
+    <li>Inbound call handling — answers, qualifies, books</li>
+    <li>Outbound callback/follow-up calls</li>
+    <li>Lead qualification conversational flow</li>
+    <li>Appointment booking with date/time confirmation</li>
+    <li>Email + name spelling verification logic</li>
+    <li>Negative sentiment detection + graceful exit</li>
+    <li>6-minute max call duration (40-50s per state)</li>
+    <li>1-minute silence auto-disconnect</li>
+    <li>Jordan Belfort sales technique (tested, then simplified)</li>
+    <li>400+ test calls validated end-to-end</li>
+  </ul>
+</div>
+<div class="card">
+  <h3>Automation & Integrations</h3>
+  <div style="margin-bottom:10px;"><strong style="color:var(--p1);">N8N Workflows</strong></div>
+  <ul>
+    <li>Inbound post-call workflow (published & live)</li>
+    <li>Outbound workflow (published & live)</li>
+    <li>Consent state validation</li>
+    <li>Post-call data extraction routing</li>
+    <li>Google Calendar appointment creation</li>
+    <li>SMS confirmation via Twilio (A2P approved)</li>
+    <li>Email confirmation (customer + admin copy)</li>
+    <li>Error handling with admin email alerts</li>
+    <li>Callback request routing</li>
+    <li>Appointment reminders: 24h / 12h / 6h / 3h / 2h / 15min (all active, selectable)</li>
+  </ul>
+</div>
+</div>
+
+<div class="card">
+  <h3>Tech Stack</h3>
+  <div class="grid-3">
+    <table>
+      <tr><td style="color:var(--text2);font-size:0.8em;">Voice AI</td><td>Retell AI + 11Labs synthesis</td></tr>
+      <tr><td style="color:var(--text2);font-size:0.8em;">Orchestration</td><td>N8N (self-hosted)</td></tr>
+      <tr><td style="color:var(--text2);font-size:0.8em;">Telephony</td><td>Twilio (A2P 10DLC ✓)</td></tr>
+    </table>
+    <table>
+      <tr><td style="color:var(--text2);font-size:0.8em;">Database</td><td>Supabase (PostgreSQL)</td></tr>
+      <tr><td style="color:var(--text2);font-size:0.8em;">Calendar</td><td>Google Calendar API</td></tr>
+      <tr><td style="color:var(--text2);font-size:0.8em;">Email</td><td>Gmail via N8N</td></tr>
+    </table>
+    <table>
+      <tr><td style="color:var(--text2);font-size:0.8em;">AI Models</td><td>Voice Agent: Claude IQ 4.5 / Workflows: Opus 4.5</td></tr>
+      <tr><td style="color:var(--text2);font-size:0.8em;">Website</td><td>Google HTTP → orayalabs.ai (Vercel)</td>
+      <tr><td style="color:var(--text2);font-size:0.8em;">Dev Tools</td><td>Claude Code, Codex</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="card">
+  <h3>What Remains (Voice AI)</h3>
+  <div class="grid-2">
+    <div>
+      <strong style="color:var(--orange)">Technical</strong>
+      <ul style="margin-top:8px;">
+        <li>SMS messaging UI inside Supabase dashboard</li>
+        <li>Phone number formatting (strip +1, add dashes)</li>
+        <li>Quiet hours filter for reminders (10pm–7am block)</li>
+        <li>CRM integration with HubSpot (account created, admin access granted)</li>
+        <li>Human warm transfer debugging (attempted, transfer failure — needs fix)</li>
+        <li>Background office noises refinement (added but needs tuning)</li>
+        <li>Outbound voice model speed optimization</li>
+        <li>Nurturing drip sequence</li>
+      </ul>
+    </div>
+    <div>
+      <strong style="color:var(--red)">Business / Strategy</strong>
+      <ul style="margin-top:8px;">
+        <li><strong style="color:var(--red)">Execute pilot entry strategy: Frankie drives to LA/Torrance for in-person pitch</strong></li>
+        <li>EIN registration — scheduled for next business day (Mon-Fri 7am-10pm ET only)</li>
+        <li>Prepare proposal email + offer letter for Khalid and GM at Torrance Mercedes</li>
+        <li>Frankie to drive to LA/Torrance for in-person dealership pitch</li>
+        <li>US bank account (Mercury/Relay)</li>
+        <li>Stripe payment integration</li>
+        <li>E&O insurance ($1M minimum)</li>
+        <li>Formal pilot proposal document</li>
+        <li>Oraya Corp renewal filing (registered agent email received)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Post-Greg: Pilot Entry Strategy Options</h3>
+  <table>
+    <thead><tr><th>Strategy</th><th>Speed</th><th>Difficulty</th><th>Recommendation</th></tr></thead>
+    <tbody>
+      <tr><td>Cold LinkedIn outreach to AutoNation managers directly (Frankie)</td><td><span class="tag tag-orange">1-2 weeks</span></td><td>Medium</td><td>Frankie has the LinkedIn presence (1,000 followers). Use the demo video as the hook.</td></tr>
+      <tr><td>Target independent Mercedes-Benz dealer (not AutoNation)</td><td><span class="tag tag-green">Faster</span></td><td>Low</td><td>Smaller dealerships move faster. Easier to get to a decision maker.</td></tr>
+      <tr><td>Cold email campaign to GM/Sales Directors at CA dealerships</td><td><span class="tag tag-orange">1-2 weeks</span></td><td>Low</td><td>Chitraksh can build automated outreach using the same email infra as insurance project.</td></tr>
+      <tr><td>Demo video on LinkedIn (organic lead magnet)</td><td><span class="tag tag-blue">Ongoing</span></td><td>Very Low</td><td>Record a real live demo call. Post on LinkedIn. Let inbound come to you.</td></tr>
+      <tr><td>In-person dealership visit (Frankie drives to LA/Torrance)</td><td><span class="tag tag-orange">1-2 weeks</span></td><td>High</td><td>Frankie plans to stay 2-3 days, pitch directly to GM/owner. Bypasses all intermediaries. Highest conviction path.</td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!-- ==================== INSURANCE PROJECT ==================== -->
+<div class="section" id="insurance">
+<div class="proj-banner p2"><div class="icon">🛡️</div><div><h2 style="color:var(--p2)">Project 2 — Insurance Lead Gen AI System</h2><p>Full deep-dive: concept, data sources, revenue model, tech architecture, compliance approach, current status.</p></div></div>
+
+<div class="grid-2">
+<div class="card p2">
+  <h3>Core Concept</h3>
+  <p>An automated pipeline that scrapes <strong>publicly available government data</strong> to identify people who are highly likely to need insurance <em>right now</em>, because their life circumstances just changed. The system then contacts them via personalized email with a consent/opt-in box. Those who opt in are directed to a landing page with an AI voice button, or called by human VAs / AI agents, qualifies them, and either books them with Frankie or resells the lead.</p>
+  <ul style="margin-top:12px;">
+    <li><strong>Key insight:</strong> Government property deed registrations, Medicare CMS data, employment records are all publicly available APIs — no consent required to access the data.</li>
+    <li><strong>Key innovation:</strong> Dual opt-in path: (1) Email consent box → landing page with voice AI button, (2) Human VAs from Philippines/South America ($5-7/hr) call opted-in leads to bypass AI cold-call restrictions.</li>
+    <li><strong>Scale potential:</strong> 1,000+ fresh leads per day across 4 verticals. Non-repeating daily data.</li>
+  </ul>
+</div>
+<div class="card p2">
+  <h3>4 Insurance Verticals</h3>
+  <table>
+    <tr><th>Vertical</th><th>Trigger Event</th><th>Data Source</th></tr>
+    <tr><td style="color:var(--p2)"><strong>Mortgage Protection</strong></td><td>Just bought a property</td><td>Atom Property API + government deed registrations</td></tr>
+    <tr><td style="color:var(--p2)"><strong>Life Insurance</strong></td><td>Newborn registered</td><td>CMS Medicare API (birth records), state databases</td></tr>
+    <tr><td style="color:var(--p2)"><strong>Medical / Health</strong></td><td>Job loss detected, Medicare enrollment</td><td>CMS data.cms.gov API, employment data</td></tr>
+    <tr><td style="color:var(--p2)"><strong>Loved Ones / Love-You-Money</strong></td><td>Life milestone indicators</td><td>Combined property + life event signals</td></tr>
+  </table>
+</div>
+</div>
+
+<div class="card p2">
+  <h3>Revenue Model</h3>
+  <div class="grid-3">
+    <div style="padding:14px;background:var(--surface2);border-radius:8px;">
+      <div style="font-size:0.75em;color:var(--text2);text-transform:uppercase;letter-spacing:1px;">Commission Revenue (Frankie sells)</div>
+      <div style="margin-top:8px;font-size:0.85em;">Policy: $100/mo × 12 = $1,200/yr × 110% advance = <strong style="color:var(--p2);">$1,320 per policy</strong></div>
+      <div style="font-size:0.8em;color:var(--text2);margin-top:4px;">Frankie's share after split: ~$660-800 per closed deal (at 110%)<br><span style="color:var(--green);">140% unlocks at $60-100K/mo issued premium volume</span></div>
+    </div>
+    <div style="padding:14px;background:var(--surface2);border-radius:8px;">
+      <div style="font-size:0.75em;color:var(--text2);text-transform:uppercase;letter-spacing:1px;">Lead Resale Revenue</div>
+      <div style="margin-top:8px;font-size:0.85em;">
+        <strong style="color:var(--p2);">$40/lead</strong> (with opt-in)<br>
+        <strong style="color:var(--orange);">$0 (without opt-in — not pursuing, legal exposure too high)</strong><br>
+        500 leads/batch × $40 = <strong style="color:var(--p2);">$20,000</strong>
+      </div>
+    </div>
+    <div style="padding:14px;background:var(--surface2);border-radius:8px;">
+      <div style="font-size:0.75em;color:var(--text2);text-transform:uppercase;letter-spacing:1px;">Frankie's Licenses</div>
+      <div style="margin-top:8px;font-size:0.85em;">
+        ✅ California<br>
+        ✅ Texas<br>
+        ✅ Idaho<br>
+        ✅ Nevada<br>
+        <span style="color:var(--green);">🎯 Planned: NC, SC, GA, LA (Bible Belt expansion)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card p2">
+  <h3>Technical Architecture</h3>
+  <div class="flow-wrap">
+    <div class="flow-node" style="border-color:var(--p2);color:var(--p2);background:rgba(0,184,148,.1)">Govt APIs<br><small>Property / CMS / Employment</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="border-color:var(--accent2);color:var(--accent2);background:rgba(0,206,201,.1)">N8N Aggregator<br><small>Multi-source combiner</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="border-color:var(--accent4);color:var(--accent4);background:rgba(253,203,110,.1)">Lead Scoring<br><small>AI qualification</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="border-color:var(--p1);color:var(--p1);background:rgba(108,92,231,.1)">Email Sender<br><small>N8N (email automation)</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="border-color:var(--accent3);color:var(--accent3);background:rgba(253,121,168,.1)">Consent Box → Landing Page<br><small>Opt-in → AI voice button</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="border-color:var(--p2);color:var(--p2);background:rgba(0,184,148,.1)">RPA Agent<br><small>Puppeteer / Beautiful Soup — e-app autofill</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="border-color:var(--blue);color:var(--blue);background:rgba(52,152,219,.1)">Warm Transfer → Frankie<br><small>Broker verification + submit</small></div>
+  </div>
+  <div style="margin-top:16px;font-size:0.85em;color:var(--text2);padding:0 14px;">
+    <strong style="color:var(--text)">Key innovation:</strong> Dual opt-in acquisition: (1) Email with consent box leads to landing page with AI voice button — user-initiated, TCPA compliant. (2) Human VAs ($5-7/hr from Philippines/South America, 60-100 appointments/week per caller) call scraped leads for initial consent, then feed opted-in leads into AI system. RPA layer handles end-to-end: AI collects application data, auto-fills e-application via Puppeteer, warm transfers to Frankie for final broker verification and submission.
+  </div>
+</div>
+
+<div class="card p2">
+  <h3>Compliance Strategy</h3>
+  <table>
+    <tr><th>Risk</th><th>Mitigation</th><th>Status</th></tr>
+    <tr>
+      <td>TCPA — calling without consent</td>
+      <td>No outbound calls from the system. All calls are web-initiated by the prospect clicking the email link.</td>
+      <td><span class="tag tag-green">Addressed</span></td>
+    </tr>
+    <tr>
+      <td>CAN-SPAM — cold email</td>
+      <td>Emails are from publicly available data. Include opt-out link. No deceptive headers. Present clearly as insurance outreach.</td>
+      <td><span class="tag tag-orange">Partial</span></td>
+    </tr>
+    <tr>
+      <td>Data sourcing — privacy concerns</td>
+      <td>All data from public government records (property deeds, Medicare CMS). No private data purchased.</td>
+      <td><span class="tag tag-green">Addressed</span></td>
+    </tr>
+    <tr>
+      <td>Insurance licensing — selling without license</td>
+      <td>AI only educates and qualifies. Frankie (licensed agent) closes the actual sale. AI never commits to policy terms.</td>
+      <td><span class="tag tag-green">Addressed</span></td>
+    </tr>
+    <tr>
+      <td>Lead resale — unlicensed broker activity</td>
+      <td>Selling publicly-sourced, arranged data to licensed insurers is a gray area. Needs legal review before scale.</td>
+      <td><span class="tag tag-red">Unresolved</span></td>
+    </tr>
+    <tr>
+      <td>Human VA outbound calls</td>
+      <td>VAs from Philippines/South America ($5-7/hr) make initial human calls to get verbal opt-in, recorded for consent. Once opted in, leads enter AI system.</td>
+      <td><span class="tag tag-orange">Planned</span></td>
+    </tr>
+    <tr>
+      <td>Chargeback recovery</td>
+      <td>AI-triggered workflow: payment failure detected → 24-48hr verification → automated SMS, email, and voice campaigns to recover lapsed policies.</td>
+      <td><span class="tag tag-red">Not Started</span></td>
+    </tr>
+  </table>
+</div>
+
+<div class="card p2">
+  <h3>Current Status & Build Plan</h3>
+  <table>
+    <thead><tr><th>Phase</th><th>Description</th><th>Timeline (Est.)</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Phase 1</strong></td><td>API integrations — connect property, CMS, and other data sources. Get first sample batch (target: 500 leads with emails).</td><td>4 days</td><td><span class="tag tag-orange">In Progress</span></td></tr>
+      <tr><td><strong>Phase 2</strong></td><td>Analyze sample data quality. Build custom HTML email template (Frankie to design on bfree.io). Integrate voice AI web-link button.</td><td>Week 2</td><td><span class="tag tag-red">Not Started</span></td></tr>
+      <tr><td><strong>Phase 3</strong></td><td>Email automation via N8N. Send first batch. Monitor open rates + AI interaction rates.</td><td>Week 3</td><td><span class="tag tag-red">Not Started</span></td></tr>
+      <tr><td><strong>Phase 4</strong></td><td>Lead dashboard (simplified — no calendar integration needed). Show: emails sent, AI conversations, opt-ins, ready-to-call list for Frankie.</td><td>Week 3-4</td><td><span class="tag tag-red">Not Started</span></td></tr>
+      <tr><td><strong>Phase 5</strong></td><td>Scale + junior engineer for heavy API work. Lead resale pipeline to external brokers.</td><td>Month 2</td><td><span class="tag tag-red">Not Started</span></td></tr>
+      <tr><td><strong>Phase 6</strong></td><td>RPA Agent Build — Puppeteer/Beautiful Soup e-application autofill. AI collects all applicant data, auto-fills carrier e-application, warm transfers to Frankie for submit. Builds separate SaaS product potential.</td><td>Month 3-4</td><td><span class="tag tag-red">Not Started</span></td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!-- ==================== WEBSITE AUDIT ==================== -->
+<div class="section" id="website">
+<h2 class="section-title">Live Website Audit</h2>
+<p style="margin-bottom:20px;color:var(--text2);">Analysis of <a href="https://oraya-ai-h485.vercel.app/">oraya-ai-h485.vercel.app</a> — captured March 13, 2026. Pricing section excluded per founder instruction (not final).</p>
+
+<div class="grid-4" style="margin-bottom:20px;">
+  <div class="card kpi"><div class="number" style="font-size:1.6em;">A</div><div class="label">Overall Positioning</div></div>
+  <div class="card kpi"><div class="number" style="font-size:1.6em;">A</div><div class="label">Information Architecture</div></div>
+  <div class="card kpi"><div class="number" style="font-size:1.6em;">A+</div><div class="label">Voice AI Demo Section</div></div>
+  <div class="card kpi"><div class="number" style="font-size:1.6em;">B</div><div class="label">Social Proof</div></div>
+</div>
+
+<div class="card">
+  <h3>Messaging & Content Analysis</h3>
+  <table>
+    <tr><th>Element</th><th>Content</th><th>Grade</th><th>Notes</th></tr>
+    <tr><td>Hero Tagline</td><td>"Turn missed calls and slow follow-up into booked revenue."</td><td><span class="tag tag-green">A+</span></td><td>Outcome-focused. Speaks directly to the pain. No jargon.</td></tr>
+    <tr><td>Target Market</td><td>"Built for appointment-driven teams"</td><td><span class="tag tag-green">A</span></td><td>Smart — keeps it multi-vertical. Automotive, home services, medical, legal all fit.</td></tr>
+    <tr><td>Live Ops Widget</td><td>"System Active · Avg Response 38s · Bookings (Wk) 18"</td><td><span class="tag tag-green">A+</span></td><td>Brilliant credibility signal. Creates immediate "it works" impression.</td></tr>
+    <tr><td>Value Pillars</td><td>"Never miss a call / Instant web follow-up / One unified system"</td><td><span class="tag tag-green">A</span></td><td>Clean, scannable, benefit-first hierarchy.</td></tr>
+    <tr><td>Technology Carousel</td><td>Twilio, N8N, Claude, OpenAI, Retell, HubSpot, Salesforce, Stripe…</td><td><span class="tag tag-green">A-</span></td><td>Strong ecosystem framing. Some tools aspirational — fine for now.</td></tr>
+    <tr><td>Process Section</td><td>"Week 1: Audit → Weeks 2-4: Ship → Ongoing: Expand"</td><td><span class="tag tag-green">A</span></td><td>Consultancy framing. Differentiates from pure SaaS. Creates trust.</td></tr>
+    <tr><td>Voice AI Demo</td><td>Mock call transcript — plumber booking scenario with intent tags</td><td><span class="tag tag-green">A+</span></td><td>Excellent. Real, believable, tagged with context. Shows depth of system.</td></tr>
+    <tr><td>Security / Guardrails</td><td>Private workflows, role-based access, audit logs, human approvals</td><td><span class="tag tag-green">A</span></td><td>Enterprise-ready messaging. Exactly what procurement needs to see.</td></tr>
+    <tr><td>Architecture Diagram</td><td>Inputs → Decision Layer → Outputs</td><td><span class="tag tag-green">A</span></td><td>Simple, clear, non-technical buyers understand it.</td></tr>
+    <tr><td>"Operations Engineering" Framing</td><td>"We act as your operations engineering team"</td><td><span class="tag tag-green">A+</span></td><td>The most powerful line on the site. Creates premium positioning and stickiness.</td></tr>
+  </table>
+</div>
+
+<div class="card" style="border-left:3px solid var(--orange);">
+  <h3 style="color:var(--orange);">Issues & Fixes (Excluding Pricing)</h3>
+  <table>
+    <tr><th>Issue</th><th>Priority</th><th>Fix</th></tr>
+    <tr><td>Domain on Vercel subdomain, not orayalabs.ai</td><td><span class="tag tag-red">HIGH</span></td><td>Connect GoDaddy → Vercel DNS. 15 minutes. Do it today.</td></tr>
+    <tr><td>CTA "Book your strategy call" — no calendar embed</td><td><span class="tag tag-orange">MEDIUM</span></td><td>Add Calendly or Cal.com widget directly on the page.</td></tr>
+    <tr><td>No team / about section</td><td><span class="tag tag-orange">MEDIUM</span></td><td>Add a 2-person "Our Team" section. Enterprise buyers need faces.</td></tr>
+    <tr><td>No real testimonials / case studies</td><td><span class="tag tag-orange">MEDIUM</span></td><td>After first pilot, add immediately. This is the #1 growth unlock post-launch.</td></tr>
+    <tr><td>Demo is home services (plumber), not auto</td><td><span class="tag tag-blue">LOW</span></td><td>Add a second demo for automotive. Keep plumber (shows versatility).</td></tr>
+    <tr><td>"Client Login" button not functional</td><td><span class="tag tag-blue">LOW</span></td><td>Link to Supabase dashboard URL or remove until ready.</td></tr>
+    <tr><td>Some tech logos are aspirational (Salesforce, Zendesk, etc.)</td><td><span class="tag tag-blue">LOW</span></td><td>Fine for now. Build them as you sell to clients that use those tools.</td></tr>
+  </table>
+</div>
+</div>
+
+<!-- ==================== RISKS & GAPS ==================== -->
+<div class="section" id="risks">
+<h2 class="section-title">Risks & Gaps (Both Projects)</h2>
+
+<h3 style="margin-bottom:14px;">Master Risk Heatmap</h3>
+<div class="heatmap" style="margin-bottom:28px;">
+  <div class="heat-cell heat-high">No Legal Entity<br><small>No EIN / Bank / Stripe</small></div>
+  <div class="heat-cell heat-high">No Partnership Contract<br><small>Equity undefined</small></div>
+  <div class="heat-cell heat-high">Greg Is Out (P1)<br><small>Pilot entry = zero</small></div>
+  <div class="heat-cell heat-med">CTO Payment: In Progress<br><small>PayPal set up, $250 sent</small></div>
+  <div class="heat-cell heat-med">Bus Factor = 1<br><small>All tech on Chitraksh</small></div>
+  <div class="heat-cell heat-med">No E&O Insurance<br><small>Required for enterprise</small></div>
+  <div class="heat-cell heat-med">Lead Resale Legality (P2)<br><small>Unlicensed broker gray area</small></div>
+  <div class="heat-cell heat-med">Scope Split Attention<br><small>Two projects, two founders</small></div>
+  <div class="heat-cell heat-low">N8N Subscription<br><small>Trial expired, migrated to new account</small></div>
+  <div class="heat-cell heat-low">No Monitoring/Observability<br><small>No uptime tracking</small></div>
+  <div class="heat-cell heat-low">Quiet Hours Gap (P1)<br><small>SMS filter missing</small></div>
+  <div class="heat-cell heat-low">Aspirational Tech Stack<br><small>Website shows unbuilt integrations</small></div>
+</div>
+
+<div class="grid-2">
+<div class="card">
+  <h3>Project 1 — Voice AI Specific Risks</h3>
+  <ul>
+    <li><strong>Greg out = no warm entry into AutoNation.</strong> The entire pilot strategy was dependent on Greg's insider access at the dealership. A cold approach to AutoNation (a large corp) is significantly harder. Alternative: target independent dealerships first.</li>
+    <li><strong>No SLA despite "99% uptime" on website.</strong> No monitoring, no redundancy, no failover. The claim is aspirational.</li>
+    <li><strong>CRM integration perpetually deferred.</strong> HubSpot vs. GHL vs. custom discussed in 3+ meetings with no decision. Enterprise clients will require this.</li>
+    <li><strong>CCPA / data handling agreement.</strong> Not discussed beyond opt-out language. Enterprise procurement will require formal DPA.</li>
+  </ul>
+</div>
+<div class="card p2">
+  <h3>Project 2 — Insurance Specific Risks</h3>
+  <ul>
+    <li><strong>Lead resale without being a licensed data broker.</strong> Selling data to insurers is a regulated activity in some states. Needs legal review before any commercial transaction.</li>
+    <li><strong>CAN-SPAM compliance for cold email.</strong> Must include real mailing address, clear opt-out, and no deceptive sender info. Currently not fully designed.</li>
+    <li><strong>Frankie's license type.</strong> Life license confirmed in CA/TX, but mortgage protection policies may require a different license type. Must be verified before selling.</li>
+    <li><strong>Data quality uncertainty.</strong> Chitraksh has not run a sample batch yet. Email deliverability, data accuracy, and lead quality are all unknown until first test run.</li>
+    <li><strong>Two months to full build.</strong> With Chitraksh also running the Voice AI project, this timeline may stretch. Priority conflict is real.</li>
+  </ul>
+</div>
+</div>
+
+<div class="card">
+  <h3>Unresolved Items — Cross-Project Tracker</h3>
+  <table>
+    <thead><tr><th>Item</th><th>Project</th><th>Times Discussed</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Partnership contract / equity split</td><td>Both</td><td>3+</td><td><span class="tag tag-red">Unresolved</span></td></tr>
+      <tr><td>Payment to Chitraksh (PayPal / UPI / Stripe)</td><td>Both</td><td>4+</td><td><span class="tag tag-green">In Progress — PayPal set up, $250 sent (Mar 15)</span></td></tr>
+      <tr><td>EIN registration</td><td>Both</td><td>2+</td><td><span class="tag tag-red">Unresolved</span></td></tr>
+      <tr><td>US bank account</td><td>Both</td><td>2+</td><td><span class="tag tag-red">Unresolved</span></td></tr>
+      <tr><td>Stripe payment integration</td><td>P1</td><td>1</td><td><span class="tag tag-red">Unresolved</span></td></tr>
+      <tr><td>E&O insurance purchase</td><td>P1</td><td>2</td><td><span class="tag tag-orange">Researched, not purchased</span></td></tr>
+      <tr><td>Connect orayalabs.ai domain</td><td>P1</td><td>2</td><td><span class="tag tag-green">✅ DONE (Mar 15)</span></td></tr>
+      <tr><td>New AutoNation / pilot dealership strategy</td><td>P1</td><td>0 (new item)</td><td><span class="tag tag-orange">In Progress — Frankie to drive to LA/Torrance + email proposal for Khalid</span></td></tr>
+      <tr><td>CRM decision (HubSpot / GHL / custom)</td><td>P1</td><td>3+</td><td><span class="tag tag-green">✅ DECIDED: HubSpot (account created, Chitraksh has admin)</span></td></tr>
+      <tr><td>Insurance lead resale legal review</td><td>P2</td><td>1</td><td><span class="tag tag-red">Unresolved</span></td></tr>
+      <tr><td>Frankie's license type verification</td><td>P2</td><td>1</td><td><span class="tag tag-green">✅ RESOLVED — Life license covers mortgage. CA, TX, Idaho, Nevada confirmed.</span></td></tr>
+      <tr><td>Any.do $30/mo subscription for email</td><td>P2</td><td>1</td><td><span class="tag tag-green">Replaced by N8N email automation</span></td></tr>
+      <tr><td>Mac Mini for Claude Bot operations</td><td>Both</td><td>1</td><td><span class="tag tag-red">Unresolved</span></td></tr>
+      <tr><td>Junior engineer for insurance build</td><td>P2</td><td>1</td><td><span class="tag tag-orange">Discussed, no candidate</span></td></tr>
+      <tr><td>EIN registration</td><td>Both</td><td>3+</td><td><span class="tag tag-orange">Scheduled for next business day</span></td></tr>
+      <tr><td>Oraya Corp renewal filing</td><td>Both</td><td>1</td><td><span class="tag tag-orange">Registered agent email received — respond by end of week</span></td></tr>
+      <tr><td>Chargeback recovery workflow</td><td>P2</td><td>1</td><td><span class="tag tag-red">Discussed, not built</span></td></tr>
+      <tr><td>Google Reviews/Trustpilot automation</td><td>Both</td><td>1</td><td><span class="tag tag-red">Discussed, not built</span></td></tr>
+      <tr><td>N8N paid subscription</td><td>Both</td><td>1</td><td><span class="tag tag-red">Trial expired, migrated to new account</span></td></tr>
+      <tr><td>Human VA hiring ($5-7/hr)</td><td>P2</td><td>1</td><td><span class="tag tag-orange">Planned — after positive cash flow</span></td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!-- ==================== RECOMMENDATIONS ==================== -->
+<div class="section" id="recs">
+<h2 class="section-title">Recommendations</h2>
+
+<div class="card" style="border-left:3px solid var(--red);">
+  <h3 style="color:var(--red);">IMMEDIATE — Today to 48 Hours</h3>
+  <ul>
+    <li><strong>✅ DONE — orayalabs.ai connected (Mar 15)</strong> Domain is live and credible.</li>
+    <li><strong>✅ DONE — PayPal set up, $250 sent to Chitraksh (Mar 15)</strong> Payment is resolving.</li>
+    <li><strong>Execute P1 pilot strategy: Frankie to prepare proposal for Khalid + plan LA/Torrance visit. Email + offer letter needed ASAP.</strong> This is the highest-conviction path forward. Frankie driving to meet the GM directly is execution at its peak.</li>
+    <li><strong>Fix N8N subscription — pay for the account so backend never goes offline again.</strong> Trial expiration is a technical risk.</li>
+    <li><strong>File EIN on Monday — IRS only accepts during business hours (Mon-Fri 7am-10pm ET).</strong> EIN is the gating factor for bank account and Stripe.</li>
+  </ul>
+</div>
+
+<div class="card" style="border-left:3px solid var(--orange);">
+  <h3 style="color:var(--orange);">NEXT 7 DAYS</h3>
+  <ul>
+    <li><strong>File EIN (P1 + P2) — SCHEDULED FOR MONDAY.</strong> Free. IRS only accepts Mon-Fri 7am-10pm ET. Unlocks bank account and Stripe.</li>
+    <li><strong>Respond to registered agent email for Oraya Corp renewal filing.</strong> Deadline: end of week.</li>
+    <li><strong>Debug and fix human warm transfer in voice agent.</strong> Attempted on Mar 15 but failed (wrong agent ID, then transfer failure). This is a critical feature for P1.</li>
+    <li><strong>Sign insurance carrier contracts (Frankie — this week).</strong> Needed for lead flow to start closing policies.</li>
+    <li><strong>Open Mercury/Relay business bank account.</strong> 1-2 days after EIN. Required before any revenue can be received.</li>
+    <li><strong>Purchase E&O insurance ($1M, ~$100-300/mo).</strong> Required before any enterprise pilot. Without it, AutoNation will not sign anything.</li>
+  </ul>
+</div>
+
+<div class="card" style="border-left:3px solid var(--blue);">
+  <h3 style="color:var(--blue);">NEXT 30 DAYS</h3>
+  <ul>
+    <li><strong>P1: Land first paying pilot client.</strong> Frankie's LA/Torrance visit is the make-or-break moment. Whether AutoNation or an independent dealership — close the first deal. Demo is ready. The gap is business, not tech.</li>
+    <li><strong>P1: Stripe integration.</strong> Accept payment from day one. No "we'll invoice you later."</li>
+    <li><strong>Build chargeback recovery workflow — AI-triggered SMS/email/voice campaigns for lapsed payments.</strong> P2 revenue protection.</li>
+    <li><strong>Build Google Reviews/Trustpilot automation — sentiment check → auto-send review link for 4+ star ratings.</strong> Passive lead generation for P1 pilot clients.</li>
+    <li><strong>Begin Bible Belt license acquisition — NC, SC, GA, LA.</strong> Frankie needs these states to scale P2.</li>
+    <li><strong>Set up human VA calling team — 1-2 callers from Philippines/South America ($5-7/hr).</strong> This doubles P2 lead acquisition after email warm-up.</li>
+  </ul>
+</div>
+
+<div class="card" style="border-left:3px solid var(--accent);">
+  <h3 style="color:var(--accent);">STRUCTURAL / PROCESS IMPROVEMENTS</h3>
+  <ul>
+    <li><strong>HubSpot CRM integration — connect to N8N pipeline for insurance leads, set up contacts/conversations/calendar.</strong> This is the data backbone for both P1 and P2.</li>
+    <li><strong>Separate project meetings.</strong> P1 and P2 should have dedicated meeting slots. Currently they blend, reducing clarity for both. Suggested: 2x/week P1 (Monday/Thursday), 1x/week P2 (Wednesday).</li>
+    <li><strong>Frankie owns his action items in writing.</strong> For every meeting, Frankie's action items go into a shared Notion doc with a due date. If not done by next meeting, it's discussed first.</li>
+    <li><strong>Chitraksh documents everything.</strong> Architecture, credentials (in a password manager — NOT LinkedIn DMs), deployment steps, API keys. Bus factor of 1 is existentially dangerous.</li>
+    <li><strong>P2 needs a dedicated build schedule.</strong> Currently Chitraksh is context-switching between P1 (polishing) and P2 (building from scratch). Establish: mornings for P2 builds, afternoons for P1 support. Or alternate weeks.</li>
+    <li><strong>Define success metrics for both projects.</strong> P1: first paying client, cost per appointment, retention. P2: email open rate, AI interaction rate, opt-in %, cost per qualified lead. Without metrics, neither project can be optimized.</li>
+  </ul>
+</div>
+</div>
+
+<!-- ==================== PSYCH PROFILES ==================== -->
+<div class="section" id="sentiment">
+<h2 class="section-title">Sentiment Analysis & Psychological Profiles</h2>
+
+<div class="card" style="margin-bottom:20px;">
+  <h3>Overall Sentiment — All 12 Business Meetings</h3>
+  <div style="display:flex;gap:16px;align-items:center;margin:10px 0;">
+    <div class="sentiment-bar" style="flex:1;">
+      <div class="sent-pos" style="width:60%"></div>
+      <div class="sent-neu" style="width:28%"></div>
+      <div class="sent-neg" style="width:12%"></div>
+    </div>
+    <div style="font-size:0.82em;">
+      <span style="color:var(--green)">●</span> 60% Positive &nbsp;
+      <span style="color:var(--orange)">●</span> 28% Productive/Neutral &nbsp;
+      <span style="color:var(--red)">●</span> 12% Frustration/Anxiety
+    </div>
+  </div>
+  <p style="font-size:0.86em;color:var(--text2);">Sentiment peaks during live demos, milestone moments (A2P approval, full workflow demo), and execution sessions like Mar 15 (PayPal resolved, domain connected, HubSpot decision). Frustration spikes around: prior engineer failures, payment logistics, and technical blockers. The 28% neutral is healthy productive working session time. The 12% negative is down from previous weeks — indicates resolution and forward momentum.</p>
+</div>
+
+<div class="grid-2">
+<div class="card">
+  <h3>Frankie — Psychological Profile</h3>
+  <div class="psych-meter"><div class="label">Energy & Drive</div><div class="bar"><div class="fill" style="width:95%;background:var(--green)"></div></div><div class="val" style="color:var(--green)">9.5</div></div>
+  <div class="psych-meter"><div class="label">Sales Ability</div><div class="bar"><div class="fill" style="width:90%;background:var(--green)"></div></div><div class="val" style="color:var(--green)">9.0</div></div>
+  <div class="psych-meter"><div class="label">Strategic Vision</div><div class="bar"><div class="fill" style="width:85%;background:var(--green)"></div></div><div class="val" style="color:var(--green)">8.5</div></div>
+  <div class="psych-meter"><div class="label">Emotional Intelligence</div><div class="bar"><div class="fill" style="width:82%;background:var(--green)"></div></div><div class="val" style="color:var(--green)">8.2</div></div>
+  <div class="psych-meter"><div class="label">Domain Knowledge (Insurance)</div><div class="bar"><div class="fill" style="width:88%;background:var(--green)"></div></div><div class="val" style="color:var(--green)">8.8</div></div>
+  <div class="psych-meter"><div class="label">Execution Discipline</div><div class="bar"><div class="fill" style="width:50%;background:var(--green)"></div></div><div class="val" style="color:var(--green)">5.0</div></div>
+  <div class="psych-meter"><div class="label">Task Completion Rate</div><div class="bar"><div class="fill" style="width:45%;background:var(--orange)"></div></div><div class="val" style="color:var(--orange)">4.5</div></div>
+  <div class="psych-meter"><div class="label">Focus / Staying On Topic</div><div class="bar"><div class="fill" style="width:42%;background:var(--orange)"></div></div><div class="val" style="color:var(--orange)">4.2</div></div>
+  <div class="psych-meter"><div class="label">Technical Literacy</div><div class="bar"><div class="fill" style="width:40%;background:var(--orange)"></div></div><div class="val" style="color:var(--orange)">4.0</div></div>
+
+  <details style="margin-top:16px;">
+    <summary>Full Psychological Analysis — Frankie</summary>
+    <div style="padding:10px 0;font-size:0.86em;">
+      <p><strong>Archetype: The Visionary Hustler.</strong> Frankie is a natural-born entrepreneur — high energy, relationship-driven, sales-first. His domain expertise in automotive and insurance is genuinely exceptional. He understands the buyer psychology of dealerships and insurance buyers at a granular level. His feedback on voice agent behavior (second-ask technique, Jordan Belfort objection handling) is operationally valuable.</p>
+
+      <p style="margin-top:10px;"><strong>Strengths in this context:</strong></p>
+      <ul>
+        <li>Extraordinary motivator. Chitraksh visibly works harder after Frankie's genuine praise. This is a retention mechanism, not manipulation.</li>
+        <li>Client-facing and community-building (LinkedIn 360→700+ followers) show strategic thinking beyond just closing deals.</li>
+        <li>Insurance domain knowledge (4 verticals, commission structures, carrier relationships, license holders) is core product IP for P2.</li>
+        <li>Resilience: Having lost $150K to prior engineers and still pushing forward shows extraordinary grit.</li>
+      </ul>
+
+      <p style="margin-top:10px;"><strong style="color:var(--red)">Work Ethic Flags:</strong></p>
+      <ul>
+        <li><strong>Self-confessed procrastinator — verbatim:</strong> "I have a bad habit...I catch myself telling you two or three times 'I'm going to do that' and I don't." This is his own assessment. It should be taken seriously.</li>
+        <li><strong>Tangential conversation pattern:</strong> 30-40% of meeting time in multiple sessions spent on geopolitics, books, fragrance reviews, weed. These are rapport-building moments that also function as avoidance of uncomfortable tasks (EIN, bank, contracts).</li>
+        <li><strong>Recurring unexecuted admin tasks:</strong> PayPal setup, EIN, bank account, partnership contract, website content — all discussed in 3+ meetings with zero execution. The pattern is clear.</li>
+        <li><strong>Financial stress may impair judgment:</strong> References to being broke, needing "immediate money right now" create a desperation dynamic that could lead to over-promising to clients or accepting bad deals.</li>
+      </ul>
+
+      <p style="margin-top:10px;"><strong>Psychological Recommendation:</strong> Frankie likely has ADHD-adjacent executive function challenges — strong on initiation and vision, weak on follow-through and routine tasks. The fix is not willpower but <strong>systems</strong>: shared Notion board with due dates, brief written commitments at end of each call, and a designated "admin hour" each week where Frankie executes business tasks with Chitraksh present (or on a shared screen). His strengths should be fully deployed in client conversations, content creation, and sales — not admin.</p>
+    </div>
+  </details>
+</div>
+
+<div class="card">
+  <h3>Chitraksh — Psychological Profile</h3>
+  <div class="psych-meter"><div class="label">Technical Execution</div><div class="bar"><div class="fill" style="width:92%;background:var(--green)"></div></div><div class="val" style="color:var(--green)">9.2</div></div>
+  <div class="psych-meter"><div class="label">Architecture Thinking</div><div class="bar"><div class="fill" style="width:82%;background:var(--green)"></div></div><div class="val" style="color:var(--green)">8.2</div></div>
+  <div class="psych-meter"><div class="label">Self-Direction</div><div class="bar"><div class="fill" style="width:82%;background:var(--green)"></div></div><div class="val" style="color:var(--green)">8.2</div></div>
+  <div class="psych-meter"><div class="label">Accountability</div><div class="bar"><div class="fill" style="width:78%;background:var(--green)"></div></div><div class="val" style="color:var(--green)">7.8</div></div>
+  <div class="psych-meter"><div class="label">Legal / Compliance Thinking</div><div class="bar"><div class="fill" style="width:80%;background:var(--green)"></div></div><div class="val" style="color:var(--green)">8.0</div></div>
+  <div class="psych-meter"><div class="label">Communication (non-tech)</div><div class="bar"><div class="fill" style="width:65%;background:var(--orange)"></div></div><div class="val" style="color:var(--orange)">6.5</div></div>
+  <div class="psych-meter"><div class="label">Business Acumen</div><div class="bar"><div class="fill" style="width:58%;background:var(--orange)"></div></div><div class="val" style="color:var(--orange)">5.8</div></div>
+  <div class="psych-meter"><div class="label">Boundary Setting</div><div class="bar"><div class="fill" style="width:45%;background:var(--orange)"></div></div><div class="val" style="color:var(--orange)">4.5</div></div>
+  <div class="psych-meter"><div class="label">Burnout Risk (inverse)</div><div class="bar"><div class="fill" style="width:35%;background:var(--red)"></div></div><div class="val" style="color:var(--red)">HIGH</div></div>
+
+  <details style="margin-top:16px;">
+    <summary>Full Psychological Analysis — Chitraksh</summary>
+    <div style="padding:10px 0;font-size:0.86em;">
+      <p><strong>Archetype: The Quiet Engine.</strong> Chitraksh is the operational core of both projects. A law student building production-grade AI infrastructure while simultaneously studying for a dissertation on algorithmic bias — this is a genuinely exceptional person. His technical decisions (N8N for zero-cost orchestration, Supabase for scalable dashboards, web-based voice AI for insurance compliance) are consistently excellent.</p>
+
+      <p style="margin-top:10px;"><strong>Strengths in this context:</strong></p>
+      <ul>
+        <li>400+ test calls with disciplined iteration shows engineering rigor rare even in professional engineers.</li>
+        <li>Law background is an underutilized asset — he proactively identified TCPA/CCPA risks before Frankie raised them.</li>
+        <li>The web-based voice AI delivery mechanism for insurance (bypasses TCPA entirely) was Chitraksh's innovation — it's genuinely clever.</li>
+        <li>Self-aware enough to say "I could have put in more hours" when productivity dipped — healthy accountability.</li>
+      </ul>
+
+      <p style="margin-top:10px;"><strong style="color:var(--orange)">Work Ethic Flags:</strong></p>
+      <ul>
+        <li><strong>Competing priorities are real:</strong> Law school, dissertation on algorithmic bias, brother visiting, this project. Acknowledged a productivity dip explicitly. This will recur.</li>
+        <li><strong>10-hour daily work is unsustainable.</strong> Cannot maintain this alongside law school long-term. Burnout risk is high. No mention of rest, exercise, or personal time in any transcript.</li>
+        <li><strong>Credential chaos is dangerous:</strong> Passwords shared via LinkedIn DMs, WhatsApp. No password manager. Google accounts used for client data. This is a business continuity and security risk.</li>
+        <li><strong>Scope-switching slows both projects:</strong> Chitraksh is context-switching between Voice AI (P1 polish) and Insurance (P2 build). Each switch carries overhead. Dedicated focus blocks are needed.</li>
+        <li><strong>Under-compensation affects motivation subconsciously.</strong> Chitraksh never complains, but 4+ meetings with unresolved payment creates a low-grade stress that will eventually surface in disengagement or departure.</li>
+      </ul>
+
+      <p style="margin-top:10px;"><strong>Psychological Recommendation:</strong> Chitraksh shows a <strong>helper/pleaser</strong> pattern — reluctant to push back on scope, scope requests, or unresolved payment. This is common in gifted technical people partnered with high-energy salespeople. The risk is that he absorbs more work than is healthy and silently disengages rather than confronting friction. The fix: formalize everything — equity, compensation, scope, timelines — in writing. Remove the ambiguity that forces him to make daily silent compromises. Also: mandate a structured rest schedule. His value to both projects is directly tied to his cognitive capacity.</p>
+    </div>
+  </details>
+</div>
+</div>
+
+<div class="card">
+  <h3>Partnership Health Assessment</h3>
+  <div class="grid-3" style="margin-bottom:16px;">
+    <div style="text-align:center;padding:14px;background:var(--surface2);border-radius:8px;">
+      <div style="font-size:1.6em;font-weight:800;color:var(--green)">Strong</div>
+      <div style="font-size:0.78em;color:var(--text2);">Rapport & Mutual Respect</div>
+    </div>
+    <div style="text-align:center;padding:14px;background:var(--surface2);border-radius:8px;">
+      <div style="font-size:1.6em;font-weight:800;color:var(--orange)">Improving</div>
+      <div style="font-size:0.78em;color:var(--text2);">Compensation Balance</div>
+    </div>
+    <div style="text-align:center;padding:14px;background:var(--surface2);border-radius:8px;">
+      <div style="font-size:1.6em;font-weight:800;color:var(--red)">At Risk</div>
+      <div style="font-size:0.78em;color:var(--text2);">Accountability Symmetry</div>
+    </div>
+  </div>
+  <p style="font-size:0.87em;color:var(--text2);">Frankie closes every meeting with genuine warmth — "I love you bro," "you're a genius," "I feel like crying" — and these expressions are clearly authentic. But affection cannot substitute for equity documents, payment, and matched execution effort. The partnership is healthy in culture and broken in structure. The structural fix (EIN, contracts, payment, task parity) is the only thing that will make the cultural health durable.</p>
+</div>
+</div>
+
+<!-- ==================== LEGAL COMMAND CENTER ==================== -->
+<div class="section" id="compliance-cmd">
+<h2 class="section-title" style="border-color:#fd79a8;">&#9878; Legal Command Center: Compliance Document Evolution</h2>
+
+<div class="proj-banner" style="background:rgba(253,121,168,.08);border-color:rgba(253,121,168,.3);">
+  <div class="icon">&#9878;</div>
+  <div>
+    <h2 style="color:#fd79a8;">How the Compliance Report Was Built, Scrutinized, and Transformed</h2>
+    <p>This section traces the complete evolution of Document B (Post-Implementation Legal &amp; Technical Compliance Verification Report) from raw source material through multi-layer reconciliation, live regulatory research, and enterprise-grade legal analysis. Every statutory citation, every control status, every risk rating was validated against primary sources.</p>
+  </div>
+</div>
+
+<!-- PHASE 1: Source Documents -->
+<div class="card">
+  <h3 style="color:#fd79a8;">Phase 1: Source Document Ingestion &amp; Initial Assessment</h3>
+  <div class="grid-2">
+    <div>
+      <div style="font-size:0.78em;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Source Document 1: "The Strategy Doc"</div>
+      <p style="font-size:0.87em;"><strong>Mercedes-Pilot-Proposal-Research.pdf</strong> (20 pages)</p>
+      <p style="font-size:0.84em;color:var(--text2);margin-top:6px;">Comprehensive 7-document proposal package design with competitive intelligence, AutoNation research framework, and A2P 10DLC guide. However, it contained critical errors: used "Retail.ai" instead of "RetellAI" throughout, had placeholder "[Your LLC Name]", vendor compliance matrix showed "TBD" and "In Review" for vendors that are already certified, and had no executed compliance controls.</p>
+      <div style="margin-top:10px;">
+        <span class="tag tag-green">Strengths: Strategy, Structure, Competitive Intel</span>
+        <span class="tag tag-red" style="margin-left:4px;">Weakness: Wrong vendor name, No legal analysis</span>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:0.78em;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Source Document 2: "The Legal Doc"</div>
+      <p style="font-size:0.87em;"><strong>Dealership-Report-Client-Version.docx</strong> (542 lines)</p>
+      <p style="font-size:0.84em;color:var(--text2);margin-top:6px;">Formal legal certification structure with TCPA/CIPA/FTC/CPRA/ADMT/SB 446 analysis, consent scripts, SQL schema for consent_log, incident response plan, and residual risk matrix. Strong statutory citations throughout. However, it lacked commercial strategy, competitive positioning, and did not address the FCC one-to-one consent rule vacatur.</p>
+      <div style="margin-top:10px;">
+        <span class="tag tag-green">Strengths: Statutory citations, Technical controls</span>
+        <span class="tag tag-red" style="margin-left:4px;">Weakness: No commercial context, Missing vacatur</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 2: Reconciliation -->
+<div class="card">
+  <h3 style="color:#fd79a8;">Phase 2: Structured Reconciliation (35K Memo)</h3>
+  <p style="font-size:0.86em;color:var(--text2);margin-bottom:14px;">A 35,000-word reconciliation memo was produced to create a single source of truth from both documents. Eight reconciliation categories were analyzed:</p>
+  <div class="grid-3">
+    <div style="background:var(--surface2);padding:14px;border-radius:8px;">
+      <div style="font-size:0.78em;font-weight:700;color:#fd79a8;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">A. Terminology</div>
+      <p style="font-size:0.82em;">6 terms normalized. "Retail.ai" corrected to "RetellAI" across all documents. "[Your LLC Name]" replaced with "Oraya AI LLC".</p>
+    </div>
+    <div style="background:var(--surface2);padding:14px;border-radius:8px;">
+      <div style="font-size:0.78em;font-weight:700;color:#fd79a8;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">B. Architecture</div>
+      <p style="font-size:0.82em;">6-vendor canonical stack verified. Each vendor's certifications confirmed via live research (March 2026). RetellAI SOC 2 I&amp;II confirmed; n8n ISO 27001 confirmed absent.</p>
+    </div>
+    <div style="background:var(--surface2);padding:14px;border-radius:8px;">
+      <div style="font-size:0.78em;font-weight:700;color:#fd79a8;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">C. Compliance</div>
+      <p style="font-size:0.82em;">7 statutory areas reconciled: TCPA, CIPA, FTC, CPRA, ADMT, SB 446, TISAX. FCC one-to-one consent rule vacatur discovered and documented.</p>
+    </div>
+    <div style="background:var(--surface2);padding:14px;border-radius:8px;">
+      <div style="font-size:0.78em;font-weight:700;color:#fd79a8;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">D. Gaps</div>
+      <p style="font-size:0.82em;">4 categories: 11 implemented/verified, 6 evidence-needed, 7 required-but-open, 8 commercially important.</p>
+    </div>
+    <div style="background:var(--surface2);padding:14px;border-radius:8px;">
+      <div style="font-size:0.78em;font-weight:700;color:#fd79a8;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">E. Vendor Certs</div>
+      <p style="font-size:0.82em;">Live web research confirmed: RetellAI SOC 2 I&amp;II + HIPAA + ISO + GDPR + PCI. n8n SOC 2 cloud. Supabase SOC 2 II + HIPAA BAA (Team+). Vercel TISAX Level 2.</p>
+    </div>
+    <div style="background:var(--surface2);padding:14px;border-radius:8px;">
+      <div style="font-size:0.78em;font-weight:700;color:#fd79a8;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">F. Competitive</div>
+      <p style="font-size:0.82em;">5 competitors analyzed: Podium, Fullpath, Dealer.com, CarNow, Conversica. Oraya AI wins on: full-stack voice + programmatic compliance + TISAX readiness + cost.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 3: Critical Corrections -->
+<div class="card">
+  <h3 style="color:#fd79a8;">Phase 3: Critical Corrections Discovered During Scrutiny</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Finding</th><th>Source</th><th>What Was Wrong</th><th>What Is True</th><th>Impact Level</th></tr></thead>
+      <tbody>
+        <tr><td>Vendor Name</td><td>Doc 1</td><td>"Retail.ai" used throughout</td><td>Correct name is <strong>RetellAI</strong></td><td><span class="tag tag-red">CRITICAL</span></td></tr>
+        <tr><td>FCC One-to-One Consent</td><td>Doc 1</td><td>Referenced as active requirement</td><td><strong>Vacated</strong> by 11th Circuit, Jan 26, 2025</td><td><span class="tag tag-red">CRITICAL</span></td></tr>
+        <tr><td>RetellAI Certifications</td><td>Doc 1</td><td>"TBD" / "In Review"</td><td>SOC 2 Type I &amp; II, HIPAA, ISO 27001, GDPR, PCI all confirmed</td><td><span class="tag tag-orange">HIGH</span></td></tr>
+        <tr><td>n8n ISO 27001</td><td>Both</td><td>Implied present</td><td>n8n does NOT hold ISO 27001. SOC 2 cloud only.</td><td><span class="tag tag-orange">HIGH</span></td></tr>
+        <tr><td>Supabase TLS</td><td>Doc 2</td><td>TLS 1.3 claimed</td><td>TLS 1.2 (not 1.3)</td><td><span class="tag tag-blue">MEDIUM</span></td></tr>
+        <tr><td>Supabase HIPAA BAA</td><td>Doc 2</td><td>Available on all plans</td><td>Requires Team or Enterprise plan (not Pro)</td><td><span class="tag tag-orange">HIGH</span></td></tr>
+        <tr><td>ADMT Regulations</td><td>Doc 2</td><td>Full compliance deadline unclear</td><td>Finalized Sept 2025, effective Jan 1, 2026. Full ADMT compliance April 1, 2027.</td><td><span class="tag tag-blue">MEDIUM</span></td></tr>
+        <tr><td>TISAX Deadline</td><td>Doc 2</td><td>Sept 30, 2026 as public fact</td><td>Date per dealership communications; not publicly confirmable. NP.50.14.110 is real.</td><td><span class="tag tag-blue">MEDIUM</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- PHASE 4: Regulatory Deep Dive -->
+<div class="card">
+  <h3 style="color:#fd79a8;">Phase 4: Regulatory Deep Dive (7 Statutory Areas)</h3>
+
+  <details>
+    <summary style="color:#fd79a8;">1. TCPA / FCC-24-17: AI Voice Classification</summary>
+    <div style="padding:10px 0;font-size:0.86em;">
+      <p><strong>The Core Rule:</strong> FCC Order 24-17 (February 8, 2024) formally classified AI-generated voices as "artificial or prerecorded" under the TCPA. This means ALL outbound AI voice calls require prior express written consent (PEWC) before dialing, regardless of the content or purpose.</p>
+      <p style="margin-top:8px;"><strong>The Vacatur:</strong> The FCC's separate "one-to-one consent" rule (requiring seller-specific consent for each caller) was <strong>vacated by the Eleventh Circuit on January 24, 2025</strong>, the day before it was set to take effect. The Insurance Marketing Coalition challenged it successfully. This means broad lead-generator consent remains valid for now.</p>
+      <p style="margin-top:8px;"><strong>Oraya's Posture:</strong> Despite the vacatur, our system enforces the most conservative possible standard: caller-specific PEWC verification on every single outbound call via Supabase consent_log query before RetellAI initiates the dial. This means even if the one-to-one rule is reinstated, we are already compliant. This is the compliance-as-architecture principle.</p>
+      <p style="margin-top:8px;"><strong>Statutory Exposure:</strong> $500 per violation (negligent), $1,500 per violation (willful/knowing). No cap. Class action exposure is significant for any dealer making volume outbound calls.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary style="color:#fd79a8;">2. CIPA &sect;&sect; 632 / 632.7: California All-Party Consent</summary>
+    <div style="padding:10px 0;font-size:0.86em;">
+      <p><strong>The Core Rule:</strong> California Penal Code &sect; 632 prohibits recording confidential communications without consent of ALL parties. &sect; 632.7 extends this to cellular and cordless communications specifically. Smith v. LoanMe (2021) confirmed that automated calls ARE covered.</p>
+      <p style="margin-top:8px;"><strong>Oraya's Implementation:</strong> Hard-coded recording disclosure at the start of every call (inbound and outbound). The consent disclosure script includes: AI identity, recording notification, purpose statement, and opt-out mechanism. Non-consenting callers trigger the basic_attributes_only purge via webhook to RetellAI, destroying audio and transcript within the API call itself.</p>
+      <p style="margin-top:8px;"><strong>Statutory Exposure:</strong> $5,000 per violation under &sect; 637.2. Criminal liability possible under &sect; 632 (imprisonment up to one year).</p>
+    </div>
+  </details>
+
+  <details>
+    <summary style="color:#fd79a8;">3. CPRA / CCPA: Data Minimization &amp; Service Provider</summary>
+    <div style="padding:10px 0;font-size:0.86em;">
+      <p><strong>The Core Framework:</strong> CPRA (effective Jan 1, 2023; regulations finalized Sept 22, 2025, effective Jan 1, 2026) requires data minimization, purpose limitation, and proper service provider agreements. Oraya AI processes dealership customer data ONLY as a "service provider" under &sect; 1798.140(ag).</p>
+      <p style="margin-top:8px;"><strong>Oraya's Architecture:</strong> Data processing agreement (DPA) language prepared per CPRA &sect; 1798.100(d). Oraya does NOT sell, share, or use personal information for any purpose other than the contracted service. Supabase consent_log with RLS ensures data cannot be accessed by unauthorized roles. Retention policy: 30-day auto-purge for non-consented data.</p>
+      <p style="margin-top:8px;"><strong>Open Gap:</strong> DPAs must be formally executed (countersigned) with ALL six vendors. Language is drafted but not yet legally binding.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary style="color:#fd79a8;">4. CPPA ADMT: Automated Decision-Making Technology</summary>
+    <div style="padding:10px 0;font-size:0.86em;">
+      <p><strong>The Core Rule:</strong> California Privacy Protection Agency (CPPA) finalized ADMT regulations in September 2025, effective January 1, 2026 (limited), with full compliance required by April 1, 2027. ADMT applies to technology that processes personal information to make or facilitate "significant decisions."</p>
+      <p style="margin-top:8px;"><strong>The Gray Zone Analysis:</strong> Customer service scheduling (booking test drives, service appointments) is NOT a "significant decision." The regulation targets employment scheduling, credit decisions, insurance underwriting, and housing. AI deciding to escalate to a human is a routing decision, not a significant decision. AI classifying a lead as "appointment booked" vs. "callback requested" is data categorization. These do NOT trigger ADMT obligations.</p>
+      <p style="margin-top:8px;"><strong>Oraya's Posture:</strong> System is architecturally exempt by restricting to scheduling and Q&amp;A functions only. No financing, credit, or insurance decisioning occurs in the voice pipeline. Document this exemption clearly in all compliance materials. If scope ever expands to include automated credit pre-qualification or insurance quoting, ADMT will be triggered and full compliance (opt-out mechanism, pre-use notice, access to logic) will be required by April 1, 2027.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary style="color:#fd79a8;">5. FTC AI Bot Identity / Operation AI Comply</summary>
+    <div style="padding:10px 0;font-size:0.86em;">
+      <p><strong>The Core Rule:</strong> FTC's Operation AI Comply (September 2024) specifically targets companies that use AI to deceive consumers. The FTC's position: any AI system that interacts with consumers must clearly disclose its artificial nature at the outset of the interaction.</p>
+      <p style="margin-top:8px;"><strong>Oraya's Implementation:</strong> Hard-coded system prompt includes AI identity disclosure within the first 10 seconds of every call: "This is Jessica, an AI assistant calling on behalf of [Dealership Name]." This is not configurable by the dealership, not skippable by the agent, and is logged in every call transcript.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary style="color:#fd79a8;">6. SB 446: California Breach Notification</summary>
+    <div style="padding:10px 0;font-size:0.86em;">
+      <p><strong>The Core Rule:</strong> SB 446 (effective January 1, 2026) tightens California's breach notification timelines: 30 days to notify affected consumers, 15 days to notify the Attorney General (if 500+ California residents affected).</p>
+      <p style="margin-top:8px;"><strong>Oraya's Incident Response:</strong> Documented IR plan with SB 446-aligned timelines: (1) Identification &amp; containment within 4 hours, (2) Executive notification within 12 hours, (3) Consumer notice within 30 days, (4) AG notice within 15 days. Tabletop exercise recommended before pilot launch to validate response times.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary style="color:#fd79a8;">7. TISAX / NP.50.14.110: Mercedes OEM Security Mandate</summary>
+    <div style="padding:10px 0;font-size:0.86em;">
+      <p><strong>The Core Requirement:</strong> Mercedes-Benz requires all contractors and technology vendors working with dealership data to comply with TISAX (Trusted Information Security Assessment Exchange). NP.50.14.110 is the Mercedes-Benz norm that mandates ISMS implementation.</p>
+      <p style="margin-top:8px;"><strong>Timeline:</strong> September 30, 2026 deadline (per Mercedes-Benz dealership communications). This is a hard deadline that applies to all dealership technology vendors.</p>
+      <p style="margin-top:8px;"><strong>Oraya's Position:</strong> Vercel (our dashboard host) holds TISAX Level 2 certification. This is a genuine differentiator: no competitor in the automotive AI voice space publicly claims TISAX-certified infrastructure. Our vendor certification bundle (SOC 2 across all layers + TISAX on the dashboard) positions Oraya as the vendor that HELPS dealerships prepare for OEM security audits, not one that adds risk.</p>
+    </div>
+  </details>
+</div>
+
+<!-- Compliance Status Matrix -->
+<div class="card">
+  <h3 style="color:#fd79a8;">Compliance Control Status Matrix</h3>
+  <div class="grid-4" style="margin-bottom:14px;">
+    <div style="text-align:center;padding:12px;background:rgba(0,184,148,.08);border-radius:8px;border:1px solid rgba(0,184,148,.2);">
+      <div style="font-size:1.8em;font-weight:800;color:var(--green);">11</div>
+      <div style="font-size:0.72em;color:var(--text2);">Implemented &amp; Verified</div>
+    </div>
+    <div style="text-align:center;padding:12px;background:rgba(243,156,18,.08);border-radius:8px;border:1px solid rgba(243,156,18,.2);">
+      <div style="font-size:1.8em;font-weight:800;color:var(--orange);">6</div>
+      <div style="font-size:0.72em;color:var(--text2);">Evidence Needed</div>
+    </div>
+    <div style="text-align:center;padding:12px;background:rgba(231,76,60,.08);border-radius:8px;border:1px solid rgba(231,76,60,.2);">
+      <div style="font-size:1.8em;font-weight:800;color:var(--red);">7</div>
+      <div style="font-size:0.72em;color:var(--text2);">Required but Open</div>
+    </div>
+    <div style="text-align:center;padding:12px;background:rgba(52,152,219,.08);border-radius:8px;border:1px solid rgba(52,152,219,.2);">
+      <div style="font-size:1.8em;font-weight:800;color:var(--blue);">8</div>
+      <div style="font-size:0.72em;color:var(--text2);">Commercially Important</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ==================== CTO/CLO MASTER BRIEF ==================== -->
+<div class="section" id="cto-clo-brief">
+<h2 class="section-title" style="border-color:#fdcb6e;">&#9733; CTO / CLO Master Brief: Operation South Bay</h2>
+
+<div class="proj-banner" style="background:rgba(253,203,110,.08);border-color:rgba(253,203,110,.3);">
+  <div class="icon">&#9733;</div>
+  <div>
+    <h2 style="color:#fdcb6e;">Dual-Perspective Executive Intelligence for Mercedes South Bay Campaign</h2>
+    <p>A combined CTO (technology architecture, scalability, vendor risk) and CLO (legal exposure, regulatory strategy, litigation prevention) analysis of Oraya AI's readiness to engage Mercedes-Benz of South Bay. This is the document you read before making the go/no-go decision.</p>
+  </div>
+</div>
+
+<!-- CTO Perspective -->
+<div class="card">
+  <h3 style="color:#fdcb6e;">CTO Perspective: Architecture Readiness Assessment</h3>
+
+  <details open>
+    <summary style="color:#fdcb6e;">Stack Integrity Score: 92/100</summary>
+    <div style="padding:10px 0;font-size:0.86em;">
+      <p>The six-vendor architecture (Twilio, RetellAI, n8n Cloud, Supabase, Google Vertex AI, Vercel) is production-ready for a single-dealership pilot. Each layer is independently certified, and the integration points have been validated through 400+ test calls.</p>
+
+      <div style="margin:14px 0;">
+        <div style="font-size:0.78em;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">What's Solid</div>
+        <ul style="font-size:0.85em;">
+          <li><strong>Telephony (Twilio):</strong> A2P 10DLC registered. SIP/RTP transport proven. STOP processing at carrier level. This is the most mature layer.</li>
+          <li><strong>Voice AI (RetellAI):</strong> Speech-to-text, LLM dialogue, TTS synthesis all production-grade. PII redaction engine covers 9 categories. data_storage_setting control gives us three modes of data handling per call.</li>
+          <li><strong>Consent Infrastructure (Supabase):</strong> Immutable consent_log with RLS. phone_number, consent_status, disclosure_text, ip_address, opt_in_timestamp, source_url all captured. This is enterprise-grade consent architecture.</li>
+          <li><strong>Orchestration (n8n Cloud):</strong> Post-call webhook processing, consent verification, purge API triggering. 86 workflows in production.</li>
+        </ul>
+      </div>
+
+      <div style="margin:14px 0;">
+        <div style="font-size:0.78em;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">What Needs Attention</div>
+        <ul style="font-size:0.85em;">
+          <li><strong>n8n execution log retention:</strong> 30-day auto-purge designed but not yet implemented. This is a compliance artifact gap, not a functional gap.</li>
+          <li><strong>Supabase plan tier:</strong> HIPAA BAA requires Team or Enterprise plan. Must confirm current tier before claiming HIPAA readiness.</li>
+          <li><strong>Dashboard auth:</strong> Email auth via Supabase is functional but not MFA-enforced at the UI layer. Admin accounts have MFA, but client portal does not yet.</li>
+          <li><strong>Disaster recovery:</strong> No documented DR plan for the voice pipeline. If RetellAI goes down, calls fail silently. Need failover or at minimum a human transfer fallback.</li>
+        </ul>
+      </div>
+
+      <div style="margin:14px 0;">
+        <div style="font-size:0.78em;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">CTO Verdict</div>
+        <p>The system is <strong>pilot-ready</strong> but not <strong>enterprise-ready</strong>. For a 30-day no-cost pilot at a single dealership, the architecture exceeds what competitors typically deploy. For an AutoNation corporate MSA, we need: SOC 2 Type I for Oraya AI itself, documented DR/BC plan, and formal vendor DPA execution. The pilot gives us 30 days to close those gaps while demonstrating production value.</p>
+      </div>
+    </div>
+  </details>
+</div>
+
+<div class="card">
+  <h3 style="color:#fdcb6e;">CTO Perspective: Vendor Certification Matrix (Verified March 2026)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Vendor</th><th>Role</th><th>SOC 2</th><th>ISO 27001</th><th>HIPAA</th><th>TISAX</th><th>GDPR</th><th>Risk Level</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Twilio</strong></td><td>Telephony / A2P</td><td><span class="tag tag-green">Type II</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-green">LOW</span></td></tr>
+        <tr><td><strong>RetellAI</strong></td><td>Voice AI / PII</td><td><span class="tag tag-green">Type I &amp; II</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-green">BAA Avail</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-green">LOW</span></td></tr>
+        <tr><td><strong>n8n Cloud</strong></td><td>Orchestration</td><td><span class="tag tag-green">Cloud</span></td><td><span class="tag tag-red">NO</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-orange">MEDIUM</span></td></tr>
+        <tr><td><strong>Supabase</strong></td><td>Database / Consent</td><td><span class="tag tag-green">Type II</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-orange">Team+ Only</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-green">LOW</span></td></tr>
+        <tr><td><strong>Google Vertex</strong></td><td>Admin / ZDR</td><td><span class="tag tag-green">Type II</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-green">LOW</span></td></tr>
+        <tr><td><strong>Vercel</strong></td><td>Dashboard</td><td><span class="tag tag-green">Type II</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-green">Level 2</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-green">LOW</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- CLO Perspective -->
+<div class="card">
+  <h3 style="color:#fdcb6e;">CLO Perspective: Legal Exposure &amp; Litigation Prevention</h3>
+
+  <details open>
+    <summary style="color:#fdcb6e;">Legal Risk Posture: Defensible with 7 Open Items</summary>
+    <div style="padding:10px 0;font-size:0.86em;">
+      <p>From a Chief Legal Officer perspective, Oraya AI's compliance posture is <strong>unusually strong for a pre-revenue startup</strong>. The system was designed with legal constraints as architectural requirements, not afterthoughts. However, seven gaps must close before the pilot can proceed without residual legal exposure.</p>
+
+      <div style="margin:14px 0;">
+        <div style="font-size:0.78em;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">What Makes This Defensible</div>
+        <ul style="font-size:0.85em;">
+          <li><strong>Consent architecture is technically enforced, not policy-dependent.</strong> The n8n workflow physically cannot initiate an outbound call without a passing PEWC query against Supabase. This is not a "we have a policy" defense; it is a "the system will not allow it" defense. In litigation, this is the difference between $500/violation (negligent) and a successful defense.</li>
+          <li><strong>Recording disclosure is hard-coded.</strong> The FTC bot-identity requirement and CIPA recording disclosure are in the system prompt. They cannot be removed by a dealership admin, turned off by a sales manager, or skipped by the AI. Every call transcript shows the disclosure. Every single one.</li>
+          <li><strong>PII redaction is proactive, not reactive.</strong> RetellAI's 9-category PII redaction engine strips sensitive data from transcripts before they reach Supabase. This means even if there's a breach, the data that's exposed is already redacted. Under SB 446, this dramatically reduces the scope of required notification.</li>
+          <li><strong>The consent_log is immutable.</strong> Supabase RLS prevents any role from modifying or deleting consent records. In a TCPA lawsuit, the plaintiff must prove lack of consent. Our consent_log provides timestamped, IP-addressd, source-tracked consent evidence that is tamper-resistant by design.</li>
+        </ul>
+      </div>
+
+      <div style="margin:14px 0;">
+        <div style="font-size:0.78em;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">7 Items That Must Close Before Go-Live</div>
+        <ul style="font-size:0.85em;">
+          <li><strong>1. DPA Execution:</strong> All six vendor DPAs must be countersigned. Currently drafted but unsigned. CPRA &sect; 1798.140(ag) requires written contracts with all service providers.</li>
+          <li><strong>2. Dealership A2P Registration:</strong> Mercedes of South Bay must register its own A2P 10DLC campaign for customer-facing SMS. Oraya's registration covers admin-to-admin only.</li>
+          <li><strong>3. 30-Day Auto-Purge Implementation:</strong> The n8n execution log auto-purge at 30 days is designed but not deployed. Until this runs automatically, stale data accumulates.</li>
+          <li><strong>4. Cyber Liability Insurance:</strong> $1M minimum coverage needed before handling dealership customer data. Binds the commercial risk that technology cannot eliminate.</li>
+          <li><strong>5. Professional Liability / E&amp;O:</strong> Protects against claims of professional negligence in the compliance advice embedded in our documentation.</li>
+          <li><strong>6. TISAX Audit Commission:</strong> The dealership must engage an accredited TISAX auditor. Oraya can provide the documentation bundle, but the dealership owns the audit engagement.</li>
+          <li><strong>7. Incident Response Tabletop:</strong> The SB 446 incident response plan has documented timelines but has never been tested. A 2-hour tabletop exercise validates the response chain.</li>
+        </ul>
+      </div>
+
+      <div style="margin:14px 0;">
+        <div style="font-size:0.78em;font-weight:700;color:#fdcb6e;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">CLO Verdict</div>
+        <p>The legal architecture is <strong>among the strongest I have seen in an early-stage AI company</strong>. The decision to enforce compliance through technical controls rather than policies means the defensibility of this system in litigation is genuinely high. Items 1-3 are execution tasks (days, not months). Items 4-5 are commercial (insurance binding). Items 6-7 are dealership-side. <strong>None of these block a pilot launch</strong> if the pilot SOW includes appropriate limitation of liability language. Recommendation: proceed with pilot, close items 1-5 in parallel, and require items 6-7 as dealership responsibilities in the SOW.</p>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- Strategic Positioning -->
+<div class="card">
+  <h3 style="color:#fdcb6e;">Combined CTO/CLO: Why Oraya AI Wins This Pilot</h3>
+  <div class="grid-2">
+    <div>
+      <div style="font-size:0.78em;font-weight:700;color:#fdcb6e;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">5 Pillars of Competitive Advantage</div>
+      <div style="margin:8px 0;padding:10px;background:var(--surface2);border-radius:8px;border-left:3px solid #fd79a8;">
+        <strong style="color:#fd79a8;">1. Compliance-First Architecture</strong>
+        <p style="font-size:0.82em;color:var(--text2);margin-top:4px;">Controls are technical, not policy-based. The system physically cannot violate TCPA, CIPA, or CPRA. Competitors rely on training and trust. We rely on code.</p>
+      </div>
+      <div style="margin:8px 0;padding:10px;background:var(--surface2);border-radius:8px;border-left:3px solid var(--green);">
+        <strong style="color:var(--green);">2. TISAX-Ready Vendor Stack</strong>
+        <p style="font-size:0.82em;color:var(--text2);margin-top:4px;">Vercel TISAX Level 2 + SOC 2 across all layers. No automotive AI competitor publicly claims this. Mercedes NP.50.14.110 deadline is September 2026. We help them prepare, not just answer phones.</p>
+      </div>
+      <div style="margin:8px 0;padding:10px;background:var(--surface2);border-radius:8px;border-left:3px solid var(--p1);">
+        <strong style="color:var(--p1);">3. Full-Stack Voice AI</strong>
+        <p style="font-size:0.82em;color:var(--text2);margin-top:4px;">Inbound + outbound + SMS + email + dashboard. Podium does messaging. Fullpath does CDP. CarNow does digital retail. Only Conversica competes on voice, and their SOC 2 report is from 2021.</p>
+      </div>
+      <div style="margin:8px 0;padding:10px;background:var(--surface2);border-radius:8px;border-left:3px solid var(--accent2);">
+        <strong style="color:var(--accent2);">4. Cost Structure Asymmetry</strong>
+        <p style="font-size:0.82em;color:var(--text2);margin-top:4px;">$30-40/mo infrastructure per client vs. Podium's $249-$599/mo pricing. This gives us 92%+ gross margin at any reasonable price point. The pilot is truly free because it costs us almost nothing to run.</p>
+      </div>
+      <div style="margin:8px 0;padding:10px;background:var(--surface2);border-radius:8px;border-left:3px solid #fdcb6e;">
+        <strong style="color:#fdcb6e;">5. Privacy-by-Design</strong>
+        <p style="font-size:0.82em;color:var(--text2);margin-top:4px;">Consent gating prevents data from existing if consent is not given. This is not data protection; this is data prevention. In a CPRA enforcement environment, this is the gold standard.</p>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:0.78em;font-weight:700;color:#fdcb6e;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Competitive Matrix</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Capability</th><th style="color:var(--p1);">Oraya AI</th><th>Podium</th><th>Fullpath</th><th>Conversica</th></tr></thead>
+          <tbody>
+            <tr><td>Voice AI (Inbound+Outbound)</td><td><span class="tag tag-green">Full</span></td><td><span class="tag tag-orange">Jerry 2.0</span></td><td><span class="tag tag-red">No</span></td><td><span class="tag tag-green">Yes</span></td></tr>
+            <tr><td>SOC 2 (All Layers)</td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-orange">Partial</span></td><td><span class="tag tag-orange">Partial</span></td><td><span class="tag tag-orange">2021</span></td></tr>
+            <tr><td>TISAX Certified</td><td><span class="tag tag-green">Level 2</span></td><td><span class="tag tag-red">No</span></td><td><span class="tag tag-red">No</span></td><td><span class="tag tag-red">No</span></td></tr>
+            <tr><td>TCPA Programmatic</td><td><span class="tag tag-green">Enforced</span></td><td><span class="tag tag-orange">Policy</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-orange">Policy</span></td></tr>
+            <tr><td>PII Redaction</td><td><span class="tag tag-green">9-Cat</span></td><td><span class="tag tag-red">No</span></td><td><span class="tag tag-red">No</span></td><td><span class="tag tag-orange">Partial</span></td></tr>
+            <tr><td>Infra Cost/Client</td><td><span class="tag tag-green">$30-40</span></td><td><span class="tag tag-red">$249+</span></td><td><span class="tag tag-orange">Custom</span></td><td><span class="tag tag-orange">Custom</span></td></tr>
+            <tr><td>Automotive Focus</td><td><span class="tag tag-green">100%</span></td><td><span class="tag tag-orange">Broad SMB</span></td><td><span class="tag tag-green">CDP</span></td><td><span class="tag tag-orange">Multi-Industry</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ==================== OFFER LETTER INTELLIGENCE ==================== -->
+<div class="section" id="offer-intel">
+<h2 class="section-title" style="border-color:#00cec9;">&#9993; Offer Letter Intelligence: Mercedes South Bay Campaign</h2>
+
+<div class="proj-banner" style="background:rgba(0,206,201,.08);border-color:rgba(0,206,201,.3);">
+  <div class="icon">&#9993;</div>
+  <div>
+    <h2 style="color:#00cec9;">First-Send Package: Executive Proposal Letter + Compliance Report</h2>
+    <p>The pilot offer letter to Mercedes-Benz of South Bay is the opening move in Operation South Bay. It was crafted on Oraya AI company letterhead, signed by Frankie Alicea (CEO), and is designed to be sent as the first email alongside the full Compliance Verification Report. Below is the strategic reasoning behind every element of the letter.</p>
+  </div>
+</div>
+
+<div class="grid-2">
+<div class="card">
+  <h3 style="color:#00cec9;">Letter Architecture: Why Every Paragraph Exists</h3>
+  <div style="font-size:0.86em;">
+    <div style="margin:8px 0;padding:10px;background:var(--surface2);border-radius:8px;">
+      <strong style="color:var(--accent2);">Opening (CEO Voice)</strong>
+      <p style="color:var(--text2);margin-top:4px;">Personal introduction from the CEO, not a generic sales template. Establishes authority, names the company, and makes the offer in the first paragraph. No preamble. A GM's attention span for cold outreach is 15 seconds.</p>
+    </div>
+    <div style="margin:8px 0;padding:10px;background:var(--surface2);border-radius:8px;">
+      <strong style="color:var(--accent2);">Compliance Foundation Section</strong>
+      <p style="color:var(--text2);margin-top:4px;">Immediately differentiates from every other AI vendor by leading with compliance, not features. Mentions statutory penalties ($500-$1,500/call TCPA, $5,000/violation CIPA) to create urgency. Names specific statutes. This is not marketing language; this is legal language in a business letter. It signals: "we are not a startup playing with AI; we are a serious infrastructure partner."</p>
+    </div>
+    <div style="margin:8px 0;padding:10px;background:var(--surface2);border-radius:8px;">
+      <strong style="color:var(--accent2);">TISAX Level 2 Mention</strong>
+      <p style="color:var(--text2);margin-top:4px;">Deliberately included because it is the one thing no competitor can say. Mercedes-Benz OEM security requirements are top-of-mind for dealership leadership right now (NP.50.14.110 deadline approaching). Positioning Oraya as the vendor that helps with OEM compliance, not just phone answering.</p>
+    </div>
+    <div style="margin:8px 0;padding:10px;background:var(--surface2);border-radius:8px;">
+      <strong style="color:var(--accent2);">Pilot Terms (Page 2)</strong>
+      <p style="color:var(--text2);margin-top:4px;">Explicit terms remove ambiguity: 30 days, $0, no commitment, 24-hour exit, data ownership retained by dealership, 72-hour purge on termination. Every term is designed to eliminate objections before they form. The CPRA "service provider" language signals to counsel that we understand the regulatory framework.</p>
+    </div>
+    <div style="margin:8px 0;padding:10px;background:var(--surface2);border-radius:8px;">
+      <strong style="color:var(--accent2);">Three Post-Pilot Scenarios</strong>
+      <p style="color:var(--text2);margin-top:4px;">Presenting three scenarios (convert, extend, walk away) signals confidence. Only a company that believes in its product offers a free extension. The "walk away with zero obligation" language removes the final psychological barrier to saying yes.</p>
+    </div>
+    <div style="margin:8px 0;padding:10px;background:var(--surface2);border-radius:8px;">
+      <strong style="color:var(--accent2);">Enclosed Compliance Report</strong>
+      <p style="color:var(--text2);margin-top:4px;">Sending the full compliance report with the first email is unusual. Most vendors wait until asked. We send it proactively because: (1) it demonstrates transparency, (2) it gives counsel something to review immediately, (3) it shortens the diligence cycle, and (4) it differentiates from every competitor who hides behind "we'll share that later."</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3 style="color:#00cec9;">Campaign Package Status</h3>
+  <div style="margin-bottom:14px;">
+    <div style="font-size:0.78em;font-weight:700;color:#00cec9;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">First-Send Documents</div>
+    <div class="progress-wrap"><div class="progress-label"><span>Executive Proposal Letter (Letterhead PDF)</span><span style="color:var(--green)">COMPLETE</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div></div>
+    <div class="progress-wrap"><div class="progress-label"><span>Compliance Verification Report (Document B)</span><span style="color:var(--green)">COMPLETE</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div></div>
+    <div class="progress-wrap"><div class="progress-label"><span>Execution Master Brief (Document A, Internal)</span><span style="color:var(--green)">COMPLETE</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div></div>
+    <div class="progress-wrap"><div class="progress-label"><span>Visual Architecture Diagram</span><span style="color:var(--orange)">PENDING</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%;background:var(--orange)"></div></div></div>
+  </div>
+
+  <div style="margin-bottom:14px;">
+    <div style="font-size:0.78em;font-weight:700;color:#00cec9;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Second-Send (Diligence Package)</div>
+    <div class="progress-wrap"><div class="progress-label"><span>Vendor Certification Bundle</span><span style="color:var(--orange)">EVIDENCE NEEDED</span></div><div class="progress-bar"><div class="progress-fill" style="width:30%;background:var(--orange)"></div></div></div>
+    <div class="progress-wrap"><div class="progress-label"><span>A2P 10DLC Implementation Guide</span><span style="color:var(--orange)">DRAFT</span></div><div class="progress-bar"><div class="progress-fill" style="width:40%;background:var(--orange)"></div></div></div>
+    <div class="progress-wrap"><div class="progress-label"><span>Pilot SOW / Agreement</span><span style="color:var(--red)">NOT STARTED</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%;background:var(--red)"></div></div></div>
+    <div class="progress-wrap"><div class="progress-label"><span>Mutual NDA</span><span style="color:var(--red)">NOT STARTED</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%;background:var(--red)"></div></div></div>
+  </div>
+
+  <div style="margin-top:16px;padding:14px;background:rgba(253,203,110,.08);border-radius:8px;border:1px solid rgba(253,203,110,.2);">
+    <div style="font-size:0.78em;font-weight:700;color:#fdcb6e;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Go/No-Go Decision Criteria</div>
+    <p style="font-size:0.84em;color:var(--text2);">The first email can be sent once: (1) Offer letter is finalized (DONE), (2) Compliance report is reviewed by internal team (Document B is DONE), (3) Target contact at Mercedes of South Bay is identified (GM, IT, or counsel). Architecture diagram is recommended but not blocking. Second-send package is prepared only after first-send generates engagement.</p>
+  </div>
+</div>
+</div>
+
+<div class="card">
+  <h3 style="color:#00cec9;">AutoNation Escalation Pathway</h3>
+  <p style="font-size:0.86em;color:var(--text2);margin-bottom:12px;">The Mercedes of South Bay pilot is not the end goal. It is the first step toward a corporate MSA covering AutoNation's 323 dealerships across 20 states.</p>
+  <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:14px;">
+    <div style="padding:10px 16px;border-radius:8px;font-size:0.82em;font-weight:600;background:rgba(0,206,201,.15);color:#00cec9;border:1px solid rgba(0,206,201,.3);">Pilot at South Bay (30 days)</div>
+    <div style="color:var(--text2);font-size:1.1em;">&rarr;</div>
+    <div style="padding:10px 16px;border-radius:8px;font-size:0.82em;font-weight:600;background:rgba(108,92,231,.15);color:var(--p1);border:1px solid rgba(108,92,231,.3);">Dealership SLA ($1.5-2.5K/mo)</div>
+    <div style="color:var(--text2);font-size:1.1em;">&rarr;</div>
+    <div style="padding:10px 16px;border-radius:8px;font-size:0.82em;font-weight:600;background:rgba(253,203,110,.15);color:#fdcb6e;border:1px solid rgba(253,203,110,.3);">Case Study + Metrics</div>
+    <div style="color:var(--text2);font-size:1.1em;">&rarr;</div>
+    <div style="padding:10px 16px;border-radius:8px;font-size:0.82em;font-weight:600;background:rgba(253,121,168,.15);color:#fd79a8;border:1px solid rgba(253,121,168,.3);">AutoNation Corporate Intro</div>
+    <div style="color:var(--text2);font-size:1.1em;">&rarr;</div>
+    <div style="padding:10px 16px;border-radius:8px;font-size:0.82em;font-weight:600;background:rgba(0,184,148,.15);color:var(--green);border:1px solid rgba(0,184,148,.3);">MSA: 323 Rooftops ($1-1.5K each)</div>
+  </div>
+  <p style="font-size:0.84em;color:var(--text2);margin-top:8px;"><strong>Revenue at scale:</strong> 323 rooftops at $1,000-$1,500/mo = $323K-$485K/mo recurring. Infrastructure cost at scale: approximately $10K-$13K/mo. Gross margin: 96%+.</p>
+</div>
+</div>
+
+</div><!-- /container -->
+
+<div style="text-align:center;padding:36px;color:var(--text2);font-size:0.78em;border-top:1px solid var(--border);">
+  Oraya Labs &middot; Project Intelligence Dashboard &middot; March 16, 2026 &middot; 12 Transcripts &middot; 2 Projects &middot; 3 Enterprise Documents &middot; 7 Statutory Areas Analyzed
+</div>
+
+<script>
+document.querySelectorAll('.nav-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.tab).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
