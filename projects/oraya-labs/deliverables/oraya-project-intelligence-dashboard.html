@@ -1100,60 +1100,142 @@
 <div class="section" id="daily-tasks">
 <h2 class="section-title" style="border-color:var(--accent4);">Daily Task Tracker</h2>
 
+<!-- COUNTDOWN BANNER -->
+<div style="background:linear-gradient(135deg, rgba(231,76,60,0.1), rgba(243,156,18,0.1)); border:1px solid rgba(231,76,60,0.3); border-radius:12px; padding:16px 24px; margin-bottom:24px; text-align:center;">
+  <div style="font-size:2.4em; font-weight:800; color:var(--red);">4 DAYS</div>
+  <div style="font-size:0.9em; color:var(--text2);">until Mercedes email deadline (April 2, 2026)</div>
+  <div style="font-size:0.78em; color:var(--text2); margin-top:6px;">5 documents must be attached: Dealership Offer Letter, Khalid Offer Letter, Compliance Report, SLA, Pilot SOW</div>
+</div>
+
+<!-- ====== TODAY ====== -->
+<div style="font-size:0.82em; text-transform:uppercase; letter-spacing:1.5px; color:var(--red); font-weight:700; margin:20px 0 12px; border-bottom:2px solid var(--red); padding-bottom:6px;">Today: Sunday, March 29</div>
+
 <div class="grid-2">
-<!-- CHITRAKSH TASKS -->
 <div class="card" style="border-left:3px solid var(--p1);">
-  <h3 style="color:var(--p1);">Chitraksh (CTO) — Saturday, March 29, 2026</h3>
+  <h3 style="color:var(--p1);">Chitraksh (CTO)</h3>
   <ul>
-    <li><strong style="color:var(--red);">Finalize Mercedes email draft:</strong> Remove all AI dashes/em dashes. Review tone. Keep in drafts (no recipient yet). Send test copy to Frankie.</li>
-    <li><strong style="color:var(--red);">Draft Khalid personal offer letter:</strong> 10% commission, $700K max, 24-month vesting, contingent on C-suite intro. Net 60-90 day payment terms. Use California law references.</li>
-    <li><strong style="color:var(--red);">Draft SLA document:</strong> 75% outbound baseline, retry workflow, 99% platform uptime, speed-to-lead metrics, legal disclaimers for case study numbers.</li>
-    <li><strong style="color:var(--orange);">Review + edit offer letter (dealership):</strong> Change LLC to C Corp throughout. Verify all terms match meeting discussion.</li>
-    <li><strong style="color:var(--orange);">Schedule human transfer test with Frankie:</strong> Confirm time for warm transfer debug session today/tomorrow.</li>
-    <li><strong style="color:var(--blue);">Research: Gemini 3.1 Live integration path.</strong> Check feasibility of connecting to Claude Code and current voice stack.</li>
-    <li><strong style="color:var(--blue);">Update dashboard + push to Vercel.</strong> Ingest Meeting 14 transcript and WhatsApp data.</li>
+    <li><strong style="color:var(--red);">Draft Khalid personal offer letter</strong> (Claude is generating this). 10% net revenue commission, $700K max across 323 locations over 24 months. Contingent on C-suite introduction. Payment: net 60-90 days. Show the earnings ladder: 10 dealerships = $2K/mo, 50 = $10K/mo, 323 = full $700K. Review tonight.</li>
+    <li><strong style="color:var(--red);">Draft SLA document</strong> (Claude is generating this). 75% outbound baseline with proprietary N8N retry loop for near-100% reach. 99% uptime. Speed-to-lead under 60 seconds. Insurance case study metrics as "demonstrated capability" with legal disclaimers. Review tonight.</li>
+    <li><strong style="color:var(--red);">Clean Mercedes email:</strong> Remove every em dash. Tighten language. Change 60-90 day pilot to 30-45 days. Add one line about insurance case study results. Keep in drafts, no recipient yet.</li>
+    <li><strong style="color:var(--orange);">Edit dealership offer letter:</strong> All LLC references become C Corp. Pilot duration: 30-45 days. Verify signature block, entity name, all terms.</li>
+    <li><strong style="color:var(--orange);">Human transfer test with Frankie:</strong> Lock a time. Isolate whether the warm transfer bug is Retell-side or Twilio SIP handoff.</li>
+    <li><strong style="color:var(--blue);">MX + SPF records for founder@orayalabs.ai:</strong> 15-minute task in Vercel DNS. Frankie needs this email working before April 2.</li>
+    <li><strong style="color:var(--blue);">Push dashboard to Vercel.</strong> Meeting 14 is ingested. Run the git push command.</li>
   </ul>
 </div>
 
 <div class="card" style="border-left:3px solid var(--accent2);">
-  <h3 style="color:var(--accent2);">Frankie (CEO) — Saturday, March 29, 2026</h3>
+  <h3 style="color:var(--accent2);">Frankie (CEO)</h3>
   <ul>
-    <li><strong style="color:var(--red);">Review Mercedes email draft from Chitraksh.</strong> Final approval needed before sending test copies.</li>
-    <li><strong style="color:var(--red);">Call Khalid today:</strong> As discussed in meeting, call him after the meeting to warm up the relationship before the email lands.</li>
-    <li><strong style="color:var(--orange);">Research LegalZoom:</strong> What's needed to add a foreign co-founder (Chitraksh) to existing C Corp. Prepare for Monday call.</li>
-    <li><strong style="color:var(--orange);">E&amp;O + Cyber Liability quotes:</strong> Start calling insurance providers this weekend. Target: $100-300/mo. Need quotes before April 2.</li>
-    <li><strong style="color:var(--orange);">Join human transfer test session with Chitraksh.</strong></li>
-    <li><strong style="color:var(--blue);">Find and share sales motion script:</strong> The sales call script created with ChatGPT for selling Oraya automation packages.</li>
-    <li><strong style="color:var(--blue);">Prepare for Monday: chargeback payment ($1,000-1,100).</strong></li>
+    <li><strong style="color:var(--red);">CALL KHALID TODAY.</strong> This is the #1 highest-ROI action. Warm-up call, not a pitch. "We rebuilt everything with a technical co-founder. Sending you the full package this week." Plant the seed so when the email arrives, he opens it immediately.</li>
+    <li><strong style="color:var(--red);">Review Mercedes email draft</strong> when Chitraksh sends the cleaned version. Read it on your phone first. That is how Khalid will see it.</li>
+    <li><strong style="color:var(--orange);">E&amp;O + Cyber Liability: get an online quote TODAY.</strong> Next Insurance and Hiscox do instant online quotes. Even on Sunday. $100-300/mo target. If you can bind a policy Monday, you can attach proof of insurance to the Mercedes email. That separates Oraya from every other AI startup.</li>
+    <li><strong style="color:var(--orange);">Research LegalZoom:</strong> Can they add a foreign national (Indian citizen) to existing CA C Corp? What docs from Chitraksh? Cost and timeline?</li>
+    <li><strong style="color:var(--orange);">Join human transfer test with Chitraksh.</strong></li>
+    <li><strong style="color:var(--blue);">Find the sales motion script</strong> (ChatGPT-generated) for selling Oraya automation packages. If unfindable, tell Chitraksh tonight and Claude will regenerate one.</li>
+    <li><strong style="color:var(--blue);">Prepare Monday chargeback payment ($1,000-1,100).</strong></li>
   </ul>
 </div>
 </div>
 
-<div class="grid-2" style="margin-top:18px;">
-<!-- YESTERDAY'S TASKS -->
-<div class="card" style="border-left:3px solid var(--p1);opacity:0.85;">
-  <h3 style="color:var(--p1);">Chitraksh — Friday, March 28, 2026 (Yesterday)</h3>
+<!-- ====== 3-DAY HORIZON ====== -->
+<div style="font-size:0.82em; text-transform:uppercase; letter-spacing:1.5px; color:var(--orange); font-weight:700; margin:28px 0 12px; border-bottom:2px solid var(--orange); padding-bottom:6px;">3-Day Horizon: Mon Mar 30 to Wed Apr 1</div>
+
+<div class="grid-2">
+<div class="card" style="border-left:3px solid var(--p1);">
+  <h3 style="color:var(--p1);">Chitraksh (CTO)</h3>
   <ul>
-    <li><strong style="color:var(--green);">✅ Meeting 14 with Frankie (1.5+ hours).</strong> Major strategy session completed.</li>
-    <li><strong style="color:var(--green);">✅ CTO daily briefing system built and tested.</strong> Both founders now get automated daily task emails.</li>
-    <li><strong style="color:var(--green);">✅ N8N insurance backend workflow created by Claude Code.</strong> Full post-call routing with TCPA compliance nodes.</li>
-    <li><strong style="color:var(--green);">✅ C Corp decision finalized with Frankie.</strong> Keeping it. Not converting.</li>
-    <li><strong style="color:var(--green);">✅ Rejected shady lawyer ($3-4K quote).</strong> Cut ties.</li>
-    <li><strong style="color:var(--orange);">Mercedes email reviewed but not finalized.</strong> Needs AI dash removal and attachment prep.</li>
-    <li><strong style="color:var(--orange);">MX records for orayalabs.ai still pending.</strong> Carried forward.</li>
+    <li><strong style="color:var(--red);">Monday: Final package assembly.</strong> 5 docs must be ready: (1) Dealership Offer Letter (C Corp), (2) Khalid Offer Letter, (3) Compliance Report (Doc B v2, done), (4) SLA, (5) Pilot SOW. Claude can generate #2, #4, #5. You review and approve.</li>
+    <li><strong style="color:var(--red);">Monday evening: Document review meeting with Frankie.</strong> Walk through every attachment together. If something is off, Tuesday is the fix day.</li>
+    <li><strong style="color:var(--orange);">Tuesday: Send test emails between yourselves 2-3 times.</strong> Check how PDFs render, how email reads on mobile, whether tone is right. This is the dress rehearsal.</li>
+    <li><strong style="color:var(--orange);">Build N8N outbound retry workflow.</strong> Failed outbound calls route to N8N, retrigger through same Retell agent. This is the SLA differentiator. Claude can generate the JSON.</li>
+    <li><strong style="color:var(--blue);">Build N8N nurture/reschedule workflow.</strong> Auto-schedule callback when prospect says "call me at X time." Not blocking April 2 but a selling point for the SLA.</li>
+    <li><strong style="color:var(--blue);">Create "Why Now" one-pager:</strong> Executive summary that makes Khalid want to open the other attachments. What changed, why Oraya is ready, what he gets, next step. Claude will create this as a clean PDF.</li>
   </ul>
 </div>
 
-<div class="card" style="border-left:3px solid var(--accent2);opacity:0.85;">
-  <h3 style="color:var(--accent2);">Frankie — Friday, March 28, 2026 (Yesterday)</h3>
+<div class="card" style="border-left:3px solid var(--accent2);">
+  <h3 style="color:var(--accent2);">Frankie (CEO)</h3>
   <ul>
-    <li><strong style="color:var(--green);">✅ Meeting 14 with Chitraksh (1.5+ hours).</strong> Full strategy alignment.</li>
-    <li><strong style="color:var(--green);">✅ Drafted Mercedes email to Khalid live in meeting.</strong> Great copy, needs minor edits.</li>
-    <li><strong style="color:var(--green);">✅ Agreed on Khalid offer structure (10% / $700K).</strong></li>
-    <li><strong style="color:var(--green);">✅ Confirmed pilot timeline: 30-45 days (reduced from 60-90).</strong></li>
-    <li><strong style="color:var(--green);">✅ Agreed on revenue pivot: sell automation packages to SMBs.</strong></li>
-    <li><strong style="color:var(--orange);">Chargeback payment delayed to Monday (offices closed).</strong></li>
-    <li><strong style="color:var(--orange);">E&amp;O insurance quotes not started yet.</strong> Carried forward.</li>
+    <li><strong style="color:var(--red);">Monday AM: Pay chargeback ($1,000-1,100).</strong> First thing. Reduces insurance balance to ~$3,100.</li>
+    <li><strong style="color:var(--red);">Monday AM: Call LegalZoom.</strong> Start adding Chitraksh to C Corp. The Mercedes email says "full compliance." Chitraksh being legally on the entity is part of that.</li>
+    <li><strong style="color:var(--red);">Monday: Bind E&amp;O insurance policy.</strong> Next Insurance / Hiscox can bind within 24-48 hours online. Do this Monday so proof of insurance is in hand by Tuesday.</li>
+    <li><strong style="color:var(--orange);">Monday evening: Joint document review with Chitraksh.</strong> Every attachment, every word. Final approval.</li>
+    <li><strong style="color:var(--orange);">Tuesday: Test email exchange.</strong> Send the full package between yourselves. Read on phone and laptop. Fix anything that feels off.</li>
+    <li><strong style="color:var(--orange);">Wednesday (April 1): Lock and load.</strong> Add Khalid's email. Send by Wednesday morning. Then call Khalid within 2 hours: "Just sent you everything. Take your time. Let me know when you want to talk."</li>
+  </ul>
+</div>
+</div>
+
+<!-- ====== 1-WEEK HORIZON ====== -->
+<div style="font-size:0.82em; text-transform:uppercase; letter-spacing:1.5px; color:var(--blue); font-weight:700; margin:28px 0 12px; border-bottom:2px solid var(--blue); padding-bottom:6px;">1-Week Horizon: Through Sunday, April 6</div>
+
+<div class="grid-2">
+<div class="card" style="border-left:3px solid var(--p1);">
+  <h3 style="color:var(--p1);">Chitraksh (CTO)</h3>
+  <ul>
+    <li><strong style="color:var(--orange);">April 2-3: EIN expected.</strong> If nothing by Apr 3, call IRS (800) 829-4933. EIN unlocks: bank account, Stripe, client billing.</li>
+    <li><strong style="color:var(--orange);">Demo video for SMB revenue pivot.</strong> 45 sec to 2 min. Screen recording of the voice agent in action + results. Needed before ads go live.</li>
+    <li><strong style="color:var(--orange);">Define pricing tiers:</strong> Solopreneur ($X/mo), Small Business ($X/mo), Enterprise (custom). Based on stack costs ($30-40/client) and 90%+ margin target.</li>
+    <li><strong style="color:var(--blue);">Gemini 3.1 Live research:</strong> Is API public or beta-only? Phone integration (SIP/PSTN) or browser-only? Actual per-minute cost vs current stack? Determines Jun-Jul 2026 feasibility.</li>
+    <li><strong style="color:var(--blue);">WhatsApp Business migration:</strong> Connect WhatsApp Cloud API to N8N. Auto-sync founder messages to Claude HQ.</li>
+    <li><strong style="color:var(--blue);">Insurance case study document:</strong> Formalize the $27K/week, 15-20 appts/day numbers into a one-page "Oraya AI: Proven Results" PDF. Attach to Mercedes email and use in future pitches.</li>
+  </ul>
+</div>
+
+<div class="card" style="border-left:3px solid var(--accent2);">
+  <h3 style="color:var(--accent2);">Frankie (CEO)</h3>
+  <ul>
+    <li><strong style="color:var(--orange);">April 2: Mercedes email sent.</strong> The big moment. Follow-up call same day.</li>
+    <li><strong style="color:var(--orange);">Khalid response window: April 2-9.</strong> Day 1: call after sending. Day 3 (Friday Apr 4): short text follow-up. Day 7 (Wed Apr 9): call directly if no response.</li>
+    <li><strong style="color:var(--orange);">Fallback: identify 5 independent dealerships in Bay Area.</strong> Non-AutoNation. If Mercedes takes weeks, do not sit idle. A smaller pilot still generates revenue + case study.</li>
+    <li><strong style="color:var(--blue);">Locate the SAFE note ($10K from Jared + Abdo Melek).</strong> Must be resolved before any enterprise contracts or fundraising. Either confirm it was never executed or formalize/return the money.</li>
+    <li><strong style="color:var(--blue);">Schedule @memeowcats social media meeting.</strong> 15-minute call. Low urgency but high potential for brand visibility when demo video + ads go live.</li>
+    <li><strong style="color:var(--blue);">Revenue pivot prep:</strong> Ads ($200-300) for Oraya automation packages. Starts after April 2. Need: demo video (Chitraksh), sales script (Frankie), working CTA on orayalabs.ai.</li>
+  </ul>
+</div>
+</div>
+
+<!-- ====== PARTNER INSIGHTS ====== -->
+<div style="font-size:0.82em; text-transform:uppercase; letter-spacing:1.5px; color:var(--green); font-weight:700; margin:28px 0 12px; border-bottom:2px solid var(--green); padding-bottom:6px;">Partner Notes: Things We Are Missing</div>
+
+<div class="card" style="border-left:3px solid var(--green); background:rgba(0,184,148,0.04);">
+  <ul>
+    <li><strong style="color:var(--green);">No fallback if Mercedes says no.</strong> Honda, Toyota, independents mentioned but zero prep work done. Identify 5 alternatives this week.</li>
+    <li><strong style="color:var(--green);">The $700K math should be IN the letter.</strong> Show the earnings ladder: 10 dealerships = $2K/mo, 50 = $10K/mo, 323 = $700K. Make it feel achievable, not just a headline number.</li>
+    <li><strong style="color:var(--green);">Missing: "Why Now" one-pager.</strong> 5 attachments is a lot of paper. You need one page that says: what changed, why we are ready, what you get, next step. The executive summary that makes Khalid open everything else.</li>
+    <li><strong style="color:var(--green);">Insurance case study should be a standalone doc.</strong> $27K/week, 15-20 appts/day, 3-4 closings/day. Formalize it as proof of concept from a different vertical. Shows the engine works.</li>
+    <li><strong style="color:var(--green);">No pilot success metrics defined.</strong> What KPIs make the pilot a "success"? Suggestion: 10+ qualified appointments/week, 99% uptime, under 60s speed-to-lead within first 30 days. Define BEFORE the email goes out.</li>
+    <li><strong style="color:var(--green);">E&amp;O must be BOUND, not just quoted.</strong> The email says "tech E&amp;O in place." If Khalid asks for proof and the answer is "we are getting quotes," credibility drops. Bind it Monday.</li>
+    <li><strong style="color:var(--green);">SAFE note ($10K) is a ticking legal risk.</strong> If you close Mercedes and then an investor shows up with a claim, it derails everything. Resolve before signing any enterprise contracts.</li>
+    <li><strong style="color:var(--green);">Execution window is compressing.</strong> April 2 is Wednesday. If docs are not locked by Monday night, Tuesday becomes a scramble. Produce everything you can independently today. Do not wait on each other.</li>
+  </ul>
+</div>
+
+<!-- ====== YESTERDAY ====== -->
+<div style="font-size:0.82em; text-transform:uppercase; letter-spacing:1.5px; color:var(--text2); font-weight:700; margin:28px 0 12px; border-bottom:2px solid var(--border); padding-bottom:6px;">Yesterday: Saturday, March 28 (Completed)</div>
+
+<div class="grid-2">
+<div class="card" style="border-left:3px solid var(--p1);opacity:0.75;">
+  <h3 style="color:var(--p1);">Chitraksh</h3>
+  <ul>
+    <li><strong style="color:var(--green);">✅</strong> Meeting 14 with Frankie (1.5+ hours). Major strategy session.</li>
+    <li><strong style="color:var(--green);">✅</strong> CTO daily briefing system built and tested.</li>
+    <li><strong style="color:var(--green);">✅</strong> N8N insurance backend workflow created by Claude Code.</li>
+    <li><strong style="color:var(--green);">✅</strong> C Corp decision finalized. Keeping it.</li>
+    <li><strong style="color:var(--green);">✅</strong> Rejected shady lawyer ($3-4K quote). Cut ties.</li>
+    <li><strong style="color:var(--orange);">Carried:</strong> Mercedes email not finalized. MX records pending.</li>
+  </ul>
+</div>
+<div class="card" style="border-left:3px solid var(--accent2);opacity:0.75;">
+  <h3 style="color:var(--accent2);">Frankie</h3>
+  <ul>
+    <li><strong style="color:var(--green);">✅</strong> Meeting 14 with Chitraksh. Full alignment.</li>
+    <li><strong style="color:var(--green);">✅</strong> Drafted Mercedes email to Khalid live.</li>
+    <li><strong style="color:var(--green);">✅</strong> Agreed on Khalid offer: 10% / $700K.</li>
+    <li><strong style="color:var(--green);">✅</strong> Pilot timeline confirmed: 30-45 days.</li>
+    <li><strong style="color:var(--green);">✅</strong> Revenue pivot agreed: sell automation to SMBs.</li>
+    <li><strong style="color:var(--orange);">Carried:</strong> Chargeback (Monday). E&amp;O quotes not started.</li>
   </ul>
 </div>
 </div>
