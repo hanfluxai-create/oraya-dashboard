@@ -89,7 +89,7 @@ $json.body.call.call_analysis.custom_analysis_data.Query_Type
 
 ## Patterns Observed
 
-- **Chitraksh values visual quality:** Interactive HTML, well-designed dashboards. Dark themes for operational dashboards only. Daily brief = light/clean theme (explicitly corrected Mar 29: "I did not like the dark UI")
+- **Chitraksh values visual quality:** Interactive HTML, well-designed dashboards. Dark themes for operational dashboards only. Daily brief = white card-based HTML matching the Mar 30 task emails (white bg, colored left-border blocks, card shadows, clean section labels, accent header strip). Chitraksh said Mar 30: "use the white dashboard thing you created in mails as html." That is now the brief standard.
 - **Chitraksh values efficiency:** Gets frustrated when context is lost. Incremental updates, never rebuilds.
 - **Chitraksh thinks in systems:** Auto-learning, autonomous behavior, sub-agents, scheduled audits
 - **Multi-surface worker:** Cowork, VS Code, browser, mobile — memory must be portable
@@ -99,6 +99,23 @@ $json.body.call.call_analysis.custom_analysis_data.Query_Type
 - **N8N is the orchestration backbone:** Always suggest N8N-first for automation
 - **Retell is the voice layer:** Chitraksh knows it deeply — don't explain basics
 - **Law background underutilized:** Leverage for TCPA, compliance, data privacy
+
+---
+
+## REINFORCED RULES (3+ Violations Logged -- Standard Rule Was Insufficient)
+
+**DASHBOARD PUSH PROTOCOL (3 violations: wrong branch, HEAD.lock, missing push command):**
+Every single dashboard edit session MUST end with the exact push command in the same response, every time, without exception. Command format: `cd ~/Downloads/Claude\ hq && cp projects/oraya-labs/deliverables/oraya-project-intelligence-dashboard.html index.html && git add index.html projects/oraya-labs/deliverables/oraya-project-intelligence-dashboard.html && git commit -m "MESSAGE" && git push -f origin HEAD:main`. If git push fails, prepend `rm -f ~/Downloads/Claude\ hq/.git/HEAD.lock &&`. Never push to master. Never forget the cp to index.html.
+
+**ORAYA DASHBOARD = P1 + P2 ONLY (4 violations on Mar 30 alone):**
+The Oraya dashboard is a company-facing business dashboard. It contains ONLY P1 (Automotive Voice AI) and P2 (Insurance Lead Gen). Dissertation, Fraudopedia, Campus Platform, HanFlux AI, Retell CTO Copilot, Mercedes Kimi Agent, and any other personal or internal tools are PERMANENTLY EXCLUDED. Before adding any section, tab, or metric to the dashboard, ask: "Is this Oraya company revenue or product?" If no, it does not belong.
+
+| Apr 5, 2026 | Gave git push command using `git push origin master` | WRONG. Repo Vercel branch is `main` not `master`. Also forgot `cp` to index.html. Correct command: `cd ~/Downloads/Claude\ hq && cp projects/oraya-labs/deliverables/oraya-project-intelligence-dashboard.html index.html && git add index.html projects/oraya-labs/deliverables/oraya-project-intelligence-dashboard.html CLAUDE.md memory/active-projects.md memory/frankie-profile.md memory/pending-actions.md && git commit -m "MESSAGE" && git push -f origin HEAD:main` |
+| Apr 4, 2026 | Assumed `setNodes` (React Flow) persists to Retell backend | `setNodes` updates VISUAL state only. Retell has its own state store. Only React `__reactProps.onChange` on textareas triggers autosave. |
+| Apr 4, 2026 | Tried drag-and-drop from sidebar to create nodes | Sidebar items have `onClick` not `onDragStart`. Click the sidebar item to create a new node at a default position. |
+| Apr 4, 2026 | Assumed JWT token alone works for Retell API | Retell's dashboard JWT requires an org_id that is NOT passed as a simple x-org-id header. Use the dashboard UI or intercept real API calls. |
+| Apr 4, 2026 | Assumed canvas DOM coords match screenshot coords consistently | Coords shift as the canvas pans. Re-query `getBoundingClientRect()` just before clicking -- never reuse stale coords from earlier steps. |
+| Apr 4, 2026 | Assumed Retell nodes have a `tools` array in base data | Raw node data schema: `{ instruction, name, edges, id, knowledge_base_ids, type, display_position }`. No `tools` at this level. Tools/functions are wired via Components tab in the UI. |
 
 ---
 
@@ -116,6 +133,11 @@ $json.body.call.call_analysis.custom_analysis_data.Query_Type
 - Retell CTO Copilot is a SKILL, not a project — belongs in skills/ directory only
 - Oraya dashboard = P1 (Voice AI / Automotive) + P2 (Insurance Lead Gen) ONLY
 - Never create .claude-hq/ in temp/session directories — always use Downloads
+- **Retell canvas: never rely on stale DOM coords.** Canvas pans constantly. Always re-run `getBoundingClientRect()` immediately before clicking. A coord gathered 3 steps ago is already wrong.
+- **Retell node creation: click sidebar item, do NOT drag.** Dragging fails silently. Clicking the sidebar "Conversation" item creates the node at a default canvas position.
+- **Retell node name editing: click the invisible pencil button at (nodeX+76, nodeY+9) in DOM coords, then Cmd+A, type, Enter.** The button is `invisible group-hover:visible` so you can click it without hovering.
+- **Retell prompt saving: fire `__reactProps.onChange({ target: { value: ta.value } })` on the textarea, then `onBlur`.** This triggers Retell's autosave. `setNodes` does NOT save.
+- **Retell transition editing: hover over transition row to reveal pencil icon, then click it.** Re-query position each time before clicking since canvas may have panned.
 - Never guess Retell payload field names — always reference skills/n8n-workflows/SKILL.md
 - **Never claim a skill doesn't exist without searching ALL skill folders first** — on Mar 15, 2026, Claude told Chitraksh there was no legal review skill when `skills/legal-review-skill/` existed the whole time. Always `ls` the skills directory before saying "that doesn't exist."
 - Never handle legal tasks with general knowledge alone — ALWAYS load `skills/legal-review-skill/SKILL.md` first
