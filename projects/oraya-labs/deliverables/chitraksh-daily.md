@@ -1,80 +1,88 @@
-# Chitraksh Daily Actions -- Sunday, March 29, 2026
+# Chitraksh Daily Actions -- Saturday, April 4, 2026
 
-**4 DAYS TO MERCEDES DEADLINE (April 2)**
-
----
-
-## TODAY (Sunday, March 29)
-
-### 1. DRAFT KHALID PERSONAL OFFER LETTER [CRITICAL -- Claude is generating]
-10% net revenue commission, $700K max across 323 locations over 24 months. Contingent on facilitating C-suite introduction. Payment: net 60-90 days. Show the earnings ladder in the letter: 10 dealerships = $2K/mo, 50 = $10K/mo, 323 = full $700K cumulative. This makes the number feel achievable, not abstract. Use California law. Review tonight.
-
-### 2. DRAFT SLA DOCUMENT [CRITICAL -- Claude is generating]
-75% outbound connection baseline with proprietary N8N retry loop pushing to near-100% effective reach. 99% platform uptime. Speed-to-lead under 60 seconds. Include insurance case study metrics ($27K/week revenue, 15-20 appointments/day, 3-4 closings/day) as "demonstrated capability in adjacent vertical" with legal disclaimers in a dedicated section. Review tonight.
-
-### 3. CLEAN MERCEDES EMAIL [CRITICAL]
-Remove every em dash and en dash. Change "60-90 day pilot" to "30-45 day pilot." Add one sentence about insurance case study: "In a recent insurance deployment, our system generated 15-20 qualified appointments per day and closed 3-4 policies daily." Send cleaned version to Frankie. No recipient address yet.
-
-### 4. EDIT DEALERSHIP OFFER LETTER [HIGH]
-Every mention of LLC becomes C Corp or Corporation. Pilot duration: 30-45 days. Verify signature block, entity name, terms match Meeting 14 discussion.
-
-### 5. HUMAN TRANSFER TEST WITH FRANKIE [HIGH]
-Lock a time. Cold transfer works. Warm transfer connects but advisor gets no briefing. Isolate: is it Retell's transfer node config or the SIP handoff to Twilio?
-
-### 6. MX + SPF RECORDS FOR founder@orayalabs.ai [MEDIUM]
-Go to Vercel DNS for orayalabs.ai. Add 5 Google Workspace MX records + SPF TXT record. Do NOT change nameservers. 15-minute task. Frankie needs this email before April 2.
-
-### 7. PUSH DASHBOARD TO VERCEL [MEDIUM]
-Meeting 14 ingested. Daily Tasks tab live. Run:
-```bash
-cd ~/Downloads/Claude\ hq && cp projects/oraya-labs/deliverables/oraya-project-intelligence-dashboard.html index.html && git add index.html projects/oraya-labs/deliverables/oraya-project-intelligence-dashboard.html && git commit -m "Mar 29: Daily tasks upgraded, Meeting 14 final" && git push -f origin HEAD:main
-```
+**STATUS CHECK: Mercedes deadline was April 2 (2 days ago). Send status still unconfirmed. Dissertation has had no logged progress in 8+ days.**
 
 ---
 
-## 3-DAY HORIZON (Mon Mar 30 to Wed Apr 1)
+## TODAY'S TOP 10 (Ranked by Urgency)
 
-### Monday: Final Package Assembly
-5 documents must be finalized: (1) Dealership Offer Letter (C Corp), (2) Khalid Offer Letter, (3) Compliance Report (Doc B v2, done), (4) SLA, (5) Pilot SOW. Claude can generate #2, #4, #5. You review and approve.
+### 1. CONFIRM MERCEDES EMAIL SEND STATUS [P0 -- DEADLINE PASSED +2 DAYS]
+The April 2 deadline has now passed by 2 days. First action today: confirm with Frankie whether the full package was sent (Offer Letter, Document B v2, SLA, Pilot SOW).
+- If SENT: check for any reply or acknowledgment from the dealership. Log send time and recipients in PROJECT.md. Prepare a follow-up ping for 48 hours from send.
+- If NOT SENT: send today without further delay. All PDFs already exist. Remove AI dashes before sending. Khalid personal offer goes SEPARATELY via the crypto/shell company arrangement.
 
-### Monday Evening: Document Review Meeting with Frankie
-Walk through every attachment. If something is off, Tuesday is the fix day.
+### 2. DISSERTATION [ACADEMIC DEADLINE UNCONFIRMED -- 8+ DAYS NO PROGRESS]
+This is now the most important non-Oraya item. No progress has been recorded for over 8 days. Topic: Cross-Jurisdictional ML Analysis in US/Indian Securities Enforcement. It is Saturday. There is no better day to protect this.
+Action: confirm the exact deadline date, then block 2 hours today for writing. If the deadline is within 30 days, escalate to P1 status and restructure the week around it.
 
-### Tuesday: Test Email Dress Rehearsal
-Send full email with all attachments between yourselves 2-3 times. Check PDFs render, mobile readability, tone.
+### 3. FIX WARM TRANSFER + THREE-WAY DEBRIEF [HIGH -- Pre-Pilot Blocker]
+Cold transfer is confirmed working. Warm transfer connects but advisor receives no briefing. Three-way debrief is glitching. The Mercedes pilot cannot go live with broken transfers. Schedule a test session with Frankie this weekend. Log the exact Retell node where the briefing fails. This is a Retell node + SIP config task.
 
-### Build N8N Outbound Retry Workflow
-Failed outbound calls route to N8N, retrigger through same Retell agent via different trigger. The SLA differentiator. Claude can generate the import-ready JSON.
+### 4. BUILD N8N OUTBOUND RETRY + NURTURE WORKFLOW [HIGH -- SLA Backbone]
+Two workflows needed: (a) failed outbound calls loop back through Retell via N8N until connected, and (b) if a prospect says "call me at X time," N8N reschedules the call automatically. Together, these underpin the near-100% reach rate claim in the SLA document. Architecture is designed. Build it at https://hanfluxai2026.app.n8n.cloud.
 
-### Build N8N Nurture/Reschedule Workflow
-Auto-schedule callback when prospect says "call me tomorrow at 4pm." Captures callback time from post-call extraction, stores in queue, triggers outbound at specified time. Not blocking April 2 but a selling point.
+### 5. PUSH DASHBOARD TO GITHUB / VERCEL [HIGH -- Mandatory Protocol]
+Dashboard was committed locally and never pushed. Live version on Vercel is stale. Run: `git push origin main`. Per standing protocol, this must happen after every dashboard update without being asked.
 
-### Create "Why Now" One-Pager
-Executive summary for Khalid: what changed since last contact, why Oraya is ready now, what Khalid gets, next step. One page. Claude will produce this as a PDF.
+### 6. FIX orayalabs.ai MX + SPF RECORDS [HIGH -- STALE 19+ Days]
+Frankie still cannot use founder@orayalabs.ai. This is a 15-minute fix in Vercel DNS that has been pending for 19 days. Add Google Workspace MX records (ASPMX.L.GOOGLE.COM priority 1 + alternates) and SPF TXT record. Do it today.
 
----
+### 7. RESPOND TO REGISTERED AGENT EMAIL [HIGH -- 15+ Days OVERDUE]
+Oraya Corp renewal filing was due end of week March 20. Now 15 days overdue. Failure to respond risks late fees or administrative dissolution of the C Corp. Check registered agent inbox, file, or forward to Frankie and the incoming attorney immediately.
 
-## 1-WEEK HORIZON (Through Sunday, April 6)
+### 8. LOCATE INVESTOR SAFE NOTE ($10,000) [HIGH -- Open Legal Liability]
+$5K from Jared + $5K from Abdo Melek. SAFE drafted, almost certainly unsigned and unnotarized. Must be located and resolved before any capital event or outside investment conversation. Find the document today.
 
-- **EIN expected April 2-3.** If nothing by Apr 3, call IRS (800) 829-4933. Chain: EIN > bank > Stripe > billing.
-- **Demo video for SMB revenue pivot.** 45 sec to 2 min. Screen recording of voice agent + results.
-- **Define pricing tiers.** Solopreneur / Small Business / Enterprise. Based on $30-40/client stack cost and 90%+ margins.
-- **Gemini 3.1 Live research.** API availability, phone integration, per-minute cost vs current stack.
-- **WhatsApp Business migration.** Connect Cloud API to N8N for auto-sync.
-- **Insurance case study PDF.** Formalize $27K/week numbers into standalone "Proven Results" document.
+### 9. MAYA PROMPT UPDATE: LIVE TRANSFER ASK + LEAKAGE FIX [MEDIUM -- P2 Insurance]
+Two open items in a single Retell session: (a) add the live transfer consent ask to Maya's conversation flow, and (b) patch prompt leakage on non-Claude LLMs or hard-lock Maya to Claude IQ 4.5 as the production LLM. Both are prompt-layer fixes. 30-45 minutes in Retell.
 
----
-
-## PARTNER NOTES: WHAT I THINK WE ARE MISSING
-
-1. **No fallback if Mercedes says no.** Identify 5 independent Bay Area dealerships this week.
-2. **$700K math not shown in the letter.** Show the earnings ladder. Make it tangible.
-3. **No "Why Now" executive summary.** 5 attachments is a lot. Need one page that makes Khalid open everything else.
-4. **No defined pilot success KPIs.** Suggestion: 10+ qualified appointments/week, 99% uptime, under 60s speed-to-lead within 30 days.
-5. **E&O must be BOUND, not quoted.** The email says "in place." If Khalid asks for proof and the answer is "getting quotes," credibility drops.
-6. **SAFE note ($10K) is unresolved legal risk.** Resolve before any enterprise contracts.
-7. **Execution window is compressing.** If docs are not locked by Monday night, Tuesday becomes a scramble.
+### 10. FOLLOW UP ON ATTORNEY + C CORP ADDITION [MEDIUM -- Entity Health]
+Frankie is sourcing a new attorney to add Chitraksh to the C Corp (LegalZoom dropped). Without legal standing in the C Corp, Chitraksh's equity and liability protection remain informal. Ping Frankie today for an update on attorney timeline.
 
 ---
 
-*Generated by Sentient Protocol. Next briefing: Monday, March 30.*
+## FRANKIE-SIDE (Ping Today)
+- Mercedes email: confirm sent or get final sign-off to send now
+- Warm transfer test: did March 29 test happen? What was the outcome?
+- E&O + cyber liability insurance: quoted or bound yet?
+- Lawyer update: progress on adding Chitraksh to C Corp?
+- GHL admin access: estimated timeline?
+- Registered agent email: has he seen it?
+- Chargeback payment: was the $1,000-1,100 payment made March 30? Current balance?
+
+---
+
+## STATUS BOARD
+| Item | Status |
+|---|---|
+| Mercedes email package | DEADLINE PASSED +2 DAYS -- confirm send status |
+| Architecture diagram | PENDING -- confirm included or cut |
+| Cold transfer | WORKING |
+| Warm transfer | PARTIAL -- advisor briefing not triggering |
+| Three-way transfer | GLITCHING |
+| Dashboard | LOCAL ONLY -- push today |
+| MX records | STALE 19+ days |
+| Registered agent | OVERDUE 15+ days |
+| Investor SAFE note | UNLOCATED -- open liability |
+| Maya P2 agent | LIVE -- prompt update pending |
+| Dissertation | NO PROGRESS 8+ DAYS -- deadline unconfirmed |
+| EIN | CONFIRMED 93-3462113 |
+| C Corp | RETAINED -- Chitraksh not yet added |
+| Frankie chargeback | UNCONFIRMED -- was due March 30 |
+
+---
+
+## THIS WEEKEND QUEUE
+- Dissertation: block 2 hours today and Sunday
+- Warm transfer test session with Frankie
+- N8N retry + nurture workflows (SLA backbone)
+- GHL CRM setup (once Frankie grants access)
+
+## NEXT WEEK QUEUE
+- P2 Insurance: Atom Property API + CMS Medicare API integrations, first data batch test
+- Khalid arrangement memo (once crypto/shell company structure confirmed)
+- Fallback dealership pipeline: identify 5 Bay Area targets if Mercedes stalls
+
+---
+
+*Generated by Sentient Protocol v2.2 | Automated daily run -- April 4, 2026*

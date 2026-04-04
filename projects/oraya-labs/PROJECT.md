@@ -49,6 +49,11 @@ Gross margins: 92-96% at website pricing tiers
 - Warm transfer: Semi-functional (connects but no advisor briefing)
 - Three-way debrief transfer: Tested, glitching — not working yet
 - Mercedes dealership report created (Dealership Report Client Version - Mercedes of South Bay.docx)
+- **Mercedes Deliverables Package (latest versions stored Mar 28):**
+  - Pilot Offer Letter PDF (2 pages, Oraya letterhead, signed Frankie Alicea CEO): 30-day free pilot, 1 Service BDC line, $0, zero commitment, TCPA/CIPA/CPRA/FTC compliant, SOC 2 Type II + TISAX Level 2 referenced, 3 post-pilot scenarios
+  - Document B v2 (Compliance Verification Report, DOCX): TCPA/PEWC, CIPA recording consent, FTC AI identity, CPRA/ADMT analysis, SB 446 data breach, Mercedes OEM TISAX mandate. Big Four advisory standard. All controls "Implemented and Verified."
+  - Document A (Execution Master Brief, internal)
+  - Pending: Visual architecture diagram, Pilot SOW, Mutual NDA, minutes/pricing finalization
 - **Mercedes email deadline: April 2, 2026** — must finalize offer, mins, package before sending
 - Greg pilot fell through — need new champion at dealership
 - CRM: Swapped from HubSpot → GHL (GoHighLevel) — Frankie giving admin access
@@ -108,8 +113,12 @@ His domain expertise makes P2 viable — irreplaceable
 - Domain connection: orayalabs.ai → Vercel (CONNECTED as of Mar 15)
 - Stripe setup → for client billing
 - Client contracts template → not drafted
-- Greg demo outcome → never happened. Greg is OUT.
 - **Mercedes email deadline: April 2, 2026** — offer/mins/package must be finalized first
+- **CRITICAL: Investor SAFE note** — $5K from Jared (Greg's brother) + $5K from Abdo Melek. Convertible SAFE drafted but Frankie 99% sure unsigned, 100% sure not notarized. Must locate document.
+- Google Workspace MX + SPF records needed in Vercel DNS for founder@orayalabs.ai
+- Founders + Equity Agreement — finalizing weekend of Mar 28-30
+- County registration: likely Alameda County (Frankie), needs lawyer confirmation
+- Website: connect all buttons on orayalabs.ai, clarify pricing with estimated mins
 - Dealership map feature: San Jose area, Google Maps pins with name/address/phone/status (requested by Frankie, not urgent)
 - Social media: @memeowcats (50K IG followers) reached out — meeting to schedule
 - Google Stitch → plan for iOS/Android client dashboard app with premium features
@@ -136,6 +145,10 @@ His domain expertise makes P2 viable — irreplaceable
 - Dashboard Review, Voice Agent Testing & Insurance System Build Session (Mar 15)
 - **Voice AI Insurance Agent Testing & Claude Code vs N8N Discussion (Mar 27)**
 
-## WhatsApp Chat Intelligence (Mar 16–27, 2026)
+## WhatsApp Chat Intelligence (Mar 16–28, 2026)
 - Extracted and logged in dashboard WhatsApp Intelligence Log tab
-- Key decisions: CRM swap (HubSpot → GHL), April 2 email deadline, EIN filing, insurance payments progress, Google Stitch, social media lead (@memeowcats), Claude Max subscription
+- Key decisions: CRM swap (HubSpot to GHL), April 2 email deadline, EIN filing, insurance payments progress, Google Stitch, social media lead (@memeowcats), Claude Max subscription
+- Mar 26-28 additions: County registration (Alameda?), investor SAFE note ($10K), human transfer set to cold after 3 attempts, Maya first live test, SS-4 filed, partnership/LLC finalization push, MX records for founder@orayalabs.ai, new SOP (dashboard in every meeting), website button fixes, pricing clarity, tech stack stays private
+
+## New SOP (Mar 28, per Frankie)
+Every meeting: pull up dashboard, follow recommendations + tasks, check off in real time. "Minutes + package = final offer."

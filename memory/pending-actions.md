@@ -82,6 +82,13 @@
 
 ---
 
+## Process Improvements (From Meeting 16 Directive)
+
+- [ ] **Build CRM for Oraya AI**: Frankie built custom CRM UI (GHL + HubSpot + Salesforce hybrid). Chitraksh to connect backend. Has pipeline view, lead score, analytics, contact cards. Use as internal tool AND potential client-facing product.
+- [ ] **AI personality adaptation**: Ingest Frankie and Chitraksh profiles so AI matches their tone in emails, tasks, and comms. ChatGPT-like warmth for Frankie, systems-level directness for Chitraksh. Protocol added to sentient-protocol.md.
+- [ ] **Dashboard cross-reference process**: Every update must compare current dashboard state vs new evidence. Psych scores must be justified with actual task evidence. Never freeze a score.
+- [ ] **Vibe Prospecting optimization**: Chitraksh has multiple accounts, getting 100-200 leads per account. Now on main accounts. Can optimize instead of resetting. Track lead source per account.
+
 ## Ideas to Explore (Future Sessions)
 
 - Build transcript-to-dashboard custom skill
@@ -97,3 +104,8 @@
 - Gemini 3.1 Live integration: speech-to-speech on Claude Code, potential 11Labs replacement by Jun-Jul 2026
 - WhatsApp Business auto-sync to Claude HQ system (ACTIVE ITEM - architecture being designed Mar 30)
 - Revenue pivot: Meta/Google ads for Oraya automation packages (solopreneurs/SMBs)
+- Quote AI as separate product: full autonomous insurance agency (Frankie's 2yr concept)
+- DAO Insurance on Solana/Ethereum: decentralized insurance without carriers (Chitraksh's cousin is a Solana dev)
+- Oraya Holding Company structure: subsidiaries for Voice AI, Insurance, Quote AI, DAO
+- IPO strategy: dilute 2-3% per growth window at peak MoM revenue multiple
+- LLM development (long-term): "companies with LLMs will only survive"

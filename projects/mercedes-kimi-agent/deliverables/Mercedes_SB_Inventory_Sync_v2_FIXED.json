@@ -1,0 +1,384 @@
+{
+  "name": "Mercedes SB — Inventory Sync v2 (FIXED)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 4
+            }
+          ]
+        }
+      },
+      "id": "3ff45ff6-9cc4-468d-a191-f66899437c32",
+      "name": "Every 4 Hours",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [-1328, 192]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ts1",
+              "name": "sync_started_at",
+              "value": "={{ new Date().toISOString() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d74be5dc-5ef9-4d5b-a0fe-6d54aae2f1e7",
+      "name": "Capture Sync Start",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-1104, 192]
+    },
+    {
+      "parameters": {
+        "url": "https://www.sbmercedes.com/apis/widget/INVENTORY_LISTING_DEFAULT_AUTO_NEW:inventory-data-bus1/getInventory",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "pageStart",
+              "value": "0"
+            },
+            {
+              "name": "pageSize",
+              "value": "1"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 30000
+        }
+      },
+      "id": "ed88a4e9-0a91-47cc-ae65-848cf53afaa2",
+      "name": "Get Total Count",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [-880, 192]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const resp = $input.item.json;\nif (!resp || resp.error || !resp.pageInfo) { throw new Error('sbmercedes API bad response: ' + JSON.stringify(resp).substring(0,200)); }\nconst totalCount = resp.pageInfo.totalCount;\nif (!totalCount || totalCount < 1) { throw new Error('totalCount missing or zero'); }\nreturn { json: { totalCount: totalCount, sync_started_at: $('Capture Sync Start').item.json.sync_started_at } };"
+      },
+      "id": "9ff6fd3d-cd25-4043-80c7-b7d0fd0517c9",
+      "name": "Validate API Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-656, 192]
+    },
+    {
+      "parameters": {
+        "jsCode": "const totalCount = $input.item.json.totalCount;\nconst syncStart = $input.item.json.sync_started_at;\nconst pageSize = 100;\nconst totalPages = Math.ceil(totalCount / pageSize);\nconst pages = [];\nfor (let i = 0; i < totalPages; i++) {\n  pages.push({ json: { pageStart: i * pageSize, pageSize: pageSize, totalCount: totalCount, totalPages: totalPages, pageNumber: i + 1, sync_started_at: syncStart } });\n}\nreturn pages;"
+      },
+      "id": "e8d83421-321f-47fa-ad09-6ff723a5b243",
+      "name": "Build Page Offsets",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-432, 192]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "dec2f198-db66-447d-80da-377e6eee0cff",
+      "name": "Loop Pages",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [-208, 192]
+    },
+    {
+      "parameters": {
+        "url": "https://www.sbmercedes.com/apis/widget/INVENTORY_LISTING_DEFAULT_AUTO_NEW:inventory-data-bus1/getInventory",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "pageStart",
+              "value": "={{ $json.pageStart }}"
+            },
+            {
+              "name": "pageSize",
+              "value": "={{ $json.pageSize }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 30000
+        }
+      },
+      "id": "90e86b10-a0d4-4af5-940f-515449da41c5",
+      "name": "Fetch Inventory Page",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [16, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// FIX: Added updated_at to every vehicle record.\n// This is required for the Remove Stale Vehicles step to correctly\n// delete records that were NOT refreshed in the current sync run.\nconst resp = $input.first().json;\nif (!resp || resp.error || !Array.isArray(resp.inventory)) {\n  return [{ json: { _skipped: true, reason: 'bad_api_response' } }];\n}\n\nconst now = new Date().toISOString();\n\nconst vehicles = resp.inventory.map(v => {\n  const attrs = {};\n  (v.attributes || []).forEach(a => { if (a.name) attrs[a.name] = a.value || ''; });\n  const msrpStr = (v.pricing || {}).retailPrice || 'N/A';\n  const msrpNumeric = parseFloat(msrpStr.replace(/[^0-9.]/g, '')) || null;\n  const titleArr = v.title || [];\n  const yearMatch = (titleArr[0] || '').match(/(\\d{4})/);\n  const year = yearMatch ? yearMatch[1] : (attrs.year || '');\n\n  return {\n    json: {\n      vin: v.vin || '',\n      stock_number: v.stockNumber || attrs.stockNumber || '',\n      year: year,\n      make: v.make || 'Mercedes-Benz',\n      model: v.model || '',\n      trim: v.trim || attrs.trim || '',\n      body_style: attrs.bodyStyle || attrs.body_style || '',\n      exterior_color: attrs.exteriorColor || attrs.exterior_color || '',\n      interior_color: attrs.interiorColor || attrs.interior_color || '',\n      fuel_type: v.fuelType || attrs.fuelType || '',\n      msrp: msrpStr,\n      msrp_numeric: msrpNumeric,\n      condition: v.condition || '',\n      updated_at: now\n    }\n  };\n}).filter(v => v.json.vin !== '' && !v.json._skipped);\n\nreturn vehicles;"
+      },
+      "id": "e9c45c9d-c2ce-4050-8d54-73a209c0735d",
+      "name": "Parse Vehicles",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [240, 0]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "tableId": "mercedes_inventory",
+        "dataToSend": "autoMapInputData"
+      },
+      "id": "85fe073f-a3ac-450d-b85a-080db7fb7704",
+      "name": "Upsert to Supabase",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [464, 0],
+      "credentials": {
+        "supabaseApi": {
+          "id": "GgulYpUfBtyGA1mu",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================\n// CRITICAL FIX — ROOT CAUSE OF PAGINATION LOOP RESET BUG\n// ============================================================\n// Without this node, ~100 vehicle records flow from Upsert\n// back into SplitInBatches (Loop Pages). When SplitInBatches\n// receives 100 foreign items on its loop-back port, it resets\n// its internal batch context and re-processes page 1 forever.\n//\n// This node collapses all 100 items into ONE signal item.\n// SplitInBatches then correctly advances to the next batch.\n// ============================================================\nconst items = $input.all();\nconst processed = items.filter(i => !i.json._skipped).length;\nreturn [{\n  json: {\n    loop_signal: true,\n    items_processed: processed\n  }\n}];"
+      },
+      "id": "f7e6d5c4-b3a2-1098-fedc-ba9876543210",
+      "name": "Reduce to Loop Signal",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [688, 0]
+    },
+    {
+      "parameters": {
+        "amount": 1
+      },
+      "id": "61e6c7a8-9254-4701-9dfd-d75f59ab82a1",
+      "name": "Rate Limit Pause",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [912, 0],
+      "webhookId": "0e2317c6-88c1-4948-8106-0b4b09a7b13d"
+    },
+    {
+      "parameters": {
+        "method": "DELETE",
+        "url": "=https://REPLACE_SUPABASE_PROJECT_URL/rest/v1/mercedes_inventory?updated_at=lt.{{ $('Capture Sync Start').first().json.sync_started_at }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "REPLACE_SUPABASE_ANON_KEY"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer REPLACE_SUPABASE_ANON_KEY"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Prefer",
+              "value": "return=representation"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "de4c510e-4705-4079-9fb1-9d84ba60df43",
+      "name": "Remove Stale Vehicles",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [16, 384]
+    },
+    {
+      "parameters": {
+        "jsCode": "const now = new Date().toISOString();\nconst syncStart = $('Capture Sync Start').first().json.sync_started_at || 'unknown';\nreturn { json: { status: 'sync_complete', message: 'Mercedes SB inventory sync finished', sync_started: syncStart, sync_ended: now, duration_ms: new Date(now) - new Date(syncStart) } };"
+      },
+      "id": "e52da391-1adf-4ed1-baf4-11f803fa04cc",
+      "name": "Log Sync Complete",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [240, 384]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Every 4 Hours": {
+      "main": [
+        [
+          {
+            "node": "Capture Sync Start",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Capture Sync Start": {
+      "main": [
+        [
+          {
+            "node": "Get Total Count",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Total Count": {
+      "main": [
+        [
+          {
+            "node": "Validate API Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate API Response": {
+      "main": [
+        [
+          {
+            "node": "Build Page Offsets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Page Offsets": {
+      "main": [
+        [
+          {
+            "node": "Loop Pages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Pages": {
+      "main": [
+        [
+          {
+            "node": "Remove Stale Vehicles",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Fetch Inventory Page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Inventory Page": {
+      "main": [
+        [
+          {
+            "node": "Parse Vehicles",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Vehicles": {
+      "main": [
+        [
+          {
+            "node": "Upsert to Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upsert to Supabase": {
+      "main": [
+        [
+          {
+            "node": "Reduce to Loop Signal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reduce to Loop Signal": {
+      "main": [
+        [
+          {
+            "node": "Rate Limit Pause",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rate Limit Pause": {
+      "main": [
+        [
+          {
+            "node": "Loop Pages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Remove Stale Vehicles": {
+      "main": [
+        [
+          {
+            "node": "Log Sync Complete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "fa82b44d-36b8-464f-979b-a8970f9a6638",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "22cc04f06d3f6736ca808bade08c4cc55067908d959edc6a03e31fb4be0c6eb0"
+  },
+  "id": "Q9btq3blA2p5m4Sz",
+  "tags": []
+}

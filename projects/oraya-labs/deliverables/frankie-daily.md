@@ -1,74 +1,43 @@
-# Frankie's Daily Actions -- Sunday, March 29, 2026
-
-**4 DAYS TO MERCEDES DEADLINE (April 2)**
-
----
-
-## TODAY (Sunday, March 29)
-
-### 1. CALL KHALID TODAY [CRITICAL -- #1 HIGHEST-ROI ACTION]
-This is the single most important thing you can do today. Everything else can be delegated. This cannot. Keep it casual: "Hey Khalid, we rebuilt everything with a technical co-founder. Sending you the full package this week. Just wanted to give you a heads up." That plants the seed. When the email arrives Wednesday, he opens it immediately instead of ignoring it after 6 months of silence.
-
-### 2. REVIEW MERCEDES EMAIL DRAFT [CRITICAL]
-Chitraksh is cleaning up the email you drafted last night (removing AI dashes, tightening language, changing pilot to 30-45 days). When he sends it, read it on your phone first. That is how Khalid will read it. If anything feels off on a small screen, flag it. Do NOT add Khalid's email yet.
-
-### 3. E&O + CYBER LIABILITY: GET A QUOTE TODAY [HIGH]
-Your email says "tech E&O in place." If Khalid asks for proof and you say "we are getting quotes," the credibility drops. Next Insurance and Hiscox give online quotes instantly, even on Sunday. $100-300/mo target. If you bind a policy Monday, you can attach proof of insurance to the Mercedes email. That is what separates Oraya from every other AI startup pitching dealerships.
-
-### 4. RESEARCH LEGALZOOM [HIGH]
-Can they add a foreign national (Indian citizen) to an existing California C Corp? What documents from Chitraksh? Timeline and cost? You do not need to file today, just get the answers so Monday you can call and start the process.
-
-### 5. JOIN HUMAN TRANSFER TEST WITH CHITRAKSH [MEDIUM]
-You play the "advisor" while the AI transfers. Does the agent brief you before connecting? If cold transfer is all that works reliably, it is still enough for the pilot.
-
-### 6. FIND YOUR SALES MOTION SCRIPT [MEDIUM]
-The ChatGPT-generated script for selling Oraya automation packages. If you cannot find it by tonight, tell Chitraksh and Claude will regenerate one based on your selling style from Meeting 14.
-
-### 7. PREPARE MONDAY CHARGEBACK PAYMENT ($1,000-1,100) [LOW]
-Offices closed today. Have the payment ready to go first thing Monday morning.
+# Frankie's Daily Action List
+**Date:** April 4, 2026
+**Generated:** Automated Daily Briefing (Sentient Protocol)
+**Status:** MERCEDES DEADLINE PASSED 2 DAYS AGO -- CONFIRM SEND OR ESCALATE NOW
 
 ---
 
-## 3-DAY HORIZON (Mon Mar 30 to Wed Apr 1)
+## PRIORITY QUEUE (Ranked by Urgency)
 
-### Monday AM: Pay Chargeback + Call LegalZoom
-Two calls, first thing. Chargeback payment reduces insurance balance to ~$3,100. LegalZoom starts the process of adding Chitraksh to the C Corp. Both feed into the "full compliance" claim in the Mercedes email.
+**1. [OVERDUE x2] CONFIRM MERCEDES EMAIL WAS SENT**
+The full package was due April 2 to Mercedes-Benz South Bay (Torrance). It is now April 4 and 2 days overdue. Confirm immediately whether the email went out to Khalid and the GM with the Pilot Offer Letter PDF, Compliance Verification Report (Doc B v2), SLA, Pilot SOW, and finalized minutes. If NOT sent, stop everything and send or call Chitraksh to finalize. This is the #1 revenue opportunity.
 
-### Monday: Bind E&O Insurance Policy
-Next Insurance and Hiscox can bind within 24-48 hours online. Do this Monday so proof of insurance is in hand by Tuesday. Attach it to the email.
+**2. [OVERDUE x3 WEEKS] RESPOND TO REGISTERED AGENT**
+Renewal filing for Oraya Corp was due March 20. Now 15 days past due. This is an active compliance risk that could affect entity standing. Call or email the registered agent today without further delay.
 
-### Monday Evening: Joint Document Review with Chitraksh
-Every attachment, every word. Final approval. If something is off, Tuesday is the fix day.
+**3. OPEN BUSINESS BANK ACCOUNT [STILL UNBLOCKED]**
+EIN is confirmed: 93-3462113, Alameda County. Walk into Chase or Wells Fargo today and open the Oraya Corp business checking account. This unblocks Stripe setup, client billing, and adding Chitraksh as a signatory. There is no reason this has not been done yet.
 
-### Tuesday: Test Email Exchange
-Send the full Mercedes package between yourselves 2-3 times. Read on phone and laptop. Check: do PDFs open? Does email look clean? Is the tone right? Fix anything that feels off. This is the dress rehearsal.
+**4. LOCATE INVESTOR SAFE NOTE [CRITICAL LEGAL]**
+$10K in convertible notes is floating unsigned: $5K from Jared (Greg's brother) and $5K from Abdo Melek. Search email, Google Drive, iCloud, and DocuSign today. An unsigned, unnotarized SAFE in circulation is a legal liability that cannot be left open heading into equity discussions.
 
-### Wednesday (April 1): Lock and Load
-Add Khalid's email address. Send by Wednesday morning. Call Khalid within 2 hours: "Just sent you everything. Take your time reviewing it. Let me know when you want 20 minutes to walk through the pilot."
+**5. CONFIRM CHARGEBACK PAYMENT STATUS**
+A partial payment of $1,000 to $1,100 was due March 30 to reduce the balance to approximately $3,100. Confirm whether this was made. If not, pay today using whatever payment method is available. Remaining balance of $1,600 still outstanding after the partial.
 
----
+**6. ATTORNEY FOLLOW-UP: C CORP + CHITRAKSH ADDITION**
+LegalZoom was dropped. A new attorney was being sourced as of March 30. Confirm whether you have contacted one. This is blocking the equity agreement, bank signatory access for Chitraksh, and entity readiness for the pilot.
 
-## 1-WEEK HORIZON (Through Sunday, April 6)
+**7. GET E&O + CYBER LIABILITY INSURANCE QUOTES**
+Target: $100 to $300 per month. Required before the Mercedes pilot launches. Contact at least 2 brokers today (Hiscox or Embroker move fast). Get quotes in writing.
 
-- **April 2: Mercedes email sent.** The big moment. Same-day follow-up call.
-- **Khalid response window: April 2-9.** Day 1: call. Day 3 (Fri Apr 4): text follow-up. Day 7 (Wed Apr 9): call directly if no response.
-- **EIN expected April 2-3.** Once received: open Mercury/Relay bank account (same day, online). Then Stripe. Then billing.
-- **Fallback: identify 5 independent Bay Area dealerships.** Non-AutoNation. If Mercedes takes weeks, do not sit idle. A smaller pilot generates revenue + case study.
-- **Locate SAFE note ($10K from Jared + Abdo Melek).** Must resolve before enterprise contracts or fundraising.
-- **Revenue pivot prep:** After April 2, shift to selling automation packages. Ads ($200-300). Need: demo video (Chitraksh building), sales script (you), working CTA on orayalabs.ai.
-- **@memeowcats social media meeting.** 15-minute call. Brand visibility for when demo video + ads go live.
+**8. FOUNDERS + EQUITY AGREEMENT STATUS**
+Was being finalized the weekend of March 28 to 30. Confirm if both founders have reviewed and signed. If not resolved, add attorney call to this week's calendar.
 
----
+**9. GHL CRM SETUP**
+Confirm that Chitraksh has admin access to GoHighLevel. Confirm whether the insurance pipeline for P2 is being configured inside GHL. This is the operational backbone for Maya's lead follow-up sequences.
 
-## PARTNER NOTES: STRAIGHT TALK
-
-1. **The Khalid call is the single highest-ROI action today.** If he gets an email out of nowhere after 6 months, he might ignore it. If he gets a personal call today and the email 3 days later, he opens it.
-2. **E&O must be BOUND, not quoted, before April 2.** The email claims it is "in place." Make that true.
-3. **Do not let the SMB revenue pivot distract from Mercedes this week.** One thing at a time. Mercedes first through April 2. Automation sales start April 3.
-4. **The SAFE note is a ticking clock.** $10K from two investors with likely unsigned documents. If you close Mercedes and then someone shows up with a claim, it derails everything. Resolve this month.
-5. **Your email draft is 90% there.** It needs: pilot changed to 30-45 days, dashes removed, and one sentence about insurance results. Chitraksh is handling this today.
-6. **Use the dashboard between meetings.** Open it once a day. Look at tasks. Check off what you did. That is how you turn awareness into a habit.
+**10. SCHEDULE @MEMEOWCATS MEETING**
+50K Instagram followers reached out. Five minutes of effort to lock in a calendar invite. Free distribution for Oraya's brand ahead of the pilot. Do it today.
 
 ---
 
-*Generated by Sentient Protocol. Next briefing: Monday, March 30.*
+*All items above are fully within Frankie's domain. No action required from Chitraksh to unblock any of them.*
+*Highest leverage action today: Mercedes confirmation + bank account opened.*

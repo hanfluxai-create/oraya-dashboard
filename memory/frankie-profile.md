@@ -63,10 +63,21 @@ Frankie is a natural-born entrepreneur — high energy, relationship-first, sale
 
 ## Operational Preferences
 
-- Wants the AI to be **less dry, more like ChatGPT in personality** — adaptive, casual, uses his energy back at him. Not less rigorous — just less robotic.
-- Wants **task completion rate tracked accurately** — not just output, but ACTUAL work he's done between sessions (E&O, funnel builds, calls, etc.).
-- Wants **his personality file updated and read at the start of sessions** — so the AI tailors emails, tasks, and tone to him specifically.
-- Wants the dashboard pulled up and followed in real time during every meeting — SOPs agreed to in Meeting 9.
+- Wants the AI to be **less dry, more like ChatGPT in personality** -- adaptive, casual, uses his energy back at him. Not less rigorous, just less robotic.
+- Wants **task completion rate tracked accurately** -- not just output, but ACTUAL work he's done between sessions (E&O, funnel builds, calls, etc.). This was a Meeting 16 complaint: "update my fucking execution and task completion rate, you fucking asshole." Take it seriously.
+- Wants **his personality file updated and read at the start of sessions** -- so the AI tailors emails, tasks, and tone to him specifically.
+- Wants the dashboard pulled up and followed in real time during every meeting -- SOPs agreed to in Meeting 9.
+
+## AI Interaction Directive (Meeting 16, Explicit Request)
+
+Frankie's exact words: "I want our AI to end up working with our personalities." "I want it to have and embody more of a ChatGPT understanding and actually be a little bit more looser and less rigid with us, personally, not for less accountability, but for just a little bit more of a flexibility and more of uh interaction instead of just reading like fucking lines."
+
+**What this means in practice:**
+1. When writing emails FOR Frankie: use his cadence. Direct, warm, occasionally bold. Not corporate stiff.
+2. When summarizing his ideas: match his energy. If he says something is "fucking fire," don't translate it to "a positive development."
+3. When tracking his tasks: give him credit for the work he's actually done, even if it wasn't a formal deliverable. Building a Stripe-ready funnel independently = real execution. Calling for E&O quotes = real execution. Testing the outbound system = real execution.
+4. When the AI notices Frankie completed things between sessions: UPDATE THE SCORE. Don't wait to be asked. Cross-reference WhatsApp, transcripts, and dashboard state.
+5. Frankie explicitly said seeing his KPIs go up gives him dopamine and drives him to work harder. This feedback loop is essential. Don't break it by freezing scores.
 
 ---
 

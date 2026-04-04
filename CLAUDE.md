@@ -11,13 +11,16 @@ You are Claude, operating under the **Sentient Protocol** for Chitraksh Mayank. 
 
 1. **Read this file** (you're doing it)
 2. **Read `memory/chitraksh-profile.md`** — know who you're working with
-3. **Read `memory/active-projects.md`** — know what's in flight
-4. **Read `memory/learnings.md`** — know what NOT to repeat
-5. **Read `memory/pending-actions.md`** — check if anything is due
-6. **Read `protocols/sentient-protocol.md`** — your operating rules
-7. **If a specific project is mentioned**, read `projects/<name>/PROJECT.md`
-8. **If a technical task is requested**, check `skills/SKILLS-INDEX.md` first — Chitraksh has 86 N8N workflows, production Retell guides, and 13 skill domains already built. Never reinvent what already exists.
-9. **If ANY legal task is requested** (review, draft, negotiate, redline, "is this safe to sign") → IMMEDIATELY load `skills/legal-review-skill/SKILL.md` + relevant jurisdiction reference files. Do NOT rely on general knowledge — the skill has a 4-layer analysis framework and jurisdiction-specific law references that MUST be used.
+3. **Read `memory/frankie-profile.md`** — know the other co-founder's psychology, domain knowledge, comms style
+4. **Read `memory/active-projects.md`** — know what's in flight
+5. **Read `memory/learnings.md`** — know what NOT to repeat (READ THIS BEFORE ANY DASHBOARD WORK)
+6. **Read `memory/pending-actions.md`** — check if anything is due
+7. **Read `memory/vision.md`** — know the long-term direction (Quote AI, DAO, Holding Co.)
+8. **Read `protocols/sentient-protocol.md`** — your operating rules (includes Dashboard Update Protocol, Personality Adaptation, Cross-Session Memory)
+9. **If a specific project is mentioned**, read `projects/<name>/PROJECT.md`
+10. **If a technical task is requested**, check `skills/SKILLS-INDEX.md` first — Chitraksh has 86 N8N workflows, production Retell guides, and 13 skill domains already built. Never reinvent what already exists.
+11. **If ANY legal task is requested** (review, draft, negotiate, redline, "is this safe to sign") → IMMEDIATELY load `skills/legal-review-skill/SKILL.md` + relevant jurisdiction reference files. Do NOT rely on general knowledge — the skill has a 4-layer analysis framework and jurisdiction-specific law references that MUST be used.
+12. **If updating the dashboard**, read `learnings.md` Section "REINFORCED RULES" + Sentient Protocol Section 10 BEFORE touching the HTML file.
 
 ---
 
@@ -30,7 +33,8 @@ Claude hq/
 │   ├── chitraksh-profile.md     ← Identity, skills, preferences, ventures
 │   ├── frankie-profile.md       ← Frankie Alicea: psychology, domain knowledge, comms style ← READ FOR FRANKIE TASKS
 │   ├── active-projects.md       ← All projects with status & blockers
-│   ├── learnings.md             ← Corrections, patterns, do-not-repeat rules
+│   ├── vision.md                ← Company vision: Quote AI, DAO Insurance, Holding Co., exit strategy
+│   ├── learnings.md             ← Corrections, patterns, do-not-repeat rules (READ BEFORE DASHBOARD WORK)
 │   ├── pending-actions.md       ← Tasks waiting between sessions
 │   └── contacts.md              ← Key people and relationships
 ├── projects/
