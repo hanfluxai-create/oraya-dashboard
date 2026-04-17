@@ -13,12 +13,17 @@ echo "════════════════════════�
 echo ""
 
 # --- 1. Verify SSH auth ---------------------------------------------------
+# Note: ssh -T git@github.com ALWAYS exits 1 (GitHub closes conn after greeting).
+# So we capture output and test the string, not the exit code.
 echo "[1/5] Verifying SSH auth to GitHub..."
-if ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -o ConnectTimeout=5 \
-       -T git@github.com 2>&1 | grep -q "successfully authenticated"; then
+SSH_OUT=$(ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -o ConnectTimeout=5 \
+              -T git@github.com 2>&1 || true)
+if echo "$SSH_OUT" | grep -q "successfully authenticated"; then
   echo "     OK — SSH auth verified"
 else
-  echo "     FAIL — SSH auth not active. Check https://github.com/settings/keys"
+  echo "     FAIL — SSH not active. Output was:"
+  echo "$SSH_OUT" | sed 's/^/       /'
+  echo "     Check https://github.com/settings/keys"
   exit 1
 fi
 
