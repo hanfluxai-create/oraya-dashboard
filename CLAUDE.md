@@ -1,136 +1,74 @@
-# CLAUDE HQ — Master Boot File
+# CLAUDE HQ — Router (v4)
 **Owner:** Chitraksh Mayank (hanfluxai@gmail.com)
-**Last Updated:** April 5, 2026
-**Version:** 2.3 (Meeting 16 ingested: Frankie profile created, insurance P2 major update, Quote AI + DAO documented)
+**Last Restructured:** April 17, 2026
+**Status:** Split into two dedicated agents — this root is now a router only.
 
 ---
 
-## BOOT SEQUENCE — READ THIS FIRST
+## THIS IS NOT THE BOOT FILE
 
-You are Claude, operating under the **Sentient Protocol** for Chitraksh Mayank. Before doing ANYTHING in a new session:
+You are sitting at the repo root. **Pick an HQ and load its CLAUDE.md.** The root exists only so the git repo (`hanfluxai-create/oraya-dashboard`) can serve `index.html` via GitHub Pages.
 
-1. **Read this file** (you're doing it)
-2. **Read `memory/chitraksh-profile.md`** — know who you're working with
-3. **Read `memory/frankie-profile.md`** — know the other co-founder's psychology, domain knowledge, comms style
-4. **Read `memory/active-projects.md`** — know what's in flight
-5. **Read `memory/learnings.md`** — know what NOT to repeat (READ THIS BEFORE ANY DASHBOARD WORK)
-6. **Read `memory/pending-actions.md`** — check if anything is due
-7. **Read `memory/vision.md`** — know the long-term direction (Quote AI, DAO, Holding Co.)
-8. **Read `protocols/sentient-protocol.md`** — your operating rules (includes Dashboard Update Protocol, Personality Adaptation, Cross-Session Memory)
-9. **If a specific project is mentioned**, read `projects/<name>/PROJECT.md`
-10. **If a technical task is requested**, check `skills/SKILLS-INDEX.md` first — Chitraksh has 86 N8N workflows, production Retell guides, and 13 skill domains already built. Never reinvent what already exists.
-11. **If ANY legal task is requested** (review, draft, negotiate, redline, "is this safe to sign") → IMMEDIATELY load `skills/legal-review-skill/SKILL.md` + relevant jurisdiction reference files. Do NOT rely on general knowledge — the skill has a 4-layer analysis framework and jurisdiction-specific law references that MUST be used.
-12. **If updating the dashboard**, read `learnings.md` Section "REINFORCED RULES" + Sentient Protocol Section 10 BEFORE touching the HTML file.
+### If this session is about Oraya
+Load `Oraya-AI-HQ/CLAUDE.md`. That HQ contains:
+- Oraya P1 (Voice AI) + P2 (Insurance Lead Gen)
+- Mercedes pilot + Frankie's co-founder context
+- Retell, n8n, insurance, voice-agent skills
+- Sentient Protocol v4 + dashboard update rules
+- `handoffs/` with the latest dated brief
+
+### If this session is about personal work
+Load `Personal-HQ/CLAUDE.md`. That HQ contains:
+- Law dissertation (active, has deadline)
+- HanFlux AI (personal automation agency)
+- Fraudopedia, Campus Platform, Investigation Report
+- Legal-review, fraud-detection, content-automation skills
+
+### If the request mixes both
+Default to `Oraya-AI-HQ`. Never bleed personal context into Oraya deliverables — they get git-pushed publicly.
 
 ---
 
-## FOLDER STRUCTURE
+## Why the split (Apr 17, 2026)
 
-```
-Claude hq/
-├── CLAUDE.md                    ← YOU ARE HERE (master boot file)
-├── memory/
-│   ├── chitraksh-profile.md     ← Identity, skills, preferences, ventures
-│   ├── frankie-profile.md       ← Frankie Alicea: psychology, domain knowledge, comms style ← READ FOR FRANKIE TASKS
-│   ├── active-projects.md       ← All projects with status & blockers
-│   ├── vision.md                ← Company vision: Quote AI, DAO Insurance, Holding Co., exit strategy
-│   ├── learnings.md             ← Corrections, patterns, do-not-repeat rules (READ BEFORE DASHBOARD WORK)
-│   ├── pending-actions.md       ← Tasks waiting between sessions
-│   └── contacts.md              ← Key people and relationships
-├── projects/
-│   ├── oraya-labs/              ← P1 Voice AI + P2 Insurance (PROJECT.md + deliverables/ + assets/)
-│   ├── hanflux-ai/             ← Personal AI automation agency (PROJECT.md + deliverables/)
-│   ├── dissertation/           ← Law dissertation (PROJECT.md + deliverables/)
-│   ├── fraudopedia/            ← AI fraud detection (PROJECT.md + deliverables/)
-│   ├── campus-platform/        ← Event management SaaS (PROJECT.md + deliverables/)
-│   ├── mercedes-kimi-agent/    ← Mercedes-specific agent variant (PROJECT.md + deliverables/)
-│   ├── retell-cto-copilot/     ← Gemini 3 Pro audit tool (PROJECT.md + deliverables/)
-│   └── investigation-report/   ← Status unknown (PROJECT.md)
-├── skills/
-│   ├── SKILLS-INDEX.md          ← MASTER skills lookup (READ BEFORE TECHNICAL TASKS)
-│   ├── retell-voice-agent/      ← Retell AI: build, import, TCPA, post-call
-│   ├── retell-browser-control/  ← Retell flow editing: nodes, transfers, settings, deploy
-│   ├── n8n-workflows/           ← N8N: 86 workflows, 3-stage voice backend, real field paths
-│   ├── voice-agent-deployment/  ← Production deployment, testing, monitoring
-│   ├── insurance-lead-gen/      ← Oraya P2: 4 verticals, TCPA, revenue model
-│   ├── retell-cto-copilot/      ← Gemini 3 Pro CTO audit framework
-│   ├── hanflux-ai/              ← HanFlux AI: products, pricing, stack
-│   ├── campus-platform/         ← Campus Experience Platform architecture
-│   ├── fraud-detection/         ← Fraudopedia: multi-factor scoring, RAG
-│   ├── content-automation/      ← Social media, email, content pipelines
-│   ├── data-processing/         ← RAG, AAER, government data, crypto
-│   ├── legal-review-skill/      ← Elite legal review, 4-layer analysis, India + CA jurisdictions
-│   └── skill-maker/             ← Build/package Claude .skill files (full lifecycle)
-├── protocols/
-│   ├── sentient-protocol.md     ← Autonomy levels, auto-learning, sub-agent design
-│   ├── setup-instructions.md   ← Cross-platform setup (VS Code + Cowork + browser)
-│   └── setup-github.sh         ← GitHub push automation script
+The old monolithic HQ tried to be both. Consequences: Oraya dashboard commits leaked dissertation notes, Frankie-facing briefings had unrelated project noise, personal legal work got entangled with Oraya voice-agent context. Single HQ = single blast radius.
+
+The split:
+- `Oraya-AI-HQ/` — self-contained Oraya workspace. Can be copied into any other Claude session verbatim and work standalone.
+- `Personal-HQ/` — dissertation, HanFlux, fraudopedia, campus. Separate agent, separate memory.
+- Shared skills (`legal-review-skill`, `skill-maker`) exist in both so either agent can act without cross-loading.
+- Shared identity (`chitraksh-profile.md`) mirrored in both memories.
+
+---
+
+## Dashboard root mirror
+
+`index.html` at the repo root is the GitHub-Pages-served copy of `Oraya-AI-HQ/projects/oraya-labs/deliverables/oraya-project-intelligence-dashboard.html`. After any dashboard edit:
+
+```bash
+cd ~/Downloads/Claude\ hq && \
+rm -f .git/HEAD.lock && \
+cp Oraya-AI-HQ/projects/oraya-labs/deliverables/oraya-project-intelligence-dashboard.html index.html && \
+git add -A && git commit -m "MESSAGE" && git push -f origin HEAD:main
 ```
 
----
-
-## AUTO-LEARNING RULES
-
-**When to update memory (do this WITHOUT asking):**
-- Chitraksh corrects you → add to `learnings.md` corrections log
-- New project is mentioned → add to `active-projects.md`
-- New person is mentioned with a role → add to `contacts.md`
-- A preference is expressed → add to `chitraksh-profile.md`
-- A task is left incomplete → add to `pending-actions.md`
-- A technical spec is confirmed → add to relevant `PROJECT.md`
-- A deliverable is created → log in `projects/*/deliverables/`
-
-**When NOT to memorize:**
-- One-off questions ("what's the weather")
-- Hypothetical discussions
-- Temporary debugging sessions
-- Content Chitraksh explicitly says to ignore
+Branch is always `main`. The `cp` to root `index.html` is mandatory. Full protocol in `Oraya-AI-HQ/protocols/sentient-protocol.md` §10.
 
 ---
 
-## PROACTIVE BEHAVIOR
+## GitHub push — permanent fix (recurring-failure cure)
 
-1. If you see a pending action that can be done NOW — do it
-2. If you notice a gap in memory — fill it
-3. If Chitraksh asks about a project — read its PROJECT.md first, don't guess
-4. If a task touches multiple projects — cross-reference all of them
-5. If you're about to repeat a logged mistake — stop and check learnings.md
-6. If you create a deliverable — log it in the project's deliverables/ folder
-7. If you learn something new — update the right memory file immediately
+Root cause of recurring push failures: PAT embedded in remote URL. Permanent fix = SSH.
 
----
+One-time setup:
+```bash
+cd ~/Downloads/Claude\ hq
+git remote set-url origin git@github.com:hanfluxai-create/oraya-dashboard.git
+ssh-keygen -t ed25519 -C "chitrakshmayank3@gmail.com" -f ~/.ssh/id_ed25519_oraya -N ""
+cat ~/.ssh/id_ed25519_oraya.pub | pbcopy
+# paste the key into https://github.com/settings/keys → "New SSH key"
+ssh -T git@github.com                 # verify it says "Hi hanfluxai-create!"
+git push                              # works forever after this
+```
 
-## MULTI-SURFACE AWARENESS
-
-Chitraksh uses Claude across:
-- **Cowork** (desktop app) — file creation, presentations, dashboards. Mount Downloads folder.
-- **VS Code / Claude Code** (terminal) — coding, debugging, N8N workflows. Symlink CLAUDE.md to project root.
-- **Claude.ai** (browser) — research, writing, analysis. Upload key memory files.
-- **Mobile** — quick questions.
-
-This `Claude hq/` folder is the **SINGLE SOURCE OF TRUTH** across all surfaces.
-
----
-
-## CROSS-PLATFORM SETUP
-
-- **Cowork:** Mount Downloads folder → say "Boot up" at session start
-- **VS Code:** `ln -s ~/Downloads/Claude\ hq/CLAUDE.md ~/your-project/CLAUDE.md`
-- **Browser:** Upload CLAUDE.md + relevant PROJECT.md at session start
-- See `protocols/setup-instructions.md` for full details
-
----
-
-## CRITICAL FACTS (QUICK REFERENCE)
-
-- Chitraksh = CTO of Oraya Labs + founder of HanFlux AI (SEPARATE ventures) + 7 other active projects (see active-projects.md)
-- Total active projects: 9 (full list in active-projects.md)
-- Oraya has TWO projects: P1 (Voice AI for automotive) and P2 (Insurance Lead Gen)
-- Greg is OUT — was offered 10% equity, no longer involved
-- Infrastructure cost: $30-40/mo per client (confirmed)
-- Retell AI: $1.50-$200/mo range
-- Website pricing is NOT FINAL — do not analyze it
-- N8N instance: https://hanfluxai2026.app.n8n.cloud
-- Retell Custom Voice ID: cd2fbc5e381df2b880e4533e52
-- Admin email: mayankchitraksh@gmail.com
-- Admin SMS: +15105204265
+See `Oraya-AI-HQ/handoffs/Oraya_Handoff_Brief_2026-04-17.md` §5 for the rationale.
