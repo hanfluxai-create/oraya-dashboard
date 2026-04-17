@@ -1,56 +1,67 @@
 #!/bin/bash
 # ============================================================
-# Oraya Dashboard — One-Time GitHub Setup Script
-# Run this ONCE on your Mac terminal to create the repo + push
+# Oraya Dashboard — One-Time GitHub SSH Setup (Apr 17, 2026)
+# Replaces the old PAT-based setup. PAT revoked + migrated to SSH.
+# Rerun is safe: script is idempotent.
 # ============================================================
+set -e
 
-PAT="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"
 GITHUB_USER="hanfluxai-create"
 REPO_NAME="oraya-dashboard"
-DASHBOARD_FILE="$(dirname "$0")/projects/oraya-labs/deliverables/oraya-project-intelligence-dashboard.html"
+KEY="$HOME/.ssh/id_ed25519_oraya"
 
-echo "🚀 Setting up Oraya Dashboard on GitHub..."
+echo "Setting up Oraya Dashboard GitHub access via SSH..."
 
-# Step 1: Create private repo
-echo "📦 Creating private repo..."
-RESPONSE=$(curl -s -X POST \
-  -H "Authorization: token $PAT" \
-  -H "Accept: application/vnd.github.v3+json" \
-  https://api.github.com/user/repos \
-  -d "{\"name\":\"$REPO_NAME\",\"private\":true,\"description\":\"Oraya Labs Project Intelligence Dashboard\"}")
+# Step 1 — SSH key (create if missing)
+if [ ! -f "$KEY" ]; then
+  mkdir -p "$HOME/.ssh" && chmod 700 "$HOME/.ssh"
+  ssh-keygen -t ed25519 -C "chitrakshmayank3@gmail.com" -f "$KEY" -N "" -q
+  echo "Generated new SSH key at $KEY"
+else
+  echo "SSH key already exists at $KEY"
+fi
 
-echo "$RESPONSE" | grep -q '"full_name"' && echo "✅ Repo created!" || echo "⚠️  Repo may already exist, continuing..."
+# Step 2 — SSH config (idempotent)
+if ! grep -q "IdentityFile $KEY" "$HOME/.ssh/config" 2>/dev/null; then
+  cat >> "$HOME/.ssh/config" <<EOF
 
-# Step 2: Set up local git repo
-TMPDIR=$(mktemp -d)
-cp "$DASHBOARD_FILE" "$TMPDIR/index.html"
+Host github.com
+  HostName github.com
+  User git
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile $KEY
+  IdentitiesOnly yes
+EOF
+  chmod 600 "$HOME/.ssh/config"
+fi
 
-cd "$TMPDIR"
-git init
-git config user.email "hanfluxai@gmail.com"
-git config user.name "Chitraksh Mayank"
-git add index.html
-git commit -m "Initial deploy: Oraya Project Intelligence Dashboard"
+# Step 3 — Agent + keychain
+eval "$(ssh-agent -s)" > /dev/null
+ssh-add --apple-use-keychain "$KEY" 2>/dev/null || ssh-add "$KEY" 2>/dev/null || true
 
-# Step 3: Push to GitHub
-git remote add origin "https://$GITHUB_USER:$PAT@github.com/$GITHUB_USER/$REPO_NAME.git"
-git branch -M main
-git push -u origin main
+# Step 4 — Copy pubkey to clipboard
+pbcopy < "$KEY.pub"
+echo ""
+echo "Public key copied to clipboard."
+echo "If not already added, paste it at: https://github.com/settings/ssh/new"
+echo ""
+
+# Step 5 — Verify auth
+if ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -T git@github.com 2>&1 | grep -q "successfully authenticated"; then
+  echo "SSH auth verified. You can push with plain 'git push' from now on."
+else
+  echo "SSH auth NOT yet active. Paste the key on GitHub first, then rerun."
+  exit 1
+fi
+
+# Step 6 — Ensure remote uses SSH
+REPO_DIR="$(dirname "$0")/.."
+cd "$REPO_DIR"
+if git remote get-url origin 2>/dev/null | grep -q "https://"; then
+  git remote set-url origin "git@github.com:$GITHUB_USER/$REPO_NAME.git"
+  echo "Remote switched from HTTPS to SSH."
+fi
 
 echo ""
-echo "✅ Done! Your repo is live at:"
-echo "   https://github.com/$GITHUB_USER/$REPO_NAME"
-echo ""
-echo "🔗 Next: Connect to Vercel at https://vercel.com/new"
-echo "   → Import from GitHub → select '$REPO_NAME' → Deploy"
-echo ""
-echo "📁 Repo path stored for future Claude auto-pushes."
-
-# Save config for Claude future use
-CONFIG_FILE="$(dirname "$0")/.github-config"
-echo "GITHUB_USER=$GITHUB_USER" > "$CONFIG_FILE"
-echo "REPO_NAME=$REPO_NAME" >> "$CONFIG_FILE"
-echo "PAT=$PAT" >> "$CONFIG_FILE"
-echo "REMOTE=https://github.com/$GITHUB_USER/$REPO_NAME" >> "$CONFIG_FILE"
-
-echo "🔐 Config saved to Claude hq/.github-config"
+echo "Done. Repo: https://github.com/$GITHUB_USER/$REPO_NAME"
