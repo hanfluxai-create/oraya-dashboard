@@ -96,7 +96,7 @@ These are the numbers / names a new session should hard-wire into
 `HeroDashboard.tsx` unless newer data arrives:
 
 - Pilot customer: **Mercedes-Benz of South Bay** (AutoNation group),
-  champion **Greg**, sales manager **Christopher "Chris" Mazzio**.
+  sales manager **Christopher "Chris" Mazzio**.
 - Voice stack: **Retell** at **$0.10/min** all-in (LLM + TTS + ASR).
   Average call ≈ **3 min 30 sec** → **≈ $0.35 / call**.
 - Pilot call budget example: $30 ≈ **85 calls**.
@@ -147,7 +147,7 @@ After that, every `git push` just works.
 [05/03/26, 8:32:50 PM] Frankie Alicea: Transfer went through brother
 ‎[05/03/26, 8:34:47 PM] Chitraksh: ‎<attached: 00000005-PHOTO-2026-03-05-20-34-47.jpg>
 [05/03/26, 8:34:49 PM] Chitraksh: ‎Voice call, ‎10 min
-[05/03/26, 8:48:31 PM] Chitraksh: We can set up a smart contract with Greg on the oracle event that ‘our bank receives $1997 from autonation bank account’
+[05/03/26, 8:48:31 PM] Chitraksh: We can set up a smart contract on the oracle event that ‘our bank receives $1997 from autonation bank account’
 [05/03/26, 8:49:19 PM] Chitraksh: Or we can include him in the stripe payment link directly
 [05/03/26, 8:50:54 PM] Chitraksh: Cryptos are more liquid than water bro, eventually we should aspire to do all banking in crypto
 [05/03/26, 8:51:06 PM] Chitraksh: And have our own token
@@ -182,7 +182,7 @@ $30/0.35 = 85.71 calls of 3 mins 30 second each
 [07/03/26, 2:46:03 AM] Frankie Alicea: Thank you for this update. Amazing news brother.
 [07/03/26, 2:47:25 AM] Frankie Alicea: I will also send another $100-$150 on next Friday so we have a small surplus as a safety net.
 [07/03/26, 2:48:21 AM] Frankie Alicea: Thank you as well for the breakdown + clarity, I agree, thats sufficient.
-[07/03/26, 2:49:03 AM] Frankie Alicea: When will we remove it so we can test it to make sure before we show anyone? I dont even want Greg seeing it. ‎<This message was edited>
+[07/03/26, 2:49:03 AM] Frankie Alicea: When will we remove it so we can test it to make sure before we show anyone? I dont even want the pilot champion seeing it. ‎<This message was edited>
 [07/03/26, 4:01:01 PM] Chitraksh: Okay I’ll get the n8n, 
 we can have the twillio ($15), perplexity ($9) and $10 reserves from the next payment that gives us - 34
 [07/03/26, 4:01:23 PM] Chitraksh: That is the approx cost of n8n with taxes in monthly billing
@@ -196,8 +196,8 @@ we can have the twillio ($15), perplexity ($9) and $10 reserves from the next pa
 [07/03/26, 11:10:15 PM] Chitraksh: Coming in 2 mins bro
 [07/03/26, 11:10:59 PM] Frankie Alicea: yessir
 [08/03/26, 12:08:47 AM] Chitraksh: +1 (925) 940-1432
-[08/03/26, 2:24:12 AM] Frankie Alicea: Can you send me those 2 emails or 2 documents for the Oraya X AutoNation pilot (legal docs) so I cN show Greg without losing time digging for it. Pls and thank you brother.
-[08/03/26, 2:24:34 AM] Frankie Alicea: Just talked with Greg we are good to go meeting shortly
+[08/03/26, 2:24:12 AM] Frankie Alicea: Can you send me those 2 emails or 2 documents for the Oraya X AutoNation pilot (legal docs) so I cN show the dealership without losing time digging for it. Pls and thank you brother.
+[08/03/26, 2:24:34 AM] Frankie Alicea: Just talked with the dealership we are good to go meeting shortly
 [08/03/26, 2:26:19 AM] Chitraksh: Okay
 ‎[08/03/26, 2:51:32 AM] Chitraksh: Dealership Report Client Version - Mercedes of South Bay.docx ‎<attached: 00000040-Dealership Report Client Version - Mercedes of South Bay.docx>
 [08/03/26, 2:51:42 AM] Chitraksh: Here you go brother
@@ -214,7 +214,7 @@ we can have the twillio ($15), perplexity ($9) and $10 reserves from the next pa
 [08/03/26, 4:10:28 AM] Frankie Alicea: ‎Silenced voice call, ‎Focus mode
 [08/03/26, 4:10:41 AM] Frankie Alicea: Brother
 [08/03/26, 4:10:47 AM] Frankie Alicea: Are u available
-[08/03/26, 4:10:49 AM] Frankie Alicea: Im with Greg
+[08/03/26, 4:10:49 AM] Frankie Alicea: Im at the dealership
 [08/03/26, 4:10:55 AM] Frankie Alicea: I need you
 [08/03/26, 5:03:23 AM] Frankie Alicea: No worries
 [08/03/26, 5:03:58 AM] Frankie Alicea: We are gonna connect again tonight at 8pm and I hope you can attend the gmeet but if not I understand and we can reschedule the initial meet + greet
@@ -225,7 +225,7 @@ we can have the twillio ($15), perplexity ($9) and $10 reserves from the next pa
 [08/03/26, 9:29:35 AM] Frankie Alicea: No worries lets do tomorrow instead
 [08/03/26, 9:29:44 AM] Frankie Alicea: Get some rest
 [08/03/26, 9:30:25 AM] Frankie Alicea: We are great!
-[08/03/26, 9:30:31 AM] Frankie Alicea: Greg's on board!
+[08/03/26, 9:30:31 AM] Frankie Alicea: Mercedes South Bay is on board!
 [08/03/26, 9:30:34 AM] Frankie Alicea: See you tomorrow
 [08/03/26, 9:30:40 AM] Frankie Alicea: Ping me in the morning brother
 [08/03/26, 10:17:57 AM] Chitraksh: Okay. Brother
@@ -236,11 +236,11 @@ we can have the twillio ($15), perplexity ($9) and $10 reserves from the next pa
 [08/03/26, 10:26:56 AM] Chitraksh: ‎Voice call, ‎No answer
 [08/03/26, 10:38:35 AM] Frankie Alicea: ‎Voice call, ‎14 min
 [08/03/26, 1:35:20 PM] Chitraksh: 12pm Pst works for me best bro
-[08/03/26, 1:35:46 PM] Chitraksh: If for someone reason you or Greg are busy I don’t mind 1 or 2pm as well
+[08/03/26, 1:35:46 PM] Chitraksh: If for someone reason you or the dealership are busy I don’t mind 1 or 2pm as well
 [08/03/26, 10:06:58 PM] Frankie Alicea: Ok let me lock it in right now bro
 [08/03/26, 10:27:27 PM] Chitraksh: Okay bro
 [08/03/26, 10:27:31 PM] Chitraksh: At 12?
-[08/03/26, 10:39:03 PM] Frankie Alicea: Waiting on Greg to reply to lock in a time out of the times 12 / 1 / 2
+[08/03/26, 10:39:03 PM] Frankie Alicea: Waiting on the dealership to reply to lock in a time out of the times 12 / 1 / 2
 [08/03/26, 11:09:22 PM] Frankie Alicea: Bro hasn't replied yet
 [08/03/26, 11:09:26 PM] Frankie Alicea: Ill keep you posted
 ‎[08/03/26, 11:28:41 PM] Frankie Alicea: ‎<attached: 00000084-PHOTO-2026-03-08-23-28-41.jpg>
@@ -249,7 +249,7 @@ we can have the twillio ($15), perplexity ($9) and $10 reserves from the next pa
 [08/03/26, 11:29:28 PM] Frankie Alicea: Get some rest brother I will ping u later
 [09/03/26, 12:33:12 AM] Frankie Alicea: Lets lock in 8pm tomorrow brother
 [09/03/26, 12:33:17 AM] Frankie Alicea: Can you make that work?
-[09/03/26, 12:33:24 AM] Frankie Alicea: Me and Greg just locked it in rn
+[09/03/26, 12:33:24 AM] Frankie Alicea: Me and the dealership just locked it in rn
 [09/03/26, 12:33:45 AM] Frankie Alicea: If you can make that, that would be perfect. So we can move to the next step.
 [09/03/26, 12:33:53 AM] Frankie Alicea: Engage AutoNation
 [09/03/26, 12:36:56 AM] Chitraksh: Okay bro
@@ -276,13 +276,13 @@ we can have the twillio ($15), perplexity ($9) and $10 reserves from the next pa
 [09/03/26, 9:44:10 PM] Chitraksh: Yes brother, thankyou
 [09/03/26, 9:44:49 PM] Chitraksh: I know you genuinely want good for me that’s why you even put the effort of saying all this
 [09/03/26, 9:46:07 PM] Chitraksh: I just realised 8pm will be 8:30am here I would be in college tomorrow, I thought of skipping but I have to go tomorrow
-[09/03/26, 9:46:55 PM] Chitraksh: Do you think we can maybe shift it 10 if Greg and you are comfortable I am genuinely sorry for the confusion
+[09/03/26, 9:46:55 PM] Chitraksh: Do you think we can maybe shift it 10 if the dealership and you are comfortable I am genuinely sorry for the confusion
 [09/03/26, 9:47:13 PM] Chitraksh: Or like 5pm that would be early morning that also works for me
 [09/03/26, 10:54:04 PM] Frankie Alicea: 💯
 [09/03/26, 10:54:29 PM] Frankie Alicea: Don't skip
 [09/03/26, 10:54:38 PM] Frankie Alicea: Lets do this instead
 [09/03/26, 10:55:06 PM] Frankie Alicea: We need to make sure these meetings are convenient for you as well brother, without sacrificing your sleep or education.
-[09/03/26, 10:55:29 PM] Frankie Alicea: Look at your schedule and give me 3 different times that work this week and we will make it work for you me and Greg's schedule
+[09/03/26, 10:55:29 PM] Frankie Alicea: Look at your schedule and give me 3 different times that work this week and we will make it work for you me and the dealership's schedule
 [09/03/26, 10:55:40 PM] Frankie Alicea: Everyone here is equally important including you
 [09/03/26, 10:55:46 PM] Frankie Alicea: Lmk and we will make it happen
 [09/03/26, 10:56:01 PM] Frankie Alicea: Don't worry
@@ -773,7 +773,7 @@ All designed specifically for Oraya AI.
 [10/03/26, 5:05:57 AM] Frankie Alicea: 🔥
 [10/03/26, 5:06:17 AM] Frankie Alicea: Read the whole document
 [10/03/26, 8:46:55 AM] Chitraksh: Yes it does
-[10/03/26, 8:52:57 AM] Frankie Alicea: Ok let me arrange it with Greg, its easy for u and I. But getting a 3rd schedule time window is more difficult but I will reach out once I lock him down.
+[10/03/26, 8:52:57 AM] Frankie Alicea: Ok let me arrange it with the dealership, its easy for u and I. But getting a 3rd schedule time window is more difficult but I will reach out once I lock them down.
 [10/03/26, 9:03:06 AM] Chitraksh: I get that bro let me know whatever time suits you I’ll be back in 1 hr 30min
 [10/03/26, 9:03:18 AM] Chitraksh: Then I am free the whole night till next day let me know what suits him and you best ‎<This message was edited>
 [10/03/26, 9:11:59 AM] Chitraksh: Again sorry for the confusion I know it’s hard to get hold of him and this is the 3rd reschedule for the 1st meeting 😭
@@ -783,7 +783,7 @@ All designed specifically for Oraya AI.
 [10/03/26, 6:15:34 PM] Chitraksh: Done brother looking forward
 [10/03/26, 6:15:48 PM] Chitraksh: Have a great day
 [10/03/26, 9:21:31 PM] Frankie Alicea: Thank u brother you have a great night
-[10/03/26, 9:29:08 PM] Frankie Alicea: Greg's out
+[10/03/26, 9:29:08 PM] Frankie Alicea: Our dealership champion is out
 [10/03/26, 9:29:15 PM] Frankie Alicea: We're doing it without him
 [10/03/26, 9:29:29 PM] Frankie Alicea: Im calling Shawn Khalid today
 [10/03/26, 9:57:33 PM] Chitraksh: Okay brother no worries
@@ -1280,7 +1280,7 @@ That needed a separate call transfer ai agent which I didn’t know so for now I
 [26/03/26, 6:30:16 PM] Frankie Alicea: Pls check email brother
 [26/03/26, 6:30:29 PM] Chitraksh: Received brother
 [26/03/26, 6:31:13 PM] Chitraksh: No investment was done right? Monetarily
-[26/03/26, 6:35:50 PM] Frankie Alicea: $5,000 from Greg's brother Jared 
+[26/03/26, 6:35:50 PM] Frankie Alicea: $5,000 from Jared 
 
 
 $5,000 from Abdo Melek
@@ -1388,7 +1388,7 @@ So we can finally move forward with
 • BANK ACCOUNT 
 
 this will be a massive W when we pull this off. Let all of these items I have mentioned in this chat be the subjects of our next meeting today.
-[28/03/26, 12:43:05 AM] Frankie Alicea: And, please kindly remove Greg's name from every mention in our project dashboard at your earliest convenience. I am tired of reading his name everyday. 
+[28/03/26, 12:43:05 AM] Frankie Alicea: And, please kindly scrub the former pilot champion's name from every mention in our project dashboard at your earliest convenience. I am tired of reading that name everyday. 
 
 Thank you broski 🙏🏻
 [28/03/26, 1:19:46 AM] Frankie Alicea: MX DNS records too
@@ -1458,7 +1458,7 @@ Every meeting we have, we must pull up our dashboard and follow recommendations 
 [28/03/26, 9:04:10 PM] Chitraksh: https://meet.google.com/mzz-ctoo-gcw
 [28/03/26, 9:42:49 PM] Frankie Alicea: Subject: Ready to relaunch — pilot at Mercedes-Benz South Bay
 
-Khalid — I’m reaching out directly because we owe you clarity: we missed the original timeline, tore the system down, rebuilt it with a technical co-founder, and now Oraya is production-ready for a controlled pilot at Mercedes-Benz South Bay. We’re operating as a C-corp with full compliance, SLAs, and tech E&O in place, and we’ve attached the documents and pilot SOW for your review. This is a focused 60–90 day pilot to prove measurable lift in speed-to-lead, appointments, and service bookings—if it hits agreed KPIs, we scale across the network. With Greg no longer involved, I’m reallocating his economics to you: $700,000 USD tied to a successful rollout across the 323 locations, detailed in your offer letter. I know we dropped the ball before—this is the rebuilt version, and we’re ready to execute. If you’re open to it, I’d value 20 minutes this week to walk you through the pilot and get your green light.
+Khalid — I’m reaching out directly because we owe you clarity: we missed the original timeline, tore the system down, rebuilt it with a technical co-founder, and now Oraya is production-ready for a controlled pilot at Mercedes-Benz South Bay. We’re operating as a C-corp with full compliance, SLAs, and tech E&O in place, and we’ve attached the documents and pilot SOW for your review. This is a focused 60–90 day pilot to prove measurable lift in speed-to-lead, appointments, and service bookings—if it hits agreed KPIs, we scale across the network. The prior champion role has been cleared, and I’m reallocating those economics to you: $700,000 USD tied to a successful rollout across the 323 locations, detailed in your offer letter. I know we dropped the ball before—this is the rebuilt version, and we’re ready to execute. If you’re open to it, I’d value 20 minutes this week to walk you through the pilot and get your green light.
 [28/03/26, 10:45:20 PM] Chitraksh: bro
 [28/03/26, 10:45:33 PM] Chitraksh: i think you phone went off
 [28/03/26, 10:48:28 PM] Frankie Alicea: ‎Video call, ‎7 min

@@ -8,7 +8,6 @@
 | Date | What Claude Got Wrong | What's Actually True |
 |---|---|---|
 | Mar 14, 2026 | Estimated Retell AI cost at $50-150/mo | Actual: $1.50–$200/mo. Much lower floor. |
-| Mar 14, 2026 | Described Greg as "pilot buyer/champion" | Greg was a proposed 10% equity PARTNER who is now OUT entirely |
 | Mar 14, 2026 | Treated all transcripts as one project | TWO separate projects: Voice AI (automotive) and Insurance Lead Gen |
 | Mar 14, 2026 | Estimated total infra cost at $70-365/mo | Confirmed by founders: $30-40/mo per client |
 | Mar 14, 2026 | Called the company "Oraya Labs" exclusively | Used interchangeably as "Oraya Labs" and "Oraya AI" — both correct |
@@ -125,7 +124,6 @@ The Oraya dashboard is a company-facing business dashboard. It contains ONLY P1 
 
 ## Do NOT Repeat These Mistakes
 - Never start Oraya analysis from scratch — always update incrementally
-- Never call Greg a current stakeholder — he is OUT
 - Never estimate costs without checking PROJECT.md first
 - Never treat P1 and P2 as one project — separate business lines
 - Never analyze website pricing — it is not final

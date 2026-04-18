@@ -8,7 +8,6 @@
 - **Name:** Oraya Labs / Oraya AI (both used interchangeably)
 - **Website:** https://oraya-ai-h485.vercel.app/ (pricing section NOT FINAL — ignore it)
 - **Founders:** Frankie (CEO) + Chitraksh Mayank (CTO)
-- **Former:** Greg — was offered 10% equity as partner. NOW OUT. Never reference as active.
 - **Legal:** S-Corp filed. EIN filing in progress (SS-4 faxed to IRS, 4-5 day turnaround). No bank yet. No Stripe. No contracts signed.
 - **Revenue:** Pre-revenue (both projects)
 - **Notion Page:** 322915e1-bde1-8134-b8ff-d7809482809c
@@ -55,7 +54,7 @@ Gross margins: 92-96% at website pricing tiers
   - Document A (Execution Master Brief, internal)
   - Pending: Visual architecture diagram, Pilot SOW, Mutual NDA, minutes/pricing finalization
 - **Mercedes email deadline: April 2, 2026** — must finalize offer, mins, package before sending
-- Greg pilot fell through — need new champion at dealership
+- Mercedes pilot champion fell through — need new champion at dealership
 - CRM: Swapped from HubSpot → GHL (GoHighLevel) — Frankie giving admin access
 - Dashboard updated with all WhatsApp + meeting intel through Mar 27
 
@@ -114,7 +113,7 @@ His domain expertise makes P2 viable — irreplaceable
 - Stripe setup → for client billing
 - Client contracts template → not drafted
 - **Mercedes email deadline: April 2, 2026** — offer/mins/package must be finalized first
-- **CRITICAL: Investor SAFE note** — $5K from Jared (Greg's brother) + $5K from Abdo Melek. Convertible SAFE drafted but Frankie 99% sure unsigned, 100% sure not notarized. Must locate document.
+- **CRITICAL: Investor SAFE note** — $5K from Jared + $5K from Abdo Melek. Convertible SAFE drafted but Frankie 99% sure unsigned, 100% sure not notarized. Must locate document.
 - Google Workspace MX + SPF records needed in Vercel DNS for founder@orayalabs.ai
 - Founders + Equity Agreement — finalizing weekend of Mar 28-30
 - County registration: likely Alameda County (Frankie), needs lawyer confirmation

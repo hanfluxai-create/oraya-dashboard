@@ -22,12 +22,6 @@
 - **Sentiment (from transcripts):** High energy, optimistic, occasionally anxious about revenue timeline
 - **Core value:** His insurance expertise is what makes P2 viable — irreplaceable
 
-### Greg — FORMER PARTNER (OUT — Do Not Reference as Active)
-- **Status:** NO LONGER INVOLVED
-- **History:** Was offered 10% equity as a partner. Partnership did not proceed.
-- **Last status:** Was supposed to be pilot champion at Mercedes dealership — did not happen
-- **Rule:** Never reference Greg as current stakeholder under any circumstance
-
 ---
 
 ## Chitraksh's Personal Network
@@ -45,7 +39,7 @@
 - **Mercedes dealership GM/Owner** — Torrance, CA. Frankie plans to visit in person (2-3 day trip to LA).
 - **Insurance carrier contacts** — Frankie signing carrier contracts at 110% commission (week of Mar 15)
 - **Lead buyers** — needed for P2 ($40/lead resale program, not yet established)
-- **Jared** — Greg's brother. Invested $5K in Oraya for engineering (convertible SAFE note, likely unsigned).
+- **Jared** — Invested $5K in Oraya for engineering (convertible SAFE note, likely unsigned).
 - **Abdo Melek** — Invested $5K in Oraya for engineering (convertible SAFE note, likely unsigned). Must locate document.
 - **India-based CA (Chartered Accountant)** — Lives in Chitraksh's building. Friend set up Chitraksh's Indian corporation. Offering free consultation on US/India tax optimization for Oraya. Can suggest entity structuring to minimize tax liability.
 - **Registered Agent** — Currently reaching out to Oraya for renewal filing info. Old lawyer involved. [OVERDUE: needed response by end of week Mar 20. Still unresolved as of Mar 30. See pending-actions.md Needs Decision section.]

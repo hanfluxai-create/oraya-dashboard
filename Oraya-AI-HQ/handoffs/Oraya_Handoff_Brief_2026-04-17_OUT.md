@@ -57,7 +57,7 @@ Explains: "This is not the boot file. Pick an HQ and load its CLAUDE.md." Keeps 
 
 - **Oraya Corporation** — California C-Corp · EIN 93-3462113 · Principal 34837 Winchester Place, Fremont, CA 94555 · SOI due 08/31/2026.
 - **Stack** — Retell AI ($0.10/min, avg 3m30s ≈ $0.35/call, Voice ID `cd2fbc5e381df2b880e4533e52`) · n8n `https://hanfluxai2026.app.n8n.cloud` (86 workflows) · Supabase · Twilio A2P 10DLC · GoHighLevel CRM · Stripe.
-- **Pilot** — Mercedes-Benz of South Bay (AutoNation) · champion Greg (pilot-only, NO equity) · sales mgr Chris Mazzio `Mazzioc@autonation.com`.
+- **Pilot** — Mercedes-Benz of South Bay (AutoNation) · sales mgr Chris Mazzio `Mazzioc@autonation.com`.
 - **Pricing** — Voice AI baseline $997 → escalating to $3K–$5K/location/mo → long-term $7K–$11K. Insurance: $25–$50/lead OR $1,000/wk retainer.
 - **E&O** — Quoted 04/07/26. Standard $46/mo (Prof Liability) vs Plus $82.42/mo (E&O + Cyber). $1K deductible · $1M limits.
 - **Stripe** — Owner Frankie (`manifestdestiny247@gmail.com`, Chase ••••6789 USD payout, auto-payouts ON). Admin invite pending for `chitrakshmayank3@gmail.com`. $0.37 first signal on Apr 15.

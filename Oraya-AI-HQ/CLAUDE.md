@@ -140,12 +140,11 @@ After one-time key paste on GitHub, `git push` works forever.
 
 - **Chitraksh** = CTO. Technical. India. Systems-thinker. Dark themes, interactive HTML, max autonomy.
 - **Frankie Alicea** = CEO. Sales/ops. San Jose, CA. Owner of Stripe account (`manifestdestiny247@gmail.com`). Energetic, relationship-driven, casual tone, uses slang.
-- **Pilot customer:** Mercedes-Benz of South Bay (AutoNation), champion Greg, sales manager Chris Mazzio (`Mazzioc@autonation.com`).
+- **Pilot customer:** Mercedes-Benz of South Bay (AutoNation), sales manager Chris Mazzio (`Mazzioc@autonation.com`).
 - **Oraya Corporation** = California C-Corp. EIN 93-3462113. Principal 34837 Winchester Place, Fremont, CA 94555 (Alameda County). SOI due 08/31/2026.
 - **Stack:** Retell AI $0.10/min · avg call 3m30s · ~$0.35/call · n8n workflows · Supabase · Twilio · GoHighLevel CRM.
 - **Pricing:** Raising from $997 baseline toward $3K–$5K/location/mo; long-term $7K–$11K once Oraya owns the dealership data plane. Insurance: $25–$50/lead or $1,000/wk retainer.
 - **Voice stack:** Retell voice ID `cd2fbc5e381df2b880e4533e52`. n8n instance `https://hanfluxai2026.app.n8n.cloud`.
-- **Greg is OUT of equity** — offered 10%, no longer involved as equity partner (still pilot champion).
 - **Frankie 2026-04-12 feedback items** (dashboard copy): swap plumbing example for automotive + life-insurance; more CTA buttons; hero screenshot à la Vagaro; embed voice demo on site; feature Stripe payment link.
 - **Insurance E&O quote:** Standard $46/mo (Prof Liability only) vs Plus $82.42/mo (E&O + Cyber), $1K deductible, $1M limits, coverage starts 04/07/26.
 - **Stripe:** Chase ••••6789 USD payout account, automatic payouts ON. Frankie is Owner; `chitrakshmayank3@gmail.com` invited as Administrator (pending).

@@ -1480,7 +1480,7 @@
               "agent_version": 6,
               "agent_name": "OUTBOUND NEPQ+JORDAN",
               "retell_llm_dynamic_variables": {
-                "name": "Greg",
+                "name": "[REDACTED]",
                 "context": "walk in, came to dealership last week"
               },
               "collected_dynamic_variables": {
@@ -1498,11 +1498,11 @@
               "start_timestamp": 1772910706429,
               "end_timestamp": 1772910920207,
               "duration_ms": 213778,
-              "transcript": "Agent: Hi, Greg? This is Jonnathan from Mercedes of South Bay, a virtual assistant calling on a recorded line. I see you, uh, stopped by the dealership last week and I wanted to follow up. Were you looking to come back in for a test drive, or are you an existing client needing some world-class service?\nUser: Yeah. I was looking at a was looking at a couple of cars.\nUser: I don't know. None none of them really stood out.\nAgent: Got it\u2014so nothing really clicked. What are you driving right now, and what would actually need to be different for you to feel like, \"Yeah, that's the one\"?\nUser: I drive a a twenty nineteen Model x. And it needs to be it just needs to be, you know, quick very quick and powerful and strong. I needed to really, you know, accelerate when I hit the gas.\nUser: It needs \nAgent: Okay, so you want serious \nUser: to feel tight.\nAgent: Perfect\u2014so you want that raw acceleration and a chassis that feels planted, yeah? I've actually got \nUser: Yeah.\nAgent: something that might be exactly what you're after: the AMG SL 63 S E Performance hits 805 horsepower and does 0-60 in 2.8 seconds, um, it's absolutely unreal.\nUser: Wow.\nUser: Well, that does sound unreal. That that sounds nice. That sounds nice. Yeah. You think? You think I should come in to test drive that thing?\nAgent: Absolutely, 100%. Let's get that arranged for you. I have your name as Greg \u2014 to send your confirmation, what's the best email address for you?\nUser: Why don't we use my my work email? Let's go with manifest destiny two four seven g mail dot com.\nAgent: Perfect. Just to be 100% sure I've got that right \u2014 is it m-a-n-i-f-e-s-t-d-e-s-t-i-n-y-2-4-7 at gmail.com?\nUser: He's still saying they're still saying question mark.\nAgent: I apologize for \nUser: Oh, okay. Got it. Got it. Got it. Wait. Can can you repeat the email back to me again? I'm not sure I heard it correctly.\nAgent: Of course \u2014 it's m-a-n-i-f-e-s-t-d-e-s-t-i-n-y-2-4-7 at gmail.com. Does that look right?\nUser: I think I already know\nAgent: So just to confirm \u2014 is m-a-n-i-f-e-s-t-d-e-s-t-i-n-y-2-4-7 at gmail.com correct?\nUser: I've already put Okay. Yeah. No. No. Every everything is good to go.\nAgent: Great. So, what day works best for you to come in and take that AMG for a spin?\nUser: What's today?\nUser: You guys open Sunday. Tomorrow, Yeah. What don't we do tomorrow?\nAgent: Tomorrow's Sunday \u2014 we're open 10 AM to 6 PM. What time works best for you?\nUser: Give me a ten AM slot, please.\nAgent: Perfect \u2014 so you're all set for tomorrow at 10 AM to test drive that AMG SL 63 S E Performance. Before we wrap up, is there anything you'd like me to note for our sales rep, or can I help you with anything else?\nUser: No. That's that that that's that's that's it. Thank you, man. Appreciate you.\nAgent: Thank you so much for your time today, Greg. We can't wait to have you over tomorrow at 10 AM. If you ever have any questions or need assistance in the future, please don't hesitate to reach out to us at Mercedes of South Bay. Have a wonderful day.\n",
+              "transcript": "Agent: Hi, [REDACTED]? This is Jonnathan from Mercedes of South Bay, a virtual assistant calling on a recorded line. I see you, uh, stopped by the dealership last week and I wanted to follow up. Were you looking to come back in for a test drive, or are you an existing client needing some world-class service?\nUser: Yeah. I was looking at a was looking at a couple of cars.\nUser: I don't know. None none of them really stood out.\nAgent: Got it\u2014so nothing really clicked. What are you driving right now, and what would actually need to be different for you to feel like, \"Yeah, that's the one\"?\nUser: I drive a a twenty nineteen Model x. And it needs to be it just needs to be, you know, quick very quick and powerful and strong. I needed to really, you know, accelerate when I hit the gas.\nUser: It needs \nAgent: Okay, so you want serious \nUser: to feel tight.\nAgent: Perfect\u2014so you want that raw acceleration and a chassis that feels planted, yeah? I've actually got \nUser: Yeah.\nAgent: something that might be exactly what you're after: the AMG SL 63 S E Performance hits 805 horsepower and does 0-60 in 2.8 seconds, um, it's absolutely unreal.\nUser: Wow.\nUser: Well, that does sound unreal. That that sounds nice. That sounds nice. Yeah. You think? You think I should come in to test drive that thing?\nAgent: Absolutely, 100%. Let's get that arranged for you. I have your name as [REDACTED] \u2014 to send your confirmation, what's the best email address for you?\nUser: Why don't we use my my work email? Let's go with manifest destiny two four seven g mail dot com.\nAgent: Perfect. Just to be 100% sure I've got that right \u2014 is it m-a-n-i-f-e-s-t-d-e-s-t-i-n-y-2-4-7 at gmail.com?\nUser: He's still saying they're still saying question mark.\nAgent: I apologize for \nUser: Oh, okay. Got it. Got it. Got it. Wait. Can can you repeat the email back to me again? I'm not sure I heard it correctly.\nAgent: Of course \u2014 it's m-a-n-i-f-e-s-t-d-e-s-t-i-n-y-2-4-7 at gmail.com. Does that look right?\nUser: I think I already know\nAgent: So just to confirm \u2014 is m-a-n-i-f-e-s-t-d-e-s-t-i-n-y-2-4-7 at gmail.com correct?\nUser: I've already put Okay. Yeah. No. No. Every everything is good to go.\nAgent: Great. So, what day works best for you to come in and take that AMG for a spin?\nUser: What's today?\nUser: You guys open Sunday. Tomorrow, Yeah. What don't we do tomorrow?\nAgent: Tomorrow's Sunday \u2014 we're open 10 AM to 6 PM. What time works best for you?\nUser: Give me a ten AM slot, please.\nAgent: Perfect \u2014 so you're all set for tomorrow at 10 AM to test drive that AMG SL 63 S E Performance. Before we wrap up, is there anything you'd like me to note for our sales rep, or can I help you with anything else?\nUser: No. That's that that that's that's that's it. Thank you, man. Appreciate you.\nAgent: Thank you so much for your time today, [REDACTED]. We can't wait to have you over tomorrow at 10 AM. If you ever have any questions or need assistance in the future, please don't hesitate to reach out to us at Mercedes of South Bay. Have a wonderful day.\n",
               "transcript_object": [
                 {
                   "role": "agent",
-                  "content": "Hi, Greg? This is Jonnathan from Mercedes of South Bay, a virtual assistant calling on a recorded line. I see you, uh, stopped by the dealership last week and I wanted to follow up. Were you looking to come back in for a test drive, or are you an existing client needing some world-class service?",
+                  "content": "Hi, [REDACTED]? This is Jonnathan from Mercedes of South Bay, a virtual assistant calling on a recorded line. I see you, uh, stopped by the dealership last week and I wanted to follow up. Were you looking to come back in for a test drive, or are you an existing client needing some world-class service?",
                   "words": [
                     {
                       "word": "Hi, ",
@@ -1510,7 +1510,7 @@
                       "end": 2.679
                     },
                     {
-                      "word": "Greg? ",
+                      "word": "[REDACTED]? ",
                       "start": 2.679,
                       "end": 3.189
                     },
@@ -2730,7 +2730,7 @@
                 },
                 {
                   "role": "agent",
-                  "content": "Absolutely, 100%. Let's get that arranged for you. I have your name as Greg \u2014 to send your confirmation, what's the best email address for you?",
+                  "content": "Absolutely, 100%. Let's get that arranged for you. I have your name as [REDACTED] \u2014 to send your confirmation, what's the best email address for you?",
                   "words": [
                     {
                       "word": "Absolutely, ",
@@ -2798,7 +2798,7 @@
                       "end": 97.73916674804687
                     },
                     {
-                      "word": "Greg ",
+                      "word": "[REDACTED] ",
                       "start": 97.73916674804687,
                       "end": 98.11116674804687
                     },
@@ -4106,7 +4106,7 @@
                 },
                 {
                   "role": "agent",
-                  "content": "Thank you so much for your time today, Greg. We can't wait to have you over tomorrow at 10 AM. If you ever have any questions or need assistance in the future, please don't hesitate to reach out to us at Mercedes of South Bay. Have a wonderful day.",
+                  "content": "Thank you so much for your time today, [REDACTED]. We can't wait to have you over tomorrow at 10 AM. If you ever have any questions or need assistance in the future, please don't hesitate to reach out to us at Mercedes of South Bay. Have a wonderful day.",
                   "words": [
                     {
                       "word": "Thank ",
@@ -4149,7 +4149,7 @@
                       "end": 203.372
                     },
                     {
-                      "word": "Greg. ",
+                      "word": "[REDACTED]. ",
                       "start": 203.372,
                       "end": 203.813
                     },
@@ -4371,7 +4371,7 @@
                 },
                 {
                   "role": "agent",
-                  "content": "Hi, Greg? This is Jonnathan from Mercedes of South Bay, a virtual assistant calling on a recorded line. I see you, uh, stopped by the dealership last week and I wanted to follow up. Were you looking to come back in for a test drive, or are you an existing client needing some world-class service?",
+                  "content": "Hi, [REDACTED]? This is Jonnathan from Mercedes of South Bay, a virtual assistant calling on a recorded line. I see you, uh, stopped by the dealership last week and I wanted to follow up. Were you looking to come back in for a test drive, or are you an existing client needing some world-class service?",
                   "words": [
                     {
                       "word": "Hi, ",
@@ -4379,7 +4379,7 @@
                       "end": 2.679
                     },
                     {
-                      "word": "Greg? ",
+                      "word": "[REDACTED]? ",
                       "start": 2.679,
                       "end": 3.189
                     },
@@ -5617,7 +5617,7 @@
                 },
                 {
                   "role": "agent",
-                  "content": "Absolutely, 100%. Let's get that arranged for you. I have your name as Greg \u2014 to send your confirmation, what's the best email address for you?",
+                  "content": "Absolutely, 100%. Let's get that arranged for you. I have your name as [REDACTED] \u2014 to send your confirmation, what's the best email address for you?",
                   "words": [
                     {
                       "word": "Absolutely, ",
@@ -5685,7 +5685,7 @@
                       "end": 97.73916674804687
                     },
                     {
-                      "word": "Greg ",
+                      "word": "[REDACTED] ",
                       "start": 97.73916674804687,
                       "end": 98.11116674804687
                     },
@@ -7029,7 +7029,7 @@
                 },
                 {
                   "role": "agent",
-                  "content": "Thank you so much for your time today, Greg. We can't wait to have you over tomorrow at 10 AM. If you ever have any questions or need assistance in the future, please don't hesitate to reach out to us at Mercedes of South Bay. Have a wonderful day.",
+                  "content": "Thank you so much for your time today, [REDACTED]. We can't wait to have you over tomorrow at 10 AM. If you ever have any questions or need assistance in the future, please don't hesitate to reach out to us at Mercedes of South Bay. Have a wonderful day.",
                   "words": [
                     {
                       "word": "Thank ",
@@ -7072,7 +7072,7 @@
                       "end": 203.372
                     },
                     {
-                      "word": "Greg. ",
+                      "word": "[REDACTED]. ",
                       "start": 203.372,
                       "end": 203.813
                     },
@@ -7699,7 +7699,7 @@
                 "combined_cost": 49.3433334
               },
               "call_analysis": {
-                "call_summary": "The agent followed up with Greg regarding his recent dealership visit. Greg expressed interest in a high-performance vehicle to replace his 2019 Model X, leading the agent to recommend the AMG SL 63 S E Performance. Greg booked a test drive for tomorrow, Sunday, March 8th, at 10:00 AM and provided his email address for confirmation.",
+                "call_summary": "The agent followed up with [REDACTED] regarding his recent dealership visit. [REDACTED] expressed interest in a high-performance vehicle to replace his 2019 Model X, leading the agent to recommend the AMG SL 63 S E Performance. [REDACTED] booked a test drive for tomorrow, Sunday, March 8th, at 10:00 AM and provided his email address for confirmation.",
                 "in_voicemail": false,
                 "user_sentiment": "Positive",
                 "call_successful": true,
@@ -7709,10 +7709,10 @@
                   "appointment date": "10:00 AM on 8th of March, 2026",
                   "car_model": "AMG SL 63 S E Performance",
                   "call_back_scheduled": true,
-                  "call_back_reason": "<h3>Customer Details</h3><ul><li><strong>Name:</strong> Greg</li><li><strong>Email:</strong> manifestdestiny247@gmail.com</li></ul><h3>Vehicle Details</h3><ul><li><strong>Model:</strong> AMG SL 63 S E Performance</li><li><strong>Current Vehicle:</strong> 2019 Tesla Model X</li></ul><h3>Inquiry Details</h3><ul><li><strong>Type:</strong> Sales / Test Drive</li><li><strong>Key Interests:</strong> High performance, raw acceleration (0-60 in 2.8s), 805 HP, and tight handling.</li><li><strong>Sentiment:</strong> Very Positive / Ready to buy</li></ul><h3>Action Plan</h3><ul><li><strong>Callback Priority:</strong> High</li><li><strong>Suggested Opening Line:</strong> Hi Greg, I'm following up on your scheduled test drive for the AMG SL 63 today at 10 AM.</li><li><strong>Main Points:</strong> Ensure the specific AMG SL 63 S E Performance unit is prepped and charged/fueled for the 10 AM appointment.</li><li><strong>Information to Prepare:</strong> Performance specs and financing options for the SL 63.</li></ul>",
+                  "call_back_reason": "<h3>Customer Details</h3><ul><li><strong>Name:</strong> [REDACTED]</li><li><strong>Email:</strong> manifestdestiny247@gmail.com</li></ul><h3>Vehicle Details</h3><ul><li><strong>Model:</strong> AMG SL 63 S E Performance</li><li><strong>Current Vehicle:</strong> 2019 Tesla Model X</li></ul><h3>Inquiry Details</h3><ul><li><strong>Type:</strong> Sales / Test Drive</li><li><strong>Key Interests:</strong> High performance, raw acceleration (0-60 in 2.8s), 805 HP, and tight handling.</li><li><strong>Sentiment:</strong> Very Positive / Ready to buy</li></ul><h3>Action Plan</h3><ul><li><strong>Callback Priority:</strong> High</li><li><strong>Suggested Opening Line:</strong> Hi [REDACTED], I'm following up on your scheduled test drive for the AMG SL 63 today at 10 AM.</li><li><strong>Main Points:</strong> Ensure the specific AMG SL 63 S E Performance unit is prepped and charged/fueled for the 10 AM appointment.</li><li><strong>Information to Prepare:</strong> Performance specs and financing options for the SL 63.</li></ul>",
                   "Customer_sentiment": "Very Positive",
                   "User consent for recording": true,
-                  "Caller_Name": "Greg",
+                  "Caller_Name": "[REDACTED]",
                   "Query_Type": "Sales",
                   "Voicemail": false,
                   "appointment_timestamp": "2026-03-08T10:00:00-07:00"
