@@ -4,6 +4,19 @@
 
 ## HARD RULES (violations logged, reinforced)
 
+### Per-node Model SOP (ratified Mtg 19 · Apr 19/20)
+Every Retell voice agent we deploy, across every vertical, uses this model allocation until reason to change:
+- **Intro node:** Gemini 3.1 Flash Lite. Warm, alive, human-sounding. Hardcoded intro copy, no prompt-driven variation.
+- **Sales / Qualification node:** Claude Haiku. Consistent tool-calling, follows structured guardrails.
+- **Inventory / Tool-heavy nodes:** Claude Haiku. Same reason.
+- **Do NOT use Sonnet for nodes** — Mtg 19 tested; Sonnet over-reasons and skips nodes (bypasses qualification on "test drive" ask).
+- **Do NOT use HiQ for sales** — Mtg 19 reversed that decision; consistency loss outweighs the cost saving.
+
+Frankie's quote: "Once we master an agent completely, we should have an SOP for all of our qualifications on all of the nodes and all of the models. Every single time we deploy a new vertical, we don't have to tinker."
+
+### Global-node scope
+Identity-verify must never be a global node. Global nodes fire regardless of intent — "test drive" requests bypass qualification + inventory and jump straight to appointment. Keep identity-verify scoped to the Appointment node only.
+
 ### Dashboard push (5+ violations)
 After EVERY dashboard edit, output this in the SAME response. Never wait to be asked.
 ```bash
