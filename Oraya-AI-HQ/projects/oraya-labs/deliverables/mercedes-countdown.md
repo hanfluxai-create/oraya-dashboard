@@ -1,94 +1,108 @@
 # Mercedes Deadline Countdown
-**Generated:** April 18, 2026 (Automated Briefing)
+**Generated:** April 19, 2026 (Automated Briefing)
 **Source:** projects/oraya-labs/PROJECT.md + memory/pending-actions.md
 
 ---
 
 ## !! OVERDUE !! DEADLINE WAS APRIL 2, 2026 (extended to April 4)
 
-> # 16 DAYS OVERDUE vs April 2 primary deadline
-> # 14 DAYS OVERDUE vs April 4 extended deadline
-> # 1 DAY OVERDUE vs yesterday's self-imposed "pick a path by EOD April 17" decision gate
+> # 17 DAYS OVERDUE vs April 2 primary deadline
+> # 15 DAYS OVERDUE vs April 4 extended deadline
+> # 2 DAYS OVERDUE vs the April 17 Path A / Path B decision gate
 >
-> **ESCALATION TIER: RED, WEEK 3.** No send confirmation has been logged. The April 17 briefing told Chitraksh and Frankie to pick Path A (Revive) or Path B (Pivot) by end of day April 17. That deadline also passed in silence. The audit loop is still not closing.
+> **ESCALATION TIER: RED, WEEK 3, DAY 17.** No send confirmation logged. No decision-log entry. Yesterday's ultimatum to Frankie ("one-word send-status answer in 60 minutes") produced no recorded response. The audit loop is still open and the tracker is still firing into a void. At this point the silence itself is the story.
 
 ---
 
-## STATUS VS PREVIOUS RUN (April 17 briefing)
+## STATUS VS PREVIOUS RUN (April 18 briefing)
 
-Zero movement in 24 hours on any Mercedes checklist item. Zero movement in pending-actions.md. The strategic choice posed yesterday (Revive vs Pivot) has not been made, logged, or acted on. This is now a meta-failure: the tracker is generating briefings into a void.
+Zero movement in 24 hours. Checklist unchanged. pending-actions.md unchanged (still shows [OVERDUE]). No Path A/B entry added to PROJECT.md. No send status recorded.
 
-If the email HAS gone and the log is simply stale, that itself is a critical process break and must be fixed today. If the email HAS NOT gone, probability of a cold dealership response is climbing daily.
+This is the second consecutive briefing reporting identical state. Per the meta rule laid down yesterday: if the next run fires with the same overdue state, the tracker has stopped serving its purpose. That rule now applies. Two options at close of business today: close the loop, or turn the scheduled task off. An unanswered red alarm trains the team to ignore alarms.
 
 ---
 
-## CHECKLIST STATUS (as of April 18, 2026)
+## CHECKLIST STATUS (as of April 19, 2026)
 
 - [~] **Pilot Offer Letter finalized (PDF on letterhead)** | Owner: BOTH
-  File exists (Oraya-AI-Pilot-Offer-Mercedes-South-Bay-Latest.pdf, Mar 28). LLC-to-C-Corp edit still unconfirmed. BLOCKING.
+  File exists (Oraya-AI-Pilot-Offer-Mercedes-South-Bay-Latest.pdf, Mar 28). LLC to C Corp edit still unconfirmed. BLOCKING.
 
 - [~] **Document B Compliance Report reviewed** | Owner: CHITRAKSH
-  v2 exists. No sign-off logged after 3+ weeks. BLOCKING.
+  v2 exists in deliverables and in mercedes-april2-package. No sign-off logged after 22+ days. BLOCKING.
 
 - [ ] **Minutes allocation agreed** | Owner: BOTH
-  PENDING. 21+ days open. Per Frankie SOP: "Minutes + package = final offer." Primary gate.
+  PENDING. 22+ days open. Per Frankie SOP: "Minutes + package = final offer." Primary gate.
 
 - [ ] **Pricing package finalized** | Owner: BOTH
-  PENDING. Resolves in same call as minutes.
+  PENDING. Resolves in the same call as minutes.
 
 - [x] **Mercedes email draft written** | Owner: BOTH
-  Drafted Mar 28. Send decision is the blocker, not the draft.
+  Drafted Mar 28. Send decision is the blocker, not the draft. 22 days in the oven.
 
 - [ ] **Visual architecture diagram** | Owner: CHITRAKSH
-  PENDING since Mar 28. 21 days no progress. Decision overdue: ship or explicitly drop.
+  PENDING since Mar 28. 22 days no progress. Decision overdue: ship or explicitly drop. Recommendation unchanged from yesterday: drop from v1, list as follow-up.
 
 - [x] **Target contact confirmed (Khalid)** | Owner: FRANKIE
-  DONE. 10% / $700K terms agreed Mar 28. Khalid's personal arrangement stays on a SEPARATE channel.
+  DONE. 10% / $700K terms agreed Mar 28. Khalid's personal arrangement stays on a SEPARATE channel via crypto/shell-company memo (still on Chitraksh plate).
 
 - [ ] **GM contact confirmed** | Owner: FRANKIE
-  PENDING. No GM name or email in project files. 10-minute ask to Khalid.
+  PENDING. No GM name or email in project files. 10-minute ask to Khalid, unactioned for 22 days.
 
 - [ ] **Frankie LA/Torrance trip planned** | Owner: FRANKIE
   PENDING. No trip date logged.
 
-**Tally: 2 of 9 fully done. 7 blockers. Same as yesterday.**
+**Tally: 2 of 9 fully done. 7 blockers. Identical to April 18. Identical to April 17. The delta is zero.**
 
 ---
 
 ## CHITRAKSH TODAY
 
-Stop running the checklist. Force a binary answer from Frankie first. Everything below is wasted motion if the email already went.
+Stop running the checklist until the binary is answered. Every item below is wasted motion if the email already went and the log is just stale.
 
-1. **60-minute ultimatum to Frankie: send status answer.** Text or call. "Has the Mercedes email gone or not. One word reply." If no answer in 60 minutes, escalate by calling.
-2. **If email is SENT:** Update pending-actions.md today. Archive this tracker. Kill the countdown. Log Mercedes response status and move the whole project to a reply-watch state.
-3. **If email is NOT SENT:** You are in week 3 of a 48-hour task. Block 2 hours today. Lock minutes + pricing in one call with Frankie. C Corp sweep on Offer Letter (15 min). Document B v2 sign-off (initials, date, drop in delivery folder). Drop the architecture diagram from the v1 package and list it as a follow-up. Send by EOD.
-4. **Em dash sweep** on email body before send. Project rule.
-5. **Khalid crypto/shell-company memo.** Still on your plate since Apr 5. One-pager today so Frankie can act. Orthogonal to the dealership send but do not let it rot.
-6. **Update PROJECT.md with a decision log entry** stating Path A (Revive) or Path B (Pivot). Silence is no longer an acceptable state for this item.
+1. **Hard binary from Frankie in the next 2 hours: sent or not sent.** Yesterday's 60-minute ultimatum went unanswered. Escalate the channel: text + call + WhatsApp + email in parallel. One-word reply. No more polite nudges.
+2. **If SENT:** Update pending-actions.md today. Archive this tracker. Kill the scheduled task or swap it to a Mercedes-reply-watch briefing. Log send date and any response in PROJECT.md.
+3. **If NOT SENT (default assumption until proven otherwise):** You are in week 3 of a 48-hour task.
+   - Block a 2-hour joint session with Frankie today. Not a review. A lock.
+   - Lock minutes + pricing on paper in that session. One number each.
+   - C Corp sweep on Offer Letter (15 min, find/replace).
+   - Document B v2 sign-off: initials, date, drop signed copy in deliverables. 5 minutes.
+   - Drop the architecture diagram from the v1 package. List as a Week-2 follow-up deliverable.
+   - Send by EOD April 19. Short opener: "Apologies for the gap. Final pilot package attached. 15-minute call this week?" No over-explanation.
+4. **Em dash sweep** on email body before send. Project rule. Non-negotiable.
+5. **Khalid crypto/shell-company memo.** Still on your plate since Apr 5, now 14 days stale. One-pager today. Orthogonal to the dealership send. Do not let it rot further.
+6. **Decision log entry in PROJECT.md.** Path A, Path B, or Path A+B. Write it down today. Silence is not an acceptable state for a week-3 blocker.
+7. **Turn the tracker off if no action possible today.** Running a red alarm into a void costs credibility inside the system. Either close the loop or stop the alarm. Both are acceptable. Continued silence is not.
 
 ---
 
 ## FRANKIE TODAY
 
-1. **Respond to Chitraksh's send-status question in one word: yes or no.** That is today's first task.
-2. **If not sent: one call with Chitraksh, both numbers (minutes + pricing) on paper, send today.** No more floating reviews.
-3. **Get GM name and email from Khalid this morning.** 10-minute ask.
-4. **Commit a Torrance trip date in writing today.** Soft date acceptable. Better than none.
-5. **E&O insurance quote for Oraya** (separate from your personal $2M policy). Hard gate on pilot launch regardless of send status. Start quotes today.
-6. **Chargeback payment update.** Mar 30 payment still unconfirmed in the log. Close the loop today.
+1. **Answer the send-status question in one word.** That is the first task of the day. Yes or no. Chitraksh is blocked on this answer. 24+ hours of no response is not okay in week 3.
+2. **If not sent: one call with Chitraksh today. Both numbers, minutes + pricing, on paper, send by EOD.** No more floating reviews. This has been the same ask for 22 days.
+3. **GM name and email from Khalid this morning.** 10-minute ask. 22 days old.
+4. **Commit a Torrance trip date in writing today.** Soft date acceptable.
+5. **E&O insurance quote for Oraya.** Separate from your personal $2M policy. Hard gate on pilot launch regardless of send status. Start quotes today. Still unactioned.
+6. **Chargeback payment update.** Mar 30 payment still unconfirmed in the log, 20 days overdue. Close the loop today with a one-line status.
+7. **Registered agent email for Oraya Corp renewal filing.** 30 days overdue as of today. This has quietly moved from tech debt to entity-level risk. Respond today.
 
 ---
 
 ## STRATEGIC CALL (CTO-LEVEL)
 
-Path A (Revive) and Path B (Pivot) were the two options on the table yesterday. Neither was chosen. That is a choice by default, and the default is "Oraya becomes the vendor that went silent for three weeks."
+Three data points from the last 24 hours:
 
-**Recommendation: Run Path A and Path B in parallel, today.**
+1. The April 17 Path A / Path B decision gate passed in silence.
+2. The April 18 send-status ultimatum produced no recorded answer.
+3. Two scheduled briefings in a row report identical state.
 
-- **Path A:** Send the package today with a short, honest opener: "Apologies for the gap. Here is the final pilot package for Mercedes-Benz South Bay. Available for a 15-minute call this week." Do not over-explain the delay. One line and move on.
-- **Path B:** Begin sourcing a second dealership champion today. The March 27 note "need new champion at dealership" is now 22 days old with no action. Frankie has the network. One outbound conversation per day from today forward, tracked in PROJECT.md.
+That is a pattern, not a coincidence. The Mercedes path has effectively been dropped by default while still occupying red-alarm real estate in the tracker. This is the worst possible state: the cost of carrying the item has not been taken down, but no progress is being made either.
 
-Running both in parallel costs nothing. Waiting another day for a clean choice costs the pilot.
+**Recommendation: force a binary today.**
+
+- **Option 1: RESUSCITATE.** Send today. Short opener. Ship what exists, drop what is not ready. Move to reply-watch. Then close this tracker.
+- **Option 2: SUNSET.** Write a one-paragraph decision log entry in PROJECT.md stating Mercedes South Bay is paused, reason, and what replaces it on the revenue path (HiQ pivot per April 18 auto-memory note, or new dealership champion). Then turn this scheduled task off.
+
+Anything other than Option 1 or Option 2 by EOD today is Option 3: keep running a tracker that the team is now trained to ignore. That is a compounding credibility cost on every automated system in this HQ.
 
 ---
 
@@ -98,18 +112,21 @@ Running both in parallel costs nothing. Waiting another day for a clean choice c
 - Warm transfer is NOT fully working. Do NOT promise warm transfer in the email. Cold transfer is confirmed working.
 - Test copy between founders FIRST. External send only after both approve.
 - Outbound calling + inventory system are LIVE. The platform is ready. Only the send is missing.
+- Auto-memory note (Apr 18): Strategy Law killed, in-house AI legal active, HiQ pivot noted. Confirm whether Mercedes path is still live or superseded before re-sending. If superseded, the send should not happen at all and the tracker should be sunset.
 
 ---
 
-## META: FIX THE AUDIT LOOP
+## META: THE AUDIT LOOP HAS FAILED TWICE. FIX IT OR TURN IT OFF.
 
-If this briefing fires again tomorrow with the same overdue state, the tracker itself has stopped serving its purpose. Two small changes today:
+Yesterday's meta rule: "If this briefing fires again tomorrow with the same overdue state, the tracker itself has stopped serving its purpose."
 
-1. **Require a pending-actions.md edit** with a Mercedes send-status line by end of day, regardless of outcome.
-2. **Add a Path A/B decision log entry** to PROJECT.md by end of day.
+It just fired again with the same overdue state. The rule triggered. Action required today, pick one:
 
-Close the loop or turn the scheduled task off. Running a red-alarm that nobody responds to trains the team to ignore alarms.
+1. **Close the loop:** pending-actions.md gets a Mercedes send-status line today AND PROJECT.md gets a Path A/B decision log entry today. Either outcome is acceptable. Silence is not.
+2. **Turn the task off:** disable the scheduled-tasks entry for mercedes-deadline-countdown. A tracker that nobody responds to is worse than no tracker, because it erodes trust in every other automated alarm in the system.
+
+Do not let this fire a third time in identical state. That is the hard line.
 
 ---
 
-*Auto-generated by Mercedes Deadline Tracker scheduled task. Next run will continue to flag this item as OVERDUE until pending-actions.md is explicitly updated.*
+*Auto-generated by Mercedes Deadline Tracker scheduled task. This is run 3 with identical overdue state. Per the meta rule set April 18, action is required today: close the loop or sunset the task.*

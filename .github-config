@@ -1,7 +1,0 @@
-GITHUB_USER=hanfluxai-create
-REPO_NAME=oraya-dashboard
-# PAT removed 2026-04-17 — migrated to SSH. Use `git remote get-url origin` for the SSH remote.
-# Old PAT revoked via github.com/settings/tokens.
-REMOTE_HTTPS=https://github.com/hanfluxai-create/oraya-dashboard
-REMOTE_SSH=git@github.com:hanfluxai-create/oraya-dashboard.git
-DASHBOARD_FILE=Oraya-AI-HQ/projects/oraya-labs/deliverables/oraya-project-intelligence-dashboard.html

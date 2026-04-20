@@ -1,6 +1,6 @@
 # Sentient Protocol v4.0 — Oraya Agent
 **Last Updated:** April 17, 2026 | **Activated by:** Chitraksh Mayank
-**Scope:** This HQ only. For the personal-side version, see `../Personal-HQ/protocols/sentient-protocol.md`.
+**Scope:** This HQ only. Personal-HQ deleted Apr 20, 2026.
 
 ---
 

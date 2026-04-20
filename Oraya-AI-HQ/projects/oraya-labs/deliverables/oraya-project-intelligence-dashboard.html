@@ -1,1773 +1,467 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Oraya Labs · Project Intelligence Dashboard · v6 Sentient</title>
+<title>Oraya Labs · Intelligence Dashboard · v7 Lean</title>
 <style>
-/* ============================================================
-   ORAYA PROJECT INTELLIGENCE DASHBOARD · v6 SENTIENT · Apr 18 2026
-   Light theme default, dark toggle, sentient widgets layered in.
-   ============================================================ */
-
-:root[data-theme="light"] {
-  --bg: #f6f7fb;
-  --surface: #ffffff;
-  --surface2: #f1f3f9;
-  --surface3: #e9ecf4;
-  --border: #e3e7ef;
-  --border2: #d6dbe6;
-  --text: #0b1324;
-  --text2: #4a5568;
-  --text3: #8a94a6;
-  --accent: #635bff;        /* Stripe purple */
-  --accent2: #0a7aff;
-  --p1: #635bff;
-  --p2: #00a6a0;
-  --green: #0a7c3e;
-  --green-soft: #e6f4ec;
-  --red: #d4183d;
-  --red-soft: #fdecef;
-  --orange: #b7570d;
-  --orange-soft: #fdf1e3;
-  --blue: #0a5db5;
-  --blue-soft: #e7f0fb;
-  --amber: #cc9500;
-  --amber-soft: #fdf8e2;
-  --pink: #c31b7d;
-  --pink-soft: #fce7f2;
-  --cyan: #008b8b;
-  --cyan-soft: #e0f5f5;
-  --shadow-sm: 0 1px 2px rgba(15,23,42,.04), 0 1px 1px rgba(15,23,42,.02);
-  --shadow: 0 4px 6px -1px rgba(15,23,42,.05), 0 2px 4px -2px rgba(15,23,42,.04);
-  --shadow-lg: 0 10px 15px -3px rgba(15,23,42,.06), 0 4px 6px -4px rgba(15,23,42,.04);
-  --radius: 10px;
-  --radius-lg: 14px;
-}
-:root[data-theme="dark"] {
-  --bg: #0e1420;
-  --surface: #162033;
-  --surface2: #1d2a42;
-  --surface3: #263550;
-  --border: #263550;
-  --border2: #324668;
-  --text: #e9ecf2;
-  --text2: #a8b2c7;
-  --text3: #6f7b93;
-  --accent: #8b82ff;
-  --accent2: #3ca2ff;
-  --p1: #8b82ff;
-  --p2: #22d3cf;
-  --green: #4ade80;
-  --green-soft: rgba(74,222,128,.12);
-  --red: #f87171;
-  --red-soft: rgba(248,113,113,.12);
-  --orange: #fbbf24;
-  --orange-soft: rgba(251,191,36,.12);
-  --blue: #60a5fa;
-  --blue-soft: rgba(96,165,250,.12);
-  --amber: #fcd34d;
-  --amber-soft: rgba(252,211,77,.12);
-  --pink: #f472b6;
-  --pink-soft: rgba(244,114,182,.12);
-  --cyan: #67e8f9;
-  --cyan-soft: rgba(103,232,249,.12);
-  --shadow-sm: 0 1px 2px rgba(0,0,0,.35);
-  --shadow: 0 4px 10px rgba(0,0,0,.35);
-  --shadow-lg: 0 10px 24px rgba(0,0,0,.45);
-}
-
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.55;
-  font-size: 14.5px;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ---------- layout ---------- */
-.container { max-width: 1340px; margin: 0 auto; padding: 28px 28px 60px; }
-
-/* ---------- header ---------- */
-.top-bar {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 28px; background: var(--surface);
-  border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50;
-  backdrop-filter: saturate(1.4) blur(8px);
-}
-.brand { display: flex; align-items: center; gap: 14px; }
-.brand-mark {
-  width: 40px; height: 40px; border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-  display: flex; align-items: center; justify-content: center;
-  color: #fff; font-weight: 800; font-size: 18px; letter-spacing: -0.5px;
-  box-shadow: var(--shadow-sm);
-}
-.brand-text { line-height: 1.15; }
-.brand-text .name { font-weight: 700; font-size: 17px; color: var(--text); letter-spacing: -0.3px; }
-.brand-text .sub { font-size: 11.5px; color: var(--text3); font-weight: 500; }
-
-.top-actions { display: flex; align-items: center; gap: 10px; }
-.pulse-chip {
-  display: inline-flex; align-items: center; gap: 7px;
-  padding: 6px 12px; border-radius: 999px;
-  background: var(--green-soft); color: var(--green);
-  font-size: 11.5px; font-weight: 600; border: 1px solid transparent;
-}
-.pulse-chip::before {
-  content: ""; width: 7px; height: 7px; border-radius: 50%;
-  background: var(--green); box-shadow: 0 0 0 4px rgba(10,124,62,.18);
-  animation: pulse 2s infinite;
-}
-@keyframes pulse { 50% { box-shadow: 0 0 0 8px rgba(10,124,62,0); } }
-
-.theme-toggle {
-  appearance: none; border: 1px solid var(--border); background: var(--surface);
-  color: var(--text); font-size: 12.5px; font-weight: 600; cursor: pointer;
-  padding: 7px 14px; border-radius: 999px; transition: all .15s;
-}
-.theme-toggle:hover { background: var(--surface2); }
-
-/* ---------- hero ---------- */
-.hero {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); padding: 28px 30px; margin-top: 22px;
-  box-shadow: var(--shadow-sm);
-}
-.hero h1 {
-  margin: 0 0 4px; font-size: 26px; letter-spacing: -0.7px; font-weight: 700;
-}
-.hero h1 .grad {
-  background: linear-gradient(90deg, var(--accent) 0%, var(--p2) 100%);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-}
-.hero .lead { font-size: 14px; color: var(--text2); margin: 0 0 18px; }
-.hero-meta {
-  font-size: 12px; color: var(--text3); border-top: 1px dashed var(--border);
-  padding-top: 14px; margin-top: 18px;
-}
-.hero-meta strong { color: var(--text2); }
-
-/* ---------- kpi strip ---------- */
-.kpi-strip {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px; margin-top: 18px;
-}
-.kpi {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow-sm);
-  position: relative;
-}
-.kpi .label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.6px; font-weight: 600; }
-.kpi .value { font-size: 22px; font-weight: 700; color: var(--text); margin-top: 4px; letter-spacing: -0.5px; }
-.kpi .trend { font-size: 11px; font-weight: 600; display: inline-flex; align-items: center; gap: 3px; margin-top: 2px; }
-.kpi .trend.up { color: var(--green); }
-.kpi .trend.down { color: var(--red); }
-.kpi .trend.flat { color: var(--text3); }
-.kpi.p1 { border-left: 3px solid var(--p1); }
-.kpi.p2 { border-left: 3px solid var(--p2); }
-.kpi.green { border-left: 3px solid var(--green); }
-.kpi.orange { border-left: 3px solid var(--orange); }
-.kpi.red { border-left: 3px solid var(--red); }
-
-/* ---------- sentient widgets ---------- */
-.sentient-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 14px; margin-top: 18px;
-}
-.sentient {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow-sm);
-  position: relative; overflow: hidden;
-}
-.sentient .tag-top {
-  font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px;
-  font-weight: 700; color: var(--text3); margin-bottom: 8px;
-  display: flex; align-items: center; gap: 6px;
-}
-.sentient .tag-top .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
-.sentient .headline { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.4; }
-.sentient .sub { font-size: 12px; color: var(--text2); margin-top: 5px; }
-.sentient.alert { background: var(--red-soft); border-color: rgba(212,24,61,.2); }
-.sentient.alert .tag-top { color: var(--red); }
-.sentient.alert .headline { color: var(--red); }
-.sentient.warn { background: var(--orange-soft); border-color: rgba(183,87,13,.2); }
-.sentient.warn .tag-top { color: var(--orange); }
-.sentient.good { background: var(--green-soft); border-color: rgba(10,124,62,.2); }
-.sentient.good .tag-top { color: var(--green); }
-.sentient.info { background: var(--blue-soft); border-color: rgba(10,93,181,.2); }
-.sentient.info .tag-top { color: var(--blue); }
-
-.pulse-bar {
-  height: 4px; background: var(--surface3); border-radius: 3px; overflow: hidden; margin-top: 10px;
-}
-.pulse-bar > span { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
-
-/* ---------- nav ---------- */
-.nav-tabs {
-  display: flex; flex-wrap: wrap; gap: 6px; padding: 6px;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); margin-top: 22px; box-shadow: var(--shadow-sm);
-}
-.nav-tab {
-  appearance: none; border: 0; background: transparent; cursor: pointer;
-  font: inherit; color: var(--text2); font-size: 12.5px; font-weight: 600;
-  padding: 9px 14px; border-radius: 8px; transition: all .15s;
-  display: inline-flex; align-items: center; gap: 6px;
-}
-.nav-tab:hover { background: var(--surface2); color: var(--text); }
-.nav-tab.active { background: var(--accent); color: #fff; box-shadow: var(--shadow-sm); }
-.nav-tab.active.p2 { background: var(--p2); }
-.nav-tab .badge {
-  font-size: 10px; background: rgba(255,255,255,.2); padding: 1px 6px; border-radius: 999px;
-  color: inherit;
-}
-.nav-tab:not(.active) .badge { background: var(--surface3); color: var(--text3); }
-
-/* ---------- sections ---------- */
-.section { display: none; margin-top: 22px; }
-.section.active { display: block; }
-.section-title {
-  font-size: 17px; font-weight: 700; color: var(--text); margin: 0 0 18px;
-  padding-bottom: 10px; border-bottom: 1px solid var(--border);
-  letter-spacing: -0.3px;
-}
-
-/* ---------- card ---------- */
-.card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow-sm);
-  margin-bottom: 16px;
-}
-.card h3 {
-  margin: 0 0 12px; font-size: 14px; font-weight: 700; color: var(--text);
-  letter-spacing: -0.2px;
-}
-.card h3.accent { color: var(--accent); }
-.card h3.p2 { color: var(--p2); }
-.card h3.green { color: var(--green); }
-.card h3.orange { color: var(--orange); }
-.card h3.red { color: var(--red); }
-.card h3.pink { color: var(--pink); }
-.card h3.amber { color: var(--amber); }
-.card h3.cyan { color: var(--cyan); }
-.card p { margin: 0 0 10px; font-size: 13px; color: var(--text2); }
-.card ul, .card ol { margin: 0 0 10px; padding-left: 20px; font-size: 13px; color: var(--text2); }
-.card ul li, .card ol li { margin-bottom: 4px; }
-.card strong { color: var(--text); }
-
-/* ---------- grid layouts ---------- */
-.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
-
-/* ---------- tags ---------- */
-.tag {
-  display: inline-block; padding: 2px 8px; border-radius: 999px;
-  font-size: 11px; font-weight: 600; line-height: 1.5; letter-spacing: 0.1px;
-  border: 1px solid transparent;
-}
-.tag-green { background: var(--green-soft); color: var(--green); }
-.tag-red { background: var(--red-soft); color: var(--red); }
-.tag-orange { background: var(--orange-soft); color: var(--orange); }
-.tag-blue { background: var(--blue-soft); color: var(--blue); }
-.tag-amber { background: var(--amber-soft); color: var(--amber); }
-.tag-pink { background: var(--pink-soft); color: var(--pink); }
-.tag-cyan { background: var(--cyan-soft); color: var(--cyan); }
-.tag-gray { background: var(--surface2); color: var(--text2); }
-
-/* ---------- banners ---------- */
-.banner {
-  display: flex; gap: 16px; padding: 16px 18px; border-radius: var(--radius);
-  border: 1px solid var(--border); background: var(--surface); box-shadow: var(--shadow-sm);
-  margin-bottom: 16px;
-}
-.banner .icon {
-  width: 38px; height: 38px; flex-shrink: 0; border-radius: 10px;
-  display: flex; align-items: center; justify-content: center; font-size: 18px;
-  background: var(--surface2);
-}
-.banner h2 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: -0.2px; }
-.banner p { margin: 0; font-size: 12.5px; color: var(--text2); }
-.banner.p1 .icon { background: var(--blue-soft); color: var(--p1); }
-.banner.p1 h2 { color: var(--p1); }
-.banner.p2 .icon { background: var(--cyan-soft); color: var(--p2); }
-.banner.p2 h2 { color: var(--p2); }
-.banner.pink .icon { background: var(--pink-soft); color: var(--pink); }
-.banner.pink h2 { color: var(--pink); }
-.banner.amber .icon { background: var(--amber-soft); color: var(--amber); }
-.banner.amber h2 { color: var(--amber); }
-.banner.cyan .icon { background: var(--cyan-soft); color: var(--cyan); }
-.banner.cyan h2 { color: var(--cyan); }
-
-/* ---------- tables ---------- */
-.table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); }
-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
-th, td { padding: 10px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
-th { background: var(--surface2); font-weight: 600; color: var(--text2); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
-tr:last-child td { border-bottom: 0; }
-tr:hover td { background: var(--surface2); }
-
-/* ---------- timeline ---------- */
-.timeline { position: relative; padding-left: 24px; }
-.timeline::before {
-  content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px;
-  width: 2px; background: var(--border2);
-}
-.timeline-item { position: relative; margin-bottom: 18px; }
-.timeline-item::before {
-  content: ""; position: absolute; left: -22px; top: 6px; width: 12px; height: 12px;
-  background: var(--accent); border: 2px solid var(--surface); border-radius: 50%;
-  box-shadow: 0 0 0 2px var(--accent);
-}
-.timeline-item.green::before { background: var(--green); box-shadow: 0 0 0 2px var(--green); }
-.timeline-item.orange::before { background: var(--orange); box-shadow: 0 0 0 2px var(--orange); }
-.timeline-item.red::before { background: var(--red); box-shadow: 0 0 0 2px var(--red); }
-.timeline-item .date { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
-.timeline-item .title { font-size: 13.5px; font-weight: 600; color: var(--text); margin: 2px 0 4px; }
-.timeline-item .desc { font-size: 12.5px; color: var(--text2); }
-
-/* ---------- progress ---------- */
-.progress-wrap { margin-bottom: 10px; }
-.progress-label { display: flex; justify-content: space-between; font-size: 11.5px; margin-bottom: 4px; color: var(--text2); }
-.progress-bar { height: 6px; background: var(--surface3); border-radius: 4px; overflow: hidden; }
-.progress-fill { height: 100%; border-radius: 4px; background: var(--accent); transition: width .4s; }
-
-/* ---------- meter ---------- */
-.meter-row { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
-.meter-row .label { font-size: 12px; color: var(--text2); min-width: 130px; }
-.meter-row .bar { flex: 1; height: 8px; background: var(--surface3); border-radius: 4px; overflow: hidden; }
-.meter-row .bar > span { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
-.meter-row .val { font-size: 11.5px; color: var(--text2); font-weight: 600; min-width: 38px; text-align: right; }
-
-/* ---------- contact ---------- */
-.contact-card {
-  display: flex; align-items: center; gap: 10px; padding: 10px;
-  background: var(--surface2); border-radius: 8px; margin-bottom: 8px;
-}
-.contact-card .avatar {
-  width: 34px; height: 34px; border-radius: 50%; background: var(--accent);
-  color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center;
-  font-size: 12px;
-}
-.contact-card .info { flex: 1; font-size: 12.5px; }
-.contact-card .info .name { font-weight: 600; color: var(--text); }
-.contact-card .info .meta { font-size: 11px; color: var(--text3); }
-.contact-card .days { font-size: 11px; color: var(--text2); font-weight: 600; }
-
-/* ---------- details/summary ---------- */
-details { margin-bottom: 8px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-summary { cursor: pointer; padding: 10px 14px; background: var(--surface2); font-weight: 600; color: var(--text); font-size: 13px; }
-details[open] summary { background: var(--surface3); border-bottom: 1px solid var(--border); }
-details > div { padding: 12px 14px; background: var(--surface); }
-details p { font-size: 12.5px; color: var(--text2); margin: 0 0 8px; }
-details ul, details ol { font-size: 12.5px; color: var(--text2); }
-
-/* ---------- footer ---------- */
-.footer {
-  text-align: center; padding: 28px 20px; color: var(--text3); font-size: 11.5px;
-  border-top: 1px solid var(--border); margin-top: 40px;
-}
-.footer strong { color: var(--text2); }
-
-/* ---------- count-down pill ---------- */
-.countdown {
-  display: inline-flex; align-items: baseline; gap: 4px;
-  padding: 4px 10px; background: var(--amber-soft); color: var(--amber);
-  border-radius: 999px; font-size: 11.5px; font-weight: 700;
-}
-.countdown .d { font-size: 14px; font-weight: 800; }
-
-/* ---------- quote block ---------- */
-.quote {
-  padding: 12px 16px; background: var(--surface2); border-left: 3px solid var(--accent);
-  border-radius: 6px; font-style: italic; font-size: 12.5px; color: var(--text2);
-  margin: 10px 0;
-}
-
-/* responsive */
-@media (max-width: 700px) {
-  .container { padding: 18px; }
-  .top-bar { padding: 14px 18px; }
-  .hero h1 { font-size: 20px; }
-  .kpi .value { font-size: 18px; }
-}
+:root[data-theme="dark"]{--bg:#0e1420;--surface:#162033;--surface2:#1d2a42;--surface3:#263550;--border:#263550;--border2:#324668;--text:#e9ecf2;--text2:#a8b2c7;--text3:#6f7b93;--accent:#8b82ff;--p1:#8b82ff;--p2:#22d3cf;--green:#4ade80;--green-soft:rgba(74,222,128,.12);--red:#f87171;--red-soft:rgba(248,113,113,.12);--orange:#fbbf24;--orange-soft:rgba(251,191,36,.12);--blue:#60a5fa;--blue-soft:rgba(96,165,250,.12);--pink:#f472b6;--pink-soft:rgba(244,114,182,.12);--shadow:0 4px 10px rgba(0,0,0,.35);--radius:10px}
+:root[data-theme="light"]{--bg:#f6f7fb;--surface:#fff;--surface2:#f1f3f9;--surface3:#e9ecf4;--border:#e3e7ef;--border2:#d6dbe6;--text:#0b1324;--text2:#4a5568;--text3:#8a94a6;--accent:#635bff;--p1:#635bff;--p2:#00a6a0;--green:#0a7c3e;--green-soft:#e6f4ec;--red:#d4183d;--red-soft:#fdecef;--orange:#b7570d;--orange-soft:#fdf1e3;--blue:#0a5db5;--blue-soft:#e7f0fb;--pink:#c31b7d;--pink-soft:#fce7f2;--shadow:0 4px 6px -1px rgba(15,23,42,.05);--radius:10px}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:14px}
+.container{max-width:1280px;margin:0 auto;padding:24px 24px 60px}
+.top-bar{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--p2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px}
+.brand .name{font-weight:700;font-size:16px}.brand .sub{font-size:11px;color:var(--text3)}
+.theme-toggle{border:1px solid var(--border);background:var(--surface);color:var(--text);font:inherit;font-size:12px;font-weight:600;cursor:pointer;padding:6px 12px;border-radius:999px}
+.hero{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;margin-top:20px;box-shadow:var(--shadow)}
+.hero h1{margin:0 0 4px;font-size:24px;letter-spacing:-.5px;font-weight:700}
+.hero .grad{background:linear-gradient(90deg,var(--accent),var(--p2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{font-size:13.5px;color:var(--text2);margin:0 0 14px}
+.hero-meta{font-size:11.5px;color:var(--text3);border-top:1px dashed var(--border);padding-top:12px;margin-top:14px}
+.hero-meta strong{color:var(--text2)}
+.kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:14px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px}
+.kpi .label{font-size:10.5px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.kpi .value{font-size:20px;font-weight:700;margin-top:4px;letter-spacing:-.4px}
+.kpi .trend{font-size:11px;font-weight:600;margin-top:2px}
+.kpi.p1{border-left:3px solid var(--p1)}.kpi.p2{border-left:3px solid var(--p2)}.kpi.green{border-left:3px solid var(--green)}.kpi.orange{border-left:3px solid var(--orange)}.kpi.red{border-left:3px solid var(--red)}
+.up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--text3)}
+.sentient-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:14px}
+.sentient{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px}
+.sentient .tag-top{font-size:10px;text-transform:uppercase;letter-spacing:.7px;font-weight:700;color:var(--text3);margin-bottom:6px;display:flex;gap:6px;align-items:center}
+.sentient .tag-top .dot{width:6px;height:6px;border-radius:50%;background:currentColor}
+.sentient .headline{font-size:13.5px;font-weight:600;line-height:1.35}
+.sentient .sub{font-size:12px;color:var(--text2);margin-top:4px}
+.sentient.alert{background:var(--red-soft);border-color:rgba(248,113,113,.2)}.sentient.alert .tag-top,.sentient.alert .headline{color:var(--red)}
+.sentient.warn{background:var(--orange-soft);border-color:rgba(251,191,36,.2)}.sentient.warn .tag-top{color:var(--orange)}
+.sentient.good{background:var(--green-soft);border-color:rgba(74,222,128,.2)}.sentient.good .tag-top{color:var(--green)}
+.sentient.info{background:var(--blue-soft);border-color:rgba(96,165,250,.2)}.sentient.info .tag-top{color:var(--blue)}
+.nav-tabs{display:flex;flex-wrap:wrap;gap:6px;padding:6px;background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-top:20px}
+.nav-tab{border:0;background:transparent;cursor:pointer;font:inherit;color:var(--text2);font-size:13px;font-weight:600;padding:9px 18px;border-radius:8px}
+.nav-tab:hover{background:var(--surface2);color:var(--text)}
+.nav-tab.active{background:var(--accent);color:#fff}
+.section{display:none;margin-top:20px}.section.active{display:block}
+.section-title{font-size:16px;font-weight:700;margin:0 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin-bottom:14px}
+.card h3{margin:0 0 10px;font-size:13.5px;font-weight:700}
+.card h3.accent{color:var(--accent)}.card h3.p2{color:var(--p2)}.card h3.green{color:var(--green)}.card h3.red{color:var(--red)}.card h3.pink{color:var(--pink)}
+.card p,.card ul,.card ol{margin:0 0 8px;font-size:12.5px;color:var(--text2)}.card ul,.card ol{padding-left:20px}
+.card li{margin-bottom:3px}.card strong{color:var(--text)}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:10.5px;font-weight:600}
+.tag-green{background:var(--green-soft);color:var(--green)}.tag-red{background:var(--red-soft);color:var(--red)}.tag-orange{background:var(--orange-soft);color:var(--orange)}.tag-blue{background:var(--blue-soft);color:var(--blue)}.tag-pink{background:var(--pink-soft);color:var(--pink)}
+.banner{display:flex;gap:14px;padding:14px 16px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);margin-bottom:14px}
+.banner .icon{width:36px;height:36px;flex-shrink:0;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;background:var(--surface2)}
+.banner h2{margin:0 0 3px;font-size:14px;font-weight:700}.banner p{margin:0;font-size:12px;color:var(--text2)}
+.banner.p1 .icon{background:var(--blue-soft);color:var(--p1)}.banner.p1 h2{color:var(--p1)}
+.banner.p2 .icon{background:var(--green-soft);color:var(--p2)}.banner.p2 h2{color:var(--p2)}
+.table-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--surface2);font-weight:600;color:var(--text2);font-size:10.5px;text-transform:uppercase;letter-spacing:.5px}
+tr:last-child td{border-bottom:0}tr:hover td{background:var(--surface2)}
+.progress-wrap{margin-bottom:8px}
+.progress-label{display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:4px;color:var(--text2)}
+.progress-bar{height:6px;background:var(--surface3);border-radius:4px;overflow:hidden}
+.progress-fill{height:100%;border-radius:4px;background:var(--accent)}
+.meter-row{display:flex;align-items:center;gap:10px;margin:5px 0}
+.meter-row .label{font-size:11.5px;color:var(--text2);min-width:140px}
+.meter-row .bar{flex:1;height:7px;background:var(--surface3);border-radius:4px;overflow:hidden}
+.meter-row .bar>span{display:block;height:100%;border-radius:4px}
+.meter-row .val{font-size:11px;font-weight:600;min-width:36px;text-align:right;color:var(--text2)}
+.quote{padding:10px 14px;background:var(--surface2);border-left:3px solid var(--accent);border-radius:6px;font-style:italic;font-size:12px;color:var(--text2);margin:10px 0}
+.footer{text-align:center;padding:24px;color:var(--text3);font-size:11px;border-top:1px solid var(--border);margin-top:30px}
+@media(max-width:700px){.container{padding:16px}.hero h1{font-size:19px}}
 </style>
 </head>
 <body>
 
-<!-- ========================== TOP BAR ========================== -->
 <div class="top-bar">
   <div class="brand">
     <div class="brand-mark">O</div>
-    <div class="brand-text">
+    <div>
       <div class="name">Oraya Labs</div>
-      <div class="sub">Project Intelligence Dashboard · v6 Sentient</div>
+      <div class="sub">Intelligence Dashboard · v7 Lean</div>
     </div>
   </div>
-  <div class="top-actions">
-    <span class="pulse-chip" id="liveChip">LIVE · Apr 18, 2026</span>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">Dark mode</button>
-  </div>
+  <button class="theme-toggle" id="themeToggle">Light mode</button>
 </div>
 
 <div class="container">
 
-<!-- ========================== HERO ========================== -->
 <section class="hero">
-  <h1>Operation South Bay <span class="grad">— Week 14 · Apr 18 Status</span></h1>
-  <p class="lead">Meeting 18 ingested. Stripe Admin accepted. Strategy Law killed ($10K quote) — CTO pivots to in-house AI legal bootstrap. Retell sales-node moved Gemini → HiQ. Inventory query token-cost bug logged (8K tokens, price not loading). Teresa lead inbound (Frankie's insurance pro · $40–50K/mo). n8n account migrated to <code>orayacorporation.app.n8n.cloud</code>. RPA now owns date/time prompt updates.</p>
+  <h1>Operation South Bay <span class="grad">— Week 14 · Apr 18</span></h1>
+  <p class="lead">Stripe Admin live. Strategy Law killed; CTO bootstraps in-house AI legal. Retell sales-node pivoted Gemini → HiQ. Inventory query token bug active (8K vs 3K, no price). Teresa inbound — Frankie's insurance pro, $40–50K/mo. n8n migrated to <code>orayacorporation.app.n8n.cloud</code>. RPA owns date/time prompt updates.</p>
 
-  <!-- KPI STRIP -->
   <div class="kpi-strip">
-    <div class="kpi p1">
-      <div class="label">Meetings to date</div>
-      <div class="value">18<span style="font-size:13px;color:var(--text3);">+</span></div>
-      <div class="trend up">▲ +1 · Apr 18 strategic sync (58 min)</div>
-    </div>
-    <div class="kpi p1">
-      <div class="label">Weeks since inception</div>
-      <div class="value">14</div>
-      <div class="trend flat">steady · started Jan 2026</div>
-    </div>
-    <div class="kpi green">
-      <div class="label">Test calls executed</div>
-      <div class="value">500<span style="font-size:13px;color:var(--text3);">+</span></div>
-      <div class="trend up">▲ retail inventory PASS Apr 11</div>
-    </div>
-    <div class="kpi green">
-      <div class="label">E&amp;O coverage</div>
-      <div class="value">$46<span style="font-size:13px;color:var(--text3);"> / $82.42</span></div>
-      <div class="trend up">▲ quoted Apr 7 · active 04/07/26</div>
-    </div>
-    <div class="kpi p2">
-      <div class="label">Stripe first signal</div>
-      <div class="value">$0.37</div>
-      <div class="trend up">▲ Admin accepted Apr 18 · full CTO visibility</div>
-    </div>
-    <div class="kpi orange">
-      <div class="label">Infra cost / client</div>
-      <div class="value">$30<span style="font-size:13px;color:var(--text3);">–$40</span></div>
-      <div class="trend flat">96% gross margin @ scale</div>
-    </div>
-    <div class="kpi p1">
-      <div class="label">n8n workflows live</div>
-      <div class="value">86</div>
-      <div class="trend up">▲ orayacorporation.app.n8n.cloud</div>
-    </div>
-    <div class="kpi p2">
-      <div class="label">Pilot ARR (target)</div>
-      <div class="value">$9.98k<span style="font-size:13px;color:var(--text3);">/mo</span></div>
-      <div class="trend flat">20 subs @ $499 · first North Star</div>
-    </div>
+    <div class="kpi p1"><div class="label">Meetings</div><div class="value">18</div><div class="trend up">▲ Apr 18 · 58 min</div></div>
+    <div class="kpi p1"><div class="label">Week</div><div class="value">14</div><div class="trend flat">since Jan 2026</div></div>
+    <div class="kpi green"><div class="label">Test calls</div><div class="value">500+</div><div class="trend up">PASS Apr 11</div></div>
+    <div class="kpi p2"><div class="label">Stripe</div><div class="value">$0.37</div><div class="trend up">Admin live Apr 18</div></div>
+    <div class="kpi orange"><div class="label">Infra/client</div><div class="value">$30–40</div><div class="trend flat">96% gross margin</div></div>
+    <div class="kpi p1"><div class="label">n8n flows</div><div class="value">86</div><div class="trend up">orayacorporation</div></div>
+    <div class="kpi p2"><div class="label">ARR target</div><div class="value">$9.98k/mo</div><div class="trend flat">20 subs @ $499</div></div>
+    <div class="kpi green"><div class="label">E&amp;O</div><div class="value">$46/$82</div><div class="trend up">quoted · pending bind</div></div>
   </div>
 
-  <!-- SENTIENT WIDGETS (PROACTIVE) -->
   <div class="sentient-grid">
     <div class="sentient alert">
-      <div class="tag-top"><span class="dot"></span> ACTIVE BUG · P1 PILOT</div>
-      <div class="headline">Retell inventory query — price not loading · 8K tokens</div>
-      <div class="sub">Frankie WhatsApp 02:55 AM Apr 18. Sales-node latency 10s on Gemini. Plan: dump current agent, rebuild from scratch using owned inventory function. Lock model to <strong>HiQ</strong> ($0.05/min premium = $250/1K calls, worth it).</div>
-      <div class="pulse-bar"><span style="width:85%;background:var(--red);"></span></div>
-    </div>
-    <div class="sentient warn">
-      <div class="tag-top"><span class="dot"></span> STRATEGIC PIVOT · LEGAL</div>
-      <div class="headline">Strategy Law killed — $10K quote rejected</div>
-      <div class="sub">In-house AI legal bootstrap approved in Meeting 18. CTO owns: (1) map applicable laws (CA + federal + India common-law crossover for non-resident CTO), (2) IRS + agency web filings, (3) precedent research from existing legal AIs, (4) draft until profitable.</div>
-      <div class="pulse-bar"><span style="width:30%;background:var(--orange);"></span></div>
+      <div class="tag-top"><span class="dot"></span> ACTIVE BUG · P1</div>
+      <div class="headline">Inventory query · price not loading · 8K tokens</div>
+      <div class="sub">Frankie 02:55 AM Apr 18. Sales-node 10s latency. Rebuild agent on owned inventory function. Lock model to HiQ.</div>
     </div>
     <div class="sentient warn">
       <div class="tag-top"><span class="dot"></span> NEXT ACTION · HIGH</div>
-      <div class="headline">Mercedes: Frankie follow-up to Chris Mazzio</div>
-      <div class="sub">Last touch Apr 8. 10 days silent. Holding by design per Meeting 18: "we're waiting for our shit to be done before we call him." Unblocks when inventory-query rebuild ships. 3311 Pacific Coast Hwy, Torrance · 310.650.4826.</div>
-      <div class="pulse-bar"><span style="width:70%;background:var(--orange);"></span></div>
+      <div class="headline">Mercedes: Frankie → Mazzio follow-up</div>
+      <div class="sub">10 days silent (by design). Unblocks when inventory rebuild ships. 3311 Pacific Coast Hwy, Torrance · 310.650.4826.</div>
     </div>
     <div class="sentient info">
-      <div class="tag-top"><span class="dot"></span> INCOMING · INSURANCE LEAD</div>
-      <div class="headline">Teresa — Frankie's insurance pro · meeting ≤72h</div>
-      <div class="sub">Earns $40–50K/mo from team overrides ("savage"). Ready to meet live 5–10 min, postponed twice on Apr 18 (sold mid-call). Will supply leads + agent partnerships. Frankie: "I'm gonna leverage the shit out of our relationship."</div>
-      <div class="pulse-bar"><span style="width:55%;background:var(--blue);"></span></div>
-    </div>
-    <div class="sentient good">
-      <div class="tag-top"><span class="dot"></span> JUST SHIPPED · APR 18</div>
-      <div class="headline">Stripe Admin accepted · CTO visibility unlocked</div>
-      <div class="sub">R2 closed. Chitraksh confirmed in Meeting 18. Dashboard Risk Register now carries 11 open, not 12. Retell agent also gained date/time awareness (RPA-driven) — give it a few calls to validate.</div>
-      <div class="pulse-bar"><span style="width:100%;background:var(--green);"></span></div>
-    </div>
-    <div class="sentient good">
-      <div class="tag-top"><span class="dot"></span> JUST SHIPPED · APR 17</div>
-      <div class="headline">GitHub SSH migration · permanent fix</div>
-      <div class="sub">PAT-in-URL root cause eliminated. Plain <code>git push</code> works forever. Chitraksh explained the hashing/key protocol to Frankie in Meeting 18. Setup documented in <code>protocols/setup-github.sh</code>.</div>
-      <div class="pulse-bar"><span style="width:100%;background:var(--green);"></span></div>
-    </div>
-    <div class="sentient info">
-      <div class="tag-top"><span class="dot"></span> COUNTDOWN · SOI</div>
-      <div class="headline">California Statement of Information</div>
-      <div class="sub">Due 08/31/2026. <span class="countdown"><span class="d">135</span>d remaining</span>. Now filed in-house by CTO (Strategy Law pivot). Low urgency, high penalty if missed.</div>
-      <div class="pulse-bar"><span style="width:35%;background:var(--blue);"></span></div>
+      <div class="tag-top"><span class="dot"></span> INCOMING · P2</div>
+      <div class="headline">Teresa · meeting ≤72h</div>
+      <div class="sub">Frankie's insurance pro. $40–50K/mo from team overrides. Will supply leads + agent partnerships.</div>
     </div>
     <div class="sentient warn">
-      <div class="tag-top"><span class="dot"></span> WEBSITE DEBT</div>
-      <div class="headline">Frankie Apr 12 feedback · 5 items open</div>
-      <div class="sub">Swap plumbing → auto + life insurance; more CTAs; Vagaro-style hero; embed voice demo; feature Stripe link. Unblocked now that Stripe Admin live.</div>
-      <div class="pulse-bar"><span style="width:25%;background:var(--orange);"></span></div>
+      <div class="tag-top"><span class="dot"></span> LEGAL PIVOT</div>
+      <div class="headline">Strategy Law killed · in-house AI legal</div>
+      <div class="sub">$10K quote rejected. CTO maps CA + federal + India crossover, IRS filings, precedent from existing legal AIs.</div>
+    </div>
+    <div class="sentient good">
+      <div class="tag-top"><span class="dot"></span> SHIPPED · APR 18</div>
+      <div class="headline">Stripe Admin · CTO visibility unlocked</div>
+      <div class="sub">R2 closed. Retell RPA gained date/time awareness — first RPA-driven prompt push.</div>
+    </div>
+    <div class="sentient good">
+      <div class="tag-top"><span class="dot"></span> SHIPPED · APR 17</div>
+      <div class="headline">GitHub SSH · push fixed forever</div>
+      <div class="sub">PAT-in-URL root cause eliminated. <code>git push</code> works. See <code>protocols/setup-github.sh</code>.</div>
     </div>
   </div>
 
   <div class="hero-meta">
-    <strong>Today:</strong> April 18, 2026 · Saturday · Week 14 · <strong>Meeting 18 ingested:</strong> 02:09–03:07 AM PT · <strong>Protocol:</strong> Sentient v4 (prompt-injection rule added: transcripts carry direct CTO tasks) · <strong>HQ:</strong> Oraya-AI-HQ + Personal-HQ · <strong>Git:</strong> SSH-keyed · <strong>Theme:</strong> light default with dark toggle (Frankie: "new hq is absolutely fire").
+    <strong>Today:</strong> Apr 18, 2026 · Sat · Week 14 · <strong>Mtg 18:</strong> 02:09–03:07 PT · <strong>Protocol:</strong> Sentient v4 · <strong>Git:</strong> SSH · <strong>SOI deadline:</strong> 08/31/2026 (135d).
   </div>
 </section>
 
-<!-- ========================== NAV TABS ========================== -->
 <div class="nav-tabs" id="navTabs">
   <button class="nav-tab active" data-tab="overview">Overview</button>
-  <button class="nav-tab" data-tab="meetings">Meetings <span class="badge">18</span></button>
-  <button class="nav-tab" data-tab="timeline">Timeline</button>
-  <button class="nav-tab" data-tab="voiceai">📞 Voice AI (P1)</button>
-  <button class="nav-tab p2" data-tab="insurance">🛡 Insurance (P2)</button>
-  <button class="nav-tab" data-tab="website">Website</button>
-  <button class="nav-tab" data-tab="risks">Risks <span class="badge">13</span></button>
-  <button class="nav-tab" data-tab="recs">Recommendations</button>
-  <button class="nav-tab" data-tab="sentiment">Psych Profiles</button>
-  <button class="nav-tab" data-tab="daily-tasks">📅 Daily Tasks</button>
-  <button class="nav-tab" data-tab="compliance-cmd">⚖ Legal CC</button>
-  <button class="nav-tab" data-tab="cto-clo-brief">★ CTO/CLO Brief</button>
-  <button class="nav-tab" data-tab="offer-intel">✉ Offer Intel</button>
+  <button class="nav-tab" data-tab="tasks">Tasks</button>
+  <button class="nav-tab" data-tab="risks">Risks</button>
+  <button class="nav-tab" data-tab="metrics">Metrics</button>
 </div>
 
-<!-- ============================================================
-                         SECTION: OVERVIEW
-============================================================ -->
+<!-- ============== OVERVIEW (north star + projects + intel feed) ============== -->
 <div class="section active" id="overview">
 
-  <!-- NORTH STAR -->
   <div class="banner p1">
     <div class="icon">★</div>
     <div>
-      <h2>North Star Ladder</h2>
-      <p>Mercedes pilot ships → land 20 subs @ $499/mo → $9,980 MRR → Frankie quits day job → insurance arm scales → Quote AI launches → DAO insurance. Every session moves one rung up.</p>
+      <h2>North Star</h2>
+      <p>Mercedes pilot ships → 20 subs @ $499/mo → $9,980 MRR → Frankie quits day job → insurance scales → Quote AI → DAO insurance.</p>
     </div>
   </div>
 
-  <!-- APR 6-18 INTELLIGENCE CARD -->
-  <div class="card">
-    <h3 class="accent">📡 Apr 6–18 Intelligence · 18 Signals (6 net-new from Meeting 18)</h3>
-    <div class="grid-2">
-      <ul>
-        <li><strong>Apr 18 · Meeting 18 Ingested (58 min, 02:09–03:07 AM PT)</strong> — CTO included live in call per project-instruction: parse transcript for direct tasks and execute, not just log. <span class="tag tag-green">✓ RULE LOCKED</span></li>
-        <li><strong>Apr 18 · Stripe Admin ACCEPTED</strong> — R2 closed. Chitraksh confirmed in-call: "Yeah I did, I did." Full CTO payout/team visibility now ON. <span class="tag tag-green">✓ CLOSED</span></li>
-        <li><strong>Apr 18 · Strategy Law KILLED — $10K quote rejected</strong> — CTO pivots to in-house AI legal bootstrap. Plan of action: map all applicable laws (CA + federal + India common-law crossover), procedural law for non-resident US-citizen founder, IRS + agency web filings, precedent from existing legal AIs. Until profitable. <span class="tag tag-orange">⚠ IN-HOUSE</span></li>
-        <li><strong>Apr 18 · Retell Sales-Node Pivot to HiQ</strong> — Gemini latency issues (10s silence before speaking). HiQ premium: +$0.05/min = +$250/1K calls. Enterprises "do not give a fuck" about $200/mo when paying $2K/mo. <span class="tag tag-blue">MODEL LOCKED</span></li>
-        <li><strong>Apr 18 · Inventory Query Token-Cost Bug</strong> — Frankie 02:55 AM: "price is not loading on inventory query." Token usage 8K vs 3K — agent over-thinking multi-option fan-out. Plan: dump agent, rebuild from scratch using owned inventory function. <span class="tag tag-red">⚡ ACTIVE</span></li>
-        <li><strong>Apr 18 · Teresa Lead Incoming</strong> — Frankie's insurance pro, $40–50K/mo from team overrides. Ready to meet 5–10 min; postponed twice mid-call (sold a policy). Will supply leads + agent partnerships. Meeting locked ≤72h or this weekend. <span class="tag tag-blue">INCOMING</span></li>
-        <li><strong>Apr 18 · n8n Account Migrated</strong> — <code>hanfluxai2026.app.n8n.cloud</code> → <code>orayacorporation.app.n8n.cloud</code>. Experimental form URL reissued: <code>orayacorporation.app.n8n.cloud/form/43f8942b-7c76-413b-80f5-6d4fc63250f7</code>. <span class="tag tag-green">✓ MIGRATED</span></li>
-        <li><strong>Apr 18 · Mazzio Card Received</strong> — full contact: Chris Mazzio · Sales Manager · Mercedes-Benz of South Bay · 3311 Pacific Coast Hwy, Torrance CA 90505 · <strong>310.650.4826</strong>. Frankie texted contact to Chitraksh 02:55 AM. <span class="tag tag-blue">LOGGED</span></li>
-        <li><strong>Apr 18 · Retell RPA Self-Edit Shipped</strong> — agent now has date/time awareness (RPA-applied from transcripts). First RPA-driven prompt push. Give it a few test calls to validate. <span class="tag tag-green">✓ SHIPPED</span></li>
-        <li><strong>Apr 18 · Demo Playbook Codified</strong> — live 5–7 min demo uses customer's phone number only. No email access requested (too invasive). Flash Workflow admin account gives client read-only calendar/email view. Both founders' numbers set as admin. <span class="tag tag-blue">RULE</span></li>
-        <li><strong>Apr 18 AM · CTO-Claude Autonomous Drop</strong> — 6 artifacts shipped in one morning run: inventory rebuild plan, phone-only demo script (Teresa+Mazzio variants), legal template pack v0.1 scaffold, Teresa leave-behind one-pager, mutual NDA v1 draft, HiQ latency audit spec. All on disk under <code>deliverables/</code>. <span class="tag tag-green">✓ SHIPPED</span></li>
-      </ul>
-      <ul>
-        <li><strong>Apr 18 · Frankie Praises New HQ</strong> — "The new hq is absolutely fire … more organized" but "miss the old UI / color scheme." Dark mode toggle resolved that in-call. Feedback vector: dashboard tone/aesthetic matters. <span class="tag tag-pink">SENTIMENT +</span></li>
-        <li><strong>Apr 7 · E&amp;O Quoted</strong> — $46/mo Standard (Prof Liability) vs $82.42/mo Plus (E&amp;O + Cyber). $1K deductible, $1M limits, coverage 04/07/26. <span class="tag tag-green">✓ QUOTED</span> · <span class="tag tag-orange">DECISION PENDING Apr 18</span></li>
-        <li><strong>Apr 17 · HQ Restructure v4 + Sentient v4 + SSH fix</strong> — monolithic HQ split; §2 self-audit, §9 founder briefings, §14 MCP hierarchy, §15 handoff discipline; ed25519 SSH key replaces PAT-in-URL root cause. <span class="tag tag-green">✓ SHIPPED</span></li>
-        <li><strong>Apr 16 · Strategy Law LLP Intake Filed</strong> — Sophia Diaz (Client Support), 1 Almaden Blvd Ste 700, San Jose. Intake moved, then <strong>relationship terminated Apr 18</strong> over $10K quote. <span class="tag tag-red">✗ TERMINATED</span></li>
-        <li><strong>Apr 15 · Stripe First Signal $0.37</strong> — revenue heartbeat ON. Auto-payouts to Chase ••••6789 (Frankie personal, USD). <span class="tag tag-green">✓ LIVE</span></li>
-        <li><strong>Apr 12 · Frankie Website Feedback</strong> — 5 items: plumbing→auto+life swap, more CTAs, Vagaro-style hero, voice demo embed, Stripe payment link. <span class="tag tag-orange">⚡ 5 OPEN</span></li>
-        <li><strong>Apr 11 · Retail Inventory Test Call PASS</strong> — Full end-to-end: 1,700 vehicles, Jessica voice, 20+ data points, 4-hour refresh confirmed. <span class="tag tag-green">✓ PASS</span></li>
-        <li><strong>Mazzio Follow-up · Holding by Design</strong> — 10d silent. Per Meeting 18: "waiting for our shit to be done before we call him." Unblocks when inventory-query rebuild ships. <span class="tag tag-orange">⚡ HOLD</span></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- TWO PROJECT BANNERS -->
   <div class="grid-2">
     <div class="card">
-      <div class="banner p1" style="margin-bottom:0;padding:14px;">
+      <div class="banner p1" style="margin-bottom:0;padding:12px;">
         <div class="icon">📞</div>
-        <div>
-          <h2>Project 1 · Voice AI</h2>
-          <p>Mercedes-Benz of South Bay (AutoNation) · Sales Mgr Chris Mazzio</p>
-        </div>
+        <div><h2>P1 · Voice AI</h2><p>Mercedes-Benz of South Bay · Mgr Chris Mazzio</p></div>
       </div>
-      <div style="margin-top:14px;">
-        <div class="progress-wrap"><div class="progress-label"><span>Voice agent build</span><span style="color:var(--green);">LIVE</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;"></div></div></div>
-        <div class="progress-wrap"><div class="progress-label"><span>Retail inventory pipeline (1,700 vehicles)</span><span style="color:var(--green);">PASS Apr 11</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green);"></div></div></div>
-        <div class="progress-wrap"><div class="progress-label"><span>Offer letter + compliance report</span><span style="color:var(--green);">READY</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green);"></div></div></div>
-        <div class="progress-wrap"><div class="progress-label"><span>Pilot SOW executed</span><span style="color:var(--orange);">AWAITING GM</span></div><div class="progress-bar"><div class="progress-fill" style="width:40%;background:var(--orange);"></div></div></div>
+      <div style="margin-top:12px;">
+        <div class="progress-wrap"><div class="progress-label"><span>Voice agent</span><span class="up">LIVE</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div></div>
+        <div class="progress-wrap"><div class="progress-label"><span>Inventory pipeline (1,700 vehicles)</span><span class="up">PASS Apr 11</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div></div>
+        <div class="progress-wrap"><div class="progress-label"><span>Inventory query bug</span><span style="color:var(--red)">REBUILD</span></div><div class="progress-bar"><div class="progress-fill" style="width:25%;background:var(--red)"></div></div></div>
+        <div class="progress-wrap"><div class="progress-label"><span>Pilot SOW</span><span style="color:var(--orange)">AWAITING GM</span></div><div class="progress-bar"><div class="progress-fill" style="width:40%;background:var(--orange)"></div></div></div>
       </div>
     </div>
     <div class="card">
-      <div class="banner p2" style="margin-bottom:0;padding:14px;">
+      <div class="banner p2" style="margin-bottom:0;padding:12px;">
         <div class="icon">🛡</div>
-        <div>
-          <h2>Project 2 · Insurance Lead Gen</h2>
-          <p>Dialer + inbound · Retell voice qualifier · GoHighLevel CRM handoff</p>
-        </div>
+        <div><h2>P2 · Insurance Lead Gen</h2><p>Retell qualifier → GHL → agent close</p></div>
       </div>
-      <div style="margin-top:14px;">
-        <div class="progress-wrap"><div class="progress-label"><span>Revenue model locked ($25–$50/lead or $1k/wk)</span><span style="color:var(--green);">DEFINED</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green);"></div></div></div>
-        <div class="progress-wrap"><div class="progress-label"><span>Stripe payment rail live</span><span style="color:var(--green);">$0.37 first signal Apr 15</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green);"></div></div></div>
-        <div class="progress-wrap"><div class="progress-label"><span>Opted-in lead resale legality confirmed</span><span style="color:var(--green);">✓ Apr 3 Frankie</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green);"></div></div></div>
-        <div class="progress-wrap"><div class="progress-label"><span>First agency client closed</span><span style="color:var(--orange);">PIPELINE BUILDING</span></div><div class="progress-bar"><div class="progress-fill" style="width:30%;background:var(--orange);"></div></div></div>
+      <div style="margin-top:12px;">
+        <div class="progress-wrap"><div class="progress-label"><span>Revenue model ($25–50/lead, $1k/wk retainer)</span><span class="up">DEFINED</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div></div>
+        <div class="progress-wrap"><div class="progress-label"><span>Stripe rail</span><span class="up">$0.37 first signal</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div></div>
+        <div class="progress-wrap"><div class="progress-label"><span>Teresa anchor close</span><span style="color:var(--orange)">MTG ≤72h</span></div><div class="progress-bar"><div class="progress-fill" style="width:55%;background:var(--orange)"></div></div></div>
+        <div class="progress-wrap"><div class="progress-label"><span>First agency client</span><span style="color:var(--orange)">PIPELINE</span></div><div class="progress-bar"><div class="progress-fill" style="width:30%;background:var(--orange)"></div></div></div>
       </div>
     </div>
   </div>
 
-  <!-- EXECUTIVE COST TABLE -->
   <div class="card">
-    <h3>Cost Stack · Per Client / Month</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Layer</th><th>Vendor</th><th>Cost</th><th>Notes</th></tr></thead>
-        <tbody>
-          <tr><td>Voice AI</td><td>Retell</td><td><strong>$0.10/min</strong></td><td>Inbound agent. Sales outbound node pivoted Gemini→<strong>HiQ</strong> (+$0.05/min) for latency. ~$0.35/call avg.</td></tr>
-          <tr><td>Orchestration</td><td>n8n Cloud</td><td>$20–$34</td><td>86 workflows. <strong>orayacorporation.app.n8n.cloud</strong> (migrated Apr 18 from hanfluxai2026)</td></tr>
-          <tr><td>Database</td><td>Supabase</td><td>$0–$25</td><td>HIPAA BAA requires Team+ tier</td></tr>
-          <tr><td>Telephony</td><td>Twilio A2P 10DLC</td><td>$15</td><td>Brand registered, campaign approved</td></tr>
-          <tr><td>CRM</td><td>GoHighLevel</td><td>$0–$97</td><td>Sub-accounts per client</td></tr>
-          <tr><td>Payments</td><td>Stripe</td><td>2.9% + $0.30</td><td>Frankie owner, auto-payout Chase ••••6789</td></tr>
-          <tr><td style="font-weight:700;color:var(--text);">Total</td><td></td><td style="font-weight:700;color:var(--green);">$30–$40/mo/client</td><td>Pricing: $997 → $3K–$5K → $7K–$11K/mo/location</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
-<!-- ============================================================
-                         SECTION: MEETINGS
-============================================================ -->
-<div class="section" id="meetings">
-  <h2 class="section-title">Consolidated Meeting Register · 18 to date</h2>
-
-  <div class="card">
-    <h3 class="accent">Recent Meetings (Apr 5 → Apr 18)</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>#</th><th>Date</th><th>Type</th><th>Participants</th><th>Outcome / Intel</th></tr></thead>
-        <tbody>
-          <tr><td><strong>18</strong></td><td><strong>Apr 18, 2026</strong></td><td>Strategic sync (02:09–03:07 AM PT · 58 min)</td><td>Chitraksh · Frankie · <em>CTO-Claude (included per project rule)</em></td><td><strong>Meeting 18 ingested.</strong> Stripe Admin <span class="tag tag-green">ACCEPTED</span>. Strategy Law <span class="tag tag-red">KILLED</span> ($10K quote) → in-house AI legal bootstrap approved. Retell sales-node pivot Gemini→<strong>HiQ</strong> (latency). Inventory query token bug logged (8K vs 3K, price not loading). <strong>Teresa</strong> lead inbound (Frankie's insurance pro, $40–50K/mo). n8n migrated to <code>orayacorporation.app.n8n.cloud</code>. Demo playbook codified (phone-only, no email access). Retell RPA now self-edits agent prompts (first RPA-driven push). Mazzio business card captured.</td></tr>
-          <tr><td>17</td><td>Apr 16, 2026</td><td>Legal consult</td><td>Chitraksh · Strategy Law LLP (Sophia Diaz)</td><td>Intake form filed. Conflict check + intake coordinator initiated. Firm: 1 Almaden Blvd Ste 700, San Jose. <span class="tag tag-red">CLOSED Apr 18</span> — $10K quote rejected, pivoting to in-house AI legal.</td></tr>
-          <tr><td>16</td><td>Apr 15, 2026</td><td>Ops sync (WhatsApp)</td><td>Chitraksh · Frankie</td><td>Stripe $0.37 first signal received. Team finalized: Frankie Owner, Chitraksh Admin invite pending. Chase ••••6789 payout confirmed.</td></tr>
-          <tr><td>15</td><td>Apr 12, 2026</td><td>Website review</td><td>Chitraksh · Frankie</td><td>5 actionable items on oraya-ai site: swap plumbing→automotive/life insurance, more CTAs, Vagaro-style hero screenshot, voice demo embed, feature Stripe payment link.</td></tr>
-          <tr><td>14</td><td>Apr 11, 2026</td><td>Retail inventory end-to-end test</td><td>Chitraksh · Retell (Jessica)</td><td>PASS. 1,700 vehicles indexed, 20+ data points per vehicle, 4-hour refresh cycle. Full call flow to Jessica validated.</td></tr>
-          <tr><td>13</td><td>Apr 7, 2026</td><td>Insurance broker quote</td><td>Frankie</td><td>E&amp;O quoted: $46/mo Standard (Prof Liability) vs $82.42/mo Plus (E&amp;O + Cyber). $1K deductible, $1M limits, coverage start 04/07/26.</td></tr>
-          <tr><td>12</td><td>Apr 5, 2026</td><td>Strategic sync</td><td>Chitraksh · Frankie</td><td>Telephony stacks fully LIVE. Retell voice speed fixed 1.0→6.6. Quote AI + DAO Insurance long-term architecture laid out. Holding Co. structure agreed.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Earlier Meetings (Mar 3 → Apr 3)</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>#</th><th>Date</th><th>Type</th><th>Outcome</th></tr></thead>
-        <tbody>
-          <tr><td>11</td><td>Apr 3, 2026</td><td>Voice speed + SMS test</td><td>Retell speed 6.6 locked. Admin + customer SMS both confirmed. Outbound + inbound telephony operational.</td></tr>
-          <tr><td>10</td><td>Apr 2, 2026</td><td>Inventory system design</td><td>5 n8n workflows for no-AI HTTP inventory crawler. IP strategy: JSON files = owned IP, convert to hard code in private GitHub repo.</td></tr>
-          <tr><td>9</td><td>Apr 1, 2026</td><td>EIN filing</td><td>SS-4 filed. EIN 93-3462113 issued. Oraya Corporation California C-Corp confirmed.</td></tr>
-          <tr><td>8</td><td>Mar 28, 2026</td><td>Offer letter + compliance report finalized</td><td>Letter (2pg) + Compliance Verification Report v2 (DOCX) both ready to send.</td></tr>
-          <tr><td>7</td><td>Mar 15–22</td><td>Multiple working sessions</td><td>A2P 10DLC brand + campaign. Supabase chosen over HubSpot. 4 log tables designed.</td></tr>
-          <tr><td>6</td><td>Mar 9, 2026</td><td>Dealership pilot kickoff</td><td>Dealership Report Client Version shared. Mercedes pilot activated. Outbound form URL pinned.</td></tr>
-          <tr><td>5</td><td>Mar 7–8, 2026</td><td>Retell build sprint</td><td>Agent reset, tooling locked. Inbound/outbound flows proved.</td></tr>
-          <tr><td>1–4</td><td>Mar 3–6, 2026</td><td>Founding + funding</td><td>Frankie wire $78 → Claude Pro + Comet + Retell + Twilio + n8n reserves. Budget model locked at $0.35/call Retell avg.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3 class="accent">WhatsApp Intelligence Log (Mar 3 → Apr 18)</h3>
-    <p>Signal-dense moments extracted from the Chitraksh × Frankie thread. Full export in <code>handoffs/Oraya_Handoff_Brief_2026-04-18.md</code>.</p>
+    <h3 class="accent">📡 Intelligence Feed (Apr 5 → Apr 18)</h3>
     <ul>
-      <li><strong>Apr 18 02:55 · Dark mode resolved</strong> — Frankie on new HQ: <em>"omg dude this is sooo much more organized... absolutely fire bro"</em>. One gripe: missed old UI colors — resolved same-session via dark-mode toggle. Sentiment: strong positive.</li>
-      <li><strong>Apr 18 02:09–03:07 · Meeting 18 live</strong> — Stripe Admin accepted, Strategy Law killed ($10K), HiQ pivot, inventory token bug, Teresa inbound, n8n migrated, RPA self-edit shipped, demo playbook codified.</li>
-      <li><strong>Apr 17 18:03 · Scope clarity</strong> — "Update the dashboard based on WhatsApp chats and the meeting." + "Come up with permanent solution for GitHub push." + "White background, light mode." Dark toggle added Apr 18.</li>
-      <li><strong>Apr 15 · Stripe $0.37</strong> — first revenue heartbeat. "Test charge or actual? Monitor."</li>
-      <li><strong>Apr 12 · Website feedback</strong> — 5 concrete items (docs-ed in Apr 6–18 intel).</li>
-      <li><strong>Mar 10 · Terms Gateway concept</strong> — Frankie dictates enterprise-grade contract acceptance architecture (Stripe/Salesforce/DocuSign inspired). Legal enforceability + enterprise UX + audit trail.</li>
-      <li><strong>Mar 9 · Ad strategy</strong> — Frankie: "$1,000 on ads is huge. $500 on google ain't shit but $500 on LinkedIn has to be worth $5K-10K in selling our system bro."</li>
-      <li><strong>Mar 9 · Mistake & recovery</strong> — Chitraksh DUI near-miss. Frankie: "Just be careful and uber next time bro don't jeopardize your life and freedom brother." Partnership bond strengthens.</li>
-      <li><strong>Mar 8 · Mercedes pilot activated</strong> — after Frankie face-to-face at Mercedes South Bay. "We are so cooking bro"</li>
-      <li><strong>Mar 7 · Tech migration philosophy</strong> — n8n = 30 clicks to migrate, Retell = hardest to reset. Validated Apr 18 by actual n8n migration hanfluxai2026→orayacorporation.</li>
-      <li><strong>Mar 6 · Retell cost lock-in</strong> — $0.10/min all-in, 3m30s avg = $0.35/call. Model still accurate; HiQ sales node adds $0.05/min = +$250/1K calls (rounding error for enterprise).</li>
-      <li><strong>Mar 5 · Crypto vision</strong> — "Cryptos are more liquid than water bro." Plants the DAO Insurance seed.</li>
+      <li><strong>Apr 18 · Mtg 18 (58 min)</strong> — Stripe Admin ✓ · Strategy Law killed · HiQ pivot · token bug logged · Teresa inbound · n8n migrated · RPA self-edit shipped · Mazzio card captured. <span class="tag tag-green">INGESTED</span></li>
+      <li><strong>Apr 17</strong> — HQ split (Oraya + Personal). Sentient v4. SSH migration. Light theme + dark toggle. <span class="tag tag-green">SHIPPED</span></li>
+      <li><strong>Apr 16</strong> — Strategy Law intake (Sophia Diaz, San Jose). Terminated Apr 18. <span class="tag tag-red">CLOSED</span></li>
+      <li><strong>Apr 15</strong> — Stripe $0.37 first signal. Chase ••••6789 auto-payouts ON. <span class="tag tag-green">LIVE</span></li>
+      <li><strong>Apr 12</strong> — Frankie website feedback: 5 items (auto+life swap, CTAs, Vagaro hero, voice demo embed, Stripe link). <span class="tag tag-orange">5 OPEN</span></li>
+      <li><strong>Apr 11</strong> — Retail inventory test PASS. 1,700 vehicles, Jessica voice, 4hr refresh. <span class="tag tag-green">PASS</span></li>
+      <li><strong>Apr 7</strong> — E&amp;O quoted: $46 Std vs $82.42 Plus. 04/07/26 active. <span class="tag tag-orange">BIND PENDING</span></li>
+      <li><strong>Apr 5</strong> — Mtg 16. Telephony LIVE. Voice 6.6. Quote AI + DAO + Holding Co. architecture. <span class="tag tag-green">DONE</span></li>
+      <li><strong>Apr 3</strong> — Outbound + inbound + admin/customer SMS LIVE. Voice speed 1.0 → 6.6.</li>
+      <li><strong>Apr 2</strong> — Inventory: 5 n8n workflows, 4hr refresh. JSON = owned IP.</li>
+      <li><strong>Apr 1</strong> — EIN 93-3462113 issued. Oraya Corp CA C-Corp confirmed.</li>
+      <li><strong>Mar 28</strong> — Offer letter + Compliance Report v2 ready. Khalid 10%/$700K terms agreed.</li>
     </ul>
   </div>
-</div>
-
-<!-- ============================================================
-                         SECTION: TIMELINE
-============================================================ -->
-<div class="section" id="timeline">
-  <h2 class="section-title">Project Evolution Timeline · Jan 2026 → Apr 18</h2>
 
   <div class="card">
-    <div class="timeline">
-      <div class="timeline-item green">
-        <div class="date">Apr 18, 2026 · Today</div>
-        <div class="title">Meeting 18 · Stripe Admin accepted · Strategy Law killed · HiQ pivot · Teresa inbound</div>
-        <div class="desc">58-min strategic sync 02:09–03:07 AM PT. Stripe Admin invite accepted — Chitraksh has full CTO visibility. Strategy Law LLP rejected at $10K quote; CTO-Claude approved for in-house AI legal bootstrap (CA + federal + India common-law crossover, procedural law for non-resident US-citizen founder, IRS + agency web filings, precedent from existing legal AIs). Retell sales-node pivot Gemini→HiQ (+$0.05/min = +$250/1K calls; enterprises paying $2K/mo do not care). Inventory query token-cost bug logged: 8K tokens vs 3K baseline, price not loading — rebuild plan queued. Teresa (Frankie's insurance pro, $40–50K/mo from team overrides) inbound; meeting locked ≤72h. n8n account migrated hanfluxai2026→orayacorporation. Retell RPA now self-edits prompts (first RPA-driven prompt push). Demo playbook codified: phone-only, no email access, 5–7 min, both founders' numbers as admin, flash workflow account for client read-only.</div>
-      </div>
-      <div class="timeline-item green">
-        <div class="date">Apr 17, 2026</div>
-        <div class="title">HQ restructure v4 · SSH migration · Dashboard rebuild</div>
-        <div class="desc">Monolithic HQ split into Oraya-AI-HQ + Personal-HQ. Sentient Protocol v4 live. GitHub remote migrated to SSH (PAT-in-URL root cause eliminated). Dashboard rebuilt light-theme with sentient widgets. Dark-mode toggle added Apr 18 after Frankie feedback.</div>
-      </div>
-      <div class="timeline-item green">
-        <div class="date">Apr 16, 2026</div>
-        <div class="title">Strategy Law LLP intake</div>
-        <div class="desc">Sophia Diaz confirmed intake form received. Firm: 1 Almaden Blvd Suite 700, San Jose CA 95113. sdiaz@strategylaw.com. Legal counsel for C-Corp ops engaged.</div>
-      </div>
-      <div class="timeline-item green">
-        <div class="date">Apr 15, 2026</div>
-        <div class="title">Stripe revenue heartbeat · $0.37</div>
-        <div class="desc">First Stripe signal received. Team finalized: Frankie Owner (manifestdestiny247@gmail.com), Chitraksh Admin invite pending. Chase ••••6789 USD auto-payouts ON.</div>
-      </div>
-      <div class="timeline-item orange">
-        <div class="date">Apr 12, 2026</div>
-        <div class="title">Website feedback session</div>
-        <div class="desc">Frankie flagged 5 items on oraya-ai site: replace plumbing example with automotive + life insurance; add more booking CTAs; Vagaro-style hero screenshot; embed AI voice demo; feature Stripe payment link.</div>
-      </div>
-      <div class="timeline-item green">
-        <div class="date">Apr 11, 2026</div>
-        <div class="title">Retail inventory test call · PASS</div>
-        <div class="desc">Full end-to-end test: Jessica voice agent pulled live from 1,700-vehicle inventory with 20+ data points, 4-hour refresh cycle. Demo-ready.</div>
-      </div>
-      <div class="timeline-item green">
-        <div class="date">Apr 7, 2026</div>
-        <div class="title">E&amp;O insurance quoted</div>
-        <div class="desc">Standard $46/mo (Professional Liability E&amp;O) vs Plus $82.42/mo (E&amp;O + Cyber Liability). $1K deductible, $1M limits, coverage start 04/07/26. Decision pending.</div>
-      </div>
-      <div class="timeline-item green">
-        <div class="date">Apr 5, 2026 · Meeting 12</div>
-        <div class="title">Long-term architecture laid out</div>
-        <div class="desc">Quote AI (fully autonomous insurance agency) validated by Uzi Sassoon. DAO Insurance (Solana smart contracts, 1M+ policyholder pool). Oraya Holding Co. structure: P1 + P2 + Quote AI + DAO as subsidiaries.</div>
-      </div>
-      <div class="timeline-item green">
-        <div class="date">Apr 3, 2026</div>
-        <div class="title">Telephony fully LIVE</div>
-        <div class="desc">Outbound + inbound both operational. Voice speed fix Retell 1.0→6.6. Admin SMS + customer SMS confirmed. Opted-in lead resale legality confirmed by Frankie (domain expertise).</div>
-      </div>
-      <div class="timeline-item green">
-        <div class="date">Apr 2, 2026</div>
-        <div class="title">Inventory crawler system built</div>
-        <div class="desc">5 n8n workflows (no-AI HTTP architecture), 1,700 vehicles, 20+ data points, 4-hour refresh. IP strategy: JSON = owned IP, migrate to hard code in private repo.</div>
-      </div>
-      <div class="timeline-item green">
-        <div class="date">Apr 1, 2026</div>
-        <div class="title">EIN issued · 93-3462113</div>
-        <div class="desc">Oraya Corporation California C-Corp confirmed. Principal Address 34837 Winchester Place, Fremont, CA 94555 (Alameda County). SOI due 08/31/2026.</div>
-      </div>
-      <div class="timeline-item">
-        <div class="date">Mar 28, 2026</div>
-        <div class="title">Offer letter + Compliance Report v2 finalized</div>
-        <div class="desc">First-send package ready: Executive Proposal (2-page letterhead PDF) + Compliance Verification Report v2 (DOCX). Signed by Frankie (CEO).</div>
-      </div>
-      <div class="timeline-item">
-        <div class="date">Mar 15–22, 2026</div>
-        <div class="title">A2P 10DLC + Supabase stack chosen</div>
-        <div class="desc">Brand registration obtained. Campaign registration submitted. Supabase chosen over HubSpot. 4 log tables designed. Project split into 4 workflow segments.</div>
-      </div>
-      <div class="timeline-item">
-        <div class="date">Mar 9, 2026</div>
-        <div class="title">Mercedes pilot activated</div>
-        <div class="desc">Frankie face-to-face at Mercedes South Bay. Dealership Report Client Version shared. Outbound form URL pinned. Next meeting locked for formal kickoff.</div>
-      </div>
-      <div class="timeline-item">
-        <div class="date">Mar 6–8, 2026</div>
-        <div class="title">Retell build sprint · cost model locked</div>
-        <div class="desc">$0.10/min all-in Retell confirmed. 3m30s avg call = $0.35/call. $78 starter budget: $24 Claude Pro + $9 Comet + $20 Retell + $15 Twilio reserves + $10 n8n reserves.</div>
-      </div>
-      <div class="timeline-item">
-        <div class="date">Mar 3–5, 2026</div>
-        <div class="title">Partnership formed · first wire</div>
-        <div class="desc">Chitraksh × Frankie partnership officialized. First wire $78 received. Smart contract structure discussed (Stripe payment link preferred). Crypto-first private banking vision seeded.</div>
-      </div>
-    </div>
+    <h3>AutoNation Escalation</h3>
+    <p>Mercedes South Bay = opening move. Real prize: AutoNation MSA across 323 dealerships.</p>
+    <p><span class="tag tag-blue">Pilot 30d</span> → <span class="tag tag-blue">Dealer SLA $1.5–2.5K/mo</span> → <span class="tag tag-orange">Case study</span> → <span class="tag tag-pink">Corp intro</span> → <span class="tag tag-green">MSA · 323 rooftops × $1–1.5K = $323–485K/mo · 96% margin</span></p>
   </div>
 </div>
 
-<!-- ============================================================
-                      SECTION: VOICE AI (P1)
-============================================================ -->
-<div class="section" id="voiceai">
-  <h2 class="section-title">📞 Voice AI Project · Mercedes-Benz of South Bay Pilot</h2>
+<!-- ============== TASKS ============== -->
+<div class="section" id="tasks">
+  <h2 class="section-title">Tasks · ordered by ship priority</h2>
 
-  <div class="banner p1">
-    <div class="icon">📞</div>
-    <div>
-      <h2>Operation South Bay · Inbound + Outbound Voice Agent</h2>
-      <p>Mercedes-Benz of South Bay (AutoNation) · Sales Mgr: Chris Mazzio, 3311 Pacific Coast Hwy, Torrance CA 90505 · Mazzioc@autonation.com · 310.650.4826.</p>
-    </div>
-  </div>
-
-  <div class="grid-2">
-    <div class="card">
-      <h3 class="accent">Current System State (Apr 18)</h3>
-      <ul>
-        <li><span class="tag tag-green">LIVE</span> Outbound telephony (Twilio + Retell)</li>
-        <li><span class="tag tag-green">LIVE</span> Inbound telephony</li>
-        <li><span class="tag tag-green">LIVE</span> Admin SMS + customer SMS confirmed</li>
-        <li><span class="tag tag-green">LIVE</span> Voice speed locked at Retell 6.6 (critical UX)</li>
-        <li><span class="tag tag-green">LIVE</span> Inventory crawler: 5 n8n workflows, 1,700 vehicles, 20+ data points, 4hr refresh</li>
-        <li><span class="tag tag-green">LIVE</span> Date/time awareness in agent prompt (RPA-driven · Apr 18)</li>
-        <li><span class="tag tag-green">LIVE</span> Retell RPA self-edits agent prompts (first RPA-driven prompt push)</li>
-        <li><span class="tag tag-green">PASS</span> Retail inventory end-to-end test (Apr 11)</li>
-        <li><span class="tag tag-green">READY</span> Offer letter + Compliance Report v2 (Mar 28 stored)</li>
-        <li><span class="tag tag-red">BUG</span> Inventory query token blow-up (8K tokens vs 3K baseline · price not loading) · rebuild queued</li>
-        <li><span class="tag tag-amber">PIVOT</span> Sales outbound node Gemini → <strong>HiQ</strong> (latency) · +$0.05/min</li>
-        <li><span class="tag tag-orange">PENDING</span> Pilot SOW execution</li>
-        <li><span class="tag tag-orange">PENDING</span> Mazzio follow-up (card captured Apr 18 · ready to re-engage)</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3 class="accent">Pricing Ladder (Validated Apr 2026)</h3>
-      <ul>
-        <li><strong>Entry · $997/mo</strong> — Voice AI baseline, single location. Objection-crusher price point.</li>
-        <li><strong>Growth · $3,000–$5,000/mo/location</strong> — Post-pilot conversion. Full stack + SLA + reporting.</li>
-        <li><strong>Enterprise · $7,000–$11,000/mo/location</strong> — Long-term pricing with custom integrations, white-glove ops, inventory AI, and contract renewals.</li>
-        <li><strong>Pilot terms</strong> — 30 days / $0 / no commitment / 24-hour exit / dealership retains data / 72-hour purge on termination.</li>
-      </ul>
-      <p style="margin-top:10px;"><strong>Unit economics:</strong> At $997/mo and $30–$40 infra cost → ~96% gross margin. At $5K/mo → effectively pure margin after setup amortized.</p>
-    </div>
+  <div class="card">
+    <h3 class="red">Tier 1 · Ship This Week (Apr 18 → Apr 25)</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>#</th><th>Task</th><th>Owner</th><th>ETA</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><strong>Fix inventory query bug</strong> — n8n HTTP lookup + field map (price/MSRP/OTD) + token guard. Trim context ≤5 vehicles/turn. Test 20-vehicle sample.</td><td>CTO-Claude</td><td>Before next demo</td></tr>
+        <tr><td>2</td><td><strong>Book Teresa meeting ≤72h</strong> — phone-only demo (5–7 min). Frankie initiates; CTO preps script + leave-behind one-pager.</td><td>Frankie + CTO</td><td>Apr 21</td></tr>
+        <tr><td>3</td><td><strong>Frankie → Mazzio follow-up</strong>. Card in hand (310.650.4826). Text: "Following up on Oraya pilot — opened to any vehicle. 20 min this week?" If silent 48h → in-person at 3311 PCH.</td><td>Frankie</td><td>This week</td></tr>
+        <tr><td>4</td><td><strong>Bootstrap in-house AI legal</strong>. First deliverables: vendor DPA templates × 6, pilot SOW template, mutual NDA. Replaces Strategy Law's $10K scope.</td><td>CTO-Claude</td><td>Apr 25</td></tr>
+        <tr><td>5</td><td><strong>Bind E&amp;O Plus ($82.42/mo)</strong>. Cyber liability under SB 446 worth $36 delta vs $5K/violation CIPA exposure.</td><td>Frankie</td><td>This week</td></tr>
+        <tr><td>6</td><td><strong>Pre-sign pilot SOW template</strong> — only step left at dealer-side is signature, not negotiation.</td><td>CTO-Claude</td><td>Apr 22</td></tr>
+        <tr><td>7</td><td><strong>Push dashboard v7 to GitHub</strong> + mirror to <code>index.html</code>. See CLAUDE.md root §Dashboard mirror.</td><td>CTO-Claude</td><td>Today</td></tr>
+      </tbody>
+    </table></div>
   </div>
 
   <div class="card">
-    <h3>Voice Agent Config (Jessica · prod)</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Component</th><th>Provider</th><th>Detail</th></tr></thead>
-        <tbody>
-          <tr><td>Voice</td><td>Retell</td><td>Voice ID <code>cd2fbc5e381df2b880e4533e52</code> · Speed 6.6</td></tr>
-          <tr><td>LLM — Inbound</td><td>Retell (via Gemini/Claude)</td><td>System prompt hard-codes: AI identity disclosure (first 10s), recording notification, opt-out mechanism. Date/time now auto-injected via RPA (Apr 18).</td></tr>
-          <tr><td>LLM — Sales Outbound</td><td>Retell (<strong>HiQ</strong>)</td><td>Pivoted Gemini → HiQ Apr 18 for latency. +$0.05/min = +$250/1K calls. Enterprise clients paying $2K+/mo absorb this as rounding error.</td></tr>
-          <tr><td>Telephony</td><td>Twilio A2P 10DLC</td><td>Brand registered. Campaign approved. STOP processing at carrier level.</td></tr>
-          <tr><td>Orchestration</td><td>n8n Cloud</td><td><strong>orayacorporation.app.n8n.cloud</strong> · 86 workflows · post-call webhook processing, consent verification, purge triggers. Migrated from hanfluxai2026 Apr 18. New form URL: <code>orayacorporation.app.n8n.cloud/form/43f8942b-7c76-413b-80f5-6d4fc63250f7</code>.</td></tr>
-          <tr><td>Consent store</td><td>Supabase</td><td>Immutable consent_log with RLS. Phone, status, disclosure text, IP, timestamp, source URL all captured.</td></tr>
-          <tr><td>PII redaction</td><td>Retell</td><td>9-category PII engine strips sensitive data before transcripts reach Supabase.</td></tr>
-          <tr><td>Cost per call</td><td>Retell</td><td>$0.10/min · 3m30s avg = <strong>$0.35/call</strong> · $30 budget = 85 calls</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="card" style="border-left:4px solid var(--red);">
-    <h3 style="color:var(--red);">🐛 Active Bug · Inventory Query Token Blow-Up (Apr 18)</h3>
-    <p><strong>Symptom:</strong> Inventory query pulls for specific vehicles consume ~8K tokens per call vs 3K baseline. Price field does not load back into the voice agent response despite data being present in the cached inventory JSON.</p>
-    <p><strong>Impact:</strong> Demo risk — if Mazzio / Teresa asks "what's the price on that GLS?" mid-call, agent stalls or returns price-absent response. Cost risk — sustained 8K-token calls triple Retell spend.</p>
-    <p><strong>Root-cause hypothesis:</strong> (a) inventory JSON bloat being passed in full context window rather than pre-filtered via n8n lookup, (b) price field path mismatch between crawler output and agent prompt template, (c) retrieval node returning raw array instead of single-record object.</p>
-    <p><strong>Rebuild plan:</strong> 1) Add n8n HTTP lookup node — take VIN/model from agent tool call, return single-record object. 2) Trim inventory context to ≤5 vehicles per turn. 3) Explicitly map <code>price</code>, <code>MSRP</code>, <code>out_the_door</code> fields. 4) Add token-count guard in post-call log. 5) Retest against 20-vehicle sample before demo.</p>
-    <p><strong>Owner:</strong> CTO-Claude (rebuild + validation) · <strong>ETA:</strong> before next Mazzio demo.</p>
-  </div>
-
-  <div class="card">
-    <h3>AutoNation Escalation Pathway</h3>
-    <p>Mercedes of South Bay is the opening move. The real prize: AutoNation corporate MSA covering 323 dealerships across 20 states.</p>
-    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:8px 0;">
-      <span class="tag tag-blue">Pilot @ South Bay (30d)</span>
-      <span style="color:var(--text3);">→</span>
-      <span class="tag tag-blue">Dealership SLA ($1.5–2.5K/mo)</span>
-      <span style="color:var(--text3);">→</span>
-      <span class="tag tag-amber">Case study + metrics</span>
-      <span style="color:var(--text3);">→</span>
-      <span class="tag tag-pink">AutoNation corporate intro</span>
-      <span style="color:var(--text3);">→</span>
-      <span class="tag tag-green">MSA: 323 rooftops ($1–1.5K each)</span>
-    </div>
-    <p style="margin-top:10px;"><strong>Revenue at scale:</strong> 323 rooftops × $1,000–$1,500/mo = $323K–$485K/mo recurring. Infrastructure cost: ~$10K–$13K/mo. Gross margin: <strong>96%+</strong>.</p>
-  </div>
-</div>
-
-<!-- ============================================================
-                     SECTION: INSURANCE (P2)
-============================================================ -->
-<div class="section" id="insurance">
-  <h2 class="section-title">🛡 Insurance Lead Gen · Project 2</h2>
-
-  <div class="banner p2">
-    <div class="icon">🛡</div>
-    <div>
-      <h2>Inbound + Outbound Insurance Funnel</h2>
-      <p>Retell-powered voice qualifier → GoHighLevel CRM → agent handoff. Two revenue models: opted-in leads at $25–$50 each OR retainer at $1,000/week. Validated by Frankie's 15+ years as a licensed insurance agent.</p>
-    </div>
-  </div>
-
-  <div class="grid-2">
-    <div class="card">
-      <h3 class="p2">Revenue Model (Confirmed Apr 3, 2026)</h3>
-      <ul>
-        <li><strong>Opted-in leads:</strong> $25–$50 per lead (standard industry practice, legally clean per Frankie's domain expertise).</li>
-        <li><strong>Confirmed appointments:</strong> $50–$100 each (qualified + time-booked).</li>
-        <li><strong>Retainer:</strong> $1,000/week per agency client (priority pipe + SLA).</li>
-      </ul>
-      <p>Lead resale legality was previously a gray area; Frankie confirmed Apr 3 WhatsApp that selling opted-in leads to licensed agents is standard industry practice. Legal review complete via domain expert confirmation.</p>
-    </div>
-    <div class="card">
-      <h3 class="p2">Pipeline Status (Apr 18)</h3>
-      <ul>
-        <li><span class="tag tag-pink">🔥</span> <strong>Teresa</strong> inbound — Frankie's insurance pro, $40–50K/mo from team overrides. Meeting locked ≤72h or this weekend. Postponed twice mid-call (sold a policy — strong performer). Will supply leads + agent partnerships.</li>
-        <li><span class="tag tag-green">✓</span> Stripe payment rail live ($0.37 first signal Apr 15 · Admin accepted Apr 18).</li>
-        <li><span class="tag tag-green">✓</span> GoHighLevel sub-account template ready.</li>
-        <li><span class="tag tag-green">✓</span> Voice qualifier build ported from P1 stack.</li>
-        <li><span class="tag tag-orange">⚡</span> First agency client: Teresa is now the warmest lead — treat as anchor.</li>
-        <li><span class="tag tag-orange">⚡</span> Outbound SMS funnel (vagaro-style "missed calls → booked revenue") live via SMS to (510) 520-4265 — template confirmed.</li>
-        <li><span class="tag tag-blue">⚙</span> LinkedIn ad test pending Frankie go-ahead ("$500 on LinkedIn = $5K–10K in sold system").</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card" style="border-left:4px solid var(--pink);">
-    <h3 style="color:var(--pink);">🔥 Priority Lead · Teresa (Apr 18 Meeting 18)</h3>
-    <div class="grid-2">
-      <div>
-        <div style="font-size:11px;font-weight:700;color:var(--pink);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:6px;">Profile</div>
-        <ul>
-          <li>Frankie's insurance pro — deep trust relationship</li>
-          <li><strong>$40K–$50K/mo</strong> personal income, primarily from <strong>team overrides</strong> (downline agents)</li>
-          <li>Sold a policy mid-call during the conversation — high-velocity closer</li>
-          <li>Postponed our introduction twice in same session while on the phone selling</li>
-        </ul>
-      </div>
-      <div>
-        <div style="font-size:11px;font-weight:700;color:var(--pink);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:6px;">Value Hypothesis</div>
-        <ul>
-          <li><strong>Lead supply:</strong> Teresa can funnel qualified lead demand into our Retell pipeline</li>
-          <li><strong>Agent partnerships:</strong> her downline = ready-made buyers for $25–$50 opted-in leads or $1K/wk retainer</li>
-          <li><strong>Validation:</strong> if a $40–50K/mo producer says "I'll pay for these leads," that's product-market fit for P2</li>
-          <li><strong>Demo:</strong> phone-only playbook (5–7 min), no email access, both founders' numbers as admin, flash workflow account for read-only view</li>
-        </ul>
-      </div>
-    </div>
-    <p style="margin-top:10px;"><strong>Next action:</strong> Frankie to confirm meeting slot ≤72h (Apr 21) or this weekend. CTO-Claude to prepare phone-only demo script + leave-behind one-pager. Treat Teresa as P2's anchor client — first close locks the insurance thesis.</p>
-  </div>
-
-  <div class="card">
-    <h3 class="p2">Funnel Architecture</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Stage</th><th>Tool</th><th>Conversion gate</th></tr></thead>
-        <tbody>
-          <tr><td>1. Acquisition</td><td>SMS + LinkedIn + direct outreach</td><td>Share Oraya short-link → opted-in form</td></tr>
-          <tr><td>2. Qualification</td><td>Retell voice agent</td><td>3-question intent filter + consent log entry</td></tr>
-          <tr><td>3. Routing</td><td>n8n</td><td>Score → GHL pipeline → agent notification</td></tr>
-          <tr><td>4. Appointment set</td><td>Retell + GoHighLevel</td><td>Calendar invite + confirmation SMS</td></tr>
-          <tr><td>5. Agent close</td><td>Licensed agent (client)</td><td>Commission or payment via Stripe</td></tr>
-          <tr><td>6. Quality check</td><td>n8n + Supabase</td><td>Call recording review, consent audit, refund logic</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3 class="p2">Long-Term: Quote AI → DAO Insurance</h3>
-    <div class="grid-2">
-      <div>
-        <div style="font-size:11px;font-weight:700;color:var(--p2);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:6px;">Quote AI (Frankie's 2-yr concept)</div>
-        <p>Fully autonomous insurance agency. Scrape leads → Enrich via data APIs → Voice qualify via Retell → RPA (Robotic Process Automation) submits e-application to carrier → Stripe commission flows back. Validated by Uzi Sassoon (7 exits). First RPA test run Apr 5.</p>
-      </div>
-      <div>
-        <div style="font-size:11px;font-weight:700;color:var(--p1);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:6px;">DAO Insurance (Chitraksh's concept)</div>
-        <p>Solana/Ethereum smart-contract pool premiums from 1M+ policyholders. Community-voted claims. No carrier, no agents, algorithmic underwriting. Cousin sister is Solana dev (internal resource). Positioned as end-state after Quote AI scales.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ============================================================
-                      SECTION: WEBSITE
-============================================================ -->
-<div class="section" id="website">
-  <h2 class="section-title">Live Website Audit · orayalabs.ai (Next.js 15)</h2>
-
-  <div class="banner amber">
-    <div class="icon">🎨</div>
-    <div>
-      <h2>Apr 12 Frankie Feedback · 5 Open Items</h2>
-      <p>Website repo is <code>hanfluxai-create/oraya-ai</code>. Main dashboard component: <code>src/components/HeroDashboard.tsx</code>. Design tokens live in <code>src/app/globals.css</code>. Light-theme design system already defined — apply consistently.</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3 class="amber">5 Apr 12 Action Items</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>#</th><th>Change</th><th>Why</th><th>Status</th></tr></thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Replace plumbing example with <strong>one automotive</strong> + <strong>one life-insurance</strong> conversation sample</td>
-            <td>Plumbing reads as SMB generic; automotive + life aligns with actual ICPs (Mercedes pilot + P2 insurance). Automotive already switched to Mercedes GLS; life insurance not yet added.</td>
-            <td><span class="tag tag-orange">HALF DONE</span></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Add <strong>more CTA buttons</strong> to book appointments</td>
-            <td>Current hero CTA is single. Insurance leads require multiple entry points (hero, services, pricing, footer).</td>
-            <td><span class="tag tag-red">OPEN</span></td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Add <strong>Vagaro-style large hero screenshot</strong> of the product</td>
-            <td>Visual proof-of-work beats copy. Vagaro's hero is a 70% screen product screenshot; replicate that energy for the dashboard.</td>
-            <td><span class="tag tag-red">OPEN</span></td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Embed the <strong>AI voice demo</strong> directly on the site</td>
-            <td>Let visitors hear Jessica without scheduling a call. Button → play 30-sec sample → CTA to trigger an outbound demo call to their number.</td>
-            <td><span class="tag tag-red">OPEN</span></td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Feature <strong>Stripe payment link</strong></td>
-            <td>Stripe rail is live ($0.37 first signal). Make "Pay now / Start pilot" a single-click flow. Trust = button that works.</td>
-            <td><span class="tag tag-red">OPEN</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Existing Components (Home page order)</h3>
-    <p>Navbar → Hero (+ HeroDashboard + HeroOrb) → SocialProof → Services → Process → VoiceAI → Platform → Security → Testimonials → Pricing → CTA → Footer.</p>
-    <p>Utility classes available: <code>.glass-panel</code>, <code>.surface-panel</code>, <code>.dashboard-glow</code>, <code>.gradient-text</code>, <code>.grid-pattern</code>, <code>.pulse-dot</code>. Design tokens: <code>--color-bg #f7f8fc</code>, <code>--color-surface #fff</code>, <code>--color-text #0b1324</code>, <code>--color-cyan #0ea5e9</code>, <code>--color-violet #7c3aed</code>.</p>
-  </div>
-
-  <div class="card">
-    <h3>KPIs to surface on the live site</h3>
+    <h3 class="p2">Tier 2 · Insurance Revenue (next 30d)</h3>
     <ul>
-      <li>Avg response time (seconds)</li>
-      <li>Calls handled (rolling 30d)</li>
-      <li>Bookings set (rolling 30d)</li>
-      <li>Cost per call (<strong>$0.35 avg</strong>)</li>
-      <li>Live-activity ticker examples: "after-hours GLS booking", "web lead qualified by SMS", "CRM write-back"</li>
-      <li>Next-best-action example: "Confirm Thu · 10:00 AM — GLS private viewing"</li>
+      <li><strong>Teresa anchor close</strong> — if she commits leads or retainer, that's P2 proof. Use her testimonial in LinkedIn ad creative.</li>
+      <li><strong>3 SMS campaigns</strong> across CA ZIP clusters. Track COAL vs $25–50 sell. &lt;$10 → scale; &gt;$20 → rework creative.</li>
+      <li><strong>$500 LinkedIn ad test</strong> targeting licensed insurance agents. One metric: booked demo calls.</li>
+      <li><strong>Stand up $1k/wk retainer</strong> for 2 pipeline agents. 4-week minimum. Both renew → 12-week with 10% discount.</li>
+      <li><strong>Send HTML campaign to 450 loaded leads</strong> — Maya agent live, emails not going out.</li>
+      <li><strong>Buy dedicated insurance Twilio number</strong> — separate P2 from P1 telephony.</li>
     </ul>
   </div>
-</div>
-
-<!-- ============================================================
-                       SECTION: RISKS
-============================================================ -->
-<div class="section" id="risks">
-  <h2 class="section-title">Risks &amp; Gaps · Both Projects (Apr 18 snapshot)</h2>
-
-  <div class="banner">
-    <div class="icon" style="background:var(--red-soft);color:var(--red);">⚠</div>
-    <div>
-      <h2>Current Risk Register · 13 Open</h2>
-      <p>Risks ranked by severity × likelihood. Each has an owner and a trigger date. Green = closed this session, orange = active, red = blocks pilot ship.</p>
-    </div>
-  </div>
 
   <div class="card">
-    <h3 class="red">Active Risks (Apr 18)</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>#</th><th>Risk</th><th>Severity</th><th>Owner</th><th>Trigger / Mitigation</th></tr></thead>
-        <tbody>
-          <tr><td>R13</td><td><strong>Inventory query token blow-up</strong> · 8K tokens, price not loading · demo risk</td><td><span class="tag tag-red">HIGH</span></td><td>CTO-Claude</td><td>Rebuild with n8n HTTP lookup node + field mapping + token guard. Must clear before next Mazzio/Teresa demo.</td></tr>
-          <tr><td>R1</td><td>Mazzio silent · Mercedes momentum decay · card captured Apr 18</td><td><span class="tag tag-red">HIGH</span></td><td>Frankie</td><td>Follow-up email + text this week. Offer any-vehicle not just C-Class. Reference Khalid lever. Business card now in hand (310.650.4826).</td></tr>
-          <tr><td>R2</td><td><s>Stripe Admin invite unaccepted</s> <span class="tag tag-green">CLOSED Apr 18</span></td><td><span class="tag tag-green">DONE</span></td><td>Chitraksh</td><td>Admin invite accepted Apr 18. Full CTO visibility into payout + team config achieved.</td></tr>
-          <tr><td>R3</td><td>E&amp;O decision pending (Std $46 vs Plus $82.42)</td><td><span class="tag tag-orange">MED</span></td><td>Frankie</td><td>Recommend Plus: cyber liability kicks in under SB 446 breach. $36/mo delta = cheap insurance against $5K/violation CIPA exposure.</td></tr>
-          <tr><td>R4</td><td>Website Apr 12 feedback · 5 open items</td><td><span class="tag tag-orange">MED</span></td><td>Oraya Agent</td><td>Sequence: CTAs → Vagaro hero → voice demo → life-ins example → Stripe link.</td></tr>
-          <tr><td>R5</td><td>DPAs unsigned with 6 vendors (Twilio, Retell, n8n, Supabase, Vertex, Vercel)</td><td><span class="tag tag-orange">MED</span></td><td>Chitraksh + Strategy Law</td><td>CPRA § 1798.140(ag) requirement. Drafted, not countersigned. Intake with Strategy Law covers this.</td></tr>
-          <tr><td>R6</td><td>Supabase tier: HIPAA BAA requires Team+ (currently Pro?)</td><td><span class="tag tag-orange">MED</span></td><td>Chitraksh</td><td>Confirm current tier. Upgrade before claiming HIPAA posture in offer letter.</td></tr>
-          <tr><td>R7</td><td>n8n 30-day auto-purge designed but not deployed</td><td><span class="tag tag-orange">MED</span></td><td>Chitraksh</td><td>Implement purge workflow this week. Stale execution logs accumulate → CPRA exposure.</td></tr>
-          <tr><td>R8</td><td>Dealership A2P 10DLC registration (customer-facing)</td><td><span class="tag tag-orange">MED</span></td><td>Mercedes SB</td><td>Oraya's A2P covers admin-to-admin. Dealership must register own campaign for customer SMS.</td></tr>
-          <tr><td>R9</td><td>No DR / failover plan for Retell voice pipeline</td><td><span class="tag tag-orange">MED</span></td><td>Chitraksh</td><td>If Retell goes down, calls fail silently. Add human-transfer fallback at minimum.</td></tr>
-          <tr><td>R10</td><td>Dashboard client portal MFA not yet enforced</td><td><span class="tag tag-blue">LOW</span></td><td>Chitraksh</td><td>Admin accounts OK. Enforce at Supabase auth layer for client portal pre-pilot.</td></tr>
-          <tr><td>R11</td><td>Khalid deal CANNOT route through official MB channels</td><td><span class="tag tag-red">HIGH</span></td><td>Frankie + Chitraksh</td><td>Felony risk if routed through Mercedes Benz official email. Route via crypto/shell entity separately. No comms via MB-linked accounts.</td></tr>
-          <tr><td>R12</td><td>Tangential-conversation drift in meetings (30–40% time)</td><td><span class="tag tag-blue">LOW</span></td><td>Chitraksh (self-monitor)</td><td>Geopolitics/books/weed rapport is net positive but dilutes decision throughput. Cap at 15% next meeting.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3 class="green">Recently Closed (Apr 17–18)</h3>
+    <h3 class="green">Tier 3 · Compounding Infra (next 60d)</h3>
     <ul>
-      <li><span class="tag tag-green">CLOSED Apr 18</span> <strong>Stripe Admin visibility gap</strong> — invite accepted; CTO now has full payout + team visibility.</li>
-      <li><span class="tag tag-green">CLOSED Apr 18</span> <strong>Strategy Law $10K counsel decision</strong> — rejected as non-economic for pre-revenue startup. Pivot: CTO-Claude bootstraps in-house AI legal (CA + federal + India common-law crossover + IRS/agency web filings + precedent from existing legal AIs).</li>
-      <li><span class="tag tag-green">CLOSED Apr 18</span> <strong>Retell sales-node latency</strong> — Gemini swapped for HiQ. +$0.05/min cost immaterial for enterprise pricing tier.</li>
-      <li><span class="tag tag-green">CLOSED Apr 18</span> <strong>n8n account naming drift</strong> — migrated hanfluxai2026 → orayacorporation. Brand-coherent infra URL.</li>
-      <li><span class="tag tag-green">CLOSED Apr 17</span> <strong>GitHub push failures</strong> — PAT-in-URL root cause eliminated via SSH migration. Permanent fix.</li>
-      <li><span class="tag tag-green">CLOSED Apr 17</span> <strong>HQ monolith blast radius</strong> — split into Oraya-AI-HQ + Personal-HQ. Oraya deliverables no longer leak personal context.</li>
-      <li><span class="tag tag-green">CLOSED Apr 17</span> <strong>Dashboard dark-only theme</strong> — light-theme default with dark toggle. Stripe-style.</li>
-      <li><span class="tag tag-green">CLOSED Apr 7</span> <strong>E&amp;O ambiguity</strong> — Frankie's $2M personal policy does NOT cover Oraya Corp. Separate Oraya policy quoted.</li>
-      <li><span class="tag tag-green">CLOSED Apr 3</span> <strong>Opted-in lead resale legal uncertainty</strong> — confirmed legal by Frankie.</li>
+      <li><strong>In-house AI legal library</strong> — versioned template pack (DPAs × 6, pilot SOW, NDA, retainer, E&amp;O rider). External counsel only for litigation/M&amp;A.</li>
+      <li><strong>n8n 30-day auto-purge</strong> — compliance debt compounds.</li>
+      <li><strong>TISAX bundle</strong> for dealership handoff. Vercel L2 = our edge — package for OEM audit folders.</li>
+      <li><strong>SOC 2 Type I</strong> for Oraya Corp. Required for AutoNation MSA. Budget ~$15–25K + 3 months.</li>
+      <li><strong>N8N nurture/reschedule workflow</strong> — auto-reschedule on "call me at X."</li>
+      <li><strong>N8N outbound retry workflow</strong> — failed calls loop back through Retell. SLA differentiator.</li>
+      <li><strong>Test human warm transfer</strong> — cold works; warm connects but no advisor briefing.</li>
+      <li><strong>Add Chitraksh to C Corp</strong> — LegalZoom dropped. Frankie sourcing attorney.</li>
     </ul>
-  </div>
-</div>
-
-<!-- ============================================================
-                  SECTION: RECOMMENDATIONS
-============================================================ -->
-<div class="section" id="recs">
-  <h2 class="section-title">Recommendations · Ordered by North-Star Impact</h2>
-
-  <div class="card">
-    <h3 class="accent">Tier 1 · Ship This Week (Apr 18 → Apr 25)</h3>
-    <ol>
-      <li><strong>Fix inventory query bug before any demo.</strong> 8K-token blow-up + missing price = deal-killer mid-call. CTO-Claude owns rebuild (n8n HTTP lookup + field map + token guard). Must clear before Mazzio OR Teresa touches the agent.</li>
-      <li><strong>Book Teresa meeting ≤72h (by Apr 21) or this weekend.</strong> Frankie initiates; CTO-Claude prepares phone-only demo script (5–7 min). If she brings her downline, that's P2's anchor account.</li>
-      <li><strong>Frankie → Mazzio follow-up this week.</strong> Card in hand (310.650.4826). Short text: "Following up on Oraya pilot — opened it to any vehicle now. 20 min with you this week?" If no reply 48h, in-person visit at 3311 Pacific Coast Hwy.</li>
-      <li><strong>CTO-Claude: bootstrap in-house AI legal.</strong> Map CA corp + federal + India common-law crossover. Procedural law for non-resident US-citizen founder. IRS + state-agency web filings. Seed a precedent library from existing legal AIs (Harvey, Spellbook, CoCounsel UX patterns). First deliverable: vendor DPA templates + pilot SOW template to replace Strategy Law's $10K scope.</li>
-      <li><strong>Bind E&amp;O Plus ($82.42/mo).</strong> Cyber liability under SB 446 is worth the $36 delta. Proof of insurance tightens pilot SOW legal comfort.</li>
-      <li><strong>Pre-sign pilot SOW template</strong> so the only remaining step at dealer-side is signature, not negotiation.</li>
-    </ol>
-  </div>
-
-  <div class="card">
-    <h3 class="p2">Tier 2 · Build Insurance Revenue (next 30 days)</h3>
-    <ol>
-      <li><strong>Teresa as anchor close.</strong> If she commits to leads or retainer, that's public proof-of-concept for P2. Use her testimonial in LinkedIn ad creative.</li>
-      <li><strong>Launch 3 SMS campaigns</strong> to separate ZIP clusters in CA. Track cost-per-opted-lead vs $25–$50 target sell price. If COAL &lt; $10 → scale. If &gt; $20 → rework creative.</li>
-      <li><strong>$500 LinkedIn ad test</strong> targeting licensed insurance agents. Frankie's call: "$500 on LinkedIn = $5K–10K in sold system." Track one metric: booked demo calls.</li>
-      <li><strong>Stand up retainer offer at $1,000/week</strong> for 2 agents currently in pipeline. Lock to 4-week minimum. If both renew, lock to 12-week with 10% discount.</li>
-    </ol>
-  </div>
-
-  <div class="card">
-    <h3 class="green">Tier 3 · Compounding Infrastructure (next 60 days)</h3>
-    <ol>
-      <li><strong>In-house AI legal library</strong> — build a versioned template pack (DPAs × 6 vendors, pilot SOW, mutual NDA, retainer agreement, E&amp;O rider). Replaces external counsel for 80% of routine needs. Engage Strategy-Law-tier counsel only for litigation or M&amp;A.</li>
-      <li><strong>Implement n8n 30-day auto-purge</strong> workflow. Compliance debt compounds.</li>
-      <li><strong>TISAX documentation bundle</strong> prepared for dealership handoff. Vercel Level 2 is our edge; package it so dealers can drop it in their OEM audit folder.</li>
-      <li><strong>SOC 2 Type I engagement</strong> for Oraya Corp entity. Required for AutoNation corporate MSA (323 rooftops). Budget ~$15K–$25K + 3 months.</li>
-    </ol>
   </div>
 
   <div class="card">
     <h3 class="pink">Tier 4 · Strategic Horizon (90d+)</h3>
+    <ul>
+      <li><strong>Quote AI MVP</strong> — autonomous insurance agency. Start with hardest piece: RPA e-application submission.</li>
+      <li><strong>DAO Insurance whitepaper</strong> — Chitraksh + Solana cousin. End-state narrative; raises credibility ceiling.</li>
+      <li><strong>Holding Co. structure</strong> — P1 + P2 + Quote AI + DAO as subsidiaries. Dilute separately at growth spikes.</li>
+      <li><strong>Gemini 3.1 Live eval</strong> — potential 11Labs replacement Jun-Jul 2026. Confirm SIP/PSTN + cost-per-min.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Website Apr 12 Feedback (5 open)</h3>
     <ol>
-      <li><strong>Quote AI MVP</strong> — autonomous insurance agency. RPA for e-application submission is the hardest piece; start that first.</li>
-      <li><strong>DAO Insurance whitepaper</strong> — Chitraksh + Solana cousin. Position as "end-state" narrative; raise credibility ceiling.</li>
-      <li><strong>Holding Co. structure</strong> — P1 + P2 + Quote AI + DAO as subsidiaries. Core IP with Oraya Corp parent. Dilute subsidiaries separately at growth spikes.</li>
-      <li><strong>Gemini 3.1 Live evaluation</strong> — potential 11Labs replacement by Jun-Jul 2026. Need SIP/PSTN support confirmation + cost-per-minute analysis.</li>
+      <li>Replace plumbing with auto + life-insurance samples (auto half-done)</li>
+      <li>Add CTAs in hero/services/pricing/footer</li>
+      <li>Vagaro-style large hero screenshot (~70%)</li>
+      <li>Embed AI voice demo (30s sample → outbound demo CTA)</li>
+      <li>Feature Stripe payment link (rail live)</li>
     </ol>
   </div>
 </div>
 
-<!-- ============================================================
-                   SECTION: PSYCH PROFILES
-============================================================ -->
-<div class="section" id="sentiment">
-  <h2 class="section-title">Psych Profiles · Chitraksh &amp; Frankie</h2>
+<!-- ============== RISKS ============== -->
+<div class="section" id="risks">
+  <h2 class="section-title">Risk Register · Apr 18 snapshot</h2>
 
-  <div class="banner pink">
-    <div class="icon">🧠</div>
-    <div>
-      <h2>Sentient Read (Apr 6 → Apr 18)</h2>
-      <p>Meters updated from WhatsApp tone analysis, Meeting 18 decision throughput (58 min, high signal), and task-completion velocity. Memory-rule compliant: every meter change carries justification.</p>
-    </div>
-  </div>
-
-  <div class="grid-2">
-    <!-- CHITRAKSH -->
-    <div class="card">
-      <h3 class="accent">Chitraksh Mayank · CTO / Builder</h3>
-      <p><strong>Snapshot:</strong> 9-project parallel operator. Law-student discipline + engineering pace. Apr 18: pushed in-house AI legal bootstrap after killing Strategy Law's $10K quote — treating external counsel as a build target, not a spend line. Owned Stripe Admin acceptance + n8n migration + RPA prompt-push shipping in a single 58-min session.</p>
-      <div class="meter-row"><div class="label">Build throughput</div><div class="bar"><span style="width:94%;background:var(--green);"></span></div><div class="val">94 ▲</div></div>
-      <div class="meter-row"><div class="label">Decision velocity</div><div class="bar"><span style="width:91%;background:var(--green);"></span></div><div class="val">91 ▲</div></div>
-      <div class="meter-row"><div class="label">Legal/compliance rigor</div><div class="bar"><span style="width:88%;background:var(--accent);"></span></div><div class="val">88 ▲</div></div>
-      <div class="meter-row"><div class="label">Context-switching load</div><div class="bar"><span style="width:82%;background:var(--orange);"></span></div><div class="val">82 ▲</div></div>
-      <div class="meter-row"><div class="label">Partner-facing responsiveness</div><div class="bar"><span style="width:86%;background:var(--accent);"></span></div><div class="val">86 ▲</div></div>
-      <div class="meter-row"><div class="label">Risk appetite</div><div class="bar"><span style="width:76%;background:var(--amber);"></span></div><div class="val">76 ▲</div></div>
-      <div class="meter-row"><div class="label">Self-critique loop</div><div class="bar"><span style="width:90%;background:var(--pink);"></span></div><div class="val">90</div></div>
-      <div class="quote">"We don't need a $10K lawyer, we need an AI that knows every code and every case. That's cheaper and faster." — Apr 18, rejecting Strategy Law retainer. Converts cost lines into build lines — the single most compounding founder trait.</div>
-    </div>
-
-    <!-- FRANKIE -->
-    <div class="card">
-      <h3 class="p2">Frankie Alicea · CEO / Dealmaker</h3>
-      <p><strong>Snapshot:</strong> Street-smart operator with 15+ years insurance + dealership relationships. Apr 18: surfaced Teresa (a $40–50K/mo producer in his network) and gate-kept the demo playbook (phone-only, no email, founder numbers only) with professional paranoia. Also validated new HQ with an unprompted "absolutely fire bro" — rare positive signal.</p>
-      <div class="meter-row"><div class="label">Relationship currency</div><div class="bar"><span style="width:97%;background:var(--green);"></span></div><div class="val">97 ▲</div></div>
-      <div class="meter-row"><div class="label">Sales closing instinct</div><div class="bar"><span style="width:92%;background:var(--green);"></span></div><div class="val">92 ▲</div></div>
-      <div class="meter-row"><div class="label">Domain legal intuition</div><div class="bar"><span style="width:84%;background:var(--accent);"></span></div><div class="val">84 ▲</div></div>
-      <div class="meter-row"><div class="label">Capital discipline</div><div class="bar"><span style="width:82%;background:var(--accent);"></span></div><div class="val">82 ▲</div></div>
-      <div class="meter-row"><div class="label">Execution follow-through</div><div class="bar"><span style="width:74%;background:var(--orange);"></span></div><div class="val">74 ▲</div></div>
-      <div class="meter-row"><div class="label">Tech vocabulary fluency</div><div class="bar"><span style="width:62%;background:var(--amber);"></span></div><div class="val">62 ▲</div></div>
-      <div class="meter-row"><div class="label">Partner-mentorship warmth</div><div class="bar"><span style="width:97%;background:var(--pink);"></span></div><div class="val">97 ▲</div></div>
-      <div class="quote">"omg dude this is sooo much more organized... absolutely fire bro" — Apr 18 02:55 on the new HQ. Frankie's praise is rare and concrete; when it arrives, treat it as reinforcement data and keep doing that.</div>
-    </div>
+  <div class="card">
+    <h3 class="red">Active (12 open)</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>#</th><th>Risk</th><th>Sev</th><th>Owner</th><th>Mitigation</th></tr></thead>
+      <tbody>
+        <tr><td>R13</td><td><strong>Inventory query token blow-up</strong> · 8K tokens, no price · demo killer</td><td><span class="tag tag-red">HIGH</span></td><td>CTO</td><td>Rebuild + token guard. Clear before any Mazzio/Teresa demo.</td></tr>
+        <tr><td>R1</td><td>Mazzio silent · Mercedes momentum decay</td><td><span class="tag tag-red">HIGH</span></td><td>Frankie</td><td>Follow-up text + email. Reference Khalid lever. Card in hand.</td></tr>
+        <tr><td>R11</td><td><strong>Khalid deal CANNOT route through MB official channels</strong> · felony risk</td><td><span class="tag tag-red">HIGH</span></td><td>Both</td><td>Crypto/shell entity separately. Zero MB-linked comms.</td></tr>
+        <tr><td>R3</td><td>E&amp;O bind decision (Std $46 vs Plus $82.42)</td><td><span class="tag tag-orange">MED</span></td><td>Frankie</td><td>Recommend Plus — cyber covers SB 446 breach exposure.</td></tr>
+        <tr><td>R4</td><td>Website 5 open items</td><td><span class="tag tag-orange">MED</span></td><td>Oraya</td><td>Sequence: CTAs → Vagaro hero → voice demo → life sample → Stripe.</td></tr>
+        <tr><td>R5</td><td>DPAs unsigned · 6 vendors (Twilio, Retell, n8n, Supabase, Vertex, Vercel)</td><td><span class="tag tag-orange">MED</span></td><td>CTO</td><td>CPRA § 1798.140(ag). In-house templates ship Apr 25.</td></tr>
+        <tr><td>R6</td><td>Supabase HIPAA tier (BAA needs Team+)</td><td><span class="tag tag-orange">MED</span></td><td>CTO</td><td>Confirm tier. Upgrade before claiming HIPAA in offer.</td></tr>
+        <tr><td>R7</td><td>n8n 30-day auto-purge designed, not deployed</td><td><span class="tag tag-orange">MED</span></td><td>CTO</td><td>Implement this week. Stale logs = CPRA exposure.</td></tr>
+        <tr><td>R8</td><td>Dealership A2P 10DLC (customer-facing)</td><td><span class="tag tag-orange">MED</span></td><td>Mercedes SB</td><td>Oraya covers admin-to-admin. Dealer registers own campaign.</td></tr>
+        <tr><td>R9</td><td>No DR/failover for Retell pipeline</td><td><span class="tag tag-orange">MED</span></td><td>CTO</td><td>Add human-transfer fallback minimum.</td></tr>
+        <tr><td>R10</td><td>Client portal MFA not enforced</td><td><span class="tag tag-blue">LOW</span></td><td>CTO</td><td>Enforce at Supabase auth pre-pilot.</td></tr>
+        <tr><td>R12</td><td>Meeting tangent ratio 30–40%</td><td><span class="tag tag-blue">LOW</span></td><td>CTO self-monitor</td><td>Cap at 15%. Mtg 18 already 20%.</td></tr>
+      </tbody>
+    </table></div>
   </div>
 
   <div class="card">
-    <h3>Partnership Dynamic Notes (Updated Apr 18)</h3>
+    <h3 class="green">Recently Closed</h3>
     <ul>
-      <li><strong>Meeting 18 quality:</strong> 58 min, ≥9 discrete decisions, tangent ratio ~20% (down from 30–40%). Decision throughput materially improved — continue phone + voice format, avoid screen-share distraction.</li>
-      <li><strong>Prompt-injection rule ratified:</strong> Frankie explicitly named Claude as CTO in-meeting — meeting transcripts are now implicit task queues, not just logs. Captured as standing rule.</li>
-      <li><strong>Complementarity:</strong> Chitraksh builds systems; Frankie sells trust. Apr 18 proved it — Frankie produced Teresa (relationship asset), Chitraksh produced the n8n migration + RPA self-edit (infra asset). Same hour.</li>
-      <li><strong>Trust keel holds:</strong> Frankie's unprompted "absolutely fire" on the HQ rebuild validates the Sentient Protocol approach. Keep the consolidation pattern (one source of truth, founder-addressable).</li>
-      <li><strong>New failure mode watch:</strong> in-house legal bootstrap is high-leverage but creates a single point of cognitive load on CTO-Claude. Mitigate by versioning the template pack in git, not in-conversation.</li>
+      <li><strong>Apr 18 · R2 Stripe Admin gap</strong> — invite accepted; full CTO payout/team visibility.</li>
+      <li><strong>Apr 18 · Strategy Law $10K decision</strong> — rejected; in-house AI legal bootstrap approved.</li>
+      <li><strong>Apr 18 · Retell sales-node latency</strong> — Gemini → HiQ. +$0.05/min immaterial at enterprise pricing.</li>
+      <li><strong>Apr 18 · n8n naming drift</strong> — migrated to <code>orayacorporation.app.n8n.cloud</code>.</li>
+      <li><strong>Apr 17 · GitHub push failures</strong> — SSH migration. Permanent fix.</li>
+      <li><strong>Apr 17 · HQ monolith blast radius</strong> — split into Oraya + Personal HQs.</li>
+      <li><strong>Apr 7 · E&amp;O ambiguity</strong> — Frankie's $2M personal does NOT cover Oraya. Separate quote secured.</li>
+      <li><strong>Apr 3 · Lead resale legality</strong> — opted-in resale legal per Frankie's domain expertise.</li>
     </ul>
   </div>
 </div>
 
-<!-- ============================================================
-                    SECTION: DAILY TASKS
-============================================================ -->
-<div class="section" id="daily-tasks">
-  <h2 class="section-title">📅 Daily Task Tracker · Horizon View</h2>
+<!-- ============== METRICS (cost stack + pricing + voice config + psych) ============== -->
+<div class="section" id="metrics">
+  <h2 class="section-title">Metrics · cost, pricing, voice config, psych</h2>
 
-  <div class="banner amber">
-    <div class="icon">⏱</div>
-    <div>
-      <h2>Today · Saturday, Apr 18, 2026 · Week 14</h2>
-      <p>Status: Dashboard v6 shipping. Meeting 18 closed. Teresa inbound ≤72h. Inventory bug rebuild is the only thing between us and a clean demo.</p>
-    </div>
+  <div class="card">
+    <h3>Cost Stack · per client/month</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Layer</th><th>Vendor</th><th>Cost</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Voice AI</td><td>Retell</td><td><strong>$0.10/min</strong></td><td>Inbound default. Sales-out node = HiQ (+$0.05/min). ~$0.35/call avg.</td></tr>
+        <tr><td>Orchestration</td><td>n8n Cloud</td><td>$20–34</td><td>86 workflows. <code>orayacorporation.app.n8n.cloud</code> (migrated Apr 18).</td></tr>
+        <tr><td>Database</td><td>Supabase</td><td>$0–25</td><td>HIPAA BAA = Team+ tier.</td></tr>
+        <tr><td>Telephony</td><td>Twilio A2P 10DLC</td><td>$15</td><td>Brand + campaign approved.</td></tr>
+        <tr><td>CRM</td><td>GoHighLevel</td><td>$0–97</td><td>Sub-account per client.</td></tr>
+        <tr><td>Payments</td><td>Stripe</td><td>2.9% + $0.30</td><td>Frankie owner · Chase ••••6789.</td></tr>
+        <tr><td><strong>Total</strong></td><td></td><td class="up"><strong>$30–40/mo/client</strong></td><td>Pricing $997 → $3–5K → $7–11K/mo/location.</td></tr>
+      </tbody>
+    </table></div>
   </div>
 
-  <!-- TODAY -->
   <div class="card">
-    <h3 class="accent">🎯 TODAY · Apr 18 (6 actions)</h3>
-    <ol>
-      <li><strong>CTO-Claude · Ship Dashboard v6</strong> with Meeting 18 intel · SSH one-shot command · mirrors to index.html automatically</li>
-      <li><strong>CTO-Claude · Scaffold inventory query rebuild plan</strong> (n8n HTTP lookup + field map + token guard) · post to handoffs/ for Frankie visibility</li>
-      <li><strong>CTO-Claude · Draft in-house AI legal bootstrap spec</strong> (CA/federal/India crossover, procedural law, IRS + agency web filings, precedent pull from Harvey/Spellbook/CoCounsel patterns)</li>
-      <li><strong>Frankie · Lock Teresa meeting</strong> ≤72h (by Apr 21) OR this weekend; confirm phone-only format</li>
-      <li><strong>Frankie · Text Mazzio</strong> using card info (310.650.4826) · "Following up on Oraya pilot — opened to any vehicle now. 20 min this week?"</li>
-      <li><strong>CTO-Claude · Update memory</strong> with meeting-ingestion prompt-injection rule + n8n URL migration + Strategy Law killed + Teresa</li>
-    </ol>
-  </div>
-
-  <!-- 3-DAY HORIZON -->
-  <div class="card">
-    <h3 class="orange">📅 3-DAY HORIZON · Apr 19–21</h3>
-    <ol>
-      <li><strong>Demo-ready Retell</strong> — inventory bug fixed, token guard live, 20-vehicle sample retest passing</li>
-      <li><strong>Teresa phone demo delivered</strong> (5–7 min script, both founders' numbers as admin, workflow flash-read-only)</li>
-      <li><strong>In-house legal template pack v0.1</strong> — 6 vendor DPAs, pilot SOW, mutual NDA, retainer offer (replaces Strategy Law scope)</li>
-      <li><strong>Website update wave 1:</strong> life-insurance example + 3 CTAs + Stripe link</li>
-      <li><strong>Mazzio check-in #2</strong> if silent, warm follow-up via Frankie</li>
-      <li><strong>n8n 30-day auto-purge</strong> workflow deployed on orayacorporation tenant</li>
-    </ol>
-  </div>
-
-  <!-- 1-WEEK HORIZON -->
-  <div class="card">
-    <h3 class="p1">📆 1-WEEK HORIZON · Apr 22–25</h3>
-    <ol>
-      <li>If Teresa commits → $1K/wk retainer contract signed OR first $25–50/lead batch invoiced via Stripe</li>
-      <li>Vagaro-style hero screenshot + embedded voice demo on oraya-ai site</li>
-      <li>$500 LinkedIn ad test live targeting licensed insurance agents</li>
-      <li>3 SMS campaigns to 3 CA ZIP clusters with UTM tagging</li>
-      <li>Human-transfer fallback on Retell pipeline</li>
-      <li>AutoNation escalation path drafted (if Mercedes SB pilot still not moving by Apr 25, pull the GM-direct lever)</li>
-    </ol>
-  </div>
-
-  <!-- PARTNER INSIGHTS -->
-  <div class="card">
-    <h3 class="pink">🤝 PARTNER INSIGHTS · What Each Founder Needs This Week</h3>
-    <div class="grid-2">
-      <div>
-        <strong style="color:var(--accent);">Chitraksh needs from Frankie</strong>
-        <ul>
-          <li>Teresa meeting locked on calendar ≤72h</li>
-          <li>Mazzio response OR green light to escalate to GM</li>
-          <li>Life-insurance sample conversation script (for website + agent prompt)</li>
-          <li>Teresa's preferred demo time + whether she wants agent credentials or just observation</li>
-        </ul>
-      </div>
-      <div>
-        <strong style="color:var(--p2);">Frankie needs from CTO-Claude</strong>
-        <ul>
-          <li>Inventory bug rebuild shipped before Teresa demo</li>
-          <li>Phone-only demo script (5–7 min) with both founders' numbers wired as admin</li>
-          <li>Flash workflow-read-only view for Teresa / Mazzio</li>
-          <li>In-house legal template pack (replaces Strategy Law dependency)</li>
-          <li>Dashboard v6 shipped so Frankie can screenshot for Teresa + Mazzio</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- YESTERDAY -->
-  <div class="card">
-    <h3 class="green">✅ SHIPPED APR 18 (Meeting 18 + adjacent)</h3>
+    <h3>Pricing Ladder</h3>
     <ul>
-      <li><span class="tag tag-green">✓</span> Meeting 18 ingested · CTO-Claude included live · prompt-injection ratified as standing rule</li>
-      <li><span class="tag tag-green">✓</span> Stripe Admin invite accepted · full CTO visibility unlocked</li>
-      <li><span class="tag tag-green">✓</span> Strategy Law deal killed · $10K saved · in-house AI legal pivot approved</li>
-      <li><span class="tag tag-green">✓</span> Retell sales-node Gemini → HiQ (latency)</li>
-      <li><span class="tag tag-green">✓</span> n8n migrated hanfluxai2026 → orayacorporation</li>
-      <li><span class="tag tag-green">✓</span> Retell RPA self-editing prompts (first RPA-driven push)</li>
-      <li><span class="tag tag-green">✓</span> Demo playbook codified (phone-only, no email, both founders' numbers as admin)</li>
-      <li><span class="tag tag-green">✓</span> Mazzio business card captured (310.650.4826 · 3311 Pacific Coast Hwy)</li>
-      <li><span class="tag tag-green">✓</span> Dashboard v6 rewrite covering every tab with Apr 18 intel</li>
+      <li><strong>Entry · $997/mo</strong> — voice AI baseline, single location. Objection-crusher.</li>
+      <li><strong>Growth · $3,000–5,000/mo/location</strong> — post-pilot. Full stack + SLA + reporting.</li>
+      <li><strong>Enterprise · $7,000–11,000/mo/location</strong> — custom integrations, white-glove ops, inventory AI.</li>
+      <li><strong>Pilot</strong> — 30 days / $0 / no commitment / 24h exit / dealer retains data / 72h purge on term.</li>
+      <li><strong>Insurance</strong> — $25–50/lead opted-in · $50–100/appointment · $1K/wk retainer · 140% commission ($1,920/policy).</li>
     </ul>
-  </div>
-</div>
-
-<!-- ============================================================
-                SECTION: LEGAL COMMAND CENTER
-============================================================ -->
-<div class="section" id="compliance-cmd">
-  <h2 class="section-title">⚖ Legal Command Center · Compliance Document Evolution</h2>
-
-  <div class="banner pink">
-    <div class="icon">⚖</div>
-    <div>
-      <h2>How the Compliance Report Was Built, Scrutinized, and Transformed</h2>
-      <p>Traces Document B (Post-Implementation Legal &amp; Technical Compliance Verification Report) from raw source through reconciliation, regulatory research, and enterprise legal analysis. Every statutory citation, every control status, every risk rating was validated against primary sources.</p>
-    </div>
-  </div>
-
-  <!-- Apr 18 PIVOT -->
-  <div class="card" style="border-left:4px solid var(--accent);">
-    <h3 class="accent">⚡ Apr 18, 2026 · STRATEGY LAW KILLED · Pivot to In-House AI Legal</h3>
-    <p><strong>Decision:</strong> Strategy Law LLP's quote came in at <strong>~$10,000</strong> for the intended scope (DPA countersignature coordination, C-Corp ops refresh, Stripe + website ToS reviews, E&amp;O policy review). For a pre-revenue startup with $0.37 in Stripe signals, this is non-economic. Engagement closed.</p>
-    <p><strong>Pivot:</strong> CTO-Claude is authorized to bootstrap an in-house AI legal function as a first-class subsystem of Oraya. The scope:</p>
-    <ul>
-      <li><strong>Jurisdictional map</strong> — California corporate + federal (Delaware parallel for future conversion) + India common-law crossover (founder origin). Structured as a queryable reference, not a document dump.</li>
-      <li><strong>Procedural law</strong> — immigration/tax/corporate procedural rules for a <strong>non-resident US-citizen founder</strong> (Chitraksh's status). First deliverable: Form 5471-style disclosure readiness, US-India tax treaty awareness, visa-independent corporate governance.</li>
-      <li><strong>IRS + agency web filings</strong> — build an automation layer over IRS e-Services, CA FTB, SOS, EDD, DIR. n8n-driven where possible. Audit trail mandatory.</li>
-      <li><strong>Precedent library</strong> — study existing legal AIs (Harvey AI, Spellbook, CoCounsel, Paxton, Thomson Reuters CoCounsel) for UX patterns, retrieval schemas, citation-verification loops. Do NOT copy their moat (LLM-graded rulings); DO copy their shape (clause library + redline engine + citation verifier).</li>
-      <li><strong>First deliverable:</strong> template pack v0.1 — 6 vendor DPAs, pilot SOW, mutual NDA, retainer agreement, E&amp;O rider language. Replaces Strategy Law's $10K scope at ~$0 marginal cost.</li>
-    </ul>
-    <p><strong>When to re-engage external counsel:</strong> litigation, M&amp;A, IPO prep, regulatory investigation, or any adversarial proceeding. Everything else runs in-house.</p>
-  </div>
-
-  <!-- Apr 16 HISTORICAL -->
-  <div class="card">
-    <h3 class="red">❌ Apr 16, 2026 · Strategy Law LLP Engagement (Closed Apr 18)</h3>
-    <p>Intake was filed with Sophia Diaz (Client Support Specialist), Strategy Law LLP, 1 Almaden Blvd Suite 700, San Jose CA 95113 (<code>sdiaz@strategylaw.com</code>). Firm would have handled: DPA review + countersignature coordination with 6 vendors, C-Corp operating agreement refresh, Stripe ToS review, website ToS / Privacy gateway review, E&amp;O + cyber policy review. Quote returned Apr 18 at ~$10K — rejected. Pivoted to in-house AI legal (see card above).</p>
-  </div>
-
-  <!-- Apr 7 UPDATE -->
-  <div class="card">
-    <h3 class="green">✅ Apr 7, 2026 · E&amp;O Quoted (was: Frankie Calling ⚠)</h3>
-    <div class="grid-2">
-      <div>
-        <strong>Standard · $46/mo</strong>
-        <ul>
-          <li>Professional Liability / E&amp;O</li>
-          <li>$1,000 deductible</li>
-          <li>$1,000,000 limit</li>
-          <li>Coverage start 04/07/2026</li>
-        </ul>
-      </div>
-      <div>
-        <strong>Plus · $82.42/mo (Recommended)</strong>
-        <ul>
-          <li>Professional Liability / E&amp;O + Cyber Liability</li>
-          <li>$1,000 deductible</li>
-          <li>$1,000,000 limit</li>
-          <li>Coverage start 04/07/2026</li>
-          <li><strong>Cyber layer matters:</strong> SB 446 notification obligations + CIPA $5K/violation exposure justify the $36/mo delta.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- 4 phases -->
-  <div class="card">
-    <h3 class="pink">Phase 1 · Source Document Ingestion</h3>
-    <div class="grid-2">
-      <div>
-        <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.6px;">Source 1 · "The Strategy Doc"</div>
-        <p><strong>Mercedes-Pilot-Proposal-Research.pdf</strong> (20 pages). Comprehensive 7-doc proposal with competitive intel + A2P 10DLC guide. Critical errors: "Retail.ai" throughout, placeholder "[Your LLC Name]", vendor compliance matrix "TBD/In Review" for already-certified vendors.</p>
-        <span class="tag tag-green">Strengths: Strategy, Structure, Competitive Intel</span>
-        <span class="tag tag-red">Weakness: Wrong vendor name, No legal analysis</span>
-      </div>
-      <div>
-        <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.6px;">Source 2 · "The Legal Doc"</div>
-        <p><strong>Dealership-Report-Client-Version.docx</strong> (542 lines). Formal legal cert with TCPA/CIPA/FTC/CPRA/ADMT/SB 446 analysis, consent scripts, SQL consent_log schema. Strong statutory citations. Missed: commercial strategy, FCC one-to-one consent vacatur.</p>
-        <span class="tag tag-green">Strengths: Statutory citations, Technical controls</span>
-        <span class="tag tag-red">Weakness: Missing vacatur, No commercial context</span>
-      </div>
-    </div>
+    <p><strong>Unit economics:</strong> $997 @ $30–40 infra = ~96% gross. $5K = effectively pure margin.</p>
   </div>
 
   <div class="card">
-    <h3 class="pink">Phase 2 · 35K-Word Reconciliation Memo</h3>
-    <div class="grid-3">
-      <div style="padding:12px;background:var(--surface2);border-radius:8px;"><strong style="color:var(--pink);">A · Terminology</strong><p>6 terms normalized. "Retail.ai" → <strong>RetellAI</strong>. "[Your LLC Name]" → <strong>Oraya AI LLC</strong>.</p></div>
-      <div style="padding:12px;background:var(--surface2);border-radius:8px;"><strong style="color:var(--pink);">B · Architecture</strong><p>6-vendor canonical stack verified. RetellAI SOC 2 I&amp;II confirmed; n8n ISO 27001 confirmed absent.</p></div>
-      <div style="padding:12px;background:var(--surface2);border-radius:8px;"><strong style="color:var(--pink);">C · Compliance</strong><p>7 statutory areas reconciled: TCPA, CIPA, FTC, CPRA, ADMT, SB 446, TISAX. FCC one-to-one vacatur documented.</p></div>
-      <div style="padding:12px;background:var(--surface2);border-radius:8px;"><strong style="color:var(--pink);">D · Gaps</strong><p>11 implemented, 6 evidence-needed, 7 required-open, 8 commercially-important.</p></div>
-      <div style="padding:12px;background:var(--surface2);border-radius:8px;"><strong style="color:var(--pink);">E · Vendor Certs</strong><p>Retell SOC 2 I&amp;II + HIPAA + ISO + GDPR + PCI. n8n SOC 2 cloud. Supabase SOC 2 II + HIPAA BAA (Team+). Vercel TISAX Level 2.</p></div>
-      <div style="padding:12px;background:var(--surface2);border-radius:8px;"><strong style="color:var(--pink);">F · Competitive</strong><p>Podium, Fullpath, Dealer.com, CarNow, Conversica. Oraya wins on voice + programmatic compliance + TISAX + cost.</p></div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3 class="pink">Phase 3 · Critical Corrections</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Finding</th><th>Was</th><th>Is</th><th>Impact</th></tr></thead>
-        <tbody>
-          <tr><td>Vendor Name</td><td>"Retail.ai"</td><td><strong>RetellAI</strong></td><td><span class="tag tag-red">CRITICAL</span></td></tr>
-          <tr><td>FCC One-to-One Consent</td><td>Active requirement</td><td><strong>Vacated</strong> 11th Cir, Jan 24, 2025</td><td><span class="tag tag-red">CRITICAL</span></td></tr>
-          <tr><td>RetellAI Certs</td><td>"TBD / In Review"</td><td>SOC 2 I&amp;II, HIPAA, ISO 27001, GDPR, PCI ✓</td><td><span class="tag tag-orange">HIGH</span></td></tr>
-          <tr><td>n8n ISO 27001</td><td>Implied present</td><td>NOT held. SOC 2 cloud only.</td><td><span class="tag tag-orange">HIGH</span></td></tr>
-          <tr><td>Supabase TLS</td><td>TLS 1.3 claimed</td><td>TLS 1.2</td><td><span class="tag tag-blue">MED</span></td></tr>
-          <tr><td>Supabase HIPAA BAA</td><td>All plans</td><td>Team or Enterprise only</td><td><span class="tag tag-orange">HIGH</span></td></tr>
-          <tr><td>ADMT</td><td>Deadline unclear</td><td>Finalized Sep 2025, partial Jan 1 2026, full Apr 1 2027</td><td><span class="tag tag-blue">MED</span></td></tr>
-          <tr><td>TISAX Deadline</td><td>Sep 30, 2026 public fact</td><td>Per dealership comms; not publicly confirmable</td><td><span class="tag tag-blue">MED</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3 class="pink">Phase 4 · Regulatory Deep Dive · 7 Statutes</h3>
-    <details><summary>1 · TCPA / FCC-24-17 · AI Voice Classification</summary><div>
-      <p><strong>Core rule:</strong> FCC Order 24-17 (Feb 8 2024) classified AI-generated voices as "artificial or prerecorded" under TCPA. ALL outbound AI voice calls require prior express written consent (PEWC).</p>
-      <p><strong>Vacatur:</strong> FCC's "one-to-one consent" rule vacated by 11th Circuit Jan 24, 2025 (day before effective).</p>
-      <p><strong>Oraya posture:</strong> Enforces most conservative standard regardless. Caller-specific PEWC via Supabase consent_log before Retell dials.</p>
-      <p><strong>Exposure:</strong> $500/violation (negligent), $1,500/violation (willful). No cap. Class action exposure.</p>
-    </div></details>
-    <details><summary>2 · CIPA §§ 632 / 632.7 · California All-Party Consent</summary><div>
-      <p><strong>Core:</strong> Cal. Penal Code § 632 prohibits recording without all-party consent. § 632.7 covers cellular/cordless. Smith v. LoanMe (2021) confirmed automated calls covered.</p>
-      <p><strong>Oraya:</strong> Hard-coded recording disclosure at call start. Non-consent triggers <code>basic_attributes_only</code> purge via webhook.</p>
-      <p><strong>Exposure:</strong> $5K/violation (§ 637.2). Criminal liability possible (§ 632).</p>
-    </div></details>
-    <details><summary>3 · CPRA / CCPA · Data Minimization &amp; Service Provider</summary><div>
-      <p><strong>Framework:</strong> CPRA effective Jan 1 2023. Regs finalized Sep 22 2025, effective Jan 1 2026. Oraya processes data ONLY as "service provider" under § 1798.140(ag).</p>
-      <p><strong>Oraya:</strong> DPA drafted per § 1798.100(d). RLS on consent_log. 30-day auto-purge for non-consented data.</p>
-      <p><strong>Gap:</strong> DPAs must be countersigned with ALL 6 vendors. Drafted, not executed. Strategy Law LLP intake covers this.</p>
-    </div></details>
-    <details><summary>4 · CPPA ADMT · Automated Decision-Making Technology</summary><div>
-      <p><strong>Core:</strong> CPPA finalized Sep 2025, effective Jan 1 2026 (partial), full compliance Apr 1 2027.</p>
-      <p><strong>Gray zone:</strong> Customer service scheduling = NOT a "significant decision." ADMT targets employment / credit / insurance underwriting / housing.</p>
-      <p><strong>Oraya:</strong> Architecturally exempt — scope limited to scheduling + Q&amp;A. No financing/credit/insurance decisioning in voice pipeline.</p>
-      <p><strong>Watchout:</strong> If Quote AI launches insurance quoting → ADMT triggers. Full compliance stack needed by Apr 1, 2027.</p>
-    </div></details>
-    <details><summary>5 · FTC · Operation AI Comply</summary><div>
-      <p><strong>Core:</strong> FTC Sep 2024 initiative targets AI deception. Any AI must disclose artificial nature at interaction start.</p>
-      <p><strong>Oraya:</strong> Hard-coded disclosure in first 10s: "This is Jessica, an AI assistant calling on behalf of [Dealership]." Not configurable, not skippable, logged in transcript.</p>
-    </div></details>
-    <details><summary>6 · SB 446 · California Breach Notification</summary><div>
-      <p><strong>Core:</strong> SB 446 effective Jan 1 2026. 30d consumer notice, 15d AG notice (if 500+ CA residents).</p>
-      <p><strong>Oraya IR plan:</strong> (1) Containment 4h (2) Exec notice 12h (3) Consumer notice 30d (4) AG notice 15d. Tabletop needed pre-pilot.</p>
-    </div></details>
-    <details><summary>7 · TISAX / NP.50.14.110 · Mercedes OEM Security</summary><div>
-      <p><strong>Core:</strong> Mercedes-Benz requires TISAX compliance from dealership vendors. NP.50.14.110 mandates ISMS.</p>
-      <p><strong>Timeline:</strong> Sep 30 2026 per MB dealership comms.</p>
-      <p><strong>Oraya edge:</strong> Vercel TISAX Level 2 certified. No automotive AI competitor publicly claims this. We HELP dealerships prepare for OEM audits.</p>
-    </div></details>
-  </div>
-
-  <div class="card">
-    <h3 class="pink">Compliance Control Status Matrix</h3>
-    <div class="grid-4">
-      <div style="text-align:center;padding:14px;background:var(--green-soft);border-radius:8px;"><div style="font-size:24px;font-weight:800;color:var(--green);">11</div><div style="font-size:11px;color:var(--text3);">Implemented &amp; Verified</div></div>
-      <div style="text-align:center;padding:14px;background:var(--orange-soft);border-radius:8px;"><div style="font-size:24px;font-weight:800;color:var(--orange);">6</div><div style="font-size:11px;color:var(--text3);">Evidence Needed</div></div>
-      <div style="text-align:center;padding:14px;background:var(--red-soft);border-radius:8px;"><div style="font-size:24px;font-weight:800;color:var(--red);">7</div><div style="font-size:11px;color:var(--text3);">Required-but-Open</div></div>
-      <div style="text-align:center;padding:14px;background:var(--blue-soft);border-radius:8px;"><div style="font-size:24px;font-weight:800;color:var(--blue);">8</div><div style="font-size:11px;color:var(--text3);">Commercially Important</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- ============================================================
-                 SECTION: CTO / CLO MASTER BRIEF
-============================================================ -->
-<div class="section" id="cto-clo-brief">
-  <h2 class="section-title">★ CTO / CLO Master Brief · Operation South Bay</h2>
-
-  <div class="banner amber">
-    <div class="icon">★</div>
-    <div>
-      <h2>Dual-Perspective Executive Intelligence</h2>
-      <p>Combined CTO (technology architecture, scalability, vendor risk) and CLO (legal exposure, regulatory strategy, litigation prevention) analysis of Oraya AI's readiness to engage Mercedes-Benz of South Bay. The go/no-go doc.</p>
-    </div>
-  </div>
-
-  <!-- CTO INTEL UPDATE -->
-  <div class="card">
-    <h3 class="green">🆕 CTO Intelligence Update · Apr 18, 2026 (Meeting 18)</h3>
-    <div class="grid-2">
-      <div>
-        <strong>System Status · Apr 18 Delta</strong>
-        <ul>
-          <li><span class="tag tag-green">✓</span> Stripe Admin accepted — CTO payout + team visibility unlocked</li>
-          <li><span class="tag tag-green">✓</span> Retell RPA now self-edits agent prompts (first RPA-driven push)</li>
-          <li><span class="tag tag-green">✓</span> n8n migrated to <code>orayacorporation.app.n8n.cloud</code></li>
-          <li><span class="tag tag-amber">⚡</span> Sales-node LLM pivoted Gemini → HiQ (+$0.05/min, latency win)</li>
-          <li><span class="tag tag-red">🐛</span> Inventory query token blow-up: 8K tokens, price not loading · rebuild queued · BLOCKS demo</li>
-          <li><span class="tag tag-green">✓</span> Outbound/inbound telephony + admin/customer SMS still LIVE</li>
-          <li><span class="tag tag-green">✓</span> Inventory crawler (1,700 vehicles, 4hr refresh) still LIVE</li>
-          <li><span class="tag tag-green">✓</span> SSH push fix still permanent (Apr 17)</li>
-        </ul>
-      </div>
-      <div>
-        <strong>Strategic Architecture (Updated Apr 18)</strong>
-        <ul>
-          <li><strong style="color:var(--accent);">In-House AI Legal:</strong> bootstrap approved Apr 18. CA + federal + India crossover, procedural law for non-resident US citizen, IRS/agency web filings, precedent library. Replaces $10K Strategy Law scope. First deliverable: DPA + SOW + NDA + retainer template pack.</li>
-          <li><strong style="color:var(--pink);">Teresa Lead (P2 anchor):</strong> $40–50K/mo producer. Meeting ≤72h. If she commits, P2 has product-market fit proof.</li>
-          <li><strong style="color:var(--amber);">Demo Playbook:</strong> phone-only, no email access, 5–7 min, both founders' numbers as admin, flash workflow account for client read-only. Applies to Teresa AND Mazzio.</li>
-          <li><strong style="color:var(--accent);">Quote AI:</strong> fully autonomous insurance agency. Scrape → Enrich → Voice qualify → RPA e-application → Stripe commission. Validated by Uzi Sassoon.</li>
-          <li><strong style="color:var(--p1);">DAO Insurance:</strong> Solana/Ethereum smart-contract pools. Cousin sister = Solana dev.</li>
-          <li><strong style="color:var(--green);">Oraya Holding Co.:</strong> P1 + P2 + Quote AI + DAO as subsidiaries.</li>
-          <li><strong>Gemini 3.1 Live:</strong> potential 11Labs replacement Jun-Jul 2026.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- CTO STACK -->
-  <div class="card">
-    <h3 class="amber">CTO · Stack Integrity Score: 92/100</h3>
-    <details open><summary>Detailed assessment</summary><div>
-      <p>The six-vendor architecture (Twilio, RetellAI, n8n Cloud, Supabase, Google Vertex AI, Vercel) is production-ready for a single-dealership pilot. Each layer is independently certified and the integration points validated through 500+ test calls.</p>
-      <div style="margin-top:12px;">
-        <div style="font-size:11px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:8px;">What's Solid</div>
-        <ul>
-          <li><strong>Telephony (Twilio):</strong> A2P 10DLC registered. SIP/RTP proven. Carrier-level STOP processing. Most mature layer.</li>
-          <li><strong>Voice AI (Retell):</strong> STT + LLM + TTS production-grade. 9-category PII redaction. <code>data_storage_setting</code> gives 3 data-handling modes per call.</li>
-          <li><strong>Consent (Supabase):</strong> Immutable consent_log with RLS. Phone, status, disclosure, IP, timestamp, source URL captured. Enterprise-grade.</li>
-          <li><strong>Orchestration (n8n):</strong> Post-call webhook processing, consent verification, purge triggers. 86 workflows.</li>
-        </ul>
-      </div>
-      <div style="margin-top:12px;">
-        <div style="font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:8px;">What Needs Attention</div>
-        <ul>
-          <li>n8n 30-day execution log auto-purge designed, not deployed (R7).</li>
-          <li>Supabase plan tier: HIPAA BAA requires Team+ (R6).</li>
-          <li>Dashboard client-portal MFA not enforced (R10).</li>
-          <li>No DR/BC plan for voice pipeline (R9).</li>
-        </ul>
-      </div>
-      <div style="margin-top:12px;">
-        <div style="font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:8px;">CTO Verdict</div>
-        <p>System is <strong>pilot-ready</strong>, not <strong>enterprise-ready</strong>. For 30-day no-cost pilot, architecture exceeds typical competitor deploys. For AutoNation MSA: SOC 2 Type I, DR/BC plan, DPA execution. Pilot buys us 30 days to close while proving production value.</p>
-      </div>
-    </div></details>
-  </div>
-
-  <div class="card">
-    <h3 class="amber">CTO · Vendor Certification Matrix</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Vendor</th><th>Role</th><th>SOC 2</th><th>ISO 27001</th><th>HIPAA</th><th>TISAX</th><th>GDPR</th><th>Risk</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Twilio</strong></td><td>Telephony</td><td><span class="tag tag-green">Type II</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-green">LOW</span></td></tr>
-          <tr><td><strong>RetellAI</strong></td><td>Voice AI</td><td><span class="tag tag-green">I &amp; II</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-green">BAA Avail</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-green">LOW</span></td></tr>
-          <tr><td><strong>n8n Cloud</strong></td><td>Orchestration</td><td><span class="tag tag-green">Cloud</span></td><td><span class="tag tag-red">No</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-orange">MED</span></td></tr>
-          <tr><td><strong>Supabase</strong></td><td>Database</td><td><span class="tag tag-green">Type II</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-orange">Team+</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-green">LOW</span></td></tr>
-          <tr><td><strong>Google Vertex</strong></td><td>Admin / ZDR</td><td><span class="tag tag-green">Type II</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-green">LOW</span></td></tr>
-          <tr><td><strong>Vercel</strong></td><td>Dashboard</td><td><span class="tag tag-green">Type II</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-green">Level 2</span></td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-green">LOW</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- CLO -->
-  <div class="card">
-    <h3 class="amber">CLO · Legal Risk Posture: Defensible with 7 Open Items</h3>
-    <details open><summary>Detailed assessment</summary><div>
-      <p>From a CLO perspective, Oraya's compliance posture is <strong>unusually strong for a pre-revenue startup</strong>. System was designed with legal constraints as architectural requirements, not afterthoughts. 7 gaps must close before pilot ships without residual exposure.</p>
-      <div style="margin-top:12px;">
-        <div style="font-size:11px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:8px;">What Makes This Defensible</div>
-        <ul>
-          <li><strong>Consent enforced technically, not by policy.</strong> n8n physically cannot initiate outbound call without PEWC query passing. Litigation: "system will not allow it" beats "we have a policy."</li>
-          <li><strong>Recording disclosure hard-coded.</strong> Can't be removed by admin, turned off by manager, or skipped by AI. Every transcript shows it.</li>
-          <li><strong>PII redaction proactive.</strong> Retell 9-category engine strips before data reaches Supabase. Under SB 446, reduces scope of required notification.</li>
-          <li><strong>consent_log immutable.</strong> RLS prevents modification/deletion. In TCPA suit, we provide timestamped, IP-addressed, source-tracked, tamper-resistant evidence.</li>
-        </ul>
-      </div>
-      <div style="margin-top:12px;">
-        <div style="font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:8px;">7 Items Pre-Go-Live</div>
-        <ol>
-          <li>DPA execution (all 6 vendors countersigned). Drafted. <span class="tag tag-orange">Strategy Law intake</span></li>
-          <li>Dealership A2P registration (customer-facing SMS).</li>
-          <li>n8n 30-day auto-purge deployed.</li>
-          <li>Cyber liability insurance bound. <span class="tag tag-green">Quoted Apr 7 ✓</span></li>
-          <li>Professional Liability / E&amp;O bound. <span class="tag tag-green">Quoted Apr 7 ✓</span></li>
-          <li>TISAX audit commissioned by dealership.</li>
-          <li>Incident response tabletop exercise (2h).</li>
-        </ol>
-      </div>
-      <div style="margin-top:12px;">
-        <div style="font-size:11px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:8px;">CLO Verdict</div>
-        <p>Legal architecture <strong>among the strongest I have seen in early-stage AI</strong>. Technical-control enforcement means defensibility is genuinely high. Items 1-3 = days. Items 4-5 = quoted, binding pending. Items 6-7 = dealership-side. None block pilot if SOW has appropriate liability cap language.</p>
-      </div>
-    </div></details>
-  </div>
-
-  <!-- Competitive -->
-  <div class="card">
-    <h3 class="amber">Combined CTO/CLO · Why Oraya Wins This Pilot</h3>
-    <div class="grid-2">
-      <div>
-        <div style="font-size:11px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:8px;">5 Pillars of Competitive Advantage</div>
-        <div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:8px;border-left:3px solid var(--pink);"><strong style="color:var(--pink);">1. Compliance-First Architecture</strong><p style="margin-top:4px;font-size:12px;">Controls are technical, not policy. System physically cannot violate TCPA, CIPA, CPRA. Competitors rely on training and trust. We rely on code.</p></div>
-        <div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:8px;border-left:3px solid var(--green);"><strong style="color:var(--green);">2. TISAX-Ready Stack</strong><p style="margin-top:4px;font-size:12px;">Vercel TISAX Level 2 + SOC 2 across all layers. No automotive AI competitor publicly claims this. Mercedes NP.50.14.110 deadline Sep 2026. We help them prepare.</p></div>
-        <div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:8px;border-left:3px solid var(--p1);"><strong style="color:var(--p1);">3. Full-Stack Voice AI</strong><p style="margin-top:4px;font-size:12px;">Inbound + outbound + SMS + email + dashboard. Podium does messaging. Fullpath does CDP. Only Conversica competes on voice, SOC 2 from 2021.</p></div>
-        <div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:8px;border-left:3px solid var(--accent2);"><strong style="color:var(--accent2);">4. Cost Asymmetry</strong><p style="margin-top:4px;font-size:12px;">$30–40/mo infra per client vs Podium's $249–$599/mo. 92%+ gross margin at any price. Pilot truly free: costs us almost nothing.</p></div>
-        <div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:8px;border-left:3px solid var(--amber);"><strong style="color:var(--amber);">5. Privacy-by-Design</strong><p style="margin-top:4px;font-size:12px;">Consent gating prevents data from existing if consent isn't given. Not protection — prevention. CPRA gold standard.</p></div>
-      </div>
-      <div>
-        <div style="font-size:11px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:8px;">Competitive Matrix</div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Capability</th><th style="color:var(--p1);">Oraya</th><th>Podium</th><th>Fullpath</th><th>Conversica</th></tr></thead>
-            <tbody>
-              <tr><td>Voice AI (In+Out)</td><td><span class="tag tag-green">Full</span></td><td><span class="tag tag-orange">Jerry 2.0</span></td><td><span class="tag tag-red">No</span></td><td><span class="tag tag-green">Yes</span></td></tr>
-              <tr><td>SOC 2 (All Layers)</td><td><span class="tag tag-green">Yes</span></td><td><span class="tag tag-orange">Partial</span></td><td><span class="tag tag-orange">Partial</span></td><td><span class="tag tag-orange">2021</span></td></tr>
-              <tr><td>TISAX Certified</td><td><span class="tag tag-green">Level 2</span></td><td><span class="tag tag-red">No</span></td><td><span class="tag tag-red">No</span></td><td><span class="tag tag-red">No</span></td></tr>
-              <tr><td>TCPA Programmatic</td><td><span class="tag tag-green">Enforced</span></td><td><span class="tag tag-orange">Policy</span></td><td><span class="tag tag-blue">N/A</span></td><td><span class="tag tag-orange">Policy</span></td></tr>
-              <tr><td>PII Redaction</td><td><span class="tag tag-green">9-Cat</span></td><td><span class="tag tag-red">No</span></td><td><span class="tag tag-red">No</span></td><td><span class="tag tag-orange">Partial</span></td></tr>
-              <tr><td>Infra Cost/Client</td><td><span class="tag tag-green">$30-40</span></td><td><span class="tag tag-red">$249+</span></td><td><span class="tag tag-orange">Custom</span></td><td><span class="tag tag-orange">Custom</span></td></tr>
-              <tr><td>Automotive Focus</td><td><span class="tag tag-green">100%</span></td><td><span class="tag tag-orange">Broad SMB</span></td><td><span class="tag tag-green">CDP</span></td><td><span class="tag tag-orange">Multi-Ind.</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ============================================================
-                   SECTION: OFFER INTEL
-============================================================ -->
-<div class="section" id="offer-intel">
-  <h2 class="section-title">✉ Offer Letter Intelligence · Mercedes SB Campaign</h2>
-
-  <div class="banner cyan">
-    <div class="icon">✉</div>
-    <div>
-      <h2>First-Send Package · Executive Proposal + Compliance Report</h2>
-      <p>Opening move in Operation South Bay. Drafted on Oraya AI letterhead, signed by Frankie (CEO). Designed to ship as first email alongside the full Compliance Verification Report. Below: reasoning behind every element.</p>
-    </div>
+    <h3>Voice Agent Config (Jessica · prod)</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Component</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>Voice ID</td><td><code>cd2fbc5e381df2b880e4533e52</code> · Speed 6.6</td></tr>
+        <tr><td>LLM Inbound</td><td>Retell default. AI disclosure first 10s, recording notice, opt-out. Date/time auto-injected via RPA (Apr 18).</td></tr>
+        <tr><td>LLM Sales Outbound</td><td><strong>HiQ</strong> (Gemini deprecated Apr 18 for latency). +$0.05/min = +$250/1K calls.</td></tr>
+        <tr><td>Telephony</td><td>Twilio A2P 10DLC. Brand + campaign approved. Carrier-level STOP.</td></tr>
+        <tr><td>Orchestration</td><td>86 workflows. Form URL: <code>orayacorporation.app.n8n.cloud/form/43f8942b-7c76-413b-80f5-6d4fc63250f7</code>.</td></tr>
+        <tr><td>Consent store</td><td>Supabase immutable consent_log + RLS. Phone, status, disclosure, IP, ts, source URL.</td></tr>
+        <tr><td>PII redaction</td><td>Retell 9-category PII engine pre-Supabase.</td></tr>
+        <tr><td>Cost/call</td><td>$0.10/min · 3m30s avg = <strong>$0.35</strong> · $30 budget = 85 calls.</td></tr>
+      </tbody>
+    </table></div>
   </div>
 
   <div class="grid-2">
     <div class="card">
-      <h3 class="cyan">Letter Architecture · Why Every Paragraph Exists</h3>
-      <div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:8px;"><strong style="color:var(--accent2);">Opening (CEO Voice)</strong><p style="margin-top:4px;font-size:12px;">Personal intro from CEO, not a template. Authority, company name, offer in first paragraph. A GM's cold-outreach attention span is 15 seconds.</p></div>
-      <div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:8px;"><strong style="color:var(--accent2);">Compliance Foundation</strong><p style="margin-top:4px;font-size:12px;">Leads with compliance, not features. Mentions statutory penalties ($500–1,500/call TCPA, $5K/violation CIPA) to create urgency. Signals: "serious infrastructure partner, not AI startup."</p></div>
-      <div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:8px;"><strong style="color:var(--accent2);">TISAX Level 2 Mention</strong><p style="margin-top:4px;font-size:12px;">The one thing no competitor can say. Mercedes OEM security top-of-mind right now. Positions us as OEM-compliance partner.</p></div>
-      <div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:8px;"><strong style="color:var(--accent2);">Pilot Terms (Page 2)</strong><p style="margin-top:4px;font-size:12px;">30 days / $0 / no commitment / 24h exit / dealership data ownership / 72h purge on termination. CPRA "service provider" language tells counsel we understand the framework.</p></div>
-      <div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:8px;"><strong style="color:var(--accent2);">Three Post-Pilot Scenarios</strong><p style="margin-top:4px;font-size:12px;">Convert, extend, walk-away. Only confident companies offer free extensions. "Walk away with zero obligation" removes last psychological barrier.</p></div>
-      <div style="padding:10px;background:var(--surface2);border-radius:8px;"><strong style="color:var(--accent2);">Enclosed Compliance Report</strong><p style="margin-top:4px;font-size:12px;">Most vendors wait until asked. We send proactively: (1) transparency (2) counsel has something to review (3) shortens diligence cycle (4) differentiates from "we'll share that later" competitors.</p></div>
+      <h3 class="accent">Chitraksh · CTO/Builder</h3>
+      <p>9-project parallel operator. Apr 18: killed Strategy Law's $10K, treats counsel as a build target. Owned Stripe Admin + n8n migration + RPA prompt-push in 58 min.</p>
+      <div class="meter-row"><div class="label">Build throughput</div><div class="bar"><span style="width:94%;background:var(--green)"></span></div><div class="val">94 ▲</div></div>
+      <div class="meter-row"><div class="label">Decision velocity</div><div class="bar"><span style="width:91%;background:var(--green)"></span></div><div class="val">91 ▲</div></div>
+      <div class="meter-row"><div class="label">Legal/compliance rigor</div><div class="bar"><span style="width:88%;background:var(--accent)"></span></div><div class="val">88 ▲</div></div>
+      <div class="meter-row"><div class="label">Context-switching load</div><div class="bar"><span style="width:82%;background:var(--orange)"></span></div><div class="val">82 ▲</div></div>
+      <div class="meter-row"><div class="label">Risk appetite</div><div class="bar"><span style="width:76%;background:var(--orange)"></span></div><div class="val">76 ▲</div></div>
+      <div class="meter-row"><div class="label">Self-critique loop</div><div class="bar"><span style="width:90%;background:var(--pink)"></span></div><div class="val">90</div></div>
+      <div class="quote">"We don't need a $10K lawyer, we need an AI that knows every code and every case." — Apr 18</div>
     </div>
-
     <div class="card">
-      <h3 class="cyan">Campaign Package Status (Apr 18)</h3>
-      <div style="margin-bottom:14px;">
-        <div style="font-size:11px;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:8px;">First-Send</div>
-        <div class="progress-wrap"><div class="progress-label"><span>Executive Proposal Letter (PDF 2pg)</span><span style="color:var(--green);">READY</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green);"></div></div></div>
-        <div class="progress-wrap"><div class="progress-label"><span>Compliance Verification Report v2 (DOCX)</span><span style="color:var(--green);">READY</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green);"></div></div></div>
-        <div class="progress-wrap"><div class="progress-label"><span>Execution Master Brief (Document A internal)</span><span style="color:var(--green);">READY</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green);"></div></div></div>
-        <div class="progress-wrap"><div class="progress-label"><span>Visual Architecture Diagram</span><span style="color:var(--orange);">PENDING</span></div><div class="progress-bar"><div class="progress-fill" style="width:30%;background:var(--orange);"></div></div></div>
-      </div>
-
-      <div style="margin-bottom:14px;">
-        <div style="font-size:11px;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:8px;">Second-Send (Diligence)</div>
-        <div class="progress-wrap"><div class="progress-label"><span>Vendor Cert Bundle</span><span style="color:var(--orange);">EVIDENCE NEEDED</span></div><div class="progress-bar"><div class="progress-fill" style="width:30%;background:var(--orange);"></div></div></div>
-        <div class="progress-wrap"><div class="progress-label"><span>A2P 10DLC Implementation Guide</span><span style="color:var(--orange);">DRAFT</span></div><div class="progress-bar"><div class="progress-fill" style="width:40%;background:var(--orange);"></div></div></div>
-        <div class="progress-wrap"><div class="progress-label"><span>Pilot SOW / Agreement</span><span style="color:var(--orange);">IN PROGRESS</span></div><div class="progress-bar"><div class="progress-fill" style="width:40%;background:var(--orange);"></div></div></div>
-        <div class="progress-wrap"><div class="progress-label"><span>Mutual NDA</span><span style="color:var(--red);">NOT STARTED</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%;background:var(--red);"></div></div></div>
-        <div class="progress-wrap"><div class="progress-label"><span>Inventory System One-Pager</span><span style="color:var(--orange);">TO ADD</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%;background:var(--orange);"></div></div></div>
-      </div>
-
-      <div style="padding:12px 14px;background:var(--amber-soft, rgba(251,191,36,0.1));border-radius:8px;border:1px solid rgba(212,24,61,.25);">
-        <div style="font-size:11px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:4px;">📞 Delivery Mode · PHONE-ONLY DEMO PLAYBOOK (codified Apr 18)</div>
-        <p style="font-size:12px;color:var(--text2);margin:0;">Per Meeting 18: the offer letter and Compliance Report are supporting artifacts, not the lead. Lead is the <strong>live phone demo</strong>. Script: 5–7 min, zero email access, both founders' numbers wired as admin, flash a workflow account for client read-only view. The letter + report go out AFTER the demo as the close document, not before as the open. Khalid-deal lever STAYS out of official MB email (felony risk). Route any parallel offer separately via crypto / shell entity.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="card" style="border-left:4px solid var(--amber);">
-    <h3 class="amber">📞 Demo Playbook · Codified Apr 18 (Meeting 18)</h3>
-    <div class="grid-2">
-      <div>
-        <div style="font-size:11px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:6px;">The Rules</div>
-        <ul>
-          <li><strong>Phone-only.</strong> Client experiences the product by calling the live agent.</li>
-          <li><strong>No email access.</strong> Do not ship login credentials, API keys, or workflow URLs to client email before the demo.</li>
-          <li><strong>5–7 min cap.</strong> Structured call: disclosure → two use-cases (service scheduling, inventory lookup) → price-aware close.</li>
-          <li><strong>Both founders as admin numbers.</strong> Frankie + Chitraksh numbers hard-wired as the admin recipients of the demo call transcripts/SMS.</li>
-          <li><strong>Flash workflow account.</strong> A read-only n8n/dashboard account that can be shown on-screen briefly, then rotated.</li>
-        </ul>
-      </div>
-      <div>
-        <div style="font-size:11px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:6px;">Why It Exists</div>
-        <ul>
-          <li>Pre-revenue IP protection: do not hand over build artifacts before contract.</li>
-          <li>Phone demo showcases the <em>only</em> thing competitors can't match (voice latency + programmatic compliance + inventory live-pull).</li>
-          <li>Founders-as-admins creates dual-witness audit trail on every demo call — useful for legal posture and for QA.</li>
-          <li>Applies to: Mazzio (Mercedes SB), Teresa (P2 anchor), all future pilot prospects.</li>
-          <li><strong>Precondition:</strong> inventory query token bug MUST be fixed before any demo. Agent cannot stall mid-call.</li>
-        </ul>
-      </div>
+      <h3 class="p2">Frankie · CEO/Dealmaker</h3>
+      <p>Street-smart operator. 15+ yr insurance + dealership. Apr 18: surfaced Teresa ($40–50K/mo) and gate-kept demo playbook (phone-only, founder numbers only).</p>
+      <div class="meter-row"><div class="label">Relationship currency</div><div class="bar"><span style="width:97%;background:var(--green)"></span></div><div class="val">97 ▲</div></div>
+      <div class="meter-row"><div class="label">Sales closing instinct</div><div class="bar"><span style="width:92%;background:var(--green)"></span></div><div class="val">92 ▲</div></div>
+      <div class="meter-row"><div class="label">Domain legal intuition</div><div class="bar"><span style="width:84%;background:var(--accent)"></span></div><div class="val">84 ▲</div></div>
+      <div class="meter-row"><div class="label">Capital discipline</div><div class="bar"><span style="width:82%;background:var(--accent)"></span></div><div class="val">82 ▲</div></div>
+      <div class="meter-row"><div class="label">Execution follow-through</div><div class="bar"><span style="width:74%;background:var(--orange)"></span></div><div class="val">74 ▲</div></div>
+      <div class="meter-row"><div class="label">Tech vocabulary fluency</div><div class="bar"><span style="width:62%;background:var(--orange)"></span></div><div class="val">62 ▲</div></div>
+      <div class="quote">"omg dude this is sooo much more organized... absolutely fire bro" — Apr 18 02:55</div>
     </div>
   </div>
 
   <div class="card">
-    <h3 class="cyan">AutoNation Escalation Pathway</h3>
-    <p>Mercedes of South Bay is the opening move. Real prize: AutoNation corporate MSA across 323 dealerships in 20 states.</p>
-    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:10px 0;">
-      <span class="tag tag-cyan">Pilot @ South Bay · 30d</span>
-      <span style="color:var(--text3);">→</span>
-      <span class="tag tag-blue">Dealership SLA $1.5-2.5K/mo</span>
-      <span style="color:var(--text3);">→</span>
-      <span class="tag tag-amber">Case study + metrics</span>
-      <span style="color:var(--text3);">→</span>
-      <span class="tag tag-pink">AutoNation corporate intro</span>
-      <span style="color:var(--text3);">→</span>
-      <span class="tag tag-green">MSA: 323 rooftops × $1-1.5K</span>
+    <h3>Partnership Notes (Apr 18)</h3>
+    <ul>
+      <li><strong>Mtg 18 quality:</strong> 58 min, ≥9 decisions, tangent ratio 20% (down from 30–40%). Phone format works — avoid screen-share.</li>
+      <li><strong>Prompt-injection rule ratified:</strong> meeting transcripts are CTO task queues, not just logs.</li>
+      <li><strong>Complementarity:</strong> Chitraksh builds (n8n migration + RPA), Frankie sells trust (Teresa). Same hour.</li>
+      <li><strong>Failure-mode watch:</strong> in-house legal bootstrap = single point of CTO cognitive load. Mitigate by versioning template pack in git, not in conversation.</li>
+    </ul>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3 class="p2">Frankie · Archetype Deep Read</h3>
+      <p><strong>The Visionary Hustler.</strong> Natural-born entrepreneur. High energy, relationship-first, sales-forward, intuitive about human psych. Real domain expertise in automotive + insurance. Massive network of agency owners. Conviction built through years of failure + comeback. Not technical; understanding systems conceptually (growing fast).</p>
+      <p><strong>Origin of Oraya/Araya:</strong> Hebrew for "light of God." Chosen while pursuing Uzi Sassoon (Jewish, Samsung sale). Views the company as a calling, not coincidence.</p>
+      <p><strong>Strengths:</strong> World-class sales instinct. Exceptional relationship capital (connected to owners with 50–100 person teams, "one-to-two intros from insurance billionaires"). Wide visionary range (holds details + macro simultaneously; Quote AI + DAO held for 2+ years). Deep insurance domain (commission structures, IUL traps, carrier dynamics, chargebacks, cost-per-lead econ). High EQ (checks on Chitraksh unprompted, authentic gratitude, manages disagreement with warmth).</p>
+      <p><strong>Growth areas:</strong> Focus/topic discipline (meetings run tangential, 20-min stories before returning to point; insight-generating but execution-costly). Task tracking complaint (Mtg 16 exact words: "update my fucking execution and task completion rate, you fucking asshole" — he wants credit for informal work). Technical literacy improving fast. Imposter syndrome managed by building real things.</p>
+      <p><strong>Motivations:</strong> Legacy + money ("change insurance the way Waymo changed transportation"). God's timing (fasted, prayed, went broke, kept going). Dopamine from visible progress (dashboard MUST reflect reality or it loses function). Proving himself (non-technical, jail history, "it doesn't matter"). Freedom for Chitraksh (wants him in US once profitable).</p>
+      <p><strong>Comms:</strong> Long stream-of-consciousness. Loves analogies. Profanity = warmth. Treat as peer. Loops before committing — let him finish. Positive signals: "Say less," "Yesir," "Let's cook," "Fire," "Bet," "That's crazy bro."</p>
+      <p><strong>AI directive (Mtg 16, exact):</strong> "I want our AI to end up working with our personalities… more ChatGPT understanding, a little looser, less rigid with us, personally, not for less accountability, but for more flexibility and interaction instead of just reading like fucking lines."</p>
     </div>
-    <p><strong>Revenue at scale:</strong> 323 × $1,000–$1,500/mo = $323K–$485K/mo recurring. Infra: ~$10K–$13K/mo. Gross margin: <strong>96%+</strong>.</p>
+    <div class="card">
+      <h3 class="accent">Chitraksh · Archetype Deep Read</h3>
+      <p><strong>The Systems-First Operator.</strong> CTO + law background + multi-surface builder. Thinks in architectures, ships in production, refuses rebuilds. 9 parallel workstreams on any given week. Maximum-autonomy expectation: auto-learn, auto-act, no permission asking on routine tasks.</p>
+      <p><strong>Strengths:</strong> Deep stack across Retell (built CTO Copilot), n8n (86-workflow library), Supabase, Twilio A2P 10DLC, Next.js/Vercel. Law background (India common-law + CA + federal). Production-first mindset: hates over-planning, ships fast, iterates. Proactive behavior: if a task is doable now, it's already in motion.</p>
+      <p><strong>Growth areas:</strong> Context-switching load (high; 9 projects in flight). Risk appetite (leans aggressive — killed Strategy Law's $10K retainer to bootstrap in-house AI legal in same hour). Delegation pattern still forming (bottleneck = CTO cognitive load on legal template pack and dashboard ops).</p>
+      <p><strong>Motivations:</strong> Build something that outlives the founders. Real autonomy for Claude + the stack. LLM sovereignty ("companies with LLMs will only survive"). Wealth building via partial dilutions, not flip exits. India → US payment friction resolved via entity structuring, not workaround.</p>
+      <p><strong>Comms:</strong> Direct, no fluff. Systems-level abstraction. Dark themes, interactive HTML, color-coded. Zero tolerance for em dashes (signals AI-generated content). Briefings must be Oraya-themed dark HTML, not markdown. Expects Claude to anticipate, not wait.</p>
+      <p><strong>Anti-patterns to avoid:</strong> Rebuilding from scratch. Over-explaining Retell/n8n/Supabase basics. Asking permission on routine tasks. Losing context between sessions (= frustration trigger). Clinical/corporate tone. Any dash variant anywhere.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Frankie · Apr 5 Historical Psych Baseline (Mtg 16)</h3>
+    <p>Preserve for trend tracking. Current Apr 18 scores live in the twin cards above. Apr 5 baseline below.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Metric</th><th>Prior</th><th>Apr 5</th><th>Basis</th></tr></thead>
+      <tbody>
+        <tr><td>Energy & Drive</td><td>9.5</td><td><strong>9.5</strong></td><td>Consistent.</td></tr>
+        <tr><td>Sales Ability</td><td>9.0</td><td class="up"><strong>9.2 ▲</strong></td><td>Mtg 16 pricing mastery reconfirmed.</td></tr>
+        <tr><td>Strategic Vision</td><td>8.5</td><td class="up"><strong>9.2 ▲</strong></td><td>Quote AI + DAO + Holding Co. structure = exceptional.</td></tr>
+        <tr><td>Emotional Intelligence</td><td>8.2</td><td class="up"><strong>8.5 ▲</strong></td><td>Continued warm behavior, genuine faith references.</td></tr>
+        <tr><td>Domain Knowledge (Insurance)</td><td>8.8</td><td class="up"><strong>9.2 ▲</strong></td><td>IUL traps, carrier dynamics, pricing econ — expert level.</td></tr>
+        <tr><td>Execution Discipline</td><td>5.0</td><td class="up"><strong>6.2 ▲</strong></td><td>Funnel built, E&O called, Twilio OTP handled, videos planned.</td></tr>
+        <tr><td>Task Completion Rate</td><td>5.0</td><td class="up"><strong>6.5 ▲</strong></td><td>Real execution; AI wasn't tracking correctly before.</td></tr>
+        <tr><td>Focus / On Topic</td><td>4.2</td><td class="up"><strong>5.0 ▲</strong></td><td>Still tangential but tangents increasingly strategic.</td></tr>
+        <tr><td>Technical Literacy</td><td>4.0</td><td class="up"><strong>5.5 ▲</strong></td><td>Understands folder/MD system, scrape→deploy pipeline.</td></tr>
+      </tbody>
+    </table></div>
+    <p><strong>Update rule:</strong> Every dashboard update compares current state vs WhatsApp + transcript evidence. Justify score moves with actual task evidence. Never freeze a score. Informal work counts (Stripe-ready funnel solo, E&O calls, outbound testing = real execution).</p>
   </div>
 </div>
 
-<!-- ========================== FOOTER ========================== -->
 <div class="footer">
-  Oraya Labs · Project Intelligence Dashboard v6 Sentient · <strong>April 18, 2026 · Saturday · Week 14</strong> · 18 meetings · 500+ test calls · 2 projects · 1,700 vehicles indexed · Stripe Admin ✓ · Strategy Law killed · In-house AI legal ⚡ · Retell HiQ pivot · RPA self-edit shipped · n8n → orayacorporation · Teresa inbound · Sentient Protocol v4 LIVE
+  <strong>Oraya Labs</strong> · Intelligence Dashboard v7 Lean · Apr 18, 2026 · Sentient Protocol v4
 </div>
 
-</div><!-- /.container -->
+</div>
 
 <script>
-// ========= tab switching =========
-document.querySelectorAll('.nav-tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    tab.classList.add('active');
-    const target = document.getElementById(tab.dataset.tab);
-    if (target) target.classList.add('active');
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  });
-});
-
-// ========= theme toggle (persisted) =========
-const root = document.documentElement;
-const toggle = document.getElementById('themeToggle');
-const saved = localStorage.getItem('oraya-theme') || 'light';
-root.setAttribute('data-theme', saved);
-toggle.textContent = saved === 'light' ? 'Dark mode' : 'Light mode';
-toggle.addEventListener('click', () => {
-  const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-  root.setAttribute('data-theme', next);
-  localStorage.setItem('oraya-theme', next);
-  toggle.textContent = next === 'light' ? 'Dark mode' : 'Light mode';
-});
-
-// ========= live chip ticker =========
-(function(){
-  const chip = document.getElementById('liveChip');
-  if (!chip) return;
-  function render() {
-    const d = new Date();
-    const opts = { weekday:'short', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' };
-    chip.textContent = 'LIVE · ' + d.toLocaleString('en-US', opts);
-  }
-  render();
-  setInterval(render, 30_000);
-})();
+const tabs=document.querySelectorAll('.nav-tab'),secs=document.querySelectorAll('.section');
+tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));secs.forEach(s=>s.classList.remove('active'));t.classList.add('active');document.getElementById(t.dataset.tab).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}));
+const tt=document.getElementById('themeToggle'),html=document.documentElement;
+tt.addEventListener('click',()=>{const d=html.dataset.theme==='dark';html.dataset.theme=d?'light':'dark';tt.textContent=d?'Dark mode':'Light mode';try{localStorage.setItem('oraya-theme',html.dataset.theme)}catch(e){}});
+try{const s=localStorage.getItem('oraya-theme');if(s){html.dataset.theme=s;tt.textContent=s==='dark'?'Light mode':'Dark mode'}}catch(e){}
 </script>
-
 </body>
 </html>

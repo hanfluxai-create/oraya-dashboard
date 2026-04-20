@@ -1,119 +1,93 @@
-# Oraya Labs: Company Vision
-**Last Updated:** April 5, 2026 (Meeting 16)
-**Source:** Frankie Alicea (CEO) + Chitraksh Mayank (CTO)
+# Oraya Vision
+
+**One sentence:** Holding company owning AI infrastructure that replaces human labor industry by industry, starting with automotive + insurance, scaling via subsidiaries.
 
 ---
 
-## The One-Sentence Version
-
-Oraya is a holding company that owns AI infrastructure capable of replacing human labor across entire industries, starting with automotive and insurance, scaling through subsidiaries.
-
----
-
-## Near-Term (Now to 6 Months)
+## Near-term (0-6 months)
 
 ### P1: Voice AI for Automotive
-- Prove the tech works with Mercedes-Benz South Bay pilot (30-45 days)
-- Target: 20 paid subscribers at $499/mo = $9,980 MRR
-- Differentiation: real-time inventory integration (1,700 vehicles, 20+ data points, 4hr refresh), post-call SMS with vehicle images, AI that is neutral (no sales bias, recommends best vehicle for customer)
+Prove tech with Mercedes-Benz South Bay pilot (30-45 days). Target 20 subs @ $499/mo = $9,980 MRR. Differentiation: real-time inventory (1,700 vehicles, 20+ data points, 4hr refresh), post-call SMS with vehicle images, neutral AI (no sales bias).
 
 ### P2: Insurance Lead Gen
-- Prove the system generates profitable leads using Frankie as the guinea pig
-- Revenue model: $25-$50/lead (opted-in), $50-$100/confirmed appointment, $1,000/week recurring per client agent
-- Target: 10-15 high-producer agency owners from Frankie's personal network
-- Scale to 1,000+ fresh leads/day across 4 verticals (mortgage protection, life, medical/health, loved ones)
-- Frankie built the lead gen funnel site with Stripe integration ready
+Prove funnel with Frankie as guinea pig. Revenue: $25-50/lead opt-in, $50-100/appt, $1K/wk recurring per agent. Target 10-15 high-producer agency owners from Frankie's network. Scale to 1,000+ leads/day across 4 verticals (mortgage protection, life, medical/health, loved ones). Funnel + Stripe LIVE as of Apr 18.
 
 ---
 
-## Mid-Term (6 to 18 Months)
+## Mid-term (6-18 months)
 
-### Quote AI: The Autonomous Insurance Agency
-**Origin:** Frankie's concept, developed over 2+ years. Validated by Uzi Sassoon (7 exits, sold company to Samsung, $50-100M net worth).
+### Quote AI: Autonomous Insurance Agency
+Frankie's 2+ year concept. Validated by Uzi Sassoon (7 exits, Samsung sale, $50-100M NW).
 
-**What it does:** Eliminates the human insurance agent entirely.
+**Eliminates the human agent entirely.** Pipeline:
+1. Scrape government data (property deeds, CMS Medicare, birth records, employment)
+2. Enrich + score
+3. Outbound: email + SMS + voice AI (Maya)
+4. AI qualifies, identifies needs, recommends best policy (no bias)
+5. RPA fills e-application in carrier portal (Puppeteer)
+6. Secure SSN + banking collect
+7. Warm transfer to licensed agent for final submit (human override)
+8. Auto policy confirm + annual review schedule
+9. Stripe captures commission split
 
-**Pipeline:**
-1. Scrape leads from government data (property deeds, CMS Medicare, birth records, employment)
-2. Enrich and score leads
-3. Deploy outbound: email + SMS + voice AI (Maya)
-4. AI qualifies prospect, identifies needs, recommends best policy (no human bias)
-5. RPA fills e-application in carrier portal via Puppeteer
-6. AI collects SSN + banking info (secure)
-7. Warm transfer to licensed agent for final "submit" (human override)
-8. Auto-sends policy confirmation, schedules annual review
-9. Stripe captures commission split automatically
+**Why it matters:** Insurance agents routinely sell bad policies (IULs as investments, lapsing-by-50 policies) for commission. Quote AI recommends actual-best product. Justice in a broken industry. Better outcomes → better brand, retention, carrier value.
 
-**Why it matters:** Insurance agents routinely sell bad policies (IULs marketed as investments, policies that lapse by age 50) because of commission incentives. Quote AI recommends the actual best product for the customer based on their age, wealth, family situation. This brings justice to a financial service industry where humans exploit it for personal gain. Better outcomes for consumers = better brand, better reviews, better retention for the carrier.
+**Big play:** Progressive, Allstate, Farmers, Geico each $40-100B/yr, hundreds of millions in agent overhead. License tech for $50M+/yr per carrier. One account = company set.
 
-**The big play:** Major carriers (Progressive, Allstate, Farmers, Geico: $40-100B/year each) spend hundreds of millions on agent overhead. If we can prove end-to-end autonomous policy writing, we license the tech to carriers for $50M+/year. One carrier account = the company is set.
-
-**Investor history:** Uzi Sassoon wanted to deploy this across ALL insurance verticals (not just life). His connections include international insurance corporation executives. Could be reactivated once system is proven at small scale.
-
-### Oraya as a Product for Other Businesses
-- Sell the voice AI + automation stack to solopreneurs/SMBs ($200-500/mo)
-- Run small Meta/Google ads for lead gen
-- Cash flow while the big plays develop
+### Oraya as SMB product
+Voice AI + automation stack to solopreneurs/SMBs at $200-500/mo. Meta/Google ads. Cash flow while big plays develop.
 
 ---
 
-## Long-Term (18 Months to 5+ Years)
+## Long-term (18mo-5yr)
 
-### DAO Insurance: Decentralized Autonomous Insurance
-**Origin:** Chitraksh's concept from 2+ years ago during the NFT/crypto boom.
+### DAO Insurance
+Chitraksh's 2+ year concept from NFT/crypto boom. Replaces the insurance CARRIER with a smart contract.
 
-**What it does:** Replaces the insurance CARRIER itself with a smart contract.
+- Solana/ETH pools premiums from 1M+ policyholders
+- Priced mathematically (25% claim rate → premium + margin)
+- Contract activates only at minimum pool threshold; below = auto-refund everyone
+- Claims voted on by decentralized policyholder jury
+- No company, no agents, no overhead. Pure math + blockchain.
 
-**How:**
-- Solana or Ethereum smart contract pools premiums from 1M+ policyholders
-- Mathematically modeled: if 25% of pool claims in a year, price premiums accordingly with a margin
-- Contract self-activates only when minimum pool threshold is met
-- If pool doesn't hit minimum, everyone gets auto-refund (no risk)
-- Claims are voted on by other policyholders (decentralized jury)
-- No insurance company. No agents. No overhead. Pure math + blockchain.
+Best uses: fire (CA), auto, health. Resource: Chitraksh's cousin is a Solana dev.
+**Monetization challenge:** System is SO decentralized that revenue extraction is hard. Needs protocol token, transaction fees, or licensing model.
 
-**Best use cases:** Fire insurance (CA), auto insurance, health insurance
-
-**Resource:** Chitraksh's cousin sister is a Solana developer who can build the smart contracts.
-
-**Monetization challenge:** System is SO decentralized that extracting revenue is the hard part. Needs architecture: transaction fees, smart contract royalty, licensing model, or protocol token.
-
-### Oraya Holding Company Structure
+### Holding Company Structure
 ```
-Oraya Corporation (C Corp, EIN: 93-3462113)
-  |
-  +-- P1: Voice AI (Automotive) -- license or sell subsidiary
-  +-- P2: Insurance Lead Gen -- lead gen platform for insurers
-  +-- Quote AI -- license to major carriers
-  +-- DAO Insurance -- protocol / licensing
-  +-- HanFlux AI (Chitraksh's personal) -- grows independently
-  +-- Future: LLM development, data centers
+Oraya Corp (C Corp, EIN 93-3462113)
+├── P1 Voice AI (automotive)
+├── P2 Insurance Lead Gen
+├── Quote AI (license to carriers)
+├── DAO Insurance (protocol/licensing)
+├── HanFlux AI (Chitraksh's personal)
+└── Future: LLM dev, data centers
 ```
 
-**Strategy:** Core IP stays with Oraya Corp. Subsidiaries spin out and dilute separately when there's a growth spike. Never sell the holding company. IPO strategy: dilute 2-3% per growth window at peak valuation multiple. If $50M ARR with 200% MoM growth, the multiple is much higher than the standard 9x.
+Core IP stays with Oraya Corp. Subsidiaries dilute separately at growth spikes. Never sell the holding co. IPO dilution: 2-3% per peak-multiple window. At $50M ARR + 200% MoM, multiple >> standard 9x.
 
-**Exit philosophy:** "A business was created to advance your wealth." But both founders lean toward building long-term + extracting value through partial dilutions, NOT quick flip exits. Frankie: "You fall in love with it." Chitraksh: "At a certain point we need to get into LLMs."
+**Exit philosophy:** Build long-term, extract via partial dilutions. Not quick flips. Frankie: "You fall in love with it." Chitraksh: "We need to get into LLMs."
 
 ---
 
 ## Cultural DNA
 
-1. **Lean as fuck.** Human-wise, very lean. Operational capacity: massive with 100s of agents.
-2. **God's timing.** Both founders have a spiritual framework. Araya = "light of God" in Hebrew. Not accidental.
-3. **Build to change the industry, not just to get rich.** "How do we change the industry with our tech?" is the North Star question.
-4. **AI eliminates bias.** Whether it's car sales (no pushing old stock) or insurance (no selling bad IULs), the AI is neutral. This is a real competitive moat.
-5. **Test on ourselves first.** Frankie is the guinea pig for insurance. Mercedes is the pilot for automotive. Prove it works at small scale before going big.
-6. **Never sell the cash cow.** License it, subsidiary it, dilute it partially. Never give up the IP.
+1. Lean as fuck. Human-lean; operational capacity massive via 100s of agents.
+2. God's timing. Araya = "light of God" (Hebrew). Both founders spiritual.
+3. Change the industry, not just get rich.
+4. AI eliminates bias. Real competitive moat.
+5. Test on ourselves first. Frankie = insurance guinea pig. Mercedes = automotive pilot.
+6. Never sell the cash cow. License, subsidiary, partial dilute.
 
 ---
 
-## Key Metrics to Track (Company-Wide)
+## Targets
 
-| Metric | Current (Apr 5) | 6-Month Target | 18-Month Target |
+| Metric | Current | 6mo | 18mo |
 |---|---|---|---|
-| MRR | $0 (pre-revenue) | $9,980 (20 subs @ $499) | $50,000+ |
-| Insurance leads/day | 0 (450 in pipeline) | 100 | 1,000+ |
-| Insurance policies/month | 0 | 10-15 (Frankie selling) | 60-120 (AI-assisted) |
-| Lead gen clients (recurring) | 0 | 5-10 agents | 15-20 agents |
+| MRR | $0 | $9,980 (20×$499) | $50K+ |
+| Insurance leads/day | 0 (450 pipeline) | 100 | 1,000+ |
+| Policies/month | 0 | 10-15 (Frankie) | 60-120 (AI-assisted) |
+| Lead gen agents recurring | 0 | 5-10 | 15-20 |
 | Voice AI pilot accounts | 0 | 1 (Mercedes) | 5-10 dealerships |
-| RPA test status | Not started | Proven in simulation | Production for insurance |
+| RPA | Not started | Simulation proven | Production |

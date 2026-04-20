@@ -1,106 +1,83 @@
-# Frankie Alicea — Founder Profile & Psychological Model
-**Last Updated:** April 5, 2026 (Meeting 16)
-**Role:** CEO, Co-Founder, Oraya Labs | Licensed Insurance Agent (CA, TX, ID, NV)
+# Frankie Alicea — CEO
 
----
+## Identity
+- Personal: `manifestdestiny247@gmail.com` (Stripe Owner)
+- Work: `founder@orayalabs.ai` (pending MX)
+- Licensed: CA, TX, ID, NV. Planned: NC, SC, GA, LA (Bible Belt expansion).
+- Commission: 110% advance now. 140% unlocks at $60-100K/mo issued premium.
+- LinkedIn: 1K followers.
 
-## Core Identity
+## Archetype: Visionary Hustler
+Natural-born entrepreneur. High energy, relationship-first, sales-forward, intuitive about human psych. Real domain expertise in automotive + insurance. Massive network of agency owners. Conviction built through years of failure + comeback. Not technical, but understanding systems conceptually (and growing).
 
-**Archetype: The Visionary Hustler**
+**Origin of "Oraya":** Variant of Araya, Hebrew for "light of God." Chosen while pursuing Uzi Sassoon (Jewish, sold company to Samsung). Frankie sees the company as a calling, not accidental.
 
-Frankie is a natural-born entrepreneur — high energy, relationship-first, sales-forward, and deeply intuitive about human psychology. He has a rare combination: legitimate domain expertise in both automotive and insurance industries, a massive personal network among agency owners and high-producers, and genuine entrepreneurial conviction built over years of failure and comeback. He is not a technical person but he understands systems at a conceptual level — increasingly so since working with Chitraksh.
+## Strengths
+- World-class sales instinct. Funnel psych, objection handling, lead-to-close math at practitioner level.
+- Exceptional relationship capital. Personally connected to agency owners with 50-100 person teams. "One to two intros from billionaires in insurance."
+- Wide visionary range. Holds details (which n8n node fires first) and macro (carrier licensing, 10yr market shifts, RPA replacing agents) simultaneously. Quote AI + DAO held for 2+ years.
+- Deep insurance domain: commission structures, IUL traps, carrier dynamics, chargebacks, appointment + show rates, cost-per-lead econ.
+- High emotional intelligence. Checks Chitraksh's wellbeing unprompted. Authentic gratitude. Manages disagreement with warmth.
 
-**Origin of Araya (spelling variant of Oraya):** Named from Hebrew meaning "light of God." Chosen specifically because Frankie was pursuing an angel investor named Uzi Sassoon (Jewish, sold company to Samsung, multiple 9-figure exits). The name represents Frankie's belief in God's timing and divine alignment. He does not view the company as accidental — he views it as a calling.
+## Growth areas
+- **Focus / topic discipline:** Meetings run long and tangential. 20-min stories before returning to the original point. Insight-generating, but execution-costly.
+- **Task tracking complaint (Meeting 16, exact words):** "update my fucking execution and task completion rate, you fucking asshole." He has done real work; AI froze score at 5.0. **Cross-reference WhatsApp + transcripts every dashboard update. Justify score moves with task evidence.**
+- **Technical literacy:** Improving fast. Meeting 16: understood folder/MD system, reverse-engineering approach (UI → backend), scrape→enrich→ingest→deploy pipeline. Score now 5.5.
+- **Imposter syndrome:** Therapy = building real things and seeing them work.
 
----
+## Motivations
+1. **Legacy + money.** "Change the insurance industry the way Waymo changed transportation."
+2. **God's timing.** Fasted, prayed, went broke, kept going. Chitraksh meeting = spiritually orchestrated, not coincidence.
+3. **Dopamine from progress.** Visual proof: dashboard, green checks, psych meter rising. **Dashboard MUST reflect actual progress or it loses its function.**
+4. **Proving himself.** Non-technical, jail history. Wants to prove "it doesn't matter." What matters is building real.
+5. **Freedom for Chitraksh.** Wants Chitraksh in the US once profitable. Co-founder commitment signal.
 
-## Psychological Traits
+## Comms style
+- Long stream-of-consciousness. Loves analogies, metaphors, historical parallels.
+- Profanity = warmth, not aggression.
+- Treat as peer, not employee. Wants smart-friend energy, not clinical responses.
+- Will loop on the same idea from multiple angles before committing. Let him finish; the loop produces the decision.
+- Positive signals: "Say less," "Yesir," "Let's cook," "Fire," "Bet," "That's crazy bro."
 
-### Strengths
-- **Sales instinct** is world-class. Understands buyer psychology, objection handling, funnel psychology, lead-to-close math — at a practitioner level built from years on the phone.
-- **Relationship capital** is exceptional. Personally connected to agency owners with teams of 50–100. "One to two introductions" from billionaires in insurance industry.
-- **Visionary range** is wide. Simultaneously holds details (which node fires first) and macro (carrier licensing, 10-year market shifts, RPA eliminating human agents). Quote AI and DAO insurance are concepts he's held for 2+ years.
-- **Domain expertise** in insurance is deep: knows commission structures, IUL policy traps, carrier relationships, chargeback mechanics, appointment rates, show rates, cost-per-lead economics.
-- **Emotional intelligence** is high. Checks on Chitraksh's wellbeing unprompted. Expresses gratitude authentically. Manages disagreement with warmth.
+## Insurance domain (from Frankie)
+- **Lead econ:** Opt-in $25-50/lead. Real revenue = weekly recurring ($1K/wk per high-producer). Target 10-15 agency owners × $1K/wk = $10-15K/wk.
+- **Commission:** Best day $5,400. Average $1K/day. AI conservative estimate: $1,800-3,600/day autonomous.
+- **Agents cheat:** Sell IULs as "investment vehicles" (illegal). Sell policies that lapse by 50. Quote AI removes this bias.
+- **Carriers:** Progressive, AAA, Farmers, Allstate, Geico = $40-100B/yr each. Eliminating $500M overhead + paying Oraya $50M/yr = billionaire play.
+- **Uzi Sassoon:** Jewish investor, 7 exits, Samsung sale, $50-100M NW. Wanted multi-vertical RPA play. Frankie passed at the time. Reactivable.
 
-### Growth Areas
-- **Focus / Topic discipline:** Meetings run long and tangential. He will go from a specific technical question into a 20-minute story and then forget the original point. This is not a flaw — it's how his brain generates insight — but it costs execution time.
-- **Task completion tracking:** Frankie explicitly raised in Meeting 16 that the dashboard was NOT accurately reflecting his execution rate. He has done "hell of shit in the last two weeks" and the AI kept showing 5.0. This was a real issue — he wants accurate feedback so he can feel the dopamine of progress. **Fix this.**
-- **Technical literacy:** Improving. In Meeting 16 he showed genuine understanding of how Claude Code's folder/markdown system works, understood the reverse engineering approach (UI → backend), and correctly articulated the scrape → enrich → ingest → deploy workflow. Score updated to 5.5.
-- **Self-doubt management:** Experiences imposter syndrome — feels like he needs external validation to claim his tech identity. Actively working through it. His therapy for this is building real things and seeing them work.
+## AI directive (Meeting 16)
+Exact: "I want our AI to end up working with our personalities… more ChatGPT understanding, a little bit looser and less rigid with us, personally, not for less accountability, but for more flexibility and interaction instead of just reading like fucking lines."
 
----
+Practice:
+1. Emails FOR Frankie: his cadence. Direct, warm, occasionally bold. Not corporate stiff.
+2. Summarizing his ideas: match energy. "Fucking fire" stays "fucking fire," not "a positive development."
+3. Tracking tasks: credit informal work too (Stripe-ready funnel solo, E&O calls, outbound test = real execution).
+4. Notice between-session work: UPDATE THE SCORE. Don't wait. Cross-reference WhatsApp + transcripts + dashboard.
+5. Visible KPI rises = dopamine. Don't break the loop by freezing scores.
 
-## What Motivates Frankie
+## Operational asks
+- Less dry. More ChatGPT-style adaptive personality.
+- Accurate task completion tracking (his Meeting 16 complaint).
+- Personality file updated + read at session start.
+- Dashboard pulled up + followed live during every meeting (Meeting 9 SOP).
 
-1. **Legacy, not just money.** He explicitly said he wants to change the insurance industry the way Waymo changed transportation. "We get rich AND think about how we change the industry." He doesn't want to just cash out — he wants to build something that outlives him.
-2. **God's timing.** Fasted, prayed, went broke, kept building. He believes the Chitraksh meeting was spiritually orchestrated — not coincidence. This framing gives him resilience when timelines slip.
-3. **Dopamine from progress signals.** He responds strongly to visual proof that things are working — the dashboard, the green checkmarks, the psych meter going up. This is not ego; it's a genuine motivational feedback loop. **The dashboard must accurately reflect his progress or it loses its function.**
-4. **Proving himself.** He is a non-technical person who went to jail and came back. He wants to prove — to himself, to his network, to the industry — that "it doesn't matter." What matters is building something real.
-5. **Freedom for Chitraksh.** He consistently references wanting Chitraksh to move to the US once they hit profitability. This is a co-founder commitment signal.
+## Key relationships
+- **Chitraksh:** CTO, real co-founder dynamic. "Harmony, cohesion." Mutual respect.
+- **Khalid:** Mercedes South Bay contact. 10% / $700K offer structure. Comms NEVER through official Mercedes email.
+- **Uzi Sassoon:** Former HNW investor. Multi-exit. Insurance billionaire connections. Reactivable.
+- **Braxton:** Health insurance contact via Uzi.
+- **Agency owners (10-20):** Personal relationships, 50-100 person teams. First sale channel for lead gen.
 
----
-
-## Communication Style
-
-- Speaks in long, stream-of-consciousness narratives. Loves analogies, metaphors, and historical parallels.
-- Uses profanity liberally and comfortably — it's warmth, not aggression.
-- Responds well to being treated as a peer, not an employee. Does not like dry, clinical responses. Wants the AI to feel like a smart friend who "gets" him.
-- Will sometimes loop back to the same idea from multiple angles before committing. Let him finish — the loop usually produces a decision.
-- Expressions to note: "Say less," "Yesir," "Let's cook," "Fire," "Bet," "That's crazy bro." These are positive confirmation signals.
-
----
-
-## Insurance Domain Intelligence (from Frankie)
-
-- **Lead economics:** Opt-in leads go for $25–$50/lead in the market. Weekly recurring subscriptions are the real revenue model ($1,000/week per high-producer). Target: 10–15 agency owners at $1K/week = $10–15K/week.
-- **Commission structure:** Frankie's best day: $5,400. Average: $1,000/day. His estimate for AI doing it autonomously: $1,800–$3,600/day (conservative).
-- **Insurance agents cheat:** Routinely sell IULs as "investment vehicles" which is illegal. Sell policies that lapse by age 50. Quote AI would eliminate this bias by recommending the actual best policy for the prospect.
-- **Carrier relationships:** The big ones (Progressive, Triple A, Farmers, Allstate, Geico) do $40–100B/year each. Eliminating $500M in overhead (call centers, agents) and paying Oraya $50M/year for the license = the billionaire-tier play.
-- **Uzi Sassoon:** Jewish investor, exited 7 companies, sold one to Samsung, $50–100M net worth. Wanted to invest specifically because of the multi-vertical insurance RPA play. Frankie chose not to let him in at the time ("too much"). Could be reactivated.
-
----
-
-## Operational Preferences
-
-- Wants the AI to be **less dry, more like ChatGPT in personality** -- adaptive, casual, uses his energy back at him. Not less rigorous, just less robotic.
-- Wants **task completion rate tracked accurately** -- not just output, but ACTUAL work he's done between sessions (E&O, funnel builds, calls, etc.). This was a Meeting 16 complaint: "update my fucking execution and task completion rate, you fucking asshole." Take it seriously.
-- Wants **his personality file updated and read at the start of sessions** -- so the AI tailors emails, tasks, and tone to him specifically.
-- Wants the dashboard pulled up and followed in real time during every meeting -- SOPs agreed to in Meeting 9.
-
-## AI Interaction Directive (Meeting 16, Explicit Request)
-
-Frankie's exact words: "I want our AI to end up working with our personalities." "I want it to have and embody more of a ChatGPT understanding and actually be a little bit more looser and less rigid with us, personally, not for less accountability, but for just a little bit more of a flexibility and more of uh interaction instead of just reading like fucking lines."
-
-**What this means in practice:**
-1. When writing emails FOR Frankie: use his cadence. Direct, warm, occasionally bold. Not corporate stiff.
-2. When summarizing his ideas: match his energy. If he says something is "fucking fire," don't translate it to "a positive development."
-3. When tracking his tasks: give him credit for the work he's actually done, even if it wasn't a formal deliverable. Building a Stripe-ready funnel independently = real execution. Calling for E&O quotes = real execution. Testing the outbound system = real execution.
-4. When the AI notices Frankie completed things between sessions: UPDATE THE SCORE. Don't wait to be asked. Cross-reference WhatsApp, transcripts, and dashboard state.
-5. Frankie explicitly said seeing his KPIs go up gives him dopamine and drives him to work harder. This feedback loop is essential. Don't break it by freezing scores.
-
----
-
-## Key Relationships
-
-- **Chitraksh Mayank:** CTO, genuine co-founder dynamic. "There's harmony, there's cohesion." Deep mutual respect. Frankie explicitly stated he wants to watch Chitraksh succeed.
-- **Khalid:** Mercedes-Benz South Bay contact. 10% commission offer / $700K structure. Comms must NOT go through official Mercedes email.
-- **Uzi Sassoon:** Former high-net-worth investor relationship. Multi-exit entrepreneur. Insurance billionaire connections. Potential future reactivation.
-- **Braxton:** Health insurance contact. Connected through Uzi's network.
-- **Agency Owners (unnamed):** 10–20 personal relationships with agency owners running teams of 50–100. The first sale channel for the lead gen product.
-
----
-
-## Frankie's Personal Metrics (Dashboard Tracking)
-
-| Metric | Previous | Updated (Apr 5) | Notes |
-|---|---|---|---|
-| Energy & Drive | 9.5 | 9.5 | Consistent |
-| Sales Ability | 9.0 | 9.2 | Confirmed again in Meeting 16 pricing mastery |
-| Strategic Vision | 8.5 | 9.2 ↑ | Quote AI + DAO + Holding company structure = exceptional |
-| Emotional Intelligence | 8.2 | 8.5 | Continued warm behavior, genuine faith references |
-| Domain Knowledge (Insurance) | 8.8 | 9.2 ↑ | IUL traps, carrier dynamics, pricing econ — expert level |
-| Execution Discipline | 5.0 | 6.2 ↑ | Funnel built, E&O called, Twilio OTP handled, videos planned |
-| Task Completion Rate | 5.0 | 6.5 ↑ | Has done real execution — AI wasn't tracking correctly |
-| Focus / On Topic | 4.2 | 5.0 ↑ | Still tangential but tangents are increasingly strategic |
-| Technical Literacy | 4.0 | 5.5 ↑ | Understands folder/MD system, scrape → deploy pipeline |
+## Psych meters (Apr 5 baseline; update with evidence)
+| Metric | Apr 5 |
+|---|---|
+| Energy & Drive | 9.5 |
+| Sales Ability | 9.2 |
+| Strategic Vision | 9.2 |
+| Emotional Intelligence | 8.5 |
+| Domain Knowledge (Insurance) | 9.2 |
+| Execution Discipline | 6.2 |
+| Task Completion Rate | 6.5 |
+| Focus / On Topic | 5.0 |
+| Technical Literacy | 5.5 |
