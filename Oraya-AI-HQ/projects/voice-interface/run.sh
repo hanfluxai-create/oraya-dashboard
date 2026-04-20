@@ -39,8 +39,8 @@ fi
 export GEMINI_API_KEY
 
 # --- 2. Dependencies ---
-python3 -c "import websockets" 2>/dev/null || \
-  pip3 install --break-system-packages --quiet websockets
+python3 -c "import websockets, certifi" 2>/dev/null || \
+  pip3 install --break-system-packages --quiet websockets certifi
 
 # --- 3. Kill stale bridge on 8787 ---
 PORT="${BRIDGE_PORT:-8787}"

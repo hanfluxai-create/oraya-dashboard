@@ -22,12 +22,20 @@ import asyncio
 import base64
 import json
 import os
+import ssl
 import subprocess
 import sys
 from pathlib import Path
 
 import websockets
 from websockets.server import WebSocketServerProtocol
+
+# macOS system Python ships without a cert bundle path set. Use certifi's.
+try:
+    import certifi
+    _SSL_CTX = ssl.create_default_context(cafile=certifi.where())
+except ImportError:
+    _SSL_CTX = ssl.create_default_context()
 
 # -------- Config --------
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "").strip()
@@ -228,18 +236,16 @@ async def handle_browser(browser_ws: WebSocketServerProtocol):
         return
 
     try:
-        async with websockets.connect(GEMINI_WS_URL, max_size=None) as gemini_ws:
-            # 1. Send setup message
+        async with websockets.connect(GEMINI_WS_URL, max_size=None, ssl=_SSL_CTX) as gemini_ws:
+            # 1. Send setup message (Gemini 3.1 Live API v1beta wire format)
             setup_msg = {
-                "setup": {
+                "config": {
                     "model": GEMINI_MODEL,
-                    "generationConfig": {
-                        "responseModalities": ["AUDIO"],
-                        "speechConfig": {
-                            "voiceConfig": {
-                                "prebuiltVoiceConfig": {"voiceName": "Puck"}
-                            }
-                        },
+                    "responseModalities": ["AUDIO"],
+                    "speechConfig": {
+                        "voiceConfig": {
+                            "prebuiltVoiceConfig": {"voiceName": "Puck"}
+                        }
                     },
                     "systemInstruction": {
                         "parts": [{"text": GEMINI_SYSTEM_INSTRUCTION}]
@@ -259,42 +265,38 @@ async def handle_browser(browser_ws: WebSocketServerProtocol):
                         continue
 
                     if msg.get("type") == "audio":
-                        # Browser ships PCM16 @ 16kHz base64
+                        # Browser ships PCM16 @ 16kHz base64. Gemini 3.1 uses realtimeInput.audio.
                         audio_b64 = msg["data"]
                         realtime = {
                             "realtimeInput": {
-                                "mediaChunks": [
-                                    {
-                                        "mimeType": "audio/pcm;rate=16000",
-                                        "data": audio_b64,
-                                    }
-                                ]
+                                "audio": {
+                                    "data": audio_b64,
+                                    "mimeType": "audio/pcm;rate=16000",
+                                }
                             }
                         }
                         await gemini_ws.send(json.dumps(realtime))
                     elif msg.get("type") == "text":
-                        # Debug/typed input
-                        client_content = {
-                            "clientContent": {
-                                "turns": [{
-                                    "role": "user",
-                                    "parts": [{"text": msg["data"]}],
-                                }],
-                                "turnComplete": True,
-                            }
-                        }
-                        await gemini_ws.send(json.dumps(client_content))
+                        # Gemini 3.1 routes text through realtimeInput.text.
+                        await gemini_ws.send(json.dumps({
+                            "realtimeInput": {"text": msg["data"]}
+                        }))
                     elif msg.get("type") == "end_turn":
                         await gemini_ws.send(json.dumps({
                             "clientContent": {"turnComplete": True}
                         }))
 
             async def gemini_to_browser():
+                first_msgs = 0
                 async for raw in gemini_ws:
                     try:
                         msg = json.loads(raw)
                     except json.JSONDecodeError:
+                        print(f"[bridge] non-json from gemini: {raw[:500]}")
                         continue
+                    if first_msgs < 3:
+                        print(f"[bridge] gemini msg #{first_msgs}: {json.dumps(msg)[:400]}")
+                        first_msgs += 1
 
                     # Forward audio chunks to browser
                     server_content = msg.get("serverContent", {})
@@ -367,10 +369,17 @@ async def handle_browser(browser_ws: WebSocketServerProtocol):
 
             await asyncio.gather(browser_to_gemini(), gemini_to_browser())
 
-    except websockets.exceptions.ConnectionClosed:
-        print("[bridge] connection closed")
+    except websockets.exceptions.ConnectionClosed as cc:
+        print(f"[bridge] connection closed code={cc.code} reason={cc.reason!r}")
+        try:
+            await browser_ws.send(json.dumps({
+                "type": "error",
+                "message": f"Gemini closed: code={cc.code} reason={cc.reason}",
+            }))
+        except Exception:
+            pass
     except Exception as e:
-        print(f"[bridge] error: {e}", file=sys.stderr)
+        print(f"[bridge] error: {type(e).__name__}: {e}", file=sys.stderr)
         try:
             await browser_ws.send(json.dumps({"type": "error", "message": str(e)}))
         except Exception:
