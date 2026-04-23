@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oraya Labs Daily Brief - March 30, 2026</title>
+<style>
+  :root {
+    --primary: #1a1a2e;
+    --accent: #e63946;
+    --accent2: #457b9d;
+    --success: #2d6a4f;
+    --warn: #e76f51;
+    --gold: #f4a261;
+    --bg: #f8f9fa;
+    --card: #ffffff;
+    --border: #e0e0e0;
+    --text: #1a1a2e;
+    --muted: #6c757d;
+    --tag-bg: #eef2ff;
+    --tag-text: #3730a3;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--primary);
+    color: white;
+    padding: 28px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-left h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
+  .header-left p { font-size: 13px; opacity: 0.6; margin-top: 4px; }
+  .countdown-box {
+    background: var(--accent);
+    padding: 14px 22px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .countdown-box .days { font-size: 32px; font-weight: 800; line-height: 1; }
+  .countdown-box .label { font-size: 11px; opacity: 0.85; text-transform: uppercase; letter-spacing: 1px; margin-top: 3px; }
+
+  /* ALERT BANNER */
+  .alert-banner {
+    background: #fff3cd;
+    border-left: 4px solid var(--warn);
+    padding: 12px 40px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #5c3300;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* MAIN LAYOUT */
+  .container { max-width: 1200px; margin: 0 auto; padding: 28px 40px 60px; }
+
+  /* SECTION LABELS */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+    margin-top: 32px;
+  }
+
+  /* INTEL CARDS ROW */
+  .intel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .intel-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .intel-card .ic-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; }
+  .intel-card .ic-value { font-size: 20px; font-weight: 700; margin-top: 6px; color: var(--text); }
+  .intel-card .ic-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .intel-card.green .ic-value { color: var(--success); }
+  .intel-card.red .ic-value { color: var(--accent); }
+  .intel-card.orange .ic-value { color: var(--warn); }
+  .intel-card.blue .ic-value { color: var(--accent2); }
+
+  /* WHATSAPP INTEL */
+  .wa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .wa-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .wa-card-header {
+    padding: 12px 18px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .wa-card-header.decisions { background: #e8f4fd; color: #1565c0; }
+  .wa-card-header.actions { background: #fce4ec; color: #c62828; }
+  .wa-card-header.updates { background: #e8f5e9; color: #2e7d32; }
+  .wa-card-header.watch { background: #fff8e1; color: #e65100; }
+  .wa-card-body { padding: 14px 18px; }
+  .wa-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 13px;
+  }
+  .wa-item:last-child { border-bottom: none; }
+  .wa-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .dot-blue { background: #1565c0; }
+  .dot-red { background: #c62828; }
+  .dot-green { background: #2e7d32; }
+  .dot-orange { background: #e65100; }
+  .wa-item strong { font-weight: 600; }
+  .wa-item span { color: var(--muted); }
+
+  /* TASK BOARDS */
+  .task-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .task-board {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .task-board-header {
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .task-board-header.chitraksh { background: var(--primary); color: white; }
+  .task-board-header.frankie { background: var(--accent2); color: white; }
+  .task-board-header h3 { font-size: 13px; font-weight: 700; }
+  .task-board-header .badge {
+    font-size: 11px;
+    background: rgba(255,255,255,0.2);
+    padding: 3px 8px;
+    border-radius: 20px;
+  }
+  .task-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 18px;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .task-item:hover { background: #fafafa; }
+  .task-item:last-child { border-bottom: none; }
+  .task-check {
+    width: 18px; height: 18px;
+    border: 2px solid #d0d0d0;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+  }
+  .task-check.done { background: var(--success); border-color: var(--success); }
+  .task-check.done::after { content: '✓'; color: white; font-size: 11px; font-weight: 700; }
+  .task-item.done-item .task-text { text-decoration: line-through; color: var(--muted); }
+  .priority-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .p1 { background: #fde8e8; color: #c62828; }
+  .p2 { background: #fff3e0; color: #e65100; }
+  .p3 { background: #e8f5e9; color: #2e7d32; }
+
+  /* PROJECT STATUS */
+  .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .project-card .proj-name { font-size: 13px; font-weight: 700; }
+  .project-card .proj-status {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+  .status-fire { background: #fde8e8; color: #c62828; }
+  .status-active { background: #e8f5e9; color: #2e7d32; }
+  .status-low { background: #f5f5f5; color: #888; }
+  .project-card .proj-note { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+  .project-card .proj-blocker {
+    font-size: 11px;
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: #fff8e1;
+    border-radius: 6px;
+    color: #7c4d0f;
+  }
+
+  /* WHATSAPP INTEGRATION */
+  .integration-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+  }
+  .integration-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .integration-card p { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+  .flow-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 20px;
+    overflow-x: auto;
+  }
+  .flow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 110px;
+    text-align: center;
+  }
+  .flow-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  .flow-icon.wa { background: #e7f5e8; }
+  .flow-icon.twilio { background: #fce4ec; }
+  .flow-icon.n8n { background: #fff3e0; }
+  .flow-icon.ai { background: #ede7f6; }
+  .flow-icon.gh { background: #e3f2fd; }
+  .flow-icon.brief { background: #e8f5e9; }
+  .flow-arrow {
+    color: #ccc;
+    font-size: 18px;
+    margin: 0 4px;
+    flex-shrink: 0;
+    margin-bottom: 24px;
+  }
+  .flow-label { font-size: 11px; font-weight: 600; }
+  .flow-sublabel { font-size: 10px; color: var(--muted); margin-top: 2px; }
+
+  .setup-steps { margin-top: 16px; }
+  .setup-step {
+    display: flex;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 13px;
+  }
+  .setup-step:last-child { border-bottom: none; }
+  .step-num {
+    width: 24px; height: 24px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .setup-step .step-content strong { display: block; font-weight: 600; margin-bottom: 2px; }
+  .setup-step .step-content span { color: var(--muted); font-size: 12px; }
+  .code-pill {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 11px;
+    background: #f0f4ff;
+    color: #3730a3;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin: 2px 0;
+  }
+
+  /* 7-DAY RADAR */
+  .radar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+  .radar-day {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 10px;
+    text-align: center;
+  }
+  .radar-day.today { border-color: var(--accent); background: #fff5f5; }
+  .radar-day .day-name { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+  .radar-day.today .day-name { color: var(--accent); }
+  .radar-day .day-date { font-size: 16px; font-weight: 700; margin: 6px 0 8px; }
+  .radar-day.today .day-date { color: var(--accent); }
+  .radar-event {
+    font-size: 10px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    line-height: 1.3;
+    text-align: left;
+  }
+  .ev-critical { background: #fde8e8; color: #c62828; }
+  .ev-action { background: #fff3e0; color: #e65100; }
+  .ev-info { background: #e8f4fd; color: #1565c0; }
+  .ev-green { background: #e8f5e9; color: #2e7d32; }
+
+  /* REVENUE TRACKER */
+  .rev-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .rev-goal { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .rev-goal h4 { font-size: 14px; font-weight: 700; }
+  .rev-goal span { font-size: 12px; color: var(--muted); }
+  .progress-bar-wrap { background: #f0f0f0; border-radius: 20px; height: 10px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; border-radius: 20px; background: linear-gradient(90deg, #2d6a4f, #52b788); }
+  .progress-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 6px; }
+  .milestone-row { display: flex; gap: 10px; margin-top: 16px; }
+  .milestone {
+    flex: 1;
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+  .milestone .m-val { font-size: 15px; font-weight: 700; }
+  .milestone .m-label { font-size: 11px; color: var(--muted); margin-top: 3px; }
+
+  /* FOOTER */
+  .footer {
+    background: var(--primary);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 16px;
+    font-size: 12px;
+    margin-top: 40px;
+  }
+  .footer strong { color: rgba(255,255,255,0.8); }
+
+  /* INTERACTIVE CHECKBOXES */
+  .task-item { user-select: none; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <h1>Oraya Labs Daily Brief</h1>
+    <p>Monday, March 30, 2026 &nbsp;|&nbsp; Chitraksh Mayank, CTO &nbsp;|&nbsp; Powered by Sentient Protocol</p>
+  </div>
+  <div class="countdown-box">
+    <div class="days">3</div>
+    <div class="label">Days to April 2</div>
+  </div>
+</div>
+
+<!-- ALERT BANNER -->
+<div class="alert-banner">
+  CRITICAL DEADLINE: Mercedes email + full package due April 2. All documents must be finalized TODAY and tomorrow. Do not let admin tasks consume the day.
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+  <!-- SNAPSHOT METRICS -->
+  <div class="section-label">Company Snapshot</div>
+  <div class="intel-grid">
+    <div class="intel-card green">
+      <div class="ic-label">EIN Status</div>
+      <div class="ic-value">CONFIRMED</div>
+      <div class="ic-sub">93-3462113 / Alameda County</div>
+    </div>
+    <div class="intel-card red">
+      <div class="ic-label">April 2 Deadline</div>
+      <div class="ic-value">3 DAYS</div>
+      <div class="ic-sub">Mercedes email + SLA + SOW + offer</div>
+    </div>
+    <div class="intel-card orange">
+      <div class="ic-label">Revenue (MRR)</div>
+      <div class="ic-value">$0</div>
+      <div class="ic-sub">Target: $9,980 (20 subs @ $499)</div>
+    </div>
+    <div class="intel-card blue">
+      <div class="ic-label">Infra Cost / Client</div>
+      <div class="ic-value">$30-40</div>
+      <div class="ic-sub">Margin extremely strong at $499/mo</div>
+    </div>
+  </div>
+
+  <!-- WHATSAPP INTEL -->
+  <div class="section-label">WhatsApp Intel (Mar 28-30) - Auto-Extracted</div>
+  <div class="wa-grid">
+
+    <div class="wa-card">
+      <div class="wa-card-header decisions">DECISIONS MADE</div>
+      <div class="wa-card-body">
+        <div class="wa-item">
+          <div class="wa-dot dot-blue"></div>
+          <div><strong>Khalid offer cannot go via Mercedes email.</strong> <span>Risk: felony exposure, contract void, blacklisted from 323 locations. Strategy changed.</span></div>
+        </div>
+        <div class="wa-item">
+          <div class="wa-dot dot-blue"></div>
+          <div><strong>Khalid compensation: crypto/smart contract via shell company.</strong> <span>Chitraksh researching structure. Official mail to dealership only.</span></div>
+        </div>
+        <div class="wa-item">
+          <div class="wa-dot dot-blue"></div>
+          <div><strong>LegalZoom dropped.</strong> <span>No guarantee of result on C Corp amendment. Frankie sourcing another attorney.</span></div>
+        </div>
+        <div class="wa-item">
+          <div class="wa-dot dot-blue"></div>
+          <div><strong>Revenue goal locked in: 20 subs @ $499/mo.</strong> <span>Frankie: "Lets get 20 paid subs and move you out here so we can grind majorly."</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wa-card">
+      <div class="wa-card-header updates">CONFIRMED FACTS</div>
+      <div class="wa-card-body">
+        <div class="wa-item">
+          <div class="wa-dot dot-green"></div>
+          <div><strong>EIN 93-3462113 confirmed by Frankie.</strong> <span>SS-4 processing complete. County: Alameda.</span></div>
+        </div>
+        <div class="wa-item">
+          <div class="wa-dot dot-green"></div>
+          <div><strong>Company located on government website via corporation number.</strong> <span>Chitraksh confirmed. Records added.</span></div>
+        </div>
+        <div class="wa-item">
+          <div class="wa-dot dot-green"></div>
+          <div><strong>Fax Plus being used for any remaining fax needs.</strong> <span>Send only (no incoming fax number required).</span></div>
+        </div>
+        <div class="wa-item">
+          <div class="wa-dot dot-green"></div>
+          <div><strong>Frankie texts at 8-10pm.</strong> <span>Schedule syncs, approvals, and async updates to that window.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wa-card">
+      <div class="wa-card-header actions">OPEN ACTION ITEMS</div>
+      <div class="wa-card-body">
+        <div class="wa-item">
+          <div class="wa-dot dot-red"></div>
+          <div><strong>Chitraksh: Research crypto/smart contract structure</strong> for Khalid arrangement. Which company entity to route through.</div>
+        </div>
+        <div class="wa-item">
+          <div class="wa-dot dot-red"></div>
+          <div><strong>Frankie: Find attorney</strong> to amend C Corp and add Chitraksh. LegalZoom dropped.</div>
+        </div>
+        <div class="wa-item">
+          <div class="wa-dot dot-red"></div>
+          <div><strong>Both: Finalize full Mercedes package</strong> (email, offer letter, SLA, pilot SOW) before April 2. No Khalid offer in official docs.</div>
+        </div>
+        <div class="wa-item">
+          <div class="wa-dot dot-red"></div>
+          <div><strong>Both: Test human warm transfer</strong> before Mercedes demo. Cold works, warm unresolved.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wa-card">
+      <div class="wa-card-header watch">CTO WATCH FLAGS</div>
+      <div class="wa-card-body">
+        <div class="wa-item">
+          <div class="wa-dot dot-orange"></div>
+          <div><strong>LEGAL: Khalid arrangement is outside compensation territory.</strong> <span>Any written offer MUST go through crypto/shell structure. Do not document via company email.</span></div>
+        </div>
+        <div class="wa-item">
+          <div class="wa-dot dot-orange"></div>
+          <div><strong>Bank account still blocked</strong> until C Corp amendment complete + EIN active. No Stripe. No payments.</div>
+        </div>
+        <div class="wa-item">
+          <div class="wa-dot dot-orange"></div>
+          <div><strong>SAFE note still unlocated.</strong> <span>$10K invested ($5K Jared, $5K Abdo). If signed, equity obligations exist. Must be resolved.</span></div>
+        </div>
+        <div class="wa-item">
+          <div class="wa-dot dot-orange"></div>
+          <div><strong>MX + SPF records</strong> for founder@orayalabs.ai still not added. Frankie can't receive email on company domain.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TODAY'S TASK BOARDS -->
+  <div class="section-label">Today's Tasks (March 30)</div>
+  <div class="task-row">
+
+    <div class="task-board">
+      <div class="task-board-header chitraksh">
+        <h3>CHITRAKSH (CTO)</h3>
+        <span class="badge">6 tasks</span>
+      </div>
+      <div class="task-item" onclick="toggleTask(this)">
+        <div class="task-check"></div>
+        <div class="priority-badge p1">P1</div>
+        <div class="task-text">Finalize SLA document (75% baseline + retry loop + 99% uptime + speed-to-lead)</div>
+      </div>
+      <div class="task-item" onclick="toggleTask(this)">
+        <div class="task-check"></div>
+        <div class="priority-badge p1">P1</div>
+        <div class="task-text">Review dealership offer letter: change all LLC to C Corp references</div>
+      </div>
+      <div class="task-item" onclick="toggleTask(this)">
+        <div class="task-check"></div>
+        <div class="priority-badge p1">P1</div>
+        <div class="task-text">Research crypto/smart contract structure for Khalid arrangement (which entity, which chain)</div>
+      </div>
+      <div class="task-item" onclick="toggleTask(this)">
+        <div class="task-check"></div>
+        <div class="priority-badge p2">P2</div>
+        <div class="task-text">Add MX + SPF records to Vercel DNS for orayalabs.ai Gmail (founder@orayalabs.ai)</div>
+      </div>
+      <div class="task-item" onclick="toggleTask(this)">
+        <div class="task-check"></div>
+        <div class="priority-badge p2">P2</div>
+        <div class="task-text">Locate or confirm status of SAFE note ($5K Jared + $5K Abdo)</div>
+      </div>
+      <div class="task-item" onclick="toggleTask(this)">
+        <div class="task-check"></div>
+        <div class="priority-badge p3">P3</div>
+        <div class="task-text">Set up WhatsApp Business API webhook to N8N (architecture below)</div>
+      </div>
+    </div>
+
+    <div class="task-board">
+      <div class="task-board-header frankie">
+        <h3>FRANKIE (CEO)</h3>
+        <span class="badge">5 tasks</span>
+      </div>
+      <div class="task-item" onclick="toggleTask(this)">
+        <div class="task-check"></div>
+        <div class="priority-badge p1">P1</div>
+        <div class="task-text">Find attorney to amend C Corp and add Chitraksh (LegalZoom dropped)</div>
+      </div>
+      <div class="task-item" onclick="toggleTask(this)">
+        <div class="task-check"></div>
+        <div class="priority-badge p1">P1</div>
+        <div class="task-text">Test human warm transfer. Cold works. Need briefing to activate on warm transfer.</div>
+      </div>
+      <div class="task-item" onclick="toggleTask(this)">
+        <div class="task-check"></div>
+        <div class="priority-badge p1">P1</div>
+        <div class="task-text">Get E&O + cyber liability insurance quotes ($100-300/mo target, must have before pilot)</div>
+      </div>
+      <div class="task-item" onclick="toggleTask(this)">
+        <div class="task-check"></div>
+        <div class="priority-badge p2">P2</div>
+        <div class="task-text">Give Chitraksh admin access to GHL (GoHighLevel) CRM</div>
+      </div>
+      <div class="task-item" onclick="toggleTask(this)">
+        <div class="task-check"></div>
+        <div class="priority-badge p3">P3</div>
+        <div class="task-text">Pay $1,000-1,100 on chargeback (reduces balance to ~$3,100)</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 7-DAY RADAR -->
+  <div class="section-label">7-Day Radar</div>
+  <div class="radar-grid">
+
+    <div class="radar-day today">
+      <div class="day-name">Mon</div>
+      <div class="day-date">30</div>
+      <div class="radar-event ev-critical">SLA draft</div>
+      <div class="radar-event ev-action">LLC to C Corp fix</div>
+      <div class="radar-event ev-info">MX records</div>
+    </div>
+
+    <div class="radar-day">
+      <div class="day-name">Tue</div>
+      <div class="day-date">31</div>
+      <div class="radar-event ev-critical">All docs finalized</div>
+      <div class="radar-event ev-action">Test email send</div>
+      <div class="radar-event ev-info">Founder review</div>
+    </div>
+
+    <div class="radar-day">
+      <div class="day-name">Wed</div>
+      <div class="day-date">Apr 1</div>
+      <div class="radar-event ev-critical">Final review pass</div>
+      <div class="radar-event ev-action">Last warm transfer test</div>
+    </div>
+
+    <div class="radar-day">
+      <div class="day-name">Thu</div>
+      <div class="day-date">2</div>
+      <div class="radar-event ev-critical">SEND MERCEDES</div>
+      <div class="radar-event ev-action">Official email drops</div>
+    </div>
+
+    <div class="radar-day">
+      <div class="day-name">Fri</div>
+      <div class="day-date">3</div>
+      <div class="radar-event ev-info">Follow-up window</div>
+      <div class="radar-event ev-green">Open bank acct</div>
+    </div>
+
+    <div class="radar-day">
+      <div class="day-name">Sat</div>
+      <div class="day-date">4</div>
+      <div class="radar-event ev-info">Crypto/Khalid research</div>
+      <div class="radar-event ev-green">C Corp amendment</div>
+    </div>
+
+    <div class="radar-day">
+      <div class="day-name">Sun</div>
+      <div class="day-date">5</div>
+      <div class="radar-event ev-green">Dissertation check</div>
+      <div class="radar-event ev-info">Weekly review</div>
+    </div>
+
+  </div>
+
+  <!-- REVENUE TARGET TRACKER -->
+  <div class="section-label">Revenue Target Tracker</div>
+  <div class="rev-card">
+    <div class="rev-goal">
+      <h4>Path to $9,980 MRR (20 subs @ $499)</h4>
+      <span>Current: $0 MRR</span>
+    </div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" style="width: 0%"></div>
+    </div>
+    <div class="progress-labels">
+      <span>$0</span>
+      <span>$2,495 (5 subs)</span>
+      <span>$4,990 (10 subs)</span>
+      <span>$9,980 (20 subs)</span>
+    </div>
+    <div class="milestone-row">
+      <div class="milestone">
+        <div class="m-val" style="color:#e63946">0</div>
+        <div class="m-label">Current subs</div>
+      </div>
+      <div class="milestone">
+        <div class="m-val" style="color:#457b9d">20</div>
+        <div class="m-label">Target subs</div>
+      </div>
+      <div class="milestone">
+        <div class="m-val" style="color:#2d6a4f">$499</div>
+        <div class="m-label">Per sub / mo</div>
+      </div>
+      <div class="milestone">
+        <div class="m-val" style="color:#2d6a4f">$30-40</div>
+        <div class="m-label">Infra / client</div>
+      </div>
+      <div class="milestone">
+        <div class="m-val" style="color:#2d6a4f">~92%</div>
+        <div class="m-label">Gross margin</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHATSAPP INTEGRATION GUIDE -->
+  <div class="section-label">WhatsApp Business Auto-Integration Architecture</div>
+  <div class="integration-card">
+    <h3>Auto-sync WhatsApp to Claude HQ (Dashboard + Memory + Tasks)</h3>
+    <p>Using your existing Twilio + N8N stack. Zero new paid tools required.</p>
+
+    <div class="flow-row">
+      <div class="flow-step">
+        <div class="flow-icon wa">💬</div>
+        <div class="flow-label">WhatsApp Business</div>
+        <div class="flow-sublabel">Meta Business API</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-icon twilio">📡</div>
+        <div class="flow-label">Twilio</div>
+        <div class="flow-sublabel">Already connected</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-icon n8n">⚙️</div>
+        <div class="flow-label">N8N Webhook</div>
+        <div class="flow-sublabel">hanfluxai2026</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-icon ai">🧠</div>
+        <div class="flow-label">Claude AI Node</div>
+        <div class="flow-sublabel">Classify + Extract</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-icon gh">🐙</div>
+        <div class="flow-label">GitHub API</div>
+        <div class="flow-sublabel">Update memory files</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-icon brief">📊</div>
+        <div class="flow-label">Daily Brief</div>
+        <div class="flow-sublabel">Auto-regenerated</div>
+      </div>
+    </div>
+
+    <div class="setup-steps">
+
+      <div class="setup-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <strong>Enable WhatsApp on your existing Twilio account</strong>
+          <span>Go to Twilio Console > Messaging > Senders > WhatsApp Senders. Connect your business number (+15105204265) or apply for a dedicated WhatsApp Business number. Takes 1-3 business days for Meta approval.</span>
+        </div>
+      </div>
+
+      <div class="setup-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <strong>Create N8N webhook trigger</strong>
+          <span>New workflow in hanfluxai2026.app.n8n.cloud. Node 1: Webhook (POST). Copy the webhook URL. In Twilio, set that URL as your WhatsApp message webhook. All incoming WA messages now hit N8N automatically.</span>
+        </div>
+      </div>
+
+      <div class="setup-step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <strong>Claude AI extraction node (the brain)</strong>
+          <span>Node 2: Claude AI. Prompt: "Classify this message as one of: [decision, action_item, update, blocker, idea, personal]. Extract: sender, content, project context, urgency (1-5). Return JSON." Field: <span class="code-pill">$json.Body</span> (Twilio WA payload).</span>
+        </div>
+      </div>
+
+      <div class="setup-step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <strong>GitHub API update node</strong>
+          <span>Node 3: HTTP Request (GitHub API). On classification = "action_item" or "decision", use GitHub's Contents API to append to <span class="code-pill">pending-actions.md</span> or <span class="code-pill">active-projects.md</span>. Requires a GitHub PAT (already in .github-config).</span>
+        </div>
+      </div>
+
+      <div class="setup-step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <strong>Schedule daily brief regeneration (existing scheduler)</strong>
+          <span>The scheduled task Claude already has can be updated to: read updated memory files at 7am daily, regenerate the daily brief HTML, commit to GitHub, push to Vercel. Brief is live by the time you wake up.</span>
+        </div>
+      </div>
+
+      <div class="setup-step">
+        <div class="step-num">6</div>
+        <div class="step-content">
+          <strong>Optional: WA confirmation reply</strong>
+          <span>Node 4: Twilio WA reply. After N8N processes a message, send back a confirmation: "Logged: [decision/action]. Updated pending-actions.md." Closes the loop so you know it worked.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROJECT STATUS -->
+  <div class="section-label">Oraya Labs Projects</div>
+  <div class="project-grid" style="grid-template-columns: 1fr 1fr;">
+
+    <div class="project-card">
+      <div class="proj-name">P1: Voice AI for Automotive</div>
+      <span class="proj-status status-fire">ON FIRE (3 days to deadline)</span>
+      <div class="proj-note">Mercedes-Benz South Bay (Torrance, CA) pilot. April 2 email deadline. MVP complete: 10-node Retell agent, cold transfer working, dashboard live on Vercel.</div>
+      <div class="proj-blocker">Blockers: SLA not finalized. SOW not drafted. Khalid arrangement strategy TBD. Warm transfer partial. No E&O insurance. No signed contracts.</div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-name">P2: Insurance Lead Gen</div>
+      <span class="proj-status status-active">Active / Pre-Revenue</span>
+      <div class="proj-note">"Maya" voice agent first live test passed (Mar 27). Claude IQ 4.5 confirmed best LLM. Cold transfer to licensed advisor working. Prompt leakage on non-Claude LLMs confirmed and avoided.</div>
+      <div class="proj-blocker">Blockers: No API integrations built. $1,600 chargeback unresolved. $2,500 marketing budget pending. Secondary to P1 until Mercedes deal closes.</div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>Sentient Protocol v2.2</strong> &nbsp;|&nbsp; Auto-generated from WhatsApp intel (Mar 28-30) + memory files &nbsp;|&nbsp; Next brief scheduled 7am &nbsp;|&nbsp; hanfluxai@gmail.com
+</div>
+
+<script>
+  function toggleTask(item) {
+    const check = item.querySelector('.task-check');
+    const text = item.querySelector('.task-text');
+    check.classList.toggle('done');
+    item.classList.toggle('done-item');
+  }
+</script>
+</body>
+</html>

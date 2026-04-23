@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Oraya Daily Brief &middot; For Chitraksh &middot; CTO &middot; Sat Apr 18 2026</title>
+<style>
+.oraya-appendix { background:#0e1430; border:1px solid #1f274a; border-radius:14px;
+  padding:24px 28px; margin:16px 0; color:#d7dbea; line-height:1.6;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; }
+.oraya-appendix h1, .oraya-appendix h2, .oraya-appendix h3, .oraya-appendix h4 {
+  color:#ffffff; margin-top:1.4em; margin-bottom:0.5em; line-height:1.3; }
+.oraya-appendix h1 { font-size:22px; border-bottom:1px solid #2a3358; padding-bottom:10px; }
+.oraya-appendix h2 { font-size:18px; color:#8ea0ff; }
+.oraya-appendix h3 { font-size:15px; color:#c99aff; }
+.oraya-appendix h4 { font-size:13px; color:#ffd166; text-transform:uppercase; letter-spacing:1px; }
+.oraya-appendix p { margin:0.7em 0; font-size:14px; }
+.oraya-appendix ul, .oraya-appendix ol { padding-left:22px; margin:0.6em 0; font-size:14px; }
+.oraya-appendix li { margin:4px 0; }
+.oraya-appendix code { background:#1a2040; color:#c9d1f5; padding:2px 6px; border-radius:4px;
+  font-size:12px; font-family:ui-monospace,Menlo,Consolas,monospace; }
+.oraya-appendix pre { background:#0a0f24; border:1px solid #1f274a; border-radius:8px;
+  padding:14px 16px; overflow-x:auto; font-size:12px; line-height:1.5; }
+.oraya-appendix pre code { background:transparent; padding:0; color:#d7dbea; }
+.oraya-appendix strong { color:#ffffff; }
+.oraya-appendix em { color:#ffd166; font-style:normal; }
+.oraya-appendix hr { border:none; border-top:1px solid #2a3358; margin:20px 0; }
+.oraya-appendix a { color:#8ea0ff; text-decoration:none; }
+.oraya-appendix blockquote { border-left:3px solid #c99aff; padding:8px 16px;
+  background:#14183a; margin:10px 0; color:#c9d1f5; font-style:italic; }
+.oraya-appendix table { border-collapse:collapse; margin:10px 0; font-size:13px; }
+.oraya-appendix th, .oraya-appendix td { border:1px solid #2a3358; padding:8px 12px; }
+.oraya-appendix th { background:#1a2040; color:#ffffff; text-align:left; }
+.oraya-divider { font-size:11px; letter-spacing:2px; text-transform:uppercase;
+  color:#8ea0ff; font-weight:600; margin:40px 0 10px; border-top:1px solid #2a3358;
+  padding-top:28px; }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#0b1020;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#e6e9f2;">
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background:#0b1020;">
+<tr><td align="center" style="padding:32px 16px;">
+
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="680" style="max-width:680px;background:#111733;border-radius:18px;overflow:hidden;border:1px solid #1f274a;">
+
+<tr><td style="padding:28px 32px 20px 32px;background:linear-gradient(135deg,#1b2448 0%,#2a1b48 100%);border-bottom:1px solid #2a3358;">
+<div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#66d9ff;font-weight:600;">Oraya Daily Brief · For Chitraksh &middot; CTO</div>
+<div style="font-size:26px;font-weight:700;margin-top:6px;color:#ffffff;">Saturday · April 18, 2026</div>
+<div style="font-size:14px;color:#b8c0e0;margin-top:6px;">Week 14 · Day 98 · 18 meetings in · Two founders, one mission.</div>
+</td></tr>
+<tr><td style="padding:24px 32px 8px 32px;">
+<div style="font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#8ea0ff;font-weight:600;">Top-line this morning</div>
+<div style="font-size:17px;line-height:1.55;color:#e6e9f2;margin-top:10px;">
+Your two moves today: <strong style='color:#ffd166;'>clear the inventory bug</strong> so Mazzio can happen, and <strong style='color:#ffd166;'>QA the legal pack</strong> so we stop bleeding external-counsel cost. Everything else is review-gate. Frankie's running the commercial side &mdash; summary below.
+</div>
+</td></tr>
+<tr><td style="padding:12px 32px 4px 32px;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td width="33%" valign="top" style="padding:14px;background:#1a1030;border:1px solid #3a1f5a;border-radius:12px;">
+<div style="font-size:11px;letter-spacing:1px;color:#ff9ed6;text-transform:uppercase;font-weight:600;">Teresa countdown</div>
+<div style="font-size:22px;font-weight:700;color:#ffffff;margin-top:4px;">&le; 72 hours</div>
+<div style="font-size:12px;color:#b8c0e0;margin-top:4px;">Lock before Apr 21 or this weekend.</div>
+</td>
+<td width="4"></td>
+<td width="33%" valign="top" style="padding:14px;background:#1f1616;border:1px solid #5a2a1f;border-radius:12px;">
+<div style="font-size:11px;letter-spacing:1px;color:#ff8a66;text-transform:uppercase;font-weight:600;">Demo blocker</div>
+<div style="font-size:22px;font-weight:700;color:#ffffff;margin-top:4px;">Inventory bug</div>
+<div style="font-size:12px;color:#b8c0e0;margin-top:4px;">8K tok vs 3K &middot; price not loading.</div>
+</td>
+<td width="4"></td>
+<td width="33%" valign="top" style="padding:14px;background:#102025;border:1px solid #1f4a5a;border-radius:12px;">
+<div style="font-size:11px;letter-spacing:1px;color:#66d9ff;text-transform:uppercase;font-weight:600;">Mazzio</div>
+<div style="font-size:22px;font-weight:700;color:#ffffff;margin-top:4px;">Silent &middot; warm</div>
+<div style="font-size:12px;color:#b8c0e0;margin-top:4px;">Card captured &middot; Frankie re-engages.</div>
+</td>
+</tr>
+</table>
+</td></tr>
+
+<tr><td style="padding:28px 32px 8px 32px;">
+<div style="font-size:15px;letter-spacing:1px;text-transform:uppercase;color:#66d9ff;font-weight:700;">Your 6 actions &middot; Chitraksh (CTO)</div>
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:12px;">
+<tr><td style="padding:14px;background:#161c3a;border-left:4px solid #66d9ff;border-radius:8px;">
+<div style="font-size:15px;font-weight:600;color:#ffffff;">1. Ship inventory query rebuild spec</div>
+<div style="font-size:13px;color:#b8c0e0;margin-top:4px;line-height:1.5;">CTO-Claude has already drafted the rebuild plan (n8n HTTP lookup node + field map + token guard). Review, approve, hand to dev queue. Target: token budget 3K, price field populated, retest on 10 VINs. <strong style='color:#66d9ff;'>See Appendix A below.</strong></div>
+</td></tr>
+<tr><td height="8"></td></tr><tr><td style="padding:14px;background:#161c3a;border-left:4px solid #66d9ff;border-radius:8px;">
+<div style="font-size:15px;font-weight:600;color:#ffffff;">2. Verify HiQ LLM latency in production</div>
+<div style="font-size:13px;color:#b8c0e0;margin-top:4px;line-height:1.5;">Pull 10 sales-outbound call logs since the Gemini&rarr;HiQ pivot. Confirm p50/p95 latency &le; the Gemini baseline minus pivot threshold. If not, roll back. Add result to the dashboard.</div>
+</td></tr>
+<tr><td height="8"></td></tr><tr><td style="padding:14px;background:#161c3a;border-left:4px solid #66d9ff;border-radius:8px;">
+<div style="font-size:15px;font-weight:600;color:#ffffff;">3. Review legal template pack v0.1 scaffold</div>
+<div style="font-size:13px;color:#b8c0e0;margin-top:4px;line-height:1.5;">CTO-Claude has the scaffold ready: 6 vendor DPAs, pilot SOW, mutual NDA, retainer agreement, E&O rider language. Your law-student eye is the QA gate before we start filling in. <strong style='color:#66d9ff;'>See Appendix C below.</strong></div>
+</td></tr>
+<tr><td height="8"></td></tr><tr><td style="padding:14px;background:#161c3a;border-left:4px solid #66d9ff;border-radius:8px;">
+<div style="font-size:15px;font-weight:600;color:#ffffff;">4. Push dashboard v6 commit to GitHub</div>
+<div style="font-size:13px;color:#b8c0e0;margin-top:4px;line-height:1.5;">Dashboard v6 Sentient is on disk + mirrored to index.html. One-shot ship command is in yesterday's thread. Run it, confirm Pages rebuilt, screenshot the live URL and drop it in our group.</div>
+</td></tr>
+<tr><td height="8"></td></tr><tr><td style="padding:14px;background:#161c3a;border-left:4px solid #66d9ff;border-radius:8px;">
+<div style="font-size:15px;font-weight:600;color:#ffffff;">5. Approve Teresa demo script before Frankie calls</div>
+<div style="font-size:13px;color:#b8c0e0;margin-top:4px;line-height:1.5;">Phone-only, 5-7 min, two variants (Teresa&middot;P2, Mazzio&middot;P1). CTO-Claude ships both today. Your job: tighten the close ask and approve. <strong style='color:#66d9ff;'>See Appendix B below.</strong></div>
+</td></tr>
+<tr><td height="8"></td></tr><tr><td style="padding:14px;background:#161c3a;border-left:4px solid #66d9ff;border-radius:8px;">
+<div style="font-size:15px;font-weight:600;color:#ffffff;">6. 15-min EOD partner sync (phone)</div>
+<div style="font-size:13px;color:#b8c0e0;margin-top:4px;line-height:1.5;">With Frankie, 6:30 PM PT. Three topics only: (a) Teresa status, (b) inventory fix status, (c) one thing we'd bet the week on tomorrow. Nothing else.</div>
+</td></tr>
+<tr><td height="8"></td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:20px 32px 8px 32px;">
+<div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#ffd166;font-weight:600;">What Frankie is running today (peer-awareness)</div>
+<div style="padding:14px 18px;background:#0f1430;border:1px solid #1f274a;border-radius:10px;margin-top:10px;">
+<ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.6;color:#b8c0e0;">
+<li style="margin:6px 0;"><strong style="color:#ffffff;">Text Teresa pre-noon PT</strong> &mdash; <span style="color:#b8c0e0;">lock the meeting, no pitching in text</span></li><li style="margin:6px 0;"><strong style="color:#ffffff;">Call Mazzio 310.650.4826</strong> &mdash; <span style="color:#b8c0e0;">10-min phone demo ask, Appendix B script</span></li><li style="margin:6px 0;"><strong style="color:#ffffff;">Draft Teresa agenda</strong> &mdash; <span style="color:#b8c0e0;">5-7 min demo + 10 min discussion, uses your demo-script review</span></li><li style="margin:6px 0;"><strong style="color:#ffffff;">Send 3 P2 warm intros</strong> &mdash; <span style="color:#b8c0e0;">parallel pipeline beyond Teresa</span></li><li style="margin:6px 0;"><strong style="color:#ffffff;">90-sec demo voicemail</strong> &mdash; <span style="color:#b8c0e0;">his voice + Retell playback for cold outbound</span></li><li style="margin:6px 0;"><strong style="color:#ffffff;">Reply to brief by 11 AM</strong> &mdash; <span style="color:#b8c0e0;">status on his 6</span></li>
+</ul>
+</div>
+</td></tr>
+
+<tr><td style="padding:28px 32px 8px 32px;">
+<div style="font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#9df0a5;font-weight:600;">Shipped yesterday (Apr 17)</div>
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:12px;">
+<tr><td style="padding:12px 16px;background:#0f2318;border-left:3px solid #9df0a5;border-radius:6px;font-size:14px;color:#c7e6cc;line-height:1.6;">
+&#10003; Stripe Admin invite accepted &mdash; CTO has full payout + team visibility<br>
+&#10003; n8n migrated hanfluxai2026 &rarr; <strong>orayacorporation.app.n8n.cloud</strong><br>
+&#10003; Retell sales-outbound LLM pivoted Gemini &rarr; HiQ (latency fix)<br>
+&#10003; Retell RPA now self-edits agent prompts &mdash; first RPA-driven prompt push shipped<br>
+&#10003; Strategy Law engagement closed &mdash; in-house AI legal bootstrap approved<br>
+&#10003; Teresa inbound &mdash; Frankie's $40-50K/mo anchor producer<br>
+&#10003; Dashboard v6 Sentient shipped &mdash; 13 tabs, all Apr 18 state
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:28px 32px 8px 32px;">
+<div style="font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#c99aff;font-weight:600;">What CTO-Claude is doing today (autonomous)</div>
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:12px;">
+<tr><td style="padding:14px;background:#1c1634;border-left:4px solid #c99aff;border-radius:8px;font-size:13px;color:#d7ccee;line-height:1.7;">
+&rarr; <strong>Shipped today:</strong> inventory-query-rebuild-plan.md, phone-only-demo-script.md, legal-template-pack-v0.1.md (all three attached below as appendices)<br>
+&rarr; <strong>Rewiring:</strong> daily-founder-briefing scheduled task so this brief runs itself every morning<br>
+&rarr; <strong>Monitoring:</strong> Teresa silence, Mazzio silence, inventory bug status, HiQ latency p95<br>
+&rarr; <strong>Next:</strong> v0.2 of legal pack (filled text) ships Apr 24 once you approve the scaffold
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:28px 32px 8px 32px;">
+<div style="font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#ff8a66;font-weight:600;">Risk radar</div>
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:12px;">
+<tr><td style="padding:12px 16px;background:#241515;border-left:3px solid #ff8a66;border-radius:6px;font-size:13px;color:#e9c9c1;line-height:1.7;">
+<strong>R13 &middot; Inventory bug blocks demo</strong> &mdash; <strong style='color:#ffd166;'>YOUR primary blocker today.</strong> Owner: Chitraksh. Target: EOD Apr 18 if queued by 2 PM PT.<br><strong>R-HiQ &middot; Cost creep</strong> &mdash; +$0.05/min = +$250/1K calls. Re-price enterprise tier if call volume crosses 5K/mo. Verify latency is actually better before accepting cost.<br><strong>R-Legal &middot; In-house bootstrap</strong> &mdash; No external counsel retainer. If a demand letter arrives before v0.3 ships (Apr 28), escalate immediately &mdash; don't answer it yourself.<br><strong>R-Teresa &middot; 72h decay</strong> &mdash; Frankie owns the touch. Your job is not blocking his ability to demo confidently &mdash; P2 is phone-only and unblocked.
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td style="padding:32px 32px 28px 32px;background:#0e1430;border-top:1px solid #1f274a;">
+<div style="font-size:12px;color:#7c86a8;line-height:1.6;">
+Sent by <strong style="color:#b8c0e0;">CTO-Claude</strong> on behalf of the partnership.<br>
+Dashboard: <a href="https://oraya-ai-h485.vercel.app/" style="color:#8ea0ff;text-decoration:none;">oraya-ai-h485.vercel.app</a> &middot; Memory lives in <code style="background:#1a2040;padding:2px 6px;border-radius:4px;color:#c9d1f5;">Claude hq / Oraya-AI-HQ</code><br>
+Reply to this thread with blockers. I'll route them the same day.
+</div>
+<div style="margin-top:14px;font-size:11px;color:#5a6488;letter-spacing:1px;">ORAYA LABS &middot; EIN 93-3462113 &middot; CA C-CORP &middot; V6 SENTIENT</div>
+</td></tr>
+
+</table>
+
+<div style="width:680px;max-width:680px;margin-top:8px;text-align:left;">
+<div class="oraya-divider">Appendix A &middot; Inventory Query Rebuild Plan (technical)</div><div class="oraya-appendix">
+  <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c99aff;font-weight:600;">Appendix A &middot; voice-ai-bugs/inventory-query-rebuild-plan.md</div>
+  <h1 style="margin-top:8px;">Inventory Query Rebuild Plan</h1>
+  <h1>Inventory Query Rebuild Plan · Apr 18, 2026</h1>
+<p><strong>Status:</strong> BLOCKS NEXT DEMO
+<strong>Owner:</strong> Chitraksh (CTO) · review + approve
+<strong>Ships:</strong> CTO-Claude drafts spec → dev queue executes → Chitraksh signs off on retest</p>
+<hr />
+<h2>1. Symptom</h2>
+<ul>
+<li>Retell voice agent inventory query consumes <strong>~8,000 tokens per call</strong>, vs <strong>~3,000 baseline</strong> established in end-to-end test on Apr 11.</li>
+<li><strong>Price field is not loading</strong> in the response payload the agent receives. The agent either omits price or says "let me check" and pivots off.</li>
+<li>Observed during Apr 17 dry-run. Confirmed Apr 18 AM. Reproduces on every VIN query.</li>
+</ul>
+<h2>2. Root cause hypothesis</h2>
+<p>The current flow passes the full 1,700-vehicle inventory snapshot into the LLM context on every call, then asks the LLM to "find" the vehicle and return its fields. That's:
+- <strong>O(n) token cost</strong> on a read that should be O(1).
+- <strong>LLM-parsed fields</strong> instead of <strong>DB-native fields</strong> — which is why price silently drops when the scraper writes it to a column the prompt doesn't reference.</p>
+<p>Root cause = <strong>we are using the LLM as a database</strong>. We need to restore the LLM to language-layer only and hand data lookups to n8n.</p>
+<h2>3. Rebuild — three-part fix</h2>
+<h3>Part A · n8n HTTP lookup node</h3>
+<p>Replace the "inventory in prompt" pattern with a dedicated lookup node:</p>
+<pre><code>Trigger (Retell webhook: inventory_query intent)
+ ↓
+HTTP Request → Supabase REST: GET /rest/v1/inventory?vin=eq.{{vin}}&amp;select=*
+ ↓
+Function node: field map (see Part B)
+ ↓
+Response → Retell custom tool output
+</code></pre>
+<p>The agent's system prompt gets the <strong>lookup tool spec</strong>, not the inventory. It calls the tool when it needs a vehicle, and the tool returns one row.</p>
+<h3>Part B · Field map (canonical contract)</h3>
+<p>Every lookup must return these fields in this exact shape. If a field is missing from Supabase, the function node fills with <code>null</code> — never omits.</p>
+<pre><code>{
+  &quot;vin&quot;: string,
+  &quot;year&quot;: number,
+  &quot;make&quot;: string,
+  &quot;model&quot;: string,
+  &quot;trim&quot;: string | null,
+  &quot;exterior_color&quot;: string | null,
+  &quot;interior_color&quot;: string | null,
+  &quot;mileage&quot;: number | null,
+  &quot;price&quot;: number | null,          // &lt;-- canonical price field
+  &quot;msrp&quot;: number | null,
+  &quot;stock_number&quot;: string | null,
+  &quot;body_style&quot;: string | null,
+  &quot;engine&quot;: string | null,
+  &quot;transmission&quot;: string | null,
+  &quot;drivetrain&quot;: string | null,
+  &quot;fuel_type&quot;: string | null,
+  &quot;features&quot;: string[] | null,
+  &quot;image_url&quot;: string | null,
+  &quot;listing_url&quot;: string | null,
+  &quot;status&quot;: &quot;available&quot; | &quot;sold&quot; | &quot;pending&quot; | &quot;in_transit&quot;,
+  &quot;updated_at&quot;: ISO8601
+}
+</code></pre>
+<p><strong>Non-negotiable:</strong> <code>price</code> and <code>status</code> are never omitted. If Supabase returns null, the agent gets null and must say "let me grab that from the manager" — not hallucinate.</p>
+<h3>Part C · Token guard</h3>
+<p>Three guardrails baked into the function node:</p>
+<ol>
+<li><strong>Max payload size:</strong> 2KB per lookup. Strip <code>features</code> array to top 10 if it overflows.</li>
+<li><strong>Context eviction:</strong> After each lookup, the prior lookup's full payload is dropped from LLM context. Only the current vehicle stays hot.</li>
+<li><strong>Budget alarm:</strong> If total tokens for a call exceed 4K, emit <code>token_budget_warn</code> event to Supabase <code>call_events</code> table. Dashboard picks it up.</li>
+</ol>
+<p>Expected outcome: <strong>3.0–3.5K tokens per call, steady state.</strong></p>
+<h2>4. Retest protocol</h2>
+<p>Before calling the fix shipped, Chitraksh runs:</p>
+<ol>
+<li><strong>10 VIN smoke test</strong> — 10 known VINs from Mercedes of South Bay, pre-verified prices in Supabase. Agent must state correct price on all 10.</li>
+<li><strong>1 missing-field test</strong> — force <code>price = null</code> for one VIN. Agent must say "let me grab that from the manager" verbatim.</li>
+<li><strong>Token ceiling test</strong> — 5 consecutive queries in one call. Max tokens across the full call ≤ 4K.</li>
+<li><strong>Latency test</strong> — p50 ≤ 800ms for the HTTP node round-trip (Retell → n8n → Supabase → Retell).</li>
+</ol>
+<p>All four pass = fix shipped. Dashboard R13 flipped from OPEN to CLOSED.</p>
+<h2>5. Not in scope (intentionally)</h2>
+<ul>
+<li>Not replacing the inventory crawler. Scraper is fine.</li>
+<li>Not touching the 5 n8n workflows that refresh inventory every 4hrs. Those write to Supabase — the fix reads from Supabase.</li>
+<li>Not moving off Supabase. Latency is already good.</li>
+<li>Not changing the agent voice or the sales-outbound LLM (HiQ). Orthogonal concerns.</li>
+</ul>
+<h2>6. Estimate</h2>
+<ul>
+<li>Spec (this doc): done.</li>
+<li>Dev execute: 2–3 hours for a sharp dev, including the function node + token guard.</li>
+<li>Retest: 45 min.</li>
+<li><strong>Target ship:</strong> EOD Apr 18 if queued by 2 PM PT. Fallback: AM Apr 19.</li>
+</ul>
+<h2>7. Why this matters</h2>
+<p>Mazzio call is blocked until this is green. Teresa's P2 demo is phone-only and doesn't hit the inventory path, so P2 is unblocked — but every P1 conversation is on pause until we can quote a price with confidence. One bug, one fix, two pipelines unlocked.</p>
+</div><div class="oraya-divider">Appendix C &middot; In-House Legal Template Pack v0.1 (review gate)</div><div class="oraya-appendix">
+  <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c99aff;font-weight:600;">Appendix C &middot; in-house-legal/template-pack-v0.1-scaffold.md</div>
+  <h1 style="margin-top:8px;">In-House Legal Template Pack v0.1</h1>
+  <h1>In-House AI Legal · Template Pack v0.1 Scaffold</h1>
+<p><strong>Date:</strong> Apr 18, 2026
+<strong>Authored by:</strong> CTO-Claude (in-house AI legal function)
+<strong>Review gate:</strong> Chitraksh (law student, non-resident US citizen, CA + federal + India common-law crossover)
+<strong>Status:</strong> Scaffold — fills will land in v0.2 once Chitraksh signs off on shape</p>
+<p><strong>Why this exists:</strong> Strategy Law LLP quoted ~$10K for DPA, C-Corp housekeeping, ToS, and E&amp;O scope. Non-economic at pre-revenue. We bootstrap in-house with AI + law-student review. External counsel re-engages only for litigation, M&amp;A, IPO, or adversarial proceedings.</p>
+<p><strong>Modeling reference:</strong> Harvey, Spellbook, CoCounsel. Not their code — their pattern: template + precedent library + law-reviewed diffs.</p>
+<hr />
+<h2>Pack contents · v0.1</h2>
+<p>The pack ships ten documents. Six are vendor-facing DPAs. Four are core commercial + liability docs.</p>
+<h3>1. Vendor DPA · Retell (voice platform)</h3>
+<p><strong>Controller–Processor with Retell as processor.</strong> Scope: inbound + outbound telephony audio, call transcripts, caller phone numbers, agent prompt content.</p>
+<p>Sections to fill:
+- Categories of personal data (caller phone, voice recording, transcript content, derived intent flags)
+- Purposes of processing (voice qualification, sales handoff routing)
+- Sub-processors (Retell's LLM vendors — HiQ for sales-outbound, Gemini/Claude for inbound)
+- Retention (TBD — Chitraksh to set: default 90 days recordings, 2 years transcripts)
+- Cross-border transfer clause (US processing; if India-routed leads later, SCC addendum)
+- Breach notification window (72 hours)</p>
+<h3>2. Vendor DPA · Supabase (database)</h3>
+<p><strong>Controller–Processor.</strong> Scope: inventory records, call event logs, lead qualification metadata.</p>
+<p>Sections to fill:
+- Data residency (US region — confirm)
+- Encryption at rest + in transit (document Supabase's defaults)
+- Access controls (Oraya service-role key rotation policy)
+- Backup + deletion timelines</p>
+<h3>3. Vendor DPA · Twilio (messaging + telephony rail)</h3>
+<p><strong>Controller–Processor.</strong> Scope: SMS content, phone numbers, messaging service delivery metadata.</p>
+<p>Sections to fill:
+- A2P 10DLC brand/campaign registration reference
+- Opt-in record retention (7 years is the conservative TCPA floor)
+- Do-not-call list integration</p>
+<h3>4. Vendor DPA · Stripe (payment rail)</h3>
+<p><strong>Controller–Processor + joint-controller split</strong> (Stripe is a joint controller for fraud screening).</p>
+<p>Sections to fill:
+- PCI scope (we never touch PAN; Stripe is in scope, we're SAQ-A)
+- Tax residency references (EIN 93-3462113, CA C-Corp)
+- Payout account protection (CTO + CEO dual-visibility; admin approval for new payout methods)</p>
+<h3>5. Vendor DPA · n8n Cloud (orchestration)</h3>
+<p><strong>Controller–Processor.</strong> Scope: webhook payloads containing caller data, inventory data, lead qualification routing metadata.</p>
+<p>Sections to fill:
+- Instance reference (orayacorporation.app.n8n.cloud — migrated Apr 18)
+- Log retention at the n8n layer (14 days default — tighten if needed)
+- Credential storage policy (n8n-native encrypted credential vault — no plaintext)</p>
+<h3>6. Vendor DPA · GoHighLevel (CRM for P2)</h3>
+<p><strong>Controller–Processor.</strong> Scope: qualified insurance leads, CRM pipeline data, agent-side notes.</p>
+<p>Sections to fill:
+- Sub-processor list (GHL's email, SMS, automation stack)
+- Agent-user access controls (per-agent seat, not shared login)
+- Export on termination (full data pull within 30 days of notice)</p>
+<h3>7. Pilot SOW · Universal template</h3>
+<p>One template, two variants (P1 automotive, P2 insurance).</p>
+<p>Sections to fill:
+- Parties + EIN
+- Pilot scope (specific agents, specific volume, specific horizon)
+- Success criteria (exit clauses if not met)
+- Pricing — per-call, per-lead, per-retainer (three-option table)
+- Term + termination (30-day mutual without cause)
+- IP assignment (Oraya retains agent, prompt library, and workflow IP; client owns their data)
+- Confidentiality (mutual, 2-year tail)
+- Limitation of liability (capped at fees paid in prior 12 months, standard)
+- Governing law (California)</p>
+<h3>8. Mutual NDA</h3>
+<p>For pre-pilot conversations (Teresa, Mazzio, AutoNation-adjacent).</p>
+<p>Sections to fill:
+- Purpose clause (evaluating a potential commercial relationship)
+- Definition of confidential info (broad, with customary carve-outs)
+- Term (3 years)
+- Return or destroy on request
+- No license granted
+- Governing law (California)</p>
+<h3>9. Retainer agreement</h3>
+<p>For $1K/wk P2 retainer structure.</p>
+<p>Sections to fill:
+- Service description (lead delivery + qualification + handoff)
+- Payment terms (weekly in advance, via Stripe)
+- Lead quality SLA (define minimum qualified-contact definition)
+- Pause + resume clause (agent can pause one week without penalty)
+- Termination (30 days notice either side)</p>
+<h3>10. E&amp;O rider language</h3>
+<p>To attach to P2 contracts — <strong>Oraya is not an insurance producer</strong>. The rider scopes us out of coverage opinions and into tech provider only.</p>
+<p>Sections to fill:
+- Definition of services (voice qualification + routing only)
+- Express exclusion: Oraya does not quote, bind, or recommend insurance
+- Agent remains the licensed producer for all coverage decisions
+- Indemnity from agent for misuse of leads (e.g., cold calling beyond permissible hours)
+- Data hygiene: Oraya maintains TCPA-compliant opt-in records; agent warrants own compliance downstream</p>
+<hr />
+<h2>Review workflow (standing process)</h2>
+<ol>
+<li><strong>CTO-Claude drafts</strong> full text from scaffold (v0.2 — triggered when Chitraksh approves the shape).</li>
+<li><strong>Chitraksh reviews</strong> as law-student QA — flags anything that would fail a procedural bar check or India common-law overlap issue.</li>
+<li><strong>Redlines captured</strong> in the deliverable file, not in email.</li>
+<li><strong>v0.3 ships</strong> to the counterparty.</li>
+<li><strong>External counsel re-engages only for:</strong> litigation, M&amp;A, IPO, regulatory proceeding, or any demand letter received.</li>
+</ol>
+<h2>Precedent library plan</h2>
+<p>CTO-Claude maintains a <code>precedent/</code> folder under <code>in-house-legal/</code>:
+- Indexed by clause type (liability caps, IP assignment, termination, etc.)
+- Sourced from public filings, reputable templates (YC SAFE, Cooley, Orrick open clauses), and our own shipped contracts once signed
+- Every clause tagged with jurisdiction notes (CA, federal, India crossover where relevant)</p>
+<p>This is the library Chitraksh can query when drafting or reviewing — pattern parallels how Spellbook surfaces clause suggestions, but built on our own ground truth.</p>
+<h2>What v0.1 is NOT</h2>
+<ul>
+<li>Not employment agreements (no employees yet).</li>
+<li>Not cap-table docs (C-Corp formation is done; next cap-table event is the first priced round).</li>
+<li>Not an IP assignment pack (CTO + CEO are the two original authors; founder IP-assignment exists at formation).</li>
+<li>Not a privacy policy / ToS for the website. Those ship in v0.2 as a separate pack.</li>
+</ul>
+<h2>Target ship</h2>
+<ul>
+<li>v0.1 scaffold (this doc): <strong>today, Apr 18</strong></li>
+<li>v0.2 filled text (docs 1–10): <strong>Apr 24</strong></li>
+<li>v0.3 counterparty-ready: <strong>Apr 28</strong></li>
+</ul>
+<p>CTO-Claude owns drafting. Chitraksh owns review. Frankie does not touch legal — Frankie's bar is commercial, not legal.</p>
+</div><div class="oraya-divider">Appendix B &middot; Phone-Only Demo Script (commercial)</div><div class="oraya-appendix">
+  <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c99aff;font-weight:600;">Appendix B &middot; demo-playbook/phone-only-demo-script.md</div>
+  <h1 style="margin-top:8px;">Phone-Only Demo Script</h1>
+  <h1>Phone-Only Demo Script · v1 · Apr 18, 2026</h1>
+<p><strong>Format:</strong> Live phone call. 5–7 minutes. No email, no screen share, no deck.
+<strong>Why phone-only:</strong> Both founders' numbers serve as admin. Prospects hear the product instead of reading a deck. Flash a read-only workflow account only if asked — never volunteered.
+<strong>Two variants:</strong> P2 · Teresa (insurance lead gen) · P1 · Mazzio (automotive voice).</p>
+<hr />
+<h2>VARIANT A — Teresa · P2 Insurance Lead Gen</h2>
+<p><strong>Caller:</strong> Frankie (warm — existing relationship)
+<strong>Length target:</strong> 6 min
+<strong>Goal of call:</strong> Get a yes to one of three commitments — (1) she supplies leads, (2) she tests the retainer, (3) she introduces one agent from her override book.</p>
+<h3>Opening · 30 sec</h3>
+<blockquote>
+<p>"Teresa — thanks for making time. You closed that policy mid-call last week while we were still in our intro, which is exactly why I wanted to build this with you. I'm going to keep this to six minutes. Three minutes on what we've built, three on how it pays you. Fair?"</p>
+</blockquote>
+<p>Wait for yes. Don't proceed without it.</p>
+<h3>Build · 90 sec</h3>
+<blockquote>
+<p>"We've got a voice AI that picks up every inbound insurance lead inside 15 seconds — any hour. It qualifies them on intent, coverage type, and urgency, drops them into GoHighLevel, and books a live handoff to the agent. That's it. One human signal out of the noise."</p>
+</blockquote>
+<p>Optional if she asks "how is this different from a chatbot":</p>
+<blockquote>
+<p>"Chatbots read. This talks. And it talks like a human, not like press-1-for-sales. We've tested it end-to-end — it closes the qualification loop without anyone noticing it's a bot."</p>
+</blockquote>
+<h3>Pay-you math · 90 sec</h3>
+<blockquote>
+<p>"Two ways we can work with you. One: you send us your raw leads, we qualify, and you pay $25 to $50 per handoff — only for the ones that pick up and match your bar. Zero for the ones that don't. Two: $1,000 a week retainer, we pipe you qualified leads from our acquisition side, you close them. Which of those sounds like the shape of your day?"</p>
+</blockquote>
+<p>Stop. Let her pick. Don't offer a third option.</p>
+<h3>Close · 60 sec</h3>
+<p>Listen first. Then, based on her answer:</p>
+<p><strong>If she picks per-lead ($25–$50):</strong> "Great. I'll send you a one-page SOW — no back-and-forth, I just need you to sign and we route the first batch Monday. Deal?"</p>
+<p><strong>If she picks retainer ($1K/wk):</strong> "Even better. I want to start you on a two-week trial at half-weight — $500, full lead volume, no commitment past week two. If week two beats what you'd normally pay for leads, we go full. Deal?"</p>
+<p><strong>If she hedges:</strong> "Totally fair. Can you introduce me to one agent from your override book this week? I'll run the same play with them, you get the override, and you see it work before you commit. Deal?"</p>
+<h3>Close-the-call · 30 sec</h3>
+<blockquote>
+<p>"Last thing — SOW hits your inbox tonight. I've blocked 15 min on Monday to walk it through if you want. If not, just sign and send back. Thanks for the time, T. Talk Monday."</p>
+</blockquote>
+<p>Hang up. Do not oversell.</p>
+<h3>Rules of engagement</h3>
+<ul>
+<li><strong>Never</strong> pitch in text. Text is for locking the meeting only.</li>
+<li><strong>Never</strong> quote a price higher than $50/lead on first call. If asked about volume pricing, defer: "Let me send you tiered pricing in the SOW."</li>
+<li><strong>Never</strong> promise lead volume — promise lead <em>quality</em>.</li>
+<li><strong>If voicemail:</strong> 20-second message, Frankie's voice. "Teresa, it's Frankie. Want to get you six minutes on the voice qualifier and a retainer option I think you'll like. Try me back whenever."</li>
+</ul>
+<hr />
+<h2>VARIANT B — Mazzio · P1 Automotive Voice</h2>
+<p><strong>Caller:</strong> Frankie first (has the card)
+<strong>Length target:</strong> 5 min (Mazzio is a sales manager — he respects brevity)
+<strong>Goal of call:</strong> Get Mazzio on a 10-minute phone demo of the inventory agent the following week. Not a pilot yes. Just the demo yes.</p>
+<p><strong>PREREQ:</strong> Inventory bug must be CLOSED before this call happens. If R13 is still open, push the call.</p>
+<h3>Opening · 20 sec</h3>
+<blockquote>
+<p>"Chris — Frankie at Oraya. Your card made it to me. Thirty seconds, then I'm out of your way: we built a voice agent that picks up inbound inventory calls 24/7 and knows every VIN on your lot. I want to give you ten minutes next week to hear it answer a live query. Good?"</p>
+</blockquote>
+<p>Wait. If yes, jump to scheduling. If he asks for more, one more paragraph only.</p>
+<h3>Build · 60 sec (only if asked)</h3>
+<blockquote>
+<p>"It runs off your inventory feed — refreshes every four hours, twenty-plus fields per vehicle. A customer calls at 9 PM, the agent handles the conversation, pulls the exact stock number, price, trim, and books them in for a test drive. Nothing routes to voicemail. That's the whole thing."</p>
+</blockquote>
+<h3>Demo ask · 30 sec</h3>
+<blockquote>
+<p>"Next week — Tuesday, Wednesday, Thursday — you pick. I'll call you, you put me on speaker, and I'll have the agent answer live. Ten minutes. If it sounds wrong, we hang up and you've lost ten. If it sounds right, we talk pilot terms."</p>
+</blockquote>
+<p>Lock the slot. Then hang up.</p>
+<h3>If he says "send me something first"</h3>
+<blockquote>
+<p>"I'll send a one-pager — but I'd rather you hear it. Any ten minutes this week or next works. Paper is cheap. The voice is the thing."</p>
+</blockquote>
+<p>Push once. If he still wants paper, send the one-pager (CTO-Claude ships the one-pager as Deliverable #3 in this same pack — pending). Always circle back to "when can I call you with the agent live."</p>
+<h3>Voicemail script · 20 sec</h3>
+<blockquote>
+<p>"Chris — Frankie Alicea at Oraya. A mutual contact passed along your card. We built a voice agent for dealer inbound — I'd love to give you ten minutes next week and have it answer a live query. I'll try you again tomorrow, or text me back at your speed. Appreciate it."</p>
+</blockquote>
+<h3>Rules of engagement</h3>
+<ul>
+<li><strong>Never</strong> mention AutoNation MSA on first call. Mercedes SB first, AutoNation is the move-six.</li>
+<li><strong>Never</strong> share the Vercel dashboard link with Mazzio — it's a working doc, not a sell sheet.</li>
+<li><strong>Never</strong> quote pilot price on the phone. "Let's see it run, then we scope." Pricing lands in the SOW after the demo.</li>
+<li><strong>If R13 reopens mid-week:</strong> call Mazzio back to reschedule. Do not demo a broken agent.</li>
+</ul>
+<hr />
+<h2>Demo-day checklist (both variants)</h2>
+<p>Before either call:</p>
+<ul>
+<li>[ ] Both founders' phones charged, silenced notifications, good signal.</li>
+<li>[ ] Retell agent dashboard open in a second tab (monitoring, not screen-sharing).</li>
+<li>[ ] For Mazzio: confirm inventory bug R13 = CLOSED in the last hour.</li>
+<li>[ ] For Teresa: SOW draft (per-lead + retainer) ready to send within 2 hours of the call.</li>
+<li>[ ] Timer set for target length. If you hit the target, close. Do not overrun.</li>
+<li>[ ] One founder leads, the other listens muted. Swap roles per variant.</li>
+</ul>
+<h2>After every call</h2>
+<p>Within 15 min:</p>
+<ul>
+<li>Log the call outcome in the dashboard's "tasks" tab as a one-liner.</li>
+<li>If it was a yes, start the SOW/contract clock.</li>
+<li>If it was a no or hedge, write one sentence: <em>what will change by next call</em>.</li>
+<li>Tell CTO-Claude in this thread so the brief reflects the result tomorrow morning.</li>
+</ul>
+</div>
+</div>
+
+</td></tr>
+</table>
+</body>
+</html>

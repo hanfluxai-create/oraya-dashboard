@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Oraya Labs · Intelligence Dashboard · v8 Tuesday T-1</title>
+<style>
+:root[data-theme="dark"]{--bg:#0e1420;--surface:#162033;--surface2:#1d2a42;--surface3:#263550;--border:#263550;--border2:#324668;--text:#e9ecf2;--text2:#a8b2c7;--text3:#6f7b93;--accent:#8b82ff;--p1:#8b82ff;--p2:#22d3cf;--green:#4ade80;--green-soft:rgba(74,222,128,.12);--red:#f87171;--red-soft:rgba(248,113,113,.12);--orange:#fbbf24;--orange-soft:rgba(251,191,36,.12);--blue:#60a5fa;--blue-soft:rgba(96,165,250,.12);--pink:#f472b6;--pink-soft:rgba(244,114,182,.12);--shadow:0 4px 10px rgba(0,0,0,.35);--radius:10px}
+:root[data-theme="light"]{--bg:#f6f7fb;--surface:#fff;--surface2:#f1f3f9;--surface3:#e9ecf4;--border:#e3e7ef;--border2:#d6dbe6;--text:#0b1324;--text2:#4a5568;--text3:#8a94a6;--accent:#635bff;--p1:#635bff;--p2:#00a6a0;--green:#0a7c3e;--green-soft:#e6f4ec;--red:#d4183d;--red-soft:#fdecef;--orange:#b7570d;--orange-soft:#fdf1e3;--blue:#0a5db5;--blue-soft:#e7f0fb;--pink:#c31b7d;--pink-soft:#fce7f2;--shadow:0 4px 6px -1px rgba(15,23,42,.05);--radius:10px}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:14px}
+.container{max-width:1280px;margin:0 auto;padding:24px 24px 60px}
+.top-bar{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--p2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px}
+.brand .name{font-weight:700;font-size:16px}.brand .sub{font-size:11px;color:var(--text3)}
+.theme-toggle{border:1px solid var(--border);background:var(--surface);color:var(--text);font:inherit;font-size:12px;font-weight:600;cursor:pointer;padding:6px 12px;border-radius:999px}
+.hero{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;margin-top:20px;box-shadow:var(--shadow)}
+.hero h1{margin:0 0 4px;font-size:24px;letter-spacing:-.5px;font-weight:700}
+.hero .grad{background:linear-gradient(90deg,var(--accent),var(--p2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{font-size:13.5px;color:var(--text2);margin:0 0 14px}
+.hero-meta{font-size:11.5px;color:var(--text3);border-top:1px dashed var(--border);padding-top:12px;margin-top:14px}
+.hero-meta strong{color:var(--text2)}
+.kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:14px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px}
+.kpi .label{font-size:10.5px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.kpi .value{font-size:20px;font-weight:700;margin-top:4px;letter-spacing:-.4px}
+.kpi .trend{font-size:11px;font-weight:600;margin-top:2px}
+.kpi.p1{border-left:3px solid var(--p1)}.kpi.p2{border-left:3px solid var(--p2)}.kpi.green{border-left:3px solid var(--green)}.kpi.orange{border-left:3px solid var(--orange)}.kpi.red{border-left:3px solid var(--red)}
+.up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--text3)}
+.sentient-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:14px}
+.sentient{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px}
+.sentient .tag-top{font-size:10px;text-transform:uppercase;letter-spacing:.7px;font-weight:700;color:var(--text3);margin-bottom:6px;display:flex;gap:6px;align-items:center}
+.sentient .tag-top .dot{width:6px;height:6px;border-radius:50%;background:currentColor}
+.sentient .headline{font-size:13.5px;font-weight:600;line-height:1.35}
+.sentient .sub{font-size:12px;color:var(--text2);margin-top:4px}
+.sentient.alert{background:var(--red-soft);border-color:rgba(248,113,113,.2)}.sentient.alert .tag-top,.sentient.alert .headline{color:var(--red)}
+.sentient.warn{background:var(--orange-soft);border-color:rgba(251,191,36,.2)}.sentient.warn .tag-top{color:var(--orange)}
+.sentient.good{background:var(--green-soft);border-color:rgba(74,222,128,.2)}.sentient.good .tag-top{color:var(--green)}
+.sentient.info{background:var(--blue-soft);border-color:rgba(96,165,250,.2)}.sentient.info .tag-top{color:var(--blue)}
+.nav-tabs{display:flex;flex-wrap:wrap;gap:6px;padding:6px;background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-top:20px}
+.nav-tab{border:0;background:transparent;cursor:pointer;font:inherit;color:var(--text2);font-size:13px;font-weight:600;padding:9px 18px;border-radius:8px}
+.nav-tab:hover{background:var(--surface2);color:var(--text)}
+.nav-tab.active{background:var(--accent);color:#fff}
+.section{display:none;margin-top:20px}.section.active{display:block}
+.section-title{font-size:16px;font-weight:700;margin:0 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin-bottom:14px}
+.card h3{margin:0 0 10px;font-size:13.5px;font-weight:700}
+.card h3.accent{color:var(--accent)}.card h3.p2{color:var(--p2)}.card h3.green{color:var(--green)}.card h3.red{color:var(--red)}.card h3.pink{color:var(--pink)}.card h3.orange{color:var(--orange)}
+.card p,.card ul,.card ol{margin:0 0 8px;font-size:12.5px;color:var(--text2)}.card ul,.card ol{padding-left:20px}
+.card li{margin-bottom:3px}.card strong{color:var(--text)}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:10.5px;font-weight:600}
+.tag-green{background:var(--green-soft);color:var(--green)}.tag-red{background:var(--red-soft);color:var(--red)}.tag-orange{background:var(--orange-soft);color:var(--orange)}.tag-blue{background:var(--blue-soft);color:var(--blue)}.tag-pink{background:var(--pink-soft);color:var(--pink)}
+.banner{display:flex;gap:14px;padding:14px 16px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);margin-bottom:14px}
+.banner .icon{width:36px;height:36px;flex-shrink:0;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;background:var(--surface2)}
+.banner h2{margin:0 0 3px;font-size:14px;font-weight:700}.banner p{margin:0;font-size:12px;color:var(--text2)}
+.banner.p1 .icon{background:var(--blue-soft);color:var(--p1)}.banner.p1 h2{color:var(--p1)}
+.banner.p2 .icon{background:var(--green-soft);color:var(--p2)}.banner.p2 h2{color:var(--p2)}
+.banner.red .icon{background:var(--red-soft);color:var(--red)}.banner.red h2{color:var(--red)}
+.table-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--surface2);font-weight:600;color:var(--text2);font-size:10.5px;text-transform:uppercase;letter-spacing:.5px}
+tr:last-child td{border-bottom:0}tr:hover td{background:var(--surface2)}
+.progress-wrap{margin-bottom:8px}
+.progress-label{display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:4px;color:var(--text2)}
+.progress-bar{height:6px;background:var(--surface3);border-radius:4px;overflow:hidden}
+.progress-fill{height:100%;border-radius:4px;background:var(--accent)}
+.meter-row{display:flex;align-items:center;gap:10px;margin:5px 0}
+.meter-row .label{font-size:11.5px;color:var(--text2);min-width:140px}
+.meter-row .bar{flex:1;height:7px;background:var(--surface3);border-radius:4px;overflow:hidden}
+.meter-row .bar>span{display:block;height:100%;border-radius:4px}
+.meter-row .val{font-size:11px;font-weight:600;min-width:36px;text-align:right;color:var(--text2)}
+.quote{padding:10px 14px;background:var(--surface2);border-left:3px solid var(--accent);border-radius:6px;font-style:italic;font-size:12px;color:var(--text2);margin:10px 0}
+.countdown{display:inline-flex;align-items:center;gap:6px;background:var(--red-soft);color:var(--red);font-weight:700;font-size:11px;padding:4px 10px;border-radius:999px;border:1px solid rgba(248,113,113,.3)}
+.countdown .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.step{padding:10px 12px;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;background:var(--surface2)}
+.step .sn{display:inline-block;width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:700;line-height:22px;text-align:center;margin-right:8px}
+.step .meta{font-size:10.5px;color:var(--text3);margin-top:4px}
+.footer{text-align:center;padding:24px;color:var(--text3);font-size:11px;border-top:1px solid var(--border);margin-top:30px}
+@media(max-width:700px){.container{padding:16px}.hero h1{font-size:19px}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="brand">
+    <div class="brand-mark">O</div>
+    <div>
+      <div class="name">Oraya Labs</div>
+      <div class="sub">Intelligence Dashboard · v8 Tuesday T-1</div>
+    </div>
+  </div>
+  <button class="theme-toggle" id="themeToggle">Light mode</button>
+</div>
+
+<div class="container">
+
+<section class="hero">
+  <h1>Operation South Bay <span class="grad">· Week 15 · Apr 20</span> <span class="countdown"><span class="pulse"></span>T-1 TO TUESDAY EMAIL</span></h1>
+  <p class="lead">Apr 18 HiQ call reversed. Mtg 19 (Apr 19 night · Apr 20 early) locked per-node model SOP: <strong>Gemini 3.1 Flash Lite for intro, Claude Haiku for sales + inventory.</strong> Sonnet tested and failed (over-smart, skipped nodes). Three P1 bugs logged: global-node qualification skip (fixed in-session), no-data webhook hang (fix today), inventory query literal-string mismatch (S-Class returns 5 of 42). Inventory <strong>benched from Tuesday Apr 21 email</strong>; pilot ships appointment-setter only (500+ call-tested). Teresa demo today on the proven flow. Paystub sidebar closed.</p>
+
+  <div class="kpi-strip">
+    <div class="kpi red"><div class="label">Tuesday email</div><div class="value">T-1d</div><div class="trend down">▼ Apr 21 send</div></div>
+    <div class="kpi p1"><div class="label">Meetings</div><div class="value">19</div><div class="trend up">▲ Apr 19 · 58+ min</div></div>
+    <div class="kpi p1"><div class="label">Week</div><div class="value">15</div><div class="trend flat">since Jan 2026</div></div>
+    <div class="kpi green"><div class="label">Appt-setter calls</div><div class="value">500+</div><div class="trend up">PASS · ships Tue</div></div>
+    <div class="kpi orange"><div class="label">Inventory flow</div><div class="value">BENCHED</div><div class="trend down">3 P1 bugs open</div></div>
+    <div class="kpi p2"><div class="label">Model SOP</div><div class="value">2 locked</div><div class="trend up">Gemini+Haiku</div></div>
+    <div class="kpi green"><div class="label">Stripe</div><div class="value">$0.37</div><div class="trend up">test product next</div></div>
+    <div class="kpi p1"><div class="label">n8n flows</div><div class="value">86</div><div class="trend flat">orayacorporation</div></div>
+  </div>
+
+  <div class="sentient-grid">
+    <div class="sentient alert">
+      <div class="tag-top"><span class="dot"></span> ACTIVE BUG · P1</div>
+      <div class="headline">Inventory query · literal-string mismatch</div>
+      <div class="sub">"S-Class" returns 5 of 42 real vehicles. DB stores trim (S580, S63), not family. Need synonym map: S-Class → [S500, S550, S560, S580, S63, S65, Maybach-S]. Same for AMG / GLB / GLC / GLA.</div>
+    </div>
+    <div class="sentient alert">
+      <div class="tag-top"><span class="dot"></span> ACTIVE BUG · P1</div>
+      <div class="headline">No-data hang · webhook never fires</div>
+      <div class="sub">Empty query result = workflow halts mid-call. Agent goes silent. Fix: code node that emits "no-match found" speaking intent + respond-to-webhook when items.length = 0.</div>
+    </div>
+    <div class="sentient alert">
+      <div class="tag-top"><span class="dot"></span> ACTIVE BUG · P1</div>
+      <div class="headline">Inventory sync vs query tool · root cause unclear</div>
+      <div class="sub">1,600 vehicles sync, but 2026 S-Class queries return 0. Two suspects: (1) sync misses new models, (2) query tool can't hit DB cleanly. Check both today.</div>
+    </div>
+    <div class="sentient good">
+      <div class="tag-top"><span class="dot"></span> SHIPPED · APR 19</div>
+      <div class="headline">Global-node qualification skip · FIXED</div>
+      <div class="sub">Identity-verify was global. "Test drive" intent bypassed qualification + inventory and jumped straight to appointment booking. Removed from global. Flow now streamlines.</div>
+    </div>
+    <div class="sentient good">
+      <div class="tag-top"><span class="dot"></span> SHIPPED · APR 19</div>
+      <div class="headline">Per-node model SOP ratified</div>
+      <div class="sub">Intro = Gemini 3.1 Flash Lite (warm, alive, jokes). Sales + Inventory = Claude Haiku (consistent tool-calling). Sonnet failed (skipped nodes). HiQ sales call reversed. Lock for every future vertical.</div>
+    </div>
+    <div class="sentient info">
+      <div class="tag-top"><span class="dot"></span> INCOMING · TODAY</div>
+      <div class="headline">Teresa demo · appointment-setter only</div>
+      <div class="sub">Apr 20 after morning call-testing block. Inject her phone + name live, she receives text + email confirmation as end-customer. Inventory NOT demoed. She earns $40–50K/mo · could supply leads + agent partnerships.</div>
+    </div>
+    <div class="sentient warn">
+      <div class="tag-top"><span class="dot"></span> NEXT ACTION · HIGH</div>
+      <div class="headline">Frankie → Mazzio follow-up</div>
+      <div class="sub">Card captured Apr 18 · 310.650.4826 · 3311 Pacific Coast Hwy, Torrance. Silent by design until appt-setter is demo-stable. Follow-up this week.</div>
+    </div>
+    <div class="sentient warn">
+      <div class="tag-top"><span class="dot"></span> TODAY · PRE-LAUNCH</div>
+      <div class="headline">Stripe test product · payment-rail verification</div>
+      <div class="sub">Frankie requested: create $1–5 test product, run payment, verify funds land Chase ••••6789 under his admin. Archive after confirmation. Required before going live with insurance funnel.</div>
+    </div>
+  </div>
+
+  <div class="hero-meta">
+    <strong>Today:</strong> Apr 20, 2026 · Mon · Week 15 · <strong>Last mtg:</strong> Apr 19 ~05:45 → 06:39 PT (58 min debug) · <strong>Protocol:</strong> Sentient v4 · <strong>Git:</strong> SSH · <strong>SOI deadline:</strong> 08/31/2026 (133d).
+  </div>
+</section>
+
+<div class="nav-tabs" id="navTabs">
+  <button class="nav-tab active" data-tab="overview">Overview</button>
+  <button class="nav-tab" data-tab="browser">Browser Control Plan</button>
+  <button class="nav-tab" data-tab="tasks">Tasks</button>
+  <button class="nav-tab" data-tab="risks">Risks</button>
+  <button class="nav-tab" data-tab="metrics">Metrics</button>
+</div>
+
+<!-- ============== OVERVIEW ============== -->
+<div class="section active" id="overview">
+
+  <div class="banner p1">
+    <div class="icon">★</div>
+    <div>
+      <h2>North Star</h2>
+      <p>Tuesday Apr 21 email out to insurance agents. Mercedes appt-setter demo to Teresa today. Inventory perfected during 3–4d prospect response window. Pilot ships → 20 subs @ $499/mo → $9,980 MRR → Frankie full-time → Quote AI → DAO insurance.</p>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="banner p1" style="margin-bottom:0;padding:12px;">
+        <div class="icon">📞</div>
+        <div><h2>P1 · Voice AI · Mercedes</h2><p>South Bay · Mgr Chris Mazzio · Jessica agent (Retell)</p></div>
+      </div>
+      <div style="margin-top:12px;">
+        <div class="progress-wrap"><div class="progress-label"><span>Appointment-setter (500+ call-tested)</span><span class="up">LIVE</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div></div>
+        <div class="progress-wrap"><div class="progress-label"><span>Global-node qualification bug</span><span class="up">FIXED Apr 19</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div></div>
+        <div class="progress-wrap"><div class="progress-label"><span>Per-node model SOP (Gemini+Haiku)</span><span class="up">LOCKED</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div></div>
+        <div class="progress-wrap"><div class="progress-label"><span>Inventory query synonym map</span><span style="color:var(--red)">TODAY</span></div><div class="progress-bar"><div class="progress-fill" style="width:25%;background:var(--red)"></div></div></div>
+        <div class="progress-wrap"><div class="progress-label"><span>No-data webhook fix</span><span style="color:var(--red)">TODAY</span></div><div class="progress-bar"><div class="progress-fill" style="width:20%;background:var(--red)"></div></div></div>
+        <div class="progress-wrap"><div class="progress-label"><span>Sales-prompt context guardrails (x4)</span><span style="color:var(--orange)">TODAY</span></div><div class="progress-bar"><div class="progress-fill" style="width:35%;background:var(--orange)"></div></div></div>
+        <div class="progress-wrap"><div class="progress-label"><span>Pilot SOW</span><span style="color:var(--orange)">AWAITING GM</span></div><div class="progress-bar"><div class="progress-fill" style="width:40%;background:var(--orange)"></div></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="banner p2" style="margin-bottom:0;padding:12px;">
+        <div class="icon">🛡</div>
+        <div><h2>P2 · Insurance Lead Gen</h2><p>Retell qualifier · GHL · agent close · Tue email T-1</p></div>
+      </div>
+      <div style="margin-top:12px;">
+        <div class="progress-wrap"><div class="progress-label"><span>Tuesday Apr 21 email · copy + list</span><span style="color:var(--orange)">T-1d</span></div><div class="progress-bar"><div class="progress-fill" style="width:70%;background:var(--orange)"></div></div></div>
+        <div class="progress-wrap"><div class="progress-label"><span>Stripe test product + payment verify</span><span style="color:var(--orange)">TODAY</span></div><div class="progress-bar"><div class="progress-fill" style="width:30%;background:var(--orange)"></div></div></div>
+        <div class="progress-wrap"><div class="progress-label"><span>Teresa demo · Mercedes appt-setter</span><span style="color:var(--orange)">TODAY PM</span></div><div class="progress-bar"><div class="progress-fill" style="width:55%;background:var(--orange)"></div></div></div>
+        <div class="progress-wrap"><div class="progress-label"><span>Site · remove "AI" hero banner</span><span style="color:var(--orange)">TODAY</span></div><div class="progress-bar"><div class="progress-fill" style="width:10%;background:var(--orange)"></div></div></div>
+        <div class="progress-wrap"><div class="progress-label"><span>Revenue model ($25–50/lead, $1k/wk)</span><span class="up">DEFINED</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="accent">📡 Intelligence Feed (Apr 11 → Apr 20)</h3>
+    <ul>
+      <li><strong>Apr 20 · Mon early AM</strong> · Mtg 19 close-out. Model SOP ratified. Inventory benched from Tue email. Teresa demo prepped for PM. Paystub sidebar closed (Frankie: "we will never do that again lmao"). Dashboard v8. <span class="tag tag-green">INGESTED</span></li>
+      <li><strong>Apr 19 · Sun night</strong> · 58+ min Mercedes debug session. Tested Gemini 3.1 Flash Lite, Claude Sonnet, Claude Haiku across intro + sales + inventory nodes. Identified global-node bypass, no-data hang, literal-string query mismatch. <span class="tag tag-green">INGESTED</span></li>
+      <li><strong>Apr 19 · morning</strong> · Paystub favor for Frankie's friend (County of Santa Clara). Layout broke fixing gap. Both agreed: one-off, never again. <span class="tag tag-red">CLOSED</span></li>
+      <li><strong>Apr 18 · Mtg 18 (58 min)</strong> · Stripe Admin ✓ · Strategy Law killed · token bug logged · Teresa inbound · n8n migrated · RPA self-edit shipped · Mazzio card captured. <span class="tag tag-green">INGESTED</span></li>
+      <li><strong>Apr 17</strong> · HQ split (Oraya + Personal). Sentient v4. SSH migration. Light theme + dark toggle. <span class="tag tag-green">SHIPPED</span></li>
+      <li><strong>Apr 16</strong> · Strategy Law intake (Sophia Diaz, San Jose). Terminated Apr 18. <span class="tag tag-red">CLOSED</span></li>
+      <li><strong>Apr 15</strong> · Stripe $0.37 first signal. Chase ••••6789 auto-payouts ON. <span class="tag tag-green">LIVE</span></li>
+      <li><strong>Apr 12</strong> · Frankie website feedback: 5 items. <span class="tag tag-orange">5 OPEN · +1 "AI" hero removal</span></li>
+      <li><strong>Apr 11</strong> · Retail inventory test PASS. 1,700 vehicles, Jessica voice, 4hr refresh. <span class="tag tag-orange">superseded Apr 19 bugs</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 class="orange">🎤 Key Quotes · Mtg 19</h3>
+    <div class="quote">"The reason why they call it a S-Class, bro, is because there's so many different type of specs. S500, S580, S580E, S560. No one knows the name of these fucking specs but a lot of people know if they want an S-Class. But the DB doesn't have S-Class in the names. That's where it's having a difficult time." — Frankie · nailing the synonym-map requirement</div>
+    <div class="quote">"I shouldn't have to prompt her. She tried to book an appointment with me after I asked her about it. A real person maybe isn't going to ask about another one. I shouldn't be the one holding the fucking conversation together." — Frankie · pinpointing the sales-node context-gap</div>
+    <div class="quote">"This motherfucker's sick. Her tone doesn't sound dead anymore. She sounds alive. That fucking model brought her voice alive." — Frankie · on Gemini 3.1 Flash Lite intro</div>
+    <div class="quote">"Now now it involves an it-in, right? It is not just a prompt." — CTO · escalating inventory fix out of prompt-only scope into n8n code-node work</div>
+    <div class="quote">"Maybe in those three four days we'll be able to perfect it and actually test it before we show it to them. I don't want them to test it in this state even after we've approved it." — CTO · benching inventory from Tuesday pilot</div>
+    <div class="quote">"Once we master an agent completely, we should have an SOP for all of our qualifications on all of the nodes and all of the models. Every single time we deploy a new vertical, we don't have to tinker." — Frankie · origin of per-node Model SOP</div>
+  </div>
+
+  <div class="card">
+    <h3>AutoNation Escalation</h3>
+    <p>Mercedes South Bay = opening move. Real prize: AutoNation MSA across 323 dealerships.</p>
+    <p><span class="tag tag-blue">Pilot 30d</span> · <span class="tag tag-blue">Dealer SLA $1.5–2.5K/mo</span> · <span class="tag tag-orange">Case study</span> · <span class="tag tag-pink">Corp intro</span> · <span class="tag tag-green">MSA · 323 rooftops × $1–1.5K = $323–485K/mo · 96% margin</span></p>
+  </div>
+</div>
+
+<!-- ============== BROWSER CONTROL PLAN ============== -->
+<div class="section" id="browser">
+  <h2 class="section-title">Browser Control Plan · Apr 20 Work Session</h2>
+
+  <div class="banner red">
+    <div class="icon">🤖</div>
+    <div>
+      <h2>Sentient Protocol · Prompt-Injection Ingest</h2>
+      <p>Mtg 19 transcript parsed as executable directive queue. 15 embedded tasks extracted. Below is the exact surface-by-surface execution order for this morning's 8–10 AM fix window. Tool tier preferred: dedicated MCP → Chrome MCP (DOM-aware) → computer use (pixel) only where unavoidable.</p>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3 class="accent">Tool-Tier Selection</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Surface</th><th>Tool</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>n8n workflow editor</td><td>Chrome MCP</td><td>Web app · DOM-aware click + JS eval beats pixel clicks · fast iteration</td></tr>
+          <tr><td>Retell agent editor</td><td>Chrome MCP</td><td>Web app · node-by-node model swap + prompt paste</td></tr>
+          <tr><td>Supabase query UI</td><td>Chrome MCP</td><td>Run diagnostic SQL against vehicles table directly · verify sync vs query root cause</td></tr>
+          <tr><td>Stripe dashboard</td><td>Chrome MCP</td><td>Product create + payment link + balance check</td></tr>
+          <tr><td>Website (Vercel / Next.js)</td><td>Bash + Edit</td><td>Code-deploy workflow faster than clicking CMS · hero banner in repo</td></tr>
+          <tr><td>Phone test calls</td><td>Manual (Chitraksh + Frankie)</td><td>Physical phone · can't automate. Browser tool pre-wires, humans verify.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="card">
+      <h3 class="accent">Session Pre-Flight Checklist</h3>
+      <ul>
+        <li>Confirm Chrome MCP extension installed + connected (expected ✓)</li>
+        <li>User session refresh if any MCP reports "integration upgraded / tools stale" (memory rule)</li>
+        <li>request_access for: Chrome, Retell tab, n8n tab, Stripe tab, Supabase tab, Terminal</li>
+        <li>Pin all 4 web-app tabs in one browser window before starting (prevents tab-thrash)</li>
+        <li>Open two phones on hand for live test-call verification (Chitraksh + Frankie)</li>
+        <li>Supabase SQL diagnostic written BEFORE opening browser: <code>select count(*), model, trim from vehicles where model ilike '%s-class%' or trim ilike 'S%' group by 1,2 order by 1 desc;</code></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="red">Phase 1 · n8n · Inventory Query Rebuild (30 min)</h3>
+    <div class="step"><span class="sn">1</span><strong>Open n8n at <code>orayacorporation.app.n8n.cloud</code></strong> · open "Mercedes Inventory Query" workflow. Screenshot current node graph for rollback reference.<div class="meta">Chrome MCP · navigate + screenshot</div></div>
+    <div class="step"><span class="sn">2</span><strong>Add synonym-expansion code node</strong> before the DB query. Maps family → trims. <code>{ "S-Class": ["S500","S550","S560","S580","S580E","S63","S65","Maybach-S"], "E-Class": [...], "GLB":[...], "GLC":[...], "GLA":[...], "AMG-GT":[...] }</code>. Output: array of IN-clause candidates.<div class="meta">Chrome MCP · double-click canvas → "Code" node → paste JS</div></div>
+    <div class="step"><span class="sn">3</span><strong>Modify Supabase query node</strong> · replace exact-match <code>eq(model, "S-Class")</code> with <code>.in('trim', trimArray)</code> or use <code>ilike</code> with <code>%</code> wildcards on trim field. Remove LIMIT 5 or raise to LIMIT 50 and let LLM pick 3-5.</div>
+    <div class="step"><span class="sn">4</span><strong>Add no-data guard code node</strong> on the empty branch. If <code>items.length === 0</code>, emit <code>{ speak: "I don't see any exact matches for that in our current inventory. Let me pull up the closest options I have on the lot." }</code> and call respond-to-webhook immediately (prevents agent hang).</div>
+    <div class="step"><span class="sn">5</span><strong>Wire the empty branch to respond-to-webhook.</strong> Current wiring lets flow terminate silently. Confirm both success and empty paths hit webhook.</div>
+    <div class="step"><span class="sn">6</span><strong>Test query from n8n UI</strong> · run with input "S-Class" · expect ≥ 9 rows (earlier diagnostic showed 42 exist). Run with input "2026 S-Class" · should return the 2026 model Frankie spotted. Run with input "nonexistent model" · expect no-match speaking intent.</div>
+  </div>
+
+  <div class="card">
+    <h3 class="red">Phase 2 · Supabase · Root-Cause Diagnostic (10 min · parallel to Phase 1)</h3>
+    <div class="step"><span class="sn">1</span><strong>Open Supabase · SQL editor</strong> · project with vehicles table.</div>
+    <div class="step"><span class="sn">2</span><strong>Count by model-family</strong> to verify sync captures all S-Class variants: <code>select count(*) from vehicles where trim ~ '^S[0-9]{3}';</code> Expect 42+ if sync is healthy.</div>
+    <div class="step"><span class="sn">3</span><strong>Check 2026 model-year rows</strong>: <code>select model, trim, year, stock_status from vehicles where year=2026 order by model;</code> If rows exist = sync OK, query tool at fault. If rows missing = sync misses new-arrival feed.</div>
+    <div class="step"><span class="sn">4</span><strong>If sync misses 2026 data</strong> · check the inventory-sync n8n workflow cron + the dealer-feed URL for new-model filter. Frankie saw 4 S-Class on site but sync shows fewer · likely feed-scope mismatch.</div>
+    <div class="step"><span class="sn">5</span><strong>Document the finding</strong> in this dashboard's R13 row before end of session.</div>
+  </div>
+
+  <div class="card">
+    <h3 class="orange">Phase 3 · Retell · Per-Node Model Swap + Prompt Hardening (25 min)</h3>
+    <div class="step"><span class="sn">1</span><strong>Open Retell · agent "Jessica" · Flow Builder.</strong></div>
+    <div class="step"><span class="sn">2</span><strong>Intro node</strong> · set LLM = Gemini 3.1 Flash Lite · hardcode intro: <em>"Thank you for calling Mercedes-Benz of South Bay on a recorded line. This is Jessica. I see you're reaching out on this fine {dayOfWeek} {timeOfDay}, the perfect time to get you behind the wheel. Are you looking to come in for a test drive or are you an existing client looking for world-class service?"</em> · Per SOP, intro is frozen.</div>
+    <div class="step"><span class="sn">3</span><strong>Sales / Qualification node</strong> · set LLM = Claude Haiku. Revert from any HiQ/Sonnet setting. Paste updated system prompt with the four guardrails (Phase 4).</div>
+    <div class="step"><span class="sn">4</span><strong>Inventory node</strong> · set LLM = Claude Haiku · ensure tool binding calls the updated n8n query with the synonym map.</div>
+    <div class="step"><span class="sn">5</span><strong>Global node · remove identity-verify</strong> (confirmation only · Chitraksh already removed Apr 19). Take screenshot for audit.</div>
+    <div class="step"><span class="sn">6</span><strong>Publish agent</strong> · click Publish. Note the version number in Phase 5 test log.</div>
+  </div>
+
+  <div class="card">
+    <h3 class="orange">Phase 4 · Sales-Prompt Guardrails · 4 new rules</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>#</th><th>Rule</th><th>Origin quote</th></tr></thead>
+      <tbody>
+        <tr><td>G1</td><td><strong>No-skip-qualification:</strong> even after the user says "test drive," do NOT jump to first-name / email capture. Must still ask current vehicle + what they want different + model suggestion first.</td><td>"It skipped the sales and inventory node entirely"</td></tr>
+        <tr><td>G2</td><td><strong>Contextual sales:</strong> after user names current car, use it. If EV → ask EV vs gas preference, don't assume. If family car → family-oriented. If performance → AMG line. Never collect data without using it.</td><td>"What's the point of asking the information if you're not going to know what to do with the information"</td></tr>
+        <tr><td>G3</td><td><strong>Assume add, not replace:</strong> Mercedes customers often add to collection. Reframe: "are you looking to add a Mercedes to the lineup?" instead of "what's pushing you to switch."</td><td>"The person might get offended · I love my car, why am I switching it up"</td></tr>
+        <tr><td>G4</td><td><strong>Never offer email-breakdown as alternative to appointment.</strong> Kills conversion. Only "come see it in person" closes.</td><td>"Some people are going to say give me a fucking email and then we killed our own appointment"</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h3 class="orange">Phase 5 · Live Call Verification (20 min · 8–10 AM)</h3>
+    <div class="step"><span class="sn">1</span><strong>Chitraksh places 5 test calls</strong> · Frankie listens/critiques one at a time. Cases: (a) "shopping around, looking for SUV" (b) "I want an S-Class specifically" (c) "I drive a 2019 Tesla, want something new" (d) "looking for a test drive" (must not skip qualification) (e) "do you have any 2026 S-Class?" (tests sync + synonym map together).</div>
+    <div class="step"><span class="sn">2</span><strong>Pass criteria:</strong> (a) intro warm · Gemini tone · hardcoded copy · (b) qualification before any name/email capture · (c) inventory query returns ≥3 real vehicles per model family · (d) no dead air >3s · (e) no appointment booking before at least 2 sales-node turns.</div>
+    <div class="step"><span class="sn">3</span><strong>Log each call</strong> · call_id · pass/fail per criterion · failure mode if any. Pushes to <code>Oraya-AI-HQ/projects/oraya-labs/logs/apr20-test-calls.md</code>.</div>
+    <div class="step"><span class="sn">4</span><strong>If 4/5 pass</strong> · appt-setter + inventory both green-light for Teresa demo. If only 3/5 · demo with appt-setter only (inventory stays benched as planned).</div>
+  </div>
+
+  <div class="card">
+    <h3 class="p2">Phase 6 · Stripe Test Product + Site Banner (15 min)</h3>
+    <div class="step"><span class="sn">1</span><strong>Stripe · Products → New</strong> · "Oraya Pilot Test · $1" · generate payment link. Chitraksh pays with personal card. Verify balance arrives Chase ••••6789 (Frankie admin visibility). Archive product after pass.</div>
+    <div class="step"><span class="sn">2</span><strong>Site "AI" hero removal</strong> · Frankie request Apr 18: "remove AI in the beginning of our site launching · makes us appear less enterprise." Locate hero copy in Next.js repo · replace / delete · commit · redeploy via Vercel.</div>
+  </div>
+
+  <div class="card">
+    <h3 class="p2">Phase 7 · Teresa Demo Prep (Afternoon)</h3>
+    <div class="step"><span class="sn">1</span><strong>Demo script:</strong> Frankie opens Gmeet + screen-share with Teresa. Chitraksh injects her name + phone into appt-setter outbound config. Agent calls her live. She receives text confirmation + email confirmation as the customer.</div>
+    <div class="step"><span class="sn">2</span><strong>Do NOT demo inventory.</strong> Stated explicitly Mtg 19. Mercedes appt-setter only. Insurance agent flow NOT yet.</div>
+    <div class="step"><span class="sn">3</span><strong>Leave-behind</strong> · one-pager PDF · Oraya-AI-Pilot-Offer summary · already in <code>deliverables/</code>.</div>
+    <div class="step"><span class="sn">4</span><strong>Exit CTAs for Teresa:</strong> (1) supply 2 insurance leads to pilot with · (2) intro 1 agency owner from her network · (3) optional: $1k/wk retainer.</div>
+  </div>
+
+</div>
+
+<!-- ============== TASKS ============== -->
+<div class="section" id="tasks">
+  <h2 class="section-title">Tasks · ordered by Tuesday Apr 21 ship</h2>
+
+  <div class="card">
+    <h3 class="red">Tier 0 · TODAY Apr 20 (before Teresa demo)</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>#</th><th>Task</th><th>Owner</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td>T0.1</td><td><strong>n8n · add no-data guard + synonym-map code nodes</strong> · wire both paths to respond-to-webhook.</td><td>CTO-Claude</td><td>Morning</td></tr>
+        <tr><td>T0.2</td><td><strong>Supabase · diagnostic SQL</strong> · determine sync-miss vs query-tool fault for 2026 S-Class.</td><td>CTO-Claude</td><td>Morning</td></tr>
+        <tr><td>T0.3</td><td><strong>Retell · lock Gemini 3.1 FL intro · Haiku sales/inv · hardcode intro copy · publish</strong>.</td><td>CTO-Claude</td><td>Morning</td></tr>
+        <tr><td>T0.4</td><td><strong>Retell · sales-node system prompt · add G1–G4 guardrails</strong>.</td><td>CTO-Claude</td><td>Morning</td></tr>
+        <tr><td>T0.5</td><td><strong>5 live test calls · 8–10 AM session</strong> · Frankie + Chitraksh.</td><td>Both</td><td>8–10 AM</td></tr>
+        <tr><td>T0.6</td><td><strong>Stripe test product · $1 · verify Chase ••••6789 credit</strong>.</td><td>CTO-Claude + Frankie</td><td>Morning</td></tr>
+        <tr><td>T0.7</td><td><strong>Site · remove "AI" hero text · redeploy</strong>.</td><td>CTO-Claude</td><td>Morning</td></tr>
+        <tr><td>T0.8</td><td><strong>Teresa demo</strong> · Gmeet · appt-setter only · inject name+phone live.</td><td>Both</td><td>PM</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h3 class="orange">Tier 1 · Tue Apr 21 SHIP</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>#</th><th>Task</th><th>Owner</th></tr></thead>
+      <tbody>
+        <tr><td>T1.1</td><td><strong>Send Tuesday email</strong> to insurance-agent list · appt-setter pilot only · 30d free / $0 / 24h exit / 72h data-purge.</td><td>Frankie (copy signed) + CTO (deliverability)</td></tr>
+        <tr><td>T1.2</td><td><strong>Frankie → Mazzio follow-up</strong> · "Following up on Oraya pilot · opened to any vehicle · 20 min this week?" If silent 48h → in-person 3311 PCH.</td><td>Frankie</td></tr>
+        <tr><td>T1.3</td><td><strong>Bind E&amp;O Plus $82.42/mo</strong> · cyber rider under SB 446.</td><td>Frankie</td></tr>
+        <tr><td>T1.4</td><td><strong>Pilot SOW template</strong> · dealer side = signature only, no negotiation.</td><td>CTO-Claude</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h3 class="p2">Tier 2 · 3–4d response window (Apr 22 → Apr 25)</h3>
+    <ul>
+      <li><strong>Inventory query · perfect it</strong> before first prospect tests · synonym map coverage across GLA, GLB, GLC, E, S, AMG · sync feed debugged · 20-vehicle sample QA.</li>
+      <li><strong>In-house AI legal bootstrap</strong> · vendor DPAs × 6, pilot SOW template, mutual NDA · replaces Strategy Law $10K scope.</li>
+      <li><strong>Teresa anchor close</strong> · 2 leads or $1k/wk retainer or agency intro.</li>
+      <li><strong>Website · Apr 12 5-item sequence</strong> · CTAs · Vagaro hero · voice demo · life-insurance sample · Stripe link.</li>
+      <li><strong>n8n 30-day auto-purge</strong> · implement and verify.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 class="green">Tier 3 · Compounding (30–60d)</h3>
+    <ul>
+      <li><strong>Per-Node Model SOP document</strong> · machine-readable YAML + human doc. Every future vertical starts from this spec.</li>
+      <li><strong>Supabase HIPAA tier</strong> · confirm Team+ before claiming HIPAA in offer.</li>
+      <li><strong>TISAX bundle</strong> for dealership handoff. Vercel L2 = our edge.</li>
+      <li><strong>SOC 2 Type I</strong> for AutoNation MSA. ~$15–25K + 3 months.</li>
+      <li><strong>Human warm-transfer test</strong> · cold works · warm connects but no advisor briefing.</li>
+      <li><strong>Add Chitraksh to C Corp</strong> · LegalZoom dropped · Frankie sourcing attorney.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 class="pink">Tier 4 · Horizon (90d+)</h3>
+    <ul>
+      <li>Quote AI MVP · autonomous insurance agency · start with RPA e-application submission.</li>
+      <li>DAO Insurance whitepaper · Chitraksh + Solana cousin.</li>
+      <li>Holding Co. structure · P1 + P2 + Quote AI + DAO as subsidiaries.</li>
+      <li>Gemini 3.1 Live eval as 11Labs replacement · Jun–Jul 2026 · SIP/PSTN + cost-per-min confirmation needed.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============== RISKS ============== -->
+<div class="section" id="risks">
+  <h2 class="section-title">Risk Register · Apr 20 snapshot</h2>
+
+  <div class="card">
+    <h3 class="red">Active</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>#</th><th>Risk</th><th>Sev</th><th>Owner</th><th>Mitigation</th></tr></thead>
+      <tbody>
+        <tr><td>R13a</td><td><strong>Inventory query literal-string mismatch</strong> · S-Class → 5 of 42</td><td><span class="tag tag-red">HIGH</span></td><td>CTO</td><td>Synonym-map code node. Today T0.1.</td></tr>
+        <tr><td>R13b</td><td><strong>No-data webhook hang</strong> · agent goes silent on empty result</td><td><span class="tag tag-red">HIGH</span></td><td>CTO</td><td>Code node emitting no-match intent + webhook. Today T0.1.</td></tr>
+        <tr><td>R13c</td><td><strong>Inventory sync vs query root cause unclear</strong> · 2026 models invisible</td><td><span class="tag tag-red">HIGH</span></td><td>CTO</td><td>Supabase SQL diagnostic. Today T0.2.</td></tr>
+        <tr><td>R14</td><td><strong>Tue Apr 21 email deliverability + copy final</strong></td><td><span class="tag tag-orange">MED</span></td><td>Both</td><td>Copy signed today. Send tomorrow AM.</td></tr>
+        <tr><td>R15</td><td><strong>Teresa demo quality</strong> · second external tester ever</td><td><span class="tag tag-orange">MED</span></td><td>Both</td><td>Appt-setter only. No inventory demo.</td></tr>
+        <tr><td>R1</td><td>Mazzio silent · Mercedes momentum decay</td><td><span class="tag tag-red">HIGH</span></td><td>Frankie</td><td>Follow-up this week · card in hand.</td></tr>
+        <tr><td>R11</td><td><strong>Khalid deal CANNOT route through MB official channels</strong> · felony risk</td><td><span class="tag tag-red">HIGH</span></td><td>Both</td><td>Crypto/shell entity separately. Zero MB-linked comms.</td></tr>
+        <tr><td>R3</td><td>E&amp;O bind decision (Std $46 vs Plus $82.42)</td><td><span class="tag tag-orange">MED</span></td><td>Frankie</td><td>Recommend Plus · cyber covers SB 446.</td></tr>
+        <tr><td>R4</td><td>Website 5 open items · +AI hero removal</td><td><span class="tag tag-orange">MED</span></td><td>Oraya</td><td>Today T0.7 starts the sequence.</td></tr>
+        <tr><td>R5</td><td>DPAs unsigned · 6 vendors</td><td><span class="tag tag-orange">MED</span></td><td>CTO</td><td>CPRA § 1798.140(ag). In-house templates ship Apr 25.</td></tr>
+        <tr><td>R6</td><td>Supabase HIPAA tier (BAA needs Team+)</td><td><span class="tag tag-orange">MED</span></td><td>CTO</td><td>Confirm tier before claiming HIPAA.</td></tr>
+        <tr><td>R7</td><td>n8n 30-day auto-purge designed, not deployed</td><td><span class="tag tag-orange">MED</span></td><td>CTO</td><td>Implement this week.</td></tr>
+        <tr><td>R8</td><td>Dealership A2P 10DLC (customer-facing)</td><td><span class="tag tag-orange">MED</span></td><td>Mercedes SB</td><td>Oraya covers admin-to-admin.</td></tr>
+        <tr><td>R9</td><td>No DR/failover for Retell pipeline</td><td><span class="tag tag-orange">MED</span></td><td>CTO</td><td>Human-transfer fallback minimum.</td></tr>
+        <tr><td>R10</td><td>Client portal MFA not enforced</td><td><span class="tag tag-blue">LOW</span></td><td>CTO</td><td>Enforce at Supabase auth pre-pilot.</td></tr>
+        <tr><td>R12</td><td>Meeting tangent ratio · 20% Mtg 18 · paystub sidebar Mtg 19</td><td><span class="tag tag-blue">LOW</span></td><td>CTO self-monitor</td><td>Cap at 15%. Paystub-style favors = never again.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h3 class="green">Recently Closed</h3>
+    <ul>
+      <li><strong>Apr 19 · Global-node qualification skip</strong> · identity-verify removed from global. Test-drive intent no longer bypasses sales + inventory.</li>
+      <li><strong>Apr 19 · HiQ sales-node decision REVERSED</strong> · Haiku is the right choice. Sonnet failed (skipped nodes). Per-node SOP locked.</li>
+      <li><strong>Apr 19 · Paystub favor</strong> · closed. Frankie: "we will never do that again lmao." CTO committed no scope-creep requests of this type.</li>
+      <li><strong>Apr 18 · R2 Stripe Admin gap</strong> · invite accepted.</li>
+      <li><strong>Apr 18 · Strategy Law $10K decision</strong> · in-house AI legal bootstrap.</li>
+      <li><strong>Apr 18 · n8n naming drift</strong> · <code>orayacorporation.app.n8n.cloud</code>.</li>
+      <li><strong>Apr 17 · GitHub push</strong> · SSH migration. Permanent fix.</li>
+      <li><strong>Apr 17 · HQ monolith blast radius</strong> · split into Oraya + Personal (Personal deleted Apr 20).</li>
+      <li><strong>Apr 7 · E&amp;O ambiguity</strong> · separate Oraya quote secured.</li>
+      <li><strong>Apr 3 · Lead resale legality</strong> · opted-in resale legal.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============== METRICS ============== -->
+<div class="section" id="metrics">
+  <h2 class="section-title">Metrics · cost, model SOP, voice config, psych</h2>
+
+  <div class="card">
+    <h3 class="accent">🔒 Per-Node Model SOP · locked Apr 19</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Node</th><th>Model</th><th>Why</th><th>Cost/min</th><th>Failures tested</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Intro</strong></td><td>Gemini 3.1 Flash Lite</td><td>Warmer tone. Good at jokes and lively framing. "Brings her voice alive." Hardcoded copy protects against drift.</td><td>low tier</td><td>default Retell LLM (flat tone)</td></tr>
+        <tr><td><strong>Sales / Qualification</strong></td><td>Claude Haiku</td><td>Consistent tool-use + prompt adherence. Sonnet over-indexes on efficiency, skips nodes. Gemini Flash Lite fails here (skipped sales entirely).</td><td>$0.10/min baseline</td><td>Gemini 3.1 FL, Claude Sonnet · both SKIPPED nodes</td></tr>
+        <tr><td><strong>Inventory</strong></td><td>Claude Haiku</td><td>Reliable function-calling to n8n query. Needs clear synonym-expanded inputs (Phase 1 fix).</td><td>$0.10/min</td><td>N/A · blocked on query fix</td></tr>
+        <tr><td><strong>Appointment / Booking</strong></td><td>Claude Haiku</td><td>Cleanly captures first-name + email + datetime. Proven across 500+ calls.</td><td>$0.10/min</td><td>none</td></tr>
+        <tr><td><strong>Outro</strong></td><td>Claude Haiku</td><td>Confirmation + text/email kickoff. Stable.</td><td>$0.10/min</td><td>none</td></tr>
+      </tbody>
+    </table></div>
+    <p style="margin-top:10px;"><strong>SOP rule:</strong> every new vertical (insurance, real-estate, dental, etc.) starts from this map. Override only after a 20-call A/B with evidence. Document deltas in <code>Oraya-AI-HQ/reference/per-node-model-sop.md</code>.</p>
+  </div>
+
+  <div class="card">
+    <h3>Cost Stack · per client/month</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Layer</th><th>Vendor</th><th>Cost</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Voice AI</td><td>Retell</td><td><strong>$0.10/min</strong></td><td>Haiku dominant. ~$0.35/call avg.</td></tr>
+        <tr><td>Orchestration</td><td>n8n Cloud</td><td>$20–34</td><td>86 workflows. <code>orayacorporation.app.n8n.cloud</code>.</td></tr>
+        <tr><td>Database</td><td>Supabase</td><td>$0–25</td><td>HIPAA BAA = Team+ tier.</td></tr>
+        <tr><td>Telephony</td><td>Twilio A2P 10DLC</td><td>$15</td><td>Brand + campaign approved.</td></tr>
+        <tr><td>CRM</td><td>GoHighLevel</td><td>$0–97</td><td>Sub-account per client.</td></tr>
+        <tr><td>Payments</td><td>Stripe</td><td>2.9% + $0.30</td><td>Frankie owner · Chase ••••6789.</td></tr>
+        <tr><td><strong>Total</strong></td><td></td><td class="up"><strong>$30–40/mo/client</strong></td><td>Pricing $997 → $3–5K → $7–11K.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h3>Pricing Ladder</h3>
+    <ul>
+      <li><strong>Entry · $997/mo</strong> · voice AI baseline, single location.</li>
+      <li><strong>Growth · $3,000–5,000/mo/location</strong> · post-pilot, full stack + SLA.</li>
+      <li><strong>Enterprise · $7,000–11,000/mo/location</strong> · custom + inventory AI.</li>
+      <li><strong>Pilot</strong> · 30 days / $0 / 24h exit / 72h purge.</li>
+      <li><strong>Insurance</strong> · $25–50/lead · $50–100/appt · $1K/wk retainer · 140% commission ($1,920/policy).</li>
+    </ul>
+    <p><strong>Unit economics:</strong> $997 @ $30–40 infra = ~96% gross. $5K = effectively pure margin.</p>
+  </div>
+
+  <div class="card">
+    <h3>Voice Agent Config (Jessica · prod Apr 20)</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Component</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>Voice ID</td><td><code>cd2fbc5e381df2b880e4533e52</code> · Speed 6.6</td></tr>
+        <tr><td>LLM Intro</td><td><strong>Gemini 3.1 Flash Lite</strong> · hardcoded copy · recording notice + date/time via RPA</td></tr>
+        <tr><td>LLM Sales / Inventory</td><td><strong>Claude Haiku</strong> (Apr 19 lock · reverses Apr 18 HiQ call)</td></tr>
+        <tr><td>Global node</td><td>identity-verify REMOVED Apr 19 (fixed qualification-skip bug)</td></tr>
+        <tr><td>Telephony</td><td>Twilio A2P 10DLC. Brand + campaign approved.</td></tr>
+        <tr><td>Orchestration</td><td>86 workflows. Form: <code>orayacorporation.app.n8n.cloud/form/43f8942b-7c76-413b-80f5-6d4fc63250f7</code></td></tr>
+        <tr><td>Consent store</td><td>Supabase immutable consent_log + RLS</td></tr>
+        <tr><td>PII redaction</td><td>Retell 9-category PII engine pre-Supabase</td></tr>
+        <tr><td>Cost/call</td><td>$0.10/min · 3m30s avg = <strong>$0.35</strong> · $30 budget = 85 calls</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3 class="accent">Chitraksh · CTO/Builder · Apr 20</h3>
+      <p>Mtg 19 : identified 3 root-cause bugs in live-debug, made the call to bench inventory from Tuesday ship rather than ship brittle ("I don't want them to test it in this state"). Shipped global-node fix in-session. Built the per-node model SOP frame.</p>
+      <div class="meter-row"><div class="label">Build throughput</div><div class="bar"><span style="width:95%;background:var(--green)"></span></div><div class="val">95 ▲</div></div>
+      <div class="meter-row"><div class="label">Decision velocity</div><div class="bar"><span style="width:92%;background:var(--green)"></span></div><div class="val">92 ▲</div></div>
+      <div class="meter-row"><div class="label">Legal/compliance rigor</div><div class="bar"><span style="width:88%;background:var(--accent)"></span></div><div class="val">88 flat</div></div>
+      <div class="meter-row"><div class="label">Root-cause instinct</div><div class="bar"><span style="width:93%;background:var(--green)"></span></div><div class="val">93 ▲</div></div>
+      <div class="meter-row"><div class="label">Context-switching load</div><div class="bar"><span style="width:85%;background:var(--orange)"></span></div><div class="val">85 ▲</div></div>
+      <div class="meter-row"><div class="label">Scope discipline</div><div class="bar"><span style="width:78%;background:var(--orange)"></span></div><div class="val">78 ▼ (paystub)</div></div>
+      <div class="meter-row"><div class="label">Risk appetite</div><div class="bar"><span style="width:76%;background:var(--orange)"></span></div><div class="val">76 flat</div></div>
+      <div class="quote">"Now now it involves an it-in. It is not just a prompt." · Apr 19 · knowing when to escalate out of prompt-only scope</div>
+    </div>
+    <div class="card">
+      <h3 class="p2">Frankie · CEO/Dealmaker · Apr 20</h3>
+      <p>Tech literacy leveled up materially. Named the synonym-map requirement before CTO did. Recognized "the call feels weird socially" and mapped it to node-skip bug. Made the Teresa appointment-setter-only call. Paystub sidebar was scope slip (acknowledged and closed).</p>
+      <div class="meter-row"><div class="label">Relationship currency</div><div class="bar"><span style="width:97%;background:var(--green)"></span></div><div class="val">97 flat</div></div>
+      <div class="meter-row"><div class="label">Sales closing instinct</div><div class="bar"><span style="width:93%;background:var(--green)"></span></div><div class="val">93 ▲</div></div>
+      <div class="meter-row"><div class="label">Domain legal intuition</div><div class="bar"><span style="width:84%;background:var(--accent)"></span></div><div class="val">84 flat</div></div>
+      <div class="meter-row"><div class="label">Capital discipline</div><div class="bar"><span style="width:83%;background:var(--accent)"></span></div><div class="val">83 ▲</div></div>
+      <div class="meter-row"><div class="label">Execution follow-through</div><div class="bar"><span style="width:77%;background:var(--orange)"></span></div><div class="val">77 ▲</div></div>
+      <div class="meter-row"><div class="label">Technical vocabulary</div><div class="bar"><span style="width:71%;background:var(--orange)"></span></div><div class="val">71 ▲ (big jump)</div></div>
+      <div class="meter-row"><div class="label">Scope discipline</div><div class="bar"><span style="width:69%;background:var(--orange)"></span></div><div class="val">69 ▼ (paystub)</div></div>
+      <div class="quote">"I shouldn't be the one holding the fucking conversation together." · Apr 19 · naming the sales-node context gap</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Partnership Notes (Apr 20)</h3>
+    <ul>
+      <li><strong>Mtg 19 quality:</strong> 58+ min debug over phone + screenshare · tangent ratio ~12% (excluding paystub thread which was off-session) · decisions/min high.</li>
+      <li><strong>Sentient Protocol v4 still holds:</strong> transcript = executable task queue. 15 directives extracted, 8 shipping today.</li>
+      <li><strong>New failure mode:</strong> scope-creep favors. Paystub cost ~2hrs and broke the document layout. Pact: no non-Oraya production work.</li>
+      <li><strong>Complementarity confirmed:</strong> Frankie names the failure in human-language, Chitraksh maps it to the node + file. Same call.</li>
+      <li><strong>Handover trust:</strong> Frankie gates the demo (Teresa, appt-setter only). CTO trusted this call without renegotiation.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Frankie · Historical Psych Trend</h3>
+    <p>Preserve for trend tracking.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Metric</th><th>Apr 5</th><th>Apr 18</th><th>Apr 20</th><th>Trend</th></tr></thead>
+      <tbody>
+        <tr><td>Sales Ability</td><td>9.2</td><td>9.2</td><td><strong>9.3</strong></td><td class="up">▲</td></tr>
+        <tr><td>Strategic Vision</td><td>9.2</td><td>9.3</td><td><strong>9.4</strong></td><td class="up">▲</td></tr>
+        <tr><td>Emotional Intelligence</td><td>8.5</td><td>8.6</td><td><strong>8.7</strong></td><td class="up">▲</td></tr>
+        <tr><td>Domain Knowledge (Insurance)</td><td>9.2</td><td>9.2</td><td>9.2</td><td class="flat">flat</td></tr>
+        <tr><td>Execution Discipline</td><td>6.2</td><td>7.0</td><td><strong>7.4</strong></td><td class="up">▲</td></tr>
+        <tr><td>Focus / On Topic</td><td>5.0</td><td>5.8</td><td><strong>5.2</strong></td><td class="down">▼ paystub sidebar</td></tr>
+        <tr><td>Technical Literacy</td><td>5.5</td><td>6.2</td><td><strong>7.1</strong></td><td class="up">▲▲ big jump (Mtg 19 diagnostics)</td></tr>
+      </tbody>
+    </table></div>
+    <p><strong>Update rule:</strong> Every dashboard update compares current state vs transcript + WhatsApp evidence. Justify score moves with quoted evidence. Never freeze.</p>
+  </div>
+</div>
+
+<div class="footer">
+  <strong>Oraya Labs</strong> · Intelligence Dashboard v8 Tuesday T-1 · Apr 20, 2026 · Sentient Protocol v4 · <em>transcript = task queue</em>
+</div>
+
+</div>
+
+<script>
+const tabs=document.querySelectorAll('.nav-tab'),secs=document.querySelectorAll('.section');
+tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));secs.forEach(s=>s.classList.remove('active'));t.classList.add('active');document.getElementById(t.dataset.tab).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}));
+const tt=document.getElementById('themeToggle'),html=document.documentElement;
+tt.addEventListener('click',()=>{const d=html.dataset.theme==='dark';html.dataset.theme=d?'light':'dark';tt.textContent=d?'Dark mode':'Light mode';try{localStorage.setItem('oraya-theme',html.dataset.theme)}catch(e){}});
+try{const s=localStorage.getItem('oraya-theme');if(s){html.dataset.theme=s;tt.textContent=s==='dark'?'Light mode':'Dark mode'}}catch(e){}
+</script>
+</body>
+</html>

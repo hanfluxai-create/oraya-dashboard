@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Oraya Pilot Offer — Mercedes-Benz of South Bay</title>
+<style>
+  @page {
+    size: Letter;
+    /* Leave ~1.35in at top for the running header, ~1.0in at bottom for the running footer */
+    margin: 1.35in 0.75in 1.0in 0.75in;
+
+    @top-left {
+      content: element(pageHeader);
+      width: 100%;
+      vertical-align: top;
+    }
+    @bottom-left {
+      content: element(pageFooter);
+      width: 100%;
+      vertical-align: bottom;
+    }
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    color: #222;
+    font-size: 10.25pt;
+    line-height: 1.42;
+    background: #fff;
+  }
+
+  /* ===== Running header ===== */
+  .page-header {
+    position: running(pageHeader);
+    width: 100%;
+    padding-top: 0.35in;
+  }
+  .hdr-wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12pt;
+  }
+  .hdr-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hdr-left svg { display: block; }
+  .brand-block .brand {
+    font-size: 26pt;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #2D1B69;
+    line-height: 1;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+  .hdr-right {
+    text-align: right;
+    font-size: 8.2pt;
+    color: #444;
+    line-height: 1.55;
+  }
+  .rule {
+    margin-top: 9pt;
+    height: 1pt;
+    background: linear-gradient(90deg, #14356C 0%, #7A1E6B 45%, #C72C82 100%);
+    width: 100%;
+  }
+
+  /* ===== Running footer ===== */
+  .page-footer {
+    position: running(pageFooter);
+    width: 100%;
+  }
+  .footer-band {
+    width: 100%;
+    box-sizing: border-box;
+    background: #111827;
+    color: #e5e7eb;
+    padding: 8pt 14pt;
+    border-top: 2pt solid #C72C82;
+    font-size: 8.2pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-l { font-weight: 700; color: #fff; }
+  .footer-r { color: #cfd3dc; }
+  .footer-sub {
+    margin-top: 4pt;
+    font-size: 7.3pt;
+    font-style: italic;
+    color: #777;
+    text-align: center;
+  }
+
+  /* ===== Body ===== */
+  h1, h2, h3 { color: #14356C; }
+  .date { margin-top: 0pt; }
+  .addr { margin-top: 10pt; line-height: 1.35; }
+  .subject { margin-top: 14pt; font-weight: 700; color: #14356C; }
+  p { margin: 7pt 0; text-align: justify; }
+  .section-title {
+    margin-top: 12pt;
+    margin-bottom: 3pt;
+    font-weight: 700;
+    font-size: 10.75pt;
+    color: #14356C;
+  }
+  ul { margin: 5pt 0 5pt 18pt; padding: 0; }
+  ul li { margin: 2.5pt 0; }
+  .sig { margin-top: 16pt; }
+  .sig .name { font-weight: 700; color: #14356C; }
+  em { font-style: italic; }
+  strong { font-weight: 700; }
+
+  .encl { margin-top: 12pt; font-style: italic; font-size: 9.75pt; }
+</style>
+</head>
+<body>
+
+<!-- ===== Running header ===== -->
+<div class="page-header">
+  <div class="hdr-wrap">
+    <div class="hdr-left">
+      <svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Complete donut — 5 segments × 72° each, slight overlap to avoid seams.
+             Circumference at r=32 ≈ 201.06; 72° arc = 40.21. Use 41.5 stroke + 159.6 gap. -->
+        <!-- Segment 1: cyan/teal — top (12→2 o'clock) -->
+        <circle cx="50" cy="50" r="32" fill="none" stroke="#29A7D6" stroke-width="18" stroke-linecap="butt"
+                stroke-dasharray="41.5 159.6" transform="rotate(-90 50 50)"/>
+        <!-- Segment 2: blue/indigo — upper-right (2→4 o'clock) -->
+        <circle cx="50" cy="50" r="32" fill="none" stroke="#3D4FBF" stroke-width="18" stroke-linecap="butt"
+                stroke-dasharray="41.5 159.6" transform="rotate(-18 50 50)"/>
+        <!-- Segment 3: violet — lower-right (4→7 o'clock) -->
+        <circle cx="50" cy="50" r="32" fill="none" stroke="#7A2FAE" stroke-width="18" stroke-linecap="butt"
+                stroke-dasharray="41.5 159.6" transform="rotate(54 50 50)"/>
+        <!-- Segment 4: magenta/pink — bottom-left (7→9 o'clock) -->
+        <circle cx="50" cy="50" r="32" fill="none" stroke="#C72C82" stroke-width="18" stroke-linecap="butt"
+                stroke-dasharray="41.5 159.6" transform="rotate(126 50 50)"/>
+        <!-- Segment 5: crimson — left (9→12 o'clock) -->
+        <circle cx="50" cy="50" r="32" fill="none" stroke="#8B1A4F" stroke-width="18" stroke-linecap="butt"
+                stroke-dasharray="41.5 159.6" transform="rotate(198 50 50)"/>
+      </svg>
+      <div class="brand-block">
+        <div class="brand">Oraya</div>
+      </div>
+    </div>
+    <div class="hdr-right">
+      HQ&nbsp;&nbsp;5560 Lexington Avenue, 429 · San Jose, CA 95123 · United States<br>
+      ✉&nbsp; frankie@orayalabs.ai<br>
+      ☎&nbsp; +1 (510) 520-4265 · orayalabs.ai
+    </div>
+  </div>
+  <div class="rule"></div>
+</div>
+
+<!-- ===== Running footer ===== -->
+<div class="page-footer">
+  <div class="footer-band">
+    <span class="footer-l">www.orayalabs.ai</span>
+    <span class="footer-r">Oraya Corporation · All rights reserved.</span>
+  </div>
+  <div class="footer-sub">Confidential property of Oraya Corporation · Unauthorized reproduction or distribution is strictly prohibited</div>
+</div>
+
+<!-- ===== Body ===== -->
+<div class="date">April 22, 2026</div>
+
+<div class="addr">
+  General Manager<br>
+  Mercedes-Benz of South Bay<br>
+  3311 Pacific Coast Highway<br>
+  Torrance, CA 90505
+</div>
+
+<div class="subject">Re: Complimentary 30-Day AI Voice Pilot, Mercedes-Benz of South Bay</div>
+
+<p>Dear General Manager,</p>
+
+<p>I am Frankie Alicea, Chief Executive Officer of Oraya Corporation, a San Jose-based artificial intelligence company that builds <strong>compliance-first voice automation purpose-built for franchised automotive dealerships</strong>. I am writing to personally invite Mercedes-Benz of South Bay<sup>1</sup> to participate in a complimentary 30-day pilot of our Voice Platform at zero platform fee, with no long-term commitment, and a clear path to measurable results.</p>
+
+<p>Our platform handles inbound and outbound Service BDC, Sales, and follow-up calls, including scheduling appointments, answering customer questions, and re-engaging open repair orders, while your staff focuses on high-value, in-person interactions. We built Oraya because dealerships deserve technology that works <em>with</em> their compliance obligations, not around them.</p>
+
+<p>This is not a generic SaaS dropped onto a Mercedes-Benz phone line. <strong>The entire voice system is built from scratch and personalized for Mercedes-Benz of South Bay</strong>: call flows modeled on your service menu, DMS and scheduling integrations mapped to your workflow, intent libraries trained on your brand voice, and compliance scripts localized to California and to your dealership's own disclosure standards. Your rooftop, your data, your stack.</p>
+
+<div class="section-title">Why Compliance Is Not Optional: It Is Our Foundation</div>
+
+<p>Every voice call to or from a California consumer triggers a matrix of federal and state obligations: TCPA prior express written consent (PEWC) for outbound automated calls (47 U.S.C. §227(b); 47 C.F.R. §64.1200), CIPA all-party recording disclosure (Cal. Penal Code §§ 632, 632.7), CPRA data-handling and consumer-rights obligations, FTC bot-and-deceptive-practice rules under §5 of the FTC Act, and California's Bolstering Online Transparency Act (SB 1001, Cal. Bus. &amp; Prof. Code §§ 17940-17943) requiring clear identification of automated agents. A single violation can expose a dealership to statutory damages of $500 to $1,500 <em>per call</em> under the TCPA and $5,000 per violation under CIPA. Most AI vendors treat compliance as an afterthought; we treat it as architecture.</p>
+
+<p>Our six-vendor stack (Twilio, RetellAI, n8n Cloud, Supabase, Google Vertex AI, and a Vercel-hosted dashboard) is built on providers that maintain <strong>SOC 2 Type II attestations or equivalent enterprise security certifications</strong>; current attestation reports are available under NDA. For outbound automated calls, we enforce PEWC verification before dialing; for inbound calls, we deliver the CIPA all-party recording disclosure and the SB 1001 automated-agent identification at the start of every interaction. We maintain an immutable consent ledger with row-level access controls and apply data-minimization and retention rules consistent with the CPRA. Our full <strong>Post-Implementation Legal &amp; Technical Compliance Verification Report</strong>, prepared by Oraya in-house compliance counsel, is available on request for review by your counsel and IT leadership.</p>
+
+<div class="section-title">Pilot Scope &amp; Terms</div>
+
+<p style="margin-bottom:3pt;"><strong>What we are proposing:</strong></p>
+<ul>
+  <li><strong>A voice system built from scratch for Mercedes-Benz of South Bay</strong> — not a pre-packaged product. Call flows, scripts, integrations, and intent models are tailored to your dealership</li>
+  <li>Full voice agent deployment on <strong>one (1) Service BDC line</strong></li>
+  <li>Inbound call handling: appointment scheduling, service status inquiries, hours/location questions</li>
+  <li>Outbound follow-up: open repair order re-engagement for consented customers only</li>
+  <li>Real-time analytics dashboard with call recordings, appointment conversion tracking, and compliance audit logs</li>
+  <li>TCPA/CIPA/FTC/SB 1001-compliant call handling with the appropriate disclosure or consent gate on every interaction</li>
+  <li>Dedicated implementation manager and weekly performance check-ins</li>
+  <li>Comprehensive written performance report delivered at Day 30</li>
+</ul>
+
+<p style="margin-top:8pt; margin-bottom:3pt;"><strong>Pilot terms:</strong></p>
+<ul>
+  <li><strong>Duration:</strong> 30 calendar days from the activation date defined in the Service Provider Addendum</li>
+  <li><strong>Cost:</strong> $0 platform fee; no setup or implementation charge. Telephony usage (Twilio carrier minutes and number rental) for the pilot DID is absorbed by Oraya for the pilot duration</li>
+  <li><strong>Commitment:</strong> Either party may discontinue at any time with 24 hours' written notice. Oraya reserves the right to suspend immediately upon a regulatory inquiry, suspected non-consent event, or other compliance trigger</li>
+  <li><strong>Data ownership &amp; role:</strong> All dealership and consumer data remains the sole property of Mercedes-Benz of South Bay. Oraya acts as a CPRA-defined "service provider" (Cal. Civ. Code §1798.140(ag)) only under, and subject to execution of, our Service Provider Addendum and DPA, executed prior to activation</li>
+  <li><strong>Termination &amp; data return:</strong> Upon conclusion or discontinuation, all customer-identifying data is purged within 72 hours with written confirmation, except for (i) consent records, call disclosures, and audit logs Oraya is required to retain to defend against compliance claims, (ii) records subject to a legal hold, and (iii) anonymized aggregate metrics</li>
+</ul>
+
+<div class="section-title">Post-Pilot Scenarios</div>
+
+<p>We believe in earning your business through demonstrated performance. At the conclusion of the 30-day pilot, there are three possible outcomes:</p>
+
+<p><strong>Scenario 1: Results meet expectations.</strong>&nbsp;&nbsp;We transition to a production agreement at competitive monthly pricing that is transparent, rooftop-based, and designed for ROI from Day 1. A detailed proposal will be presented at the Day 30 review.</p>
+
+<p><strong>Scenario 2: Promising but needs refinement.</strong>&nbsp;&nbsp;We extend the pilot at no cost for up to 15 days to optimize performance and tune call handling to your preferences.</p>
+
+<p><strong>Scenario 3: Not the right fit.</strong>&nbsp;&nbsp;You walk away with zero obligation. We purge all data, provide written deletion confirmation, and part on professional terms. All reports remain yours.</p>
+
+<div class="section-title">How We Measure Success</div>
+
+<p>The Day 30 report will quantify performance across four dimensions: <strong>operational efficiency</strong> (booking rate, handle time, first-call resolution); <strong>revenue impact</strong> (appointments booked, RO re-engagement conversions, recovered missed-call revenue); <strong>customer experience</strong> (satisfaction indicators, transfer rate, escalation frequency); and <strong>compliance posture</strong> (consent verification rate, disclosure delivery, data-purge logs, and a written compliance-posture report based on available logs identifying any known issues and remediation steps).</p>
+
+<div class="section-title">Enclosed Documentation &amp; Next Steps</div>
+
+<p>Accompanying this letter is our <strong>Post-Implementation Legal &amp; Technical Compliance Verification Report</strong> covering TCPA, CIPA, CPRA, FTC §5, and SB 1001 analysis with statutory citations, deployed controls, consent scripts, and a residual risk matrix, prepared proactively because dealerships deserve full legal transparency <em>before</em> a single automated call is made.</p>
+
+<p>I would welcome the opportunity to schedule a 30-minute call at your earliest convenience to walk through the platform, answer questions from your management, counsel, or IT team, and align on a pilot start date. Mercedes-Benz of South Bay has an exceptional reputation, and we would be honored to support your dealership with technology that matches the standard your customers expect.</p>
+
+<p>Respectfully,</p>
+
+<div class="sig">
+  <div class="name">Frankie Alicea</div>
+  <div>Chief Executive Officer</div>
+  <div>Oraya Corporation</div>
+  <div>frankie@orayalabs.ai&nbsp; |&nbsp; +1 (510) 520-4265&nbsp; |&nbsp; orayalabs.ai</div>
+</div>
+
+<!-- Branded signature mark -->
+<div style="margin-top:16pt; display:flex; align-items:center; gap:10px;">
+  <svg width="42" height="42" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="32" fill="none" stroke="#29A7D6" stroke-width="18" stroke-linecap="butt"
+            stroke-dasharray="41.5 159.6" transform="rotate(-90 50 50)"/>
+    <circle cx="50" cy="50" r="32" fill="none" stroke="#3D4FBF" stroke-width="18" stroke-linecap="butt"
+            stroke-dasharray="41.5 159.6" transform="rotate(-18 50 50)"/>
+    <circle cx="50" cy="50" r="32" fill="none" stroke="#7A2FAE" stroke-width="18" stroke-linecap="butt"
+            stroke-dasharray="41.5 159.6" transform="rotate(54 50 50)"/>
+    <circle cx="50" cy="50" r="32" fill="none" stroke="#C72C82" stroke-width="18" stroke-linecap="butt"
+            stroke-dasharray="41.5 159.6" transform="rotate(126 50 50)"/>
+    <circle cx="50" cy="50" r="32" fill="none" stroke="#8B1A4F" stroke-width="18" stroke-linecap="butt"
+            stroke-dasharray="41.5 159.6" transform="rotate(198 50 50)"/>
+  </svg>
+  <div style="line-height:1.25;">
+    <div style="font-size:16pt; font-weight:700; color:#2D1B69; letter-spacing:-0.3px;">Oraya</div>
+    <div style="font-size:7pt; letter-spacing:1.8px; color:#6a6a6a; text-transform:uppercase; margin-top:2px;">© 2026 Oraya Corporation · All Rights Reserved</div>
+  </div>
+</div>
+
+<p style="margin-top:14pt; font-size:8pt; color:#555; text-align:left; line-height:1.45;"><sup>1</sup>&nbsp;Mercedes-Benz<sup>®</sup> and Mercedes-Benz of South Bay are trademarks of their respective owners. References herein are nominative and for identification only; no endorsement, sponsorship, or affiliation with Mercedes-Benz Group AG, Mercedes-Benz USA, LLC, or Mercedes-Benz of South Bay is claimed or implied. This letter is a non-binding pilot proposal and does not constitute an offer capable of acceptance until both parties execute Oraya's Pilot Services Agreement and Service Provider Addendum.</p>
+
+</body>
+</html>

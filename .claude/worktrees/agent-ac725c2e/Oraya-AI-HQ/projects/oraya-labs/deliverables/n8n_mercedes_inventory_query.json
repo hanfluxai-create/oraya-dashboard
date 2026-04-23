@@ -1,0 +1,137 @@
+{
+  "name": "Mercedes SB — Inventory Query (Retell Tool)",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## 🎙️ Retell Inventory Query Tool\n\n**Full filter set Jessica can pass:**\n- model        → \"GLC 300\", \"AMG GT\", \"CLA\"\n- body_style   → \"SUV\", \"Sedan\", \"Coupe\", \"Convertible\"\n- trim         → \"AMG GT 63 S\", \"4MATIC+\"\n- color        → \"black\", \"white\", \"silver\"\n- fuel_type    → \"Gasoline\", \"Hybrid\", \"Electric\"\n- condition    → \"New\" or \"Used\"\n- min_price    → minimum MSRP (number)\n- max_price    → maximum MSRP (number)\n- min_year     → e.g. 2024\n- max_year     → e.g. 2026\n- max_mileage  → for used vehicles (number)\n\n**Webhook URL (after activation):**\nhttps://orayalabsai.app.n8n.cloud/webhook/inventory-query\n\n**REPLACE before activating:**\n- REPLACE_SUPABASE_PROJECT_URL\n- REPLACE_SUPABASE_ANON_KEY (both occurrences in Query Supabase node)",
+        "width": 440,
+        "height": 460,
+        "color": 3
+      },
+      "id": "note-001",
+      "name": "Setup Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-340, 140]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "inventory-query",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-001",
+      "name": "Retell Inventory Query",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "inv-query-webhook-001"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ── Extract all filter params from Retell tool call body ──────────────\n// Retell sends the tool parameters as top-level JSON fields in POST body\nconst body = $input.item.json.body || $input.item.json;\n\n// String filters\nconst model      = (body.model      || '').trim();\nconst body_style = (body.body_style || '').trim();\nconst trim_level = (body.trim       || '').trim();\nconst color      = (body.color      || '').trim();\nconst fuel_type  = (body.fuel_type  || '').trim();\nconst condition  = (body.condition  || '').trim(); // 'New' or 'Used'\n\n// Numeric range filters\nconst min_price   = body.min_price   ? parseFloat(body.min_price)   : null;\nconst max_price   = body.max_price   ? parseFloat(body.max_price)   : null;\nconst min_year    = body.min_year    ? parseInt(body.min_year)      : null;\nconst max_year    = body.max_year    ? parseInt(body.max_year)      : null;\nconst max_mileage = body.max_mileage ? parseFloat(body.max_mileage) : null;\n\n// ── Build PostgREST query string ──────────────────────────────────────\n// Supabase REST API operators:\n//   ilike.*term*  = case-insensitive CONTAINS\n//   eq.value      = exact match\n//   gte.value     = greater than or equal\n//   lte.value     = less than or equal\nconst parts = [\n  'select=*',\n  'order=msrp_numeric.asc.nullslast',\n  'limit=10'\n];\n\n// Text / partial-match filters\nif (model)      parts.push('model=ilike.*'          + encodeURIComponent(model)      + '*');\nif (body_style) parts.push('body_style=ilike.*'     + encodeURIComponent(body_style) + '*');\nif (trim_level) parts.push('trim=ilike.*'           + encodeURIComponent(trim_level) + '*');\nif (color)      parts.push('exterior_color=ilike.*' + encodeURIComponent(color)      + '*');\nif (fuel_type)  parts.push('fuel_type=ilike.*'      + encodeURIComponent(fuel_type)  + '*');\n\n// Exact condition match\nif (condition) parts.push('condition=eq.' + encodeURIComponent(condition));\n\n// Numeric range filters\nif (min_price)   parts.push('msrp_numeric=gte.' + min_price);\nif (max_price)   parts.push('msrp_numeric=lte.' + max_price);\nif (min_year)    parts.push('year=gte.'         + min_year);\nif (max_year)    parts.push('year=lte.'         + max_year);\nif (max_mileage) parts.push('mileage=lte.'      + max_mileage);\n\n// Detect if caller is clearly looking for something specific\nconst has_filters = !!(model || body_style || trim_level || color || fuel_type ||\n                       condition || min_price || max_price || min_year || max_year || max_mileage);\n\nreturn [{\n  json: {\n    query_string: parts.join('&'),\n    filters: { model, body_style, trim_level, color, fuel_type, condition,\n               min_price, max_price, min_year, max_year, max_mileage },\n    has_filters\n  }\n}];",
+        "mode": "runOnceForEachItem"
+      },
+      "id": "code-001",
+      "name": "Build Query",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ 'https://REPLACE_SUPABASE_PROJECT_URL/rest/v1/mercedes_inventory?' + $json.query_string }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "apikey",        "value": "REPLACE_SUPABASE_ANON_KEY" },
+            { "name": "Authorization", "value": "Bearer REPLACE_SUPABASE_ANON_KEY" },
+            { "name": "Content-Type",  "value": "application/json" },
+            { "name": "Prefer",        "value": "count=exact" }
+          ]
+        },
+        "options": {
+          "timeout": 15000,
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        },
+        "onError": "continueRegularOutput"
+      },
+      "id": "http-001",
+      "name": "Query Supabase",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [700, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ── Guard: handle Supabase error responses before format step ─────────\n// Supabase returns error objects like { code, message, details, hint }\n// when credentials are wrong, table doesn't exist, or query is malformed.\n// We catch that here so Format Voice Response always gets a clean array.\n\nconst allItems = $input.all();\n\n// Check if first item looks like a Supabase error\nconst first = allItems[0] && allItems[0].json;\nif (first && (first.code || first.message) && !first.vin) {\n  // It's an error object — return a graceful fallback\n  const errMsg = first.message || first.code || 'unknown error';\n  console.error('Supabase query error:', errMsg);\n  return [{\n    json: {\n      _supabase_error: true,\n      error_message: errMsg,\n      inventory_context: \"I'm having a little trouble pulling up our live inventory right now. Our team can give you the most accurate information — shall I have someone reach out to you directly?\",\n      count: 0\n    }\n  }];\n}\n\n// All good — pass items through unchanged\nreturn allItems;",
+        "mode": "runOnceForAllItems"
+      },
+      "id": "code-guard-001",
+      "name": "Guard Supabase Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [920, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ── Short-circuit if upstream guard already set inventory_context ──────\nconst allItems = $input.all();\nconst first = allItems[0] && allItems[0].json;\n\nif (first && first._supabase_error) {\n  // Pass through the error fallback message directly\n  return [{ json: first }];\n}\n\n// ── Collect all vehicle items returned by Supabase ────────────────────\nconst vehicles = allItems\n  .map(item => item.json)\n  .filter(v => v && v.vin && typeof v.vin === 'string');\n\nconst count = vehicles.length;\n\n// ── NO RESULTS ────────────────────────────────────────────────────────\nif (count === 0) {\n  return [{\n    json: {\n      inventory_context: \"I wasn't able to find any vehicles matching those exact specifications in our current inventory. Our inventory refreshes every four hours, and our team also has access to incoming units not yet listed online. I'd love to connect you with one of our sales advisors who can give you a complete picture — would that work for you?\",\n      count: 0\n    }\n  }];\n}\n\n// ── FORMAT RESULTS INTO SPEAKABLE VOICE RESPONSE ─────────────────────\nconst ordinals = ['first', 'second', 'third', 'fourth', 'fifth'];\n\nlet response = count === 1\n  ? 'I found one vehicle that matches what you are looking for. '\n  : `Great news — I found ${count} vehicle${count > 1 ? 's' : ''} that match your request. `;\n\nvehicles.slice(0, 5).forEach((v, i) => {\n  const price = v.msrp_numeric\n    ? '$' + Number(v.msrp_numeric).toLocaleString('en-US')\n    : (v.msrp && v.msrp !== 'N/A' ? v.msrp : 'call for pricing');\n\n  const color     = v.exterior_color || 'showroom color';\n  const trim      = v.trim ? ' ' + v.trim : '';\n  const year      = v.year || '';\n  const model     = v.model || 'Mercedes-Benz';\n  const condLabel = (v.condition === 'New') ? 'brand new' : 'pre-owned';\n  const fullLabel = `${condLabel} ${year} ${model}${trim}`.trim();\n\n  const isLast = i === Math.min(count, 5) - 1;\n\n  if (i === 0) {\n    response += `The ${ordinals[i]} is a ${fullLabel} in ${color}, priced at ${price}. `;\n  } else if (isLast && count <= 5) {\n    response += `And the ${ordinals[i]} is a ${color} ${v.trim || model} at ${price}. `;\n  } else {\n    response += `The ${ordinals[i]} is a ${color} ${v.trim || model} at ${price}. `;\n  }\n});\n\nif (count > 5) {\n  const extra = count - 5;\n  response += `We also have ${extra} more option${extra > 1 ? 's' : ''} available. `;\n}\n\nresponse += 'Would you like more details on any of these, or shall I arrange for you to come in and take one for a test drive?';\n\nreturn [{\n  json: {\n    inventory_context: response,\n    count: count,\n    top_matches: vehicles.slice(0, 5).map(v => ({\n      vin:        v.vin,\n      year:       v.year,\n      model:      v.model,\n      trim:       v.trim,\n      color:      v.exterior_color,\n      price:      v.msrp,\n      mileage:    v.mileage,\n      condition:  v.condition,\n      body_style: v.body_style\n    }))\n  }\n}];",
+        "mode": "runOnceForAllItems"
+      },
+      "id": "code-002",
+      "name": "Format Voice Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1140, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ inventory_context: $json.inventory_context }) }}",
+        "options": {}
+      },
+      "id": "respond-001",
+      "name": "Respond to Retell",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1360, 300]
+    }
+  ],
+  "connections": {
+    "Retell Inventory Query": {
+      "main": [[{ "node": "Build Query",              "type": "main", "index": 0 }]]
+    },
+    "Build Query": {
+      "main": [[{ "node": "Query Supabase",            "type": "main", "index": 0 }]]
+    },
+    "Query Supabase": {
+      "main": [[{ "node": "Guard Supabase Response",   "type": "main", "index": 0 }]]
+    },
+    "Guard Supabase Response": {
+      "main": [[{ "node": "Format Voice Response",     "type": "main", "index": 0 }]]
+    },
+    "Format Voice Response": {
+      "main": [[{ "node": "Respond to Retell",         "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "pinData": {},
+  "_meta": {
+    "version": "2.0",
+    "changes": [
+      "Fixed webhook URL in sticky note — now points to orayalabsai.app.n8n.cloud (was hanfluxai2026)",
+      "Added Guard Supabase Response node — catches Supabase error objects before Format step, returns graceful voice fallback",
+      "Format Voice Response updated to short-circuit cleanly on upstream error",
+      "Query limit raised from 5 to 10 — Format step still caps voice output at top 5 but fetches more for better ranking",
+      "top_matches now includes mileage field for full context",
+      "mileage filter (max_mileage → mileage=lte.X) already present — now works because Sync workflow stores mileage column"
+    ]
+  }
+}

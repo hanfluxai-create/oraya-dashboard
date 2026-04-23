@@ -1,0 +1,315 @@
+{
+  "name": "Mercedes SB — Inventory Sync (Every 4 Hours)",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## 🚗 Mercedes SB Inventory Sync\n**What this does:**\n1. Runs every 4 hours\n2. Captures sync start time (for stale cleanup)\n3. Hits sbmercedes.com's live inventory API\n4. Paginates through ALL vehicles\n5. Upserts to Supabase `mercedes_inventory` table\n6. Removes stale vehicles (sold/delisted) after sync\n\n**Supabase table required:**\nRun this SQL to create it:\n```sql\nCREATE TABLE mercedes_inventory (\n  vin TEXT PRIMARY KEY,\n  stock_number TEXT,\n  year TEXT,\n  make TEXT,\n  model TEXT,\n  trim TEXT,\n  body_style TEXT,\n  exterior_color TEXT,\n  interior_color TEXT,\n  fuel_type TEXT,\n  mileage NUMERIC,\n  msrp TEXT,\n  msrp_numeric NUMERIC,\n  condition TEXT,\n  classification TEXT,\n  detail_url TEXT,\n  scraped_at TIMESTAMPTZ DEFAULT NOW(),\n  updated_at TIMESTAMPTZ DEFAULT NOW()\n);\n\nCREATE INDEX idx_mercedes_model ON mercedes_inventory(model);\nCREATE INDEX idx_mercedes_color ON mercedes_inventory(exterior_color);\nCREATE INDEX idx_mercedes_condition ON mercedes_inventory(condition);\nCREATE INDEX idx_mercedes_fuel ON mercedes_inventory(fuel_type);\nCREATE INDEX idx_mercedes_mileage ON mercedes_inventory(mileage);\nCREATE INDEX idx_mercedes_msrp ON mercedes_inventory(msrp_numeric);\n```",
+        "width": 500,
+        "height": 540,
+        "color": 4
+      },
+      "id": "note-001",
+      "name": "Setup Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-300, 200]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 4
+            }
+          ]
+        }
+      },
+      "id": "trigger-001",
+      "name": "Every 4 Hours",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "sync-start-ts",
+              "name": "sync_started_at",
+              "value": "={{ new Date().toISOString() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set-001",
+      "name": "Capture Sync Start",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://www.sbmercedes.com/apis/widget/INVENTORY_LISTING_DEFAULT_AUTO_NEW:inventory-data-bus1/getInventory",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "pageStart", "value": "0" },
+            { "name": "pageSize", "value": "1" }
+          ]
+        },
+        "options": {
+          "timeout": 30000,
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        },
+        "onError": "continueRegularOutput"
+      },
+      "id": "http-001",
+      "name": "Get Total Count",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Validate API response — bail out cleanly if sbmercedes.com is down\nconst resp = $input.item.json;\n\nif (!resp || resp.error || !resp.pageInfo) {\n  throw new Error(\n    'sbmercedes.com API returned an unexpected response: ' +\n    JSON.stringify(resp).substring(0, 200)\n  );\n}\n\nconst totalCount = resp.pageInfo.totalCount;\nif (!totalCount || totalCount < 1) {\n  throw new Error('pageInfo.totalCount missing or zero — aborting sync');\n}\n\n// Pass total count + sync start timestamp forward\nreturn [{\n  json: {\n    totalCount: totalCount,\n    sync_started_at: $('Capture Sync Start').item.json.sync_started_at\n  }\n}];",
+        "mode": "runOnceForEachItem"
+      },
+      "id": "code-check-001",
+      "name": "Validate API Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build array of page offsets based on totalCount\nconst totalCount = $input.item.json.totalCount;\nconst syncStart = $input.item.json.sync_started_at;\nconst pageSize = 100;\nconst totalPages = Math.ceil(totalCount / pageSize);\n\nconst pages = [];\nfor (let i = 0; i < totalPages; i++) {\n  pages.push({\n    json: {\n      pageStart: i * pageSize,\n      pageSize: pageSize,\n      totalCount: totalCount,\n      totalPages: totalPages,\n      pageNumber: i + 1,\n      sync_started_at: syncStart\n    }\n  });\n}\n\nreturn pages;",
+        "mode": "runOnceForEachItem"
+      },
+      "id": "code-001",
+      "name": "Build Page Offsets",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "batch-001",
+      "name": "Loop Pages",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [1340, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://www.sbmercedes.com/apis/widget/INVENTORY_LISTING_DEFAULT_AUTO_NEW:inventory-data-bus1/getInventory",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "pageStart", "value": "={{ $json.pageStart }}" },
+            { "name": "pageSize", "value": "={{ $json.pageSize }}" }
+          ]
+        },
+        "options": {
+          "timeout": 30000,
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        },
+        "onError": "continueRegularOutput"
+      },
+      "id": "http-002",
+      "name": "Fetch Inventory Page",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1560, 220]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Skip pages where the API returned an error\nconst resp = $input.item.json;\nif (!resp || resp.error || !Array.isArray(resp.inventory)) {\n  // Log and skip — do not crash the whole sync\n  return [{ json: { _skipped: true, reason: 'bad_api_response' } }];\n}\n\nconst vehicles = resp.inventory;\n\nreturn vehicles.map(v => {\n  // Flatten attribute array into key-value map\n  const attrs = {};\n  (v.attributes || []).forEach(a => {\n    if (a.name) attrs[a.name] = a.value || '';\n  });\n\n  // Pricing\n  const pricingObj = v.pricing || {};\n  const msrpStr = pricingObj.retailPrice || 'N/A';\n  const msrpNumeric = parseFloat(msrpStr.replace(/[^0-9.]/g, '')) || null;\n\n  // Year — from title array\n  const titleArr = v.title || [];\n  const yearMake = titleArr[0] || '';\n  const yearMatch = yearMake.match(/(\\d{4})/);\n  const year = yearMatch ? yearMatch[1] : (attrs.year || '');\n\n  // Mileage — critical for used-car queries\n  const rawMileage =\n    v.mileage ||\n    attrs.mileage ||\n    attrs.Mileage ||\n    attrs.odometer ||\n    attrs.Odometer ||\n    (v.certifiedDetails && v.certifiedDetails.odometerReading) ||\n    null;\n  const mileage = rawMileage ? parseFloat(String(rawMileage).replace(/[^0-9.]/g, '')) || null : null;\n\n  // Detail URL\n  const detailPath = v.link || '';\n  const detailUrl = detailPath ? 'https://www.sbmercedes.com' + detailPath : '';\n\n  return {\n    json: {\n      vin:            v.vin || '',\n      stock_number:   v.stockNumber || attrs.stockNumber || '',\n      year:           year,\n      make:           v.make || 'Mercedes-Benz',\n      model:          v.model || '',\n      trim:           v.trim || attrs.trim || '',\n      body_style:     attrs.bodyStyle || attrs.body_style || '',\n      exterior_color: attrs.exteriorColor || attrs.exterior_color || '',\n      interior_color: attrs.interiorColor || attrs.interior_color || '',\n      fuel_type:      v.fuelType || attrs.fuelType || '',\n      mileage:        mileage,\n      msrp:           msrpStr,\n      msrp_numeric:   msrpNumeric,\n      condition:      v.condition || '',\n      classification: v.classification || '',\n      detail_url:     detailUrl,\n      scraped_at:     new Date().toISOString(),\n      updated_at:     new Date().toISOString()\n    }\n  };\n}).filter(v => v.json.vin !== '' && !v.json._skipped);",
+        "mode": "runOnceForEachItem"
+      },
+      "id": "code-002",
+      "name": "Parse Vehicles",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1780, 220]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Skip upsert for rows that were skipped upstream (bad API page)\nconst item = $input.item.json;\nif (item._skipped) {\n  return [{ json: item }];\n}\nreturn [{ json: item }];",
+        "mode": "runOnceForEachItem"
+      },
+      "id": "code-skip-check",
+      "name": "Skip Bad Pages",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2000, 220]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "tableId": "mercedes_inventory",
+        "fieldsUi": {
+          "fieldValues": [
+            { "fieldId": "vin",            "fieldValue": "={{ $json.vin }}" },
+            { "fieldId": "stock_number",   "fieldValue": "={{ $json.stock_number }}" },
+            { "fieldId": "year",           "fieldValue": "={{ $json.year }}" },
+            { "fieldId": "make",           "fieldValue": "={{ $json.make }}" },
+            { "fieldId": "model",          "fieldValue": "={{ $json.model }}" },
+            { "fieldId": "trim",           "fieldValue": "={{ $json.trim }}" },
+            { "fieldId": "body_style",     "fieldValue": "={{ $json.body_style }}" },
+            { "fieldId": "exterior_color", "fieldValue": "={{ $json.exterior_color }}" },
+            { "fieldId": "interior_color", "fieldValue": "={{ $json.interior_color }}" },
+            { "fieldId": "fuel_type",      "fieldValue": "={{ $json.fuel_type }}" },
+            { "fieldId": "mileage",        "fieldValue": "={{ $json.mileage }}" },
+            { "fieldId": "msrp",           "fieldValue": "={{ $json.msrp }}" },
+            { "fieldId": "msrp_numeric",   "fieldValue": "={{ $json.msrp_numeric }}" },
+            { "fieldId": "condition",      "fieldValue": "={{ $json.condition }}" },
+            { "fieldId": "classification", "fieldValue": "={{ $json.classification }}" },
+            { "fieldId": "detail_url",     "fieldValue": "={{ $json.detail_url }}" },
+            { "fieldId": "scraped_at",     "fieldValue": "={{ $json.scraped_at }}" },
+            { "fieldId": "updated_at",     "fieldValue": "={{ $json.updated_at }}" }
+          ]
+        }
+      },
+      "id": "supabase-001",
+      "name": "Upsert to Supabase",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [2220, 220],
+      "credentials": {
+        "supabaseApi": {
+          "id": "REPLACE_SUPABASE_CRED_ID",
+          "name": "Oraya Supabase"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "seconds"
+      },
+      "id": "wait-001",
+      "name": "Rate Limit Pause",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [2440, 220]
+    },
+    {
+      "parameters": {
+        "method": "DELETE",
+        "url": "=https://REPLACE_SUPABASE_PROJECT_URL/rest/v1/mercedes_inventory?updated_at=lt.{{ $('Capture Sync Start').item.json.sync_started_at }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "apikey",        "value": "REPLACE_SUPABASE_ANON_KEY" },
+            { "name": "Authorization", "value": "Bearer REPLACE_SUPABASE_ANON_KEY" },
+            { "name": "Content-Type",  "value": "application/json" }
+          ]
+        },
+        "options": {
+          "timeout": 15000
+        },
+        "onError": "continueRegularOutput"
+      },
+      "id": "http-stale-001",
+      "name": "Remove Stale Vehicles",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1560, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Sync complete — report results\nconst now = new Date().toISOString();\nconst syncStart = $('Capture Sync Start').item.json.sync_started_at || 'unknown';\n\nreturn [{\n  json: {\n    status:       'sync_complete',\n    message:      'Mercedes SB inventory sync finished successfully',\n    sync_started: syncStart,\n    sync_ended:   now,\n    duration_ms:  new Date(now) - new Date(syncStart)\n  }\n}];",
+        "mode": "runOnceForAllItems"
+      },
+      "id": "code-003",
+      "name": "Log Sync Complete",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1780, 400]
+    }
+  ],
+  "connections": {
+    "Every 4 Hours": {
+      "main": [[{ "node": "Capture Sync Start", "type": "main", "index": 0 }]]
+    },
+    "Capture Sync Start": {
+      "main": [[{ "node": "Get Total Count", "type": "main", "index": 0 }]]
+    },
+    "Get Total Count": {
+      "main": [[{ "node": "Validate API Response", "type": "main", "index": 0 }]]
+    },
+    "Validate API Response": {
+      "main": [[{ "node": "Build Page Offsets", "type": "main", "index": 0 }]]
+    },
+    "Build Page Offsets": {
+      "main": [[{ "node": "Loop Pages", "type": "main", "index": 0 }]]
+    },
+    "Loop Pages": {
+      "main": [
+        [{ "node": "Fetch Inventory Page",  "type": "main", "index": 0 }],
+        [{ "node": "Remove Stale Vehicles", "type": "main", "index": 0 }]
+      ]
+    },
+    "Fetch Inventory Page": {
+      "main": [[{ "node": "Parse Vehicles", "type": "main", "index": 0 }]]
+    },
+    "Parse Vehicles": {
+      "main": [[{ "node": "Skip Bad Pages", "type": "main", "index": 0 }]]
+    },
+    "Skip Bad Pages": {
+      "main": [[{ "node": "Upsert to Supabase", "type": "main", "index": 0 }]]
+    },
+    "Upsert to Supabase": {
+      "main": [[{ "node": "Rate Limit Pause", "type": "main", "index": 0 }]]
+    },
+    "Rate Limit Pause": {
+      "main": [[{ "node": "Loop Pages", "type": "main", "index": 0 }]]
+    },
+    "Remove Stale Vehicles": {
+      "main": [[{ "node": "Log Sync Complete", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "pinData": {},
+  "_meta": {
+    "version": "2.0",
+    "changes": [
+      "Added Capture Sync Start node to track sync timestamp",
+      "Added Validate API Response node — exits cleanly if sbmercedes.com is down",
+      "Added onError:continueRegularOutput to Get Total Count and Fetch Inventory Page",
+      "Added mileage field extraction in Parse Vehicles (checks v.mileage, attrs.mileage, attrs.odometer, certifiedDetails.odometerReading)",
+      "Added mileage field to Upsert to Supabase",
+      "Added Skip Bad Pages node to handle pages where API returns errors mid-sync",
+      "Added Remove Stale Vehicles node — deletes rows where updated_at < sync start (removes sold/delisted cars)",
+      "Fixed Log Sync Complete — now reports sync_started, sync_ended, duration_ms instead of wrong vehicle count",
+      "Updated Supabase schema in sticky note to include mileage column and index",
+      "Sync start timestamp propagated through Build Page Offsets for use in stale cleanup"
+    ],
+    "setup_instructions": [
+      "1. CREATE SUPABASE TABLE: Run the SQL from the sticky note (includes mileage column)",
+      "2. SET CREDENTIAL: Replace REPLACE_SUPABASE_CRED_ID with your actual Supabase credential ID",
+      "3. SET STALE CLEANUP URL: Replace REPLACE_SUPABASE_PROJECT_URL and REPLACE_SUPABASE_ANON_KEY in Remove Stale Vehicles node",
+      "4. VERIFY API: Test-run Get Total Count — should return pageInfo.totalCount > 0",
+      "5. FIRST RUN: Click Test Workflow for initial full sync",
+      "6. ACTIVATE: Toggle workflow Active for 4-hour auto-sync"
+    ]
+  }
+}

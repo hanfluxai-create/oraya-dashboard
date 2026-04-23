@@ -110,6 +110,8 @@ Never guess field names. Reference `skills/n8n-workflows/SKILL.md`.
 - **Investment:** $5K Jared + $5K Abdo Melek = $10K total. Convertible SAFE drafted but likely unsigned/unnotarized. LEGAL RISK.
 - **Transfer:** Cold works (SIP invite). Agentic 2-way needs separate agent, not available. Cold transfer after 3 attempts set.
 - **HanFlux ≠ Oraya.** Never conflate. HanFlux is personal venture, pricing ₹2,999-19,999 / $49-399 / 15% revshare.
+- **Tuesday email send-time rule (Apr 22):** Frankie's cold-opens to the insurance agent list go out Tue 08:00-09:00 PT. Response window averages Tue+1 to Tue+4. Any hardware/software hardening (inventory, qualifier guardrails) sized to land before Wed EOD of the following week so inventory-enabled replies hit a stable stack. Sprint naming: "Inventory sprint Day 1 of 4" format used on dashboard v10.
+- **Gmail MCP draft-only (Apr 22):** `mcp__...Gmail...send_draft` is NOT in the Gmail MCP schema. Daily briefs create drafts; on-disk HTML at `deliverables/daily-briefs/YYYY-MM-DD.html` is canonical. Slack-style output line must say "brief saved + draft created (send-draft MCP missing)," not "brief sent."
 
 ---
 

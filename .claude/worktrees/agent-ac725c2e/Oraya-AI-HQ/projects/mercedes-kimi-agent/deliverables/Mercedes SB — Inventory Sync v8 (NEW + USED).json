@@ -1,0 +1,464 @@
+{
+  "name": "Mercedes SB — Inventory Sync v8 (NEW + USED)",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// ── v8 FIX: try numFound FIRST (dealer CDK/DealerSocket APIs use numFound for total inventory,\n// totalCount is often the per-page count). Fallback chain covers all known dealer API shapes.\nconst resp = $input.item.json;\nconst pageInfo = resp?.pageInfo || {};\n\nconst totalCount =\n  pageInfo.numFound          ||\n  pageInfo.totalCount        ||\n  pageInfo.total             ||\n  pageInfo.numRecords        ||\n  pageInfo.totalItems        ||\n  pageInfo.count             ||\n  pageInfo.recordsTotal      ||\n  pageInfo.filteredCount     ||\n  resp?.numFound             ||\n  resp?.totalCount           ||\n  resp?.total                ||\n  0;\n\nif (!resp || resp.error) {\n  throw new Error('USED API error: ' + JSON.stringify(resp).substring(0, 300));\n}\nif (totalCount < 1) {\n  throw new Error(\n    'USED totalCount is zero or missing. pageInfo was: ' +\n    JSON.stringify(pageInfo).substring(0, 500) +\n    ' | full response keys: ' + Object.keys(resp).join(', ')\n  );\n}\n\nreturn { json: { totalCount, sync_started_at: $('Capture Sync Start').first().json.sync_started_at } };"
+      },
+      "id": "c2636e76-1fb0-40ae-8c83-e124f7f1a7d5",
+      "name": "Validate API Response (USED)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [10240, 2960]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 4
+            }
+          ]
+        }
+      },
+      "id": "89467bf5-dbf7-486c-9c3c-b3d0d695493c",
+      "name": "Every 4 Hours",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [8672, 2512]
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [8672, 2704],
+      "id": "5a3b3194-4fed-403e-a1da-d44c451015cb",
+      "name": "When clicking 'Execute workflow'"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ts1",
+              "name": "sync_started_at",
+              "value": "={{ new Date().toISOString() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "eb29ef11-70ee-4f04-87ac-4ed2c7b446ef",
+      "name": "Capture Sync Start",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [8896, 2624]
+    },
+    {
+      "parameters": {
+        "url": "https://www.sbmercedes.com/apis/widget/INVENTORY_LISTING_DEFAULT_AUTO_NEW:inventory-data-bus1/getInventory",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "pageStart", "value": "0" },
+            { "name": "pageSize", "value": "1" }
+          ]
+        },
+        "options": {
+          "response": { "response": { "responseFormat": "json" } },
+          "timeout": 30000
+        }
+      },
+      "id": "a2e0261d-dee9-4091-91a2-aa1a25692f27",
+      "name": "Get Total Count (NEW)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [9120, 2624]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const resp = $input.item.json;\nif (!resp || resp.error || !resp.pageInfo) { throw new Error('sbmercedes NEW API bad response: ' + JSON.stringify(resp).substring(0, 200)); }\nconst totalCount = resp.pageInfo.totalCount;\nif (!totalCount || totalCount < 1) { throw new Error('NEW totalCount missing or zero'); }\nreturn { json: { totalCount, sync_started_at: $('Capture Sync Start').item.json.sync_started_at } };"
+      },
+      "id": "07129231-13cf-4695-a295-d89410288fde",
+      "name": "Validate API Response (NEW)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [9344, 2624]
+    },
+    {
+      "parameters": {
+        "jsCode": "const totalCount = $input.item.json.totalCount;\nconst syncStart = $input.item.json.sync_started_at;\nconst pageSize = 100;\nconst totalPages = Math.ceil(totalCount / pageSize);\nconst pages = [];\nfor (let i = 0; i < totalPages; i++) {\n  pages.push({ json: {\n    pageStart: i * pageSize,\n    pageSize,\n    totalCount,\n    totalPages,\n    pageNumber: i + 1,\n    sync_started_at: syncStart\n  }});\n}\nreturn pages;"
+      },
+      "id": "a7f7aa03-14c0-49ac-83fe-14767ecb45de",
+      "name": "Build Page Offsets (NEW)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [9568, 2624]
+    },
+    {
+      "parameters": { "options": {} },
+      "id": "f29bd27e-01ca-4349-ac74-a501d83f9dcf",
+      "name": "Loop Pages (NEW)",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [9792, 2624]
+    },
+    {
+      "parameters": {
+        "url": "https://www.sbmercedes.com/apis/widget/INVENTORY_LISTING_DEFAULT_AUTO_NEW:inventory-data-bus1/getInventory",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "pageStart", "value": "={{ $json.pageStart }}" },
+            { "name": "pageSize",  "value": "={{ $json.pageSize }}" }
+          ]
+        },
+        "options": {
+          "response": { "response": { "responseFormat": "json" } },
+          "timeout": 30000
+        }
+      },
+      "id": "87e98db6-8567-4f4a-a3d0-7bf3fb845166",
+      "name": "Fetch Inventory Page (NEW)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [10016, 2432]
+    },
+    {
+      "parameters": {
+        "jsCode": "const rawData = $input.first().json;\nconst inventory = rawData.inventory || [];\n\nconst trackingMap = {};\nconst trackingData = rawData.pageInfo?.trackingData || [];\nfor (const t of trackingData) {\n  if (t.vin) trackingMap[t.vin] = t;\n}\n\nconst seenThisPage = new Set();\nconst now = new Date().toISOString();\nconst results = [];\n\nfor (const v of inventory) {\n  if (!v.vin || seenThisPage.has(v.vin)) continue;\n  seenThisPage.add(v.vin);\n\n  const t = trackingMap[v.vin] || {};\n  const attrs = {};\n  (v.attributes || []).forEach(a => { if (a.name) attrs[a.name] = a.value || ''; });\n  const hAttrs = {};\n  (v.highlightedAttributes || []).forEach(a => { if (a.name) hAttrs[a.name] = a.value || ''; });\n\n  const msrpNumeric = parseFloat(String(t.msrp || '').replace(/[^0-9.]/g, '')) || 0;\n  const salePriceNumeric = parseFloat(t.salePrice) || 0;\n  const internetPriceNumeric = parseFloat(t.internetPrice) || 0;\n  const msrpFormatted = msrpNumeric ? `$${msrpNumeric.toLocaleString()}` : '';\n  const salePriceFormatted = salePriceNumeric ? `$${salePriceNumeric.toLocaleString()}` : '';\n\n  const images = v.images || [];\n  const image_url = images[0]?.uri || '';\n  const images_json = images.length ? JSON.stringify(images.map(i => i.uri)) : null;\n\n  const exterior_color = t.exteriorColor || attrs.exteriorColor || '';\n  const interior_color = t.interiorColor || attrs.interiorColor || '';\n  const status = t.status || 'live';\n  const is_new = (t.newOrUsed || t.inventoryType || v.condition || 'new').toLowerCase() === 'new';\n  const is_certified = !!(t.certified || v.certified);\n  const vehicle_url = t.link ? `https://www.sbmercedes.com${t.link}` : '';\n  const mileage = t.odometer ? parseInt(t.odometer) : null;\n\n  const priceText = salePriceNumeric && salePriceNumeric < msrpNumeric\n    ? `MSRP is ${msrpFormatted}, currently on sale for ${salePriceFormatted}`\n    : `MSRP is ${msrpFormatted}`;\n\n  const ai_summary = [\n    `${t.year || v.year} Mercedes-Benz ${t.model || v.model || ''} ${attrs.trim || t.trim || ''}`.trim(),\n    `${is_certified ? 'Certified Pre-Owned' : is_new ? 'Brand new' : 'Pre-owned'} ${t.bodyStyle || attrs.bodyStyle || ''}`,\n    exterior_color ? `Exterior: ${exterior_color}` : null,\n    interior_color ? `Interior: ${interior_color}` : null,\n    t.transmission ? `Transmission: ${t.transmission === 'A/T' ? 'Automatic' : t.transmission}` : null,\n    t.driveLine ? `Drivetrain: ${t.driveLine}` : null,\n    t.engine ? `Engine: ${t.engineSize || ''} ${t.engine}`.trim() : null,\n    mileage ? `Mileage: ${mileage.toLocaleString()} miles` : null,\n    priceText,\n    status !== 'live' ? `Status: ${status}` : 'Status: Available',\n  ].filter(Boolean).join('. ');\n\n  results.push({ json: {\n    vin: v.vin,\n    uuid: t.uuid || '',\n    stock_number: t.stockNumber || attrs.stockNumber || '',\n    year: t.year || v.year || null,\n    make: t.make || v.make || 'Mercedes-Benz',\n    model: t.model || v.model || '',\n    trim: t.trim || attrs.trim || '',\n    body_style: t.bodyStyle || attrs.bodyStyle || '',\n    exterior_color, interior_color,\n    fuel_type: t.normalFuelType || hAttrs.normalFuelType || '',\n    transmission: t.transmission || '',\n    drivetrain: t.driveLine || '',\n    engine: t.engineSize ? `${t.engineSize} ${t.engine || ''}`.trim() : (t.engine || ''),\n    doors: t.doors || '',\n    msrp: msrpFormatted, msrp_numeric: msrpNumeric,\n    sale_price: salePriceNumeric || null,\n    internet_price: internetPriceNumeric || null,\n    condition: is_new ? 'New' : 'Used',\n    is_new, is_certified, status, mileage,\n    image_url, images_json, vehicle_url,\n    inventory_date: t.inventoryDate || '',\n    ai_summary, updated_at: now\n  }});\n}\n\nif (results.length === 0) return [{ json: { _skipped: true } }];\nreturn results;"
+      },
+      "id": "0e6a18dc-1684-4595-8d1c-38071004063d",
+      "name": "Process Vehicles",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [10240, 2432]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "loose" },
+          "conditions": [
+            {
+              "id": "skip-check",
+              "leftValue": "={{ $json._skipped }}",
+              "rightValue": true,
+              "operator": { "type": "boolean", "operation": "true", "singleValue": true }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "c3b24a1b-67db-43cc-8e8b-08b839fc9cdb",
+      "name": "IF: Skip Upsert (NEW)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [10464, 2432]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://bqxucafmdziaenbthbxb.supabase.co/rest/v1/mercedes_inventory",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "apikey",        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxeHVjYWZtZHppYWVuYnRoYnhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkwNzk2MjksImV4cCI6MjA4NDY1NTYyOX0.SlCNRPpTosihuqYhXm-TvbJbYa0YfWlUqfWVgml2Nvs" },
+            { "name": "Authorization", "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxeHVjYWZtZHppYWVuYnRoYnhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkwNzk2MjksImV4cCI6MjA4NDY1NTYyOX0.SlCNRPpTosihuqYhXm-TvbJbYa0YfWlUqfWVgml2Nvs" },
+            { "name": "Content-Type",  "value": "application/json" },
+            { "name": "Prefer",        "value": "resolution=merge-duplicates,return=minimal" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "d79c37df-c13e-435f-9c0d-aa6161b0e38e",
+      "name": "Upsert Supabase (NEW)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [10688, 2448],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst processed = items.filter(i => !i.json._skipped).length;\nreturn [{ json: { loop_signal: true, items_processed: processed } }];"
+      },
+      "id": "255e3cf9-03ae-444e-a45a-0aed73bcfb0e",
+      "name": "Reduce to Loop Signal (NEW)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [10912, 2432]
+    },
+    {
+      "parameters": {
+        "url": "https://www.sbmercedes.com/apis/widget/INVENTORY_LISTING_DEFAULT_AUTO_USED:inventory-data-bus1/getInventory",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "pageStart", "value": "0" },
+            { "name": "pageSize",  "value": "1" }
+          ]
+        },
+        "options": {
+          "response": { "response": { "responseFormat": "json" } },
+          "timeout": 30000
+        }
+      },
+      "id": "09f39f6d-c0d5-4432-9f14-c9b17e897b72",
+      "name": "Get Total Count (USED)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [10000, 2960]
+    },
+    {
+      "parameters": {
+        "jsCode": "const totalCount = $input.item.json.totalCount;\nconst syncStart = $input.item.json.sync_started_at;\nconst pageSize = 100;\nconst totalPages = Math.ceil(totalCount / pageSize);\nconst pages = [];\nfor (let i = 0; i < totalPages; i++) {\n  pages.push({ json: {\n    pageStart: i * pageSize,\n    pageSize,\n    totalCount,\n    totalPages,\n    pageNumber: i + 1,\n    sync_started_at: syncStart\n  }});\n}\nreturn pages;"
+      },
+      "id": "e8f20925-ef9e-49ee-86fe-0e04f5a5fcfa",
+      "name": "Build Page Offsets (USED)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [10464, 2960]
+    },
+    {
+      "parameters": { "options": {} },
+      "id": "dcbf46c8-4b02-4f75-a052-743c83dc4fd1",
+      "name": "Loop Pages (USED)",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [10688, 2960]
+    },
+    {
+      "parameters": {
+        "url": "https://www.sbmercedes.com/apis/widget/INVENTORY_LISTING_DEFAULT_AUTO_USED:inventory-data-bus1/getInventory",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "pageStart", "value": "={{ $json.pageStart }}" },
+            { "name": "pageSize",  "value": "={{ $json.pageSize }}" }
+          ]
+        },
+        "options": {
+          "response": { "response": { "responseFormat": "json" } },
+          "timeout": 30000
+        }
+      },
+      "id": "2d825c01-a755-4931-87ff-9cd657b564fb",
+      "name": "Fetch Inventory Page (USED)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [10912, 2800]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ── v8 FIX: default condition changed from 'new' to 'used'.\n// The v7 copy-paste from the NEW pipeline used || 'new' as fallback,\n// silently tagging all USED vehicles with missing condition as is_new=true.\nconst rawData = $input.first().json;\nconst inventory = rawData.inventory || [];\n\nconst trackingMap = {};\nconst trackingData = rawData.pageInfo?.trackingData || [];\nfor (const t of trackingData) {\n  if (t.vin) trackingMap[t.vin] = t;\n}\n\nconst seenThisPage = new Set();\nconst now = new Date().toISOString();\nconst results = [];\n\nfor (const v of inventory) {\n  if (!v.vin || seenThisPage.has(v.vin)) continue;\n  seenThisPage.add(v.vin);\n\n  const t = trackingMap[v.vin] || {};\n  const attrs = {};\n  (v.attributes || []).forEach(a => { if (a.name) attrs[a.name] = a.value || ''; });\n  const hAttrs = {};\n  (v.highlightedAttributes || []).forEach(a => { if (a.name) hAttrs[a.name] = a.value || ''; });\n\n  const msrpNumeric = parseFloat(String(t.msrp || '').replace(/[^0-9.]/g, '')) || 0;\n  const salePriceNumeric = parseFloat(t.salePrice) || 0;\n  const internetPriceNumeric = parseFloat(t.internetPrice) || 0;\n  const msrpFormatted = msrpNumeric ? `$${msrpNumeric.toLocaleString()}` : '';\n  const salePriceFormatted = salePriceNumeric ? `$${salePriceNumeric.toLocaleString()}` : '';\n\n  const images = v.images || [];\n  const image_url = images[0]?.uri || '';\n  const images_json = images.length ? JSON.stringify(images.map(i => i.uri)) : null;\n\n  const exterior_color = t.exteriorColor || attrs.exteriorColor || '';\n  const interior_color = t.interiorColor || attrs.interiorColor || '';\n  const status = t.status || 'live';\n  // v8 FIX: fallback is 'used' not 'new' — this pipeline only processes USED inventory\n  const is_new = (t.newOrUsed || t.inventoryType || v.condition || 'used').toLowerCase() === 'new';\n  const is_certified = !!(t.certified || v.certified);\n  const vehicle_url = t.link ? `https://www.sbmercedes.com${t.link}` : '';\n  const mileage = t.odometer ? parseInt(t.odometer) : null;\n\n  const priceText = salePriceNumeric && salePriceNumeric < msrpNumeric\n    ? `MSRP is ${msrpFormatted}, currently on sale for ${salePriceFormatted}`\n    : `MSRP is ${msrpFormatted}`;\n\n  const ai_summary = [\n    `${t.year || v.year} Mercedes-Benz ${t.model || v.model || ''} ${attrs.trim || t.trim || ''}`.trim(),\n    `${is_certified ? 'Certified Pre-Owned' : is_new ? 'Brand new' : 'Pre-owned'} ${t.bodyStyle || attrs.bodyStyle || ''}`,\n    exterior_color ? `Exterior: ${exterior_color}` : null,\n    interior_color ? `Interior: ${interior_color}` : null,\n    t.transmission ? `Transmission: ${t.transmission === 'A/T' ? 'Automatic' : t.transmission}` : null,\n    t.driveLine ? `Drivetrain: ${t.driveLine}` : null,\n    t.engine ? `Engine: ${t.engineSize || ''} ${t.engine}`.trim() : null,\n    mileage ? `Mileage: ${mileage.toLocaleString()} miles` : null,\n    priceText,\n    status !== 'live' ? `Status: ${status}` : 'Status: Available',\n  ].filter(Boolean).join('. ');\n\n  results.push({ json: {\n    vin: v.vin,\n    uuid: t.uuid || '',\n    stock_number: t.stockNumber || attrs.stockNumber || '',\n    year: t.year || v.year || null,\n    make: t.make || v.make || 'Mercedes-Benz',\n    model: t.model || v.model || '',\n    trim: t.trim || attrs.trim || '',\n    body_style: t.bodyStyle || attrs.bodyStyle || '',\n    exterior_color, interior_color,\n    fuel_type: t.normalFuelType || hAttrs.normalFuelType || '',\n    transmission: t.transmission || '',\n    drivetrain: t.driveLine || '',\n    engine: t.engineSize ? `${t.engineSize} ${t.engine || ''}`.trim() : (t.engine || ''),\n    doors: t.doors || '',\n    msrp: msrpFormatted, msrp_numeric: msrpNumeric,\n    sale_price: salePriceNumeric || null,\n    internet_price: internetPriceNumeric || null,\n    condition: is_new ? 'New' : 'Used',\n    is_new, is_certified, status, mileage,\n    image_url, images_json, vehicle_url,\n    inventory_date: t.inventoryDate || '',\n    ai_summary, updated_at: now\n  }});\n}\n\nif (results.length === 0) return [{ json: { _skipped: true } }];\nreturn results;"
+      },
+      "id": "e6793030-bd4e-441e-930a-c5a7711730f1",
+      "name": "Process Vehicles (USED)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [11136, 2800]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "loose" },
+          "conditions": [
+            {
+              "id": "skip-check",
+              "leftValue": "={{ $json._skipped }}",
+              "rightValue": true,
+              "operator": { "type": "boolean", "operation": "true", "singleValue": true }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "87369269-9684-453b-821a-770e27d79ef7",
+      "name": "IF: Skip Upsert (USED)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [11360, 2800]
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst processed = items.filter(i => !i.json._skipped).length;\nreturn [{ json: { loop_signal: true, items_processed: processed } }];"
+      },
+      "id": "c0fcf600-2bdf-43ae-bfe7-3c3e3ed43af1",
+      "name": "Reduce to Loop Signal (USED)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [11808, 2800]
+    },
+    {
+      "parameters": {
+        "method": "DELETE",
+        "url": "={{ 'https://bqxucafmdziaenbthbxb.supabase.co/rest/v1/mercedes_inventory?updated_at=lt.' + $('Capture Sync Start').first().json.sync_started_at }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "apikey",        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxeHVjYWZtZHppYWVuYnRoYnhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkwNzk2MjksImV4cCI6MjA4NDY1NTYyOX0.SlCNRPpTosihuqYhXm-TvbJbYa0YfWlUqfWVgml2Nvs" },
+            { "name": "Authorization", "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxeHVjYWZtZHppYWVuYnRoYnhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkwNzk2MjksImV4cCI6MjA4NDY1NTYyOX0.SlCNRPpTosihuqYhXm-TvbJbYa0YfWlUqfWVgml2Nvs" },
+            { "name": "Content-Type",  "value": "application/json" },
+            {
+              "name": "Prefer",
+              "value": "return=minimal"
+            }
+          ]
+        },
+        "options": { "timeout": 30000 }
+      },
+      "id": "5ddcfbe3-4254-46a2-8fa3-8be10ea90719",
+      "name": "Remove Stale Vehicles",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [10912, 3120],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Receives input from Remove Stale Vehicles (success OR error path)\nconst now = new Date().toISOString();\nconst syncStart = $('Capture Sync Start').first().json.sync_started_at || 'unknown';\nconst durationMs = new Date(now) - new Date(syncStart);\nconst durationMin = (durationMs / 60000).toFixed(1);\n\n// Detect if we arrived via error path\nconst fromError = $input.first()?.json?.error !== undefined;\n\nreturn [{ json: {\n  status: fromError ? 'sync_complete_with_stale_error' : 'sync_complete',\n  message: 'Mercedes SB full inventory sync finished (NEW + USED)',\n  stale_removal: fromError ? 'FAILED — check Remove Stale Vehicles node' : 'OK',\n  sync_started: syncStart,\n  sync_ended: now,\n  duration_ms: durationMs,\n  duration_minutes: durationMin\n} }];"
+      },
+      "id": "69ddc0fd-3e43-490f-8e47-c768998a2c44",
+      "name": "Log Sync Complete",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [11136, 3120]
+    },
+    {
+      "parameters": { "amount": 3 },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [11248, 2464],
+      "id": "177e1982-fd92-4c00-8f4c-46abe594a0c6",
+      "name": "Wait",
+      "webhookId": "ca4f05e0-8108-411d-80a7-c343b2fbaf4c",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://bqxucafmdziaenbthbxb.supabase.co/rest/v1/mercedes_inventory",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "apikey",        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxeHVjYWZtZHppYWVuYnRoYnhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkwNzk2MjksImV4cCI6MjA4NDY1NTYyOX0.SlCNRPpTosihuqYhXm-TvbJbYa0YfWlUqfWVgml2Nvs" },
+            { "name": "Authorization", "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxeHVjYWZtZHppYWVuYnRoYnhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkwNzk2MjksImV4cCI6MjA4NDY1NTYyOX0.SlCNRPpTosihuqYhXm-TvbJbYa0YfWlUqfWVgml2Nvs" },
+            { "name": "Content-Type",  "value": "application/json" },
+            { "name": "Prefer",        "value": "resolution=merge-duplicates,return=minimal" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "464fd30e-7588-457b-ae68-5d376f67e7dd",
+      "name": "Upsert Supabase (Used)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [11584, 2832],
+      "retryOnFail": true
+    }
+  ],
+  "connections": {
+    "Every 4 Hours": {
+      "main": [[{ "node": "Capture Sync Start", "type": "main", "index": 0 }]]
+    },
+    "When clicking 'Execute workflow'": {
+      "main": [[{ "node": "Capture Sync Start", "type": "main", "index": 0 }]]
+    },
+    "Capture Sync Start": {
+      "main": [[{ "node": "Get Total Count (NEW)", "type": "main", "index": 0 }]]
+    },
+    "Get Total Count (NEW)": {
+      "main": [[{ "node": "Validate API Response (NEW)", "type": "main", "index": 0 }]]
+    },
+    "Validate API Response (NEW)": {
+      "main": [[{ "node": "Build Page Offsets (NEW)", "type": "main", "index": 0 }]]
+    },
+    "Build Page Offsets (NEW)": {
+      "main": [[{ "node": "Loop Pages (NEW)", "type": "main", "index": 0 }]]
+    },
+    "Loop Pages (NEW)": {
+      "main": [
+        [{ "node": "Get Total Count (USED)", "type": "main", "index": 0 }],
+        [{ "node": "Fetch Inventory Page (NEW)", "type": "main", "index": 0 }]
+      ]
+    },
+    "Fetch Inventory Page (NEW)": {
+      "main": [[{ "node": "Process Vehicles", "type": "main", "index": 0 }]]
+    },
+    "Process Vehicles": {
+      "main": [[{ "node": "IF: Skip Upsert (NEW)", "type": "main", "index": 0 }]]
+    },
+    "IF: Skip Upsert (NEW)": {
+      "main": [
+        [{ "node": "Reduce to Loop Signal (NEW)", "type": "main", "index": 0 }],
+        [{ "node": "Upsert Supabase (NEW)", "type": "main", "index": 0 }]
+      ]
+    },
+    "Upsert Supabase (NEW)": {
+      "main": [[{ "node": "Reduce to Loop Signal (NEW)", "type": "main", "index": 0 }]]
+    },
+    "Reduce to Loop Signal (NEW)": {
+      "main": [[{ "node": "Loop Pages (NEW)", "type": "main", "index": 0 }]]
+    },
+    "Get Total Count (USED)": {
+      "main": [[{ "node": "Validate API Response (USED)", "type": "main", "index": 0 }]]
+    },
+    "Validate API Response (USED)": {
+      "main": [[{ "node": "Build Page Offsets (USED)", "type": "main", "index": 0 }]]
+    },
+    "Build Page Offsets (USED)": {
+      "main": [[{ "node": "Loop Pages (USED)", "type": "main", "index": 0 }]]
+    },
+    "Loop Pages (USED)": {
+      "main": [
+        [{ "node": "Remove Stale Vehicles", "type": "main", "index": 0 }],
+        [{ "node": "Fetch Inventory Page (USED)", "type": "main", "index": 0 }]
+      ]
+    },
+    "Fetch Inventory Page (USED)": {
+      "main": [[{ "node": "Process Vehicles (USED)", "type": "main", "index": 0 }]]
+    },
+    "Process Vehicles (USED)": {
+      "main": [[{ "node": "IF: Skip Upsert (USED)", "type": "main", "index": 0 }]]
+    },
+    "IF: Skip Upsert (USED)": {
+      "main": [
+        [{ "node": "Reduce to Loop Signal (USED)", "type": "main", "index": 0 }],
+        [{ "node": "Upsert Supabase (Used)", "type": "main", "index": 0 }]
+      ]
+    },
+    "Upsert Supabase (Used)": {
+      "main": [[{ "node": "Reduce to Loop Signal (USED)", "type": "main", "index": 0 }]]
+    },
+    "Reduce to Loop Signal (USED)": {
+      "main": [[{ "node": "Loop Pages (USED)", "type": "main", "index": 0 }]]
+    },
+    "Remove Stale Vehicles": {
+      "main": [
+        [{ "node": "Log Sync Complete", "type": "main", "index": 0 }],
+        [{ "node": "Log Sync Complete", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "meta": {
+    "instanceId": "22cc04f06d3f6736ca808bade08c4cc55067908d959edc6a03e31fb4be0c6eb0",
+    "notes": "v8: Fixed USED pagination (numFound fallback), Process Vehicles (USED) condition default, Remove Stale Vehicles URL expression + return=minimal + onError wiring, added Bearer prefix to Authorization headers"
+  },
+  "tags": []
+}

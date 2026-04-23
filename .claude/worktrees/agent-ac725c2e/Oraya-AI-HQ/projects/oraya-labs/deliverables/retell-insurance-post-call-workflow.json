@@ -1,0 +1,893 @@
+{
+  "name": "Retell Insurance Agent \u2014 Post Call Processor",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "retell-insurance-post-call",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-001",
+      "name": "Retell Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        240,
+        560
+      ],
+      "webhookId": "a1b2c3d4-retell-insurance-post-call"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Parse and normalize all Retell post-call data fields\nconst items = $input.all();\nconst raw = items[0].json.body || items[0].json;\n\n// Extract call metadata from Retell payload\nconst callId = raw.call_id || raw.callId || 'unknown';\nconst agentId = raw.agent_id || raw.agentId || '';\nconst fromNumber = raw.from_number || raw.fromNumber || '';\nconst toNumber = raw.to_number || raw.toNumber || '';\nconst callDuration = raw.call_duration_ms || raw.duration || 0;\nconst callTimestamp = raw.start_timestamp || raw.created_at || new Date().toISOString();\nconst disconnectReason = raw.disconnect_reason || raw.disconnection_reason || '';\n\n// Extract post-call data retrieval variables\nconst pcdr = raw.call_analysis || raw.custom_analysis_data || raw;\n\nconst callSummary = pcdr.Call_Summary || pcdr.call_summary || pcdr.Call_summary || '';\nconst callSuccessful = pcdr.Call_Successful === true || pcdr.Call_Successful === 'true' || pcdr.call_successful === true || false;\nconst userSentiment = pcdr.User_Sentiment || pcdr.user_sentiment || '';\nconst callerEmail = pcdr.Callers_email_id || pcdr.callers_email_id || pcdr['Caller\\'s email id'] || pcdr.caller_email || '';\nconst advisorTransferCompleted = pcdr.advisor_transfer_completed === true || pcdr.advisor_transfer_completed === 'true' || false;\nconst callbackDate = pcdr.callback_date || '';\nconst coverageTypeRequested = pcdr.coverage_type_requested || '';\nconst callBackScheduled = pcdr.call_back_scheduled === true || pcdr.call_back_scheduled === 'true' || false;\nconst callBackReason = pcdr.call_back_reason || '';\nconst customerSentiment = pcdr.Customer_sentiment || pcdr.customer_sentiment || '';\nconst userConsentForRecording = pcdr.User_consent_for_recording === true || pcdr.User_consent_for_recording === 'true' || pcdr.user_consent_for_recording === true || false;\nconst callerName = pcdr.Caller_Name || pcdr.caller_name || pcdr.CallerName || 'Unknown';\nconst leadDisposition = pcdr.lead_disposition || pcdr.Lead_disposition || 'unknown';\nconst voicemail = pcdr.Voicemail === true || pcdr.Voicemail === 'true' || pcdr.voicemail === true || false;\nconst callbackScheduledTime = pcdr.callback_scheduled_time || '';\n\n// Normalize lead disposition to standard values\nconst dispositionMap = {\n  'interested': 'interested',\n  'hot_lead': 'interested',\n  'callback_scheduled': 'callback_scheduled',\n  'callback': 'callback_scheduled',\n  'appointment_booked': 'appointment_booked',\n  'appointment': 'appointment_booked',\n  'booked': 'appointment_booked',\n  'not_interested': 'not_interested',\n  'declined': 'not_interested',\n  'opt_out': 'not_interested',\n  'voicemail': 'voicemail',\n  'no_answer': 'voicemail',\n  'transfer_completed': 'transfer_completed',\n  'transferred': 'transfer_completed',\n  'unknown': 'unknown'\n};\n\nconst normalizedDisposition = dispositionMap[leadDisposition.toLowerCase().replace(/[\\s-]/g, '_')] || leadDisposition.toLowerCase();\n\nreturn [{\n  json: {\n    // Call metadata\n    call_id: callId,\n    agent_id: agentId,\n    from_number: fromNumber,\n    to_number: toNumber,\n    call_duration_ms: callDuration,\n    call_timestamp: callTimestamp,\n    disconnect_reason: disconnectReason,\n    processed_at: new Date().toISOString(),\n    \n    // Post-call data retrieval fields\n    call_summary: callSummary,\n    call_successful: callSuccessful,\n    user_sentiment: userSentiment,\n    caller_email: callerEmail,\n    advisor_transfer_completed: advisorTransferCompleted,\n    callback_date: callbackDate,\n    coverage_type_requested: coverageTypeRequested,\n    call_back_scheduled: callBackScheduled,\n    call_back_reason: callBackReason,\n    customer_sentiment: customerSentiment,\n    user_consent_for_recording: userConsentForRecording,\n    caller_name: callerName,\n    lead_disposition: leadDisposition,\n    normalized_disposition: normalizedDisposition,\n    voicemail: voicemail,\n    callback_scheduled_time: callbackScheduledTime\n  }\n}];"
+      },
+      "id": "parse-001",
+      "name": "Parse Retell Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "REPLACE_WITH_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Call Log",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {}
+        },
+        "options": {}
+      },
+      "id": "sheets-001",
+      "name": "Log to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        720,
+        340
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "REPLACE_SHEETS_CRED_ID",
+          "name": "Google Sheets"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "combinator": "and",
+                  "caseSensitive": false
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.normalized_disposition }}",
+                    "rightValue": "appointment_booked",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ]
+              },
+              "outputKey": "appointment",
+              "renameOutput": true
+            },
+            {
+              "conditions": {
+                "options": {
+                  "combinator": "and",
+                  "caseSensitive": false
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.normalized_disposition }}",
+                    "rightValue": "callback_scheduled",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ]
+              },
+              "outputKey": "callback",
+              "renameOutput": true
+            },
+            {
+              "conditions": {
+                "options": {
+                  "combinator": "and",
+                  "caseSensitive": false
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.normalized_disposition }}",
+                    "rightValue": "interested",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ]
+              },
+              "outputKey": "interested",
+              "renameOutput": true
+            },
+            {
+              "conditions": {
+                "options": {
+                  "combinator": "and",
+                  "caseSensitive": false
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.normalized_disposition }}",
+                    "rightValue": "not_interested",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ]
+              },
+              "outputKey": "not_interested",
+              "renameOutput": true
+            },
+            {
+              "conditions": {
+                "options": {
+                  "combinator": "and",
+                  "caseSensitive": false
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.normalized_disposition }}",
+                    "rightValue": "voicemail",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ]
+              },
+              "outputKey": "voicemail",
+              "renameOutput": true
+            },
+            {
+              "conditions": {
+                "options": {
+                  "combinator": "and",
+                  "caseSensitive": false
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.normalized_disposition }}",
+                    "rightValue": "transfer_completed",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ]
+              },
+              "outputKey": "transfer",
+              "renameOutput": true
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "id": "switch-001",
+      "name": "Route by Disposition",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        720,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Prepare Google Calendar event for appointment\nconst item = $input.all()[0].json;\n\nconst callerName = item.caller_name || 'Prospect';\nconst coverageType = item.coverage_type_requested || 'Insurance Consultation';\nconst callbackDate = item.callback_date || '';\nconst callbackTime = item.callback_scheduled_time || '';\nconst callerEmail = item.caller_email || '';\nconst phone = item.from_number || '';\nconst summary = item.call_summary || '';\n\n// Parse appointment date/time\nlet startDateTime, endDateTime;\nif (callbackDate && callbackTime) {\n  const dateStr = `${callbackDate}T${callbackTime}`;\n  startDateTime = new Date(dateStr).toISOString();\n  endDateTime = new Date(new Date(dateStr).getTime() + 30 * 60000).toISOString(); // 30 min\n} else if (callbackDate) {\n  startDateTime = new Date(`${callbackDate}T10:00:00`).toISOString();\n  endDateTime = new Date(`${callbackDate}T10:30:00`).toISOString();\n} else {\n  // Default to tomorrow 10 AM\n  const tomorrow = new Date();\n  tomorrow.setDate(tomorrow.getDate() + 1);\n  tomorrow.setHours(10, 0, 0, 0);\n  startDateTime = tomorrow.toISOString();\n  endDateTime = new Date(tomorrow.getTime() + 30 * 60000).toISOString();\n}\n\nreturn [{\n  json: {\n    ...item,\n    event_summary: `${coverageType} \u2014 ${callerName}`,\n    event_description: `Coverage Type: ${coverageType}\\nCaller: ${callerName}\\nPhone: ${phone}\\nEmail: ${callerEmail}\\n\\nCall Summary:\\n${summary}`,\n    event_start: startDateTime,\n    event_end: endDateTime,\n    attendee_email: callerEmail\n  }\n}];"
+      },
+      "id": "appt-prep-001",
+      "name": "Prepare Appointment",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        960,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.googleapis.com/calendar/v3/calendars/primary/events",
+        "authentication": "genericCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ summary: $json.event_summary, description: $json.event_description, start: { dateTime: $json.event_start, timeZone: 'America/Los_Angeles' }, end: { dateTime: $json.event_end, timeZone: 'America/Los_Angeles' }, attendees: $json.attendee_email ? [{ email: $json.attendee_email }] : [], reminders: { useDefault: false, overrides: [{ method: 'email', minutes: 60 }, { method: 'popup', minutes: 15 }] } }) }}",
+        "options": {},
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "id": "gcal-001",
+      "name": "Book Google Calendar",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1180,
+        200
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "REPLACE_GCAL_CRED_ID",
+          "name": "Google Calendar Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "sendTo": "={{ $('Parse Retell Data').item.json.caller_email }}",
+        "subject": "={{ 'Your ' + $('Parse Retell Data').item.json.coverage_type_requested + ' Appointment is Confirmed!' }}",
+        "emailType": "html",
+        "message": "=<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n<h2 style=\"color: #2563eb;\">Appointment Confirmed</h2>\n<p>Hi {{ $('Parse Retell Data').item.json.caller_name }},</p>\n<p>Thank you for your interest! Your <strong>{{ $('Parse Retell Data').item.json.coverage_type_requested }}</strong> consultation has been scheduled.</p>\n<p><strong>Date:</strong> {{ $('Prepare Appointment').item.json.event_start }}</p>\n<p>A licensed insurance advisor will be ready to discuss your coverage options in detail.</p>\n<p>If you need to reschedule, please call us or reply to this email.</p>\n<br/>\n<p>Best regards,<br/>Insurance Advisory Team</p>\n</div>",
+        "options": {}
+      },
+      "id": "gmail-appt-001",
+      "name": "Email Appointment Confirm",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1400,
+        140
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "REPLACE_GMAIL_CRED_ID",
+          "name": "Gmail Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "REPLACE_WITH_SMS_API_URL",
+        "authentication": "genericCredentialType",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ to: $('Parse Retell Data').item.json.from_number, message: 'Hi ' + $('Parse Retell Data').item.json.caller_name + '! Your ' + $('Parse Retell Data').item.json.coverage_type_requested + ' appointment is confirmed. A licensed advisor will call you at the scheduled time. Reply STOP to opt out.' }) }}",
+        "options": {},
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "id": "sms-appt-001",
+      "name": "SMS Appointment Confirm",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1400,
+        280
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "REPLACE_SMS_AUTH_ID",
+          "name": "SMS API Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "sendTo": "={{ $json.caller_email }}",
+        "subject": "={{ 'Your Callback is Scheduled \u2014 ' + $json.coverage_type_requested }}",
+        "emailType": "html",
+        "message": "=<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n<h2 style=\"color: #2563eb;\">Callback Scheduled</h2>\n<p>Hi {{ $json.caller_name }},</p>\n<p>As requested, we've scheduled a callback to discuss your <strong>{{ $json.coverage_type_requested }}</strong> coverage needs.</p>\n<p><strong>Scheduled Date:</strong> {{ $json.callback_date || 'We will contact you soon' }}</p>\n<p><strong>Scheduled Time:</strong> {{ $json.callback_scheduled_time || 'During business hours' }}</p>\n<p><strong>Reason:</strong> {{ $json.call_back_reason || 'Follow-up consultation' }}</p>\n<p>A licensed insurance advisor will reach out at the scheduled time.</p>\n<br/>\n<p>Best regards,<br/>Insurance Advisory Team</p>\n</div>",
+        "options": {}
+      },
+      "id": "gmail-callback-001",
+      "name": "Email Callback Confirm",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        960,
+        400
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "REPLACE_GMAIL_CRED_ID",
+          "name": "Gmail Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "REPLACE_WITH_SMS_API_URL",
+        "authentication": "genericCredentialType",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ to: $json.from_number, message: 'Hi ' + $json.caller_name + '! Your callback has been scheduled for ' + ($json.callback_date || 'soon') + '. We will reach out to discuss your ' + $json.coverage_type_requested + ' coverage. Reply STOP to opt out.' }) }}",
+        "options": {},
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "id": "sms-callback-001",
+      "name": "SMS Callback Confirm",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1180,
+        400
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "REPLACE_SMS_AUTH_ID",
+          "name": "SMS API Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "sendTo": "={{ $json.caller_email }}",
+        "subject": "={{ 'Thank You for Your Interest \u2014 ' + $json.coverage_type_requested }}",
+        "emailType": "html",
+        "message": "=<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n<h2 style=\"color: #2563eb;\">Thank You for Your Interest!</h2>\n<p>Hi {{ $json.caller_name }},</p>\n<p>Thank you for taking the time to learn about <strong>{{ $json.coverage_type_requested }}</strong> coverage options.</p>\n<p>We'd love to help you find the right plan. When you're ready, simply reply to this email or call us back to speak with a licensed advisor.</p>\n<p>In the meantime, here are some resources that may be helpful:</p>\n<ul>\n<li>Understanding your coverage options</li>\n<li>How to compare insurance plans</li>\n<li>Frequently asked questions</li>\n</ul>\n<br/>\n<p>Best regards,<br/>Insurance Advisory Team</p>\n</div>",
+        "options": {}
+      },
+      "id": "gmail-interested-001",
+      "name": "Email Interested Lead",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        960,
+        560
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "REPLACE_GMAIL_CRED_ID",
+          "name": "Gmail Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "REPLACE_WITH_SMS_API_URL",
+        "authentication": "genericCredentialType",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ to: $json.from_number, message: 'Hi ' + $json.caller_name + '! Thank you for your interest in ' + $json.coverage_type_requested + '. Reply YES to connect with a licensed advisor, or call us anytime. Reply STOP to opt out.' }) }}",
+        "options": {},
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "id": "sms-interested-001",
+      "name": "SMS Interested Lead",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1180,
+        560
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "REPLACE_SMS_AUTH_ID",
+          "name": "SMS API Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Log opt-out / not interested \u2014 no email or SMS (TCPA compliance)\nconst item = $input.all()[0].json;\nreturn [{\n  json: {\n    ...item,\n    action: 'opt_out_logged',\n    note: 'Lead marked not interested. No further contact per TCPA compliance.'\n  }\n}];"
+      },
+      "id": "optout-001",
+      "name": "Handle Opt-Out",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        960,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "REPLACE_WITH_SMS_API_URL",
+        "authentication": "genericCredentialType",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ to: $json.from_number, message: 'Hi ' + $json.caller_name + ', we tried reaching you regarding insurance coverage options. Please call us back at your convenience or reply CALLBACK to schedule a time. Reply STOP to opt out.' }) }}",
+        "options": {},
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "id": "sms-vm-001",
+      "name": "SMS Voicemail Follow-Up",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        960,
+        880
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "REPLACE_SMS_AUTH_ID",
+          "name": "SMS API Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "sendTo": "={{ $json.caller_email }}",
+        "subject": "={{ 'Your Advisor Transfer is Complete \u2014 ' + $json.coverage_type_requested }}",
+        "emailType": "html",
+        "message": "=<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n<h2 style=\"color: #2563eb;\">Advisor Transfer Complete</h2>\n<p>Hi {{ $json.caller_name }},</p>\n<p>You were successfully connected with a licensed insurance advisor regarding your <strong>{{ $json.coverage_type_requested }}</strong> inquiry.</p>\n<p>If you have any additional questions or need to follow up, please don't hesitate to reach out.</p>\n<br/>\n<p>Best regards,<br/>Insurance Advisory Team</p>\n</div>",
+        "options": {}
+      },
+      "id": "gmail-transfer-001",
+      "name": "Email Transfer Confirm",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        960,
+        1040
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "REPLACE_GMAIL_CRED_ID",
+          "name": "Gmail Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Handle unknown/fallback dispositions\nconst item = $input.all()[0].json;\nreturn [{\n  json: {\n    ...item,\n    action: 'fallback_logged',\n    note: `Unknown disposition: ${item.lead_disposition}. Logged for manual review.`\n  }\n}];"
+      },
+      "id": "fallback-001",
+      "name": "Handle Unknown Disposition",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        960,
+        1200
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "sendTo": "mayankchitraksh@gmail.com",
+        "subject": "={{ '[ALERT] Insurance Post-Call \u2014 ' + $json.normalized_disposition + ' \u2014 ' + $json.caller_name }}",
+        "emailType": "html",
+        "message": "=<div style=\"font-family: Arial, sans-serif;\">\n<h2 style=\"color: #dc2626;\">Post-Call Alert \u2014 Manual Review Needed</h2>\n<table style=\"border-collapse: collapse; width: 100%;\">\n<tr><td style=\"padding: 8px; border: 1px solid #ddd; font-weight: bold;\">Caller</td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $json.caller_name }}</td></tr>\n<tr><td style=\"padding: 8px; border: 1px solid #ddd; font-weight: bold;\">Phone</td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $json.from_number }}</td></tr>\n<tr><td style=\"padding: 8px; border: 1px solid #ddd; font-weight: bold;\">Email</td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $json.caller_email }}</td></tr>\n<tr><td style=\"padding: 8px; border: 1px solid #ddd; font-weight: bold;\">Disposition</td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $json.lead_disposition }}</td></tr>\n<tr><td style=\"padding: 8px; border: 1px solid #ddd; font-weight: bold;\">Coverage Type</td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $json.coverage_type_requested }}</td></tr>\n<tr><td style=\"padding: 8px; border: 1px solid #ddd; font-weight: bold;\">Sentiment</td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $json.customer_sentiment }}</td></tr>\n<tr><td style=\"padding: 8px; border: 1px solid #ddd; font-weight: bold;\">Call Summary</td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $json.call_summary }}</td></tr>\n<tr><td style=\"padding: 8px; border: 1px solid #ddd; font-weight: bold;\">Note</td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $json.note || 'N/A' }}</td></tr>\n</table>\n</div>",
+        "options": {}
+      },
+      "id": "gmail-admin-001",
+      "name": "Admin Alert Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1180,
+        1200
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "REPLACE_GMAIL_CRED_ID",
+          "name": "Gmail Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "REPLACE_WITH_SMS_API_URL",
+        "authentication": "genericCredentialType",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ to: '+15105204265', message: '[ADMIN] New insurance call processed \u2014 ' + $('Parse Retell Data').item.json.caller_name + ' | Disposition: ' + $('Parse Retell Data').item.json.lead_disposition + ' | Coverage: ' + $('Parse Retell Data').item.json.coverage_type_requested + ' | Sentiment: ' + $('Parse Retell Data').item.json.customer_sentiment }) }}",
+        "options": {},
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "id": "sms-admin-001",
+      "name": "SMS Admin Notification",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        720,
+        780
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "REPLACE_SMS_AUTH_ID",
+          "name": "SMS API Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ success: true, message: 'Post-call data processed successfully', call_id: $('Parse Retell Data').item.json.call_id, disposition: $('Parse Retell Data').item.json.normalized_disposition, processed_at: $('Parse Retell Data').item.json.processed_at }) }}"
+      },
+      "id": "respond-001",
+      "name": "Webhook Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        960,
+        1380
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Retell Insurance Post-Call Workflow\n\n**Webhook receives Retell post-call data** \u2192 **Parses & normalizes all 15 PCDR variables** \u2192 **Logs to Google Sheets** \u2192 **Routes by lead_disposition** \u2192 **Triggers appropriate actions**\n\n### Disposition Routes:\n1. **Appointment Booked** \u2192 Google Calendar + Email + SMS\n2. **Callback Scheduled** \u2192 Email + SMS confirmation\n3. **Interested** \u2192 Nurture email + SMS\n4. **Not Interested** \u2192 Opt-out logged (TCPA compliant, no contact)\n5. **Voicemail** \u2192 SMS follow-up\n6. **Transfer Completed** \u2192 Confirmation email\n7. **Unknown/Fallback** \u2192 Admin alert email\n\n### Credentials to configure:\n- Google Sheets OAuth2\n- Gmail OAuth2\n- Google Calendar OAuth2\n- SMS API (Header Auth)\n\n### Admin: mayankchitraksh@gmail.com / +15105204265",
+        "width": 460,
+        "height": 420
+      },
+      "id": "note-001",
+      "name": "Workflow Overview",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -120,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## TCPA Compliance Note\n\n**Not Interested / Opt-Out path intentionally does NOT send any email or SMS.** The prospect declined \u2014 TCPA requires no further automated contact.\n\nVoicemail path sends ONE follow-up SMS with opt-out language.",
+        "width": 340,
+        "height": 180
+      },
+      "id": "note-002",
+      "name": "TCPA Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -120,
+        740
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "noop-merge-001",
+      "name": "All Paths Complete",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1620,
+        700
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "error-trigger-001",
+      "name": "On Workflow Error",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        240,
+        1380
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "sendTo": "mayankchitraksh@gmail.com",
+        "subject": "={{ '[ERROR] Retell Insurance Post-Call Workflow Failed \u2014 ' + $json.execution?.id }}",
+        "emailType": "html",
+        "message": "=<div style=\"font-family: Arial, sans-serif;\">\n<h2 style=\"color: #dc2626;\">Workflow Error</h2>\n<p>The Retell Insurance Post-Call workflow encountered an error.</p>\n<p><strong>Execution ID:</strong> {{ $json.execution?.id }}</p>\n<p><strong>Error Node:</strong> {{ $json.execution?.error?.node?.name || 'Unknown' }}</p>\n<p><strong>Error Message:</strong> {{ $json.execution?.error?.message || 'No error message' }}</p>\n<p>Please check the n8n execution log for details.</p>\n</div>",
+        "options": {}
+      },
+      "id": "gmail-error-001",
+      "name": "Error Alert Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        480,
+        1380
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "REPLACE_GMAIL_CRED_ID",
+          "name": "Gmail Account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Retell Webhook": {
+      "main": [
+        [
+          {
+            "node": "Parse Retell Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Retell Data": {
+      "main": [
+        [
+          {
+            "node": "Log to Google Sheets",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Route by Disposition",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "SMS Admin Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route by Disposition": {
+      "main": [
+        [
+          {
+            "node": "Prepare Appointment",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Email Callback Confirm",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Email Interested Lead",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Handle Opt-Out",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "SMS Voicemail Follow-Up",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Email Transfer Confirm",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Handle Unknown Disposition",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Appointment": {
+      "main": [
+        [
+          {
+            "node": "Book Google Calendar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Book Google Calendar": {
+      "main": [
+        [
+          {
+            "node": "Email Appointment Confirm",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "SMS Appointment Confirm",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Email Appointment Confirm",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "SMS Appointment Confirm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email Appointment Confirm": {
+      "main": [
+        [
+          {
+            "node": "All Paths Complete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SMS Appointment Confirm": {
+      "main": [
+        [
+          {
+            "node": "All Paths Complete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email Callback Confirm": {
+      "main": [
+        [
+          {
+            "node": "SMS Callback Confirm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SMS Callback Confirm": {
+      "main": [
+        [
+          {
+            "node": "All Paths Complete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email Interested Lead": {
+      "main": [
+        [
+          {
+            "node": "SMS Interested Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SMS Interested Lead": {
+      "main": [
+        [
+          {
+            "node": "All Paths Complete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Handle Opt-Out": {
+      "main": [
+        [
+          {
+            "node": "All Paths Complete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SMS Voicemail Follow-Up": {
+      "main": [
+        [
+          {
+            "node": "All Paths Complete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email Transfer Confirm": {
+      "main": [
+        [
+          {
+            "node": "All Paths Complete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Handle Unknown Disposition": {
+      "main": [
+        [
+          {
+            "node": "Admin Alert Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Admin Alert Email": {
+      "main": [
+        [
+          {
+            "node": "All Paths Complete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "All Paths Complete": {
+      "main": [
+        [
+          {
+            "node": "Webhook Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On Workflow Error": {
+      "main": [
+        [
+          {
+            "node": "Error Alert Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "tags": []
+}
