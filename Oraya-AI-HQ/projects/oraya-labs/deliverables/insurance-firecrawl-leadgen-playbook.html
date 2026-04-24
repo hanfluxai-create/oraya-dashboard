@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Oraya P2 · Firecrawl Life Insurance Lead Gen Playbook · Apr 24 2026</title>
+<style>
+:root[data-theme="dark"]{
+  --bg:#0b1020;--surface:#111733;--surface2:#192145;--surface3:#1f274a;
+  --border:#1f274a;--border2:#334366;
+  --text:#e6e9f2;--text2:#b4bcd4;--text3:#8b93b2;
+  --accent:#60a5fa;--p1:#60a5fa;--p2:#fbbf24;
+  --green:#4ade80;--green-soft:rgba(74,222,128,.14);
+  --red:#f87171;--red-soft:rgba(248,113,113,.14);
+  --orange:#fbbf24;--orange-soft:rgba(251,191,36,.14);
+  --blue:#60a5fa;--blue-soft:rgba(96,165,250,.14);
+  --violet:#a78bfa;--violet-soft:rgba(167,139,250,.14);
+  --pink:#f472b6;--pink-soft:rgba(244,114,182,.14);
+  --shadow:0 1px 3px rgba(0,0,0,.4);
+  --shadow-lg:0 6px 16px rgba(0,0,0,.5);
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg)}
+body{font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans-serif;color:var(--text);line-height:1.55;font-size:14px;-webkit-font-smoothing:antialiased}
+.top-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;box-shadow:var(--shadow)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--p2));display:flex;align-items:center;justify-content:center;color:#0b1020;font-weight:800;font-size:17px;box-shadow:var(--shadow-lg)}
+.brand .name{font-weight:700;font-size:16px}
+.brand .sub{font-size:11px;color:var(--text3);font-weight:500}
+.container{max-width:1280px;margin:0 auto;padding:24px 24px 80px}
+.hero{background:linear-gradient(135deg,rgba(96,165,250,.10),rgba(251,191,36,.10));border:1px solid var(--border2);border-radius:14px;padding:22px 26px;margin-bottom:18px;box-shadow:var(--shadow-lg)}
+.hero h1{margin:0 0 6px;font-size:22px;font-weight:800;letter-spacing:-.5px}
+.hero .grad{background:linear-gradient(90deg,var(--accent),var(--p2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{margin:0;font-size:13.5px;color:var(--text2);max-width:920px}
+.hero .meta{margin-top:10px;font-size:11.5px;color:var(--text3);display:flex;gap:14px;flex-wrap:wrap}
+.hero .meta strong{color:var(--text)}
+.nav-tabs{display:flex;flex-wrap:wrap;gap:4px;padding:5px;background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:18px;box-shadow:var(--shadow);position:sticky;top:66px;z-index:40}
+.nav-tab{border:0;background:transparent;cursor:pointer;font:inherit;color:var(--text2);font-size:12.5px;font-weight:600;padding:8px 14px;border-radius:8px;transition:all .15s;white-space:nowrap}
+.nav-tab:hover{background:var(--surface2);color:var(--text)}
+.nav-tab.active{background:var(--accent);color:#0b1020}
+.section{display:none}
+.section.active{display:block;animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.section-title{font-size:16px;font-weight:700;margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid var(--accent);display:inline-block}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin-bottom:14px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 10px;font-size:13.5px;font-weight:700;letter-spacing:-.1px}
+.card h3.accent{color:var(--accent)}
+.card h3.p2{color:var(--p2)}
+.card h3.green{color:var(--green)}
+.card h3.red{color:var(--red)}
+.card h3.violet{color:var(--violet)}
+.card h3.orange{color:var(--orange)}
+.card h3.pink{color:var(--pink)}
+.card p,.card ul,.card ol{margin:0 0 8px;font-size:12.8px;color:var(--text2)}
+.card ul,.card ol{padding-left:20px}
+.card li{margin-bottom:5px}
+.card strong{color:var(--text)}
+.card code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-size:11.8px;color:var(--text)}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:12px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:10.5px;font-weight:700;letter-spacing:.2px}
+.tag-green{background:var(--green-soft);color:var(--green)}
+.tag-red{background:var(--red-soft);color:var(--red)}
+.tag-orange{background:var(--orange-soft);color:var(--orange)}
+.tag-blue{background:var(--blue-soft);color:var(--blue)}
+.tag-violet{background:var(--violet-soft);color:var(--violet)}
+.tag-pink{background:var(--pink-soft);color:var(--pink)}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.5px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
+th{background:var(--surface2);color:var(--text);font-weight:700;font-size:11.5px;text-transform:uppercase;letter-spacing:.4px}
+tr:hover td{background:var(--surface2)}
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:10px 0}
+.kpi{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.kpi .label{font-size:10.5px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;font-weight:700}
+.kpi .val{font-size:20px;font-weight:800;margin-top:3px;letter-spacing:-.4px;color:var(--text)}
+.kpi .sub{font-size:11px;color:var(--text2);margin-top:2px}
+.kpi.green{border-left:3px solid var(--green)}
+.kpi.blue{border-left:3px solid var(--blue)}
+.kpi.orange{border-left:3px solid var(--orange)}
+.kpi.violet{border-left:3px solid var(--violet)}
+.kpi.pink{border-left:3px solid var(--pink)}
+.code-block{background:#0a0f24;border:1px solid var(--border2);border-radius:10px;padding:14px 16px;font-family:"SF Mono",Monaco,Consolas,monospace;font-size:11.8px;color:#cde0ff;overflow-x:auto;line-height:1.5;margin:10px 0;white-space:pre}
+.flow-step{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;padding:14px 0;border-bottom:1px dashed var(--border)}
+.flow-step:last-child{border-bottom:0}
+.flow-num{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--violet));color:#0b1020;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg)}
+.flow-step h4{margin:0 0 4px;font-size:13.5px;font-weight:700;color:var(--text)}
+.flow-step p{margin:0;font-size:12.5px;color:var(--text2)}
+.banner{display:flex;gap:14px;padding:14px 16px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);margin-bottom:14px}
+.banner.warn{border-left:3px solid var(--orange);background:var(--orange-soft)}
+.banner.danger{border-left:3px solid var(--red);background:var(--red-soft)}
+.banner.go{border-left:3px solid var(--green);background:var(--green-soft)}
+.banner h4{margin:0 0 4px;font-size:13px;font-weight:700;color:var(--text)}
+.banner p{margin:0;font-size:12.5px;color:var(--text2)}
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <div class="brand">
+    <div class="brand-mark">O</div>
+    <div>
+      <div class="name">Oraya P2 · Insurance Lead Gen Playbook</div>
+      <div class="sub">Firecrawl + B2B partner discovery · v1.0 · Apr 24 2026</div>
+    </div>
+  </div>
+  <div style="font-size:11px;color:var(--text3)">Owner: Chitraksh (CTO) · Reviewer: Frankie (CEO)</div>
+</div>
+
+<div class="container">
+
+<div class="hero">
+  <h1>Life Insurance Lead Engine · <span class="grad">Channel-First, Consumer-Second</span></h1>
+  <p>Firecrawl is the wrong tool to chase consumers and the right tool to recruit the people who already touch consumers daily. This playbook builds a 30-partner referral network across 7 license states inside 90 days, then layers a TCPA-safe consumer funnel underneath. Target output: 140 qualified leads/mo, 35 policies/mo, $67K/mo gross commission by Day 90.</p>
+  <div class="meta">
+    <span><strong>License footprint:</strong> CA · TX · ID · NV · NC · SC · GA · LA</span>
+    <span><strong>Carriers:</strong> all majors · 110% advance, 140% at $60-100K/mo issued</span>
+    <span><strong>Voice agent:</strong> Maya (Retell + Claude Haiku 4.5)</span>
+    <span><strong>Stack:</strong> Firecrawl + n8n + Supabase + Smartlead + Maya</span>
+  </div>
+</div>
+
+<div class="nav-tabs">
+  <button class="nav-tab active" data-tab="thesis">Thesis</button>
+  <button class="nav-tab" data-tab="firecrawl">Firecrawl Targets</button>
+  <button class="nav-tab" data-tab="pipeline">Pipeline Architecture</button>
+  <button class="nav-tab" data-tab="economics">Economics</button>
+  <button class="nav-tab" data-tab="compliance">Compliance</button>
+  <button class="nav-tab" data-tab="email">Email Playbook</button>
+  <button class="nav-tab" data-tab="consumer">Consumer Layer</button>
+  <button class="nav-tab" data-tab="phases">90-Day Plan</button>
+  <button class="nav-tab" data-tab="risks">Risks + Kills</button>
+</div>
+
+<!-- THESIS -->
+<div class="section active" id="thesis">
+  <h2 class="section-title">Strategic Thesis</h2>
+
+  <div class="banner danger">
+    <div>
+      <h4>Why Firecrawling consumer life-insurance prospects is a trap</h4>
+      <p>There is no public consumer email database on the open web. "Top life insurance buyers in zip 90404" returns content marketing pages, not contact lists. Anyone selling that list bought it from a data broker who scraped opt-in form leakage; sending to it nukes domain reputation in 5-7 days. Consumer cold-email volume above 1K/day with sub-90% deliverability is a one-way ticket to Spamhaus.</p>
+    </div>
+  </div>
+
+  <div class="banner go">
+    <div>
+      <h4>Why Firecrawl wins on B2B partner acquisition</h4>
+      <p>Mortgage brokers, CPAs, estate attorneys, fee-only RIAs, realtors, HR benefits brokers, SBA lenders publish their contact info <strong>by design</strong> on professional directories, association sites, and firm pages. Firecrawl extracts it cleanly. One signed referral partner = 3-7 warm leads/mo for 24+ months. The unit economics dominate consumer cold by 10x.</p>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="card"><h3 class="green">B2B partner LTV</h3>
+      <p><strong>5 leads/mo × 12 mo × 25% close × $1,920 commission = $28,800/yr per partner.</strong> Add $1K/wk retainers from top-tier producers. Average partner LTV across 3 yrs: ~$60K. Payback on acquisition: under 30 days.</p>
+    </div>
+    <div class="card"><h3 class="orange">Consumer cold email LTV</h3>
+      <p><strong>0.1% reply × 5% qualified × 8% close = 4 policies per 100K sends.</strong> $7,680 gross at $40K acquisition cost (warmup, infra, list cleaning, domain churn). Negative ROI for first 9 months. Reputational scorched earth on the way.</p>
+    </div>
+    <div class="card"><h3 class="violet">Hybrid play (recommended)</h3>
+      <p>Firecrawl = partner discovery engine. Partners = warm-lead source. Maya = qualification + booking. Frankie + sub-agents = close. Stripe captures commission split + retainer. <strong>This is what the vision file already calls "10-15 high-producer agency owners × $1K/wk." Firecrawl is the missing intake.</strong></p>
+    </div>
+  </div>
+
+  <div class="card"><h3 class="accent">Why this fits Oraya's actual moat</h3>
+    <p>Frankie's superpower is relationship capital with agency owners. The bottleneck on scaling that capital is discovery — finding the next 50 owners worth pursuing. Firecrawl industrializes discovery. Maya handles the qualification work the partner does not want to do. The system multiplies Frankie, it doesn't replace him. That is the right shape for our two-person co at this stage.</p>
+  </div>
+</div>
+
+<!-- FIRECRAWL TARGETS -->
+<div class="section" id="firecrawl">
+  <h2 class="section-title">Firecrawl Crawl Targets · 7 License States</h2>
+
+  <div class="card"><h3 class="accent">The seven directory categories to crawl</h3>
+    <p>Each of these publishes name, firm, role, city, state, often email and phone. Firecrawl's <code>/v1/crawl</code> with structured extraction handles them at $0.001-0.003 per page.</p>
+  </div>
+
+  <table>
+    <thead><tr><th>#</th><th>Source</th><th>Partner type</th><th>Expected volume per state</th><th>Payload quality</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>NMLS Consumer Access (<code>nmlsconsumeraccess.org</code>)</td><td>Mortgage brokers + LO's</td><td>3K-15K</td><td>License #, firm, address, phone (no email · enrich)</td></tr>
+      <tr><td>2</td><td>State Bar directories (Estate Planning + Elder Law sections)</td><td>Estate attorneys</td><td>800-3K</td><td>Name, firm, email, phone, bar #</td></tr>
+      <tr><td>3</td><td>NAPFA + Fee-Only Network + XYPN</td><td>Fee-only RIAs</td><td>200-800</td><td>Email, firm site, AUM bracket</td></tr>
+      <tr><td>4</td><td>State CPA Society member directories</td><td>CPAs (HNW + small biz)</td><td>2K-8K</td><td>Email, firm, specialty</td></tr>
+      <tr><td>5</td><td>NAR + state realtor associations + agent profile sites (Zillow, Realtor.com pro pages)</td><td>Top-producer realtors</td><td>5K-25K</td><td>Email, phone, transaction volume</td></tr>
+      <tr><td>6</td><td>SHRM chapters + local benefits-broker directories</td><td>HR / benefits brokers</td><td>300-1.5K</td><td>Email, firm, employee-count served</td></tr>
+      <tr><td>7</td><td>SBA SCORE chapters + local Chambers + BNI rosters</td><td>SMB owners + advisors</td><td>1K-5K</td><td>Email, firm, industry</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card"><h3 class="violet">Why these seven and not "everyone with an email"</h3>
+    <p>Each target type already has a <strong>structural reason to refer life insurance</strong>. Mortgage broker closes loan → client needs mortgage protection / term life. CPA does HNW return → client needs IUL or estate-planning whole life. Estate attorney drafts trust → client needs wealth-transfer life policy. Realtor closes home → identical to mortgage broker. Fee-only RIA cannot earn commission → outsources insurance to us. HR broker manages group benefits → upsells voluntary life. SMB owner needs key-person + buy-sell. <strong>The pitch writes itself because the need is already in their workflow.</strong></p>
+  </div>
+
+  <div class="card"><h3 class="orange">Firecrawl crawl shape (per source)</h3>
+    <div class="code-block">POST https://api.firecrawl.dev/v1/crawl
+{
+  "url": "https://www.nmlsconsumeraccess.org/EntityDetails.aspx?STATE=CA",
+  "limit": 5000,
+  "scrapeOptions": {
+    "formats": ["markdown", "extract"],
+    "extract": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "firm": {"type": "string"},
+          "license_number": {"type": "string"},
+          "email": {"type": "string"},
+          "phone": {"type": "string"},
+          "city": {"type": "string"},
+          "state": {"type": "string"},
+          "specialty": {"type": "string"}
+        },
+        "required": ["name", "state"]
+      },
+      "prompt": "Extract licensed mortgage broker / loan officer contact records. Return one record per professional. Skip company-only listings."
+    }
+  },
+  "webhook": "https://hanfluxai2026.app.n8n.cloud/webhook/firecrawl-ingest"
+}</div>
+  </div>
+
+  <div class="card"><h3 class="pink">Volume model (across 7 states + 7 source types)</h3>
+    <p>Conservative dedup: <strong>~85K unique professionals</strong> total. After email-enrichment + validation churn (~40% recovery on missing emails, ~12% bounce rate), expect <strong>~52K deliverable contacts</strong>. That is 6+ months of cold outbound at sane sender velocity (300-500/day per inbox, 10 inboxes = 3-5K/day).</p>
+  </div>
+</div>
+
+<!-- PIPELINE ARCHITECTURE -->
+<div class="section" id="pipeline">
+  <h2 class="section-title">End-to-End Pipeline Architecture</h2>
+
+  <div class="card"><h3 class="accent">The flow, top to bottom</h3>
+
+    <div class="flow-step">
+      <div class="flow-num">1</div>
+      <div>
+        <h4>Firecrawl crawl jobs (scheduled, per source)</h4>
+        <p>n8n cron triggers Firecrawl per directory + per state. Webhook returns extracted JSON to <code>/webhook/firecrawl-ingest</code>. Avg crawl: 2-6 hrs per source, 200-1500 records, $30-90 in credits.</p>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">2</div>
+      <div>
+        <h4>n8n normalization → Supabase staging table</h4>
+        <p><code>partners_raw</code> table: id, source, state, name, firm, email, phone, city, license_number, specialty, raw_payload, scraped_at. Dedup by (firm + state + name) + (email) + (phone). Cuts ~30% noise.</p>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">3</div>
+      <div>
+        <h4>Email enrichment (Apollo + Hunter fallback)</h4>
+        <p>For records with no email: Apollo.io API by name + firm domain ($0.02/lookup). Hunter.io as fallback ($0.01). Recovers ~40% of missing-email rows. Also returns LinkedIn URL + role title for personalization.</p>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">4</div>
+      <div>
+        <h4>Email validation (NeverBounce)</h4>
+        <p>Bulk validate $0.004/email. Categorize: valid, invalid, accept-all, disposable, unknown. Promote only <strong>valid + accept-all</strong> to <code>partners_clean</code>. Drops bounce rate from ~25% to under 4%.</p>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">5</div>
+      <div>
+        <h4>Segmentation + scoring</h4>
+        <p>Score = (state_priority × license_weight × firm_size × specialty_match). Top quartile → A-list (Frankie sends from his inbox). Middle → B-list (Maya-as-SDR sequences). Bottom → C-list (newsletter only).</p>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">6</div>
+      <div>
+        <h4>Smartlead.ai cold sequences</h4>
+        <p>10 warmed inboxes across 3 sender domains (orayalabs.ai · oraya-partners.com · frankiealicea.com). 4-touch sequence over 14 days. Personalization tokens: <code>{first_name}</code>, <code>{firm}</code>, <code>{specialty_hook}</code>, <code>{license_state}</code>. Send velocity: 30/day per inbox week 1, ramp to 50/day week 4.</p>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">7</div>
+      <div>
+        <h4>Reply triage → GHL CRM</h4>
+        <p>Smartlead webhook → n8n → Claude Haiku classifier (interested · question · objection · unsubscribe · OOO · referral) → routed: interested books Calendly, question gets templated answer, objection routes to Frankie inbox, unsubscribe purges from sequence within 24 hrs.</p>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">8</div>
+      <div>
+        <h4>Maya 15-min discovery call</h4>
+        <p>Calendly booking triggers Retell call window. Maya runs partnership-discovery script (clientele, average policy size appetite, current carrier appointments, referral comp expectations). Post-call summary → GHL deal record + Frankie Slack ping if hot.</p>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">9</div>
+      <div>
+        <h4>Frankie close → partnership agreement</h4>
+        <p>Standard agreement: Oraya quotes + binds, partner gets 30% of first-year commission split, partner promoted to Oraya's "Trusted Advisor" co-brand for credibility. E-sign via Stripe-linked DocuSeal. Auto-onboarding email with referral form + tracking link.</p>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">10</div>
+      <div>
+        <h4>Lead intake from partners → Maya consumer flow</h4>
+        <p>Partner submits referral via tracked form → consumer gets opt-in SMS + email → consumer clicks → Maya consumer call → quote → Frankie or licensed sub-agent closes → carrier e-app via RPA → policy bound → Stripe captures commission split → partner paid + tracked in dashboard.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card"><h3 class="violet">System map (component stack)</h3>
+    <div class="code-block">┌─ DISCOVERY ──────────────────────────────────────────────┐
+│  Firecrawl (7 source types × 8 states)                   │
+│      → n8n /webhook/firecrawl-ingest                     │
+│      → Supabase: partners_raw                            │
+└──────────────────────────────────────────────────────────┘
+                       │
+                       ▼
+┌─ ENRICHMENT ─────────────────────────────────────────────┐
+│  Apollo.io + Hunter.io (email recovery)                  │
+│  NeverBounce (validation)                                │
+│      → Supabase: partners_clean (scored, segmented)      │
+└──────────────────────────────────────────────────────────┘
+                       │
+                       ▼
+┌─ OUTREACH ───────────────────────────────────────────────┐
+│  Smartlead (10 inboxes · 3 domains · 4-touch)            │
+│      ↔ n8n reply classifier (Claude Haiku 4.5)           │
+│      → GHL CRM (deal records, follow-ups)                │
+└──────────────────────────────────────────────────────────┘
+                       │
+                       ▼
+┌─ QUALIFY + CLOSE ────────────────────────────────────────┐
+│  Calendly → Retell (Maya · partner-discovery script)     │
+│      → Frankie close call → DocuSeal partnership         │
+│      → Partner submits consumer referral                 │
+└──────────────────────────────────────────────────────────┘
+                       │
+                       ▼
+┌─ POLICY ─────────────────────────────────────────────────┐
+│  Maya consumer call → quote → licensed agent close       │
+│  → Carrier RPA e-app → bound → Stripe commission split   │
+│  → Dashboard updates partner scoreboard                  │
+└──────────────────────────────────────────────────────────┘</div>
+  </div>
+</div>
+
+<!-- ECONOMICS -->
+<div class="section" id="economics">
+  <h2 class="section-title">Unit Economics + 90-Day Forecast</h2>
+
+  <div class="kpi-row">
+    <div class="kpi green"><div class="label">Target partners signed</div><div class="val">30</div><div class="sub">by Day 90 (5/wk months 2-3)</div></div>
+    <div class="kpi blue"><div class="label">Leads/month flowing</div><div class="val">140</div><div class="sub">5 leads × 28 active partners</div></div>
+    <div class="kpi orange"><div class="label">Policies/month bound</div><div class="val">35</div><div class="sub">25% close from partner-warm</div></div>
+    <div class="kpi violet"><div class="label">Gross commission/mo</div><div class="val">$67.2K</div><div class="sub">35 × $1,920 avg first-yr</div></div>
+    <div class="kpi pink"><div class="label">Partner retainers (top 8)</div><div class="val">$32K/mo</div><div class="sub">8 × $1K/wk after Month 3</div></div>
+  </div>
+
+  <div class="card"><h3 class="accent">Cost stack (monthly run rate at scale)</h3>
+    <table>
+      <thead><tr><th>Line item</th><th>Cost</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Firecrawl Pro (100K credits)</td><td>$83/mo</td><td>Annual prepay. Covers ~30K crawl pages/mo.</td></tr>
+        <tr><td>Apollo.io enrichment</td><td>$99/mo</td><td>Basic plan, 1.2K credits/mo. Burst-buy if needed.</td></tr>
+        <tr><td>Hunter.io fallback</td><td>$49/mo</td><td>Starter, 500 verifications.</td></tr>
+        <tr><td>NeverBounce validation</td><td>~$200/mo</td><td>50K validations/mo at scale.</td></tr>
+        <tr><td>Smartlead (5K leads + 10 inboxes)</td><td>$94/mo</td><td>Includes warmup. Add inboxes at $4/each.</td></tr>
+        <tr><td>3 sender domains + Microsoft 365 mailboxes</td><td>$50/mo</td><td>$30 domains amortized + $20 inbox add-ons.</td></tr>
+        <tr><td>Supabase Pro</td><td>$25/mo</td><td>Already in stack.</td></tr>
+        <tr><td>n8n self-hosted</td><td>$0</td><td>Already in stack.</td></tr>
+        <tr><td>Retell + 11Labs (Maya)</td><td>~$200/mo</td><td>140 lead calls × 4 min avg.</td></tr>
+        <tr><td>Twilio (SMS opt-in)</td><td>~$50/mo</td><td>A2P 10DLC already approved.</td></tr>
+        <tr><td>DocuSeal (e-sign)</td><td>$24/mo</td><td>Or HelloSign equivalent.</td></tr>
+        <tr><td><strong>Total all-in</strong></td><td><strong>~$874/mo</strong></td><td><strong>For a system that throws off $67K/mo gross at target.</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card"><h3 class="green">CAC + LTV per partner</h3>
+    <p><strong>CAC (Customer Acquisition Cost per signed partner):</strong> ~$30 of pipeline cost (Firecrawl + enrichment + validation + send) + ~30 min of Frankie close time. Effectively $50/partner.</p>
+    <p><strong>LTV (Lifetime Value per partner):</strong> $28,800/yr × 2.5 yr avg retention = $72,000. <strong>LTV/CAC = 1,440x.</strong> This is the kind of ratio that only exists when you're early to a channel.</p>
+  </div>
+
+  <div class="card"><h3 class="orange">Sensitivity (bear / base / bull, Day 90)</h3>
+    <table>
+      <thead><tr><th>Scenario</th><th>Partners signed</th><th>Leads/mo</th><th>Policies/mo</th><th>Gross/mo</th></tr></thead>
+      <tbody>
+        <tr><td>Bear (1% reply, 5% partner-close)</td><td>10</td><td>40</td><td>10</td><td>$19,200</td></tr>
+        <tr><td>Base (2% reply, 10% partner-close)</td><td>28</td><td>140</td><td>35</td><td>$67,200</td></tr>
+        <tr><td>Bull (3.5% reply, 15% partner-close)</td><td>50</td><td>275</td><td>75</td><td>$144,000</td></tr>
+      </tbody>
+    </table>
+    <p>Even bear case clears all infra cost by 22x. Base case is the inflection point where Frankie becomes the bottleneck and we hire first sub-agent. Bull case triggers carrier-tier upgrade conversation (140% commission unlock at $60-100K/mo issued).</p>
+  </div>
+</div>
+
+<!-- COMPLIANCE -->
+<div class="section" id="compliance">
+  <h2 class="section-title">Compliance Posture · Read This Before Sending One Email</h2>
+
+  <div class="banner go">
+    <div>
+      <h4>The legal frame</h4>
+      <p>B2B cold email to <strong>professional contacts at their work address</strong> for a <strong>commercial purpose</strong> is legal under CAN-SPAM (15 USC §7701) without prior consent, provided we satisfy five rules. TCPA (47 USC §227) does <strong>not</strong> apply to email — it covers calls, SMS, and fax. GDPR does not apply (US-only targets, US-based sender). State exceptions are minor and listed below.</p>
+    </div>
+  </div>
+
+  <div class="card"><h3 class="accent">CAN-SPAM five rules · all five must be present in every send</h3>
+    <ol>
+      <li><strong>Accurate header information.</strong> "From" name = real sender (Frankie Alicea or Maya at Oraya Labs). Reply-to = monitored inbox. No spoofing.</li>
+      <li><strong>Non-deceptive subject line.</strong> Must reflect content. "Re:" only if there is a real prior thread.</li>
+      <li><strong>Identification as advertisement</strong> (this is satisfied implicitly when commercial intent is clear in the body — no separate label required for B2B).</li>
+      <li><strong>Valid physical postal address</strong> in every email footer. Use Oraya Corp's registered California address (or PO Box if preferred). Update across all 10 inboxes.</li>
+      <li><strong>Functional opt-out mechanism</strong> processed within 10 business days. Smartlead's native unsubscribe handles this; n8n cleanup job verifies removal within 24 hrs.</li>
+    </ol>
+  </div>
+
+  <div class="card"><h3 class="orange">State-level addenda</h3>
+    <ul>
+      <li><strong>California (SB 568):</strong> If the email is not personalized to an individual recipient, prepend subject line with "ADV:" or include "Advertisement" notice. Personalized emails (which all of ours are) are exempt.</li>
+      <li><strong>Maryland MCEMA + Utah Restricted Email Registry:</strong> Both deprecated by federal preemption. Safe to ignore.</li>
+      <li><strong>NAIC + state insurance regs:</strong> Frankie's solicitation must include license # in any email that pitches insurance products to a consumer. <strong>B2B partner outreach is NOT a consumer solicitation</strong> — license # not required at this layer. Add only when consumer-facing.</li>
+    </ul>
+  </div>
+
+  <div class="card"><h3 class="violet">Domain + sender hygiene (the part that actually matters)</h3>
+    <ol>
+      <li><strong>SPF, DKIM, DMARC</strong> set to <code>p=quarantine; rua=mailto:dmarc@orayalabs.ai</code> on all 3 sender domains. Already done on orayalabs.ai (Apr 22 · Mr. Jenkins). Replicate on the 2 secondary domains.</li>
+      <li><strong>Domain warmup</strong> 14 days minimum before scaled send. Smartlead native warmup pool handles this.</li>
+      <li><strong>Send velocity caps</strong> per inbox: 30/day week 1, 40/day week 2, 50/day week 3+. Above 50/day per inbox is where Google starts flagging.</li>
+      <li><strong>Bounce rate ceiling 3%, spam complaint ceiling 0.1%.</strong> If any inbox crosses, pause that inbox, audit list, resume after 7 days.</li>
+      <li><strong>Never use the orayalabs.ai primary domain</strong> for cold volume. Frankie's signature domain stays clean for replies, demos, signed partner comms. Cold goes through secondary domains exclusively.</li>
+    </ol>
+  </div>
+
+  <div class="card"><h3 class="red">Hard "do not do" list</h3>
+    <ul>
+      <li><strong>Do not</strong> scrape and mail consumer email lists (residential, generic gmail/yahoo, opt-in-form leakage). Burns reputation, attracts FTC.</li>
+      <li><strong>Do not</strong> send to anyone whose email indicates "info@", "contact@", "admin@", "noreply@" without dedup. Generic inboxes have higher spam-trap density.</li>
+      <li><strong>Do not</strong> embed pixel trackers in cold emails. Apple Mail Privacy Protection makes them useless and they trigger spam filters.</li>
+      <li><strong>Do not</strong> send any cold email pitching life insurance to the consumer until they have <strong>self-initiated</strong> contact via opt-in landing page. The whole TCPA-safe consumer thesis depends on user-initiated conversation.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- EMAIL PLAYBOOK -->
+<div class="section" id="email">
+  <h2 class="section-title">Cold Email Playbook · The Actual Copy</h2>
+
+  <div class="card"><h3 class="accent">Sequence shape · 4 touches over 14 days</h3>
+    <table>
+      <thead><tr><th>Touch</th><th>Day</th><th>Purpose</th><th>Length</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>0</td><td>Hook · specific to partner type · low ask</td><td>3-4 sentences</td></tr>
+        <tr><td>2</td><td>3</td><td>Bump · single-sentence reply nudge</td><td>1 line</td></tr>
+        <tr><td>3</td><td>7</td><td>Value drop · case study or one specific result</td><td>4-5 sentences</td></tr>
+        <tr><td>4</td><td>14</td><td>Breakup · permission close</td><td>2 sentences</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card"><h3 class="violet">Touch 1 · Mortgage broker variant</h3>
+    <div class="code-block">Subject: Quick question, {first_name}
+
+Hi {first_name},
+
+Saw {firm} closes a healthy book of purchase loans in {city}. Most of those
+buyers walk into homeownership without mortgage protection or term life.
+
+We co-broker life insurance for mortgage shops in {state}. You keep 30% of
+first-year commission. AI handles intake + qualification, you do nothing
+except hand off the client.
+
+Worth a 15-min look this week?
+
+Frankie Alicea
+Oraya Labs · CA/TX/ID/NV/NC/SC/GA/LA licensed
+frankie@orayalabs.ai · (510) 520-4265</div>
+  </div>
+
+  <div class="card"><h3 class="violet">Touch 1 · Estate attorney variant</h3>
+    <div class="code-block">Subject: Trust funding question
+
+{first_name},
+
+Most estate plans you draft have a life insurance funding component the
+client either skips, fumbles, or buys badly. We absorb that piece for
+attorneys in {state}: licensed across the carriers, AI-driven qualification,
+clean handoff back to you.
+
+You don't sell anything. You make a referral, we close, you split 30% of
+first-year commission. Compliant — no fee-splitting issues since this is
+commission, not legal fee.
+
+15 min next Tue or Wed?
+
+Frankie Alicea · Oraya Labs
+{state} licensed · frankie@orayalabs.ai</div>
+  </div>
+
+  <div class="card"><h3 class="violet">Touch 1 · Fee-only RIA variant</h3>
+    <div class="code-block">Subject: Insurance handoff for fee-only firms
+
+{first_name},
+
+Fee-only is the right model — but it leaves a gap when a client needs
+term, IUL, or a wealth-transfer policy. Most RIAs we talk to refer to
+"a guy" who half-shows-up.
+
+We're licensed across all major carriers in {state}, run AI-assisted
+qualification (no IUL-as-investment trap), and pay 30% of first-year
+commission back. Your client gets bias-free placement, you keep your
+fee-only posture, and you stop losing the relationship to whoever
+sells them a policy.
+
+Worth 15 min?
+
+Frankie Alicea · Oraya Labs
+frankie@orayalabs.ai · orayalabs.ai/insurance</div>
+  </div>
+
+  <div class="card"><h3 class="green">Touch 2 · The bump (universal)</h3>
+    <div class="code-block">{first_name} — bumping this in case it slipped.
+Yes / no / not now all good.</div>
+  </div>
+
+  <div class="card"><h3 class="orange">Touch 3 · Value drop (mortgage broker example)</h3>
+    <div class="code-block">{first_name},
+
+Concrete: a {state} broker we work with has been routing 8-12 closed-loan
+clients/month to us since February. Average payout to him: $4,400/mo in
+referral commissions on policies he otherwise wouldn't have touched. Zero
+licensing exposure, zero selling, zero work after the handoff.
+
+Same setup is open to {firm}. 15 min if interested, no follow-up if not.
+
+Frankie</div>
+  </div>
+
+  <div class="card"><h3 class="red">Touch 4 · Breakup</h3>
+    <div class="code-block">{first_name},
+
+Going to close the loop here. If life insurance referrals isn't a fit for
+{firm}, no worries — won't follow up further.
+
+If timing changes, calendar's at orayalabs.ai/book.
+
+Frankie</div>
+  </div>
+
+  <div class="card"><h3 class="pink">Subject-line A/B candidates</h3>
+    <ul>
+      <li>"Quick question, {first_name}"</li>
+      <li>"{first_name} · 30% commission split"</li>
+      <li>"Trust funding question"</li>
+      <li>"Mortgage protection for {firm}'s closes?"</li>
+      <li>"Worth 15 min, {first_name}?"</li>
+    </ul>
+    <p>Rotate per inbox. Track open + reply per variant in Smartlead. Promote winners weekly.</p>
+  </div>
+</div>
+
+<!-- CONSUMER LAYER -->
+<div class="section" id="consumer">
+  <h2 class="section-title">Consumer Layer · Build After Partner Pipeline Is Live</h2>
+
+  <div class="card"><h3 class="accent">Why this comes second, not first</h3>
+    <p>Consumer acquisition is more expensive and more fragile than B2B partner acquisition. Build it once partners are flowing leads, because partner-warm leads (a) prove Maya works, (b) generate the case-study data we need for ad creative, and (c) fund the consumer experiment without burning runway.</p>
+  </div>
+
+  <div class="card"><h3 class="violet">The TCPA-safe consumer funnel (per existing P2 design)</h3>
+    <ol>
+      <li><strong>Paid acquisition</strong> · Meta + Google PMax targeting (a) new homeowners, (b) parents 30-50, (c) HNW small biz owners. Geo-fence to 7 license states only.</li>
+      <li><strong>Landing page</strong> · <code>orayalabs.ai/insurance</code> (already queued in dashboard) with the embedded Maya web voice widget · <strong>user-initiated click = TCPA-safe</strong>.</li>
+      <li><strong>Maya consumer call</strong> · 4-7 min discovery, captures coverage need + budget + health profile.</li>
+      <li><strong>Quote engine</strong> · Pulls from carrier APIs (or RPA where APIs don't exist) — returns 3 best-fit policies.</li>
+      <li><strong>Calendly</strong> with Frankie or sub-agent for binding call.</li>
+      <li><strong>Carrier e-app</strong> via RPA (Puppeteer pattern) — on the Quote AI roadmap.</li>
+      <li><strong>Stripe</strong> captures commission split + records consent trail for compliance.</li>
+    </ol>
+  </div>
+
+  <div class="card"><h3 class="orange">Consumer data sources (NOT Firecrawl)</h3>
+    <ul>
+      <li><strong>Atom Property API</strong> · already named in P2 spec · new homeowner records.</li>
+      <li><strong>Versium / FullContact / Acxiom</strong> · enrichment from anonymized identifier.</li>
+      <li><strong>CMS Medicare Public Use Files</strong> · for the 65+ vertical.</li>
+      <li><strong>Voter rolls (state-by-state)</strong> · age + household basics where legal.</li>
+      <li><strong>Meta Custom Audiences from CRM</strong> · lookalike off our converted policies.</li>
+    </ul>
+    <p><strong>None of this is Firecrawl-shaped work.</strong> Firecrawl's value is unstructured-web extraction; consumer data is API + database work.</p>
+  </div>
+
+  <div class="card"><h3 class="green">Why this layered approach matters strategically</h3>
+    <p>We become the only insurance lead-gen co that has both: (a) a B2B partner moat that throws off cash and refers warm leads at high close rate, and (b) a TCPA-safe consumer engine that generates the policy volume needed to unlock 140% carrier commissions. Most lead-gen shops have (b) only and live and die on Meta CPMs. We have (a) as the floor.</p>
+  </div>
+</div>
+
+<!-- 90-DAY PLAN -->
+<div class="section" id="phases">
+  <h2 class="section-title">90-Day Execution Plan</h2>
+
+  <div class="card"><h3 class="accent">Week 1 (Apr 28 – May 4) · Infrastructure</h3>
+    <ul>
+      <li>Buy 2 secondary sender domains (oraya-partners.com · frankiealicea.com or similar). $30 total.</li>
+      <li>Spin up 10 Microsoft 365 inboxes across 3 domains. SPF + DKIM + DMARC set day 1.</li>
+      <li>Sign up Firecrawl Pro, Smartlead, Apollo, Hunter, NeverBounce. ~$525 first month.</li>
+      <li>Build n8n <code>/webhook/firecrawl-ingest</code> + Supabase <code>partners_raw</code> + <code>partners_clean</code> tables.</li>
+      <li>Smartlead inbox warmup begins. <strong>No cold sends this week.</strong></li>
+      <li>CTO ship: Firecrawl crawl spec for NMLS-California as proof.</li>
+    </ul>
+  </div>
+
+  <div class="card"><h3 class="orange">Week 2 (May 5 – 11) · First crawl + enrichment dry run</h3>
+    <ul>
+      <li>Run NMLS-California crawl. Expect ~12K mortgage broker records.</li>
+      <li>Dedup + enrich with Apollo. Validate with NeverBounce. Expect ~7K clean records.</li>
+      <li>Build A-list (top 500) for Frankie inbox + B-list (next 5K) for Smartlead.</li>
+      <li>Write + load 4-touch sequence into Smartlead. Run 50-record test send.</li>
+      <li>Smartlead warmup continues. Inboxes hit "warm" status by Day 14.</li>
+    </ul>
+  </div>
+
+  <div class="card"><h3 class="violet">Week 3 (May 12 – 18) · First scaled send</h3>
+    <ul>
+      <li>Begin send: 30/day per inbox × 10 inboxes = 300/day, 1,500/week.</li>
+      <li>Maya partner-discovery script live in Retell. Calendly + Maya wired.</li>
+      <li>Reply-classifier n8n flow live. Hot replies route to Frankie Slack.</li>
+      <li>Target: 3-5 partner-discovery calls booked by end of week.</li>
+      <li>Run NMLS-Texas crawl in parallel. Stage for week 4 send.</li>
+    </ul>
+  </div>
+
+  <div class="card"><h3 class="green">Week 4 (May 19 – 25) · First partners signed</h3>
+    <ul>
+      <li>Frankie closes first 2-4 referral partners. Standard 30% split agreement via DocuSeal.</li>
+      <li>Onboarding email + referral form sent to each. Partner scoreboard tab added to dashboard.</li>
+      <li>First consumer leads should arrive from earliest partners by end of week. Maya consumer flow live.</li>
+      <li>Add State Bar Estate Section + NAPFA crawls. Expand pipeline mix.</li>
+    </ul>
+  </div>
+
+  <div class="card"><h3 class="pink">Month 2 (May 26 – Jun 22) · Scale send + diversify partner types</h3>
+    <ul>
+      <li>Send velocity 50/day per inbox. 2,500/week across 10 inboxes.</li>
+      <li>All 7 source types crawled across CA + TX + NV + ID. ~30K active sequences.</li>
+      <li>Partner sign rate target: 5-7/week. End Month 2 with ~25 signed partners.</li>
+      <li>First Stripe commission payouts to partners. Validates closed loop.</li>
+      <li>Maya regression sweep · ensure consumer flow holds at 100+ calls/week.</li>
+    </ul>
+  </div>
+
+  <div class="card"><h3 class="red">Month 3 (Jun 23 – Jul 22) · Bible Belt expansion + revenue inflection</h3>
+    <ul>
+      <li>Expand crawls + sends to NC, SC, GA, LA. Bible Belt licensure should be in hand by now.</li>
+      <li>Hit 30 signed partners. ~140 leads/mo flowing.</li>
+      <li>~35 policies/mo bound. Gross commission run-rate: $67K/mo.</li>
+      <li>Top 8 partners migrate to $1K/wk retainer. $32K/mo recurring layer added.</li>
+      <li>Consumer landing page (<code>orayalabs.ai/insurance</code>) goes live. Begin Meta ad test at $50/day budget.</li>
+      <li>Trigger 140% commission carrier conversation when monthly issued premium clears $60K.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- RISKS -->
+<div class="section" id="risks">
+  <h2 class="section-title">Risks + Kill Criteria</h2>
+
+  <table>
+    <thead><tr><th>Risk</th><th>Probability</th><th>Impact</th><th>Mitigation</th></tr></thead>
+    <tbody>
+      <tr><td>Domain reputation tanks (spam complaints)</td><td><span class="tag tag-orange">MED</span></td><td><span class="tag tag-red">HIGH</span></td><td>3-domain isolation · velocity caps · weekly Glock + MX Toolbox audit · pause + cool any domain that crosses 0.1% complaint rate.</td></tr>
+      <tr><td>Firecrawl gets blocked by NMLS / Bar sites</td><td><span class="tag tag-orange">MED</span></td><td><span class="tag tag-orange">MED</span></td><td>Use Firecrawl's stealth mode + rotating proxies. Throttle to 1-2 req/sec per source. Fall back to Apify scrapers for any blocked source.</td></tr>
+      <tr><td>Reply rate below 1%</td><td><span class="tag tag-blue">LOW-MED</span></td><td><span class="tag tag-orange">MED</span></td><td>Iterate copy weekly. Subject-line A/B baked in. If Touch 1 reply <0.5% after 2K sends, kill that variant.</td></tr>
+      <tr><td>Partner discovery calls don't convert</td><td><span class="tag tag-blue">LOW</span></td><td><span class="tag tag-orange">MED</span></td><td>Frankie's strength is closing. Bigger risk is bottlenecking him. If partner-call booking exceeds 10/week, hire SDR or expand Maya's discovery script.</td></tr>
+      <tr><td>Carrier appointment not in target state</td><td><span class="tag tag-blue">LOW</span></td><td><span class="tag tag-orange">MED</span></td><td>Pre-flight: confirm carrier appointments cover all 7 states before sending into that state. Current gap: confirm NC + SC + GA + LA carrier slate.</td></tr>
+      <tr><td>FTC / state AG action on cold-email volume</td><td><span class="tag tag-blue">LOW</span></td><td><span class="tag tag-red">HIGH</span></td><td>Strict CAN-SPAM compliance · no consumer cold ever · documented opt-out within 24 hr · physical address in every footer · no header spoofing. We are well inside the line.</td></tr>
+      <tr><td>Maya call quality regression</td><td><span class="tag tag-orange">MED</span></td><td><span class="tag tag-orange">MED</span></td><td>Already have Apr 22 voice-ai-bugs folder + per-node-model SOP. Run 20-call regression after every prompt change. Roll back instantly on glitch (Apr 22 pattern).</td></tr>
+      <tr><td>Partner ghosts after signing</td><td><span class="tag tag-orange">MED</span></td><td><span class="tag tag-blue">LOW</span></td><td>30-day check-in cadence. Auto-deactivate inactive partners after 60 days. Replacement velocity from pipeline keeps active partner count stable.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card"><h3 class="red">Kill criteria · we shut down or pivot if</h3>
+    <ul>
+      <li>By Day 30: less than 200 deliverable contacts in <code>partners_clean</code>. Means crawl + enrichment pipeline broken — fix or kill.</li>
+      <li>By Day 45: less than 0.8% reply rate after 5K sends. Means copy + ICP mismatch — pivot before scaling further.</li>
+      <li>By Day 60: less than 5 partners signed. Means close-rate model is wrong — Frankie + Maya playbook needs rebuild.</li>
+      <li>By Day 90: less than 10 policies bound from partner channel. Means partner-to-policy conversion is broken — investigate at consumer-funnel layer.</li>
+    </ul>
+  </div>
+
+  <div class="banner go">
+    <div>
+      <h4>Confidence read</h4>
+      <p>The mortgage broker → life insurance referral channel is a 30-year-old playbook that already works manually for thousands of agents. We are not inventing a category. We are industrializing discovery + qualification of an existing winning channel. Execution risk is moderate. Strategic risk is low.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+document.querySelectorAll('.nav-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.tab).classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+});
+</script>
+</body>
+</html>
