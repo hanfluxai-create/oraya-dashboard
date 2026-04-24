@@ -211,7 +211,7 @@ details p,details ul,details ol,details li{font-size:12px}
 <div class="section active" id="overview">
   <div class="hero">
     <h2>Operation South Bay &middot; Week 16 &middot; Day 104 &middot; Apr 24 2026 <span class="countdown-pill"><span class="pulse"></span>TRIPLE-SEND DAY</span></h2>
-    <p class="lead">Transition day &rarr; strategy day. AM: first pilot invite landed in Mark Akbar's inbox; Khalid (former MBSB staff &middot; may have moved on) pinged; Mazzio warm follow-up sent; Abdul meeting confirmed. PM (Mtg 23): cold-email math killed (0.03%, 1 lead per 306 emails, 66K&rarr;18 policies) &middot; <strong>paid ads becomes primary P2 acquisition channel</strong> &middot; Apollo prospecting stack already live (free tier, used during earlier prospecting) &middot; live P2 inbound from old insurance client <strong>George</strong> (Apr 15 email, Frankie called back Apr 24) &middot; <strong>direct-to-owner pivot</strong> triggered (Khalid no-reply confirms may-have-left; if champion layer silent 72h, go straight to Mercedes SB owner) &middot; Stripe sandbox dead, fresh live account spun up on <code>frankie@orayalabs.ai</code> (three products $497/$997/$1997 pending) &middot; competitor UX intel captured (timer popup, social-proof ticker, full-conversation preview, demo-first gating). Teresa re-ping queued. Frankie flight SF&rarr;LA $180 1hr if no reply.</p>
+    <p class="lead">Transition day &rarr; strategy day. AM: first pilot invite landed in Mark Akbar's inbox; Khalid (former MBSB staff &middot; may have moved on) pinged; Mazzio warm follow-up sent; Abdul meeting confirmed. PM (Mtg 23): cold-email math killed (0.03%, 1 lead per 306 emails, 66K&rarr;18 policies) &middot; <strong>paid ads becomes primary P2 acquisition channel</strong> &middot; Apollo prospecting stack already live (free tier, used during earlier prospecting) &middot; live P2 inbound from old insurance client <strong>George</strong> (Apr 15 email, Frankie called back Apr 24) &middot; <strong>direct-to-owner pivot</strong> triggered (Khalid no-reply confirms may-have-left; if champion layer silent 72h, go straight to Mercedes SB owner) &middot; Stripe sandbox dead, fresh live account spun up on <code>frankie@orayalabs.ai</code> (three products $497/$997/$1997 pending) &middot; competitor UX intel captured (timer popup, social-proof ticker, full-conversation preview, demo-first gating). Teresa re-ping queued. Frankie flight SF&rarr;LA $180 1hr if no reply. <strong>Late-night closeout (Apr 24 5-10 AM):</strong> Frankie shipped <strong>3 Stripe test payment links live</strong> ($497 / $997 / $1997 product tiers), drove the flow himself via RPA first-solo-use (unsubscribed from marketing emails independently &mdash; adoption signal). Backend tier-button wiring pending (Frankie blocked on backend access &rarr; Chitraksh owns next). <strong>Apr 25 PM plan:</strong> Frankie sends LinkedIn DM to Mark Akbar as secondary channel after work. Quote AI + DAO reinstated as visible subsidiaries (not just horizon bullets).</p>
 
     <div class="countdown-strip">
       <div class="countdown-tile green"><div class="label">Pilot Outreach</div><div class="value">SENT</div><div class="sub">Apr 24 &middot; triple-send</div></div>
@@ -279,7 +279,10 @@ details p,details ul,details ol,details li{font-size:12px}
         <li><strong>Apr 24 PM</strong> &middot; Inbox monitoring for any of: Mark Akbar reply, Khalid reply, Mazzio reply.</li>
         <li><strong>Apr 24 evening</strong> &middot; Stripe live-mode promotion. CTO account login reset. Retry first Frankie purchase on non-Chase card.</li>
         <li><strong>Apr 25</strong> &middot; Provision <code>chitraksh@orayalabs.ai</code> ($2/mo GoDaddy add-on). Turn off residual Google Workspace services.</li>
-        <li><strong>Apr 25</strong> &middot; Wire Stripe live-mode to 3 website package buttons. Replace "Client Login" with "Book Demo" CTA.</li>
+        <li><strong>Apr 25 AM</strong> &middot; <strong>Stripe BE wiring (Chitraksh):</strong> connect 3 live payment links to the 3 package buttons on site. Frankie already shipped the FE links overnight &mdash; BE only. RPA is BLOCKED on Stripe payment pages so this is manual / API / direct code.</li>
+        <li><strong>Apr 25 AM</strong> &middot; Finalize Book Demo button + calendar integration (replaces Client Login). Chitraksh committed.</li>
+        <li><strong>Apr 25 PM</strong> &middot; Frankie sends <strong>LinkedIn DM to Mark Akbar</strong> as secondary outreach channel (email already in his inbox; LinkedIn adds parallel touch if email is screened).</li>
+        <li><strong>Apr 25-26</strong> &middot; Chitraksh ships <strong>lead scoring + exhaustion cadence</strong> engine (per CTO-Claude spec in Insurance tab). Ship BEFORE first paid-ads campaign lands so inbound hits a live scoring engine.</li>
         <li><strong>Apr 25/26 weekend</strong> &middot; <strong>Frankie drives LA</strong> if no reply from Khalid/Mark. In-person Mazzio walk-in ready.</li>
         <li><strong>Apr 24-25</strong> &middot; Abdul meeting CONFIRMED. Sharpened offer: $6K payback ($5K owed + $1K premium) + ongoing percentage for a warm re-intro into Mercedes SB (original chain was Abdul &rarr; Khalid &rarr; Mark Akbar). He originated the chain; this formalizes the goodwill loop.</li>
         <li><strong>Apr 27</strong> &middot; Teresa re-ping with pilot status update.</li>
@@ -537,6 +540,59 @@ details p,details ul,details ol,details li{font-size:12px}
       </tbody>
     </table></div>
   </div>
+
+  <div class="card">
+    <h3 class="violet">Lead scoring + exhaustion cadence &middot; CTO-Claude answer (Apr 24)</h3>
+    <p><strong>Frankie's ask:</strong> "ay, 9th day, 15th day etc, i think 2 weeks is sufficient but could be wrong, we will ask HQ what is optimal amount of time to lead exhaustion simultaneously reducing costs for leads less likely to convert, add lead scoring so only the hottest leads go to appointments based on buying signals + intent analyzed by our AI."</p>
+
+    <p><strong>Verdict:</strong> Frankie's 2-week instinct is right for the MIDDLE tier &mdash; but a flat 2-week cap burns hot leads and keeps dead leads alive too long. A scored + tiered cadence is the right structure.</p>
+
+    <h4 style="color:var(--accent);margin-top:14px">Proposed cadence (by score tier)</h4>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Score</th><th>Tier</th><th>Touches</th><th>Cadence</th><th>Exhaustion</th><th>Channel</th></tr></thead>
+      <tbody>
+        <tr><td>&ge; 70</td><td class="green"><strong>Hot</strong></td><td>5 touches</td><td>Day 0, 1, 3, 5, 9</td><td>Day 10 &rarr; nurture</td><td>Voice AI call + SMS + email</td></tr>
+        <tr><td>40-69</td><td class="orange"><strong>Warm</strong></td><td>6 touches</td><td>Day 0, 2, 5, 9, 15, 21</td><td>Day 22 &rarr; nurture</td><td>Email + SMS &middot; voice only on reply</td></tr>
+        <tr><td>&lt; 40</td><td class="red"><strong>Cold</strong></td><td>3 touches</td><td>Day 0, 7, 21</td><td>Day 22 &rarr; nurture</td><td>Email only &middot; no Retell minutes</td></tr>
+        <tr><td>Any (nurture)</td><td class="pink">Long tail</td><td>Quarterly</td><td>D+60, D+90, D+180</td><td>Permanent drop at D+365</td><td>Email only</td></tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:13px;color:var(--text2);margin-top:8px"><strong>Cost containment logic:</strong> only Hot (score &ge; 70) leads get expensive Retell minutes after touch #1. Warm leads earn Retell time only after a positive reply. Cold leads are email-only &mdash; cost per touch drops from ~$0.42/call to ~$0.001/email, a 420x reduction on the bottom 60% of the pipeline.</p>
+
+    <h4 style="color:var(--accent);margin-top:14px">Scoring dimensions (AI-derived, 0-100)</h4>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Dimension</th><th>Weight</th><th>Signal</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Explicit ask</td><td>25</td><td>"Send me a quote" &gt; "Tell me more" &gt; generic interest &gt; no ask</td><td>Retell transcript NLP</td></tr>
+        <tr><td>Response latency</td><td>15</td><td>&lt;1hr (25pt), &lt;24hr (15pt), &lt;72hr (7pt), &gt;72hr (0pt)</td><td>Supabase timestamps</td></tr>
+        <tr><td>Conversation length</td><td>15</td><td>&ge;3 min voice (15pt), 1-3 min (8pt), &lt;1 min (0pt)</td><td>Retell call duration</td></tr>
+        <tr><td>Specificity</td><td>15</td><td>Named coverage type + dollar amount mentioned = full points</td><td>Transcript NLP</td></tr>
+        <tr><td>Quote / calendar Q</td><td>15</td><td>Asked for quote or appointment = full points</td><td>Intent classifier</td></tr>
+        <tr><td>Demographic fit</td><td>10</td><td>Age + state + prior-policy match carrier appetite</td><td>Apollo enrichment</td></tr>
+        <tr><td>Reply sentiment</td><td>5</td><td>Positive &gt; neutral &gt; negative</td><td>Transcript NLP</td></tr>
+      </tbody>
+    </table></div>
+
+    <h4 style="color:var(--accent);margin-top:14px">Routing rules (on each touch outcome)</h4>
+    <ul style="margin-top:6px">
+      <li><strong>Score jumps &ge; 15 points on any touch</strong> &rarr; upgrade tier immediately; live-agent handoff within 5 minutes for Hot.</li>
+      <li><strong>Two consecutive silent touches at Warm or Cold</strong> &rarr; demote one tier.</li>
+      <li><strong>Explicit "do not contact" or hard unsubscribe</strong> &rarr; permanent DNC list, zero further touches (TCPA + CAN-SPAM + CA SB 1001 compliance).</li>
+      <li><strong>Appointment booked</strong> &rarr; freeze automated sequence, hand to Frankie or qualified agent.</li>
+      <li><strong>No-show on booked appointment</strong> &rarr; drop one tier + schedule recovery sequence at Day +3.</li>
+    </ul>
+
+    <h4 style="color:var(--accent);margin-top:14px">Why this beats flat 2-week</h4>
+    <ul style="margin-top:6px">
+      <li>Hot leads get 5 touches in 9 days rather than 3 in 14 &mdash; no oxygen lost to a policy buyer who's ready NOW.</li>
+      <li>Cold leads get 3 email touches over 21 days at pennies, not 3 voice calls at $1.26 of Retell burn.</li>
+      <li>Nurture tail captures leads that convert at 6-12 month decision cycles (common in life insurance) at quarterly email cost, ~$0.003 each.</li>
+      <li>Compliance is encoded in routing, not bolted on &mdash; DNC, unsubscribe, appointment-freeze are all rule-driven, audit-traceable.</li>
+    </ul>
+
+    <p style="font-size:13px;color:var(--text2);margin-top:10px"><strong>Infra to build (Chitraksh queue):</strong> scoring function in n8n (reads Supabase lead_events + Retell transcript NLP output), writes back <code>score</code>, <code>tier</code>, <code>next_touch_at</code> columns. Cadence scheduler fires from <code>next_touch_at</code> triggers. Dashboard adds a Lead Pipeline tab (future v11) with tier breakdown + cost-per-appointment KPI.</p>
+    <p style="font-size:13px;color:var(--text2);margin-top:6px"><strong>Sequencing:</strong> score function + scheduler = ~2 days of n8n + Supabase work for Chitraksh; ship BEFORE the first paid-ads test campaign lands, so the inbound lead flow hits a live scoring engine instead of a flat cadence.</p>
+  </div>
 </div>
 
 <div class="section" id="legal">
@@ -714,6 +770,24 @@ details p,details ul,details ol,details li{font-size:12px}
       <p><strong>Why:</strong> compounding gains; shaves approx 6-8h/week off Chitraksh's load. Sentient Protocol v4 rule holds.</p>
       <p><strong>Owner:</strong> CTO-Claude &middot; <strong>Timing:</strong> ongoing.</p>
     </div>
+    <div class="card">
+      <h3 class="accent">Rec 7 &middot; LinkedIn DM to Mark Akbar (parallel channel)</h3>
+      <p><strong>Play:</strong> Frankie sends a detailed personal LinkedIn DM to Mark Akbar after work Apr 25. Different channel than email &middot; different inbox &middot; bypasses corporate filters &middot; adds LinkedIn's social-proof layer (connections, endorsements, career history visible to Mark).</p>
+      <p><strong>Why:</strong> zero downside, meaningful upside. Email reply rates at GM level sit 15-25%; LinkedIn InMail reply rates run 25-40% for warm-framed messages. Reference the sent email without redundant re-pitching &mdash; nudge a response.</p>
+      <p><strong>Owner:</strong> Frankie &middot; <strong>Timing:</strong> Apr 25 PM after work.</p>
+    </div>
+    <div class="card">
+      <h3 class="violet">Rec 8 &middot; Lead scoring + exhaustion engine (pre-ads ship)</h3>
+      <p><strong>Play:</strong> Chitraksh ships the lead scoring function + cadence scheduler (spec in Insurance tab) before the first paid-ads campaign lands. Scoring writes to Supabase; cadence triggers off <code>next_touch_at</code>.</p>
+      <p><strong>Why:</strong> flat 2-week cadence torches hot leads and wastes Retell minutes on dead leads. Tiered scoring (Hot 5 touches / Warm 6 / Cold 3 email-only) cuts cost-per-touch ~420x on the bottom 60% of pipeline.</p>
+      <p><strong>Owner:</strong> Chitraksh &middot; <strong>Timing:</strong> 2 days of work, ship Apr 25-26 before ads go live.</p>
+    </div>
+    <div class="card">
+      <h3 class="green">Rec 9 &middot; Quote AI + DAO reinstated &middot; holding-co narrative</h3>
+      <p><strong>Play:</strong> keep Quote AI (autonomous insurance agency) and DAO Insurance (Solana/Ethereum claim pools) visible in the Insurance tab's Tier 4 horizon block, not buried. Holding-co story = Oraya Corp (parent) &rarr; P1 + P2 + Quote AI + DAO as subs.</p>
+      <p><strong>Why:</strong> Frankie flagged these were invisible in the skimmed dashboard. Uzi Sassoon already validated Quote AI. These are the fundraising-narrative assets when the priced round opens.</p>
+      <p><strong>Owner:</strong> CTO-Claude doc + Chitraksh tech &middot; <strong>Status:</strong> visibility reinstated in v10.4.</p>
+    </div>
   </div>
 </div>
 
@@ -723,7 +797,8 @@ details p,details ul,details ol,details li{font-size:12px}
   <div class="card">
     <h3 class="green">This week &middot; Apr 21 &rarr; Apr 24</h3>
     <ul>
-      <li><strong>Apr 24 (today)</strong> &middot; <span class="tag tag-green">MILESTONE</span> Triple-outreach SENT: email to Mark Akbar (GM, MBSB), email to Chris Mazzio (Sales Mgr, MBSB), WhatsApp to Khalid (former MBSB manager). <code>frankie@orayalabs.ai</code> signature canonical. Four working-product screenshots attached. <strong>Plus:</strong> Abdul meeting CONFIRMED same day &mdash; he's the external investor (not Mercedes, not AutoNation) who originated the chain &mdash; offer on the table: $6K ($5K principal + $1K premium) + ongoing percentage for a warm MBSB re-intro.</li>
+      <li><strong>Apr 24 late-night (5-10 AM)</strong> &middot; Frankie ships <strong>3 Stripe test payment links live</strong> ($497 / $997 / $1997). Drives flow solo. RPA first-solo-use (unsubscribe automation) &mdash; technical-adoption leap. BE wiring still pending (Chitraksh owns). <strong>Apr 25 AM plan:</strong> Chitraksh wires Stripe BE + ships lead scoring engine. <strong>Apr 25 PM plan:</strong> Frankie LinkedIn DM to Mark Akbar as parallel channel.</li>
+        <li><strong>Apr 24 (today)</strong> &middot; <span class="tag tag-green">MILESTONE</span> Triple-outreach SENT: email to Mark Akbar (GM, MBSB), email to Chris Mazzio (Sales Mgr, MBSB), WhatsApp to Khalid (former MBSB manager). <code>frankie@orayalabs.ai</code> signature canonical. Four working-product screenshots attached. <strong>Plus:</strong> Abdul meeting CONFIRMED same day &mdash; he's the external investor (not Mercedes, not AutoNation) who originated the chain &mdash; offer on the table: $6K ($5K principal + $1K premium) + ongoing percentage for a warm MBSB re-intro.</li>
       <li><strong>Apr 23</strong> &middot; Email final draft locked. TISAX removed. California compliance stack added. Live test number inserted. Customization framing sharpened. Logo refinement brief issued 3:38 AM. Canonical signature block shipped.</li>
       <li><strong>Apr 22</strong> &middot; Voice agent regressions caught and fixed (Lauren + S-Class). GoDaddy Email Essentials live. Microsoft 365 routed. Google Workspace killed. Mr. Jenkins cleaned competing MX. n8n watermark stripped. RPA PoC (Gemini 3.1 Pro / Comet / GoDaddy DNS). Stripe sandbox + meter configured. "AI" removed from branding. Mtg 21 Stripe + Mtg 22 naming/offer.</li>
       <li><strong>Apr 21</strong> &middot; Triple-outreach plan committed ("we're going crazy"). Braze AI evaluated and rejected ("disregard, not for us"). Site cleanup push. Legendary idea teased (undisclosed). Mtg 19 GoDaddy/Twilio/RPA demo. Mtg 20 Royal Ops DNS fix + first draft polish.</li>
@@ -999,7 +1074,8 @@ details p,details ul,details ol,details li{font-size:12px}
       <tbody>
         <tr><td>Replace "Client Login" with <strong>"Book Demo"</strong> CTA &middot; wire to shared founder calendar (Calendly free or native Outlook embed)</td><td><span class="tag tag-orange">QUEUED</span></td><td>CTO</td><td>Apr 25</td></tr>
         <tr><td>Client Login &middot; demote lower on page (still accessible)</td><td><span class="tag tag-orange">QUEUED</span></td><td>CTO</td><td>Apr 25</td></tr>
-        <tr><td>Stripe live-mode to 3 package-tier checkout pages</td><td><span class="tag tag-orange">BLOCKED ON R17</span></td><td>CTO</td><td>Apr 25-26</td></tr>
+        <tr><td>Stripe &middot; 3 live payment links (<code>test_3cI</code> / <code>test_6oU</code> / <code>test_5kQ</code>)</td><td><span class="tag tag-green">FE SHIPPED Apr 24 overnight (Frankie solo)</span></td><td>Frankie</td><td>DONE</td></tr>
+        <tr><td>Stripe BE &middot; wire 3 payment links to 3 website package buttons</td><td><span class="tag tag-orange">CHITRAKSH BE &middot; RPA blocked &rarr; manual/API</span></td><td>CTO</td><td>Apr 25</td></tr>
         <tr><td>Add "minutes" display on package tiers (align with hybrid billing)</td><td><span class="tag tag-orange">QUEUED</span></td><td>CTO</td><td>Apr 25</td></tr>
         <tr><td>Refined Oraya Corporation logo (Apr 23 brief)</td><td><span class="tag tag-orange">IN FLIGHT</span></td><td>CTO</td><td>Apr 25</td></tr>
       </tbody>
@@ -1058,6 +1134,8 @@ details p,details ul,details ol,details li{font-size:12px}
         <li><strong>Meet Art</strong> (mentor) &middot; strategic feedback, not demo. Re-engagement was Apr 22.</li>
         <li><strong>Re-ping Teresa</strong> with MBSB-status update &middot; offer half-weight $500 retainer trial.</li>
         <li><strong>Reply to CTO-Claude brief</strong> &middot; acknowledge ingest of WhatsApp Apr 21-23 + new intel Apr 22-24.</li>
+        <li><strong>Apr 25 PM &middot; LinkedIn DM to Mark Akbar</strong> after work &middot; detailed personal outreach as secondary channel in case email is screened. <span class="tag tag-orange">QUEUED</span></li>
+        <li><strong>Shipped overnight:</strong> 3 Stripe test payment links live ($497/$997/$1997). First solo RPA use (unsubscribed from marketing emails). <span class="tag tag-green">DONE</span></li>
       </ol>
     </div>
     <div class="card">
@@ -1067,7 +1145,10 @@ details p,details ul,details ol,details li{font-size:12px}
         <li><strong>Provision <code>chitraksh@orayalabs.ai</code></strong> &middot; $2/mo GoDaddy add-on &middot; CC flows depend on this.</li>
         <li><strong>Turn off residual Google Workspace services</strong> via admin link (<code>knowledge.workspace.google.com/admin/users/advanced/turn-a-service-on-or-off-for-google-workspace-users</code>).</li>
         <li><strong>Ship refined Oraya Corporation logo</strong> per Apr 23 brief.</li>
-        <li><strong>Wire Stripe live-mode</strong> to website &middot; 3 package-tier checkout pages. Resolve R17 login.</li>
+        <li><strong>Wire Stripe BE to website</strong> &middot; Frankie already shipped 3 live payment links overnight. BE only. Connect to 3 package buttons. R17 login resolved &mdash; account live on <code>frankie@orayalabs.ai</code>.</li>
+        <li><strong>Reinstate Quote AI + DAO visibility</strong> &middot; Frankie flagged both missing from earlier dashboard version. <span class="tag tag-green">DONE in v10.4 (Tier 4 horizon block now prominent)</span></li>
+        <li><strong>Ship lead scoring + exhaustion engine</strong> &middot; per CTO-Claude spec in Insurance tab. Scoring function in n8n &middot; cadence scheduler &middot; Supabase schema for <code>score/tier/next_touch_at</code>. Ship before first paid-ads campaign.</li>
+        <li><strong>Finalize Book Demo + calendar</strong> &middot; replace "Client Login" button, wire to shared founders' calendar (Calendly free or native M365).</li>
         <li><strong>Review legal pack v0.2</strong> &middot; CPRA &sect; 1798.140(ag) carve-out + n8n EU residency confirmation before Retell signature request.</li>
       </ol>
     </div>
@@ -1112,9 +1193,9 @@ details p,details ul,details ol,details li{font-size:12px}
       <div>
         <h4 style="font-size:12.5px;margin:0 0 4px;color:var(--pink)">Tier 4 &middot; horizon (90d+)</h4>
         <ul>
-          <li>Quote AI MVP &middot; autonomous insurance agency</li>
-          <li>DAO Insurance whitepaper &middot; Chitraksh + Solana cousin</li>
-          <li>Holding Co structure &middot; P1 + P2 + Quote AI + DAO as subsidiaries</li>
+          <li><strong>Quote AI</strong> &middot; autonomous insurance agency (scrape &rarr; enrich &rarr; voice qualify &rarr; RPA e-app &rarr; Stripe commission). Validated by Uzi Sassoon. <span class="tag tag-violet">REINSTATED Apr 24</span></li>
+          <li><strong>DAO Insurance</strong> &middot; Solana/Ethereum smart-contract pools, community-voted claims. Cousin is Solana dev. End-state narrative. <span class="tag tag-violet">REINSTATED Apr 24</span></li>
+          <li><strong>Holding Co structure</strong> &middot; Oraya Corp (parent) &rarr; P1 Voice AI + P2 Insurance Lead Gen + Quote AI + DAO Insurance as subsidiaries</li>
           <li>Gemini 3.1 Live eval as 11Labs replacement &middot; Jun-Jul 2026</li>
         </ul>
       </div>
@@ -1135,7 +1216,7 @@ details p,details ul,details ol,details li{font-size:12px}
     <ul>
       <li>Voice agent (Jessica) on Retell &middot; appointment-setter path production-stable</li>
       <li>Corporate email <code>frankie@orayalabs.ai</code> on Microsoft 365 / GoDaddy</li>
-      <li>Stripe sandbox + meter &middot; $0.37 first signal Apr 15 &middot; hybrid billing locked</li>
+      <li>Stripe LIVE account on <code>frankie@orayalabs.ai</code> &middot; 3 payment links shipped Apr 24 ($497 / $997 / $1997) &middot; hybrid billing (flat + usage) &middot; BE wiring pending</li>
       <li>Dashboard v10 Renaissance &middot; daily autonomous briefs &middot; Sentient Protocol v4</li>
       <li>orayalabs.ai marketing site &middot; "AI" removed from branding, Book Demo CTA queued</li>
       <li>Legal pack v0.2 (6 vendor DPAs, SOW, NDA, retainer, E&amp;O rider)</li>
@@ -1157,7 +1238,7 @@ details p,details ul,details ol,details li{font-size:12px}
     <ul>
       <li><strong>R1 &middot; MBSB momentum decay</strong> if no reply by Apr 28 &rarr; LA drive weekend Apr 25/26 armed.</li>
       <li><strong>R14 &middot; voice agent regressions</strong> (Lauren, S-Class) &mdash; triple-pass verification required before live-test number is exercised by the GM.</li>
-      <li><strong>R17 &middot; Stripe live-mode blocked</strong> on CTO login &mdash; customer checkout wiring depends on this.</li>
+      <li><strong>R17 resolved</strong> &middot; Stripe live account spun up on <code>frankie@orayalabs.ai</code>, 3 payment links live. Remaining: BE wiring to 3 website buttons (RPA-blocked &rarr; manual/API).</li>
       <li><strong>R13 &middot; inventory sync-miss vs query-tool verdict</strong> &mdash; only matters if the first call routes through inventory intent; appointment-setter-only path is safe.</li>
       <li><strong>R11 &middot; Khalid deal cannot route through MB official channels</strong> &middot; felony risk &middot; enforced zero MB-linked comms.</li>
     </ul>
@@ -1167,7 +1248,9 @@ details p,details ul,details ol,details li{font-size:12px}
     <h3 class="orange">What's next (72-hour horizon)</h3>
     <ol>
       <li><strong>Inbox monitoring</strong> &middot; any of Mark Akbar / Khalid / Mazzio reply routes through the regression-clean stack.</li>
-      <li><strong>Stripe live-mode promotion</strong> &middot; resolve CTO login, wire 3 checkout pages, retry Frankie on non-Chase card.</li>
+      <li><strong>Stripe BE wiring</strong> &middot; Chitraksh connects 3 live payment links to 3 package buttons (FE shipped by Frankie overnight).</li>
+      <li><strong>Lead scoring + exhaustion engine</strong> &middot; Chitraksh ships spec per CTO-Claude Insurance-tab design before first paid-ads test campaign.</li>
+      <li><strong>LinkedIn DM to Mark Akbar</strong> &middot; Frankie Apr 25 PM after work &middot; parallel channel beyond email.</li>
       <li><strong>Chitraksh email provisioning</strong> &middot; CC flows go green.</li>
       <li><strong>LA drive Apr 25/26</strong> if no reply by Apr 25 EOD.</li>
       <li><strong>Abdul meeting today</strong> &middot; present $6K ($5K owed + $1K premium) + ongoing percentage in exchange for a warm re-intro into MBSB (he's external &mdash; originated the Khalid &rarr; Mark Akbar chain).</li>

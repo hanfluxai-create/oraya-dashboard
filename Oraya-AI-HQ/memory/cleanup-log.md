@@ -1,5 +1,34 @@
 # Memory Cleanup Log
 
+## 2026-04-24 — Automated pass (stale-items-cleanup)
+
+### Boot-path correction
+Scheduled task still points at `/Users/.../Claude hq/memory/*.md`. Actual memory files live at `/Users/.../Claude hq/Oraya-AI-HQ/memory/*.md`. Ran against the correct paths. Recommend updating the task file so future runs hit the right boot list without a lookup step.
+
+### pending-actions.md
+- Teresa anchor-close: marked [OVERDUE as of Apr 24]. Pending date was Apr 22; no branch pick (a/b/c/none) is reflected in the notes as of Apr 24, and the fallback rule says "no outreach before Apr 28" if nothing lands. Needs a decision log today.
+- Inventory sprint, Stripe live-mode, Renaissance pivot, Direct-to-owner pivot, George P2 callback, Day 4 lock: all dated Apr 22 to Apr 25. Not stale, not overdue. Left alone.
+- No items older than 14 days. No "Needs Decision" section added.
+
+### active-projects.md
+No action. Registry file with no dated task entries. Project status lives in dashboard and per-project `PROJECT.md` files; those are the correct targets for 14-day staleness checks, not this file.
+
+### learnings.md
+No action. No new correction pattern has reached 3+ occurrences since the Apr 21 pass. Existing hardened rules (dashboard push, dashboard scope, em/en dashes, Per-node Model SOP, boot sequence) still cover all repeat violations.
+
+### contacts.md
+- Chris Mazzio: status block marked [OVERDUE as of Apr 24]. Apr 22 walk-in trigger ("no reply to text + voicemail by 3 PT today") has passed without a documented resolution. Added a note to confirm whether walk-in fired or update status before the Apr 28 recast-dormant deadline.
+- Teresa: status block marked [OVERDUE as of Apr 24]. Same Apr 22 anchor-close pending that is flagged in pending-actions.md.
+- No other contact has a passed deadline.
+
+### Rule fidelity
+No em dashes introduced. Only overdue items touched. Four files, three narrow edits, one new cleanup-log entry.
+
+### Recommendation for next pass
+Repeat Apr 21 recommendation: retarget the scheduled task at `TASKS.md` + dashboard Tasks tab + `memory/learnings.md`. Additionally, update the boot-list file paths in the task file itself to `Oraya-AI-HQ/memory/`. If Teresa and Mazzio statuses are not updated manually before the next run, escalate them in the next pass summary.
+
+---
+
 ## 2026-04-21 — Automated pass (stale-items-cleanup)
 
 ### State of memory
