@@ -37,14 +37,22 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:14px;-webkit-font-smoothing:antialiased}
-.top-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;box-shadow:var(--shadow)}
-.brand{display:flex;align-items:center;gap:12px}
-.brand-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--p2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:17px;box-shadow:var(--shadow-lg)}
-.brand .name{font-weight:700;font-size:16px}
-.brand .sub{font-size:11px;color:var(--text3);font-weight:500}
+.top-bar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:11px 24px;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;box-shadow:var(--shadow)}
+.brand{display:flex;align-items:center;gap:12px;min-width:0;flex:1}
+.brand-mark{width:36px;height:36px;flex-shrink:0;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--p2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px;box-shadow:var(--shadow-lg)}
+.brand .copy{min-width:0;overflow:hidden}
+.brand .name{font-weight:700;font-size:15.5px;line-height:1.2}
+.brand .sub{
+  font-size:11.5px;color:var(--text3);font-weight:500;line-height:1.4;margin-top:2px;
+  max-width:760px;
+  display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.brand .sub strong{color:var(--text2)}
+@media(min-width:1100px){.brand .sub{white-space:normal;-webkit-line-clamp:2}}
 .theme-toggle{border:1px solid var(--border);background:var(--surface);color:var(--text);font:inherit;font-size:13px;font-weight:600;cursor:pointer;padding:7px 14px;border-radius:999px;transition:all .15s}
 .theme-toggle:hover{background:var(--surface2);border-color:var(--border2)}
-.container{max-width:1280px;margin:0 auto;padding:24px 24px 60px}
+.container{max-width:1240px;margin:0 auto;padding:26px 28px 64px}
 /* === MILESTONE BANNER · Fibonacci / Golden-Ratio Layout (v11.4) ===
    Spacing scale: 5 8 13 21 34 55 px (Fibonacci)
    Grid split: 1.618 : 1 (≈ 62/38 — the golden section)
@@ -53,7 +61,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans
 .milestone-banner{
   background:linear-gradient(135deg,var(--green-soft),var(--blue-soft));
   border:1px solid var(--green);border-radius:13px;
-  padding:13px 21px 13px;margin-bottom:13px;
+  padding:16px 22px 18px;margin-bottom:18px;
   box-shadow:var(--shadow-lg);position:relative;overflow:hidden;
 }
 .milestone-banner::before{
@@ -85,15 +93,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans
 .mb-toggle .chev{transition:transform .2s}
 .milestone-banner.is-collapsed .mb-toggle .chev{transform:rotate(-90deg)}
 .milestone-banner h1{
-  margin:0 0 5px;font-size:19px;font-weight:800;letter-spacing:-.4px;
-  color:var(--text);line-height:1.3;
+  margin:0 0 8px;font-size:19px;font-weight:800;letter-spacing:-.4px;
+  color:var(--text);line-height:1.35;
 }
 .milestone-banner .grad{
   background:linear-gradient(90deg,var(--green),var(--blue));
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
 .milestone-banner .subhead{
-  margin:0 0 8px;font-size:12.5px;color:var(--text2);line-height:1.5;
+  margin:0 0 12px;font-size:12.5px;color:var(--text2);line-height:1.65;max-width:780px;
 }
 /* GOLDEN-SECTION GRID — left rail 1.618fr, right rail 1fr */
 .mb-golden{
@@ -103,30 +111,31 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans
 .mb-golden.is-hidden{display:none}
 .mb-left{
   background:rgba(255,255,255,.55);border:1px dashed var(--green);
-  border-radius:10px;padding:10px 13px;
+  border-radius:10px;padding:12px 15px;
 }
 :root[data-theme="dark"] .mb-left{background:rgba(15,23,42,.45);border-color:var(--green)}
 .mb-left .wn-head{
   font-size:10px;font-weight:800;color:var(--green);
-  letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;
+  letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;
   display:flex;align-items:center;gap:5px;
 }
-.mb-left ul{margin:0;padding-left:17px;font-size:12.5px;color:var(--text2)}
-.mb-left li{margin-bottom:3px;line-height:1.5}
+.mb-left ul{margin:0;padding-left:18px;font-size:12.5px;color:var(--text2)}
+.mb-left li{margin-bottom:6px;line-height:1.6}
+.mb-left li:last-child{margin-bottom:0}
 .mb-left strong{color:var(--text)}
 .mb-left code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-size:11px;color:var(--text)}
 /* RIGHT RAIL — vertical Fibonacci-spaced state chips */
-.mb-right{display:flex;flex-direction:column;gap:5px}
+.mb-right{display:flex;flex-direction:column;gap:6px}
 .mb-state-head{
   font-size:10px;font-weight:800;color:var(--blue);
-  letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;
+  letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;
   display:flex;align-items:center;gap:5px;
 }
 .mb-chip{
-  display:flex;align-items:flex-start;gap:8px;
+  display:flex;align-items:flex-start;gap:9px;
   background:rgba(255,255,255,.6);border:1px solid var(--border);
   border-left:3px solid var(--blue);border-radius:8px;
-  padding:7px 10px;font-size:11.5px;color:var(--text2);line-height:1.4;
+  padding:8px 11px;font-size:11.5px;color:var(--text2);line-height:1.5;
 }
 :root[data-theme="dark"] .mb-chip{background:rgba(15,23,42,.4)}
 .mb-chip strong{color:var(--text);font-weight:700}
@@ -155,39 +164,44 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans
 .mb-deep .deep-body strong{color:var(--text)}
 .mb-deep .deep-body code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-size:11.5px;color:var(--text)}
 .mb-deep.is-hidden{display:none}
-.hero{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:16px;box-shadow:var(--shadow)}
-.hero h2{margin:0 0 4px;font-size:17px;font-weight:700;letter-spacing:-.3px}
-.hero .lead{font-size:13px;color:var(--text2);margin:0 0 14px}
-.countdown-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:12px 0}
-.countdown-tile{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;position:relative}
+.hero{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 26px;margin-bottom:18px;box-shadow:var(--shadow)}
+.hero h2{margin:0 0 6px;font-size:17px;font-weight:700;letter-spacing:-.3px;line-height:1.35}
+.hero .lead{font-size:13px;color:var(--text2);margin:0 0 14px;line-height:1.7}
+.hero .lead p{margin:0 0 11px}
+.hero .lead p:last-child{margin-bottom:0}
+.hero .lead strong{color:var(--text)}
+.countdown-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:11px;margin:14px 0}
+.countdown-tile{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:13px 15px;position:relative;transition:transform .15s,box-shadow .15s}
+.countdown-tile:hover{transform:translateY(-1px);box-shadow:var(--shadow-lg)}
 .countdown-tile .label{font-size:10.5px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;font-weight:700}
-.countdown-tile .value{font-size:19px;font-weight:800;margin-top:4px;letter-spacing:-.3px}
-.countdown-tile .sub{font-size:11px;color:var(--text2);margin-top:2px}
+.countdown-tile .value{font-size:18px;font-weight:800;margin-top:5px;letter-spacing:-.3px;line-height:1.2}
+.countdown-tile .sub{font-size:11px;color:var(--text2);margin-top:4px;line-height:1.45}
 .countdown-tile.green{border-left:3px solid var(--green)}
 .countdown-tile.orange{border-left:3px solid var(--orange)}
 .countdown-tile.red{border-left:3px solid var(--red)}
 .countdown-tile.blue{border-left:3px solid var(--blue)}
 .countdown-tile.violet{border-left:3px solid var(--violet)}
-.founder-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:14px}
-.founder-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px}
+.founder-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:16px}
+.founder-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px}
 .founder-card .who{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;font-weight:700}
-.founder-card .name{font-size:14px;font-weight:700;margin-top:2px}
-.founder-card .role{font-size:11.5px;color:var(--text2);margin-top:1px}
-.founder-card .status{font-size:11.5px;margin-top:6px;color:var(--text2);line-height:1.45}
+.founder-card .name{font-size:14.5px;font-weight:700;margin-top:3px}
+.founder-card .role{font-size:11.5px;color:var(--text2);margin-top:2px}
+.founder-card .status{font-size:11.5px;margin-top:8px;color:var(--text2);line-height:1.6}
 .founder-card.frankie{border-left:3px solid var(--p2)}
 .founder-card.chitraksh{border-left:3px solid var(--p1)}
 .founder-card.claude{border-left:3px solid var(--violet)}
 .founder-card.jenkins{border-left:3px solid var(--green)}
-.nav-tabs{display:flex;flex-wrap:wrap;gap:4px;padding:5px;background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:18px;box-shadow:var(--shadow);position:sticky;top:66px;z-index:40}
-.nav-tab{border:0;background:transparent;cursor:pointer;font:inherit;color:var(--text2);font-size:12.5px;font-weight:600;padding:8px 14px;border-radius:8px;transition:all .15s;white-space:nowrap}
+.nav-tabs{display:flex;flex-wrap:wrap;gap:3px;padding:5px;background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:21px;box-shadow:var(--shadow);position:sticky;top:62px;z-index:40}
+.nav-tab{border:0;background:transparent;cursor:pointer;font:inherit;color:var(--text2);font-size:11.5px;font-weight:600;padding:7px 10px;border-radius:7px;transition:all .15s;white-space:nowrap;letter-spacing:.1px}
 .nav-tab:hover{background:var(--surface2);color:var(--text)}
 .nav-tab.active{background:var(--accent);color:#fff}
 .section{display:none}
 .section.active{display:block;animation:fadeIn .2s ease}
 @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
-.section-title{font-size:16px;font-weight:700;margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid var(--accent);display:inline-block}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin-bottom:14px;box-shadow:var(--shadow)}
-.card h3{margin:0 0 10px;font-size:13.5px;font-weight:700;letter-spacing:-.1px}
+.section{padding-top:4px}
+.section-title{font-size:16px;font-weight:700;margin:0 0 18px;padding-bottom:10px;border-bottom:2px solid var(--accent);display:inline-block}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin-bottom:16px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 12px;font-size:13.5px;font-weight:700;letter-spacing:-.1px}
 .card h3.accent{color:var(--accent)}
 .card h3.p1{color:var(--p1)}
 .card h3.p2{color:var(--p2)}
@@ -196,13 +210,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans
 .card h3.pink{color:var(--pink)}
 .card h3.orange{color:var(--orange)}
 .card h3.violet{color:var(--violet)}
-.card p,.card ul,.card ol{margin:0 0 8px;font-size:12.5px;color:var(--text2)}
+.card p,.card ul,.card ol{margin:0 0 10px;font-size:12.5px;color:var(--text2);line-height:1.65}
+.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
 .card ul,.card ol{padding-left:20px}
-.card li{margin-bottom:4px}
+.card li{margin-bottom:5px;line-height:1.6}
+.card li:last-child{margin-bottom:0}
 .card strong{color:var(--text)}
 .card code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-size:11.5px;color:var(--text)}
-.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
-.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
 .tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:10.5px;font-weight:700;letter-spacing:.2px}
 .tag-green{background:var(--green-soft);color:var(--green)}
 .tag-red{background:var(--red-soft);color:var(--red)}
@@ -210,10 +226,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans
 .tag-blue{background:var(--blue-soft);color:var(--blue)}
 .tag-violet{background:var(--violet-soft);color:var(--violet)}
 .tag-pink{background:var(--pink-soft);color:var(--pink)}
-.banner{display:flex;gap:14px;padding:14px 16px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);margin-bottom:14px}
+.banner{display:flex;gap:14px;padding:16px 20px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);margin-bottom:14px}
 .banner .icon{width:40px;height:40px;flex-shrink:0;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;background:var(--surface2)}
-.banner h2{margin:0 0 3px;font-size:14px;font-weight:700}
-.banner p{margin:0;font-size:12.5px;color:var(--text2)}
+.banner h2{margin:0 0 5px;font-size:14px;font-weight:700;line-height:1.35}
+.banner p{margin:0;font-size:12.5px;color:var(--text2);line-height:1.65}
 .banner.p1{background:var(--blue-soft);border-color:var(--p1)}
 .banner.p1 .icon{background:var(--surface);color:var(--p1)}
 .banner.p1 h2{color:var(--p1)}
@@ -285,9 +301,9 @@ html{scroll-behavior:smooth}
 <div class="top-bar">
   <div class="brand">
     <div class="brand-mark">O</div>
-    <div>
-      <div class="name">Oraya Labs</div>
-      <div class="sub">Intelligence Dashboard &middot; v11.4 &middot; May 19 2026 &middot; Day 129 &middot; <strong>Voice creature fixed</strong> (Sonic 3.5 + interrupt-sensitivity floor + bg-noise off) &middot; sales-master script rebuild (Miner NPQ &middot; Belfort Straight-Line &middot; Voss empathy &middot; Albright 30-day frame &middot; Hormozi loss-aversion 2.5&times;) &middot; IRS EIN call sat on hold &middot; <strong>"In Sync" daily blocks locked</strong> (4:30am recap + 10-1pm execution) &middot; Texas homeowner lead lane (CA delete-act bypass) &middot; n8n single-prompt agent forked &middot; Claude Max downgrade queued ($120 &rarr; $30 + GPT $30)</div>
+    <div class="copy">
+      <div class="name">Oraya Labs <span style="font-weight:500;color:var(--text3);font-size:12px;margin-left:6px">Intelligence Dashboard</span></div>
+      <div class="sub"><strong>v11.4</strong> &middot; May 19 &middot; Day 129 &middot; Voice fixed &middot; Sales-master script reborn &middot; "In Sync" locked &middot; EIN call live</div>
     </div>
   </div>
   <button class="theme-toggle" id="themeToggle" title="Toggle theme">&#9790; Dark</button>
@@ -307,8 +323,8 @@ html{scroll-behavior:smooth}
       <span class="chev">&#9662;</span><span class="lbl">Collapse</span>
     </button>
   </div>
-  <h1>Voice creature exorcised &middot; <span class="grad">sales-master script reborn from 5 GOATs.</span> "In Sync" daily blocks locked &middot; IRS EIN call alive &middot; Texas homeowner lane opens &middot; n8n single-prompt agent forked.</h1>
-  <p class="subhead">Day 129 closes <strong>Voice-Fix + Sales-Master Week</strong>: voice "creature" root-caused on the Maya/Tessa inbound agent (volume-low + interruption-sensitivity too high + Sonic-3 stale model + background-noise on); Sonic 3.5 + volume +166 + bg-noise off + interrupt floor cleared it in one pass. Script rebuild merging <strong>Jeremy Miner NPQ &middot; Jordan Belfort straight-line &middot; Chris Voss empathy &middot; Andy Albright 30-day frame &middot; Alex Hormozi loss-aversion 2.5&times;</strong>. IRS call sat on hold for EIN; "In Sync" daily 4:30am + 10am-1pm blocks locked.</p>
+  <h1>Voice creature exorcised &middot; <span class="grad">sales-master script reborn from 5 GOATs.</span> "In Sync" daily blocks locked &middot; IRS EIN call alive.</h1>
+  <p class="subhead">Day 129 closes <strong>Voice-Fix + Sales-Master Week</strong>. The Maya/Tessa "creature" cleared in one pass &mdash; volume +166, interrupt-sensitivity floor, bg-noise on, Sonic 3.5. Script rebuilt by merging <strong>Miner + Belfort + Voss + Albright + Hormozi</strong> into a single prompt. Schedule: 4:30 AM recap + 10-1 PM execution.</p>
   <div class="mb-golden" id="mbBody">
     <div class="mb-left">
       <div class="wn-head"><span>&#10024;</span> What's new &middot; May 17-19 sweep (since v11.3)</div>
@@ -362,25 +378,41 @@ html{scroll-behavior:smooth}
 
 <div class="nav-tabs" id="navTabs" role="tablist" aria-label="Dashboard sections">
   <button class="nav-tab active" data-tab="overview" role="tab"><span class="nt-ico">&#9678;</span>Overview</button>
-  <button class="nav-tab" data-tab="voice-ai" role="tab"><span class="nt-ico">&#127908;</span>Voice AI (P1)</button>
-  <button class="nav-tab" data-tab="insurance" role="tab"><span class="nt-ico">&#127968;</span>Insurance (P2)</button>
-  <button class="nav-tab" data-tab="sync" role="tab"><span class="nt-ico">&#9851;</span>Daily Sync</button>
+  <button class="nav-tab" data-tab="voice-ai" role="tab"><span class="nt-ico">&#127908;</span>Voice AI</button>
+  <button class="nav-tab" data-tab="insurance" role="tab"><span class="nt-ico">&#127968;</span>Insurance</button>
+  <button class="nav-tab" data-tab="sync" role="tab"><span class="nt-ico">&#9851;</span>Sync</button>
   <button class="nav-tab" data-tab="legal" role="tab"><span class="nt-ico">&#9878;</span>Legal</button>
   <button class="nav-tab" data-tab="risks" role="tab"><span class="nt-ico">&#9888;</span>Risks</button>
-  <button class="nav-tab" data-tab="recs" role="tab"><span class="nt-ico">&#9889;</span>Recommendations</button>
+  <button class="nav-tab" data-tab="recs" role="tab"><span class="nt-ico">&#9889;</span>Recs</button>
   <button class="nav-tab" data-tab="timeline" role="tab"><span class="nt-ico">&#128467;</span>Timeline</button>
   <button class="nav-tab" data-tab="meetings" role="tab"><span class="nt-ico">&#128172;</span>Meetings</button>
   <button class="nav-tab" data-tab="psych" role="tab"><span class="nt-ico">&#129504;</span>Psych</button>
-  <button class="nav-tab" data-tab="offer" role="tab"><span class="nt-ico">&#128196;</span>Offer Letter</button>
-  <button class="nav-tab" data-tab="website" role="tab"><span class="nt-ico">&#127760;</span>Website Audit</button>
-  <button class="nav-tab" data-tab="tasks" role="tab"><span class="nt-ico">&#9989;</span>Daily Tasks</button>
-  <button class="nav-tab" data-tab="brief" role="tab"><span class="nt-ico">&#128218;</span>CTO/CLO Brief</button>
+  <button class="nav-tab" data-tab="offer" role="tab"><span class="nt-ico">&#128196;</span>Offer</button>
+  <button class="nav-tab" data-tab="website" role="tab"><span class="nt-ico">&#127760;</span>Website</button>
+  <button class="nav-tab" data-tab="tasks" role="tab"><span class="nt-ico">&#9989;</span>Tasks</button>
+  <button class="nav-tab" data-tab="brief" role="tab"><span class="nt-ico">&#128218;</span>Brief</button>
 </div>
 
 <div class="section active" id="overview">
   <div class="hero">
     <h2>Operation Insurance Pivot &middot; Week 19 &middot; Day 129 &middot; May 19 2026 <span class="countdown-pill"><span class="pulse"></span>VOICE FIXED &middot; SCRIPT REBORN &middot; "IN SYNC" LOCKED &middot; IRS CALL LIVE &middot; TX LEAD LANE OPEN</span></h2>
-    <p class="lead"><strong>Day 129 closes "Voice-Fix + Sales-Master Week."</strong> The Maya/Tessa voice "creature" artifact on the inbound triage agent was root-caused on a live May 18 02:09-02:21 call session to a three-variable stack &mdash; <strong>voice volume too low</strong> (Cartesia at 100 default, raised <strong>+166</strong>), <strong>interruption-sensitivity too aggressive</strong> (clipping its own breath frames; lowered to floor), <strong>background-noise removal OFF</strong> (turned on) &mdash; plus <strong>Cartesia Sonic-3 swapped to Sonic 3.5</strong>. Post-fix call verdict: <em>"It's 100% better."</em> Voice-speed toggle audited &middot; ON in two nodes, OFF globally &middot; brought all to OFF for consistency. With the voice transport fixed, the script bottleneck surfaced as the new constraint &mdash; <strong>the script-driven agent felt robotic</strong>. Decision: merge five sales GOATs into a single prompt &mdash; <strong>Jeremy Miner NPQ + Jordan Belfort straight-line + Chris Voss tactical empathy + Andy Albright 30-day frame + Alex Hormozi loss-aversion 2.5&times;</strong> &mdash; with trigger updated from <em>death</em> to <em>death OR disabling illness / can't work</em>, <strong>Sam Lair upfront contract</strong> baked in ("if by the end of five minutes this isn't a fit, you'll tell me &mdash; deal?"), and pitch bullet ordering locked. <strong>n8n single-prompt agent forked</strong> as a parallel fallback architecture: pre-filled phone form delivered at <code>orayacorporation.app.n8n.cloud/form/7811db04-a919-425a-972f-39cb36953ff8</code> &mdash; one button &rarr; instant ring &mdash; for hands-free testing (Frankie: <em>"record myself doing it so I don't have to write hella shit down, drop you a video"</em>). <strong>"In Sync" daily-block schedule LOCKED:</strong> 4:30 AM CA fixed (15-30 min recap-yesterday + plan-today); 10 AM-1 PM CA floating execution block (60+ min); evening optional. Goes on shared calendar as recurring. <strong>IRS / EIN:</strong> Frankie sat on hold May 19 02:33 AM; lines open 8 AM (Frankie's busy hour) &rarr; <strong>Chitraksh runs the AM-call rotation from India</strong> while Frankie's on the road, Frankie picks up post-day-job. Email draft staged in parallel. <strong>Texas-homeowner lead lane chosen:</strong> CA Delete Act + CCPA + state IPA block consumer-data enrichment on CA new-homeowners &rarr; no platform sells &middot; Texas has no equivalent state act &rarr; enrichers openly sell &middot; 4-5 page strategy doc + NotebookLM-style audio podcast ordered for founder listen. <strong>Claude rate-limit outage</strong> May 19 03:39 hit Anthropic-side server load (not Oraya quota), 32s retries lasted 6-7 min &mdash; reinforces multi-model fallback rule and Mac Mini urgency (Chitraksh's current Mac is storage-full and can't run 5 sub-agents locally). <strong>Claude Max plan downgrade queued</strong>: $120 single-vendor &rarr; $30 Claude + $30 ChatGPT, tokens-in-cycle burned first. <strong>Twin Mind live-transcription discovered</strong> &mdash; chat-side transcript with ~2-3 min delay unblocks mid-call dashboard edits while founders are still on the line. <strong>Carrier cash status:</strong> Mom's policy <strong>paid next day</strong> (ad-budget reserve); Frankie's own + brother's policies <strong>delayed by carrier issue on Teresa's end</strong>; military couple at <strong>cancellation risk</strong> (client thinks military coverage covers funeral &mdash; Frankie scheduling side-by-side compare meeting to retain). <strong>External signals logged:</strong> Meta tracked employees to build AI to replace them (8K layoffs vs $145B AI spend); Anthropic hiring religious-trained reviewers for moral compass; Pope set AI guidelines + invited AI cos to Vatican; <strong>Pizza Hut $100M franchisee lawsuit</strong> over Dragon Tail AI delivery system &mdash; AI exposed kitchen-workflow timing to drivers &rarr; drivers gamed it (clubbed 2-3-4 orders) &rarr; cold food &rarr; revenue down 1-2% YoY &mdash; Frankie's framing: <em>"not a software issue, an over-informing issue"</em> &mdash; over-transparency itself is a system risk; bake into Oraya client-side dashboard design. <strong>Carry-over from v11.3 (May 17 "Infra + Compliance Week"):</strong> A2P brand-and-campaign package built end-to-end (terms, privacy, IPA, MSA, AI-voice disclosure, ~8 SMS + 4 calls/month, opt-in form) and ready to fire the moment EIN issues. <strong>Week 19 closed as "Infra + Compliance Week."</strong> The A2P brand-and-campaign package &mdash; terms, privacy, California IPA notice, MSA, AI-voice + frequency disclosure, opt-in form &mdash; is built end-to-end and waiting on a single blocker: Oraya's EIN, which Chitraksh + Frankie are calling IRS for tonight. GHL Certified Partner support (Marlen, Redwood City) walked the founders through the Trust Center, AI checklist, $24 + 2-day-to-3-week regulator cycle on a 187-min live consult May 12. Claude HQ scaffolds the Oraya Insurance Group sub-account end-to-end from one prompt (23 custom fields, workflows, lead capture, opt-in form, IPA disclosure) and the same template clones for every future insurance client. The voice arc that started May 10 closed with <strong>Tessa hired</strong> on an inbound life/health triage agent &mdash; mortgage-protection content was removed and the agent was switched to inbound. Latency root-caused to first-node Sonnet (~10s open silence); the fix is lighter model on entry + Sonnet on hand-off, final test with Frankie queued. Frankie shipped the founding <strong>Oraya AI enterprise revenue-infrastructure SOP + 30-min demo + payment-collection script</strong> on May 11 (branded in Oraya colors, AutoNation-package treatment) &mdash; this is the SOP for Frankie today and the sales team tomorrow. Architecture is now committed: a CEO agent over legal / engineer / dashboard / marketing / lead-gen + follow-up sub-agents &mdash; the founders talk to the CEO, the CEO talks to humans, agents delegate to each other. Retell&rarr;GHL API is direct-edit-by-prompt &mdash; Claude can pull transcripts, edit, publish, report back from a single prompt while Frankie is on a call. <strong>Hardware:</strong> M3 Mac Mini (16GB / 512GB, $700-1000) ordered on amazon.in with Frankie's card, shipping to Chitraksh; unbox + setup live on Zoom. <strong>Geography:</strong> Chitraksh flew home May 15, told parents about Frankie and Oraya seriousness, converted a spare bedroom into the Oraya office &mdash; <strong>24/7 from May 16</strong>. <strong>Compliance:</strong> a Claude legal audit cross-verified across 4 other models surfaced 7-8 laws in scope (CCPA, federal privacy, California IPA, "ignorance of law is not an excuse") and the FBN filing requirement; all baked into the A2P documentation. <strong>Forwarding:</strong> Telnyx call-mask extended into a multi-vendor 8-tool orchestration so clients keep their existing licensed numbers, with no client-side A2P required; test pass scheduled before AutoNation push. <strong>Address hygiene:</strong> free registered-agent address via RPA queued so public-facing addresses can flip post-A2P; Frankie owns <code>frankiealicea.com</code> purchase + GHL connect + A2P hand-off. <strong>External signal logged:</strong> Mustafa Suleyman forecast &mdash; "most white-collar professional tasks fully automated within 12-18 months" &mdash; bakes into pitch and recruiting. <strong>Carry-over from v11.2:</strong> Mortgage-Protection Agent v1.0 still LIVE, $3,410 week May 9 closed, $2,532 family-policy bridge cash deployed, Boatman live, 132 scored homeowners, Maya benched during the voice rebuild. <strong>Earlier May 7 context retained:</strong> +4 days from the May 3 pivot snapshot, the system had matured from "MVP LIVE" to "Mortgage-Protection Agent v1.0 in live calling." Maya is now a <strong>dedicated mortgage-protection agent</strong> (not generic life insurance) on <code>925-660-7930</code> &mdash; tuned May 5-6 against Frankie's role-played objections, opens with <strong>truthful provenance</strong> ("we pulled mortgage records and saw no coverage; we work with banks like [their lender]"), and runs <strong>three pitch tracks</strong>: Elite Risk (high mortgage / clean profile / age 30s-40s), Medical Condition, and Tobacco User. Dynamic variables now flow per caller from the lead row: name, lender bank, mortgage amount, address, city, co-borrower, borrower age, medical, tobacco use. <strong>Lead Recovery Matrix shipped</strong> &mdash; Google-Sheets agent intelligence layer over Teresa's leads identified <strong>132 homeowners</strong> in mortgage-protection scope across the three risk buckets, with per-row strategic insights. <strong>Live test calls (May 6-7, Frankie role-playing customer "Mason")</strong> validated a personalized open referencing Mason's actual loan ($358K with Almadin Bank), and <strong>locked an appointment for Thu May 7 9:00 AM</strong> end-to-end. Frankie verdict: "AI sells insurance much better than I do. I see the AI pitch versus my own pitch &mdash; AI knows the right fucking time to say things." <strong>Family-policy bridge cash placed at $2,532 (vs. $3,500 forecast)</strong> &mdash; Frankie's own + Mom's (one policy, not two: existing Mom policy too good to replace) + Brother's. The full $2,532 deploys straight back into Boatman ad-budget on receipt; $1,000 of subsequent ad-driven revenue earmarked for Chitraksh. <strong>Boatman goes live TOMORROW (Fri May 8)</strong> &mdash; reschedule meeting on the calendar, A2P approved, GHL webhook live, Frankie's calendar wired into Boatman's IG/FB funnel. <strong>Mom is flying LA with Frankie</strong> ("she said let's book the trip... she believes in it 100%") &mdash; the in-person walk-in at MBSB is happening regardless of Mark Akbar's reply (now Day +11 silent): "I'm keeping my word, going anyway, other dealerships will come." <strong>Frankie's day-job restructured</strong> &middot; renegotiated to 5-9 AM (4 hrs/day at $4K/mo) from 5 AM-7 PM (12 hrs/day at $6K/mo) &mdash; the $2K monthly trade buys back <strong>6-8 hrs/day of Oraya time</strong>, called "the best deal" of the week. <strong>Twilio second line</strong> still live on 925-660-7930 (Pleasanton, voice + SMS + MMS); A2P scope concern flagged for the record (license registered for Elite Solar LLC admin messages on automationexpert.com &mdash; old-leads campaign is one-time / regulated cadence so we proceed; a fresh A2P for long-running outbound queued). <strong>Public-mortgage-data lead-mining research closed</strong> &mdash; Hall of Fame Leads model reverse-engineered: county recorder office (deed + lender name) + premium-data sources + Apollo enrichment + direct mailers; Oraya pivots to email/voice instead of postage. Lead-pipeline build queued: HTTP-request enrichment via Property Shark / CoreLogic / Atom / TruePeopleSearch keyed off (state, name, age) per row. <strong>LinkedIn Phantom-Buster outreach plan</strong> committed for dealership GMs &middot; session-cookie injection on a Premium account ($40-60/mo) supports 100-200 personalized DMs/day; Frankie has prior experience scaling 200&rarr;400 connections without flagging. <strong>Telnyx call-masking solution</strong> documented for Mercedes outbound HUP compliance &mdash; Oraya Twilio forwards through MBSB's published number so customer caller-ID shows Mercedes-Benz; toggle button hands inbound back to MBSB cell when desired. <strong>GPT-5.5 just released on Retell</strong> tested in greetings node &mdash; failed sales-tone ("we got your form, life insurance, right?" stutter, 2x same model); reverted to Sonnet on greetings. 5.5 retained for non-voice agentic surfaces; rumor of Meta integrating an in-platform marketing AI noted &mdash; reinforces the rule: "till they do, we are the agency." <strong>Anthropic / DoD news</strong> &middot; Anthropic declined the surveillance contract on moral-compass grounds; Google won then retracted (employee backlash); Palantir/another vendor implied. No Oraya impact; reinforces multi-vendor / Paperclip stack rule. <strong>Insurance call cost</strong>: Mercedes-agent prompt ~4K tokens at $0.40/5min; mortgage-protection prompt ~7-8K tokens runs <strong>~$0.60-0.70/5min</strong> (30% premium). Acceptable: failed calls clip at 30-60s, only successful (booked) calls hit the cap. <strong>Cinematic demo v2</strong> remains live on orayalabs.ai. <strong>"Our dashboard is back"</strong> &middot; Cloud HQ outage closed; Paperclip migration follow-through still tracked.</p>
+    <div class="lead">
+      <p><strong>Day 129 closes "Voice-Fix + Sales-Master Week."</strong> The Maya/Tessa voice "creature" artifact was root-caused on a live May 18 call session to a three-variable stack &mdash; <strong>volume +166</strong> from default, <strong>interruption-sensitivity to floor</strong>, <strong>background-noise removal ON</strong> &mdash; plus <strong>Cartesia Sonic-3 swapped to Sonic 3.5</strong>. Voice-speed toggle audited and unified to OFF across all nodes. Post-fix verdict: <em>"It's 100% better."</em></p>
+      <p>With voice transport fixed, script became the new bottleneck. Claude HQ merged five sales GOATs into a single prompt &mdash; <strong>Jeremy Miner NPQ + Jordan Belfort straight-line + Chris Voss tactical empathy + Andy Albright 30-day frame + Alex Hormozi loss-aversion 2.5&times;</strong>. Trigger updated to <em>death OR disabling illness</em>, <strong>Sam Lair upfront contract</strong> baked in, pitch bullet ordering locked. The <strong>n8n single-prompt agent</strong> was forked as a parallel architecture; pre-filled one-click test form delivered at <code>orayacorporation.app.n8n.cloud/form/7811db04-a919-425a-972f-39cb36953ff8</code> for hands-free testing.</p>
+      <p><strong>"In Sync" daily blocks LOCKED:</strong> 4:30 AM PT fixed (15-30 min recap + plan); 10 AM-1 PM PT floating (60-90 min execution); evening optional. <strong>IRS / EIN:</strong> Frankie sat on hold May 19 02:33 AM; Chitraksh now runs the AM-call rotation from India, Frankie picks up post-day-job. Email draft staged in parallel.</p>
+      <p><strong>Texas-homeowner lead lane chosen.</strong> CA Delete Act + CCPA + state IPA block consumer-data enrichment on CA new-homeowners &mdash; no platform sells; Texas has no equivalent state act, enrichers openly sell. 4-5 page strategy doc + NotebookLM-style audio podcast ordered. <strong>Claude rate-limit outage</strong> May 19 03:39 hit Anthropic-side server load (not Oraya quota) for 6-7 min &mdash; reinforces multi-model fallback and Mac Mini urgency. <strong>Claude Max downgrade queued</strong>: $120 &rarr; $30 + ChatGPT $30. <strong>Twin Mind live-transcription</strong> discovered &mdash; 2-3 min delay unblocks mid-call dashboard edits.</p>
+      <p><strong>Carrier cash:</strong> Mom's policy <strong>paid next day</strong> (ad-budget reserve); Frankie + brother delayed by carrier issue on Teresa's end; military couple at <strong>cancellation risk</strong> (client thinks military coverage covers funeral &mdash; compare meeting being booked to retain). <strong>External signals logged:</strong> Meta tracked employees to build replacement AI (8K layoffs vs $145B); Anthropic hiring religious-trained reviewers for moral compass; Pope set AI guidelines + invited AI cos to Vatican; <strong>Pizza Hut $100M franchisee lawsuit</strong> over Dragon Tail AI &mdash; drivers gamed kitchen-workflow timing, food arrived cold, revenue dropped. Frankie's framing: <em>"not a software issue, an over-informing issue."</em> Apply: Oraya client dashboards expose value, hide seams.</p>
+      <p><strong>Carry-over from v11.3 (May 17 "Infra + Compliance Week"):</strong> A2P brand-and-campaign package built end-to-end (terms, privacy, California IPA, MSA, AI-voice disclosure, ~8 SMS + 4 calls/month, opt-in form), ready to fire the moment EIN issues.</p>
+    </div>
+    <details style="margin:0 0 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:10px 14px">
+      <summary style="cursor:pointer;font-weight:700;font-size:11.5px;color:var(--text2);letter-spacing:.4px;text-transform:uppercase;list-style:none">&#9662; Deep state &middot; v11.3 / v11.2 / v11.1 carry-over (preserved verbatim)</summary>
+      <div style="font-size:12.5px;color:var(--text2);line-height:1.7;margin-top:10px">
+        <p>The A2P brand-and-campaign package &mdash; terms, privacy, California IPA notice, MSA, AI-voice + frequency disclosure, opt-in form &mdash; is built end-to-end and waiting on a single blocker: Oraya's EIN. GHL Certified Partner support (Marlen, Redwood City) walked the founders through the Trust Center, AI checklist, $24 + 2-day-to-3-week regulator cycle on a 187-min live consult May 12. Claude HQ scaffolds the Oraya Insurance Group sub-account end-to-end from one prompt (23 custom fields, workflows, lead capture, opt-in form, IPA disclosure) and the same template clones for every future insurance client.</p>
+        <p>The voice arc that started May 10 closed with <strong>Tessa hired</strong> on an inbound life/health triage agent &mdash; mortgage-protection content was removed and the agent was switched to inbound. Latency root-caused to first-node Sonnet (~10s open silence); the fix is lighter model on entry + Sonnet on hand-off. Frankie shipped the founding <strong>Oraya AI enterprise revenue-infrastructure SOP + 30-min demo + payment-collection script</strong> on May 11 (branded in Oraya colors, AutoNation-package treatment).</p>
+        <p>Architecture is now committed: a CEO agent over legal / engineer / dashboard / marketing / lead-gen + follow-up sub-agents. Retell&rarr;GHL API is direct-edit-by-prompt &mdash; Claude can pull transcripts, edit, publish, report back from a single prompt. <strong>Hardware:</strong> M3 Mac Mini (16GB / 512GB, $700-1000) ordered on amazon.in with Frankie's card. <strong>Geography:</strong> Chitraksh flew home May 15, parents told, spare-room office set up &mdash; 24/7 from May 16. <strong>Compliance:</strong> Claude legal audit cross-verified across 4 other models surfaced 7-8 in-scope laws (CCPA, federal privacy, California IPA, "ignorance of law is not an excuse") and the FBN filing requirement. <strong>Forwarding:</strong> Telnyx call-mask + 8-vendor orchestration so clients keep their existing licensed numbers. <strong>External signal:</strong> Mustafa Suleyman forecast &mdash; "most white-collar professional tasks fully automated within 12-18 months."</p>
+        <p><strong>Carry-over from v11.2:</strong> Mortgage-Protection Agent v1.0 still LIVE, $3,410 week May 9 closed, $2,532 family-policy bridge cash deployed, Boatman live, 132 scored homeowners, Maya benched during the voice rebuild. <strong>Earlier May 7 context retained:</strong> Maya is the dedicated mortgage-protection agent on <code>925-660-7930</code> &mdash; truthful provenance opening, three pitch tracks (Elite Risk / Medical / Tobacco), dynamic per-caller variables. <strong>Lead Recovery Matrix shipped</strong> via Google-Sheets agent &mdash; 132 homeowners scored across the three risk buckets. <strong>Live test calls (May 6-7)</strong> with Frankie role-playing "Mason" locked an appointment for Thu May 7 9:00 AM referencing the actual $358K loan with Almadin Bank. <strong>$2,532 family-policy bridge</strong> placed (Frankie + Mom + Brother) &mdash; deploys to Boatman ad-budget on receipt. <strong>Boatman went live Fri May 8.</strong> <strong>Mom is flying LA with Frankie.</strong> <strong>Day-job restructured</strong> to 5-9 AM ($4K/mo, 4 hrs) from 5 AM-7 PM ($6K/mo, 12 hrs) &mdash; buys back 6-8 hrs/day for Oraya. <strong>Public-mortgage-data lead pipeline:</strong> county recorder + Property Shark / CoreLogic / Atom / TruePeopleSearch enrichment, pivot to voice/email over postage. <strong>LinkedIn Phantom-Buster</strong> outreach: 100-200 personalized DMs/day to CA dealership sales-managers. <strong>Telnyx call-masking</strong> documented for Mercedes outbound HUP compliance. <strong>GPT-5.5 on Retell:</strong> failed sales-tone; retained for non-voice agentic surfaces. <strong>Anthropic / DoD news</strong> reinforces multi-vendor / Paperclip stack rule. <strong>Insurance call cost:</strong> Mercedes ~4K tokens at $0.40/5min; mortgage-protection ~7-8K tokens at ~$0.60-0.70/5min (30% premium). <strong>Cinematic demo v2</strong> live on orayalabs.ai.</p>
+      </div>
+    </details>
 
     <div class="countdown-strip">
       <div class="countdown-tile green"><div class="label">Voice creature</div><div class="value">FIXED</div><div class="sub">Sonic 3.5 + vol +166 + interrupt floor + bg-noise OFF</div></div>
