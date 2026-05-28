@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Oraya HQ · Insurance Lead-Gen Dashboard · v2.0 · May 28 2026 · Day 138 · Voice agents LIVE (v126/v15) · ATTOM+BatchData+PropertyRadar bake-off queued</title>
+<style>
+  :root {
+    --bg:#0b1020; --surface:#111733; --surface2:#192145; --border:#1f274a; --border2:#334366;
+    --text:#e6e9f2; --text2:#b4bcd4; --text3:#8b93b2;
+    --accent:#60a5fa; --green:#4ade80; --green-soft:rgba(74,222,128,.14);
+    --red:#f87171; --red-soft:rgba(248,113,113,.14);
+    --orange:#fbbf24; --orange-soft:rgba(251,191,36,.14);
+    --blue:#60a5fa; --blue-soft:rgba(96,165,250,.14);
+    --violet:#a78bfa; --violet-soft:rgba(167,139,250,.14);
+    --shadow:0 1px 3px rgba(0,0,0,.4); --radius:10px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.5}
+  .wrap{max-width:1400px;margin:0 auto;padding:24px}
+  header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;margin-bottom:24px;border-bottom:1px solid var(--border);padding-bottom:16px}
+  h1{font-size:24px;margin:0 0 4px 0;color:var(--text)}
+  h2{font-size:18px;margin:0 0 12px 0;color:var(--accent);font-weight:600}
+  h3{font-size:14px;margin:0 0 8px 0;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+  .sub{color:var(--text3);font-size:13px}
+  .grid{display:grid;gap:16px}
+  .grid-2{grid-template-columns:repeat(auto-fit,minmax(420px,1fr))}
+  .grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .grid-4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+  .card.tight{padding:12px 14px}
+  .stat{display:flex;flex-direction:column;gap:4px}
+  .stat .n{font-size:22px;font-weight:700;color:var(--text)}
+  .stat .l{font-size:12px;color:var(--text3);text-transform:uppercase;letter-spacing:.04em}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--border)}
+  th{color:var(--text3);font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.06em}
+  tr:last-child td{border-bottom:none}
+  .pill{display:inline-block;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:.03em}
+  .pill.ok   {background:var(--green-soft);color:var(--green)}
+  .pill.warn {background:var(--orange-soft);color:var(--orange)}
+  .pill.bad  {background:var(--red-soft);color:var(--red)}
+  .pill.info {background:var(--blue-soft);color:var(--blue)}
+  .pill.muted{background:var(--surface2);color:var(--text3)}
+  .pill.violet{background:var(--violet-soft);color:var(--violet)}
+  code{background:var(--surface2);padding:1px 6px;border-radius:4px;font-size:12px;color:var(--text2);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  section{margin-bottom:32px}
+  ol{padding-left:20px;margin:0}
+  ol li{margin-bottom:8px;padding-left:4px}
+  .label-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .timeline-item{padding:8px 0;border-bottom:1px dashed var(--border)}
+  .timeline-item:last-child{border-bottom:none}
+  .timeline-item .date{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em}
+  .timeline-item .act{color:var(--text);font-weight:500;margin:2px 0}
+  .timeline-item .res{font-size:12px;color:var(--text2)}
+  details{background:var(--surface2);border-radius:6px;padding:10px 12px;margin-top:8px}
+  details summary{cursor:pointer;color:var(--text2);font-size:12px;font-weight:600}
+  .arch{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--text2);background:var(--surface2);padding:14px;border-radius:8px;white-space:pre;overflow-x:auto}
+  .priority-pill{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;font-size:11px;font-weight:700;background:var(--accent);color:#0b1020;margin-right:8px;flex-shrink:0}
+  .action-row{display:flex;gap:8px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed var(--border)}
+  .action-row:last-child{border-bottom:none}
+  .footer{text-align:center;color:var(--text3);font-size:11px;margin-top:32px;padding-top:16px;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div>
+    <h1>Oraya HQ · Insurance Lead-Gen Dashboard <span style="font-size:13px;font-weight:500;color:var(--text3);margin-left:8px">v2.0 · Day 138</span></h1>
+    <div class="sub">Lead-gen lane feeding into <strong>LIVE</strong> Retell AI voice agents (Outbound v126 + Inbound v15) + n8n call workflows · CA · TX · NV · ID</div>
+    <div style="margin-top:10px"><a href="index.html" style="display:inline-block;padding:8px 14px;background:var(--violet-soft);color:var(--violet);border:1px solid var(--violet);border-radius:8px;font-weight:700;text-decoration:none;font-size:12.5px">&larr; Back to Oraya HQ Main Dashboard</a></div>
+  </div>
+  <div style="text-align:right">
+    <div class="pill info">Last updated: <span id="lastUpdated">2026-05-28</span></div>
+    <div class="sub" style="margin-top:6px">Source of truth: <code>insurance_leadgen_state.json</code></div>
+    <div class="sub" style="margin-top:6px"><span class="pill ok">Outbound v126 LIVE</span> <span class="pill ok">Inbound v15 LIVE</span></div>
+    <div class="sub" style="margin-top:6px"><span class="pill violet">1st Dealership Appt &middot; May 28 1pm</span></div>
+  </div>
+</header>
+
+<!-- =================== WHAT'S NEW (May 22-28) =================== -->
+<section>
+  <h2>What's New &middot; May 22-28 sweep (since v1)</h2>
+  <div class="card">
+    <ul style="margin:0;padding-left:18px">
+      <li><strong>Outbound v126 + Inbound v15 published LIVE on Retell (May 28).</strong> Email digit-word &rarr; numeric-digit fix (<em>"john wick one two at gmail dot com"</em> &rarr; <code>johnwick12@gmail.com</code>) + appointment_timestamp ISO 8601 spec (replaces n8n template syntax that GCal rejected) + callback_scheduled_time role separation. Inbound v15 = parity publish of all three patches in one. Both agents now run identical post-call extraction logic.</li>
+      <li><strong>Backend verified end-to-end on a real test call (May 27 1:39 AM):</strong> caller "Adrian Marino", appointment Thu May 28 11 AM PT booked, calendar event created in GCal, Oraya-branded confirmation email landed, SMS delivered, DNC harvest active, admin log dispatch firing.</li>
+      <li><strong>Pre-publish bug found + fixed same day:</strong> inbound was wired to the OUTBOUND post-call backend &mdash; that was the cause of the 10-emails-per-call problem. Cause was the form-submit fan-out. Now routes to its own inbound post-call workflow.</li>
+      <li><strong>Single-prompt agent forked + tested vs node-based (May 26-27).</strong> Production = node-based (won the founder ear test for inbound clarity). Single-prompt = archived as the architecture for P3 Real Estate's investor-blast agent.</li>
+      <li><strong>1st dealership appointment landed (May 28).</strong> Envision Honda Milpitas &middot; Thu May 28 1 PM PT. Reciprocity opener (Frankie shopping for Prologue) + ask for GSM Mo. Calendar event created.</li>
+      <li><strong>Real Estate Project (P3) scoped end-to-end on the May 27-28 founder call.</strong> Art Yano + Mom + investor-flip wholesale lane (NOT consumer end-buyers). Single-prompt agent architecture ports cleanly. See Main Dashboard &rarr; Real Estate tab.</li>
+      <li><strong>EIN application MAILED via certified mail (May 22).</strong> Parallel to IRS phone rotation. Expected Thursday-Friday landing.</li>
+      <li><strong>License numbers locked into all backend templates.</strong> CA # <strong>4276736</strong> + NPN # <strong>20996126</strong> baked into all backend mail/SMS templates (Cal Ins Code &sect;1725.5(c)).</li>
+      <li><strong>$60 bake-off queued:</strong> ATTOM ($20) + BatchData ($20) + PropertyRadar ($20) on same TX new-homeowner pull. Compare data quality + cold-outreach conversion before scaling.</li>
+      <li><strong>NotebookLM lead-gen podcast shipped (May 21).</strong> Generated from the 4-5 page lead-gen strategy doc. Frankie: <em>"You never cease to amaze me. Absolutely insane."</em></li>
+    </ul>
+  </div>
+</section>
+
+<!-- =================== QUICK STATUS =================== -->
+<section>
+  <h2>Quick Status</h2>
+  <div class="grid grid-4">
+    <div class="card stat"><div class="n">Phase 2</div><div class="l">Current phase — Launch (voice agents LIVE)</div></div>
+    <div class="card stat"><div class="n">v126 / v15</div><div class="l">Outbound / Inbound (Retell, LIVE 2026-05-28)</div></div>
+    <div class="card stat"><div class="n">209</div><div class="l">CA mortgage-protection leads (HOF)</div></div>
+    <div class="card stat"><div class="n">77</div><div class="l">TIER 1 prime leads (age 30–65, ≥$200K)</div></div>
+    <div class="card stat"><div class="n">3,961</div><div class="l">WARN layoff records (4 states)</div></div>
+    <div class="card stat"><div class="n">$40 / lead</div><div class="l">Resale price (per existing skill)</div></div>
+    <div class="card stat"><div class="n">$1,920</div><div class="l">Avg policy commission (140% Y1)</div></div>
+    <div class="card stat"><div class="n">3 / 16</div><div class="l">APIs connected (ATTOM + Apollo + Retell)</div></div>
+    <div class="card stat"><div class="n">$60</div><div class="l">Bake-off risk (3 enrichers &times; $20)</div></div>
+    <div class="card stat"><div class="n">1 blocker</div><div class="l">EIN (mailed certified May 22) &middot; BatchData OAuth</div></div>
+    <div class="card stat"><div class="n">1 dealer appt</div><div class="l">Envision Honda Milpitas, Thu May 28 1pm</div></div>
+    <div class="card stat"><div class="n">P3 scoped</div><div class="l">Real Estate (Art Yano + Mom) sequenced after P2</div></div>
+  </div>
+</section>
+
+<!-- =================== FUNNEL ARCHITECTURE =================== -->
+<section>
+  <h2>Funnel Architecture (where we are vs. what exists)</h2>
+  <div class="card">
+    <div class="arch">┌─ TOP OF FUNNEL ──────────────────────────────────────────────────────┐  ⏳ BEING BUILT
+│  Trigger data → Enrichment → Direct mail / Cold email                │
+│  · WARN (live) · ATTOM (✓) · BatchData (configured) · FCRA prescreen │
+│  · Lob/PostGrid · Smartlead · Versium                                │
+└──────────────────────────┬───────────────────────────────────────────┘
+                           ↓
+┌─ MID FUNNEL ─────────────────────────────────────────────────────────┐  ⏳ PARTLY BUILT
+│  TCPA-compliant landing page (TrustedForm + Jornaya PEWC capture)    │
+│                          ↓                                            │
+│  CRM (GoHighLevel)                                                    │
+└──────────────────────────┬───────────────────────────────────────────┘
+                           ↓
+┌─ BOTTOM FUNNEL ──────────────────────────────────────────────────────┐  ✅ LIVE (2026-05-28)
+│  Retell AI Outbound v126 (Frankie · email digit-fix + ISO appt)      │
+│  Retell AI Inbound  v15  (Maya  · parity-publish, calendar verified) │
+│  n8n: Outbound + Inbound Post-Call (split workflows, fan-out fixed)  │
+│  Calendar · Email · SMS · DNC · Admin log dispatch — VERIFIED LIVE   │
+└──────────────────────────────────────────────────────────────────────┘</div>
+    <p class="sub" style="margin:12px 0 0">As of <strong>2026-05-28</strong>, the bottom of the funnel is <strong>LIVE</strong> end-to-end. <code>projects/p2-insurance/retell/</code> now tracks 56+ snapshots and 22 patch scripts. The remaining work is the top-of-funnel feeder &mdash; trigger data, enrichment, compliance, opt-in capture &mdash; plus the $60 enrichment bake-off across ATTOM / BatchData / PropertyRadar.</p>
+  </div>
+</section>
+
+<!-- =================== COMPLIANCE =================== -->
+<section>
+  <h2>Compliance & Legal — Foundation Items</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>Item</th><th>Status</th><th>Cost</th><th>Why it matters</th></tr></thead>
+      <tbody>
+        <tr><td>CA Data Broker registration (CPPA)</td><td><span class="pill bad">PENDING — BLOCKER</span></td><td>$6,000/yr</td><td>$200/day penalty. CPPA Strike Force active. Required before any CA consumer data processing.</td></tr>
+        <tr><td>TX Data Broker registration (SOS)</td><td><span class="pill bad">PENDING — BLOCKER</span></td><td>—</td><td>Required for TX consumer data processing</td></tr>
+        <tr><td>TX SB 140 telephone solicitor registration</td><td><span class="pill warn">PENDING (for SMS)</span></td><td>$200 + $10K bond</td><td>Required for TX SMS unless airtight opt-in documented</td></tr>
+        <tr><td>TCPA counsel red-team review</td><td><span class="pill warn">PENDING</span></td><td>$3–5K one-time</td><td>Cheap insurance vs six-figure TCPA class actions</td></tr>
+        <tr><td>Privacy policy + "Do Not Sell or Share" page</td><td><span class="pill warn">PENDING</span></td><td>~$29–99/mo</td><td>Termly / Osano / OneTrust</td></tr>
+        <tr><td>CCPA Risk Assessment documented</td><td><span class="pill warn">PENDING</span></td><td>—</td><td>Required before any CA sale/share of personal data</td></tr>
+        <tr><td>CA producer license # in email signature</td><td><span class="pill ok">SHIPPED 2026-05-22</span></td><td>—</td><td>Cal Ins Code §1725.5(c) — CA # 4276736 + NPN # 20996126 baked into all backend mail/SMS templates</td></tr>
+        <tr><td>FCRA prescreen account (Experian/TU/Equifax)</td><td><span class="pill muted">NOT STARTED</span></td><td>Application + fees</td><td>Unlocks "firm offer of insurance" direct-mail lane (no consent needed)</td></tr>
+        <tr><td>DNC scrub account (Blacklist Alliance)</td><td><span class="pill muted">NOT STARTED</span></td><td>~$200/mo</td><td>Federal + state DNC + TCPA litigator-list scrub</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- =================== APIs / CREDENTIALS =================== -->
+<section>
+  <h2>Connected APIs & Credentials</h2>
+  <div class="grid grid-2">
+
+    <div class="card">
+      <div class="label-row"><h3 style="margin:0">ATTOM Property API</h3><span class="pill ok">CONNECTED ✓</span></div>
+      <p class="sub" style="margin:4px 0 8px">Verified 2026-05-21 (200 OK, 6,513 records returned for Austin ZIP 78701)</p>
+      <div style="margin-top:8px"><strong>Key:</strong> <code>~/Downloads/Oraya HQ Reborn/.oraya-credentials/attom_api_key</code> (chmod 600)</div>
+      <div><strong>Endpoint:</strong> <code>api.gateway.attomdata.com/propertyapi/v1.0.0</code></div>
+      <div><strong>Auth header:</strong> <code>apikey: &lt;key&gt;</code></div>
+      <div><strong>Use for:</strong> new-homeowner deed pulls across CA/TX/NV/ID</div>
+    </div>
+
+    <div class="card">
+      <div class="label-row"><h3 style="margin:0">BatchData MCP</h3><span class="pill warn">CONFIGURED — needs OAuth</span></div>
+      <p class="sub" style="margin:4px 0 8px">Dataset config saved 2026-05-21. Tool calls require user to OAuth-reconnect.</p>
+      <div><strong>Enabled add-ons:</strong> Core Property, Contact Enrichment, Mortgage + Liens, History (Deed), Property Owner Profile, Valuation, Demographics</div>
+      <div><strong>Disabled:</strong> Listing Data, Quick Lists, BatchRank, Pre-Foreclosure, Permit Summary</div>
+      <div><strong>Always-on:</strong> Address, Phone, Skip Trace</div>
+      <div style="margin-top:6px"><strong>Next:</strong> Cowork settings → MCP servers → reconnect BatchData</div>
+    </div>
+
+    <div class="card">
+      <div class="label-row"><h3 style="margin:0">Apollo</h3><span class="pill warn">FREE TRIAL — limited</span></div>
+      <p class="sub" style="margin:4px 0 8px">80 credits remaining. People Search blocked on free plan; enrichment endpoints work.</p>
+      <div><strong>Use for:</strong> B2B enrichment of named contacts at known WARN-listed companies (not consumer prospecting)</div>
+      <div><strong>Upgrade:</strong> hold until BatchData/ATTOM funnel proven</div>
+    </div>
+
+    <div class="card">
+      <div class="label-row"><h3 style="margin:0">Retell AI (LIVE end-to-end)</h3><span class="pill ok">PUBLISHED ✓</span></div>
+      <p class="sub" style="margin:4px 0 8px">Voice agents at <code>projects/p2-insurance/retell/</code></p>
+      <div><strong>OUTBOUND:</strong> v126 LIVE (2026-05-28) &middot; agent <code>agent_63a23bd2cc9273a9b4fea5656e</code> + flow <code>conversation_flow_96a5fd684b24</code></div>
+      <div><strong>INBOUND:</strong> v15 LIVE (2026-05-28) &middot; agent <code>agent_1ffc59c3d135d0776cb35fec6f</code> + flow <code>conversation_flow_302b435de58b</code></div>
+      <div><strong>Latest patches:</strong> email digit-word &rarr; numeric (v126) · appointment_timestamp ISO 8601 (v125) · callback_scheduled_time role split (v124) · inbound parity (v15)</div>
+      <div><strong>Snapshots:</strong> 56+ versions tracked &middot; <strong>Scripts:</strong> 22 patch + verify scripts</div>
+    </div>
+
+    <div class="card">
+      <div class="label-row"><h3 style="margin:0">PropertyRadar</h3><span class="pill warn">RE-INGESTED — needs US phone</span></div>
+      <p class="sub">Back in the lead-gen agent (May 27) alongside ATTOM + BatchData for the $60 bake-off. Awaiting a US phone number from Frankie to complete account verification.</p>
+    </div>
+
+    <div class="card tight">
+      <div class="label-row"><h3 style="margin:0">Versium REACH / AtData</h3><span class="pill muted">NOT STARTED</span></div>
+      <p class="sub">Consumer email append, used when BatchData skip-trace insufficient. Apply once we know match rate gap.</p>
+    </div>
+
+    <div class="card tight">
+      <div class="label-row"><h3 style="margin:0">Lob / PostGrid</h3><span class="pill muted">NOT STARTED</span></div>
+      <p class="sub">Programmatic direct mail. Zero-TCPA opt-in channel for the homeowner trigger.</p>
+    </div>
+
+    <div class="card tight">
+      <div class="label-row"><h3 style="margin:0">Smartlead</h3><span class="pill muted">NOT STARTED</span></div>
+      <p class="sub">Cold-email infra. 4–6 week domain warmup required before first send.</p>
+    </div>
+
+    <div class="card tight">
+      <div class="label-row"><h3 style="margin:0">TrustedForm + Jornaya</h3><span class="pill muted">NOT STARTED</span></div>
+      <p class="sub">TCPA PEWC consent capture on opt-in landing pages.</p>
+    </div>
+
+    <div class="card tight">
+      <div class="label-row"><h3 style="margin:0">GoHighLevel</h3><span class="pill muted">NOT STARTED</span></div>
+      <p class="sub">CRM + dialer + SMS + funnels. See GoHighLevel_Mastery_Playbook.docx for setup.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- =================== BUSINESS MODEL =================== -->
+<section>
+  <h2>Business Model (recovered from existing <code>insurance-lead-gen</code> skill)</h2>
+  <div class="card">
+    <div class="grid grid-3">
+      <div><h3>Revenue per lead</h3><div style="font-size:24px;font-weight:700">$40</div><div class="sub">Lead-resale price (with opt-in) to buyer agents</div></div>
+      <div><h3>Commission per bind</h3><div style="font-size:24px;font-weight:700">$1,920</div><div class="sub">140% first-year commission on average policy</div></div>
+      <div><h3>Unit economics</h3><div style="font-size:24px;font-weight:700">100 leads</div><div class="sub">= $4,000 resale + $9,600 commissions = <strong>$13,600</strong></div></div>
+    </div>
+    <h3 style="margin-top:20px">4 verticals</h3>
+    <table>
+      <thead><tr><th>Vertical</th><th>Trigger</th><th>Product</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Mortgage / Property</strong></td><td>New homeowners (ATTOM, BatchData, HOF list)</td><td>Mortgage Protection Insurance (MPI)</td></tr>
+        <tr><td>Life / Wealth Transfer</td><td>Employment + age records (35–55 with dependents)</td><td>Term life + IUL</td></tr>
+        <tr><td>Medicare / Medical</td><td>65+ / coverage gaps (CMS Medicare API)</td><td>Medicare supplement</td></tr>
+        <tr><td>Family / Care</td><td>Adults with aging parents</td><td>Final expense / care</td></tr>
+      </tbody>
+    </table>
+    <p class="sub" style="margin-top:12px"><strong>TCPA strategy:</strong> Email-first cold outreach (CAN-SPAM only) → embedded web-voice-AI CTA on landing (click-to-initiate = user-originated, bypasses cold-call TCPA restrictions) → opt-in captured in web session = enables future SMS/call. Frankie is the licensed CA/TX domain expert with carrier relationships.</p>
+  </div>
+</section>
+
+<!-- =================== HOF LEAD INVENTORY (NEW) =================== -->
+<section>
+  <h2>Imported Lead Lists — HOF Frankie file</h2>
+  <div class="card">
+    <p>Found <code>HOF Ages to Frankie 04302026.csv</code> in Downloads → ingested into <code>05_imported_leads/</code> + tiered into 4 segments.</p>
+    <table>
+      <thead><tr><th>File</th><th>Rows</th><th>Filter</th><th>Use</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td><code>HOF_Ages_to_Frankie_2026-04-30.csv</code></td><td>214</td><td>Raw import (all states)</td><td>Master copy</td><td><span class="pill muted">archive</span></td></tr>
+        <tr><td><code>HOF_CA_mortgage_protection_clean.csv</code></td><td>209</td><td>CA only, sorted newest</td><td>Full CA pool</td><td><span class="pill info">reference</span></td></tr>
+        <tr><td><strong><code>HOF_CA_TIER1_30-65_200K_clean.csv</code></strong></td><td><strong>77</strong></td><td>age 30–65 + mortgage ≥ $200K + no medical issues</td><td><strong>PRIME — START HERE</strong></td><td><span class="pill ok">🔴 HIGH</span></td></tr>
+        <tr><td><code>HOF_CA_TIER2_30-65_anyloan.csv</code></td><td>130</td><td>age 30–65 broader</td><td>Secondary MPI</td><td><span class="pill info">MED</span></td></tr>
+        <tr><td><code>HOF_CA_TIER3_seniors_66plus_finalexpense.csv</code></td><td>58</td><td>age 66+</td><td>Final-expense product line</td><td><span class="pill info">MED</span></td></tr>
+        <tr><td><code>HOF_CA_TIER4_riskclass_underwrite.csv</code></td><td>57</td><td>medical OR tobacco YES</td><td>Risk-class / specialty carriers</td><td><span class="pill warn">SPECIALTY</span></td></tr>
+      </tbody>
+    </table>
+    <p class="sub" style="margin-top:10px"><strong>HOF stats:</strong> ages 23–99 (median 52) · mortgages $3K–$2M (median $276K) · 100% have phone · 19% medical issues · 9% tobacco · 35% co-borrower · sale dates Jul 2024 – Feb 2025 (8–18 months back — past peak MPI window, position as "mortgage protection review")</p>
+    <p class="sub"><strong>Missing column:</strong> <span class="pill bad">email</span> — HOF has phone + address but no email. Run BatchData skip-trace to fill in.</p>
+  </div>
+</section>
+
+<!-- =================== ENRICHMENT STATUS / VIBE FILE =================== -->
+<section>
+  <h2>Email Enrichment Status</h2>
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>ATTOM (no email in our tier — confirmed)</h3>
+      <p class="sub">Tested <code>/property/detailowner</code> and <code>/property/expandedprofile</code>. Returns property + mortgage + mailing address only. No phone, no email. ATTOM remains the new-deed pull source — not the contact-enrichment source.</p>
+    </div>
+    <div class="card">
+      <h3>BatchData skip-trace — READY TO FIRE ⚡</h3>
+      <p class="sub"><code>03_integrations/batchdata_skiptrace.py</code> is written and waiting. Needs only <code>BATCHDATA_TOKEN</code> env var.</p>
+      <p><strong>Get the token:</strong> <a href="https://app.batchdata.com/api-tokens">app.batchdata.com/api-tokens</a> → "Server Side Tokens" tab → Create Token → paste it in chat.</p>
+    </div>
+    <div class="card">
+      <h3>Vibe-prospecting lead lists — NOT FOUND</h3>
+      <p class="sub">User mentioned 4–5 Excel files with ~100 leads each from "vibe prospecting tool". Exhaustive search of <code>~/Desktop</code> + <code>~/Downloads</code> + <code>~/Downloads/Oraya HQ Reborn</code> finds zero "vibe" hits. Likely in <code>~/Documents</code> (not mounted) or iCloud Drive (not mounted).</p>
+      <p><strong>Action:</strong> mount <code>~/Documents</code> in Cowork folder picker, OR drag-drop the files into chat.</p>
+    </div>
+    <div class="card">
+      <h3>Apollo — 80 free credits</h3>
+      <p class="sub">People-search blocked on free plan. Enrichment endpoints work but Apollo is B2B-skewed; low coverage on consumer/personal emails. Hold for B2B angles (e.g., enriching HR contacts at WARN-listed companies).</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================== DATA INVENTORY =================== -->
+<section>
+  <h2>Data Inventory</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>File</th><th>Rows</th><th>Type</th><th>Use for</th></tr></thead>
+      <tbody>
+        <tr><td><code>01_raw_data/WARN_combined_4states.csv</code></td><td>3,961</td><td>Layoff triggers (live pull)</td><td>B2B HR-side outreach</td></tr>
+        <tr><td><code>01_raw_data/TOP50_actionable_layoffs.csv</code></td><td>75</td><td>Derived shortlist</td><td>Week-1 outreach targets</td></tr>
+        <tr><td><code>02_week1_outreach/Week1_Top25_Companies.csv</code></td><td>25</td><td>Outreach targets</td><td>B2B email to HR / People Ops contacts</td></tr>
+        <tr><td><code>02_week1_outreach/Week1_Outreach_Brief.md</code></td><td>—</td><td>Brief + email template</td><td>5-line B2B outreach template</td></tr>
+        <tr><td><code>01_raw_data/CA_EDD_warn_raw.xlsx</code></td><td>1,401</td><td>Raw source (CA EDD)</td><td>WARN archive</td></tr>
+        <tr><td><code>01_raw_data/NV_DETR_warn_raw.pdf</code></td><td>11</td><td>Raw source (NV DETR)</td><td>WARN archive</td></tr>
+        <tr><td><code>01_raw_data/ID_DoL_warn_raw.pdf</code></td><td>197</td><td>Raw source (ID DoL)</td><td>WARN archive</td></tr>
+        <tr><td><code>03_integrations/propertyradar_pull.py</code></td><td>—</td><td>Integration script</td><td>Reference (pivoted to ATTOM/BatchData)</td></tr>
+        <tr><td><code>~/Desktop/03_Startups/golabal prospect lead list.xlsx</code></td><td>?</td><td>User lead list — UNREADABLE</td><td><span class="pill bad">Likely iCloud-only placeholder. Open in Finder to download.</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- =================== EXISTING ASSETS =================== -->
+<section>
+  <h2>Existing Project Assets (already built)</h2>
+  <div class="grid grid-2">
+
+    <div class="card">
+      <h3>Master Strategic Plan</h3>
+      <div><code>Oraya_LeadGen_Plan.md</code> (40KB, v2)</div>
+      <p class="sub">Covers: legal foundation, 4-state data sources, enrichment stack, funnel architecture, 90-day rollout, budget, risk register, FCRA prescreen track, direct mail channel, TX SB 140 specifics.</p>
+    </div>
+
+    <div class="card">
+      <h3>Main Intelligence Dashboard (DO NOT OVERWRITE)</h3>
+      <div><code>index.html</code> (374KB, v11.4 Day 129)</div>
+      <p class="sub">Pre-existing comprehensive Oraya Labs dashboard. Auto-deploys to Vercel via <code>push-dashboard.sh</code>. The insurance lead-gen dashboard you're reading is a separate file.</p>
+    </div>
+
+    <div class="card">
+      <h3>Retell AI Voice Agents (LIVE)</h3>
+      <div><code>projects/p2-insurance/retell/</code></div>
+      <p class="sub"><strong>Outbound v126 LIVE</strong> (2026-05-28) + <strong>Inbound v15 LIVE</strong> (2026-05-28). 56+ snapshots, 22 patch/verify scripts. Iterated through v96 &rarr; v126 outbound for audio quality, personalization, role-play, binary opener, spellout fixes, volume bumps, screech fix, emergency revert, GOAT-stack script (Miner / Belfort / Voss / Albright / Hormozi), appointment_timestamp ISO 8601, callback_scheduled_time role split, email digit-word &rarr; numeric-digit conversion. Inbound separate iteration to v15 with full parity to outbound's post-call extraction logic.</p>
+    </div>
+
+    <div class="card">
+      <h3>n8n Workflows (in Downloads)</h3>
+      <p class="sub" style="margin:4px 0 8px">~15 JSON workflows. Need to be merged into <code>projects/p2-insurance/n8n/</code> with proper versioning.</p>
+      <details><summary>Show inventory</summary>
+        <ul style="margin:6px 0 0 0;padding-left:18px;color:var(--text2);font-size:12px">
+          <li>Outbound Insurance.json</li>
+          <li>Insurance Post-Call (Maya v24).json — 452KB</li>
+          <li>OUTBOUND NEPQ+JORDAN.json (Jeremy Miner + Jordan Belfort sales methodology)</li>
+          <li>INBOUND NEPQ+JORDAN.json</li>
+          <li>Outbound Precall - Final Draft.json (4 versions)</li>
+          <li>Outbound Post Call.json (4 versions)</li>
+          <li>Reminder workflow - Final Draft.json (2 versions)</li>
+          <li>Retell Insurance Agent — Post Call Processor.json</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="card">
+      <h3>Supporting Docs</h3>
+      <ul style="margin:6px 0 0 0;padding-left:18px;color:var(--text2);font-size:13px">
+        <li><code>GoHighLevel_Mastery_Playbook.docx</code></li>
+        <li><code>VAPOR_Strategic_Plan.md</code></li>
+        <li><code>VAPOR_CTO_Brief.md</code></li>
+        <li><code>VAPOR_UI_UX_Pack.md</code></li>
+        <li><code>VAPOR_Trademark_Clearance_Memo.md</code></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- =================== NEXT ACTIONS =================== -->
+<section>
+  <h2>Next Actions (in priority order, updated 2026-05-28)</h2>
+  <div class="card">
+    <div class="action-row" style="background:rgba(167,139,250,.08);border-radius:8px;padding:14px;border:1px solid rgba(167,139,250,.3)">
+      <span class="priority-pill" style="background:var(--violet);color:white">A</span>
+      <div><strong>&#127968; ENVISION HONDA MILPITAS WALK-IN &middot; Thu May 28 1 PM PT</strong> <span class="pill violet">Frankie · TODAY</span><br>
+      <span class="sub">First dealership appointment landed via cold-call yesterday. Ask for Greg (intro) &rarr; GSM Mo. iPad demo with the Oraya-branded dealership deck. Reciprocity opener: shopping for a Prologue hybrid. Reverse-pitch the Oraya AI revenue stack once warm. <strong>This is the live test of the wedge &rarr; AI employees &rarr; AI CEO upsell ladder.</strong></span></div>
+    </div>
+    <div class="action-row" style="background:rgba(248,113,113,.08);border-radius:8px;padding:14px;border:1px solid rgba(248,113,113,.3);margin-top:8px">
+      <span class="priority-pill" style="background:var(--red);color:white">0</span>
+      <div><strong>&#9993; EIN landing watch (certified-mail track)</strong> <span class="pill bad">User · A2P BLOCKER</span><br>
+      <span class="sub">Mailed via USPS certified mail May 22 with proof-of-delivery + delivery notification. Expected Thu/Fri landing. The moment it hits, the A2P brand + campaign package (built since v11.3) submits. Phone rotation remains parallel.</span></div>
+    </div>
+    <div class="action-row" style="background:rgba(74,222,128,.08);border-radius:8px;padding:14px;border:1px solid rgba(74,222,128,.3);margin-top:8px">
+      <span class="priority-pill" style="background:var(--green);color:#0b1020">$</span>
+      <div><strong>&#128293; $60 ENRICHMENT BAKE-OFF &middot; ATTOM + BatchData + PropertyRadar</strong> <span class="pill ok">Frankie + Chitraksh</span><br>
+      <span class="sub">$20 each. Same TX new-homeowner pull across all three providers. Compare data quality (match rate, email-vs-phone presence, address freshness) + actual cold-outreach conversion. Winner scales; losers stay as fallback. Property Shark / CoreLogic / TruePeopleSearch deferred behind this test.</span></div>
+    </div>
+    <div class="action-row" style="background:rgba(248,113,113,.08);border-radius:8px;padding:14px;border:1px solid rgba(248,113,113,.3);margin-top:8px">
+      <span class="priority-pill" style="background:var(--red);color:white">1</span>
+      <div><strong>&#128226; ADD US PHONE TO PROPERTYRADAR ACCOUNT</strong> <span class="pill warn">Frankie</span><br>
+      <span class="sub">PropertyRadar account ingested into the lead-gen agent (May 27); third leg of the $60 bake-off needs a US phone number to complete verification before $20 can be loaded.</span></div>
+    </div>
+    <div class="action-row" style="background:rgba(248,113,113,.08);border-radius:8px;padding:14px;border:1px solid rgba(248,113,113,.3);margin-top:8px">
+      <span class="priority-pill" style="background:var(--red);color:white">2</span>
+      <div><strong>&#128274; OAuth-reconnect BatchData MCP</strong> <span class="pill warn">Chitraksh / User</span><br>
+      <span class="sub">Cowork settings &rarr; MCP servers &rarr; BatchData &rarr; reconnect. Then top up account with $20 (bake-off Leg B). Skip-trace is ~$0.15/lookup.</span></div>
+    </div>
+    <div class="action-row">
+      <span class="priority-pill" style="background:var(--orange);color:#0b1020">½</span>
+      <div><strong>Recover or share the vibe-prospecting lead lists</strong> <span class="pill warn">User</span><br>
+      <span class="sub">Mount <code>~/Documents</code> in Cowork folder picker, OR drag-drop into chat. Could be ~500 more leads.</span></div>
+    </div>
+    <div class="action-row">
+      <span class="priority-pill">1</span>
+      <div><strong>OAuth-reconnect BatchData MCP into Cowork</strong> <span class="pill warn">User</span><br>
+      <span class="sub">BatchData config saved but tool calls now require fresh OAuth (saving config ends current MCP sessions). Cowork settings → MCP servers → BatchData → reconnect.</span></div>
+    </div>
+    <div class="action-row">
+      <span class="priority-pill">2</span>
+      <div><strong>Run first ATTOM new-homeowner pull (CA/TX/NV/ID, last 14 days, loan ≥ $150K)</strong> <span class="pill info">Claude</span><br>
+      <span class="sub">ATTOM key works. Output → <code>04_leads/new_homeowners_2026-05-21.csv</code></span></div>
+    </div>
+    <div class="action-row">
+      <span class="priority-pill">3</span>
+      <div><strong>CA Data Broker registration ($6,000/yr, CPPA)</strong> <span class="pill warn">User</span><br>
+      <span class="sub">Blocker for any CA consumer data. <a href="https://cppa.ca.gov/data_brokers/">cppa.ca.gov/data_brokers</a></span></div>
+    </div>
+    <div class="action-row">
+      <span class="priority-pill">4</span>
+      <div><strong>TCPA counsel red-team ($3–5K)</strong> <span class="pill warn">User</span><br>
+      <span class="sub">1-hour funnel review by TCPA specialist (Eversheds Sutherland, Mintz, Womble Bond Dickinson)</span></div>
+    </div>
+    <div class="action-row">
+      <span class="priority-pill">5</span>
+      <div><strong>Build TCPA-compliant landing page (TrustedForm + Jornaya)</strong> <span class="pill info">Claude</span><br>
+      <span class="sub">Funnel-blocking. Without opt-in capture, no legal SMS/call.</span></div>
+    </div>
+    <div class="action-row">
+      <span class="priority-pill">6</span>
+      <div><strong>Inventory + version-lock existing n8n workflows</strong> <span class="pill info">Claude</span><br>
+      <span class="sub">15 JSON files scattered in Downloads → consolidate into <code>projects/p2-insurance/n8n/</code></span></div>
+    </div>
+    <div class="action-row">
+      <span class="priority-pill">7</span>
+      <div><strong>Recover unreadable prospect xlsx</strong> <span class="pill warn">User</span><br>
+      <span class="sub">Open <code>~/Desktop/03_Startups/golabal prospect lead list.xlsx</code> in Finder to trigger iCloud download.</span></div>
+    </div>
+    <div class="action-row">
+      <span class="priority-pill">8</span>
+      <div><strong>Apply for Experian Marketing FCRA prescreen account</strong> <span class="pill warn">User</span><br>
+      <span class="sub">Unlocks highest-volume direct-mail lane ("firm offer of insurance" — no consent needed)</span></div>
+    </div>
+    <div class="action-row">
+      <span class="priority-pill">9</span>
+      <div><strong>Buy 15–20 secondary cold-email domains + Google Workspace inboxes</strong> <span class="pill warn">User</span><br>
+      <span class="sub">4–6 week warmup before first send. Start the clock now.</span></div>
+    </div>
+    <div class="action-row">
+      <span class="priority-pill">10</span>
+      <div><strong>Apply for Lob or PostGrid API for direct mail</strong> <span class="pill warn">User</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ACTIVITY LOG =================== -->
+<section>
+  <h2>Activity Log</h2>
+  <div class="card">
+    <div class="timeline-item">
+      <div class="date">2026-05-28</div>
+      <div class="act">Published Outbound v126 + Inbound v15 LIVE on Retell</div>
+      <div class="res">→ Email digit-word → numeric-digit fix shipped on outbound (v126). Inbound parity collapsed v124+v125+v126 into a single publish (v15). Patch scripts: apply_email_digit_fix_2026-05-28.py + apply_inbound_parity_fix_2026-05-28.py. Pre/post snapshots stored.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026-05-28</div>
+      <div class="act">1st dealership appointment landed — Envision Honda Milpitas</div>
+      <div class="res">→ Thu May 28 1 PM PT. Cold-call yesterday (Frankie). Reciprocity opener: "shopping for Prologue hybrid, mind if I look around while we talk?". Got Greg + ask for GSM Mo. Calendar event created.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026-05-28</div>
+      <div class="act">Lead-Gen Dashboard wired into main HQ top-bar nav</div>
+      <div class="res">→ Linked from index.html top-bar as a violet button. Added back-link here to main dashboard. Activity log + Quick Status + Next Actions all refreshed to Day 138.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026-05-27</div>
+      <div class="act">Backend pipeline VERIFIED end-to-end on a real test call</div>
+      <div class="res">→ Caller "Adrian Marino" booked Thu May 28 11 AM PT. Calendar event, confirmation email, SMS all landed. Bug found + fixed: inbound was wired to OUTBOUND post-call backend (10-emails-per-call). Now on its own inbound workflow.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026-05-27</div>
+      <div class="act">Real Estate Project (P3) scoped end-to-end on founder call</div>
+      <div class="res">→ Art Yano + Mom + investor-flip wholesale lane. Day-trading agent scratched. Single-prompt agent (forked from P2) archived as P3 architecture. See main dashboard → Real Estate tab.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026-05-22</div>
+      <div class="act">EIN application MAILED via USPS certified mail</div>
+      <div class="res">→ Proof of delivery + delivery notification. Expected Thu/Fri landing. Runs parallel to IRS phone-call rotation. Last A2P blocker.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026-05-22</div>
+      <div class="act">License numbers baked into all backend mail + SMS templates</div>
+      <div class="res">→ CA # 4276736 + NPN # 20996126 placed in Oraya-branded compliance footer for Cal Ins Code §1725.5(c). Sender identity = "Frankie Alicea"; Oraya umbrella disclosed in privacy + ToS.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026-05-21</div>
+      <div class="act">NotebookLM lead-gen podcast shipped</div>
+      <div class="res">→ Audio overview generated from the 4-5 page Texas-homeowner lead-gen strategy doc. Frankie: "You never cease to amaze me. Absolutely insane."</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026-05-21</div>
+      <div class="act">Built insurance lead-gen dashboard + state JSON + bootstrap doc</div>
+      <div class="res">→ INSURANCE_LEADGEN_DASHBOARD.html · insurance_leadgen_state.json · READ_ME_FIRST.md</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026-05-21</div>
+      <div class="act">Configured BatchData MCP dataset add-ons via Chrome automation</div>
+      <div class="res">→ 6 useful add-ons enabled (Contact Enrichment, Mortgage + Liens, History Deed, Property Owner Profile, Valuation, Demographics); 5 wasteful disabled. Awaiting OAuth reconnect.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026-05-21</div>
+      <div class="act">Verified ATTOM API key works</div>
+      <div class="res">→ 6,513 records returned for Austin ZIP 78701 test. Key saved chmod 600 in .oraya-credentials/</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026-05-21</div>
+      <div class="act">Identified Week-1 top 25 layoff employers</div>
+      <div class="res">→ Top targets: Republic National Distributing (1,813), KBR Services (758 CA), Oracle America (702 CA), Laurel Ridge TX (648), LinkedIn (585 CA)</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026-05-21</div>
+      <div class="act">Pulled live WARN data from CA/TX/NV/ID government sources</div>
+      <div class="res">→ 3,961 rows: TX 2352, CA 1401, ID 197, NV 11</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026-05-21</div>
+      <div class="act">Built v2 plan with FCRA prescreen + direct mail + TX SB 140 corrections</div>
+      <div class="res">→ Oraya_LeadGen_Plan.md updated. Corrected: vacated FCC 1-to-1 rule, no Aug 2025 reinstatement, no fixed federal consent-retention period.</div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOR FUTURE CLAUDE SESSIONS =================== -->
+<section>
+  <h2>For Future Claude Sessions — Reading Order</h2>
+  <div class="card">
+    <ol>
+      <li><code>READ_ME_FIRST.md</code> — one-page bootstrap (what this project is, where to start)</li>
+      <li><code>insurance_leadgen_state.json</code> — full machine-readable state (this dashboard's source of truth)</li>
+      <li><code>INSURANCE_LEADGEN_DASHBOARD.html</code> — this file, human-readable rendering</li>
+      <li><code>Oraya_LeadGen_Plan.md</code> — full strategic plan v2 (40KB)</li>
+      <li><code>02_week1_outreach/Week1_Outreach_Brief.md</code> — current actionable shortlist</li>
+    </ol>
+    <p class="sub" style="margin-top:12px"><strong>To update this dashboard:</strong> edit <code>insurance_leadgen_state.json</code>, then re-run <code>03_integrations/regen_dashboard.py</code> to rebuild the HTML (or hand-edit the HTML — both files should stay in sync).</p>
+  </div>
+</section>
+
+<!-- =================== EMBEDDED STATE JSON =================== -->
+<!-- Future Claude sessions can parse the embedded state JSON below for deterministic state.
+     Keep this in sync with insurance_leadgen_state.json -->
+<script type="application/json" id="oraya-insurance-leadgen-state">
+{
+  "schema_version": "1.0",
+  "last_updated": "2026-05-28",
+  "version": "v2.0",
+  "day": 138,
+  "voice_agents": {
+    "outbound": { "version": "v126", "status": "LIVE", "agent_id": "agent_63a23bd2cc9273a9b4fea5656e", "flow_id": "conversation_flow_96a5fd684b24" },
+    "inbound":  { "version": "v15",  "status": "LIVE", "agent_id": "agent_1ffc59c3d135d0776cb35fec6f", "flow_id": "conversation_flow_302b435de58b" }
+  },
+  "milestones": [
+    "Outbound v126 + Inbound v15 LIVE on Retell (2026-05-28)",
+    "Backend pipeline (calendar/email/SMS/DNC/admin log) verified on real test call (2026-05-27)",
+    "1st dealership appointment booked — Envision Honda Milpitas, Thu May 28 1 PM PT (2026-05-28)",
+    "EIN mailed via USPS certified mail (2026-05-22) — last A2P blocker",
+    "License # CA 4276736 + NPN 20996126 baked into backend mail/SMS templates (2026-05-22)",
+    "Real Estate Project (P3) scoped end-to-end (2026-05-27)"
+  ],
+  "source_of_truth_file": "/Users/chitrakshmayank/Downloads/Oraya HQ Reborn/insurance_leadgen_state.json",
+  "see_also": "/Users/chitrakshmayank/Downloads/Oraya HQ Reborn/READ_ME_FIRST.md",
+  "main_dashboard": "/Users/chitrakshmayank/Downloads/Oraya HQ Reborn/index.html"
+}
+</script>
+
+<div class="footer">Oraya HQ · Insurance Lead-Gen Dashboard · v2.0 · Day 138 · 2026-05-28 · Single-file · Open in any browser · <a href="index.html" style="color:var(--violet)">← Main Dashboard</a></div>
+
+</div>
+</body>
+</html>

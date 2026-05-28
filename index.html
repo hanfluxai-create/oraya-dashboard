@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Oraya Labs · Intelligence Dashboard · v11.4 · May 19 2026 · Day 129 · Voice fixed (Sonic 3.5 + interrupt floor + bg-noise off) · Sales-master script rebuild (Miner+Belfort+Voss+Albright+Hormozi) · IRS EIN call live · "In Sync" daily-block schedule locked · Texas homeowner lead lane · n8n single-prompt agent forked</title>
+<title>Oraya Labs · Intelligence Dashboard · v12.0 · May 28 2026 · Day 138 · Voice OUTBOUND v126 + INBOUND v15 LIVE · Inbound calendar + post-call backend wired · 1st DEALERSHIP appointment booked (Envision Honda Milpitas, May 28 1pm) · Real Estate Project P3 scoped (Art Yano · investor-flip wholesale lane) · Lead-Gen Dashboard linked · ATTOM/BatchData/PropertyRadar $60 test queued · Single-prompt agent shipped · Twin Mind live transcript in production</title>
 <style>
 :root{
   --bg:#f8fafc;--surface:#ffffff;--surface2:#f1f5f9;--surface3:#e2e8f0;
@@ -303,9 +303,10 @@ html{scroll-behavior:smooth}
     <div class="brand-mark">O</div>
     <div class="copy">
       <div class="name">Oraya Labs <span style="font-weight:500;color:var(--text3);font-size:12px;margin-left:6px">Intelligence Dashboard</span></div>
-      <div class="sub"><strong>v11.4</strong> &middot; May 19 &middot; Day 129 &middot; Voice fixed &middot; Sales-master script reborn &middot; "In Sync" locked &middot; EIN call live</div>
+      <div class="sub"><strong>v12.0</strong> &middot; May 28 &middot; Day 138 &middot; Outbound v126 + Inbound v15 LIVE &middot; 1st dealership appt booked &middot; Real Estate P3 scoped &middot; Lead-Gen lane wired</div>
     </div>
   </div>
+  <a href="INSURANCE_LEADGEN_DASHBOARD.html" class="theme-toggle" style="text-decoration:none;border-color:var(--violet);color:var(--violet);font-weight:700" title="Open the Insurance Lead-Gen Dashboard in a new tab" target="_blank" rel="noopener">&#128202; Lead-Gen Dashboard &rarr;</a>
   <button class="theme-toggle" id="themeToggle" title="Toggle theme">&#9790; Dark</button>
 </div>
 
@@ -314,21 +315,38 @@ html{scroll-behavior:smooth}
 <div class="milestone-banner" id="milestoneBanner">
   <div class="mb-head">
     <div class="mb-pills">
-      <span class="milestone-pill"><span class="dot"></span>&#9733; VOICE-FIX + SALES-MASTER WEEK</span>
-      <span class="milestone-pill alt">MAY 19 2026 &middot; DAY 129 &middot; v11.4</span>
-      <span class="milestone-pill warm">EIN ON HOLD (IRS LIVE)</span>
-      <span class="milestone-pill violet">"IN SYNC" SCHEDULE LOCKED</span>
+      <span class="milestone-pill"><span class="dot"></span>&#9733; LAUNCH WEEK &middot; OUTBOUND v126 + INBOUND v15 LIVE</span>
+      <span class="milestone-pill alt">MAY 28 2026 &middot; DAY 138 &middot; v12.0</span>
+      <span class="milestone-pill warm">1st DEALERSHIP APPT BOOKED</span>
+      <span class="milestone-pill violet">REAL ESTATE P3 SCOPED</span>
     </div>
     <button class="mb-toggle" id="mbToggle" aria-expanded="true" aria-controls="mbBody mbDeep" title="Collapse banner">
       <span class="chev">&#9662;</span><span class="lbl">Collapse</span>
     </button>
   </div>
-  <h1>Voice creature exorcised &middot; <span class="grad">sales-master script reborn from 5 GOATs.</span> "In Sync" daily blocks locked &middot; IRS EIN call alive.</h1>
-  <p class="subhead">Day 129 closes <strong>Voice-Fix + Sales-Master Week</strong>. The Maya/Tessa "creature" cleared in one pass &mdash; volume +166, interrupt-sensitivity floor, bg-noise on, Sonic 3.5. Script rebuilt by merging <strong>Miner + Belfort + Voss + Albright + Hormozi</strong> into a single prompt. Schedule: 4:30 AM recap + 10-1 PM execution.</p>
+  <h1>Voice agent LIVE end-to-end &middot; <span class="grad">first dealership appointment landed.</span> Real Estate Project (P3) scoped on the May 27-28 founder call &middot; Lead-Gen lane wired.</h1>
+  <p class="subhead">Day 138 closes <strong>Launch Week</strong>. <strong>Outbound v126</strong> + <strong>Inbound v15</strong> both publish-live on Retell &mdash; email digit-word &rarr; numeric fix shipped, calendar booking + post-call backend (mail / SMS / DNC / logs) verified on real test calls. <strong>Envision Honda Milpitas</strong> appointment locked May 28 1 PM PT (first dealership outbound landed a callback). <strong>Real Estate P3</strong> (Art Yano · investor-flip wholesale + CA broker lane via Mom) scoped end-to-end. Lead-Gen Dashboard now wired into top-bar &rarr; ATTOM + BatchData + PropertyRadar $60 enrichment bake-off queued. Single-prompt agent shipped, node fallback preserved.</p>
   <div class="mb-golden" id="mbBody">
     <div class="mb-left">
-      <div class="wn-head"><span>&#10024;</span> What's new &middot; May 17-19 sweep (since v11.3)</div>
+      <div class="wn-head"><span>&#10024;</span> What's new &middot; May 22-28 sweep (since v11.4)</div>
       <ul>
+        <li><strong>Outbound v126 + Inbound v15 published LIVE on Retell (May 28).</strong> Two surgical patch passes shipped same day. <strong>Outbound v126</strong> = global_prompt EMAIL CAPTURE digit rule + node 9 worked example + post_call_analysis caller_email extraction extended; Maya now converts spoken digit words ("one"/"two"/"zero"/"oh") to numerals (1/2/0) inside the stored local-part so <em>"john wick one two at gmail dot com"</em> stores as <code>johnwick12@gmail.com</code>. <strong>Inbound v15</strong> = full parity pull (appointment_timestamp ISO + callback_scheduled_time role separation + email-digit handling) collapsed into a single combined patch. Inbound agent <code>agent_1ffc59c3d135d0776cb35fec6f</code> + flow <code>conversation_flow_302b435de58b</code>; outbound agent <code>agent_63a23bd2cc9273a9b4fea5656e</code> + flow <code>conversation_flow_96a5fd684b24</code>. Pre/post snapshots saved in <code>projects/p2-insurance/retell/snapshots/</code>.</li>
+        <li><strong>First dealership appointment LANDED (May 28).</strong> Cold-call to Envision Honda Milpitas connected with Greg (one of multiple new sales managers) &mdash; Frankie reused the "Greg Korea pitched here ~6 months ago, was I the right person?" wedge, offered to come look at a Prologue hybrid in exchange for an intro to GSM Mo. <strong>Appointment locked for Thursday May 28, 1 PM PT.</strong> Frankie suiting up. Old MBSB-era playbook validated: opening with reciprocity (something for them) beats opening with a pitch. Calendar event created, location pinned, Chitraksh added as optional attendee for celebration or live G-Meet pull-in.</li>
+        <li><strong>REAL ESTATE PROJECT (P3) scoped end-to-end (May 27-28 founder call).</strong> Decision: <strong>P3 is Real Estate, not day-trading</strong>. Frankie scratched the trading agent ("on paper easy, in reality 3 years of trying and the back-tests don't translate to live" &mdash; Chitraksh). Real Estate is the <strong>"perfect next step"</strong> because the lead-gen muscle we're building for insurance applies directly. <strong>Two human channels</strong>: (a) <strong>Art Yano</strong> &mdash; CA licensed broker + property-management family, auctions houses for investors at $10K-$50K per flip, currently away from the desk caring for his terminally ill mother ($5-10K / mo home medical) so a system that does the work for him is timely; (b) <strong>Mom (Frankie's)</strong> &mdash; licensed CA real-estate agent + broker, retiring, wants a position with Art. <strong>The system:</strong> NOT consumer end-buyers &mdash; <strong>99% investor / flipper buyer side</strong>. Scrape Facebook + real-estate investor sites for CA flippers, enrich, ingest into our database. When a seller signs an off-market contract with us, blast the deal to 50+ investors at once with full underwriting metrics: comparables (1-2 mi radius, same vintage), rehab estimate, post-rehab ARV, days-on-market in that ZIP, urgency timer, GPS, photos. Investor responds &rarr; we wholesale the contract &rarr; $10-50K spread per close. <strong>Tech demo built</strong>: clone of Oraya site repurposed (<em>"Turn difficult property distributions into clear"</em>) with dropdown "Inherited a property / Going through divorce / &hellip;" CTAs &mdash; shown to Frankie on the call, locked as the visual reference. <strong>Sequencing</strong>: P2 insurance lead-gen first &rarr; learnings transplant to P3 real-estate lead-gen. Frankie: <em>"We're not done, but we're good for the rest of the year, bro."</em></li>
+        <li><strong>Inbound agent backend (calendar + mail + SMS + DNC) VERIFIED on real call (May 27, 1:39-1:42 AM).</strong> Test caller "Adrian Marino" booked appointment Thu May 28 11 AM through the inbound triage flow. Maya read back the appointment slot, the calendar event hit the workflow, both founders received the confirmation email ("That insurance email confirmation is FIRE, bro" &mdash; Frankie). Pre-fix bug found same day: inbound was wired to the OUTBOUND backend &mdash; that's why test calls were producing 10 emails per call. Cause was the form-submit fan-out; now routed to its own inbound post-call workflow. Email digit-handling rule shipped in the same publish pass (v126 outbound / v15 inbound).</li>
+        <li><strong>Single-prompt agent FORKED + tested vs node-based (May 26-27).</strong> Chitraksh shipped both architectures: (a) single-prompt agent with the GOAT-merge (Miner NPQ + Belfort + Voss + Albright + Hormozi) baked into one prompt, (b) node-based conversation flow (the current production path). Single-prompt test (May 27 12:18 AM "Vantasia TS Johnson") proved the flow works and the post-call extraction is correct, but the script-driven node-based architecture won the founder ear test on the inbound side &mdash; cleaner empathy, faster pivot to "are you familiar with how mortgage protection works?" &rarr; one-month / three-month / six-month time-to-decide ladder. <strong>Production path: node-based. Single-prompt: archived as fallback + as the architecture for P3 Real Estate's investor-blast agent.</strong></li>
+        <li><strong>Lead-Gen Dashboard wired into top-bar nav (May 28).</strong> The standalone <code>INSURANCE_LEADGEN_DASHBOARD.html</code> is now linked as a violet pill-button in the top-bar of this main dashboard. ATTOM (key in <code>.oraya-credentials/</code>) + BatchData (configured) + PropertyRadar (needs US phone number from Frankie) are the three enrichment lanes ingested in the lead-gen agent. <strong>$60 bake-off queued</strong>: $20 each across all three providers, compare data quality + actual outreach conversion, pick the winner. Property Shark / CoreLogic deferred behind this test.</li>
+        <li><strong>Voice opener glitch FIXED on Gmail / Outlook personal addresses (May 27-28).</strong> Maya was breaking on company-domain emails because the inbound agent was instructed to read out the domain letter-by-letter (designed for old-people Gmail/Outlook leads). Decision: leave as-is &mdash; the cohort is statistically 50-70% Gmail, &le;30% Outlook, &lt;1% company &mdash; if we hit a company-email caller we patch it then. <em>"It works perfectly with Gmail now."</em> &mdash; Frankie.</li>
+        <li><strong>Inbound opener locked using a known-good outbound snippet.</strong> Frankie flagged that the inbound was glitching while the outbound (same flow downstream) was flawless &mdash; <em>"Mortgage protection is simple. If you have a loan&hellip; the policy keeps your payments&hellip; your family doesn't scramble while they're grieving"</em>. Chitraksh extracted that verbatim from a clean outbound transcript and ported it into the inbound's first three nodes. Result: inbound opener now matches outbound clarity, founder verdict: <em>"That was fire. That was fire."</em></li>
+        <li><strong>Dealership sales sheet committed (May 28).</strong> Action: take the existing Mercedes dealership offer letter, prompt Claude HQ to rewrite as a generic Oraya dealership-deck (UI + logo + color scheme + Oraya AI capability matrix) Frankie can pull up on his iPad at the Envision Honda walk-in. Note logged in dashboard: <em>"extract info to create dynamic slide deck with Oraya UI"</em>. Replaces the print-out idea (iPad demo &gt; paper).</li>
+        <li><strong>Theresa cash-flow update + grace shown (May 21-26).</strong> Theresa's son passed; Frankie chose not to chase the $2,500 owed on the two policies they wrote together. He's cancelling those, writing a new big policy through his daughter's mother to manufacture the ad-budget cash overnight, plus three checks from the day-job pipeline. Chitraksh's reply: <em>"if there's anything extraordinary or even something small you can straight up tell me &mdash; if you don't have the money there's nothing we can do about it instead of coming up with other plans."</em> Mutual-respect contract reinforced. May 26 11 AM IST.</li>
+        <li><strong>"AI Employees / AI CEO" master-vision committed as the long-arc revenue surface (May 27, 12:35 AM).</strong> Voice AI = the wedge. The wedge converts &rarr; we upsell <strong>a full team of AI employees plus a CEO agent that gives directions to real people via call, email, SMS</strong> (not just sub-agents to sub-agents). Sticky moat = the more tools we embed in the client's workflow, the harder it is to remove us &mdash; "bundle pattern" (telcos bundling internet + cable, insurance bundling auto + renters). <strong>Order of deploy:</strong> insurance lead-gen &rarr; real-estate lead-gen &rarr; per-client AI-employee stack &rarr; per-client AI-CEO. Frankie: <em>"Now we don't have to do anything but refining and honing in and hyper-focusing on system feedback loops &mdash; we're good for the rest of the year, bro."</em></li>
+        <li><strong>Claude rate-limit outage recurrence + multi-model fallback re-tested (May 26-27).</strong> Anthropic-side server pressure tripped the dashboard auto-push helper mid-edit. Paperclip stack (Claude + ChatGPT + Gemini) confirmed as the live-fallback architecture. Mac Mini still on the back-end-of-month buy plan; storage-full on Chitraksh's current Mac is the blocker on running 5 sub-agents locally. <em>"Hold me to it &mdash; you should have it in the next 7 days."</em> &mdash; Frankie, May 27.</li>
+        <li><strong>Sleep + sync slip resolved (May 23-26).</strong> Both founders crossed schedules over the weekend &mdash; Chitraksh slept through the 8:41 PM IST proposed sync; Frankie was unavailable Friday-Sunday. Recovered May 26 11 PM IST with the test session. Reinforces the case for the "In Sync" daily-block discipline locked May 19.</li>
+        <li><strong>NotebookLM lead-gen podcast SHIPPED (May 21, 11:51 PM).</strong> Generated NotebookLM audio overview from the 4-5 page lead-gen strategy doc + the Oraya HQ source documents Claude built. Frankie reaction: <em>"You never cease to amaze me. Absolutely insane."</em> &rarr; <em>"Eventually we need AI agents like our podcast bro."</em> &mdash; reinforces the Gemini 3.1 Live speech-to-speech roadmap (zero-latency native multimodal, 2-3 months out).</li>
+        <li><strong>EIN application MAILED via certified mail (May 22, 2:16 AM).</strong> Paid for certified mail with proof of delivery + notification on delivery, expected Thursday or Friday landing. Two parallel tracks now (mail + IRS phone-call rotation). Still the last A2P blocker.</li>
+        <li><strong>License numbers locked into all backend mail + SMS templates.</strong> Frankie's CA # <strong>4276736</strong> + NPN # <strong>20996126</strong> placed into the Oraya-branded compliance footer for legitimacy / Cal Ins Code &sect;1725.5(c). Sender identity updated: backend transactional mail goes out branded "Frankie Alicea" while the Oraya umbrella relationship is disclosed in privacy + ToS &mdash; clears the liability flag Chitraksh raised May 22 4:42 AM (<em>"I don't wanna create any liability for you, legal part is serious"</em>).</li>
+        <li><strong>External signals queued:</strong> Pope set AI guidelines + invited AI cos to the Vatican (May 19); Meta tracked employees to build replacement AI (8K layoffs vs $145B); Anthropic hiring religious-trained moral-compass reviewers; Pizza Hut $100M franchisee lawsuit over Dragon Tail AI delivery (over-transparency = system risk). Macro: gas crisis, Strait of Hormuz pinch, oil at $120/bbl (Russia 300% gain) &mdash; queued as macro-context for client-facing copy.</li>
         <li><strong>Voice "creature" exorcised (May 18, 2:21 AM call session).</strong> Root cause was a stack of three things, not one &mdash; <strong>voice volume too low</strong> (Cartesia Ali at default 100, raised <strong>+166</strong>), <strong>interruption-sensitivity too aggressive</strong> (lowered to floor), <strong>background-noise removal OFF</strong> (turned on), plus Cartesia <strong>Sonic-3 stale</strong> &rarr; swapped to <strong>Sonic 3.5</strong>. <em>"It's 100% better."</em> &mdash; Frankie, post-fix call.</li>
         <li><strong>Sales-master script rebuild ordered (May 18, 03:57-04:00).</strong> Frankie pulled <strong>five GOATs</strong> into one prompt: <strong>Jeremy Miner NPQ</strong> (neuro-emotional persuasion qs), <strong>Jordan Belfort straight-line</strong>, <strong>Chris Voss tactical empathy</strong>, <strong>Andy Albright</strong> mortgage-protection 30-day frame, <strong>Alex Hormozi</strong> loss-aversion <strong>2.5&times;</strong>. Trigger reframed to <em>death OR disabling illness / can't work</em> (illness was missing in v1). <strong>Sam Lair upfront contract:</strong> "If by the end of five minutes this isn't a fit, you'll tell me, deal?" reframes the no. Mortgage-protection bullet ordering locked: <em>are-you-familiar &rarr; one-month / three-month / six-month time-to-decide &rarr; keep / rent / sell</em>.</li>
         <li><strong>EIN: IRS sat-on-hold campaign (May 19, 04:06).</strong> EIN is THE blocker for A2P submission. IRS open 8 AM (Frankie's busy hour); Chitraksh now calling daily from India while Frankie works. Plan: call repeatedly, repeatedly, repeatedly. Mail draft staged in parallel. GHL stays organization-owned, campaign on Frankie's personal path, Oraya relationship disclosed in privacy + ToS &mdash; sole-prop pattern, approval-likely.</li>
@@ -345,22 +363,34 @@ html{scroll-behavior:smooth}
       </ul>
     </div>
     <div class="mb-right">
-      <div class="mb-state-head"><span>&#9678;</span> Live state &middot; Day 129</div>
-      <div class="mb-chip green"><span class="icn">&#9989;</span><div><strong>Voice fixed.</strong> Sonic 3.5 + volume +166 + interrupt floor + bg-noise off &mdash; 100% better on test call.</div></div>
-      <div class="mb-chip warm"><span class="icn">&#127942;</span><div><strong>Script rebuild.</strong> Miner NPQ + Belfort + Voss + Albright + Hormozi merged in single prompt.</div></div>
-      <div class="mb-chip orange"><span class="icn">&#9742;</span><div><strong>EIN.</strong> IRS sat-on-hold. Chitraksh-AM + Frankie-day call rotation. Last A2P blocker.</div></div>
-      <div class="mb-chip violet"><span class="icn">&#128467;</span><div><strong>"In Sync".</strong> 4:30am fixed (recap + plan) &middot; 10am-1pm floating (execution). Evening optional.</div></div>
-      <div class="mb-chip"><span class="icn">&#9961;</span><div><strong>n8n single-prompt agent forked.</strong> Pre-filled form for hands-free QA: one button &rarr; call.</div></div>
-      <div class="mb-chip"><span class="icn">&#127956;</span><div><strong>Texas lane open.</strong> CA Delete-Act bypass &middot; new-homeowner scrape + enrich.</div></div>
-      <div class="mb-chip red"><span class="icn">&#128178;</span><div><strong>Claude Max downgrade.</strong> $120 &rarr; $30 + GPT $30. Tokens spent first.</div></div>
-      <div class="mb-chip green"><span class="icn">&#127968;</span><div><strong>Chitraksh HQ 24/7.</strong> Home, parents told, spare-room office, Mac Mini incoming.</div></div>
-      <div class="mb-chip warm"><span class="icn">&#128184;</span><div><strong>Cash:</strong> Mom paid next-day &middot; F+brother delayed (carrier) &middot; military couple cancel-risk.</div></div>
+      <div class="mb-state-head"><span>&#9678;</span> Live state &middot; Day 138</div>
+      <div class="mb-chip green"><span class="icn">&#127908;</span><div><strong>Outbound v126 LIVE.</strong> Email digit-word &rarr; numeric digit fix + appointment_timestamp ISO + callback_scheduled_time roles &mdash; all shipped.</div></div>
+      <div class="mb-chip green"><span class="icn">&#128231;</span><div><strong>Inbound v15 LIVE.</strong> Parity-publish (3 patches in one). Calendar / mail / SMS / DNC / logs verified on live test.</div></div>
+      <div class="mb-chip green"><span class="icn">&#127968;</span><div><strong>1st dealership appt.</strong> Envision Honda Milpitas &middot; Thu May 28 1pm PT &middot; Greg + GSM Mo target.</div></div>
+      <div class="mb-chip violet"><span class="icn">&#127960;</span><div><strong>Real Estate P3 scoped.</strong> Art Yano + Mom &middot; investor-flip wholesale + comparables blast &middot; CA broker lane.</div></div>
+      <div class="mb-chip violet"><span class="icn">&#128202;</span><div><strong>Lead-Gen Dashboard linked.</strong> Top-bar button live &middot; ATTOM + BatchData + PropertyRadar &middot; $60 bake-off queued.</div></div>
+      <div class="mb-chip warm"><span class="icn">&#129489;&#8205;&#128188;</span><div><strong>AI Employees / AI CEO.</strong> Voice = wedge. Stack: lead-gen &rarr; AI employees &rarr; AI CEO over real humans.</div></div>
+      <div class="mb-chip orange"><span class="icn">&#9993;</span><div><strong>EIN mailed certified.</strong> Phone rotation still live. Last A2P blocker.</div></div>
+      <div class="mb-chip"><span class="icn">&#9961;</span><div><strong>Single-prompt agent shipped.</strong> Production = node-based; single-prompt archived as P3 architecture.</div></div>
+      <div class="mb-chip"><span class="icn">&#128467;</span><div><strong>"In Sync".</strong> 4:30am fixed &middot; 10am-1pm floating &middot; slipped May 23-26, recovered May 26-28.</div></div>
+      <div class="mb-chip warm"><span class="icn">&#128184;</span><div><strong>Cash:</strong> Theresa policies cancelled (her son passed) &middot; daughter-mother policy queued for ad-budget overnight &middot; 3 day-job checks pending.</div></div>
+      <div class="mb-chip"><span class="icn">&#128193;</span><div><strong>Licenses in backend.</strong> CA #4276736 + NPN #20996126 baked into mail/SMS templates (Cal Ins Code &sect;1725.5(c)).</div></div>
     </div>
   </div>
   <details class="mb-deep" id="mbDeep">
-    <summary>Day 129 deep state &middot; full essay &middot; carry-overs from v11.3 / v11.2 / v11.1</summary>
+    <summary>Day 138 deep state &middot; full essay &middot; carry-overs from v11.4 / v11.3 / v11.2 / v11.1</summary>
     <div class="deep-body">
-      <p><strong>May 19 state (Day 129, Tue) &mdash; "Voice-Fix + Sales-Master Week" closes.</strong> The week reframed Oraya's voice surface from "agent feels almost there" to <strong>"agent passes the founder ear test."</strong> Maya/Tessa on the inbound life/health triage agent had been producing a "creature" artifact mid-sentence on test calls &mdash; voice cutting out, muffling, partial syllables; recording came back clean every time which told us it was a runtime transport issue, not a generation issue. The May 18 02:09-02:21 call session ran the diagnostic live with Frankie on speaker: tried voice swap (got worse), then identified that voices are <strong>Cartesia imports</strong> (not native Retell), which means the variable in scope is Cartesia &harr; Retell transport, not Retell-internal config. Three changes shipped in one pass: (a) <strong>Voice volume +166</strong> (was at default, agent was simply speaking too quietly for the cellphone codec to render mid-sentence breath), (b) <strong>Interruption-sensitivity reduced to floor</strong> (agent was treating its own breath / silence frames as a user barge-in and clipping), (c) <strong>Background-noise removal turned ON</strong>. Bonus: voice-speed toggle, which was ON in two nodes but OFF globally, brought to OFF everywhere for consistency. <strong>Sonic 3</strong> model swapped for <strong>Sonic 3.5</strong> &mdash; default was sticking to the more-stable older release; experimental newer release turned out to be more stable in our case. Post-fix call: <em>"It's 100% better."</em>  &mdash; Frankie.</p>
+      <p><strong>May 28 state (Day 138, Thu) &mdash; "Launch Week" closes.</strong> The two voice agents Oraya has been forging for six weeks &mdash; <strong>outbound mortgage-protection</strong> and <strong>inbound life/health triage</strong> &mdash; both crossed the publish line on the same day. <strong>Outbound v126</strong> ships the email digit-word &rarr; numeric-digit fix Maya kept biting on (callers saying "john wick one two at gmail dot com" now store as <code>johnwick12@gmail.com</code> rather than the literal word string) and inherits v125's appointment_timestamp ISO 8601 rewrite + v124's callback_scheduled_time role separation. <strong>Inbound v15</strong> collapses all three of those patches into a single publish so the inbound and outbound flows now run on identical extraction logic, ending six weeks of drift. Both backends &mdash; calendar event creation, opt-in confirmation email, SMS, DNC harvest, admin log dispatch &mdash; verified on a live test call (May 27 1:39 AM, caller "Adrian Marino", appointment slot Thu May 28 11 AM landed end-to-end). Pre-publish bug found same day: inbound had been mistakenly wired to the OUTBOUND backend &mdash; that's why test calls produced 10 emails per call. Cause was the form-submit fan-out path; it now routes to its own inbound post-call workflow.</p>
+      <p><strong>First dealership appointment LANDED (May 28).</strong> Frankie ran the cold-call to Envision Honda Milpitas &mdash; opened with the Mercedes-era "Greg Korea was here ~6 months ago pitching automation, was I the right person?" wedge, got Greg (one of the new sales managers brought in after the prior team turned over &mdash; a "they're underperforming" signal), GSM Mo still in place. <strong>Appointment locked Thursday May 28, 1 PM PT</strong> at the Milpitas dealership. Frankie suiting up; calendar event created in Google Calendar with location pinned and Chitraksh added as optional attendee for either celebration or live G-Meet pull-in. The hand-off ask: replace the iPad-print-out paper-deck idea with a dynamic Oraya-branded slide deck generated from the Mercedes offer letter Claude HQ has on file. <em>"Extract info to create dynamic slide deck with Oraya UI, logo, color scheme"</em> &mdash; Frankie's note logged in real-time.</p>
+      <p><strong>REAL ESTATE PROJECT (P3) scoped end-to-end on the May 27-28 founder call.</strong> Day-trading agent scratched (Chitraksh has back-tested for 3 years, the strategies don't translate to live execution &mdash; revenue potential lower than insurance / real-estate / voice). Real Estate is the <strong>"perfect next step"</strong>: the lead-gen muscle being built for P2 Insurance transplants directly into P3 Real Estate &mdash; same enrichment, same outreach, different buyer side. <strong>Two human channels:</strong> (a) <strong>Art Yano</strong> &mdash; CA licensed broker, family runs a property-management company, auctions houses for investors at $10K-$50K per wholesale, currently taking time away from real estate to care for his terminally-ill mother ($5-10K / month in home medical for dialysis + multiple treatments) so a system that does the prospecting / pricing / blast for him is timely; (b) <strong>Frankie's mom</strong> &mdash; licensed CA real-estate agent + broker, retiring, wants a position alongside Art. <strong>The buyer side is NOT consumer end-buyers</strong> &mdash; it's investors / flippers (the 99% of this market). The system scrapes Facebook + investor sites for CA flippers, enriches, ingests to our database. When a seller signs an off-market contract (e.g., hoarder house that won't sell on Zillow as-is), we blast that deal simultaneously to 50+ investors in the database with full underwriting metrics: <strong>comparables (1-2 mi radius, same vintage), rehab estimate, post-rehab ARV, days-on-market in that ZIP, urgency timer, GPS, photos, pie chart of cost-vs-profit</strong> &mdash; "everything an investor needs to decide in 60 seconds." Investor responds &rarr; we wholesale the contract &rarr; <strong>$10-50K spread per close</strong>. Tech visual reference is the Oraya site clone Chitraksh already built (<em>"Turn difficult property distributions into clear"</em> with dropdown CTAs &mdash; "Inherited a property / Going through divorce / &hellip;"). Sequencing: P2 insurance lead-gen ships first &rarr; learnings flow into P3 real-estate. Frankie's frame: <em>"Now we don't have to do anything but refining and honing in and hyper-focusing on system feedback loops &mdash; we're good for the rest of the year."</em></p>
+      <p><strong>Lead-Gen Dashboard wired into top-bar navigation.</strong> The standalone <code>INSURANCE_LEADGEN_DASHBOARD.html</code> (which Chitraksh has been iterating on as the operational state-of-the-data-side) is now linked as a violet button in the top-bar of this main HQ dashboard. ATTOM (key in <code>.oraya-credentials/</code>, verified working), BatchData (configured, needs OAuth reconnect), and PropertyRadar (needs a US phone number from Frankie) are the three enrichment lanes already wired into the lead-gen agent. <strong>$60 bake-off queued:</strong> $20 each across all three providers, compare data quality + actual outreach conversion, pick the winner before scaling spend. Property Shark / CoreLogic / TruePeopleSearch deferred behind this test.</p>
+      <p><strong>"AI Employees / AI CEO" master-vision committed (May 27, 12:35 AM).</strong> Voice AI is now explicitly the <strong>wedge</strong>, not the destination. After the wedge converts, the upsell stack is: <strong>(i)</strong> lead-gen + follow-up infrastructure (the dashboard the client uses daily); <strong>(ii)</strong> a team of AI <em>employees</em> &mdash; one per workflow surface (calendar, mail, SMS, post-call, KB, finance); <strong>(iii)</strong> an AI <em>CEO</em> over the employees that gives directions to real humans (call, email, SMS), not just to sub-agents. The moat = stickiness &mdash; the more workflow surfaces we embed, the harder it is for the client to extract us, same pattern as bundled telecom / bundled insurance. <em>"You could sell them a team of fucking employees, you could sell them an infrastructure, and then you can sell them a CEO to manage their infrastructure."</em> &mdash; Frankie. Order of deploy: P2 insurance lead-gen &rarr; P3 real-estate lead-gen &rarr; per-client AI-employee stack &rarr; per-client AI-CEO.</p>
+      <p><strong>Cash-flow + Theresa update (May 21-26).</strong> Theresa's son passed mid-cycle. Frankie chose not to chase the $2,500 owed on the two policies they had written together &mdash; the human call. Plan: cancel those policies, write a new big policy through his daughter's mother (manufactures the ~$3K ad-budget cash overnight), plus three pending day-job paychecks. Chitraksh's response carved a permanent rule into the founder relationship: <em>"If there's anything extraordinary or even something small you can straight up tell me &mdash; if you don't have the money there's nothing we can do about it instead of coming up with other plans."</em> Mutual-respect contract reinforced. May 26 11:24 AM IST.</p>
+      <p><strong>"In Sync" daily-block schedule slipped + recovered.</strong> Both founders crossed schedules over the May 23-26 weekend (Chitraksh slept through the 8:41 PM IST sync; Frankie unavailable Friday-Sunday for personal reasons). Recovered May 26 11 PM IST with the test session. Reinforces the case for the 4:30 AM PT fixed block + 10 AM-1 PM PT floating block locked May 19 &mdash; intermittent slip is the failure mode the schedule was built to prevent.</p>
+      <p><strong>EIN application: parallel certified-mail track now live.</strong> May 22 2:16 AM Frankie filed via certified mail with proof-of-delivery + delivery-notification &mdash; expected Thursday or Friday landing. IRS phone rotation continues alongside. EIN is the single remaining A2P blocker; once it hits, the A2P brand + campaign package (built since v11.3) submits.</p>
+      <p><strong>NotebookLM lead-gen podcast shipped (May 21, 11:51 PM).</strong> Generated NotebookLM audio overview from the 4-5 page lead-gen strategy doc + the Oraya HQ source documents Claude built. Frankie listened, reaction: <em>"You never cease to amaze me. Absolutely insane."</em> &rarr; <em>"Eventually we need AI agents like our podcast bro."</em> Confirms the Gemini 3.1 Live speech-to-speech roadmap (zero-latency native multimodal) as the 2-3-month-out voice-AI ceiling worth tracking.</p>
+      <p><strong>License numbers locked into all backend templates (May 22).</strong> Frankie's CA # <strong>4276736</strong> + NPN # <strong>20996126</strong> placed into the Oraya-branded compliance footer for legitimacy / Cal Ins Code &sect;1725.5(c). Sender identity updated: backend transactional mail goes out branded "Frankie Alicea" while the Oraya umbrella relationship is disclosed in privacy + ToS &mdash; clears the legal-liability flag Chitraksh raised May 22 4:42 AM (<em>"I don't wanna create any liability for you, legal part is serious"</em>).</p>
+      <p><strong>v11.4 carry-over (May 19 "Voice-Fix + Sales-Master Week" close).</strong> The week reframed Oraya's voice surface from "agent feels almost there" to <strong>"agent passes the founder ear test."</strong> Maya/Tessa on the inbound life/health triage agent had been producing a "creature" artifact mid-sentence on test calls &mdash; voice cutting out, muffling, partial syllables; recording came back clean every time which told us it was a runtime transport issue, not a generation issue. The May 18 02:09-02:21 call session ran the diagnostic live with Frankie on speaker: tried voice swap (got worse), then identified that voices are <strong>Cartesia imports</strong> (not native Retell), which means the variable in scope is Cartesia &harr; Retell transport, not Retell-internal config. Three changes shipped in one pass: (a) <strong>Voice volume +166</strong> (was at default, agent was simply speaking too quietly for the cellphone codec to render mid-sentence breath), (b) <strong>Interruption-sensitivity reduced to floor</strong> (agent was treating its own breath / silence frames as a user barge-in and clipping), (c) <strong>Background-noise removal turned ON</strong>. Bonus: voice-speed toggle, which was ON in two nodes but OFF globally, brought to OFF everywhere for consistency. <strong>Sonic 3</strong> model swapped for <strong>Sonic 3.5</strong> &mdash; default was sticking to the more-stable older release; experimental newer release turned out to be more stable in our case. Post-fix call: <em>"It's 100% better."</em>  &mdash; Frankie.</p>
       <p><strong>Sales-master script rebuild.</strong> With the voice transport fixed, the script bottleneck surfaced &mdash; the agent sounded "robotic because it's a script." Decision: don't rewrite the script line-by-line in our weaker voices, instead <strong>let Claude HQ merge five sales GOATs into a single prompt</strong>: <strong>Jeremy Miner</strong> (NPQ &mdash; neuro-emotional persuasion questions; statements-as-questions removed), <strong>Jordan Belfort</strong> (straight-line: tonality + control), <strong>Chris Voss</strong> (tactical empathy + mirror + label), <strong>Andy Albright</strong> (mortgage-protection 30-day frame, "reason for the call is non-negotiable"), <strong>Alex Hormozi</strong> (loss-aversion 2.5&times; &mdash; humans hate loss 2.5&times; more than they love gain &mdash; reframe "family loses the house in 30 days" not "family gets a payment"). Trigger updated from <em>death</em> to <em>death OR disabling illness / can't work</em>. <strong>Sam Lair upfront contract</strong> baked in: "If by the end of five minutes this isn't a fit, you'll tell me &mdash; deal?" &mdash; reframes the no, gives caller permission to exit, lowers defense. Pitch bullet ordering locked: <strong>are-you-familiar-with-MP &rarr; (yes/no, same response) &rarr; explain trigger + payout &rarr; one / two / three / six-month time-to-decide &rarr; keep / rent / sell.</strong> "Most people will say yes even if they don't know" &mdash; the question is rhetorical and is there to anchor authority + create permission to teach.</p>
       <p><strong>n8n single-prompt agent fork.</strong> Even with the GOAT-merge in the node-based architecture, the agent kept showing seams. Decision (May 19, 03:25): <strong>fork the agent into a single-prompt architecture</strong>, hand Claude HQ the full extracted context from the existing tree (already in scope via Retell API tokens), let it author the script natively. Node version preserved as fallback. New pre-filled form delivered: <code>orayacorporation.app.n8n.cloud/form/7811db04-a919-425a-972f-39cb36953ff8</code> &mdash; one submit button, phone pre-filled, instant ring &mdash; built specifically for Frankie's testing loop ("record myself doing it so I don't have to write hella shit down, drop you a video").</p>
       <p><strong>"In Sync" daily-block schedule locked.</strong> Frankie pitched the In Sync naming personally as marketable / high-leverage; the schedule itself is the lever. <strong>4:30 AM CA (fixed, 15-30 min):</strong> recap yesterday + plan today &mdash; short, daily, calendared. <strong>10 AM-1 PM CA (floating window, 60+ min):</strong> execution block, kicked off whenever both are free in the window. <strong>Evening:</strong> optional, both founders open but no fixed slot. India side: 4:30 AM PT = 5:00 PM IST; 10 AM-1 PM PT = 10:30 PM-1:30 AM IST &mdash; Chitraksh's "I sleep late anyway" window. Goes on shared calendar as recurring, notifications + automations on top. <strong>Frankie:</strong> <em>"Once we agree on set times, hopefully we can do 30 min to 90 min meetings, twice a day."</em></p>
@@ -380,6 +410,8 @@ html{scroll-behavior:smooth}
   <button class="nav-tab active" data-tab="overview" role="tab"><span class="nt-ico">&#9678;</span>Overview</button>
   <button class="nav-tab" data-tab="voice-ai" role="tab"><span class="nt-ico">&#127908;</span>Voice AI</button>
   <button class="nav-tab" data-tab="insurance" role="tab"><span class="nt-ico">&#127968;</span>Insurance</button>
+  <button class="nav-tab" data-tab="realestate" role="tab"><span class="nt-ico">&#127960;</span>Real Estate</button>
+  <button class="nav-tab" data-tab="leadgen" role="tab"><span class="nt-ico">&#128202;</span>Lead-Gen</button>
   <button class="nav-tab" data-tab="sync" role="tab"><span class="nt-ico">&#9851;</span>Sync</button>
   <button class="nav-tab" data-tab="legal" role="tab"><span class="nt-ico">&#9878;</span>Legal</button>
   <button class="nav-tab" data-tab="risks" role="tab"><span class="nt-ico">&#9888;</span>Risks</button>
@@ -395,9 +427,10 @@ html{scroll-behavior:smooth}
 
 <div class="section active" id="overview">
   <div class="hero">
-    <h2>Operation Insurance Pivot &middot; Week 19 &middot; Day 129 &middot; May 19 2026 <span class="countdown-pill"><span class="pulse"></span>VOICE FIXED &middot; SCRIPT REBORN &middot; "IN SYNC" LOCKED &middot; IRS CALL LIVE &middot; TX LEAD LANE OPEN</span></h2>
+    <h2>Operation Insurance Pivot &middot; Week 20 &middot; Day 138 &middot; May 28 2026 <span class="countdown-pill"><span class="pulse"></span>OUTBOUND v126 + INBOUND v15 LIVE &middot; 1st DEALERSHIP APPT BOOKED &middot; REAL ESTATE P3 SCOPED &middot; LEAD-GEN LANE WIRED</span></h2>
     <div class="lead">
-      <p><strong>Day 129 closes "Voice-Fix + Sales-Master Week."</strong> The Maya/Tessa voice "creature" artifact was root-caused on a live May 18 call session to a three-variable stack &mdash; <strong>volume +166</strong> from default, <strong>interruption-sensitivity to floor</strong>, <strong>background-noise removal ON</strong> &mdash; plus <strong>Cartesia Sonic-3 swapped to Sonic 3.5</strong>. Voice-speed toggle audited and unified to OFF across all nodes. Post-fix verdict: <em>"It's 100% better."</em></p>
+      <p><strong>Day 138 closes "Launch Week."</strong> Both voice agents publish-live on Retell &mdash; <strong>outbound v126</strong> (email digit-word &rarr; numeric-digit fix + appointment_timestamp ISO + callback_scheduled_time roles) and <strong>inbound v15</strong> (full parity-publish of all three patches in one). Calendar event creation, opt-in confirmation email, SMS, DNC harvest, admin log dispatch <strong>verified on live test call</strong> (May 27 1:39 AM, caller "Adrian Marino", appointment Thu May 28 11 AM landed end-to-end). <strong>First dealership appointment landed</strong> &mdash; Envision Honda Milpitas, Thu May 28 1 PM PT, GSM Mo target. <strong>Real Estate Project (P3) scoped</strong> on the May 27-28 founder call &mdash; Art Yano + Mom + investor-flip wholesale lane (NOT consumer end-buyers). <strong>Lead-Gen Dashboard wired</strong> into top-bar nav; ATTOM + BatchData + PropertyRadar $60 bake-off queued.</p>
+      <p><strong>Day 129 carry-over closed "Voice-Fix + Sales-Master Week."</strong> The Maya/Tessa voice "creature" artifact was root-caused on a live May 18 call session to a three-variable stack &mdash; <strong>volume +166</strong> from default, <strong>interruption-sensitivity to floor</strong>, <strong>background-noise removal ON</strong> &mdash; plus <strong>Cartesia Sonic-3 swapped to Sonic 3.5</strong>. Voice-speed toggle audited and unified to OFF across all nodes. Post-fix verdict: <em>"It's 100% better."</em></p>
       <p>With voice transport fixed, script became the new bottleneck. Claude HQ merged five sales GOATs into a single prompt &mdash; <strong>Jeremy Miner NPQ + Jordan Belfort straight-line + Chris Voss tactical empathy + Andy Albright 30-day frame + Alex Hormozi loss-aversion 2.5&times;</strong>. Trigger updated to <em>death OR disabling illness</em>, <strong>Sam Lair upfront contract</strong> baked in, pitch bullet ordering locked. The <strong>n8n single-prompt agent</strong> was forked as a parallel architecture; pre-filled one-click test form delivered at <code>orayacorporation.app.n8n.cloud/form/7811db04-a919-425a-972f-39cb36953ff8</code> for hands-free testing.</p>
       <p><strong>"In Sync" daily blocks LOCKED:</strong> 4:30 AM PT fixed (15-30 min recap + plan); 10 AM-1 PM PT floating (60-90 min execution); evening optional. <strong>IRS / EIN:</strong> Frankie sat on hold May 19 02:33 AM; Chitraksh now runs the AM-call rotation from India, Frankie picks up post-day-job. Email draft staged in parallel.</p>
       <p><strong>Texas-homeowner lead lane chosen.</strong> CA Delete Act + CCPA + state IPA block consumer-data enrichment on CA new-homeowners &mdash; no platform sells; Texas has no equivalent state act, enrichers openly sell. 4-5 page strategy doc + NotebookLM-style audio podcast ordered. <strong>Claude rate-limit outage</strong> May 19 03:39 hit Anthropic-side server load (not Oraya quota) for 6-7 min &mdash; reinforces multi-model fallback and Mac Mini urgency. <strong>Claude Max downgrade queued</strong>: $120 &rarr; $30 + ChatGPT $30. <strong>Twin Mind live-transcription</strong> discovered &mdash; 2-3 min delay unblocks mid-call dashboard edits.</p>
@@ -415,12 +448,18 @@ html{scroll-behavior:smooth}
     </details>
 
     <div class="countdown-strip">
-      <div class="countdown-tile green"><div class="label">Voice creature</div><div class="value">FIXED</div><div class="sub">Sonic 3.5 + vol +166 + interrupt floor + bg-noise OFF</div></div>
+      <div class="countdown-tile green"><div class="label">Outbound voice agent</div><div class="value">v126 LIVE</div><div class="sub">email digit-word &rarr; numeric &middot; ISO appt &middot; callback role split</div></div>
+      <div class="countdown-tile green"><div class="label">Inbound voice agent</div><div class="value">v15 LIVE</div><div class="sub">parity publish &middot; calendar / mail / SMS verified on test</div></div>
+      <div class="countdown-tile green"><div class="label">1st dealership appt</div><div class="value">BOOKED</div><div class="sub">Envision Honda Milpitas &middot; Thu May 28 1pm PT</div></div>
+      <div class="countdown-tile violet"><div class="label">Real Estate Project (P3)</div><div class="value">SCOPED</div><div class="sub">Art Yano + Mom &middot; investor-flip wholesale &middot; comparables blast</div></div>
+      <div class="countdown-tile violet"><div class="label">Lead-Gen Dashboard</div><div class="value">LINKED</div><div class="sub">top-bar nav &middot; ATTOM + BatchData + PropertyRadar &middot; $60 bake-off</div></div>
+      <div class="countdown-tile violet"><div class="label">AI Employees / AI CEO</div><div class="value">COMMITTED</div><div class="sub">Voice = wedge &rarr; employees &rarr; CEO over real humans</div></div>
+      <div class="countdown-tile green"><div class="label">Voice creature</div><div class="value">FIXED (carry)</div><div class="sub">Sonic 3.5 + vol +166 + interrupt floor + bg-noise OFF</div></div>
       <div class="countdown-tile violet"><div class="label">Sales-master script</div><div class="value">5 GOATs</div><div class="sub">Miner + Belfort + Voss + Albright + Hormozi</div></div>
-      <div class="countdown-tile red"><div class="label">EIN (Oraya)</div><div class="value">IRS HOLD</div><div class="sub">daily call rotation &middot; A2P blocker</div></div>
-      <div class="countdown-tile violet"><div class="label">"In Sync" schedule</div><div class="value">LOCKED</div><div class="sub">4:30am fixed + 10am-1pm floating</div></div>
-      <div class="countdown-tile blue"><div class="label">n8n agent fork</div><div class="value">SINGLE-PROMPT</div><div class="sub">parallel to node-based &middot; 50/50 A/B</div></div>
-      <div class="countdown-tile blue"><div class="label">TX homeowner lane</div><div class="value">OPEN</div><div class="sub">CA Delete-Act bypass &middot; doc + podcast</div></div>
+      <div class="countdown-tile orange"><div class="label">EIN (Oraya)</div><div class="value">CERTIFIED MAIL + PHONE</div><div class="sub">mailed May 22 &middot; expected Thu/Fri &middot; last A2P blocker</div></div>
+      <div class="countdown-tile violet"><div class="label">"In Sync" schedule</div><div class="value">SLIPPED &rarr; RESUMED</div><div class="sub">May 23-26 slip &middot; recovered May 26-28</div></div>
+      <div class="countdown-tile blue"><div class="label">Single-prompt agent</div><div class="value">SHIPPED &middot; ARCHIVED</div><div class="sub">production = node-based &middot; single-prompt = P3 architecture</div></div>
+      <div class="countdown-tile blue"><div class="label">TX homeowner lane</div><div class="value">OPEN (carry)</div><div class="sub">CA Delete-Act bypass &middot; doc + podcast shipped</div></div>
       <div class="countdown-tile green"><div class="label">A2P package</div><div class="value">BUILT</div><div class="sub">terms + privacy + IPA + MSA + opt-in</div></div>
       <div class="countdown-tile orange"><div class="label">Claude Max plan</div><div class="value">$120 &rarr; $60</div><div class="sub">$30 Claude + $30 ChatGPT next cycle</div></div>
       <div class="countdown-tile green"><div class="label">Twin Mind live transcript</div><div class="value">2-3 MIN</div><div class="sub">mid-call Claude HQ edits unblocked</div></div>
@@ -628,6 +667,217 @@ html{scroll-behavior:smooth}
   </details>
 </div>
 
+<div class="section" id="realestate">
+  <h2 class="section-title">Real Estate &middot; P3 &middot; Investor-Flip Wholesale Lane &middot; Art Yano + Mom (scoped May 27-28)</h2>
+
+  <div class="banner violet">
+    <div class="icon">&#127960;</div>
+    <div>
+      <h2>Real Estate Project (P3) &mdash; scoped on the May 27-28 founder call</h2>
+      <p>P3 replaces the previously-floated day-trading agent (Chitraksh: 3 years of back-testing &mdash; strategies don't translate to live execution &mdash; revenue potential lower than insurance / real-estate / voice). Real Estate is the <strong>perfect next step</strong> because the lead-gen muscle being built for P2 Insurance transplants directly into the buyer side here. <strong>Two human channels in place</strong> (Art Yano + Frankie's mom), <strong>one tech-buyer focus</strong> (investors / flippers, not consumer end-buyers), <strong>one revenue model</strong> (off-market wholesale spread, $10K-$50K / close). Sequencing: P2 ships first &rarr; learnings flow into P3.</p>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3 class="violet">&#128104;&#8205;&#128188; The two human channels</h3>
+      <ul>
+        <li><strong>Art Yano</strong> &mdash; CA licensed real-estate broker; family runs a property-management company overseeing condo, apartment, and house portfolios; personally auctions houses for investors at $10K-$50K per wholesale (no rehab, just contract-spread). <strong>Currently away from real estate</strong> taking care of his terminally-ill mother (~$5-10K / month in home medical care &mdash; dialysis, multiple treatments) &mdash; <em>so a system that does the prospecting / pricing / blast for him is timely.</em> Frankie's prior real-estate transaction was wholesaled <em>by</em> Art's circle (paid Frankie $10K because he didn't know the going rate was $30-50K, validating both the opportunity size and the asymmetric-information problem this platform solves).</li>
+        <li><strong>Frankie's mom</strong> &mdash; licensed CA real-estate agent + broker, retiring, wants a position alongside Art. Friends with Art, both brokers, family-trust relationship already exists. P3 is also the structured way to financially set her up post-retirement.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="blue">&#127960; Buyer side &mdash; investors / flippers, NOT consumer end-buyers</h3>
+      <ul>
+        <li>This vertical is <strong>99% investor</strong>, not the wife-and-kids end-buyer. End-buyers are the wrong cohort for off-market wholesale &mdash; they want the home pretty, not the home cheap-and-cash-now.</li>
+        <li>Investor cohort: people who put $20-100K down per house, fix in 30-90 days, list for retail, keep $100-300K spread.</li>
+        <li>They want one thing: <strong>be first to see the deal, get the underwriting in 60 seconds, lock the contract before the next investor sees it</strong>. They have the cash. They have the rehab crew. They have the listing crew. They don't have the <em>scaled-deal-flow</em>.</li>
+        <li><strong>Hedge funds already do this with data + systems.</strong> Independent investors do not yet. That's the gap.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <h3 class="green">&#128190; Step 1 &middot; Build the investor database</h3>
+      <ul>
+        <li>Scrape <strong>Facebook</strong> + dedicated real-estate-investor sites for public real-estate-investor profiles in CA.</li>
+        <li>Enrich the database (same playbook as P2 insurance lead-gen: ATTOM / BatchData / TruePeopleSearch class).</li>
+        <li>Onboard each investor with a one-off VA-driven introductory call ("we're launching this, here's what it does, you get first-look on deals matching your buy-box") &mdash; using the Philippines call-center pattern Frankie has flagged repeatedly.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="violet">&#128218; Step 2 &middot; Lock the contract (seller side)</h3>
+      <ul>
+        <li>Art / Mom (or future VAs) cold-call sellers: <em>"give me one month with your house &mdash; if I can sell it for X, you'll have your money; if I can't, the contract cancels, no harm done."</em></li>
+        <li>Backed by counsel (Chitraksh + legal-stack): first-up right-to-action / lien on house if seller breaks deal.</li>
+        <li>Contract signed &rarr; trigger fires &rarr; auto-package the deal for investor blast.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="orange">&#9889; Step 3 &middot; Investor blast (the system)</h3>
+      <ul>
+        <li>Single deal goes to 50+ matched investors at once.</li>
+        <li>Each investor receives, on one screen: address (GPS pinned), comparables (1-2 mi radius, same vintage / sqft), photos, rehab estimate, post-rehab ARV, days-on-market in that ZIP, urgency countdown.</li>
+        <li>Pie chart: cost + rehab vs market ARV vs spread.</li>
+        <li>First-responder gets priority. Wholesale spread = <strong>$10K-$50K per close</strong> (Frankie's mid-range range, validated from his prior transaction and Art's running history).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="violet">&#127912; Tech / UI demo already exists &mdash; reference visual</h3>
+    <p>Chitraksh built a working visual reference during a prior session &mdash; an Oraya-site clone repositioned for property distributions (<em>"Turn difficult property distributions into clear"</em>) with dropdown CTAs <em>"Inherited a property / Going through divorce / &hellip;"</em>. Frankie reaction (May 27): <em>"It's crazy, bro."</em> &mdash; locked as the visual reference for the P3 surface. Single-prompt agent (forked + archived from the P2 push) becomes the architecture for the P3 investor-blast agent so the prompt-driven cohort matching can iterate weekly.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3 class="orange">&#9888; Adversarial-investor protection</h3>
+      <p>Real-estate investors are a <strong>shady cohort by default</strong> &mdash; once they have the seller's address, a fraction will try to back-channel directly to the seller to undercut Oraya's spread (<em>"hey, how much are they trying to give you? I'll give you 10K more."</em>). Mitigation: legal-binding contract before the address goes out + first-up right-to-action / lien clause so any breakage by the seller pulls the spread back to Oraya. Counsel-wired into the workflow, not bolted on after.</p>
+    </div>
+    <div class="card">
+      <h3 class="blue">&#128202; Why the lead-gen muscle transplants directly</h3>
+      <p>P2 Insurance is teaching us: scrape &rarr; enrich &rarr; outreach &rarr; opt-in &rarr; voice qualifier &rarr; humans close. P3 Real Estate uses the same pipeline, just swap: scrape <em>investors</em> not <em>homeowners</em>; enrich differently (Facebook + investor sites &gt; ATTOM); outreach by deal-blast not single-message; opt-in is implicit (investor already signed up); voice qualifier becomes the deal-blast agent. <strong>Frankie:</strong> <em>"Once you understand the lead generation from insurance, then you apply that for the real estate &mdash; we're done. We don't have to do anything but refine and hyper-focus on feedback loops."</em></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="red">&#9961; Sequencing &middot; what blocks P3 from starting today</h3>
+    <ul>
+      <li><strong>(1) P2 Insurance lead-gen must produce its first dollar.</strong> Without that signal, we can't reinvest cash into the P3 investor-database build.</li>
+      <li><strong>(2) Art's bandwidth.</strong> Mother's illness is consuming his focus; we won't push him into a co-build until he signals readiness. Mom + the platform can pre-build the pipeline so he plugs in when he's ready.</li>
+      <li><strong>(3) The investor-blast agent itself.</strong> Single-prompt architecture already archived from the P2 fork &mdash; ports cleanly. The custom UI (deal cards + comparables + countdowns) is the actual build.</li>
+      <li><strong>(4) Counsel-blessed seller contract template</strong> with first-up-right-of-action / lien-on-breach clauses.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 class="green">&#128176; Unit economics (Frankie's running numbers)</h3>
+    <ul>
+      <li><strong>$10K-$50K per close</strong> as a wholesale spread (validated from Frankie's prior transaction + Art's history).</li>
+      <li><strong>Art alone (no system)</strong>: 2-3 houses / month &rarr; $20-150K / month gross. <strong>At scale (with the system)</strong>: 5-10 houses / month is the lever &mdash; the rate-limit is contract-velocity, not buyer-velocity (investors will always say yes if the underwriting is clean).</li>
+      <li><strong>Long-arc</strong>: the next layer is hedge-fund-grade signal &mdash; "house just listed in this ZIP at $X under comp, 47% chance of closing in 14 days based on last 30 ZIP-level comps." That's the moat once we have buyer-side data.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 class="violet">&#128172; Frankie verbatim &middot; the master vision once P3 ships</h3>
+    <p><em>"You just gave me a brilliant idea. After we're up and rolling, bro, we could fucking sell employees. Like that's the whole thing. You could sell them a team of fucking employees. Yeah. You could sell them an infrastructure, and then you can sell them a CEO to manage their infrastructure."</em> &mdash; May 27 12:35 AM. Voice = wedge. Lead-gen = first upsell. AI employees = second upsell. AI CEO over real humans = the third. P2 insurance + P3 real estate are the two verticals where we prove the pattern on ourselves before selling it externally.</p>
+  </div>
+</div>
+
+<div class="section" id="leadgen">
+  <h2 class="section-title">Lead-Gen &middot; P2 Top-of-Funnel &middot; ATTOM + BatchData + PropertyRadar &middot; bake-off queued</h2>
+
+  <div class="banner violet">
+    <div class="icon">&#128202;</div>
+    <div>
+      <h2>Lead-Gen Dashboard &mdash; standalone op surface, linked from top-bar</h2>
+      <p>The standalone <code>INSURANCE_LEADGEN_DASHBOARD.html</code> is the operational state-of-the-data-side: trigger pulls, enrichment status, compliance blockers, funnel map. It is now linked as a violet button in the top-bar of this main HQ dashboard. This section gives you the in-context summary; the full live dashboard is one click away.</p>
+      <p style="margin-top:12px"><a href="INSURANCE_LEADGEN_DASHBOARD.html" target="_blank" rel="noopener" style="display:inline-block;padding:10px 18px;background:var(--violet);color:#fff;text-decoration:none;font-weight:700;border-radius:8px;letter-spacing:.4px">&#128202; Open Lead-Gen Dashboard &rarr;</a></p>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <h3 class="green">&#9989; Connected today</h3>
+      <ul>
+        <li><strong>ATTOM API</strong> (key in <code>.oraya-credentials/attom_api_key</code>, verified working) &mdash; the lowest-risk source of truth on new-homeowner records.</li>
+        <li><strong>Retell AI project</strong> (existing &mdash; outbound v126 + inbound v15 LIVE) &mdash; the bottom of the funnel is already shipped.</li>
+        <li><strong>Apollo</strong> (free trial &mdash; 80 credits) for B2B angles (HR / Benefits at layoffing employers).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="orange">&#9203; Configured, awaiting next step</h3>
+      <ul>
+        <li><strong>BatchData MCP</strong> &mdash; dataset config saved; user OAuth re-connect needed (Cowork settings &rarr; MCP servers).</li>
+        <li><strong>PropertyRadar</strong> &mdash; account ingested in lead-gen agent; needs a US phone number from Frankie to complete account verification.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="red">&#10060; Not started (compliance + scale blockers)</h3>
+      <ul>
+        <li>Versium &middot; AtData &middot; Lob/PostGrid (direct mail) &middot; Smartlead (cold email) &middot; TrustedForm &middot; Jornaya &middot; GoHighLevel pipeline &middot; FCRA prescreen (Experian / TransUnion / Equifax)</li>
+        <li>CA Data Broker registration ($6K/yr) &middot; TX Data Broker registration &middot; TX SB 140 telephone-solicitor registration ($200 + $10K bond) &middot; TCPA counsel red-team ($3-5K)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="violet">&#128293; The $60 bake-off &mdash; current decision queue</h3>
+    <p>Three enrichment providers are wired into the lead-gen agent (<strong>ATTOM, BatchData, PropertyRadar</strong>). Rather than commit to any one before knowing real cost-per-quality-lead, the plan is a <strong>$20-each bake-off ($60 total risk)</strong>: pull the same set of TX new-homeowners across all three, compare enrichment quality, run outreach on each cohort, measure conversion. Winner scales; losers stay as fallback. Property Shark / CoreLogic / TruePeopleSearch deferred behind this test.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3 class="blue">&#128205; Why Texas first (not California)</h3>
+      <ul>
+        <li><strong>California</strong> has CA Delete Act + CCPA + state-specific consumer-protection laws &mdash; <strong>no major consumer-data platform will sell enriched CA new-homeowner records</strong> because the lawsuit exposure is too high.</li>
+        <li><strong>Texas</strong> has no equivalent state-level act &mdash; enrichers openly sell. Bigger volume, cleaner data, no platform-side risk premium.</li>
+        <li>4-5 page strategy doc + NotebookLM podcast already produced (May 21) &mdash; Frankie: <em>"You never cease to amaze me."</em></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="green">&#127968; Why homeowners (not laid-off workers)</h3>
+      <ul>
+        <li>Homeowners convert 3-5&times; better than laid-off workers (data + industry consensus).</li>
+        <li>Mortgage origination is a forcing-function trigger event: someone just signed up for a 30-year liability without protection on it.</li>
+        <li>Laid-off cohort is the B2B angle &mdash; contact HR / Benefits at the layoffing employer, not the worker. 2-hop expensive, only worth it once homeowner lane is humming.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="orange">&#127922; Funnel map &middot; top to bottom (live state May 28)</h3>
+    <ol>
+      <li><strong>Trigger data</strong> &mdash; WARN (live), ATTOM (live), BatchData (configured), PropertyRadar (configured), FCRA prescreen (not started), SEC Form 4 (queued), SBA loans (queued).</li>
+      <li><strong>Enrichment</strong> &mdash; BatchData skip-trace, Versium consumer-email append, AtData &mdash; bake-off pending.</li>
+      <li><strong>Outreach</strong> &mdash; Lob/PostGrid direct mail (zero TCPA risk) AND Smartlead cold email (CAN-SPAM). Voice outreach gated on EIN + A2P.</li>
+      <li><strong>Opt-in capture</strong> &mdash; landing page with TrustedForm + Jornaya certificates (TCPA PEWC).</li>
+      <li><strong>CRM</strong> &mdash; GoHighLevel sub-account (scaffolded; not yet provisioned).</li>
+      <li><strong>Voice qualifier</strong> &mdash; <strong>LIVE</strong>: Retell v126 outbound + v15 inbound (Frankie / Maya).</li>
+      <li><strong>Post-call</strong> &mdash; <strong>LIVE</strong>: calendar, email, SMS, DNC, admin log dispatch (n8n insurance post-call workflow).</li>
+      <li><strong>Licensed producer closes</strong> &mdash; Frankie (CA # 4276736 / NPN # 20996126).</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h3 class="red">&#9888; Compliance blockers (must clear before consumer outreach starts)</h3>
+    <ol>
+      <li><strong>CA Data Broker registration</strong> ($6K/yr, cppa.ca.gov/data_brokers) &mdash; $200/day late penalty, Strike Force active.</li>
+      <li><strong>TX Data Broker registration</strong> (TX SOS).</li>
+      <li><strong>TX SB 140 telephone-solicitor registration</strong> ($200 + $10K bond &mdash; needed for TX SMS unless opt-in is airtight).</li>
+      <li><strong>TCPA counsel red-team</strong> ($3-5K, one-time).</li>
+      <li><strong>Privacy policy + Do-Not-Sell-or-Share page</strong> (Termly / Osano / OneTrust).</li>
+      <li><strong>CCPA Risk Assessment</strong> documented.</li>
+      <li><strong>CA producer license # in every marketing email</strong> (Cal Ins Code &sect;1725.5(c)) &mdash; <strong>SHIPPED May 22</strong> (CA # 4276736 + NPN # 20996126 in all backend mail/SMS templates).</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h3 class="violet">&#128221; Decisions made (so we don't re-litigate)</h3>
+    <ul>
+      <li>Homeowners over laid-off (3-5&times; conversion delta).</li>
+      <li>Texas over California (enrichment availability + lawsuit risk).</li>
+      <li>Direct mail = parallel channel, not fallback (zero TCPA risk).</li>
+      <li>FCRA prescreen = separate legal track that bypasses consent requirements &mdash; pursue in parallel.</li>
+      <li>Hunter.io is B2B-only, does NOT return consumer emails &mdash; use Versium / AtData / LexisNexis instead.</li>
+      <li>CA is the binding compliance constraint &mdash; design for CA, the other 3 states are subsets.</li>
+      <li>Pivoted away from PropertyRadar-Python-only in favor of ATTOM (free key) + BatchData (configured). PropertyRadar Python script kept for reference.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 class="blue">&#128218; Errors corrected from earlier plans</h3>
+    <ul>
+      <li>The FCC "1-to-1 consent rule" was <strong>vacated</strong> by the 11th Circuit on Jan 24, 2025. The FCC repealed it. Do not build to it.</li>
+      <li>There was <strong>no August 2025 reinstatement</strong> of any TCPA rule. PEWC remains under pre-existing FCC rules (47 CFR &sect;64.1200).</li>
+      <li><strong>No fixed federal consent-retention period</strong> exists. TCPA SOL is 4 years; most operators retain 5-7 years for safety.</li>
+      <li><strong>No fixed SBA dollar threshold</strong> for mandatory life insurance &mdash; it's lender discretion based on "key person" dependency.</li>
+    </ul>
+  </div>
+</div>
+
 <div class="section" id="sync">
   <h2 class="section-title">Daily Sync &middot; "In Sync" schedule + 90-min blocks (locked May 19)</h2>
 
@@ -716,7 +966,41 @@ html{scroll-behavior:smooth}
 </div>
 
 <div class="section" id="voice-ai">
-  <h2 class="section-title">Voice AI &middot; P1 &middot; Insurance triage agent (May 10-19 voice fix + script rebuild)</h2>
+  <h2 class="section-title">Voice AI &middot; P1 &middot; OUTBOUND v126 + INBOUND v15 LIVE on Retell (May 28)</h2>
+
+  <div class="banner green">
+    <div class="icon">&#127908;</div>
+    <div>
+      <h2>May 28 &middot; OUTBOUND v126 LIVE &mdash; email digit-word &rarr; numeric-digit fix shipped</h2>
+      <p><strong>Agent</strong> <code>agent_63a23bd2cc9273a9b4fea5656e</code> + <strong>flow</strong> <code>conversation_flow_96a5fd684b24</code>. v126 ships <strong>three surgical edits</strong> on top of v125: (a) <strong>global_prompt EMAIL CAPTURE</strong> &mdash; added a DIGITS bullet: when caller speaks digit words ("one"/"two"/"zero"/"oh"), convert to numerals (1/2/0) in the stored local-part; read each digit back individually ("one two" not "twelve"). Example: <em>"john wick one two at gmail dot com"</em> stores as <code>johnwick12@gmail.com</code>; read back <em>"J. O. H. N. W. I. C. K. one two at gmail dot com"</em>. Negative example: NEVER spell digits as letters (<em>"o. n. e. t. w. o."</em>). (b) <strong>Node 9 (Identity Verification) email-capture</strong> &mdash; same DIGITS rule added to Format Rules + a worked example placed between the existing "j underscore 99" and "tony" examples (node text 4,090 &rarr; 4,847 chars). (c) <strong>post_call_analysis_data caller_email</strong> &mdash; extraction description extended (498 &rarr; 792 chars) with explicit digit-word &rarr; numeric-digit conversion table (zero/oh&rarr;0, one&rarr;1, &hellip;, nine&rarr;9) and the <code>johnwick12</code> vs <code>johnwickonetwo</code> counterexample.</p>
+      <p><strong>Inherited from v125 (still in v126):</strong> appointment_timestamp ISO 8601 spec (no n8n template syntax &mdash; LLM was previously falling back to natural-language strings that Google Calendar's create-event rejected with 400). <strong>callback_scheduled_time</strong> clarified as the human-readable companion to appointment_timestamp, preventing role confusion between the two callback-time variables. Patch script: <code>retell/scripts/apply_email_digit_fix_2026-05-28.py</code>. Snapshots: <code>agent_pre_email_digit_fix_20260528_151544.json</code> + post.</p>
+    </div>
+  </div>
+
+  <div class="banner green">
+    <div class="icon">&#128231;</div>
+    <div>
+      <h2>May 28 &middot; INBOUND v15 LIVE &mdash; parity publish (3 patches in one)</h2>
+      <p><strong>Agent</strong> <code>agent_1ffc59c3d135d0776cb35fec6f</code> + <strong>flow</strong> <code>conversation_flow_302b435de58b</code>. v15 collapses three outbound patches (v124 callback role split + v125 appointment_timestamp ISO + v126 email digit handling) into a single publish so inbound and outbound now run identical post-call extraction logic. <strong>appointment_timestamp</strong> rewritten (155 &rarr; 725 chars). <strong>callback_scheduled_time</strong> replaced (270 &rarr; 359 chars). <strong>caller_email</strong> replaced (498 &rarr; 792 chars). <strong>global_prompt EMAIL CAPTURE Rules</strong> &mdash; DIGITS bullet added (10,679 &rarr; 11,238 chars). <strong>Node 9 (Identity Verification)</strong> &mdash; DIGITS rule added to Format Rules + new worked example (inbound's WORKED EXAMPLES section had only 2 examples vs outbound's 5, so a different splice anchor was used &mdash; inserted after the "john dot smith" example; 3,643 &rarr; 4,400 chars). Patch script: <code>retell/scripts/apply_inbound_parity_fix_2026-05-28.py</code>.</p>
+      <p><strong>Backend verified on live test call</strong> (May 27 1:39-1:42 AM PT): caller "Adrian Marino", appointment Thu May 28 11 AM PT booked end-to-end, both founders received the Oraya-branded confirmation email, Maya read back the slot and email correctly. <strong>Pre-fix bug found same day:</strong> inbound was wired to the OUTBOUND backend (cause of the 10-emails-per-call problem) &mdash; now routes to its own inbound post-call workflow. Backend covers: <strong>calendar event creation, opt-in confirmation email, SMS, DNC harvest, admin log dispatch</strong>.</p>
+    </div>
+  </div>
+
+  <div class="banner green">
+    <div class="icon">&#127968;</div>
+    <div>
+      <h2>May 28 &middot; FIRST DEALERSHIP APPOINTMENT BOOKED &mdash; Envision Honda Milpitas, 1 PM PT</h2>
+      <p>Outbound playbook validated on a cold-call to <strong>Envision Honda of Milpitas</strong>. Frankie opened with reciprocity: <em>"I'm looking for someone &mdash; my buddy Greg Korea pitched here ~6 months ago with automation voice software for appointments / KPIs, was that you?"</em> &rarr; got <strong>Greg</strong>, one of the new sales managers post-turnover (a "team's underperforming" tell). <strong>GSM Mo</strong> still in place &mdash; reachable Thursday. Frankie offered to come look at a Prologue hybrid in exchange for an intro to Mo. <strong>Appointment locked Thu May 28, 1 PM PT</strong> at the Milpitas dealership. Calendar event created in Google Calendar with location pinned and Chitraksh added as optional attendee (celebration or live G-Meet pull-in if it converts). <strong>Hand-off ask:</strong> dynamic Oraya-branded dealership deck generated from the existing Mercedes offer letter &mdash; <em>"extract info to create dynamic slide deck with Oraya UI, logo, color scheme"</em>. Replaces the print-out idea (iPad demo &gt; paper).</p>
+    </div>
+  </div>
+
+  <div class="banner blue">
+    <div class="icon">&#9881;</div>
+    <div>
+      <h2>May 26-27 &middot; SINGLE-PROMPT AGENT shipped &middot; production = node-based, single-prompt archived as P3 architecture</h2>
+      <p>Both architectures landed; both were tested back-to-back. Single-prompt agent (Claude HQ generated from the full Retell-API system context with the Miner/Belfort/Voss/Albright/Hormozi merge baked in) passed all post-call extraction tests; node-based won the founder ear test for the inbound flow &mdash; <strong>cleaner empathy, faster pivot from greeting to the "are you familiar with how mortgage protection works?" &rarr; one / two / three / six-month time-to-decide ladder</strong>. <strong>Production path:</strong> node-based (v126 outbound / v15 inbound). <strong>Single-prompt:</strong> archived as the architecture for P3 Real Estate's investor-blast agent &mdash; the prompt-driven cohort matching matches that workflow much better than a hand-tuned tree.</p>
+    </div>
+  </div>
 
   <div class="banner green">
     <div class="icon">&#127942;</div>
@@ -1003,7 +1287,23 @@ html{scroll-behavior:smooth}
 </div>
 
 <div class="section" id="insurance">
-  <h2 class="section-title">Insurance &middot; P2 &middot; A2P submission armed &middot; sub-account compliance-ready</h2>
+  <h2 class="section-title">Insurance &middot; P2 &middot; Voice agents LIVE &middot; Backend verified &middot; EIN mailed certified, on phone-rotation</h2>
+
+  <div class="banner green">
+    <div class="icon">&#128231;</div>
+    <div>
+      <h2>May 28 &middot; INSURANCE VOICE STACK LIVE end-to-end &mdash; outbound + inbound + backend</h2>
+      <p>Six weeks of voice + flow + backend iteration converged on May 28. <strong>Outbound v126</strong> and <strong>Inbound v15</strong> both publish-live on Retell (see Voice AI tab). <strong>Backend pipeline verified on a real test call</strong> (May 27 1:39 AM, caller "Adrian Marino", Thu May 28 11 AM PT slot booked end-to-end): Google Calendar event created, Oraya-branded confirmation email landed (<em>"That confirmation is FIRE, bro"</em> &mdash; Frankie), SMS delivered, DNC harvest live (rows added on every "do-not-call" mention), admin log dispatch firing. <strong>Pre-launch bug found + fixed same day:</strong> inbound was incorrectly routed to the OUTBOUND post-call backend &mdash; that's why test calls were producing 10 confirmation emails per call. Cause was the form-submit fan-out. Now routes to the dedicated inbound post-call workflow. <strong>License compliance:</strong> CA # 4276736 + NPN # 20996126 baked into all backend mail/SMS templates (Cal Ins Code &sect;1725.5(c)). Sender identity is "Frankie Alicea" with the Oraya umbrella relationship disclosed in privacy + ToS &mdash; the legal-liability path Chitraksh flagged May 22 4:42 AM is now cleared.</p>
+    </div>
+  </div>
+
+  <div class="banner orange">
+    <div class="icon">&#9993;</div>
+    <div>
+      <h2>May 22 &middot; EIN application MAILED via certified mail (parallel to IRS phone rotation)</h2>
+      <p>EIN is the single remaining A2P blocker. Two tracks now running in parallel: <strong>(1)</strong> certified mail sent May 22 with proof-of-delivery + delivery-notification &mdash; expected Thursday or Friday landing; <strong>(2)</strong> IRS phone-rotation (Chitraksh AM from India + Frankie post-day-job in CA). Frankie's first EIN was issued over a single phone call; the only theory for this one taking longer is that Frankie already has an EIN on file under a prior entity. The moment the new EIN lands, the A2P brand + campaign package (built since v11.3) submits.</p>
+    </div>
+  </div>
 
   <div class="banner green">
     <div class="icon">&#128274;</div>
@@ -2169,11 +2469,62 @@ html{scroll-behavior:smooth}
 </div>
 
 <div class="section" id="tasks">
-  <h2 class="section-title">Daily Tasks &middot; May 19 (Tue)</h2>
+  <h2 class="section-title">Daily Tasks &middot; May 28 (Thu) &middot; Launch Week close</h2>
 
   <div class="grid-2">
     <div class="card">
-      <h3 class="p2">Frankie &middot; CEO &middot; today (Tue May 19)</h3>
+      <h3 class="p2">Frankie &middot; CEO &middot; today (Thu May 28)</h3>
+      <ol>
+        <li><strong>WALK INTO ENVISION HONDA MILPITAS &middot; 1 PM PT</strong> &middot; suited up, fresh haircut, iPad with the Oraya-branded dealership deck. Ask for Greg (introduced you on phone yesterday) then GSM Mo. Reciprocity opener: <em>"I'm semi-interested in the Prologue hybrid &mdash; mind if I poke around while we talk?"</em> &mdash; lower the sales-resistance, demo the system on iPad once warm. Calendar event already created with location pinned + Chitraksh on as optional. <span class="tag tag-green">FIRST DEALERSHIP APPT</span></li>
+        <li><strong>Test outbound v126 + inbound v15 end-to-end</strong> on at least 2 fresh test scenarios &middot; pretend-flow on inbound: voicemail callback &rarr; opt-in &rarr; calendar slot. Confirm calendar event, email confirmation, SMS &mdash; all three &mdash; land on each test.</li>
+        <li><strong>EIN check the certified-mail tracker</strong> (mailed May 22) &middot; expected Thursday or Friday landing. The moment it hits, A2P submits.</li>
+        <li><strong>Plug Mom's policy from daughter's mother</strong> &middot; the manufactured $3K of ad-budget cash. Theresa policies cancelled with grace given her son's passing &mdash; don't disturb. Day-job checks running parallel.</li>
+        <li><strong>Pull up the Real Estate P3 visual reference</strong> with Chitraksh on the next sync &middot; lock the deal-card UI design (comparables + ARV pie chart + urgency countdown). Plan for Mom + Art handoff once P2 generates first dollar.</li>
+        <li><strong>Lock Mac Mini purchase timing</strong> &middot; back-end of month. Frankie's card on amazon.in with monitor (per Chitraksh's request). Coordinate Zoom unbox/setup. <em>"Hold me to it &mdash; you should have it in the next 7 days."</em></li>
+        <li><strong>Pick a window for the Chitraksh-parents intro</strong> &middot; before 11am or after 8pm Frankie-time. Cup-of-coffee energy, not pitch.</li>
+        <li><strong>4:30 AM block discipline &mdash; resume tomorrow.</strong> May 23-26 slip-then-recover. Fixed block is the rule, not the suggestion.</li>
+        <li><strong>Test the inbound agent edited opener tonight</strong> &middot; confirm the outbound-snippet ported in worked correctly. If clean, tomorrow morning kick off the first 60-lead outbound batch.</li>
+        <li><strong>Carry-over (still active):</strong> Marketing Retainer + Meta ads next-out once A2P approves &middot; Pizza Hut lesson logged (over-transparency = system risk) &middot; military-couple compare-meeting still need to book if you want to retain.</li>
+        <li><strong>IRS call (parallel)</strong> &middot; lines open 8 AM PT; Chitraksh handles 8-11 AM India-side rotation; Frankie picks up post-day-job. Backup: file SS-4 via fax for guaranteed 4-business-day turnaround. <span class="tag tag-red">EIN BLOCKER</span></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3 class="p1">Chitraksh &middot; CTO &middot; today (Thu May 28)</h3>
+      <ol>
+        <li><strong>Push v12.0 dashboard (this update) live</strong> &middot; main HQ + linked Lead-Gen Dashboard + new Real Estate section + Lead-Gen tab. Vercel auto-deploys on push.</li>
+        <li><strong>Watch the Envision Honda walk-in</strong> &middot; Chitraksh on standby in case Frankie needs a live G-Meet pull-in for live demo or live Q&amp;A. Have outbound voice agent on demo-mode ready to dial Frankie's phone for in-person playback.</li>
+        <li><strong>Build the dynamic Oraya dealership deck</strong> from the Mercedes offer letter &middot; Oraya UI / logo / color scheme &middot; capability matrix &middot; deliverables on PDF for Frankie's iPad. <span class="tag tag-orange">FRANKIE NOTE</span></li>
+        <li><strong>Ship the $60 enrichment bake-off</strong> &middot; $20 each on ATTOM + BatchData + PropertyRadar &middot; same TX new-homeowner pull across all three &middot; compare data quality + cold-outreach conversion &middot; pick the winner.</li>
+        <li><strong>Verify outbound v126 + inbound v15 backend</strong> on 5 fresh test calls &middot; confirm calendar / email / SMS / DNC / admin log all firing on each &middot; spot-check the digit-conversion fix on at least 3 "spoken digit" emails.</li>
+        <li><strong>Real Estate P3 architecture spec</strong> &middot; port the single-prompt agent (archived from P2 fork) into the investor-blast prototype &middot; ingest the Oraya site clone visual as the deal-card UI reference &middot; scaffold a Postgres schema for the investor DB + the seller-contract DB.</li>
+        <li><strong>IRS call rotation 8-11 AM PT</strong> (8:30 PM-11:30 PM IST) &middot; ride out auto-disconnects, retry until a live agent picks up &middot; certified-mail track running parallel. <span class="tag tag-red">EIN BLOCKER</span></li>
+        <li><strong>Twin Mind transcript &rarr; dashboard auto-update pipeline</strong> &middot; complete the webhook so post-block dashboard updates push automatically without manual edit-loop.</li>
+        <li><strong>FBN filing (California)</strong> &middot; "Oraya Insurance Group" trade name vs. legal entity; file with operating county; publish in adjudicated newspaper for 4 consecutive weeks; bake receipt into the A2P package.</li>
+        <li><strong>RPA for free registered-agent address</strong> &middot; queue providers, prepare SoS filing, synchronized public-facing address flip the moment A2P approves.</li>
+        <li><strong>Stand up the CEO sub-agent on the Mac Mini</strong> when it arrives &middot; first sub-agent online: dashboard. Then legal / engineer / marketing / lead-gen + follow-up one per shipping week.</li>
+        <li><strong>Cancelled / dropped:</strong> day-trading agent (Frankie + Chitraksh aligned May 27 &mdash; revenue potential lower than P2/P3/voice, back-tests don't translate to live).</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="violet">CTO-Claude &middot; autonomous block &middot; May 28</h3>
+    <ul>
+      <li><strong>v12.0 dashboard sweep</strong> &middot; this update: title/banner/hero/countdown refreshed for Day 138; Real Estate (P3) section added; Lead-Gen section added with top-bar link; Voice AI section refreshed for v126/v15; Insurance section refreshed for backend-LIVE state; auto-pushed via PAT to <code>hanfluxai-create/oraya-dashboard</code>.</li>
+      <li><strong>Ingested transcripts:</strong> May 20-21 "Voice Agent Debugging / Mortgage Protection Script Rework / Texas Homeowner Lead Strategy"; May 23-24 "Claude Rate-Limit Outage / Daily Sync / Mortgage-Insurance Agent Script Testing / EIN Follow-up"; May 26-28 "Voice AI Launch Fixes / Insurance Inbound Testing / Dealership Outreach Strategy".</li>
+      <li><strong>Email digit-conversion patch script</strong> &middot; <code>apply_email_digit_fix_2026-05-28.py</code> drafted + applied on outbound v126; parity patch <code>apply_inbound_parity_fix_2026-05-28.py</code> applied on inbound v15. Pre/post snapshots saved in <code>projects/p2-insurance/retell/snapshots/</code>.</li>
+      <li><strong>Memory updated:</strong> "Email digit handling rule" memory file noted as shipped v126 (2026-05-28). Voice-flow surgical-editing rule honored (str.replace only, never wholesale rewrite).</li>
+      <li><strong>Inbox + WhatsApp monitor</strong> &middot; auto-flag EIN-related IRS communication (USPS certified-mail delivery), Envision Honda follow-up from Greg/Mo, Theresa cancellation processing, Mom's policy through daughter's mother.</li>
+      <li><strong>Multi-model fallback rule still in force</strong> &middot; ChatGPT + Gemini on shadow during Anthropic outages.</li>
+      <li><strong>No permission-asking on routine tasks</strong> (max-autonomy rule holds).</li>
+    </ul>
+  </div>
+
+  <details>
+    <summary>Carry-over &middot; Daily Tasks &middot; May 19 (Tue)</summary>
+    <div class="grid-2">
+    <div class="card">
+      <h3 class="p2">Frankie &middot; CEO &middot; May 19</h3>
       <ol>
         <li><strong>IRS call &mdash; mid-day re-attack</strong> &middot; lines open 8 AM; Chitraksh handles 8-11 AM India-side rotation; Frankie picks up post-day-job 9 AM PT. Have SS-4 fields pre-aligned. Backup: file SS-4 via fax for guaranteed 4-business-day turnaround as a parallel path. <span class="tag tag-red">EIN BLOCKER</span></li>
         <li><strong>Test the new single-prompt agent via the n8n one-click form</strong> &middot; <code>orayacorporation.app.n8n.cloud/form/7811db04-a919-425a-972f-39cb36953ff8</code> &middot; record yourself on call &middot; drop video for Chitraksh. Run different scenarios (co-borrower / no co-borrower / tobacco / medical) after the ideal-case pass.</li>
@@ -2221,6 +2572,7 @@ html{scroll-behavior:smooth}
       <li><strong>No permission-asking on routine tasks</strong> (max-autonomy rule holds).</li>
     </ul>
   </div>
+  </details>
 
   <details>
     <summary>Carry-over &middot; Daily Tasks &middot; May 17 (Sun)</summary>
