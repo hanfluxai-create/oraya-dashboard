@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Oraya Labs · Intelligence Dashboard · v12.0 · May 28 2026 · Day 138 · Voice OUTBOUND v126 + INBOUND v15 LIVE · Inbound calendar + post-call backend wired · 1st DEALERSHIP appointment booked (Envision Honda Milpitas, May 28 1pm) · Real Estate Project P3 scoped (Art Yano · investor-flip wholesale lane) · Lead-Gen Dashboard linked · ATTOM/BatchData/PropertyRadar $60 test queued · Single-prompt agent shipped · Twin Mind live transcript in production</title>
+<title>Oraya Labs · Intelligence Dashboard · v12.0 · May 28 2026 · Day 138 · Voice OUTBOUND v128 (opener reframe) + INBOUND v15 LIVE · Inbound calendar + post-call backend wired · 1st DEALERSHIP appointment booked (Envision Honda Milpitas, May 28 1pm) · Real Estate Project P3 scoped (Art Yano · investor-flip wholesale lane) · Lead-Gen Dashboard linked · ATTOM/BatchData/PropertyRadar $60 test queued · Single-prompt agent shipped · Twin Mind live transcript in production</title>
 <style>
 :root{
   --bg:#f8fafc;--surface:#ffffff;--surface2:#f1f5f9;--surface3:#e2e8f0;
@@ -303,7 +303,7 @@ html{scroll-behavior:smooth}
     <div class="brand-mark">O</div>
     <div class="copy">
       <div class="name">Oraya Labs <span style="font-weight:500;color:var(--text3);font-size:12px;margin-left:6px">Intelligence Dashboard</span></div>
-      <div class="sub"><strong>v12.0</strong> &middot; May 28 &middot; Day 138 &middot; Outbound v126 + Inbound v15 LIVE &middot; 1st dealership appt booked &middot; Real Estate P3 scoped &middot; Lead-Gen lane wired</div>
+      <div class="sub"><strong>v12.0</strong> &middot; May 28 &middot; Day 138 &middot; Outbound v128 + Inbound v15 LIVE &middot; opener reframe shipped &middot; 1st dealership appt booked &middot; Real Estate P3 scoped &middot; Lead-Gen lane wired</div>
     </div>
   </div>
   <a href="INSURANCE_LEADGEN_DASHBOARD.html" class="theme-toggle" style="text-decoration:none;border-color:var(--violet);color:var(--violet);font-weight:700" title="Open the Insurance Lead-Gen Dashboard in a new tab" target="_blank" rel="noopener">&#128202; Lead-Gen Dashboard &rarr;</a>
@@ -315,7 +315,7 @@ html{scroll-behavior:smooth}
 <div class="milestone-banner" id="milestoneBanner">
   <div class="mb-head">
     <div class="mb-pills">
-      <span class="milestone-pill"><span class="dot"></span>&#9733; LAUNCH WEEK &middot; OUTBOUND v126 + INBOUND v15 LIVE</span>
+      <span class="milestone-pill"><span class="dot"></span>&#9733; LAUNCH WEEK &middot; OUTBOUND v128 + INBOUND v15 LIVE</span>
       <span class="milestone-pill alt">MAY 28 2026 &middot; DAY 138 &middot; v12.0</span>
       <span class="milestone-pill warm">1st DEALERSHIP APPT BOOKED</span>
       <span class="milestone-pill violet">REAL ESTATE P3 SCOPED</span>
@@ -330,6 +330,7 @@ html{scroll-behavior:smooth}
     <div class="mb-left">
       <div class="wn-head"><span>&#10024;</span> What's new &middot; May 22-28 sweep (since v11.4)</div>
       <ul>
+        <li><strong>&#127908; Opener reframe SHIPPED &mdash; Outbound v128 LIVE (May 29).</strong> The Greetings part 2 STEP 1 opener was leading with a mortgage-protection mechanism lecture (<em>"Mortgage protection is simple: you pay a small monthly premium&hellip;"</em>) AND asking for the appointment in the same breath &mdash; telegraphing the pitch, so cold 15-month-old leads bailed. Reframed via 3 surgical edits: now LEADS with the property flag (<em>"Your property on {{address}} came up flagged as having no mortgage protection on the loan with {{lender}}"</em>), disarms the old lead (<em>"this was a while back, no worries if you don't remember"</em>), explicitly says <em>"I'm not going to pitch you anything on this call,"</em> and ends with an open question to build interest &mdash; the appointment ask is deferred to the adaptive paths once they engage. PATHs A&ndash;G, pain hook, and NEPQ connector preserved. Publish quirk: <code>/publish-agent</code> returns an empty 200, so v127 published then a redundant retry republished identical content as v128 (v128 is live, v127&equiv;v128); new draft = v129. <strong>Inbound got the same reframe adapted to callback context (no lead vars, "thanks again for calling back / what had you call back?") &mdash; drafted to v16 but HELD pending publish.</strong> Patch scripts: <code>apply_opener_reframe_2026-05-29.py</code> + <code>apply_inbound_opener_reframe_2026-05-29.py</code>.</li>
         <li><strong>Outbound v126 + Inbound v15 published LIVE on Retell (May 28).</strong> Two surgical patch passes shipped same day. <strong>Outbound v126</strong> = global_prompt EMAIL CAPTURE digit rule + node 9 worked example + post_call_analysis caller_email extraction extended; Maya now converts spoken digit words ("one"/"two"/"zero"/"oh") to numerals (1/2/0) inside the stored local-part so <em>"john wick one two at gmail dot com"</em> stores as <code>johnwick12@gmail.com</code>. <strong>Inbound v15</strong> = full parity pull (appointment_timestamp ISO + callback_scheduled_time role separation + email-digit handling) collapsed into a single combined patch. Inbound agent <code>agent_1ffc59c3d135d0776cb35fec6f</code> + flow <code>conversation_flow_302b435de58b</code>; outbound agent <code>agent_63a23bd2cc9273a9b4fea5656e</code> + flow <code>conversation_flow_96a5fd684b24</code>. Pre/post snapshots saved in <code>projects/p2-insurance/retell/snapshots/</code>.</li>
         <li><strong>First dealership appointment LANDED (May 28).</strong> Cold-call to Envision Honda Milpitas connected with Greg (one of multiple new sales managers) &mdash; Frankie reused the "Greg Korea pitched here ~6 months ago, was I the right person?" wedge, offered to come look at a Prologue hybrid in exchange for an intro to GSM Mo. <strong>Appointment locked for Thursday May 28, 1 PM PT.</strong> Frankie suiting up. Old MBSB-era playbook validated: opening with reciprocity (something for them) beats opening with a pitch. Calendar event created, location pinned, Chitraksh added as optional attendee for celebration or live G-Meet pull-in.</li>
         <li><strong>REAL ESTATE PROJECT (P3) scoped end-to-end (May 27-28 founder call).</strong> Decision: <strong>P3 is Real Estate, not day-trading</strong>. Frankie scratched the trading agent ("on paper easy, in reality 3 years of trying and the back-tests don't translate to live" &mdash; Chitraksh). Real Estate is the <strong>"perfect next step"</strong> because the lead-gen muscle we're building for insurance applies directly. <strong>Two human channels</strong>: (a) <strong>Art Yano</strong> &mdash; CA licensed broker + property-management family, auctions houses for investors at $10K-$50K per flip, currently away from the desk caring for his terminally ill mother ($5-10K / mo home medical) so a system that does the work for him is timely; (b) <strong>Mom (Frankie's)</strong> &mdash; licensed CA real-estate agent + broker, retiring, wants a position with Art. <strong>The system:</strong> NOT consumer end-buyers &mdash; <strong>99% investor / flipper buyer side</strong>. Scrape Facebook + real-estate investor sites for CA flippers, enrich, ingest into our database. When a seller signs an off-market contract with us, blast the deal to 50+ investors at once with full underwriting metrics: comparables (1-2 mi radius, same vintage), rehab estimate, post-rehab ARV, days-on-market in that ZIP, urgency timer, GPS, photos. Investor responds &rarr; we wholesale the contract &rarr; $10-50K spread per close. <strong>Tech demo built</strong>: clone of Oraya site repurposed (<em>"Turn difficult property distributions into clear"</em>) with dropdown "Inherited a property / Going through divorce / &hellip;" CTAs &mdash; shown to Frankie on the call, locked as the visual reference. <strong>Sequencing</strong>: P2 insurance lead-gen first &rarr; learnings transplant to P3 real-estate lead-gen. Frankie: <em>"We're not done, but we're good for the rest of the year, bro."</em></li>
@@ -364,7 +365,7 @@ html{scroll-behavior:smooth}
     </div>
     <div class="mb-right">
       <div class="mb-state-head"><span>&#9678;</span> Live state &middot; Day 138</div>
-      <div class="mb-chip green"><span class="icn">&#127908;</span><div><strong>Outbound v126 LIVE.</strong> Email digit-word &rarr; numeric digit fix + appointment_timestamp ISO + callback_scheduled_time roles &mdash; all shipped.</div></div>
+      <div class="mb-chip green"><span class="icn">&#127908;</span><div><strong>Outbound v128 LIVE &mdash; opener reframe (May 29).</strong> Greetings p2 STEP 1 now leads with the property flag, drops the mechanism lecture + early appt ask, ends on an open question to build interest. Inbound same reframe drafted (v16, HELD). Inherits v126 email/ISO/callback fixes.</div></div>
       <div class="mb-chip green"><span class="icn">&#128231;</span><div><strong>Inbound v15 LIVE.</strong> Parity-publish (3 patches in one). Calendar / mail / SMS / DNC / logs verified on live test.</div></div>
       <div class="mb-chip green"><span class="icn">&#127968;</span><div><strong>1st dealership appt.</strong> Envision Honda Milpitas &middot; Thu May 28 1pm PT &middot; Greg + GSM Mo target.</div></div>
       <div class="mb-chip violet"><span class="icn">&#127960;</span><div><strong>Real Estate P3 scoped.</strong> Art Yano + Mom &middot; investor-flip wholesale + comparables blast &middot; CA broker lane.</div></div>
@@ -427,7 +428,7 @@ html{scroll-behavior:smooth}
 
 <div class="section active" id="overview">
   <div class="hero">
-    <h2>Operation Insurance Pivot &middot; Week 20 &middot; Day 138 &middot; May 28 2026 <span class="countdown-pill"><span class="pulse"></span>OUTBOUND v126 + INBOUND v15 LIVE &middot; 1st DEALERSHIP APPT BOOKED &middot; REAL ESTATE P3 SCOPED &middot; LEAD-GEN LANE WIRED</span></h2>
+    <h2>Operation Insurance Pivot &middot; Week 20 &middot; Day 138 &middot; May 28 2026 <span class="countdown-pill"><span class="pulse"></span>OUTBOUND v128 + INBOUND v15 LIVE &middot; OPENER REFRAME SHIPPED &middot; 1st DEALERSHIP APPT BOOKED &middot; REAL ESTATE P3 SCOPED &middot; LEAD-GEN LANE WIRED</span></h2>
     <div class="lead">
       <p><strong>Day 138 closes "Launch Week."</strong> Both voice agents publish-live on Retell &mdash; <strong>outbound v126</strong> (email digit-word &rarr; numeric-digit fix + appointment_timestamp ISO + callback_scheduled_time roles) and <strong>inbound v15</strong> (full parity-publish of all three patches in one). Calendar event creation, opt-in confirmation email, SMS, DNC harvest, admin log dispatch <strong>verified on live test call</strong> (May 27 1:39 AM, caller "Adrian Marino", appointment Thu May 28 11 AM landed end-to-end). <strong>First dealership appointment landed</strong> &mdash; Envision Honda Milpitas, Thu May 28 1 PM PT, GSM Mo target. <strong>Real Estate Project (P3) scoped</strong> on the May 27-28 founder call &mdash; Art Yano + Mom + investor-flip wholesale lane (NOT consumer end-buyers). <strong>Lead-Gen Dashboard wired</strong> into top-bar nav; ATTOM + BatchData + PropertyRadar $60 bake-off queued.</p>
       <p><strong>Day 129 carry-over closed "Voice-Fix + Sales-Master Week."</strong> The Maya/Tessa voice "creature" artifact was root-caused on a live May 18 call session to a three-variable stack &mdash; <strong>volume +166</strong> from default, <strong>interruption-sensitivity to floor</strong>, <strong>background-noise removal ON</strong> &mdash; plus <strong>Cartesia Sonic-3 swapped to Sonic 3.5</strong>. Voice-speed toggle audited and unified to OFF across all nodes. Post-fix verdict: <em>"It's 100% better."</em></p>
@@ -448,7 +449,7 @@ html{scroll-behavior:smooth}
     </details>
 
     <div class="countdown-strip">
-      <div class="countdown-tile green"><div class="label">Outbound voice agent</div><div class="value">v126 LIVE</div><div class="sub">email digit-word &rarr; numeric &middot; ISO appt &middot; callback role split</div></div>
+      <div class="countdown-tile green"><div class="label">Outbound voice agent</div><div class="value">v128 LIVE</div><div class="sub">opener reframe (flag-led, no early appt) &middot; +email/ISO/callback fixes</div></div>
       <div class="countdown-tile green"><div class="label">Inbound voice agent</div><div class="value">v15 LIVE</div><div class="sub">parity publish &middot; calendar / mail / SMS verified on test</div></div>
       <div class="countdown-tile green"><div class="label">1st dealership appt</div><div class="value">BOOKED</div><div class="sub">Envision Honda Milpitas &middot; Thu May 28 1pm PT</div></div>
       <div class="countdown-tile violet"><div class="label">Real Estate Project (P3)</div><div class="value">SCOPED</div><div class="sub">Art Yano + Mom &middot; investor-flip wholesale &middot; comparables blast</div></div>
@@ -966,7 +967,16 @@ html{scroll-behavior:smooth}
 </div>
 
 <div class="section" id="voice-ai">
-  <h2 class="section-title">Voice AI &middot; P1 &middot; OUTBOUND v126 + INBOUND v15 LIVE on Retell (May 28)</h2>
+  <h2 class="section-title">Voice AI &middot; P1 &middot; OUTBOUND v128 + INBOUND v15 LIVE on Retell (May 29)</h2>
+
+  <div class="banner green">
+    <div class="icon">&#127908;</div>
+    <div>
+      <h2>May 29 &middot; OUTBOUND v128 LIVE &mdash; opener reframe (Greetings part 2 STEP 1)</h2>
+      <p><strong>Agent</strong> <code>agent_63a23bd2cc9273a9b4fea5656e</code> + <strong>flow</strong> <code>conversation_flow_96a5fd684b24</code>. The STEP 1 opener was leading with a mortgage-protection mechanism lecture (<em>"Mortgage protection is simple: you pay a small monthly premium&hellip;"</em>) AND asking for the appointment in the same breath &mdash; telegraphing the pitch, so cold 15-month-old leads bailed. <strong>Three surgical edits</strong> in the Greetings part 2 node (9,061 &rarr; 9,649 chars): (a) STEP 1 objective line &mdash; "position the APPOINTMENT" &rarr; build interest / get THEM asking questions / keep them talking; (b) "Say (&hellip;)" framing &mdash; mechanism-first &rarr; flag-first, no appt; (c) the spoken opener now LEADS with the property flag (<em>"Your property on {{address}} came up flagged as having no mortgage protection on the loan with {{lender}}"</em>), disarms the old lead, explicitly says <em>"I'm not going to pitch you anything on this call,"</em> and ends with an open question. PATHs A&ndash;G, pain hook, NEPQ connector preserved &mdash; the appointment ask fires later, once they engage. Patch: <code>retell/scripts/apply_opener_reframe_2026-05-29.py</code>. <strong>Publish note:</strong> <code>/publish-agent</code> returns an empty 200 &mdash; v127 published, then a redundant retry republished identical content as v128 (live = v128, v127&equiv;v128); new draft = v129.</p>
+      <p><strong>INBOUND v16 &mdash; same reframe, drafted + HELD (not published).</strong> Agent <code>agent_1ffc59c3d135d0776cb35fec6f</code> + flow <code>conversation_flow_302b435de58b</code>. Adapted to the callback context: inbound has no dialer lead variables, so the flag is generic (<em>"the mortgage on your home"</em>); the greeting already says "thanks for calling back," so the opener says <em>"thanks again for calling back&hellip; what had you call back?"</em> 2 surgical edits (5,850 &rarr; 6,230 chars). Patch: <code>retell/scripts/apply_inbound_opener_reframe_2026-05-29.py</code>. Ships on "publish inbound".</p>
+    </div>
+  </div>
 
   <div class="banner green">
     <div class="icon">&#127908;</div>
