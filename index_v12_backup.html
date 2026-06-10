@@ -1,608 +1,299 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Oraya Labs · Mission Control · v13.0 · Day 138 data (through May 29 2026) · Outbound v128 + Inbound v15 LIVE · 1st dealership appt booked · Real Estate P3 scoped · Lead-Gen bake-off queued</title>
+<title>Oraya Labs · Intelligence Dashboard · v12.0 · May 28 2026 · Day 138 · Voice OUTBOUND v128 (opener reframe) + INBOUND v15 LIVE · Inbound calendar + post-call backend wired · 1st DEALERSHIP appointment booked (Envision Honda Milpitas, May 28 1pm) · Real Estate Project P3 scoped (Art Yano · investor-flip wholesale lane) · Lead-Gen Dashboard linked · ATTOM/BatchData/PropertyRadar $60 test queued · Single-prompt agent shipped · Twin Mind live transcript in production</title>
 <style>
-/* ============================================================
-   ORAYA MISSION CONTROL · v13.0 design system
-   Light = Executive Paper · Dark = Mission Control
-   Legacy content classes re-skinned · zero content edits.
-   ============================================================ */
 :root{
-  --bg:#f3f5fa;--surface:#ffffff;--surface2:#edf1f8;--surface3:#e2e8f3;
-  --border:#e3e9f3;--border2:#c8d3e6;
-  --text:#0c1428;--text2:#42506c;--text3:#69769a;
+  --bg:#f8fafc;--surface:#ffffff;--surface2:#f1f5f9;--surface3:#e2e8f0;
+  --border:#e2e8f0;--border2:#cbd5e1;
+  --text:#0f172a;--text2:#475569;--text3:#64748b;
   --accent:#2563eb;--p1:#2563eb;--p2:#f59e0b;
-  --green:#0e9f6e;--green-soft:#def7ec;
+  --green:#16a34a;--green-soft:#dcfce7;
   --red:#dc2626;--red-soft:#fee2e2;
   --orange:#d97706;--orange-soft:#ffedd5;
   --blue:#2563eb;--blue-soft:#dbeafe;
   --violet:#7c3aed;--violet-soft:#ede9fe;
   --pink:#db2777;--pink-soft:#fce7f3;
-  --gold:#b45309;
-  --shadow:0 1px 3px rgba(12,20,40,.07),0 1px 2px rgba(12,20,40,.05);
-  --shadow-lg:0 10px 30px -8px rgba(12,20,40,.14);
-  --glow:0 0 0 rgba(0,0,0,0);
-  --radius:14px;
-  --hero-grad:radial-gradient(1100px 500px at 18% -10%,rgba(37,99,235,.10),transparent 60%),radial-gradient(900px 420px at 85% -20%,rgba(124,58,237,.10),transparent 60%);
-  --sb-w:236px;
+  --shadow:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --shadow-lg:0 4px 12px rgba(15,23,42,.08);
+  --radius:12px;
 }
 :root[data-theme="dark"]{
-  --bg:#060a14;--surface:#0d1426;--surface2:#131c33;--surface3:#1b2742;
-  --border:#1c2845;--border2:#324569;
-  --text:#e9edf8;--text2:#aeb9d6;--text3:#7e8bb0;
-  --accent:#5b9bff;--p1:#5b9bff;--p2:#fbbf24;
-  --green:#34d399;--green-soft:rgba(52,211,153,.13);
-  --red:#f87171;--red-soft:rgba(248,113,113,.13);
-  --orange:#fbbf24;--orange-soft:rgba(251,191,36,.13);
-  --blue:#5b9bff;--blue-soft:rgba(91,155,255,.14);
+  --bg:#0b1020;--surface:#111733;--surface2:#192145;--surface3:#1f274a;
+  --border:#1f274a;--border2:#334366;
+  --text:#e6e9f2;--text2:#b4bcd4;--text3:#8b93b2;
+  --accent:#60a5fa;--p1:#60a5fa;--p2:#fbbf24;
+  --green:#4ade80;--green-soft:rgba(74,222,128,.14);
+  --red:#f87171;--red-soft:rgba(248,113,113,.14);
+  --orange:#fbbf24;--orange-soft:rgba(251,191,36,.14);
+  --blue:#60a5fa;--blue-soft:rgba(96,165,250,.14);
   --violet:#a78bfa;--violet-soft:rgba(167,139,250,.14);
   --pink:#f472b6;--pink-soft:rgba(244,114,182,.14);
-  --gold:#fcd34d;
-  --shadow:0 1px 3px rgba(0,0,0,.45);
-  --shadow-lg:0 18px 44px -12px rgba(0,0,0,.65);
-  --glow:0 0 24px rgba(91,155,255,.18);
-  --hero-grad:radial-gradient(1100px 520px at 18% -10%,rgba(91,155,255,.13),transparent 60%),radial-gradient(900px 460px at 85% -18%,rgba(167,139,250,.13),transparent 60%),radial-gradient(700px 380px at 50% 110%,rgba(52,211,153,.07),transparent 60%);
+  --shadow:0 1px 3px rgba(0,0,0,.4);
+  --shadow-lg:0 6px 16px rgba(0,0,0,.5);
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans-serif;
-  background:var(--bg);color:var(--text);line-height:1.6;font-size:14px;
-  -webkit-font-smoothing:antialiased;background-image:var(--hero-grad);background-repeat:no-repeat;
+body{font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:14px;-webkit-font-smoothing:antialiased}
+.top-bar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:11px 24px;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;box-shadow:var(--shadow)}
+.brand{display:flex;align-items:center;gap:12px;min-width:0;flex:1}
+.brand-mark{width:36px;height:36px;flex-shrink:0;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--p2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px;box-shadow:var(--shadow-lg)}
+.brand .copy{min-width:0;overflow:hidden}
+.brand .name{font-weight:700;font-size:15.5px;line-height:1.2}
+.brand .sub{
+  font-size:11.5px;color:var(--text3);font-weight:500;line-height:1.4;margin-top:2px;
+  max-width:760px;
+  display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;
+  white-space:nowrap;
 }
-::selection{background:var(--blue-soft);}
-
-/* ============ TOP COMMAND BAR ============ */
-.top-bar{
-  display:flex;align-items:center;gap:14px;padding:10px 18px;
-  background:color-mix(in srgb,var(--surface) 86%,transparent);
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--border);position:sticky;top:0;z-index:90;box-shadow:var(--shadow);
-}
-.brand{display:flex;align-items:center;gap:11px;min-width:0}
-.brand-mark{
-  width:38px;height:38px;flex-shrink:0;border-radius:11px;
-  background:conic-gradient(from 210deg,#2563eb,#7c3aed,#f59e0b,#2563eb);
-  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:17px;
-  box-shadow:0 4px 14px rgba(37,99,235,.35);
-}
-.brand .copy{min-width:0}
-.brand .name{font-weight:800;font-size:15px;line-height:1.15;letter-spacing:-.2px;white-space:nowrap}
-.brand .name .lite{font-weight:600;color:var(--text3);font-size:11px;margin-left:7px;letter-spacing:.6px;text-transform:uppercase}
-.brand .sub{font-size:11px;color:var(--text3);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:430px}
 .brand .sub strong{color:var(--text2)}
-.tb-spacer{flex:1}
-.searchwrap{position:relative;flex:0 1 360px;min-width:160px}
-.searchwrap .si{position:absolute;left:11px;top:50%;transform:translateY(-50%);opacity:.55;font-size:13px;pointer-events:none}
-#globalSearch{
-  width:100%;padding:8px 30px 8px 32px;border-radius:999px;border:1px solid var(--border2);
-  background:var(--surface2);color:var(--text);font:inherit;font-size:12.5px;outline:none;
-  transition:border-color .15s, box-shadow .15s;
+@media(min-width:1100px){.brand .sub{white-space:normal;-webkit-line-clamp:2}}
+.theme-toggle{border:1px solid var(--border);background:var(--surface);color:var(--text);font:inherit;font-size:13px;font-weight:600;cursor:pointer;padding:7px 14px;border-radius:999px;transition:all .15s}
+.theme-toggle:hover{background:var(--surface2);border-color:var(--border2)}
+.container{max-width:1240px;margin:0 auto;padding:26px 28px 64px}
+/* === MILESTONE BANNER · Fibonacci / Golden-Ratio Layout (v11.4) ===
+   Spacing scale: 5 8 13 21 34 55 px (Fibonacci)
+   Grid split: 1.618 : 1 (≈ 62/38 — the golden section)
+   The banner is compact-by-default, expandable on demand,
+   so a tab click never traps the user above the fold. */
+.milestone-banner{
+  background:linear-gradient(135deg,var(--green-soft),var(--blue-soft));
+  border:1px solid var(--green);border-radius:13px;
+  padding:16px 22px 18px;margin-bottom:18px;
+  box-shadow:var(--shadow-lg);position:relative;overflow:hidden;
 }
-#globalSearch:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--blue-soft)}
-#searchClear{position:absolute;right:7px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:var(--text3);cursor:pointer;font-size:13px;padding:3px;display:none}
-.searching #searchClear{display:block}
-.tb-btn{
-  border:1px solid var(--border2);background:var(--surface);color:var(--text);font:inherit;font-size:12px;
-  font-weight:700;cursor:pointer;padding:7px 13px;border-radius:999px;transition:all .15s;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center;gap:6px;
+.milestone-banner::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--green) 0%,var(--blue) 38.2%,var(--violet) 61.8%,var(--p2) 100%);
 }
-.tb-btn:hover{background:var(--surface2);border-color:var(--accent);transform:translateY(-1px)}
-.tb-btn.violet{border-color:var(--violet);color:var(--violet)}
-.tb-btn:focus-visible,#globalSearch:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-
-/* ============ APP SHELL ============ */
-.app-shell{display:grid;grid-template-columns:var(--sb-w) minmax(0,1fr);gap:0;max-width:1500px;margin:0 auto;align-items:start}
-.main{min-width:0;padding:20px 26px 70px}
-
-/* ============ SIDEBAR ============ */
-.sidebar{
-  position:sticky;top:59px;height:calc(100vh - 59px);overflow-y:auto;overscroll-behavior:contain;
-  padding:18px 12px 26px 16px;scrollbar-width:thin;
+.mb-head{
+  display:flex;align-items:center;justify-content:space-between;gap:13px;
+  flex-wrap:wrap;margin-bottom:8px;
 }
-.sb-group{margin-bottom:16px}
-.sb-kicker{font-size:9.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--text3);padding:0 10px;margin-bottom:6px}
-.sb-item{
-  display:flex;align-items:center;gap:9px;width:100%;text-align:left;border:1px solid transparent;
-  background:transparent;color:var(--text2);font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;
-  padding:8px 10px;border-radius:10px;transition:all .14s;position:relative;
+.mb-pills{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.milestone-pill{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:10px;font-weight:800;color:#fff;background:var(--green);
+  letter-spacing:.7px;padding:4px 9px;border-radius:999px;text-transform:uppercase;
 }
-.sb-item:hover{background:var(--surface);color:var(--text);border-color:var(--border);transform:translateX(2px)}
-.sb-item.active{
-  background:var(--surface);color:var(--text);border-color:var(--border2);box-shadow:var(--shadow);
+.milestone-pill.alt{background:var(--blue);color:#fff}
+.milestone-pill.warm{background:var(--orange);color:#fff}
+.milestone-pill.violet{background:var(--violet);color:#fff}
+.milestone-pill .dot{width:5px;height:5px;border-radius:50%;background:#fff;animation:pulse 1.6s ease-in-out infinite}
+.mb-toggle{
+  border:1px solid var(--green);background:rgba(255,255,255,.7);color:var(--green);
+  font:inherit;font-size:10.5px;font-weight:700;cursor:pointer;
+  padding:5px 11px;border-radius:999px;transition:all .15s;
+  display:inline-flex;align-items:center;gap:5px;
 }
-.sb-item.active::before{
-  content:"";position:absolute;left:-9px;top:20%;bottom:20%;width:3px;border-radius:3px;background:var(--accent);
+:root[data-theme="dark"] .mb-toggle{background:rgba(15,23,42,.45)}
+.mb-toggle:hover{background:var(--green);color:#fff}
+.mb-toggle .chev{transition:transform .2s}
+.milestone-banner.is-collapsed .mb-toggle .chev{transform:rotate(-90deg)}
+.milestone-banner h1{
+  margin:0 0 8px;font-size:19px;font-weight:800;letter-spacing:-.4px;
+  color:var(--text);line-height:1.35;
 }
-.sb-ico{width:20px;text-align:center;font-size:14px;flex-shrink:0;filter:saturate(.9)}
-.sb-lbl{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sb-badge{
-  font-size:8.5px;font-weight:800;letter-spacing:.8px;padding:2.5px 7px;border-radius:999px;flex-shrink:0;
-  background:var(--surface3);color:var(--text3);
+.milestone-banner .grad{
+  background:linear-gradient(90deg,var(--green),var(--blue));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-.sb-badge.live{background:var(--green-soft);color:var(--green)}
-.sb-badge.live::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--green);margin-right:4px;vertical-align:1px;animation:pulse 1.6s ease-in-out infinite}
-.sb-badge.warn{background:var(--orange-soft);color:var(--orange)}
-.sb-badge.info{background:var(--blue-soft);color:var(--blue)}
-.sb-badge.viol{background:var(--violet-soft);color:var(--violet)}
-.sb-badge.hits{background:var(--accent);color:#fff;display:none}
-.searching .sb-badge.hits{display:inline-block}
-.searching .sb-badge:not(.hits){display:none}
-.sb-foot{margin-top:18px;padding:10px;font-size:10px;color:var(--text3);line-height:1.7;border-top:1px dashed var(--border)}
-
-/* ============ SECTIONS ============ */
+.milestone-banner .subhead{
+  margin:0 0 12px;font-size:12.5px;color:var(--text2);line-height:1.65;max-width:780px;
+}
+/* GOLDEN-SECTION GRID — left rail 1.618fr, right rail 1fr */
+.mb-golden{
+  display:grid;grid-template-columns:1.618fr 1fr;gap:13px;
+  align-items:start;
+}
+.mb-golden.is-hidden{display:none}
+.mb-left{
+  background:rgba(255,255,255,.55);border:1px dashed var(--green);
+  border-radius:10px;padding:12px 15px;
+}
+:root[data-theme="dark"] .mb-left{background:rgba(15,23,42,.45);border-color:var(--green)}
+.mb-left .wn-head{
+  font-size:10px;font-weight:800;color:var(--green);
+  letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;
+  display:flex;align-items:center;gap:5px;
+}
+.mb-left ul{margin:0;padding-left:18px;font-size:12.5px;color:var(--text2)}
+.mb-left li{margin-bottom:6px;line-height:1.6}
+.mb-left li:last-child{margin-bottom:0}
+.mb-left strong{color:var(--text)}
+.mb-left code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-size:11px;color:var(--text)}
+/* RIGHT RAIL — vertical Fibonacci-spaced state chips */
+.mb-right{display:flex;flex-direction:column;gap:6px}
+.mb-state-head{
+  font-size:10px;font-weight:800;color:var(--blue);
+  letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;
+  display:flex;align-items:center;gap:5px;
+}
+.mb-chip{
+  display:flex;align-items:flex-start;gap:9px;
+  background:rgba(255,255,255,.6);border:1px solid var(--border);
+  border-left:3px solid var(--blue);border-radius:8px;
+  padding:8px 11px;font-size:11.5px;color:var(--text2);line-height:1.5;
+}
+:root[data-theme="dark"] .mb-chip{background:rgba(15,23,42,.4)}
+.mb-chip strong{color:var(--text);font-weight:700}
+.mb-chip.green{border-left-color:var(--green)}
+.mb-chip.orange{border-left-color:var(--orange)}
+.mb-chip.violet{border-left-color:var(--violet)}
+.mb-chip.red{border-left-color:var(--red)}
+.mb-chip.warm{border-left-color:var(--p2)}
+.mb-chip .icn{font-size:13px;line-height:1.2;flex-shrink:0}
+/* DEEP STATE — collapsible essay paragraph */
+.mb-deep{
+  margin-top:13px;
+  background:rgba(255,255,255,.45);border:1px solid var(--border);
+  border-radius:10px;padding:10px 13px;
+}
+:root[data-theme="dark"] .mb-deep{background:rgba(15,23,42,.35)}
+.mb-deep summary{
+  cursor:pointer;font-weight:700;font-size:11.5px;color:var(--text);
+  list-style:none;letter-spacing:.4px;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:5px;
+}
+.mb-deep summary::-webkit-details-marker{display:none}
+.mb-deep summary::before{content:"\25B8";color:var(--green);font-weight:700;font-size:10px}
+.mb-deep[open] summary::before{content:"\25BE"}
+.mb-deep .deep-body{margin-top:8px;font-size:12.5px;color:var(--text2);line-height:1.55}
+.mb-deep .deep-body strong{color:var(--text)}
+.mb-deep .deep-body code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-size:11.5px;color:var(--text)}
+.mb-deep.is-hidden{display:none}
+.hero{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 26px;margin-bottom:18px;box-shadow:var(--shadow)}
+.hero h2{margin:0 0 6px;font-size:17px;font-weight:700;letter-spacing:-.3px;line-height:1.35}
+.hero .lead{font-size:13px;color:var(--text2);margin:0 0 14px;line-height:1.7}
+.hero .lead p{margin:0 0 11px}
+.hero .lead p:last-child{margin-bottom:0}
+.hero .lead strong{color:var(--text)}
+.countdown-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:11px;margin:14px 0}
+.countdown-tile{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:13px 15px;position:relative;transition:transform .15s,box-shadow .15s}
+.countdown-tile:hover{transform:translateY(-1px);box-shadow:var(--shadow-lg)}
+.countdown-tile .label{font-size:10.5px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;font-weight:700}
+.countdown-tile .value{font-size:18px;font-weight:800;margin-top:5px;letter-spacing:-.3px;line-height:1.2}
+.countdown-tile .sub{font-size:11px;color:var(--text2);margin-top:4px;line-height:1.45}
+.countdown-tile.green{border-left:3px solid var(--green)}
+.countdown-tile.orange{border-left:3px solid var(--orange)}
+.countdown-tile.red{border-left:3px solid var(--red)}
+.countdown-tile.blue{border-left:3px solid var(--blue)}
+.countdown-tile.violet{border-left:3px solid var(--violet)}
+.founder-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:16px}
+.founder-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px}
+.founder-card .who{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;font-weight:700}
+.founder-card .name{font-size:14.5px;font-weight:700;margin-top:3px}
+.founder-card .role{font-size:11.5px;color:var(--text2);margin-top:2px}
+.founder-card .status{font-size:11.5px;margin-top:8px;color:var(--text2);line-height:1.6}
+.founder-card.frankie{border-left:3px solid var(--p2)}
+.founder-card.chitraksh{border-left:3px solid var(--p1)}
+.founder-card.claude{border-left:3px solid var(--violet)}
+.founder-card.jenkins{border-left:3px solid var(--green)}
+.nav-tabs{display:flex;flex-wrap:wrap;gap:3px;padding:5px;background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:21px;box-shadow:var(--shadow);position:sticky;top:62px;z-index:40}
+.nav-tab{border:0;background:transparent;cursor:pointer;font:inherit;color:var(--text2);font-size:11.5px;font-weight:600;padding:7px 10px;border-radius:7px;transition:all .15s;white-space:nowrap;letter-spacing:.1px}
+.nav-tab:hover{background:var(--surface2);color:var(--text)}
+.nav-tab.active{background:var(--accent);color:#fff}
 .section{display:none}
-.section.active{display:block;animation:secIn .3s cubic-bezier(.2,.7,.3,1)}
-@keyframes secIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-body.searching .section{display:block;margin-bottom:8px}
-
-/* Old section title → "full record" divider */
-.section-title{
-  display:flex;align-items:center;gap:10px;font-size:11px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;
-  color:var(--text3);margin:26px 0 14px;padding:0;border:0;
-}
-.section-title::before{content:"⬇ FULL RECORD";flex-shrink:0;font-size:9px;letter-spacing:1.6px;color:var(--accent);background:var(--blue-soft);padding:3px 9px;border-radius:999px}
-.section-title::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--border2),transparent)}
-
-/* ============ COCKPIT (new visual layer) ============ */
-.ck{margin-bottom:10px}
-.ck-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;flex-wrap:wrap}
-.ck-ico{
-  width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:25px;flex-shrink:0;
-  background:linear-gradient(145deg,var(--surface),var(--surface2));border:1px solid var(--border2);box-shadow:var(--shadow-lg);
-}
-.ck-head-copy{flex:1;min-width:230px}
-.ck-kicker{font-size:9.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--text3);display:flex;gap:7px;align-items:center;flex-wrap:wrap}
-.ck-kicker .dotlive{display:inline-flex;align-items:center;gap:5px;color:var(--green);font-weight:800}
-.ck-kicker .dotlive::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 1.6s ease-in-out infinite}
-.ck-title{margin:2px 0 4px;font-size:24px;font-weight:850;letter-spacing:-.6px;line-height:1.15}
-.ck-title .grad{background:linear-gradient(92deg,var(--blue),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
-.ck-plain{
-  margin:0;font-size:12.5px;color:var(--text2);line-height:1.65;max-width:760px;
-  padding-left:10px;border-left:3px solid var(--p2);
-}
-.ck-plain strong{color:var(--text)}
-.ck-stats{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch}
-.stat{
-  background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:9px 13px;min-width:86px;
-  box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .15s,box-shadow .15s;
-}
-.stat:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
-.stat::after{content:"";position:absolute;inset:auto 0 0 0;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
-.stat .sv{font-size:19px;font-weight:850;letter-spacing:-.5px;line-height:1.1;font-variant-numeric:tabular-nums}
-.stat .sl{font-size:9px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;color:var(--text3);margin-top:3px}
-.stat.green .sv{color:var(--green)}.stat.red .sv{color:var(--red)}.stat.orange .sv{color:var(--orange)}
-.stat.blue .sv{color:var(--blue)}.stat.violet .sv{color:var(--violet)}.stat.gold .sv{color:var(--gold)}
-
-.ck-panel{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-  padding:16px 18px;box-shadow:var(--shadow);margin-bottom:12px;position:relative;overflow:hidden;
-}
-.ck-panel.glow{box-shadow:var(--shadow-lg),var(--glow)}
-.ck-panel h4{margin:0 0 4px;font-size:12px;font-weight:800;letter-spacing:.2px;display:flex;align-items:center;gap:7px}
-.ck-panel .ph{font-size:11px;color:var(--text3);margin:0 0 12px;line-height:1.55}
-.ck-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:12px;margin-bottom:12px}
-.ck-controls{display:flex;align-items:center;gap:10px;margin:4px 0 0;flex-wrap:wrap}
-.x-all{
-  border:1px solid var(--border2);background:var(--surface);color:var(--text2);font:inherit;font-size:10.5px;font-weight:700;
-  cursor:pointer;padding:5px 12px;border-radius:999px;transition:all .15s;letter-spacing:.4px;
-}
-.x-all:hover{border-color:var(--accent);color:var(--accent)}
-.ck-count{font-size:10.5px;color:var(--text3);font-weight:600;letter-spacing:.3px}
-
-/* pipeline / flow */
-.flow{display:flex;align-items:stretch;gap:0;overflow-x:auto;padding:6px 2px 10px;scrollbar-width:thin}
-.fnode{min-width:118px;flex:1;position:relative;padding:10px 10px 10px 14px;border-radius:11px;border:1px solid var(--border);background:var(--surface2);margin-right:26px}
-.fnode:last-child{margin-right:0}
-.fnode::after{
-  content:"➜";position:absolute;right:-21px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:13px;
-}
-.fnode:last-child::after{display:none}
-.fnode .fs{font-size:8.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;display:inline-block;padding:2px 7px;border-radius:999px;margin-bottom:5px}
-.fnode .fn{font-size:11.5px;font-weight:750;line-height:1.3}
-.fnode .fd{font-size:10px;color:var(--text3);margin-top:3px;line-height:1.45}
-.fnode.live{border-color:var(--green);background:var(--green-soft)}
-.fnode.live .fs{background:var(--green);color:#fff}
-.fnode.cfg{border-color:var(--orange);background:var(--orange-soft)}
-.fnode.cfg .fs{background:var(--orange);color:#fff}
-.fnode.off{border-color:var(--border2)}
-.fnode.off .fs{background:var(--surface3);color:var(--text3)}
-.fnode.blk{border-color:var(--red);background:var(--red-soft)}
-.fnode.blk .fs{background:var(--red);color:#fff}
-
-/* dependency chain */
-.chain{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
-.chain .cnode{display:flex;flex-direction:column;gap:2px;padding:9px 13px;border-radius:11px;border:1.5px solid var(--border2);background:var(--surface2);min-width:120px}
-.chain .cnode b{font-size:11.5px}
-.chain .cnode span{font-size:9.5px;color:var(--text3);font-weight:600;letter-spacing:.4px;text-transform:uppercase}
-.chain .cnode.red{border-color:var(--red);background:var(--red-soft)}
-.chain .cnode.red span{color:var(--red)}
-.chain .cnode.amber{border-color:var(--orange);background:var(--orange-soft)}
-.chain .cnode.amber span{color:var(--orange)}
-.chain .cnode.go{border-color:var(--green);background:var(--green-soft)}
-.chain .cnode.go span{color:var(--green)}
-.chain .clink{color:var(--text3);font-size:15px;font-weight:800}
-
-/* rings */
-.ringwrap{display:flex;align-items:center;gap:12px}
-.ring{transform:rotate(-90deg)}
-.ring .track{stroke:var(--surface3);fill:none}
-.ring .arc{fill:none;stroke-linecap:round;transition:stroke-dashoffset 1.2s cubic-bezier(.2,.7,.3,1)}
-.ringlbl{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:none}
-.ringbox{position:relative;width:84px;height:84px;flex-shrink:0}
-.ringlbl .rv{font-size:16px;font-weight:850;letter-spacing:-.4px}
-.ringlbl .rl{font-size:8px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3)}
-
-/* project trio */
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:13px;margin-bottom:12px}
-.proj-card{
-  background:linear-gradient(160deg,var(--surface),var(--surface2));border:1px solid var(--border);border-radius:16px;
-  padding:16px;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .18s,box-shadow .18s;will-change:transform;
-}
-.proj-card:hover{box-shadow:var(--shadow-lg),var(--glow)}
-.proj-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--pc,var(--accent))}
-.proj-card .pk{font-size:9px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--text3)}
-.proj-card .pt{font-size:16.5px;font-weight:850;letter-spacing:-.3px;margin:2px 0 6px}
-.proj-card .pd{font-size:11.5px;color:var(--text2);line-height:1.6;margin-bottom:10px}
-.proj-card .pfoot{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.pstatus{font-size:9px;font-weight:800;letter-spacing:1px;padding:3.5px 10px;border-radius:999px;text-transform:uppercase}
-.pstatus.live{background:var(--green);color:#fff;box-shadow:0 0 12px rgba(16,185,129,.45);animation:breathe 2.4s ease-in-out infinite}
-.pstatus.armed{background:var(--orange);color:#fff}
-.pstatus.scoped{background:var(--violet);color:#fff}
-@keyframes breathe{0%,100%{box-shadow:0 0 6px rgba(16,185,129,.35)}50%{box-shadow:0 0 16px rgba(16,185,129,.65)}}
-
-/* KPI hero */
-.hero-ck{
-  position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--border);
-  background:linear-gradient(160deg,var(--surface),var(--surface2));box-shadow:var(--shadow-lg);
-  padding:26px 26px 22px;margin-bottom:14px;
-}
-#aurora{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.85}
-.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.5fr 1fr;gap:22px;align-items:center}
-.hero-copy h2{margin:0 0 8px;font-size:30px;font-weight:900;letter-spacing:-1px;line-height:1.12}
-.hero-copy h2 .grad{background:linear-gradient(92deg,var(--blue) 0%,var(--violet) 55%,var(--p2) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero-copy .hsub{font-size:13px;color:var(--text2);line-height:1.75;max-width:560px;margin:0 0 14px}
-.hero-copy .hsub strong{color:var(--text)}
-.hero-pills{display:flex;gap:7px;flex-wrap:wrap}
-.hpill{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:800;letter-spacing:.6px;padding:5px 11px;border-radius:999px;text-transform:uppercase;border:1px solid var(--border2);background:var(--surface);color:var(--text2)}
-.hpill.live{border-color:var(--green);color:var(--green);background:var(--green-soft)}
-.hpill.live .d{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 1.6s infinite}
-.hpill.amber{border-color:var(--orange);color:var(--orange);background:var(--orange-soft)}
-.hpill.viol{border-color:var(--violet);color:var(--violet);background:var(--violet-soft)}
-.hero-day{display:flex;flex-direction:column;align-items:center;gap:10px;justify-self:center}
-.dayring{position:relative;width:150px;height:150px}
-.dayring .rv{font-size:40px;font-weight:900;letter-spacing:-2px}
-.dayring .rl{font-size:9px;letter-spacing:2px}
-.hero-meta{font-size:10px;color:var(--text3);font-weight:700;letter-spacing:1.2px;text-transform:uppercase;text-align:center;line-height:1.8}
-.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:10px;margin:16px 0 0;position:relative;z-index:2}
-.kpi{
-  background:color-mix(in srgb,var(--surface) 75%,transparent);backdrop-filter:blur(6px);
-  border:1px solid var(--border);border-radius:13px;padding:12px 13px;text-align:left;transition:transform .16s,box-shadow .16s;
-}
-.kpi:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-.kpi .kv{font-size:22px;font-weight:900;letter-spacing:-.6px;font-variant-numeric:tabular-nums;line-height:1.05}
-.kpi .kl{font-size:9px;font-weight:750;letter-spacing:.9px;text-transform:uppercase;color:var(--text3);margin-top:4px;line-height:1.5}
-.kpi .kd{font-size:9.5px;color:var(--text2);margin-top:2px}
-
-/* guide steps */
-.guide{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
-.gstep{display:flex;gap:10px;align-items:flex-start;background:var(--surface2);border:1px dashed var(--border2);border-radius:12px;padding:11px 13px}
-.gstep .gn{width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:11.5px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.gstep b{font-size:11.5px;display:block;margin-bottom:2px}
-.gstep span{font-size:10.5px;color:var(--text2);line-height:1.55}
-
-/* wins ticker strip */
-.wins{display:flex;gap:9px;overflow-x:auto;padding:2px 2px 8px;scrollbar-width:thin}
-.win{
-  flex:0 0 auto;display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);
-  border-left:3px solid var(--green);border-radius:11px;padding:8px 13px;font-size:11px;color:var(--text2);white-space:nowrap;box-shadow:var(--shadow);
-}
-.win b{color:var(--text)}
-.win .we{font-size:14px}
-
-/* version timeline */
-.vtl{position:relative;padding:26px 6px 6px;overflow-x:auto}
-.vtl-line{position:absolute;top:44px;left:12px;right:12px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--surface3),var(--accent));}
-.vtl-row{display:flex;gap:6px;min-width:660px;position:relative}
-.vt{flex:1;min-width:88px;position:relative;padding-top:34px;text-align:center}
-.vt::before{
-  content:"";position:absolute;top:12px;left:50%;transform:translateX(-50%);width:13px;height:13px;border-radius:50%;
-  background:var(--surface);border:3px solid var(--vc,var(--text3));box-shadow:0 0 0 4px var(--surface);
-}
-.vt.hot::before{background:var(--vc);box-shadow:0 0 0 4px var(--surface),0 0 14px var(--vc);animation:pulse 1.8s infinite}
-.vt .vv{font-size:12px;font-weight:850;color:var(--vc,var(--text))}
-.vt .vl{font-size:9px;color:var(--text3);font-weight:650;line-height:1.5;margin-top:2px;letter-spacing:.2px}
-
-/* clock strip (sync) */
-.clockstrip{display:flex;flex-direction:column;gap:14px}
-.tzrow .tzl{font-size:9.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--text3);margin-bottom:5px;display:flex;justify-content:space-between}
-.tzbar{position:relative;height:34px;border-radius:9px;background:var(--surface2);border:1px solid var(--border);overflow:hidden}
-.tzseg{position:absolute;top:0;bottom:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;letter-spacing:.5px;color:#fff;border-radius:8px;padding:0 4px;white-space:nowrap}
-.tzseg.b1{background:linear-gradient(135deg,var(--blue),var(--violet))}
-.tzseg.b2{background:linear-gradient(135deg,var(--orange),var(--pink));opacity:.92}
-.tzticks{display:flex;justify-content:space-between;font-size:8.5px;color:var(--text3);margin-top:3px;font-weight:600}
-
-/* doc shelf / status grids */
-.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px}
-.doc{display:flex;align-items:center;gap:9px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:8px 11px;transition:transform .14s}
-.doc:hover{transform:translateY(-2px)}
-.doc .led{width:9px;height:9px;border-radius:50%;flex-shrink:0;background:var(--text3)}
-.doc.ok .led{background:var(--green);box-shadow:0 0 8px var(--green)}
-.doc.warn .led{background:var(--orange);box-shadow:0 0 8px var(--orange)}
-.doc.bad .led{background:var(--red);box-shadow:0 0 8px var(--red);animation:pulse 1.4s infinite}
-.doc b{font-size:10.5px;line-height:1.35;display:block}
-.doc span{font-size:8.5px;color:var(--text3);font-weight:700;letter-spacing:.7px;text-transform:uppercase}
-
-/* severity columns */
-.sevrow{display:flex;gap:10px;align-items:flex-end;height:120px;padding:0 6px}
-.sevcol{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;justify-content:flex-end;height:100%}
-.sevbar{width:100%;max-width:84px;border-radius:9px 9px 4px 4px;position:relative;min-height:12px;transition:height 1s cubic-bezier(.2,.7,.3,1);display:flex;align-items:flex-start;justify-content:center}
-.sevbar b{color:#fff;font-size:14px;padding-top:5px}
-.sevcol .scl{font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text3)}
-
-/* meter (legacy re-skin + cockpit use) */
-.meter-row{display:flex;align-items:center;gap:10px;margin:7px 0}
-.meter-row .label{font-size:11.5px;color:var(--text2);min-width:150px;font-weight:600}
-.meter-row .bar{flex:1;height:9px;background:var(--surface3);border-radius:6px;overflow:hidden}
-.meter-row .bar>span{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--blue),var(--violet));transform-origin:left;animation:growbar 1.1s cubic-bezier(.2,.7,.3,1) both}
-@keyframes growbar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-.meter-row .val{font-size:11px;font-weight:800;min-width:44px;text-align:right;color:var(--text)}
-
-/* kanban counts */
-.kan3{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
-.kanc{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:12px 14px;border-top:3px solid var(--kc,var(--accent))}
-.kanc .kn{font-size:24px;font-weight:900;letter-spacing:-.5px}
-.kanc .kt{font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--text3);margin-top:2px}
-.kanc .ks{font-size:10.5px;color:var(--text2);margin-top:5px;line-height:1.55}
-
-/* GOAT chips */
-.goatrow{display:flex;gap:8px;flex-wrap:wrap}
-.goat{display:flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--border);border-radius:999px;padding:5px 12px 5px 5px;transition:transform .14s}
-.goat:hover{transform:translateY(-2px) scale(1.02)}
-.goat .ga{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:900;color:#fff;background:var(--gc,var(--accent))}
-.goat b{font-size:10.5px}
-.goat span{font-size:9px;color:var(--text3);margin-left:2px}
-
-/* console toggles (voice config) */
-.console{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
-.knob{background:var(--surface2);border:1px solid var(--border);border-radius:11px;padding:10px 12px}
-.knob .kk{font-size:9px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;color:var(--text3)}
-.knob .kv2{font-size:14px;font-weight:850;margin-top:3px}
-.knob .kv2.on{color:var(--green)}
-.knob .kv2.off{color:var(--text3)}
-.knob .kv2.hot{color:var(--orange)}
-
-/* ============ LEGACY CONTENT RE-SKIN ============ */
-.container{max-width:none;margin:0;padding:0}
-.card{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-  padding:16px 20px;margin-bottom:12px;box-shadow:var(--shadow);transition:border-color .15s,box-shadow .15s;position:relative;
-}
-.card:hover{border-color:var(--border2)}
-.card h3{margin:0;font-size:13.5px;font-weight:750;letter-spacing:-.1px;line-height:1.45}
-.card.collapsible>h3{cursor:pointer;padding-right:30px;user-select:none}
-.card.collapsible>h3::after{
-  content:"▾";position:absolute;right:16px;top:14px;font-size:12px;color:var(--text3);
-  transition:transform .25s;width:22px;height:22px;display:flex;align-items:center;justify-content:center;
-  border-radius:50%;background:var(--surface2);border:1px solid var(--border);
-}
-.card.collapsible:not(.is-open)>h3::after{transform:rotate(-90deg)}
-.card.collapsible>h3:hover::after{color:var(--accent);border-color:var(--accent)}
-.card .card-body{overflow:hidden;transition:max-height .42s cubic-bezier(.2,.7,.3,1),opacity .3s}
-.card.collapsible:not(.is-open) .card-body{
-  max-height:64px;opacity:.62;
-  -webkit-mask-image:linear-gradient(180deg,#000 18%,transparent 96%);mask-image:linear-gradient(180deg,#000 18%,transparent 96%);
-}
-.card.collapsible.is-open .card-body{max-height:none;opacity:1}
-.card .card-body>*:first-child{margin-top:12px}
-.card h3.accent{color:var(--accent)}.card h3.p1{color:var(--p1)}.card h3.p2{color:var(--p2)}
-.card h3.green{color:var(--green)}.card h3.red{color:var(--red)}.card h3.pink{color:var(--pink)}
-.card h3.orange{color:var(--orange)}.card h3.violet{color:var(--violet)}
-.card p,.card ul,.card ol{margin:0 0 10px;font-size:12.5px;color:var(--text2);line-height:1.7}
+.section.active{display:block;animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.section{padding-top:4px}
+.section-title{font-size:16px;font-weight:700;margin:0 0 18px;padding-bottom:10px;border-bottom:2px solid var(--accent);display:inline-block}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin-bottom:16px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 12px;font-size:13.5px;font-weight:700;letter-spacing:-.1px}
+.card h3.accent{color:var(--accent)}
+.card h3.p1{color:var(--p1)}
+.card h3.p2{color:var(--p2)}
+.card h3.green{color:var(--green)}
+.card h3.red{color:var(--red)}
+.card h3.pink{color:var(--pink)}
+.card h3.orange{color:var(--orange)}
+.card h3.violet{color:var(--violet)}
+.card p,.card ul,.card ol{margin:0 0 10px;font-size:12.5px;color:var(--text2);line-height:1.65}
 .card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
 .card ul,.card ol{padding-left:20px}
-.card li{margin-bottom:6px;line-height:1.68}
-.card li::marker{color:var(--accent)}
+.card li{margin-bottom:5px;line-height:1.6}
+.card li:last-child{margin-bottom:0}
 .card strong{color:var(--text)}
-.card code{background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:11.5px;color:var(--text)}
-.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:13px}
-.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:13px}
-.grid-2>.card,.grid-3>.card{margin-bottom:0}
-.tag{display:inline-block;padding:2.5px 10px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.4px}
+.card code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-size:11.5px;color:var(--text)}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:10.5px;font-weight:700;letter-spacing:.2px}
 .tag-green{background:var(--green-soft);color:var(--green)}
 .tag-red{background:var(--red-soft);color:var(--red)}
 .tag-orange{background:var(--orange-soft);color:var(--orange)}
 .tag-blue{background:var(--blue-soft);color:var(--blue)}
 .tag-violet{background:var(--violet-soft);color:var(--violet)}
 .tag-pink{background:var(--pink-soft);color:var(--pink)}
-.banner{display:flex;gap:14px;padding:15px 18px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);margin-bottom:12px;box-shadow:var(--shadow)}
-.banner .icon{width:42px;height:42px;flex-shrink:0;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:19px;background:var(--surface2)}
-.banner h2{margin:0 0 5px;font-size:13.5px;font-weight:800;line-height:1.4}
-.banner p{margin:0;font-size:12.5px;color:var(--text2);line-height:1.7}
-.banner.p1{background:var(--blue-soft);border-color:var(--p1)}.banner.p1 .icon{background:var(--surface);color:var(--p1)}.banner.p1 h2{color:var(--p1)}
-.banner.p2{background:var(--orange-soft);border-color:var(--p2)}.banner.p2 .icon{background:var(--surface);color:var(--p2)}.banner.p2 h2{color:var(--p2)}
-.banner.green{background:var(--green-soft);border-color:var(--green)}.banner.green .icon{background:var(--surface);color:var(--green)}.banner.green h2{color:var(--green)}
-.banner.red{background:var(--red-soft);border-color:var(--red)}.banner.red .icon{background:var(--surface);color:var(--red)}.banner.red h2{color:var(--red)}
-.banner.violet{background:var(--violet-soft);border-color:var(--violet)}.banner.violet .icon{background:var(--surface);color:var(--violet)}.banner.violet h2{color:var(--violet)}
-.banner.orange{background:var(--orange-soft);border-color:var(--orange)}.banner.orange .icon{background:var(--surface);color:var(--orange)}.banner.orange h2{color:var(--orange)}
-.table-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow)}
+.banner{display:flex;gap:14px;padding:16px 20px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);margin-bottom:14px}
+.banner .icon{width:40px;height:40px;flex-shrink:0;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;background:var(--surface2)}
+.banner h2{margin:0 0 5px;font-size:14px;font-weight:700;line-height:1.35}
+.banner p{margin:0;font-size:12.5px;color:var(--text2);line-height:1.65}
+.banner.p1{background:var(--blue-soft);border-color:var(--p1)}
+.banner.p1 .icon{background:var(--surface);color:var(--p1)}
+.banner.p1 h2{color:var(--p1)}
+.banner.p2{background:var(--orange-soft);border-color:var(--p2)}
+.banner.p2 .icon{background:var(--surface);color:var(--p2)}
+.banner.p2 h2{color:var(--p2)}
+.banner.green{background:var(--green-soft);border-color:var(--green)}
+.banner.green .icon{background:var(--surface);color:var(--green)}
+.banner.green h2{color:var(--green)}
+.banner.red{background:var(--red-soft);border-color:var(--red)}
+.banner.red .icon{background:var(--surface);color:var(--red)}
+.banner.red h2{color:var(--red)}
+.banner.violet{background:var(--violet-soft);border-color:var(--violet)}
+.banner.violet .icon{background:var(--surface);color:var(--violet)}
+.banner.violet h2{color:var(--violet)}
+.banner.orange{background:var(--orange-soft);border-color:var(--orange)}
+.banner.orange .icon{background:var(--surface);color:var(--orange)}
+.banner.orange h2{color:var(--orange)}
+.table-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border)}
 table{width:100%;border-collapse:collapse;font-size:12px}
-th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
-th{background:var(--surface2);font-weight:800;color:var(--text2);font-size:10px;text-transform:uppercase;letter-spacing:.7px;position:sticky;top:0;z-index:2}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+th{background:var(--surface2);font-weight:700;color:var(--text2);font-size:10.5px;text-transform:uppercase;letter-spacing:.5px}
 tr:last-child td{border-bottom:0}
-tbody tr{transition:background .12s}
 tr:hover td{background:var(--surface2)}
-td{line-height:1.65;color:var(--text2)}
-td strong{color:var(--text)}
-.quote{padding:11px 15px;background:var(--surface2);border-left:3px solid var(--violet);border-radius:8px;font-style:italic;font-size:12px;color:var(--text2);margin:10px 0;line-height:1.7}
-.countdown-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:14px 0}
-.countdown-tile{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;position:relative;transition:transform .15s,box-shadow .15s;box-shadow:var(--shadow)}
-.countdown-tile:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
-.countdown-tile .label{font-size:9.5px;color:var(--text3);text-transform:uppercase;letter-spacing:.8px;font-weight:800}
-.countdown-tile .value{font-size:17px;font-weight:850;margin-top:5px;letter-spacing:-.3px;line-height:1.25}
-.countdown-tile .sub{font-size:11px;color:var(--text2);margin-top:4px;line-height:1.5}
-.countdown-tile.green{border-left:3px solid var(--green)}.countdown-tile.orange{border-left:3px solid var(--orange)}
-.countdown-tile.red{border-left:3px solid var(--red)}.countdown-tile.blue{border-left:3px solid var(--blue)}
-.countdown-tile.violet{border-left:3px solid var(--violet)}
-.founder-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:11px;margin-top:14px}
-.founder-card{background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:13px 15px;box-shadow:var(--shadow);transition:transform .15s}
-.founder-card:hover{transform:translateY(-2px)}
-.founder-card .who{font-size:9.5px;color:var(--text3);text-transform:uppercase;letter-spacing:.8px;font-weight:800}
-.founder-card .name{font-size:14.5px;font-weight:800;margin-top:3px}
-.founder-card .role{font-size:11.5px;color:var(--text2);margin-top:2px}
-.founder-card .status{font-size:11.5px;margin-top:8px;color:var(--text2);line-height:1.65}
-.founder-card.frankie{border-left:3px solid var(--p2)}
-.founder-card.chitraksh{border-left:3px solid var(--p1)}
-.founder-card.claude{border-left:3px solid var(--violet)}
-.founder-card.jenkins{border-left:3px solid var(--green)}
-.hero{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 24px;margin-bottom:14px;box-shadow:var(--shadow)}
-.hero h2{margin:0 0 6px;font-size:16px;font-weight:800;letter-spacing:-.3px;line-height:1.4}
-.hero .lead{font-size:12.5px;color:var(--text2);margin:0 0 12px;line-height:1.75}
-.hero .lead p{margin:0 0 11px}
-.hero .lead p:last-child{margin-bottom:0}
-.hero .lead strong{color:var(--text)}
-.progress-wrap{margin-bottom:8px}
-.progress-label{display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:4px;color:var(--text2);gap:8px;font-weight:600}
-.progress-bar{height:8px;background:var(--surface3);border-radius:6px;overflow:hidden}
-.progress-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--blue),var(--violet))}
-.chip-row{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
-details{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:10px 13px;margin:8px 0}
-details summary{cursor:pointer;font-weight:750;font-size:12.5px;color:var(--text);list-style:none}
-details summary::-webkit-details-marker{display:none}
-details summary::before{content:"▸  ";color:var(--accent);font-weight:700}
-details[open] summary::before{content:"▾  "}
-details p,details ul,details ol,details li{font-size:12px}
-.countdown-pill{display:inline-flex;align-items:center;gap:6px;background:var(--red-soft);color:var(--red);font-weight:800;font-size:11px;padding:4px 11px;border-radius:999px;border:1px solid var(--red)}
+.quote{padding:10px 14px;background:var(--surface2);border-left:3px solid var(--accent);border-radius:6px;font-style:italic;font-size:12px;color:var(--text2);margin:10px 0}
+.countdown-pill{display:inline-flex;align-items:center;gap:6px;background:var(--red-soft);color:var(--red);font-weight:700;font-size:11px;padding:4px 10px;border-radius:999px;border:1px solid var(--red)}
 .countdown-pill .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 1.4s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-
-/* ============ MILESTONE BANNER → LATEST SWEEP STRIP ============ */
-.milestone-banner{
-  background:linear-gradient(135deg,var(--green-soft),var(--blue-soft));
-  border:1px solid var(--green);border-radius:16px;
-  padding:13px 18px 14px;margin-bottom:16px;box-shadow:var(--shadow);position:relative;overflow:hidden;
-}
-.milestone-banner::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),var(--blue) 38%,var(--violet) 62%,var(--p2))}
-.mb-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
-.mb-pills{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
-.milestone-pill{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:800;color:#fff;background:var(--green);letter-spacing:.8px;padding:4px 10px;border-radius:999px;text-transform:uppercase}
-.milestone-pill.alt{background:var(--blue)}.milestone-pill.warm{background:var(--orange)}.milestone-pill.violet{background:var(--violet)}
-.milestone-pill .dot{width:5px;height:5px;border-radius:50%;background:#fff;animation:pulse 1.6s ease-in-out infinite}
-.mb-toggle{border:1px solid var(--green);background:color-mix(in srgb,var(--surface) 70%,transparent);color:var(--green);font:inherit;font-size:10px;font-weight:800;cursor:pointer;padding:5px 12px;border-radius:999px;transition:all .15s;display:inline-flex;align-items:center;gap:5px}
-.mb-toggle:hover{background:var(--green);color:#fff}
-.mb-toggle .chev{transition:transform .2s}
-.milestone-banner.is-collapsed .mb-toggle .chev{transform:rotate(-90deg)}
-.milestone-banner h1{margin:0 0 6px;font-size:15.5px;font-weight:800;letter-spacing:-.3px;color:var(--text);line-height:1.45}
-.milestone-banner .grad{background:linear-gradient(90deg,var(--green),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
-.milestone-banner .subhead{margin:0 0 10px;font-size:12px;color:var(--text2);line-height:1.7;max-width:880px}
-.milestone-banner.is-collapsed .subhead{display:none}
-.milestone-banner.is-collapsed h1{margin-bottom:0;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.mb-golden{display:grid;grid-template-columns:1.618fr 1fr;gap:12px;align-items:start}
-.mb-golden.is-hidden{display:none}
-.mb-left{background:color-mix(in srgb,var(--surface) 62%,transparent);border:1px dashed var(--green);border-radius:11px;padding:12px 15px}
-.mb-left .wn-head{font-size:9.5px;font-weight:800;color:var(--green);letter-spacing:1.1px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:5px}
-.mb-left ul{margin:0;padding-left:18px;font-size:12px;color:var(--text2)}
-.mb-left li{margin-bottom:7px;line-height:1.7}
-.mb-left li:last-child{margin-bottom:0}
-.mb-left strong{color:var(--text)}
-.mb-left code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-size:11px;color:var(--text)}
-.mb-right{display:flex;flex-direction:column;gap:6px}
-.mb-state-head{font-size:9.5px;font-weight:800;color:var(--blue);letter-spacing:1.1px;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:5px}
-.mb-chip{display:flex;align-items:flex-start;gap:9px;background:color-mix(in srgb,var(--surface) 66%,transparent);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:9px;padding:8px 11px;font-size:11.5px;color:var(--text2);line-height:1.6}
-.mb-chip strong{color:var(--text);font-weight:750}
-.mb-chip.green{border-left-color:var(--green)}.mb-chip.orange{border-left-color:var(--orange)}
-.mb-chip.violet{border-left-color:var(--violet)}.mb-chip.red{border-left-color:var(--red)}.mb-chip.warm{border-left-color:var(--p2)}
-.mb-chip .icn{font-size:13px;line-height:1.2;flex-shrink:0}
-.mb-deep{margin-top:12px;background:color-mix(in srgb,var(--surface) 55%,transparent);border:1px solid var(--border);border-radius:11px;padding:10px 13px}
-.mb-deep summary{cursor:pointer;font-weight:800;font-size:11px;color:var(--text);list-style:none;letter-spacing:.5px;text-transform:uppercase;display:inline-flex;align-items:center;gap:5px}
-.mb-deep summary::-webkit-details-marker{display:none}
-.mb-deep summary::before{content:"▸";color:var(--green);font-weight:700;font-size:10px}
-.mb-deep[open] summary::before{content:"▾"}
-.mb-deep .deep-body{margin-top:8px;font-size:12.5px;color:var(--text2);line-height:1.6}
-.mb-deep .deep-body strong{color:var(--text)}
-.mb-deep .deep-body code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-size:11.5px;color:var(--text)}
-.mb-deep.is-hidden{display:none}
-
-/* ============ TIMELINE RAIL (CSS-only on legacy lists) ============ */
-#timeline .card ul{list-style:none;padding-left:24px;position:relative}
-#timeline .card ul::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;border-radius:2px;background:linear-gradient(180deg,var(--accent),var(--violet),var(--surface3))}
-#timeline .card ul li{position:relative;margin-bottom:13px;padding-left:4px}
-#timeline .card ul li::before{
-  content:"";position:absolute;left:-22.5px;top:7px;width:9px;height:9px;border-radius:50%;
-  background:var(--surface);border:2.5px solid var(--accent);box-shadow:0 0 0 3px var(--surface);
-}
-#timeline .card ul li:hover::before{background:var(--accent);box-shadow:0 0 0 3px var(--surface),0 0 10px var(--accent)}
-
-/* tasks: checkbox feel on lists */
-#tasks .card ul{list-style:none;padding-left:6px}
-#tasks .card ul li{position:relative;padding-left:26px;margin-bottom:9px}
-#tasks .card ul li::before{
-  content:"";position:absolute;left:2px;top:5px;width:13px;height:13px;border-radius:4.5px;
-  border:1.6px solid var(--border2);background:var(--surface2);
-}
-#tasks .card ul li:hover::before{border-color:var(--accent)}
-
-/* footer */
-.footer{text-align:center;padding:26px 20px;color:var(--text3);font-size:11px;border-top:1px solid var(--border);margin-top:34px;line-height:2}
-.footer .heart{color:var(--red)}
-
-/* FAB */
-#toTop{
-  position:fixed;right:18px;bottom:18px;z-index:80;width:40px;height:40px;border-radius:50%;
-  border:1px solid var(--border2);background:var(--surface);color:var(--text);cursor:pointer;font-size:15px;
-  box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;transform:translateY(8px);
-}
-#toTop.show{opacity:1;pointer-events:auto;transform:none}
-#toTop:hover{border-color:var(--accent);color:var(--accent)}
-
-/* search result pill */
-#searchInfo{
-  position:fixed;left:50%;transform:translateX(-50%);bottom:18px;z-index:80;display:none;
-  background:var(--text);color:var(--bg);font-size:11.5px;font-weight:700;padding:8px 16px;border-radius:999px;box-shadow:var(--shadow-lg);
-}
-body.searching #searchInfo{display:block}
-body.searching .ck-viz-hide{display:none}
-
-/* reveal-on-scroll */
-.rv{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.3,1)}
-.rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  .rv{opacity:1;transform:none}
-}
-
-/* scrollbars */
-*::-webkit-scrollbar{height:9px;width:9px}
-*::-webkit-scrollbar-thumb{background:var(--surface3);border-radius:9px;border:2px solid var(--bg)}
-*::-webkit-scrollbar-thumb:hover{background:var(--border2)}
-
-/* ============ RESPONSIVE ============ */
-@media(max-width:1060px){
-  .hero-inner{grid-template-columns:1fr}
-  .hero-day{display:none}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.progress-wrap{margin-bottom:8px}
+.progress-label{display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:4px;color:var(--text2);gap:8px}
+.progress-bar{height:6px;background:var(--surface3);border-radius:4px;overflow:hidden}
+.progress-fill{height:100%;border-radius:4px;background:var(--accent)}
+.meter-row{display:flex;align-items:center;gap:10px;margin:5px 0}
+.meter-row .label{font-size:11.5px;color:var(--text2);min-width:150px}
+.meter-row .bar{flex:1;height:7px;background:var(--surface3);border-radius:4px;overflow:hidden}
+.meter-row .bar>span{display:block;height:100%;border-radius:4px}
+.meter-row .val{font-size:11px;font-weight:700;min-width:44px;text-align:right;color:var(--text2)}
+.chip-row{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+details{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin:8px 0}
+details summary{cursor:pointer;font-weight:700;font-size:12.5px;color:var(--text);list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"\25B8  ";color:var(--accent);font-weight:700}
+details[open] summary::before{content:"\25BE  "}
+details p,details ul,details ol,details li{font-size:12px}
+.footer{text-align:center;padding:20px;color:var(--text3);font-size:11px;border-top:1px solid var(--border);margin-top:30px}
+/* Nav-tab icons & dividers */
+.nav-tab .nt-ico{margin-right:5px;opacity:.85}
+.nav-tab.active .nt-ico{opacity:1}
+.nav-tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.theme-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.mb-toggle:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+/* Smooth scroll for whole page */
+html{scroll-behavior:smooth}
+@media(max-width:880px){
   .mb-golden{grid-template-columns:1fr}
 }
-@media(max-width:900px){
-  .app-shell{display:block}
-  .sidebar{
-    position:sticky;top:57px;height:auto;display:flex;gap:6px;overflow-x:auto;padding:8px 12px;z-index:60;
-    background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);
-  }
-  .sb-group{display:flex;gap:6px;margin:0}
-  .sb-kicker,.sb-foot{display:none}
-  .sb-item{white-space:nowrap;padding:6px 11px;border:1px solid var(--border);background:var(--surface);flex-shrink:0}
-  .sb-item.active::before{display:none}
-  .main{padding:16px 14px 60px}
-  .brand .sub{display:none}
-  .searchwrap{flex:1}
-  .hero-copy h2{font-size:23px}
-  .ck-title{font-size:20px}
+@media(max-width:768px){
+  .container{padding:16px}
+  .milestone-banner h1{font-size:17px}
+  .milestone-banner{padding:11px 14px}
   .grid-2,.grid-3,.countdown-strip,.founder-strip{grid-template-columns:1fr}
+  .nav-tabs{position:sticky;top:0;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch}
+  .nav-tab{font-size:11.5px;padding:7px 10px;flex-shrink:0}
 }
-
 </style>
 </head>
 <body>
@@ -611,65 +302,15 @@ body.searching .ck-viz-hide{display:none}
   <div class="brand">
     <div class="brand-mark">O</div>
     <div class="copy">
-      <div class="name">Oraya Labs <span class="lite">Mission Control</span></div>
-      <div class="sub"><strong>v13.0</strong> · data through May 29 2026 · Day 138 · Week 20 · Outbound v128 + Inbound v15 LIVE</div>
+      <div class="name">Oraya Labs <span style="font-weight:500;color:var(--text3);font-size:12px;margin-left:6px">Intelligence Dashboard</span></div>
+      <div class="sub"><strong>v12.0</strong> &middot; May 28 &middot; Day 138 &middot; Outbound v128 + Inbound v15 LIVE &middot; opener reframe shipped &middot; 1st dealership appt booked &middot; Real Estate P3 scoped &middot; Lead-Gen lane wired</div>
     </div>
   </div>
-  <div class="tb-spacer"></div>
-  <div class="searchwrap">
-    <span class="si">🔎</span>
-    <input id="globalSearch" type="search" placeholder="Search everything — try &quot;EIN&quot;, &quot;Art Yano&quot;, &quot;v128&quot;…  ( / )" autocomplete="off" spellcheck="false">
-    <button id="searchClear" title="Clear search">✕</button>
-  </div>
-  <a href="INSURANCE_LEADGEN_DASHBOARD.html" class="tb-btn violet" title="Open the Insurance Lead-Gen Dashboard" target="_blank" rel="noopener">📡 Lead-Gen Ops →</a>
-  <button class="tb-btn" id="themeToggle" title="Toggle theme">☾ Dark</button>
+  <a href="INSURANCE_LEADGEN_DASHBOARD.html" class="theme-toggle" style="text-decoration:none;border-color:var(--violet);color:var(--violet);font-weight:700" title="Open the Insurance Lead-Gen Dashboard in a new tab" target="_blank" rel="noopener">&#128202; Lead-Gen Dashboard &rarr;</a>
+  <button class="theme-toggle" id="themeToggle" title="Toggle theme">&#9790; Dark</button>
 </div>
-<div id="searchInfo"></div>
-<button id="toTop" title="Back to top">↑</button>
 
-<div class="app-shell">
-
-<aside class="sidebar" aria-label="Dashboard navigation">
-  <div class="sb-group">
-    <div class="sb-kicker">Mission</div>
-    <button class="sb-item active" data-tab="overview"><span class="sb-ico">🛰</span><span class="sb-lbl">Mission Control</span><span class="sb-badge live">LIVE</span></button>
-  </div>
-  <div class="sb-group">
-    <div class="sb-kicker">Projects</div>
-    <button class="sb-item" data-tab="voice-ai"><span class="sb-ico">🎤</span><span class="sb-lbl">Voice AI · P1</span><span class="sb-badge live">v128</span></button>
-    <button class="sb-item" data-tab="insurance"><span class="sb-ico">🛡️</span><span class="sb-lbl">Insurance · P2</span><span class="sb-badge live">LIVE</span></button>
-    <button class="sb-item" data-tab="leadgen"><span class="sb-ico">📡</span><span class="sb-lbl">Lead-Gen funnel</span><span class="sb-badge warn">BAKE-OFF</span></button>
-    <button class="sb-item" data-tab="realestate"><span class="sb-ico">🏘️</span><span class="sb-lbl">Real Estate · P3</span><span class="sb-badge viol">SCOPED</span></button>
-  </div>
-  <div class="sb-group">
-    <div class="sb-kicker">Operations</div>
-    <button class="sb-item" data-tab="tasks"><span class="sb-ico">✅</span><span class="sb-lbl">Daily Tasks</span><span class="sb-badge info">30 TODAY</span></button>
-    <button class="sb-item" data-tab="sync"><span class="sb-ico">♻️</span><span class="sb-lbl">Daily Sync</span><span class="sb-badge">4:30 AM</span></button>
-    <button class="sb-item" data-tab="recs"><span class="sb-ico">🎯</span><span class="sb-lbl">Next Plays</span><span class="sb-badge info">10</span></button>
-    <button class="sb-item" data-tab="risks"><span class="sb-ico">⚠️</span><span class="sb-lbl">Risk Register</span><span class="sb-badge warn">6 HIGH</span></button>
-  </div>
-  <div class="sb-group">
-    <div class="sb-kicker">Governance</div>
-    <button class="sb-item" data-tab="legal"><span class="sb-ico">⚖️</span><span class="sb-lbl">Legal Stack</span><span class="sb-badge">8 LAWS</span></button>
-    <button class="sb-item" data-tab="website"><span class="sb-ico">🌐</span><span class="sb-lbl">Website</span><span class="sb-badge live">7 LIVE</span></button>
-    <button class="sb-item" data-tab="offer"><span class="sb-ico">✉️</span><span class="sb-lbl">Offer Letter</span><span class="sb-badge">PILOT</span></button>
-  </div>
-  <div class="sb-group">
-    <div class="sb-kicker">Memory</div>
-    <button class="sb-item" data-tab="timeline"><span class="sb-ico">🧭</span><span class="sb-lbl">Timeline</span><span class="sb-badge">73</span></button>
-    <button class="sb-item" data-tab="meetings"><span class="sb-ico">🗓️</span><span class="sb-lbl">Meetings</span><span class="sb-badge">34</span></button>
-    <button class="sb-item" data-tab="psych"><span class="sb-ico">🧠</span><span class="sb-lbl">Founder Profiles</span><span class="sb-badge">DUO</span></button>
-    <button class="sb-item" data-tab="brief"><span class="sb-ico">⚡</span><span class="sb-lbl">Master Brief</span><span class="sb-badge">90 SEC</span></button>
-  </div>
-  <div class="sb-foot">
-    <strong>v13.0 · Mission Control</strong><br>
-    Data through May 29 2026.<br>
-    Every v12.0 record preserved — nothing summarized away.<br><br>
-    <kbd>/</kbd> search · <kbd>←</kbd><kbd>→</kbd> switch tabs
-  </div>
-</aside>
-
-<main class="main">
+<div class="container">
 
 <div class="milestone-banner" id="milestoneBanner">
   <div class="mb-head">
@@ -766,133 +407,26 @@ body.searching .ck-viz-hide{display:none}
   </details>
 </div>
 
-<div class="section active" id="overview">
-<div class="ck" data-sec="overview">
-  <div class="hero-ck rv">
-    <canvas id="aurora"></canvas>
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <h2>The whole company.<br><span class="grad">One screen. Zero guesswork.</span></h2>
-        <p class="hsub"><strong>Oraya Labs is a two-founder, AI-only company.</strong> <strong>Frankie</strong> (CEO · California) sells, closes and carries the licenses. <strong>Chitraksh</strong> (CTO/CLO · India) builds the agents, the pipelines and the legal stack. <strong>Claude&nbsp;HQ</strong> is the third teammate — it drafts, patches, audits and updates this very dashboard. Everything below is the live state of that machine: what is <strong>running</strong>, what is <strong>blocked</strong>, and what happens <strong>next</strong>.</p>
-        <div class="hero-pills">
-          <span class="hpill live"><span class="d"></span> Voice stack LIVE end-to-end</span>
-          <span class="hpill amber">⏳ EIN → A2P is the one blocker</span>
-          <span class="hpill viol">🏘 P3 Real Estate scoped</span>
-        </div>
-      </div>
-      <div class="hero-day">
-        <div class="dayring ringbox" style="width:150px;height:150px">
-          <svg class="ring" width="150" height="150" viewBox="0 0 150 150" data-pct="38">
-            <circle class="track" cx="75" cy="75" r="66" stroke-width="9"></circle>
-            <circle class="arc" cx="75" cy="75" r="66" stroke-width="9" stroke="url(#dayGrad)"></circle>
-            <defs><linearGradient id="dayGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#2563eb"/><stop offset="60%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#f59e0b"/>
-            </linearGradient></defs>
-          </svg>
-          <div class="ringlbl"><span class="rv" data-count="138">0</span><span class="rl">DAY OF OPERATION</span></div>
-        </div>
-        <div class="hero-meta">WEEK 20 · OPERATION<br>INSURANCE PIVOT</div>
-      </div>
-    </div>
-    <div class="kpi-grid">
-      <div class="kpi"><div class="kv" style="color:var(--green)" data-count="2">0</div><div class="kl">Voice agents LIVE</div><div class="kd">outbound v128 · inbound v15</div></div>
-      <div class="kpi"><div class="kv" style="color:var(--blue)" data-count="34">0</div><div class="kl">Founder meetings logged</div><div class="kd">longest: 187 min</div></div>
-      <div class="kpi"><div class="kv" style="color:var(--violet)" data-count="132">0</div><div class="kl">Homeowners scored</div><div class="kd">Lead Recovery Matrix</div></div>
-      <div class="kpi"><div class="kv" style="color:var(--orange)" data-count="3961">0</div><div class="kl">Layoff rows pulled</div><div class="kd">WARN · CA TX NV ID</div></div>
-      <div class="kpi"><div class="kv" style="color:var(--gold)" data-count="3410" data-prefix="$">0</div><div class="kl">Best revenue week</div><div class="kd">week of May 9</div></div>
-      <div class="kpi"><div class="kv" style="color:var(--pink)" data-count="4">0</div><div class="kl">States licensed</div><div class="kd">CA · TX · NV · ID</div></div>
-    </div>
-  </div>
-
-  <div class="proj-grid">
-    <div class="proj-card rv" style="--pc:var(--blue)">
-      <div class="pk">PROJECT P1 · VOICE AI</div>
-      <div class="pt">🎤 Maya, the AI closer</div>
-      <div class="pd">AI voice agents that call leads, handle objections with a 6-GOAT sales script, book the appointment and run the whole follow-up backend on their own.</div>
-      <div class="pfoot">
-        <span class="pstatus live">● LIVE</span>
-        <div class="ringbox" style="width:54px;height:54px"><svg class="ring" width="54" height="54" viewBox="0 0 54 54" data-pct="90"><circle class="track" cx="27" cy="27" r="22" stroke-width="5"></circle><circle class="arc" cx="27" cy="27" r="22" stroke-width="5" stroke="var(--blue)"></circle></svg><div class="ringlbl"><span class="rv" style="font-size:11px">90%</span></div></div>
-      </div>
-    </div>
-    <div class="proj-card rv" style="--pc:var(--orange)">
-      <div class="pk">PROJECT P2 · INSURANCE</div>
-      <div class="pt">🛡️ Mortgage-protection engine</div>
-      <div class="pd">Find homeowners at a trigger moment, reach out compliantly, let Maya qualify them, and Frankie closes the policy. Backend verified on real calls — waiting on one EIN.</div>
-      <div class="pfoot">
-        <span class="pstatus armed">⏳ ARMED — EIN GATE</span>
-        <div class="ringbox" style="width:54px;height:54px"><svg class="ring" width="54" height="54" viewBox="0 0 54 54" data-pct="72"><circle class="track" cx="27" cy="27" r="22" stroke-width="5"></circle><circle class="arc" cx="27" cy="27" r="22" stroke-width="5" stroke="var(--orange)"></circle></svg><div class="ringlbl"><span class="rv" style="font-size:11px">72%</span></div></div>
-      </div>
-    </div>
-    <div class="proj-card rv" style="--pc:var(--violet)">
-      <div class="pk">PROJECT P3 · REAL ESTATE</div>
-      <div class="pt">🏘️ Investor-flip wholesale</div>
-      <div class="pd">Off-market deals blasted to 50+ cash investors with instant underwriting. $10K–$50K spread per close. Art Yano + Mom are the human channels. Starts after P2's first dollar.</div>
-      <div class="pfoot">
-        <span class="pstatus scoped">◆ SCOPED</span>
-        <div class="ringbox" style="width:54px;height:54px"><svg class="ring" width="54" height="54" viewBox="0 0 54 54" data-pct="25"><circle class="track" cx="27" cy="27" r="22" stroke-width="5"></circle><circle class="arc" cx="27" cy="27" r="22" stroke-width="5" stroke="var(--violet)"></circle></svg><div class="ringlbl"><span class="rv" style="font-size:11px">25%</span></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ck-panel glow rv">
-    <h4>⚙️ THE MACHINE — how Oraya turns data into revenue</h4>
-    <p class="ph">Follow the conveyor left → right. Green = running today · Amber = built &amp; waiting · Red = blocked · Grey = designed, not started.</p>
-    <div class="flow">
-      <div class="fnode live"><span class="fs">LIVE</span><div class="fn">1 · Trigger data</div><div class="fd">WARN layoffs + ATTOM new-mortgage pulls</div></div>
-      <div class="fnode cfg"><span class="fs">BAKE-OFF</span><div class="fn">2 · Enrichment</div><div class="fd">$60 test: ATTOM vs BatchData vs PropertyRadar</div></div>
-      <div class="fnode blk"><span class="fs">EIN GATE</span><div class="fn">3 · Outreach</div><div class="fd">mail + email + SMS — waits on EIN → A2P</div></div>
-      <div class="fnode off"><span class="fs">DESIGNED</span><div class="fn">4 · Opt-in capture</div><div class="fd">TCPA consent w/ TrustedForm certs</div></div>
-      <div class="fnode live"><span class="fs">LIVE</span><div class="fn">5 · Voice qualifier</div><div class="fd">Maya calls · v128 out / v15 in</div></div>
-      <div class="fnode live"><span class="fs">LIVE</span><div class="fn">6 · Post-call backend</div><div class="fd">calendar + email + SMS + DNC + logs</div></div>
-      <div class="fnode live"><span class="fs">LIVE</span><div class="fn">7 · Human close</div><div class="fd">Frankie · CA lic #4276736</div></div>
-      <div class="fnode cfg"><span class="fs">RAMPING</span><div class="fn">8 · Cash</div><div class="fd">$3,300 first advance · $3,410 best week</div></div>
-    </div>
-  </div>
-
-  <div class="ck-cols">
-    <div class="ck-panel rv">
-      <h4>🔓 WHAT UNBLOCKS EVERYTHING</h4>
-      <p class="ph">One number is holding the gate: the IRS EIN. The moment it lands, the chain fires left → right.</p>
-      <div class="chain">
-        <div class="cnode red"><b>EIN from IRS</b><span>BLOCKED · mail + phone rotation</span></div>
-        <span class="clink">→</span>
-        <div class="cnode amber"><b>A2P brand + campaign</b><span>PRE-BUILT · submits same day</span></div>
-        <span class="clink">→</span>
-        <div class="cnode amber"><b>SMS / voice at scale</b><span>2 days – 3 weeks regulator</span></div>
-        <span class="clink">→</span>
-        <div class="cnode go"><b>Revenue engine ON</b><span>full-funnel outreach</span></div>
-      </div>
-    </div>
-    <div class="ck-panel rv">
-      <h4>🧭 NEW HERE? READ THE DASHBOARD IN 3 MOVES</h4>
-      <div class="guide" style="grid-template-columns:1fr">
-        <div class="gstep"><div class="gn">1</div><div><b>Look at The Machine above.</b><span> Green is alive, red is blocked. That is the company in one glance.</span></div></div>
-        <div class="gstep"><div class="gn">2</div><div><b>Open ✅ Daily Tasks.</b><span> Who does what today — Frankie, Chitraksh and Claude each have a lane.</span></div></div>
-        <div class="gstep"><div class="gn">3</div><div><b>Need depth? Click any card title.</b><span> Every detail ever logged is still here, folded neatly — nothing was deleted. <kbd>/</kbd> searches everything.</span></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ck-panel rv">
-    <h4>🏆 LATEST WINS — scroll the trophy shelf</h4>
-    <div class="wins">
-      <div class="win"><span class="we">🏚️</span><div><b>1st dealership appt booked</b> · Envision Honda Milpitas · May 28 1 PM</div></div>
-      <div class="win"><span class="we">📞</span><div><b>Backend verified on a real call</b> · calendar + email + SMS + DNC, end-to-end</div></div>
-      <div class="win"><span class="we">🎤</span><div><b>Opener reframe LIVE (v128)</b> · leads with the property flag, not the pitch</div></div>
-      <div class="win"><span class="we">💵</span><div><b>$3,300 advance closed</b> · George Morrison · Baltimore Life</div></div>
-      <div class="win"><span class="we">👻</span><div><b>Voice “creature” exorcised</b> · “It’s 100% better.” — Frankie</div></div>
-      <div class="win"><span class="we">♻️</span><div><b>“In Sync” cadence locked</b> · 4:30 AM fixed + floating exec block</div></div>
-      <div class="win"><span class="we">🏘️</span><div><b>P3 scoped end-to-end</b> · “good for the rest of the year, bro.”</div></div>
-    </div>
-  </div>
-
-  <div class="ck-controls">
-    <button class="x-all">▾ Expand all records</button>
-    <span class="ck-count">Below: the full Day-138 narrative — 4 deep records, preserved word-for-word. Click any title to unfold.</span>
-  </div>
+<div class="nav-tabs" id="navTabs" role="tablist" aria-label="Dashboard sections">
+  <button class="nav-tab active" data-tab="overview" role="tab"><span class="nt-ico">&#9678;</span>Overview</button>
+  <button class="nav-tab" data-tab="voice-ai" role="tab"><span class="nt-ico">&#127908;</span>Voice AI</button>
+  <button class="nav-tab" data-tab="insurance" role="tab"><span class="nt-ico">&#127968;</span>Insurance</button>
+  <button class="nav-tab" data-tab="realestate" role="tab"><span class="nt-ico">&#127960;</span>Real Estate</button>
+  <button class="nav-tab" data-tab="leadgen" role="tab"><span class="nt-ico">&#128202;</span>Lead-Gen</button>
+  <button class="nav-tab" data-tab="sync" role="tab"><span class="nt-ico">&#9851;</span>Sync</button>
+  <button class="nav-tab" data-tab="legal" role="tab"><span class="nt-ico">&#9878;</span>Legal</button>
+  <button class="nav-tab" data-tab="risks" role="tab"><span class="nt-ico">&#9888;</span>Risks</button>
+  <button class="nav-tab" data-tab="recs" role="tab"><span class="nt-ico">&#9889;</span>Recs</button>
+  <button class="nav-tab" data-tab="timeline" role="tab"><span class="nt-ico">&#128467;</span>Timeline</button>
+  <button class="nav-tab" data-tab="meetings" role="tab"><span class="nt-ico">&#128172;</span>Meetings</button>
+  <button class="nav-tab" data-tab="psych" role="tab"><span class="nt-ico">&#129504;</span>Psych</button>
+  <button class="nav-tab" data-tab="offer" role="tab"><span class="nt-ico">&#128196;</span>Offer</button>
+  <button class="nav-tab" data-tab="website" role="tab"><span class="nt-ico">&#127760;</span>Website</button>
+  <button class="nav-tab" data-tab="tasks" role="tab"><span class="nt-ico">&#9989;</span>Tasks</button>
+  <button class="nav-tab" data-tab="brief" role="tab"><span class="nt-ico">&#128218;</span>Brief</button>
 </div>
-<div class="section-title">Original Day-138 narrative · Week 20 · preserved verbatim</div>
 
+<div class="section active" id="overview">
   <div class="hero">
     <h2>Operation Insurance Pivot &middot; Week 20 &middot; Day 138 &middot; May 28 2026 <span class="countdown-pill"><span class="pulse"></span>OUTBOUND v128 + INBOUND v15 LIVE &middot; OPENER REFRAME SHIPPED &middot; 1st DEALERSHIP APPT BOOKED &middot; REAL ESTATE P3 SCOPED &middot; LEAD-GEN LANE WIRED</span></h2>
     <div class="lead">
@@ -1135,56 +669,6 @@ body.searching .ck-viz-hide{display:none}
 </div>
 
 <div class="section" id="realestate">
-<div class="ck" data-sec="realestate">
-  <div class="ck-head">
-    <div class="ck-ico">🏘️</div>
-    <div class="ck-head-copy">
-      <div class="ck-kicker">PROJECT P3 · SCOPED MAY 27-28 · <span style="color:var(--violet);font-weight:800">STARTS AFTER P2’s FIRST DOLLAR</span></div>
-      <h2 class="ck-title">Real Estate — <span class="grad">the $10K–$50K-per-deal machine</span></h2>
-      <p class="ck-plain"><strong>Plain English:</strong> a seller gives us one month to sell their house off-market. Our system instantly packages the deal — comparable sales, repair estimate, resale value, urgency timer — and blasts it to 50+ cash investors at once. First investor to say yes wins; Oraya keeps a $10K–$50K spread. Art Yano (broker) and Frankie’s mom (agent, retiring) are the human channels.</p>
-    </div>
-    <div class="ck-stats">
-      <div class="stat gold"><div class="sv">$10–50K</div><div class="sl">Spread per close</div></div>
-      <div class="stat violet"><div class="sv" data-count="50" data-suffix="+">0</div><div class="sl">Investors per blast</div></div>
-      <div class="stat blue"><div class="sv">99%</div><div class="sl">Investor buyers</div></div>
-      <div class="stat orange"><div class="sv" data-count="4">0</div><div class="sl">Gates to launch</div></div>
-    </div>
-  </div>
-
-  <div class="ck-panel glow rv">
-    <h4>⚡ THE DEAL CONVEYOR — contract in, spread out</h4>
-    <div class="flow">
-      <div class="fnode cfg"><span class="fs">HUMAN</span><div class="fn">1 · Seller signs</div><div class="fd">“give me one month — no sale, no harm”</div></div>
-      <div class="fnode cfg"><span class="fs">AUTO</span><div class="fn">2 · Underwriting pack</div><div class="fd">comps 1-2 mi · rehab est. · ARV · DOM · GPS · photos</div></div>
-      <div class="fnode cfg"><span class="fs">AUTO</span><div class="fn">3 · Blast 50+ investors</div><div class="fd">one screen · urgency countdown</div></div>
-      <div class="fnode cfg"><span class="fs">RACE</span><div class="fn">4 · First yes locks it</div><div class="fd">investors have cash + crews, not deal-flow</div></div>
-      <div class="fnode live"><span class="fs">MOAT</span><div class="fn">5 · Oraya spread</div><div class="fd">$10K–$50K per close · legal lien protects it</div></div>
-    </div>
-    <p class="ph" style="margin:8px 0 0">Anti-back-channel armor: contract + first-up right-of-action / lien <em>before</em> any address goes out — investors are “a shady cohort by default”.</p>
-  </div>
-
-  <div class="ck-cols">
-    <div class="ck-panel rv">
-      <h4>👥 THE HUMAN CHANNELS</h4>
-      <div class="kan3" style="grid-template-columns:1fr 1fr">
-        <div class="kanc" style="--kc:var(--violet)"><div class="kn">🤝</div><div class="kt">Art Yano</div><div class="ks">CA broker · property-mgmt family · auctions flips at $10–50K/deal · timing: needs a system while caring for his mother</div></div>
-        <div class="kanc" style="--kc:var(--pink)"><div class="kn">👩‍💼</div><div class="kt">Frankie’s Mom</div><div class="ks">licensed CA agent + broker · retiring · wants the seat next to Art · P3 doubles as her post-retirement setup</div></div>
-      </div>
-    </div>
-    <div class="ck-panel rv">
-      <h4>📈 UNIT ECONOMICS — Frankie’s running numbers</h4>
-      <div class="meter-row"><span class="label">Art alone · 2-3 houses/mo</span><div class="bar"><span style="width:30%"></span></div><span class="val">$20–150K</span></div>
-      <div class="meter-row"><span class="label">With the system · 5-10/mo</span><div class="bar"><span style="width:100%;background:linear-gradient(90deg,var(--violet),var(--pink))"></span></div><span class="val">2-3× that</span></div>
-      <p class="ph" style="margin:8px 0 0">Rate-limit is <strong>contract velocity, not buyer velocity</strong> — investors always say yes to clean underwriting. Long-arc moat: hedge-fund-grade ZIP-level signals.</p>
-    </div>
-  </div>
-
-  <div class="ck-controls">
-    <button class="x-all">▾ Expand all records</button>
-    <span class="ck-count">10 records below — channels, build steps, adversarial protection, sequencing gates, Frankie’s master-vision quote.</span>
-  </div>
-</div>
-
   <h2 class="section-title">Real Estate &middot; P3 &middot; Investor-Flip Wholesale Lane &middot; Art Yano + Mom (scoped May 27-28)</h2>
 
   <div class="banner violet">
@@ -1284,61 +768,6 @@ body.searching .ck-viz-hide{display:none}
 </div>
 
 <div class="section" id="leadgen">
-<div class="ck" data-sec="leadgen">
-  <div class="ck-head">
-    <div class="ck-ico">📡</div>
-    <div class="ck-head-copy">
-      <div class="ck-kicker">P2 TOP-OF-FUNNEL · <span style="color:var(--orange);font-weight:800">$60 BAKE-OFF QUEUED</span></div>
-      <h2 class="ck-title">Lead-Gen — <span class="grad">where tomorrow’s customers come from</span></h2>
-      <p class="ck-plain"><strong>Plain English:</strong> we find people who just took on a mortgage (the moment they most need protection), buy their contact info from data providers, and feed them into Maya’s funnel. Before spending real money we run a $60 taste-test across three providers and scale whichever wins. Texas first — California’s privacy laws make its data unsellable.</p>
-    </div>
-    <div class="ck-stats">
-      <div class="stat orange"><div class="sv" data-count="60" data-prefix="$">0</div><div class="sl">Bake-off budget</div></div>
-      <div class="stat green"><div class="sv" data-count="3">0</div><div class="sl">Providers wired</div></div>
-      <div class="stat blue"><div class="sv">TX</div><div class="sl">First market</div></div>
-      <div class="stat violet"><div class="sv">3–5×</div><div class="sl">Homeowner edge</div></div>
-    </div>
-  </div>
-
-  <div class="ck-panel glow rv">
-    <h4>🎲 THE FUNNEL MAP — live state of every stage (May 28)</h4>
-    <div class="flow">
-      <div class="fnode live"><span class="fs">LIVE</span><div class="fn">Trigger data</div><div class="fd">WARN ✓ · ATTOM ✓ · FCRA queued</div></div>
-      <div class="fnode cfg"><span class="fs">PENDING</span><div class="fn">Enrichment</div><div class="fd">bake-off decides the winner</div></div>
-      <div class="fnode off"><span class="fs">DESIGNED</span><div class="fn">Outreach</div><div class="fd">Lob mail + Smartlead email</div></div>
-      <div class="fnode off"><span class="fs">DESIGNED</span><div class="fn">Opt-in</div><div class="fd">TrustedForm + Jornaya PEWC</div></div>
-      <div class="fnode cfg"><span class="fs">SCAFFOLDED</span><div class="fn">CRM</div><div class="fd">GHL sub-account template</div></div>
-      <div class="fnode live"><span class="fs">LIVE</span><div class="fn">Voice qualifier</div><div class="fd">v128 out · v15 in</div></div>
-      <div class="fnode live"><span class="fs">LIVE</span><div class="fn">Post-call</div><div class="fd">n8n full backend</div></div>
-      <div class="fnode live"><span class="fs">LIVE</span><div class="fn">Close</div><div class="fd">Frankie · licensed ×4 states</div></div>
-    </div>
-  </div>
-
-  <div class="ck-cols">
-    <div class="ck-panel rv">
-      <h4>🥊 THE $60 BAKE-OFF — three providers enter, one scales</h4>
-      <div class="kan3">
-        <div class="kanc" style="--kc:var(--green)"><div class="kn">$20</div><div class="kt">ATTOM</div><div class="ks">API key verified working · lowest-risk source of truth on new homeowners</div></div>
-        <div class="kanc" style="--kc:var(--orange)"><div class="kn">$20</div><div class="kt">BatchData</div><div class="ks">dataset config saved · needs one OAuth re-connect</div></div>
-        <div class="kanc" style="--kc:var(--violet)"><div class="kn">$20</div><div class="kt">PropertyRadar</div><div class="ks">account ingested · needs a US phone number from Frankie</div></div>
-      </div>
-      <p class="ph" style="margin:9px 0 0">Same Texas pull through all three → compare quality → run outreach → measure conversion. <strong>Winner scales, losers stay as fallback.</strong></p>
-    </div>
-    <div class="ck-panel rv">
-      <h4>⚠️ COMPLIANCE TOLL BOOTH — must pay before consumer outreach</h4>
-      <div class="meter-row"><span class="label">CA Data Broker reg.</span><div class="bar"><span style="width:100%;background:linear-gradient(90deg,var(--red),var(--orange))"></span></div><span class="val">$6K/yr</span></div>
-      <div class="meter-row"><span class="label">TX SB 140 reg. + bond</span><div class="bar"><span style="width:85%;background:linear-gradient(90deg,var(--orange),var(--gold))"></span></div><span class="val">$10.2K</span></div>
-      <div class="meter-row"><span class="label">TCPA counsel red-team</span><div class="bar"><span style="width:40%"></span></div><span class="val">$3–5K</span></div>
-      <p class="ph" style="margin:9px 0 0">Already shipped: CA license # in every marketing email (Cal Ins Code §1725.5(c)) ✓ · Direct mail = <strong>zero-TCPA-risk</strong> parallel lane ✓</p>
-    </div>
-  </div>
-
-  <div class="ck-controls">
-    <button class="x-all">▾ Expand all records</button>
-    <span class="ck-count">10 records below — connections, decisions already made, corrected legal errors. Don’t re-litigate; it’s all here.</span>
-  </div>
-</div>
-
   <h2 class="section-title">Lead-Gen &middot; P2 Top-of-Funnel &middot; ATTOM + BatchData + PropertyRadar &middot; bake-off queued</h2>
 
   <div class="banner violet">
@@ -1451,52 +880,6 @@ body.searching .ck-viz-hide{display:none}
 </div>
 
 <div class="section" id="sync">
-<div class="ck" data-sec="sync">
-  <div class="ck-head">
-    <div class="ck-ico">♻️</div>
-    <div class="ck-head-copy">
-      <div class="ck-kicker">FOUNDER OPERATING CADENCE · LOCKED MAY 19</div>
-      <h2 class="ck-title">Daily Sync — <span class="grad">“we don’t miss each other anymore”</span></h2>
-      <p class="ck-plain"><strong>Plain English:</strong> two founders, 12.5 time zones apart, run the company on two daily meeting blocks. A fixed 4:30 AM California check-in to plan the day, and a floating mid-day deep-work block. Named “In Sync” — Frankie reserved the name on purpose; the meeting <em>is</em> the work session because Claude edits systems live while they talk.</p>
-    </div>
-    <div class="ck-stats">
-      <div class="stat blue"><div class="sv">4:30 AM</div><div class="sl">Block 1 · fixed PT</div></div>
-      <div class="stat orange"><div class="sv">10–1 PT</div><div class="sl">Block 2 · floating</div></div>
-      <div class="stat violet"><div class="sv">90 min</div><div class="sl">Max focus block</div></div>
-      <div class="stat green"><div class="sv">~2 min</div><div class="sl">Live transcript lag</div></div>
-    </div>
-  </div>
-
-  <div class="ck-panel glow rv">
-    <h4>🌍 ONE DAY, TWO CLOCKS — the same two blocks on each founder’s wall</h4>
-    <div class="clockstrip">
-      <div class="tzrow">
-        <div class="tzl"><span>🇺🇸 FRANKIE · CALIFORNIA (PT)</span><span>day-job 5–9 AM bracketed</span></div>
-        <div class="tzbar">
-          <div class="tzseg b1" style="left:18.7%;width:4.5%">4:30</div>
-          <div class="tzseg b2" style="left:41.6%;width:12.5%">10 AM – 1 PM</div>
-        </div>
-        <div class="tzticks"><span>12 AM</span><span>6 AM</span><span>12 PM</span><span>6 PM</span><span>12 AM</span></div>
-      </div>
-      <div class="tzrow">
-        <div class="tzl"><span>🇮🇳 CHITRAKSH · INDIA (IST)</span><span>family wraps ~12-1 AM · flexible by design</span></div>
-        <div class="tzbar">
-          <div class="tzseg b2" style="left:0%;width:6.2%">…1:30 AM</div>
-          <div class="tzseg b1" style="left:70.8%;width:4.5%">5 PM</div>
-          <div class="tzseg b2" style="left:93.7%;width:6.3%">10:30 PM…</div>
-        </div>
-        <div class="tzticks"><span>12 AM</span><span>6 AM</span><span>12 PM</span><span>6 PM</span><span>12 AM</span></div>
-      </div>
-    </div>
-    <p class="ph" style="margin:10px 0 0"><strong>Block 1</strong> = recap yesterday → plan today (15-30 min, hard cap). <strong>Block 2</strong> = the deep-work session (60-90 min, slot picked each morning). Evening Block 3 only when scope demands.</p>
-  </div>
-
-  <div class="ck-controls">
-    <button class="x-all">▾ Expand all records</button>
-    <span class="ck-count">7 records below — the verbatim block doctrine, Twin Mind tooling, calendar automation queue, failure modes already burned.</span>
-  </div>
-</div>
-
   <h2 class="section-title">Daily Sync &middot; "In Sync" schedule + 90-min blocks (locked May 19)</h2>
 
   <div class="banner violet">
@@ -1584,73 +967,6 @@ body.searching .ck-viz-hide{display:none}
 </div>
 
 <div class="section" id="voice-ai">
-<div class="ck" data-sec="voice-ai">
-  <div class="ck-head">
-    <div class="ck-ico">🎤</div>
-    <div class="ck-head-copy">
-      <div class="ck-kicker">PROJECT P1 <span class="dotlive">LIVE ON RETELL</span> · OUTBOUND + INBOUND</div>
-      <h2 class="ck-title">Voice AI — <span class="grad">Maya, the closer that never sleeps</span></h2>
-      <p class="ck-plain"><strong>Plain English:</strong> an AI voice called Maya phones leads, opens with their own property details instead of a pitch, talks like a blend of six legendary sales coaches, books the appointment, and the machine handles every confirmation afterwards. Two copies run: one dials out, one answers callbacks.</p>
-    </div>
-    <div class="ck-stats">
-      <div class="stat green"><div class="sv">v128</div><div class="sl">Outbound · LIVE</div></div>
-      <div class="stat green"><div class="sv">v15</div><div class="sl">Inbound · LIVE</div></div>
-      <div class="stat orange"><div class="sv">v16</div><div class="sl">Drafted · HELD</div></div>
-      <div class="stat blue"><div class="sv" data-count="48">0</div><div class="sl">Saved snapshots</div></div>
-      <div class="stat violet"><div class="sv" data-count="20">0</div><div class="sl">Patch scripts</div></div>
-    </div>
-  </div>
-
-  <div class="ck-panel rv">
-    <h4>🚀 VERSION RACE — how the agent evolved (every step surgical, never rewritten)</h4>
-    <div class="vtl">
-      <div class="vtl-line"></div>
-      <div class="vtl-row">
-        <div class="vt" style="--vc:var(--text3)"><div class="vv">v106</div><div class="vl">May 21 base<br>48-snapshot lineage</div></div>
-        <div class="vt" style="--vc:var(--blue)"><div class="vv">v124</div><div class="vl">callback role<br>split</div></div>
-        <div class="vt" style="--vc:var(--blue)"><div class="vv">v125</div><div class="vl">ISO 8601<br>appointment fix</div></div>
-        <div class="vt" style="--vc:var(--violet)"><div class="vv">v126</div><div class="vl">May 28 · “one two”<br>→ “12” email fix</div></div>
-        <div class="vt hot" style="--vc:var(--green)"><div class="vv">v128</div><div class="vl">May 29 · opener<br>reframe · LIVE</div></div>
-        <div class="vt" style="--vc:var(--orange)"><div class="vv">v129</div><div class="vl">next draft<br>open</div></div>
-      </div>
-    </div>
-    <p class="ph" style="margin:6px 0 0">Inbound mirror: <strong>v15 LIVE</strong> (3 patches collapsed into one parity publish) · <strong>v16 drafted + HELD</strong> — same opener reframe, ships on “publish inbound”.</p>
-  </div>
-
-  <div class="ck-cols">
-    <div class="ck-panel rv">
-      <h4>🎛️ THE VOICE CONSOLE — locked May 18, “keeper at any cost”</h4>
-      <p class="ph">Five dials ended the “creature” artifact on live calls. Verdict: “It’s 100% better.”</p>
-      <div class="console">
-        <div class="knob"><div class="kk">Voice volume</div><div class="kv2 hot">+166</div></div>
-        <div class="knob"><div class="kk">Interruption sensitivity</div><div class="kv2 on">FLOOR</div></div>
-        <div class="knob"><div class="kk">Background-noise removal</div><div class="kv2 on">ON</div></div>
-        <div class="knob"><div class="kk">Cartesia model</div><div class="kv2 on">Sonic 3.5</div></div>
-        <div class="knob"><div class="kk">Voice-speed toggle</div><div class="kv2 off">OFF · all nodes</div></div>
-        <div class="knob"><div class="kk">FTO target</div><div class="kv2">150–300 ms</div></div>
-      </div>
-    </div>
-    <div class="ck-panel rv">
-      <h4>🐐 THE SCRIPT DNA — six sales GOATs fused into one prompt</h4>
-      <p class="ph">Maya doesn’t read a script; she runs a merged playbook of the best closers alive.</p>
-      <div class="goatrow">
-        <div class="goat" style="--gc:#2563eb"><span class="ga">JM</span><b>Jeremy Miner</b><span>NPQ — real questions only</span></div>
-        <div class="goat" style="--gc:#7c3aed"><span class="ga">JB</span><b>Jordan Belfort</b><span>straight-line control</span></div>
-        <div class="goat" style="--gc:#0e9f6e"><span class="ga">CV</span><b>Chris Voss</b><span>mirror + label empathy</span></div>
-        <div class="goat" style="--gc:#d97706"><span class="ga">AA</span><b>Andy Albright</b><span>30-day frame</span></div>
-        <div class="goat" style="--gc:#db2777"><span class="ga">AH</span><b>Alex Hormozi</b><span>loss-aversion 2.5×</span></div>
-        <div class="goat" style="--gc:#64748b"><span class="ga">SL</span><b>Sam Lair</b><span>upfront contract</span></div>
-      </div>
-      <p class="ph" style="margin:10px 0 0">Trigger covers <strong>death OR disabling illness</strong> · the appointment ask now waits until the lead engages.</p>
-    </div>
-  </div>
-
-  <div class="ck-controls">
-    <button class="x-all">▾ Expand all records</button>
-    <span class="ck-count">11 engineering records below — every patch, agent ID, char-count and verbatim quote preserved.</span>
-  </div>
-</div>
-
   <h2 class="section-title">Voice AI &middot; P1 &middot; OUTBOUND v128 + INBOUND v15 LIVE on Retell (May 29)</h2>
 
   <div class="banner green">
@@ -1981,67 +1297,6 @@ body.searching .ck-viz-hide{display:none}
 </div>
 
 <div class="section" id="insurance">
-<div class="ck" data-sec="insurance">
-  <div class="ck-head">
-    <div class="ck-ico">🛡️</div>
-    <div class="ck-head-copy">
-      <div class="ck-kicker">PROJECT P2 <span class="dotlive">STACK LIVE</span> · EIN IS THE ONLY GATE</div>
-      <h2 class="ck-title">Insurance — <span class="grad">the revenue engine, armed</span></h2>
-      <p class="ck-plain"><strong>Plain English:</strong> the selling machine works — a real test caller booked a real appointment and the calendar invite, branded email, SMS and do-not-call list all fired by themselves. The only thing stopping mass outreach is a tax ID number from the IRS. The paperwork to switch everything on is already written.</p>
-    </div>
-    <div class="ck-stats">
-      <div class="stat gold"><div class="sv" data-count="3300" data-prefix="$">0</div><div class="sl">First close advance</div></div>
-      <div class="stat green"><div class="sv" data-count="2532" data-prefix="$">0</div><div class="sl">Family bridge placed</div></div>
-      <div class="stat blue"><div class="sv" data-count="1250" data-prefix="$" data-suffix="/mo">0</div><div class="sl">Boatman retainer</div></div>
-      <div class="stat violet"><div class="sv" data-count="132">0</div><div class="sl">Leads scored</div></div>
-    </div>
-  </div>
-
-  <div class="ck-panel glow rv">
-    <h4>📞 WHAT HAPPENS AFTER EVERY CALL — verified live, May 27 1:39 AM (“Adrian Marino” test)</h4>
-    <div class="flow">
-      <div class="fnode live"><span class="fs">LIVE</span><div class="fn">Call ends</div><div class="fd">Maya wraps · data extracted</div></div>
-      <div class="fnode live"><span class="fs">LIVE</span><div class="fn">📅 Calendar event</div><div class="fd">Google Calendar · slot pinned</div></div>
-      <div class="fnode live"><span class="fs">LIVE</span><div class="fn">✉️ Branded email</div><div class="fd">“That confirmation is FIRE, bro”</div></div>
-      <div class="fnode live"><span class="fs">LIVE</span><div class="fn">💬 SMS confirm</div><div class="fd">delivered on test</div></div>
-      <div class="fnode live"><span class="fs">LIVE</span><div class="fn">🚫 DNC harvest</div><div class="fd">every “don’t call” logged</div></div>
-      <div class="fnode live"><span class="fs">LIVE</span><div class="fn">🧾 Admin log</div><div class="fd">founders get the receipt</div></div>
-    </div>
-    <p class="ph" style="margin:8px 0 0">Bug killed pre-launch: inbound was firing the <em>outbound</em> backend (10 emails per call) — now routed to its own workflow. License stamped into every template: <strong>CA #4276736 · NPN #20996126</strong>.</p>
-  </div>
-
-  <div class="ck-cols">
-    <div class="ck-panel rv">
-      <h4>🚦 A2P LAUNCH READINESS — package pre-built, finger on the button</h4>
-      <p class="ph">14 of 16 checklist items are done. The red one is the gate; everything fires the day it lands.</p>
-      <div class="ringwrap">
-        <div class="ringbox"><svg class="ring" width="84" height="84" viewBox="0 0 84 84" data-pct="87"><circle class="track" cx="42" cy="42" r="35" stroke-width="8"></circle><circle class="arc" cx="42" cy="42" r="35" stroke-width="8" stroke="var(--orange)"></circle></svg><div class="ringlbl"><span class="rv">87%</span><span class="rl">READY</span></div></div>
-        <div style="flex:1;min-width:0">
-          <div class="shelf" style="grid-template-columns:repeat(auto-fill,minmax(140px,1fr))">
-            <div class="doc bad"><span class="led"></span><div><b>EIN</b><span>mailed certified + phone rotation</span></div></div>
-            <div class="doc warn"><span class="led"></span><div><b>FBN filing</b><span>to file · CA county</span></div></div>
-            <div class="doc ok"><span class="led"></span><div><b>ToS · Privacy · IPA · MSA</b><span>drafted</span></div></div>
-            <div class="doc ok"><span class="led"></span><div><b>Opt-in form + disclosures</b><span>built · inline</span></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="ck-panel rv">
-      <h4>💰 CASH SCOREBOARD — proof the model sells</h4>
-      <div class="meter-row"><span class="label">George Morrison close (advance)</span><div class="bar"><span style="width:100%;background:linear-gradient(90deg,var(--gold),var(--orange))"></span></div><span class="val">$3,300</span></div>
-      <div class="meter-row"><span class="label">Best revenue week (May 9)</span><div class="bar"><span style="width:100%;background:linear-gradient(90deg,var(--green),var(--blue))"></span></div><span class="val">$3,410</span></div>
-      <div class="meter-row"><span class="label">Family-policy ad bridge</span><div class="bar"><span style="width:77%"></span></div><span class="val">$2,532</span></div>
-      <div class="meter-row"><span class="label">Boatman ads retainer</span><div class="bar"><span style="width:38%;background:linear-gradient(90deg,var(--violet),var(--pink))"></span></div><span class="val">$1,250/mo</span></div>
-      <p class="ph" style="margin:8px 0 0">Frankie’s verdict after the live tests: <em>“AI sells insurance much better than I do.”</em></p>
-    </div>
-  </div>
-
-  <div class="ck-controls">
-    <button class="x-all">▾ Expand all records</button>
-    <span class="ck-count">9 records below — A2P checklist table, sub-account scaffold, Maya’s 3 pitch tracks, carrier history. All verbatim.</span>
-  </div>
-</div>
-
   <h2 class="section-title">Insurance &middot; P2 &middot; Voice agents LIVE &middot; Backend verified &middot; EIN mailed certified, on phone-rotation</h2>
 
   <div class="banner green">
@@ -2375,61 +1630,6 @@ body.searching .ck-viz-hide{display:none}
 </div>
 
 <div class="section" id="legal">
-<div class="ck" data-sec="legal">
-  <div class="ck-head">
-    <div class="ck-ico">⚖️</div>
-    <div class="ck-head-copy">
-      <div class="ck-kicker">IN-HOUSE AI LEGAL STACK · <span style="color:var(--green);font-weight:800">$0 vs the $10K/mo IT REPLACED</span></div>
-      <h2 class="ck-title">Legal — <span class="grad">five AI models, one verdict</span></h2>
-      <p class="ck-plain"><strong>Plain English:</strong> instead of paying a law firm $10K a month, Claude drafts every contract and policy, then four other AI models cross-examine the work. Where all five agree, it ships; where they disagree, a human looks. This caught two gaps a paid consultant missed. Real lawyers are only called for lawsuits, M&amp;A or regulators.</p>
-    </div>
-    <div class="ck-stats">
-      <div class="stat violet"><div class="sv" data-count="5">0</div><div class="sl">AI models in audit</div></div>
-      <div class="stat blue"><div class="sv" data-count="8">0</div><div class="sl">Laws in scope</div></div>
-      <div class="stat green"><div class="sv" data-count="11">0</div><div class="sl">Docs in the pack</div></div>
-      <div class="stat gold"><div class="sv" data-count="10" data-prefix="$" data-suffix="K/mo">0</div><div class="sl">Counsel cost avoided</div></div>
-    </div>
-  </div>
-
-  <div class="ck-cols">
-    <div class="ck-panel glow rv">
-      <h4>📚 THE DOCUMENT SHELF — A2P + insurance pack, status lights live</h4>
-      <div class="shelf">
-        <div class="doc ok"><span class="led"></span><div><b>Terms of Service</b><span>drafted</span></div></div>
-        <div class="doc ok"><span class="led"></span><div><b>Privacy Policy</b><span>drafted · CCPA/CPRA</span></div></div>
-        <div class="doc ok"><span class="led"></span><div><b>California IPA Notice</b><span>drafted</span></div></div>
-        <div class="doc ok"><span class="led"></span><div><b>MSA template</b><span>drafted · 2 variants</span></div></div>
-        <div class="doc ok"><span class="led"></span><div><b>AI-voice disclosure</b><span>inline on form</span></div></div>
-        <div class="doc ok"><span class="led"></span><div><b>Frequency disclosure</b><span>inline · 8 SMS + 4 calls</span></div></div>
-        <div class="doc ok"><span class="led"></span><div><b>Double-confirm opt-in</b><span>built</span></div></div>
-        <div class="doc ok"><span class="led"></span><div><b>5-model audit</b><span>passed</span></div></div>
-        <div class="doc bad"><span class="led"></span><div><b>EIN</b><span>the blocker</span></div></div>
-        <div class="doc warn"><span class="led"></span><div><b>FBN filing</b><span>to file</span></div></div>
-        <div class="doc warn"><span class="led"></span><div><b>Registered agent</b><span>RPA queued</span></div></div>
-      </div>
-    </div>
-    <div class="ck-panel rv">
-      <h4>🏛️ LAWS WE BUILD AGAINST — before the first call, not after</h4>
-      <div class="goatrow">
-        <div class="goat" style="--gc:#dc2626"><span class="ga">T</span><b>TCPA</b><span>consent for auto-dials</span></div>
-        <div class="goat" style="--gc:#d97706"><span class="ga">C</span><b>CIPA</b><span>2-party recording</span></div>
-        <div class="goat" style="--gc:#2563eb"><span class="ga">P</span><b>CPRA/CCPA</b><span>45-day rights</span></div>
-        <div class="goat" style="--gc:#7c3aed"><span class="ga">F</span><b>FTC §5</b><span>no deception</span></div>
-        <div class="goat" style="--gc:#db2777"><span class="ga">B</span><b>SB 1001</b><span>bot disclosure</span></div>
-        <div class="goat" style="--gc:#0e9f6e"><span class="ga">S</span><b>SB 446</b><span>72-hr breach</span></div>
-        <div class="goat" style="--gc:#64748b"><span class="ga">I</span><b>CA IPA</b><span>insurance privacy</span></div>
-        <div class="goat" style="--gc:#b45309"><span class="ga">§</span><b>§1725.5(c)</b><span>license # in mail</span></div>
-      </div>
-      <p class="ph" style="margin:10px 0 0">Audit SOP: Claude drafts → statute check → <strong>4 independent models cross-verify</strong> → consensus ships, disagreement escalates. Caught the FBN + IPA gaps nothing else did. Principle on file: <em>“ignorance of law is not an excuse.”</em></p>
-    </div>
-  </div>
-
-  <div class="ck-controls">
-    <button class="x-all">▾ Expand all records</button>
-    <span class="ck-count">7 records below — deliverables table, DPA fill-sheet for 6 vendors, external-counsel trigger list. Verbatim.</span>
-  </div>
-</div>
-
   <h2 class="section-title">Legal &middot; In-house AI Legal Stack &middot; A2P + IPA + FBN + multi-model audit</h2>
 
   <div class="banner green">
@@ -2546,48 +1746,6 @@ body.searching .ck-viz-hide{display:none}
 </div>
 
 <div class="section" id="risks">
-<div class="ck" data-sec="risks">
-  <div class="ck-head">
-    <div class="ck-ico">⚠️</div>
-    <div class="ck-head-copy">
-      <div class="ck-kicker">RISK REGISTER · R13 → R43 · EVERY RISK HAS AN OWNER + A PLAN</div>
-      <h2 class="ck-title">Risks — <span class="grad">what could hurt us, and the counterpunch</span></h2>
-      <p class="ck-plain"><strong>Plain English:</strong> every threat to the company is written down with a severity, an owner and a mitigation. Nothing lives in anyone’s head. The tallest red bar is the EIN delay — same story as everywhere else: the paperwork is ready, the IRS is the queue.</p>
-    </div>
-    <div class="ck-stats">
-      <div class="stat red"><div class="sv" data-count="6">0</div><div class="sl">High severity</div></div>
-      <div class="stat orange"><div class="sv" data-count="14">0</div><div class="sl">Medium</div></div>
-      <div class="stat blue"><div class="sv" data-count="13">0</div><div class="sl">Low</div></div>
-      <div class="stat green"><div class="sv" data-count="9">0</div><div class="sl">Closed / resolved</div></div>
-    </div>
-  </div>
-
-  <div class="ck-cols">
-    <div class="ck-panel glow rv">
-      <h4>📊 SEVERITY SKYLINE</h4>
-      <div class="sevrow">
-        <div class="sevcol"><div class="sevbar" data-h="43" style="background:linear-gradient(180deg,var(--red),#b91c1c);height:0"><b>6</b></div><span class="scl">HIGH</span></div>
-        <div class="sevcol"><div class="sevbar" data-h="100" style="background:linear-gradient(180deg,var(--orange),#b45309);height:0"><b>14</b></div><span class="scl">MED</span></div>
-        <div class="sevcol"><div class="sevbar" data-h="93" style="background:linear-gradient(180deg,var(--blue),#1d4ed8);height:0"><b>13</b></div><span class="scl">LOW</span></div>
-        <div class="sevcol"><div class="sevbar" data-h="64" style="background:linear-gradient(180deg,var(--green),#047857);height:0"><b>9</b></div><span class="scl">CLOSED</span></div>
-      </div>
-    </div>
-    <div class="ck-panel rv">
-      <h4>🔥 THE THREE THAT MATTER MOST RIGHT NOW</h4>
-      <div class="chain" style="flex-direction:column;align-items:stretch">
-        <div class="cnode red" style="min-width:0"><b>R36 · EIN not issued in time</b><span>A2P blocked · IRS rotation + certified mail + fax SS-4 fallback</span></div>
-        <div class="cnode red" style="min-width:0"><b>R24 · Cloud HQ desktop outage</b><span>mitigated: multi-model fallback (Paperclip) · web app unaffected</span></div>
-        <div class="cnode red" style="min-width:0"><b>R25 · Mark Akbar +11 days silent</b><span>countered: LA walk-in trip booked · “other dealerships will come”</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ck-controls">
-    <button class="x-all">▾ Expand all records</button>
-    <span class="ck-count">Full register below — every R-number from R13 to R43 with owner, window and mitigation, exactly as logged.</span>
-  </div>
-</div>
-
   <h2 class="section-title">Risk Register &middot; May 17 snapshot</h2>
 
   <div class="card">
@@ -2675,43 +1833,6 @@ body.searching .ck-viz-hide{display:none}
 </div>
 
 <div class="section" id="recs">
-<div class="ck" data-sec="recs">
-  <div class="ck-head">
-    <div class="ck-ico">🎯</div>
-    <div class="ck-head-copy">
-      <div class="ck-kicker">NEXT PLAYS · RANKED · EACH WITH OWNER + TIMING + WHY</div>
-      <h2 class="ck-title">Recommendations — <span class="grad">the playbook for the next 7 days</span></h2>
-      <p class="ck-plain"><strong>Plain English:</strong> ten concrete moves, lettered A through J, each saying exactly what to do, who does it, when, and why it matters. A is always the bottleneck-breaker — right now that means getting the EIN out of the IRS.</p>
-    </div>
-    <div class="ck-stats">
-      <div class="stat blue"><div class="sv" data-count="10">0</div><div class="sl">Active plays A–J</div></div>
-      <div class="stat orange"><div class="sv">A</div><div class="sl">Top play: call IRS</div></div>
-      <div class="stat violet"><div class="sv" data-count="13">0</div><div class="sl">Carry-over recs kept</div></div>
-    </div>
-  </div>
-
-  <div class="ck-panel glow rv">
-    <h4>🃏 THE PLAY RAIL — A through J at a glance</h4>
-    <div class="shelf" style="grid-template-columns:repeat(auto-fill,minmax(215px,1fr))">
-      <div class="doc bad"><span class="led"></span><div><b>A · Call IRS until EIN issues</b><span>Founders · tonight</span></div></div>
-      <div class="doc warn"><span class="led"></span><div><b>B · Submit A2P the moment EIN lands</b><span>Chitraksh · same day</span></div></div>
-      <div class="doc warn"><span class="led"></span><div><b>C · Latency fix + final ear test</b><span>Chitraksh · this week</span></div></div>
-      <div class="doc warn"><span class="led"></span><div><b>D · Client-A2P forwarding test E2E</b><span>Chitraksh · May 18-22</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>E · Buy frankiealicea.com → GHL</b><span>Frankie · this week</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>F · Free registered-agent via RPA</b><span>Chitraksh · post-A2P</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>G · CEO agent + briefing webhook</b><span>Chitraksh · Mac Mini</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>H · Mac Mini procurement</b><span>Frankie buys · this week</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>I · Brand the Sales SOP in Oraya colors</b><span>Claude HQ · this week</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>J · Suleyman forecast in pitch copy</b><span>Frankie · next demo</span></div></div>
-    </div>
-  </div>
-
-  <div class="ck-controls">
-    <button class="x-all">▾ Expand all records</button>
-    <span class="ck-count">Every play below in full — the play, the why, the owner, the timing — plus all 13 carry-over recommendations preserved.</span>
-  </div>
-</div>
-
   <h2 class="section-title">Recommendations &middot; Next plays &middot; May 17</h2>
 
   <div class="grid-2">
@@ -2881,42 +2002,6 @@ body.searching .ck-viz-hide{display:none}
 </div>
 
 <div class="section" id="timeline">
-<div class="ck" data-sec="timeline">
-  <div class="ck-head">
-    <div class="ck-ico">🧭</div>
-    <div class="ck-head-copy">
-      <div class="ck-kicker">REVERSE-CHRONOLOGICAL · 73 LOGGED EVENTS · JAN → MAY 2026</div>
-      <h2 class="ck-title">Timeline — <span class="grad">the company’s flight recorder</span></h2>
-      <p class="ck-plain"><strong>Plain English:</strong> every meaningful moment — fixes, decisions, outages, wins, even the 3 AM ones — timestamped in order. Newest first. If anyone ever asks “when did we decide that?”, the answer is on this rail.</p>
-    </div>
-    <div class="ck-stats">
-      <div class="stat blue"><div class="sv" data-count="73">0</div><div class="sl">Events logged</div></div>
-      <div class="stat violet"><div class="sv" data-count="138">0</div><div class="sl">Days covered</div></div>
-      <div class="stat green"><div class="sv">v12.0</div><div class="sl">Latest sweep</div></div>
-    </div>
-  </div>
-
-  <div class="ck-panel glow rv">
-    <h4>🛰️ DASHBOARD ERAS — each version was a chapter</h4>
-    <div class="vtl">
-      <div class="vtl-line"></div>
-      <div class="vtl-row">
-        <div class="vt" style="--vc:var(--text3)"><div class="vv">v11.1</div><div class="vl">May 7 · Day 117<br>agent v1.0 era</div></div>
-        <div class="vt" style="--vc:var(--blue)"><div class="vv">v11.2</div><div class="vl">May 9 · $3,410 week<br>Boatman live</div></div>
-        <div class="vt" style="--vc:var(--blue)"><div class="vv">v11.3</div><div class="vl">May 17 · Infra +<br>Compliance Week</div></div>
-        <div class="vt" style="--vc:var(--violet)"><div class="vv">v11.4</div><div class="vl">May 19 · Voice-Fix +<br>Sales-Master Week</div></div>
-        <div class="vt" style="--vc:var(--orange)"><div class="vv">v12.0</div><div class="vl">May 28 · Launch Week<br>both agents LIVE</div></div>
-        <div class="vt hot" style="--vc:var(--green)"><div class="vv">v13.0</div><div class="vl">Jun 10 · Mission<br>Control interface</div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ck-controls">
-    <button class="x-all">▾ Expand all records</button>
-    <span class="ck-count">The full rail below — 73 timestamped events with verbatim founder quotes, newest first. Click a week to unfold it.</span>
-  </div>
-</div>
-
   <h2 class="section-title">Timeline &middot; Reverse chronological</h2>
 
   <div class="card">
@@ -3024,38 +2109,6 @@ body.searching .ck-viz-hide{display:none}
 </div>
 
 <div class="section" id="meetings">
-<div class="ck" data-sec="meetings">
-  <div class="ck-head">
-    <div class="ck-ico">🗓️</div>
-    <div class="ck-head-copy">
-      <div class="ck-kicker">MEETING REGISTER · #1 → #34 · TRANSCRIPT = TASK QUEUE</div>
-      <h2 class="ck-title">Meetings — <span class="grad">34 sessions, every decision traceable</span></h2>
-      <p class="ck-plain"><strong>Plain English:</strong> every founder call is logged with its decisions and outputs. Meetings here aren’t status updates — Claude edits live systems <em>during</em> the call, so the meeting itself is the work session. Most happen between 1 AM and 4 AM Pacific, because that’s when two continents overlap.</p>
-    </div>
-    <div class="ck-stats">
-      <div class="stat blue"><div class="sv" data-count="34">0</div><div class="sl">Meetings logged</div></div>
-      <div class="stat violet"><div class="sv" data-count="187" data-suffix=" min">0</div><div class="sl">Longest (GHL consult)</div></div>
-      <div class="stat orange"><div class="sv">~2-4 AM</div><div class="sl">Typical PT window</div></div>
-      <div class="stat green"><div class="sv">100%</div><div class="sl">Logged w/ decisions</div></div>
-    </div>
-  </div>
-
-  <div class="ck-panel glow rv">
-    <h4>📈 CADENCE — sessions per sweep</h4>
-    <div class="sevrow" style="height:100px">
-      <div class="sevcol"><div class="sevbar" data-h="62" style="background:linear-gradient(180deg,var(--surface3),var(--border2));height:0"><b style="color:var(--text2)">25</b></div><span class="scl">Jan–Apr</span></div>
-      <div class="sevcol"><div class="sevbar" data-h="50" style="background:linear-gradient(180deg,var(--blue),#1d4ed8);height:0"><b>5</b></div><span class="scl">May 3-7</span></div>
-      <div class="sevcol"><div class="sevbar" data-h="25" style="background:linear-gradient(180deg,var(--violet),#6d28d9);height:0"><b>1</b></div><span class="scl">May 12 · 187min</span></div>
-      <div class="sevcol"><div class="sevbar" data-h="75" style="background:linear-gradient(180deg,var(--green),#047857);height:0"><b>3</b></div><span class="scl">May 17-19</span></div>
-    </div>
-  </div>
-
-  <div class="ck-controls">
-    <button class="x-all">▾ Expand all records</button>
-    <span class="ck-count">The full register below — meetings 1→34 with attendees, decisions and outputs, word-for-word.</span>
-  </div>
-</div>
-
   <h2 class="section-title">Meeting Register &middot; 1 to 30</h2>
 
   <div class="card">
@@ -3143,46 +2196,6 @@ body.searching .ck-viz-hide{display:none}
 </div>
 
 <div class="section" id="psych">
-<div class="ck" data-sec="psych">
-  <div class="ck-head">
-    <div class="ck-ico">🧠</div>
-    <div class="ck-head-copy">
-      <div class="ck-kicker">FOUNDER PSYCHOGRAPHICS · EVIDENCE-BASED · QUOTES REQUIRED FOR EVERY SCORE</div>
-      <h2 class="ck-title">The Founder Duo — <span class="grad">why this pair works</span></h2>
-      <p class="ck-plain"><strong>Plain English:</strong> a running, evidence-backed read on how the two founders operate — strengths scored only when a transcript proves it. Headline: brutal honesty without bruises (“that shit sounds stupid” → iterate → “you’re fucking fire”), boundaries respected, families introduced, same worldview under pressure. The partnership itself is an asset on the balance sheet.</p>
-    </div>
-    <div class="ck-stats">
-      <div class="stat blue"><div class="sv" data-count="96">0</div><div class="sl">Chitraksh · build throughput</div></div>
-      <div class="stat gold"><div class="sv" data-count="97">0</div><div class="sl">Frankie · relationship currency</div></div>
-      <div class="stat violet"><div class="sv" data-count="17">0</div><div class="sl">Partnership signals logged</div></div>
-    </div>
-  </div>
-
-  <div class="ck-cols">
-    <div class="ck-panel rv" style="border-top:3px solid var(--p1)">
-      <h4>🛠️ CHITRAKSH · CTO / CLO — top scores</h4>
-      <div class="meter-row"><span class="label">Build throughput</span><div class="bar"><span style="width:96%"></span></div><span class="val">96</span></div>
-      <div class="meter-row"><span class="label">Root-cause instinct</span><div class="bar"><span style="width:94%"></span></div><span class="val">94</span></div>
-      <div class="meter-row"><span class="label">Decision velocity</span><div class="bar"><span style="width:93%"></span></div><span class="val">93</span></div>
-      <div class="meter-row"><span class="label">Self-critique loop</span><div class="bar"><span style="width:90%"></span></div><span class="val">90</span></div>
-      <div class="meter-row"><span class="label">Legal / compliance rigor</span><div class="bar"><span style="width:89%"></span></div><span class="val">89</span></div>
-    </div>
-    <div class="ck-panel rv" style="border-top:3px solid var(--p2)">
-      <h4>🤝 FRANKIE · CEO / DEALMAKER — top scores</h4>
-      <div class="meter-row"><span class="label">Relationship currency</span><div class="bar"><span style="width:97%;background:linear-gradient(90deg,var(--orange),var(--gold))"></span></div><span class="val">97</span></div>
-      <div class="meter-row"><span class="label">Strategic vision</span><div class="bar"><span style="width:95%;background:linear-gradient(90deg,var(--orange),var(--gold))"></span></div><span class="val">95</span></div>
-      <div class="meter-row"><span class="label">Sales closing instinct</span><div class="bar"><span style="width:94%;background:linear-gradient(90deg,var(--orange),var(--gold))"></span></div><span class="val">94</span></div>
-      <div class="meter-row"><span class="label">Domain knowledge (auto)</span><div class="bar"><span style="width:89%;background:linear-gradient(90deg,var(--orange),var(--gold))"></span></div><span class="val">89</span></div>
-      <div class="meter-row"><span class="label">Emotional intelligence</span><div class="bar"><span style="width:88%;background:linear-gradient(90deg,var(--orange),var(--gold))"></span></div><span class="val">88</span></div>
-    </div>
-  </div>
-
-  <div class="ck-controls">
-    <button class="x-all">▾ Expand all records</button>
-    <span class="ck-count">Full profiles below — all 19 scored traits, every partnership signal with its verbatim quote, and the operating manual.</span>
-  </div>
-</div>
-
   <h2 class="section-title">Psychographic Profiles &middot; May 19 snapshot</h2>
 
   <div class="card">
@@ -3332,40 +2345,6 @@ body.searching .ck-viz-hide{display:none}
 </div>
 
 <div class="section" id="offer">
-<div class="ck" data-sec="offer">
-  <div class="ck-head">
-    <div class="ck-ico">✉️</div>
-    <div class="ck-head-copy">
-      <div class="ck-kicker">SALES WEAPONRY · PILOT OFFER + FOUNDING SALES SOP</div>
-      <h2 class="ck-title">The Offer — <span class="grad">impossible to say no to</span></h2>
-      <p class="ck-plain"><strong>Plain English:</strong> the dealership pilot offer removes every reason to refuse: free for 30 days, no commitment, a live phone number they can call <em>right now</em> to judge the AI themselves, full compliance before the first call, and a written performance report at day 30. Plus the founding Sales SOP that lets any future hire ramp in days.</p>
-    </div>
-    <div class="ck-stats">
-      <div class="stat green"><div class="sv">$0</div><div class="sl">Platform fee · 30 days</div></div>
-      <div class="stat blue"><div class="sv">24 hr</div><div class="sl">Exit window</div></div>
-      <div class="stat violet"><div class="sv">72 hr</div><div class="sl">Data purge on exit</div></div>
-      <div class="stat orange"><div class="sv">Day 30</div><div class="sl">Written report</div></div>
-    </div>
-  </div>
-
-  <div class="ck-panel glow rv">
-    <h4>🧾 THE PILOT, AS THE BUYER READS IT</h4>
-    <div class="shelf" style="grid-template-columns:repeat(auto-fill,minmax(195px,1fr))">
-      <div class="doc ok"><span class="led"></span><div><b>Try it live before committing</b><span>real phone number in the email</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>One Service BDC line</b><span>tight scope · no overreach</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>Compliance BEFORE first call</b><span>TCPA · CIPA · CPRA · FTC§5 · SB1001</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>“Not a pre-packaged SaaS”</b><span>tuned with the team</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>4 real screenshots attached</b><span>“real, not AI-generated”</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>CTA: 30 minutes</b><span>management, counsel or IT</span></div></div>
-    </div>
-  </div>
-
-  <div class="ck-controls">
-    <button class="x-all">▾ Expand all records</button>
-    <span class="ck-count">Below: the canonical clause table, the Apr-18→Apr-23 redline history, and the May 11 Sales SOP record. Verbatim.</span>
-  </div>
-</div>
-
   <h2 class="section-title">Offer Letter Intel &middot; v11.3 &middot; Sales SOP shipped May 11</h2>
   <div class="card"><p><strong>May 11 update &middot; Founding Sales SOP + 30-min demo + payment-collection script shipped (Frankie).</strong> Positioning: <em>"Oraya AI helps enterprises eliminate revenue leakage from slow speed-to-lead, missed calls, inconsistent follow-up, after-hours gaps and human bottlenecks &mdash; via AI voice, SMS, email, CRM automation, appointment orchestration, performance feedback loops."</em> Frankie: <em>"absolutely fire."</em> Brand in Oraya colors per AutoNation-package treatment; canonical playbook for Frankie today + future sales team. Pair with Mustafa Suleyman 12-18-mo forecast as urgency anchor in cold-outreach + demo open. <strong>May 15 reference filed:</strong> NSA Meta-ads booking page <code>booking.nonstopautomation.com/nsa-demo</code> &mdash; competitive-UX teardown queued for next meet.</p></div>
   <h3 style="margin-top:18px">Carry-over &middot; canonical Apr 23 draft</h3>
@@ -3429,40 +2408,6 @@ body.searching .ck-viz-hide{display:none}
 </div>
 
 <div class="section" id="website">
-<div class="ck" data-sec="website">
-  <div class="ck-head">
-    <div class="ck-ico">🌐</div>
-    <div class="ck-head-copy">
-      <div class="ck-kicker">ORAYALABS.AI · FINALIZED APR 26 · <span class="dotlive">PRODUCTION-GRADE</span></div>
-      <h2 class="ck-title">Website — <span class="grad">the storefront a lawyer can audit</span></h2>
-      <p class="ck-plain"><strong>Plain English:</strong> orayalabs.ai is a finished, working storefront — live payments, live calendar booking, a demo conversation that plays out a real booked appointment, and a popup that lets the AI call <em>you</em>. Any prospect (or their counsel) can click through today and find a real business, not a landing page promise.</p>
-    </div>
-    <div class="ck-stats">
-      <div class="stat green"><div class="sv" data-count="7">0</div><div class="sl">Features live</div></div>
-      <div class="stat blue"><div class="sv">3</div><div class="sl">Stripe tiers wired</div></div>
-      <div class="stat orange"><div class="sv" data-count="5">0</div><div class="sl">Queue items</div></div>
-    </div>
-  </div>
-
-  <div class="ck-panel glow rv">
-    <h4>🟢 LIVE BOARD — what a visitor can touch right now</h4>
-    <div class="shelf">
-      <div class="doc ok"><span class="led"></span><div><b>Stripe checkout ×3</b><span>$497 / $997 / $1997 · LIVE</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>Book-Demo + Calendly</b><span>founders’ shared calendar</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>Full conversation demo</b><span>through booked appointment</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>“Have AI call you” popup</b><span>idle-triggered · ~20 sec</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>Side banners</b><span>shipped Apr 26</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>“AI” debranded</b><span>Oraya AI → Oraya</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>n8n watermark stripped</b><span>credibility risk closed</span></div></div>
-    </div>
-  </div>
-
-  <div class="ck-controls">
-    <button class="x-all">▾ Expand all records</button>
-    <span class="ck-count">Below: the full live-features table, the open queue, internal-dashboard UX bugs and the gated insurance landing page plan.</span>
-  </div>
-</div>
-
   <h2 class="section-title">Website Audit &middot; v11.3 &middot; opt-in form + IPA + AI-voice disclosure (May 12-17)</h2>
 
   <div class="banner green">
@@ -3534,47 +2479,6 @@ body.searching .ck-viz-hide{display:none}
 </div>
 
 <div class="section" id="tasks">
-<div class="ck" data-sec="tasks">
-  <div class="ck-head">
-    <div class="ck-ico">✅</div>
-    <div class="ck-head-copy">
-      <div class="ck-kicker">DAILY TASKS · MAY 28 · LAUNCH-WEEK CLOSE · THREE LANES, ZERO OVERLAP</div>
-      <h2 class="ck-title">Today’s Board — <span class="grad">who does what, right now</span></h2>
-      <p class="ck-plain"><strong>Plain English:</strong> the day’s work, split into three lanes — Frankie in the field, Chitraksh in the build, Claude running autonomous chores. The headline item: Frankie walks into Envision Honda at 1 PM, suited, iPad in hand, for the first dealership appointment. Older boards are archived below, untouched.</p>
-    </div>
-    <div class="ck-stats">
-      <div class="stat orange"><div class="sv" data-count="11">0</div><div class="sl">Frankie · CEO</div></div>
-      <div class="stat blue"><div class="sv" data-count="12">0</div><div class="sl">Chitraksh · CTO</div></div>
-      <div class="stat violet"><div class="sv" data-count="7">0</div><div class="sl">CTO-Claude · auto</div></div>
-      <div class="stat red"><div class="sv">EIN</div><div class="sl">Shared blocker</div></div>
-    </div>
-  </div>
-
-  <div class="ck-cols">
-    <div class="ck-panel glow rv">
-      <h4>🌟 TODAY’S SPOTLIGHT</h4>
-      <div class="chain" style="flex-direction:column;align-items:stretch">
-        <div class="cnode go" style="min-width:0"><b>🚗 1 PM PT · Envision Honda Milpitas walk-in</b><span>Frankie · suit + iPad deck · ask for Greg → GSM Mo · reciprocity opener</span></div>
-        <div class="cnode amber" style="min-width:0"><b>📬 EIN certified-mail watch + IRS rotation</b><span>both founders · the moment it lands, A2P submits</span></div>
-        <div class="cnode amber" style="min-width:0"><b>🥊 Ship the $60 enrichment bake-off</b><span>Chitraksh · same TX pull across 3 providers</span></div>
-      </div>
-    </div>
-    <div class="ck-panel rv">
-      <h4>🧭 LANE LOADS — May 28 board</h4>
-      <div class="kan3">
-        <div class="kanc" style="--kc:var(--orange)"><div class="kn" data-count="11">0</div><div class="kt">🤝 Frankie</div><div class="ks">dealership walk-in · E2E call tests · EIN tracker · Mac Mini timing · parents-intro window</div></div>
-        <div class="kanc" style="--kc:var(--blue)"><div class="kn" data-count="12">0</div><div class="kt">🛠 Chitraksh</div><div class="ks">v12 push · bake-off · 5 backend test calls · P3 spec · FBN filing · IRS rotation</div></div>
-        <div class="kanc" style="--kc:var(--violet)"><div class="kn" data-count="7">0</div><div class="kt">🤖 CTO-Claude</div><div class="ks">dashboard sweep · patch scripts · transcript ingest · inbox monitor · memory updates</div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ck-controls">
-    <button class="x-all">▾ Expand all records</button>
-    <span class="ck-count">Full boards below — May 28 (today) plus archived May 19, May 17 and May 7 boards. Every task line preserved.</span>
-  </div>
-</div>
-
   <h2 class="section-title">Daily Tasks &middot; May 28 (Thu) &middot; Launch Week close</h2>
 
   <div class="grid-2">
@@ -3813,41 +2717,6 @@ body.searching .ck-viz-hide{display:none}
 </div>
 
 <div class="section" id="brief">
-<div class="ck" data-sec="brief">
-  <div class="ck-head">
-    <div class="ck-ico">⚡</div>
-    <div class="ck-head-copy">
-      <div class="ck-kicker">CTO/CLO MASTER BRIEF · THE 90-SECOND EXECUTIVE READ</div>
-      <h2 class="ck-title">Master Brief — <span class="grad">if you read only one tab, read this</span></h2>
-      <p class="ck-plain"><strong>Plain English:</strong> the whole company compressed: where we are in one paragraph, the critical path for the next seven days, and what was built since January. Written for a decision-maker with 90 seconds.</p>
-    </div>
-    <div class="ck-stats">
-      <div class="stat blue"><div class="sv" data-count="12">0</div><div class="sl">Critical-path items</div></div>
-      <div class="stat green"><div class="sv" data-count="500" data-suffix="+">0</div><div class="sl">Calls proven</div></div>
-      <div class="stat violet"><div class="sv" data-count="86">0</div><div class="sl">n8n workflows</div></div>
-    </div>
-  </div>
-
-  <div class="ck-panel glow rv">
-    <h4>🏗️ WHAT EXISTS BECAUSE THIS COMPANY EXISTS — Jan → May 2026</h4>
-    <div class="shelf" style="grid-template-columns:repeat(auto-fill,minmax(195px,1fr))">
-      <div class="doc ok"><span class="led"></span><div><b>Voice-AI platform</b><span>500+ appointment-setter calls</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>86 n8n workflows</b><span>+ Supabase PII-redaction store</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>Twilio A2P approved</b><span>brand + campaign (auto vertical)</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>Stripe hybrid billing</b><span>flat + usage meter</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>CA compliance stack</b><span>operational before first call</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>Legal pack v0.2</b><span>6 DPAs · SOW · NDA · E&amp;O</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>Mortgage-protection agent</b><span>3 pitch tracks · live number</span></div></div>
-      <div class="doc ok"><span class="led"></span><div><b>Lead Recovery Matrix</b><span>132 homeowners scored</span></div></div>
-    </div>
-  </div>
-
-  <div class="ck-controls">
-    <button class="x-all">▾ Expand all records</button>
-    <span class="ck-count">The full brief below — May 19 paragraph, 12-step critical path, v11.3 carry-over and the complete build inventory.</span>
-  </div>
-</div>
-
   <h2 class="section-title">CTO/CLO Master Brief &middot; 90-second exec read &middot; May 19</h2>
 
   <div class="card">
@@ -3949,315 +2818,125 @@ body.searching .ck-viz-hide{display:none}
   </div>
 </div>
 
-
 <div class="footer">
-  <strong>Oraya Labs · Mission Control v13.0</strong> · interface rebuilt Jun 10 2026 · all v12.0 content preserved verbatim
-  (146 record cards · 73 timeline events · 34 meetings · 42 tracked risks) ·
-  <em>Sentient Protocol v4 · transcript = task queue</em><br>
-  Canonical: <code>hanfluxai-create/oraya-dashboard</code> → Vercel auto-deploy · prior look archived as <code>index_v12_backup.html</code>
+  <strong>Oraya Labs</strong> &middot; Intelligence Dashboard v11.1 &middot; May 7, 2026 (Day 117) &middot; Sentient Protocol v4 &middot; <em>transcript = task queue</em><br>
+  Canonical: <code>Oraya-AI-HQ/projects/oraya-labs/deliverables/oraya-project-intelligence-dashboard.html</code>
 </div>
 
-</main>
 </div>
 
 <script>
 (function(){
-/* ============================================================
-   ORAYA MISSION CONTROL v13.0 — behavior engine
-   nav · theme · banner · progressive disclosure · global search
-   count-ups · rings · aurora canvas · tilt · reveal · keyboard
-   ============================================================ */
-'use strict';
-var $=function(s,c){return (c||document).querySelector(s)};
-var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+  /* ============================================================
+     Oraya Dashboard v11.4 — Behavior layer
+     - Tab clicks land on the nav-tab strip (not top of page),
+       so the green milestone banner doesn't trap the user above
+       the fold every time they switch sections.
+     - Milestone banner is collapsible & remembers state.
+     - Theme toggle persists across sessions.
+     ============================================================ */
+  var tabs=document.querySelectorAll('.nav-tab');
+  var secs=document.querySelectorAll('.section');
+  var topBar=document.querySelector('.top-bar');
+  var navTabs=document.getElementById('navTabs');
+  var banner=document.getElementById('milestoneBanner');
+  var mbBody=document.getElementById('mbBody');
+  var mbDeep=document.getElementById('mbDeep');
+  var mbToggle=document.getElementById('mbToggle');
 
-/* ---------- 1. NAVIGATION ---------- */
-var navItems=$$('.sb-item[data-tab]');
-var secs=$$('.section');
-function activate(id,scroll){
-  navItems.forEach(function(x){x.classList.toggle('active',x.dataset.tab===id)});
-  secs.forEach(function(s){s.classList.toggle('active',s.id===id)});
-  if(scroll!==false){window.scrollTo({top:0,behavior:'smooth'})}
-  revealScan();
-}
-navItems.forEach(function(t){
-  t.addEventListener('click',function(){
-    if(document.body.classList.contains('searching')){clearSearch()}
-    activate(t.dataset.tab);
-    history.replaceState(null,'','#'+t.dataset.tab);
+  function topBarHeight(){return topBar?topBar.getBoundingClientRect().height:60;}
+  /* Scroll target = nav-tabs row, offset by top-bar height.
+     This lands the user EXACTLY on the section heading every time,
+     bypassing the banner regardless of its collapsed/expanded state. */
+  function scrollToSection(){
+    if(!navTabs) return;
+    var rect=navTabs.getBoundingClientRect();
+    var absoluteTop=rect.top+window.pageYOffset;
+    var target=absoluteTop-topBarHeight()-4;
+    window.scrollTo({top:target<0?0:target,behavior:'smooth'});
+  }
+
+  function activate(id,opts){
+    opts=opts||{};
+    tabs.forEach(function(x){x.classList.toggle('active',x.dataset.tab===id);});
+    secs.forEach(function(s){s.classList.toggle('active',s.id===id);});
+    if(opts.scroll!==false){scrollToSection();}
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(e){
+      e.preventDefault();
+      var id=t.dataset.tab;
+      activate(id);
+      history.replaceState(null,'','#'+id);
+    });
   });
-});
-var initial=(location.hash||'').replace('#','');
-if(initial&&document.getElementById(initial)){activate(initial,false)}
-window.addEventListener('hashchange',function(){
-  var id=(location.hash||'').replace('#','');
-  if(id&&document.getElementById(id)){activate(id)}
-});
-document.addEventListener('keydown',function(e){
-  if(e.target&&/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;
-  if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
-  var cur=$('.sb-item.active');if(!cur)return;
-  var i=navItems.indexOf(cur);
-  var n=e.key==='ArrowRight'?i+1:i-1;
-  if(n<0)n=navItems.length-1;if(n>=navItems.length)n=0;
-  navItems[n].click();
-});
+  var initial=(location.hash||'').replace('#','');
+  if(initial && document.getElementById(initial)){
+    /* On a deep-link, do NOT auto-scroll on first paint —
+       respect the user's hash entry but let them see the banner. */
+    activate(initial,{scroll:false});
+  }
+  window.addEventListener('hashchange',function(){
+    var id=(location.hash||'').replace('#','');
+    if(id && document.getElementById(id)){activate(id);}
+  });
 
-/* ---------- 2. THEME ---------- */
-var tt=$('#themeToggle'),html=document.documentElement;
-function setLabel(){
-  if(!tt)return;
-  var d=html.getAttribute('data-theme')==='dark';
-  tt.innerHTML=d?'&#9728; Light':'&#9790; Dark';
-}
-try{var saved=localStorage.getItem('oraya-theme');if(saved){html.setAttribute('data-theme',saved)}}catch(e){}
-setLabel();
-if(tt){tt.addEventListener('click',function(){
-  var next=html.getAttribute('data-theme')==='dark'?'light':'dark';
-  html.setAttribute('data-theme',next);
-  try{localStorage.setItem('oraya-theme',next)}catch(e){}
-  setLabel();auroraTheme();
-})}
-
-/* ---------- 3. MILESTONE BANNER (latest sweep) ---------- */
-var banner=$('#milestoneBanner'),mbBody=$('#mbBody'),mbDeep=$('#mbDeep'),mbToggle=$('#mbToggle');
-function setBanner(collapsed){
-  if(!banner)return;
-  banner.classList.toggle('is-collapsed',collapsed);
-  if(mbBody)mbBody.classList.toggle('is-hidden',collapsed);
-  if(mbDeep)mbDeep.classList.toggle('is-hidden',collapsed);
+  /* Banner collapse — remembers state, default expanded.
+     When collapsed: hides golden grid + deep state, keeps pills + headline. */
+  function setBanner(collapsed){
+    if(!banner) return;
+    banner.classList.toggle('is-collapsed',collapsed);
+    if(mbBody){mbBody.classList.toggle('is-hidden',collapsed);}
+    if(mbDeep){mbDeep.classList.toggle('is-hidden',collapsed);}
+    if(mbToggle){
+      mbToggle.setAttribute('aria-expanded',collapsed?'false':'true');
+      var lbl=mbToggle.querySelector('.lbl');
+      if(lbl){lbl.textContent=collapsed?'Expand':'Collapse';}
+      mbToggle.title=collapsed?'Expand banner':'Collapse banner';
+    }
+    try{localStorage.setItem('oraya-mb-collapsed',collapsed?'1':'0');}catch(e){}
+  }
   if(mbToggle){
-    mbToggle.setAttribute('aria-expanded',collapsed?'false':'true');
-    var l=mbToggle.querySelector('.lbl');if(l)l.textContent=collapsed?'Expand':'Collapse';
-  }
-  try{localStorage.setItem('oraya-mb-collapsed',collapsed?'1':'0')}catch(e){}
-}
-if(mbToggle){
-  mbToggle.addEventListener('click',function(){setBanner(!banner.classList.contains('is-collapsed'))});
-  var sm='1';try{sm=localStorage.getItem('oraya-mb-collapsed')||'1'}catch(e){}
-  setBanner(sm==='1');
-}
-
-/* ---------- 4. PROGRESSIVE DISCLOSURE (auto card collapse) ---------- */
-$$('.section').forEach(function(sec){
-  $$(':scope > .card, :scope > .grid-2 > .card, :scope > .grid-3 > .card, :scope > div > .card',sec).forEach(function(card){
-    if(card.closest('.ck'))return;               // never touch cockpit panels
-    var h3=card.querySelector(':scope > h3');
-    if(!h3)return;                                // no title → leave open
-    var kids=[];var n=h3.nextSibling;
-    while(n){kids.push(n);n=n.nextSibling}
-    if(!kids.length)return;
-    var body=document.createElement('div');body.className='card-body';
-    kids.forEach(function(k){body.appendChild(k)});
-    card.appendChild(body);
-    card.classList.add('collapsible');
-    h3.setAttribute('role','button');h3.setAttribute('tabindex','0');h3.setAttribute('aria-expanded','false');
-    function toggle(){
-      var open=card.classList.toggle('is-open');
-      h3.setAttribute('aria-expanded',open?'true':'false');
-    }
-    h3.addEventListener('click',toggle);
-    h3.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}});
-  });
-});
-/* expand/collapse all per section */
-$$('.x-all').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    var sec=btn.closest('.section');if(!sec)return;
-    var cards=$$('.card.collapsible',sec);
-    var anyClosed=cards.some(function(c){return !c.classList.contains('is-open')});
-    cards.forEach(function(c){c.classList.toggle('is-open',anyClosed)});
-    btn.textContent=anyClosed?'▴ Collapse all records':'▾ Expand all records';
-  });
-});
-
-/* ---------- 5. GLOBAL SEARCH ---------- */
-var input=$('#globalSearch'),clearBtn=$('#searchClear'),info=$('#searchInfo');
-var SEARCH_UNITS='.card,.banner,.table-wrap,.hero,.countdown-strip,.founder-strip,.quote';
-function clearSearch(){
-  if(input)input.value='';
-  document.body.classList.remove('searching');
-  $$('.sb-badge.hits').forEach(function(b){b.style.display='';b.textContent=''});
-  secs.forEach(function(s){
-    $$(SEARCH_UNITS,s).forEach(function(u){u.style.display=''});
-    $$('.ck',s).forEach(function(c){c.style.display=''});
-    $$('.section-title',s).forEach(function(t){t.style.display=''});
-  });
-}
-function runSearch(q){
-  q=q.trim().toLowerCase();
-  if(q.length<2){clearSearch();return}
-  document.body.classList.add('searching');
-  var total=0,secHit=0;
-  secs.forEach(function(s){
-    var hits=0;
-    $$('.ck',s).forEach(function(c){c.style.display='none'});
-    $$('.section-title',s).forEach(function(t){t.style.display='none'});
-    $$(SEARCH_UNITS,s).forEach(function(u){
-      if(u.closest('.ck')){return}
-      var match=u.textContent.toLowerCase().indexOf(q)>-1;
-      u.style.display=match?'':'none';
-      if(match){
-        hits++;
-        if(u.classList.contains('collapsible'))u.classList.add('is-open');
-      }
+    mbToggle.addEventListener('click',function(){
+      setBanner(!banner.classList.contains('is-collapsed'));
     });
-    if(hits>0)secHit++;
-    total+=hits;
-    var item=$('.sb-item[data-tab="'+s.id+'"]');
-    if(item){
-      var b=item.querySelector('.sb-badge.hits');
-      if(!b){b=document.createElement('span');b.className='sb-badge hits';item.appendChild(b)}
-      b.textContent=hits;b.style.display=hits?'inline-block':'none';
-    }
+    var savedMb='0';
+    try{savedMb=localStorage.getItem('oraya-mb-collapsed')||'0';}catch(e){}
+    setBanner(savedMb==='1');
+  }
+
+  var tt=document.getElementById('themeToggle');
+  var html=document.documentElement;
+  function setLabel(){
+    var isDark=html.getAttribute('data-theme')==='dark';
+    tt.innerHTML=isDark?'&#9728; Light':'&#9790; Dark';
+  }
+  try{
+    var saved=localStorage.getItem('oraya-theme');
+    if(saved){html.setAttribute('data-theme',saved);}
+  }catch(e){}
+  setLabel();
+  tt.addEventListener('click',function(){
+    var isDark=html.getAttribute('data-theme')==='dark';
+    var next=isDark?'light':'dark';
+    html.setAttribute('data-theme',next);
+    try{localStorage.setItem('oraya-theme',next);}catch(e){}
+    setLabel();
   });
-  if(info)info.textContent=total?('🔎 '+total+' matching records across '+secHit+' sections — Esc to exit'):'No matches — try another term · Esc to exit';
-}
-if(input){
-  var deb;
-  input.addEventListener('input',function(){clearTimeout(deb);deb=setTimeout(function(){runSearch(input.value)},160)});
-  input.addEventListener('keydown',function(e){if(e.key==='Escape'){clearSearch();input.blur()}});
+
+  /* Keyboard nav — left/right cycles tabs */
   document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'&&document.body.classList.contains('searching'))clearSearch();
-    if((e.key==='/'||(e.key==='k'&&(e.metaKey||e.ctrlKey)))&&document.activeElement!==input){
-      if(e.target&&/INPUT|TEXTAREA/.test(e.target.tagName))return;
-      e.preventDefault();input.focus();
-    }
+    if(e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+    if(e.key!=='ArrowLeft' && e.key!=='ArrowRight') return;
+    var current=document.querySelector('.nav-tab.active');
+    if(!current) return;
+    var idx=Array.prototype.indexOf.call(tabs,current);
+    var next=e.key==='ArrowRight'?idx+1:idx-1;
+    if(next<0) next=tabs.length-1;
+    if(next>=tabs.length) next=0;
+    tabs[next].click();
   });
-}
-if(clearBtn)clearBtn.addEventListener('click',clearSearch);
-
-/* ---------- 6. COUNT-UP NUMBERS ---------- */
-function countUp(el){
-  var target=parseFloat(el.dataset.count||'0');
-  var prefix=el.dataset.prefix||'',suffix=el.dataset.suffix||'';
-  var dec=(el.dataset.count||'').indexOf('.')>-1?1:0;
-  var dur=1100,t0=null;
-  function step(ts){
-    if(!t0)t0=ts;
-    var p=Math.min((ts-t0)/dur,1);
-    var ease=1-Math.pow(1-p,3);
-    var v=target*ease;
-    el.textContent=prefix+(dec?v.toFixed(1):Math.round(v).toLocaleString('en-US'))+suffix;
-    if(p<1)requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-/* ---------- 7. RINGS ---------- */
-function fireRing(svg){
-  var arc=svg.querySelector('.arc');if(!arc)return;
-  var pct=parseFloat(svg.dataset.pct||'0');
-  var r=parseFloat(arc.getAttribute('r'));
-  var C=2*Math.PI*r;
-  arc.style.strokeDasharray=C+' '+C;
-  arc.style.strokeDashoffset=C;
-  requestAnimationFrame(function(){requestAnimationFrame(function(){
-    arc.style.strokeDashoffset=C*(1-pct/100);
-  })});
-}
-/* ---------- 8. REVEAL ON SCROLL + triggers ---------- */
-var seen=new WeakSet();
-var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){
-  es.forEach(function(en){
-    if(!en.isIntersecting)return;
-    var el=en.target;
-    el.classList.add('in');
-    if(!seen.has(el)){
-      seen.add(el);
-      $$('[data-count]',el).forEach(countUp);
-      if(el.hasAttribute('data-count'))countUp(el);
-      $$('.ring[data-pct]',el).forEach(fireRing);
-      if(el.classList.contains('ring'))fireRing(el);
-      $$('.sevbar[data-h]',el).forEach(function(b){b.style.height=b.dataset.h+'%'});
-    }
-    io.unobserve(el);
-  });
-},{threshold:.18}):null;
-function revealScan(){
-  if(!io){$$('.rv').forEach(function(e){e.classList.add('in')});$$('[data-count]').forEach(countUp);$$('.ring[data-pct]').forEach(fireRing);return}
-  $$('.section.active .rv, .section.active [data-count], .section.active .ring[data-pct]').forEach(function(el){io.observe(el)});
-}
-revealScan();
-
-/* ---------- 9. AURORA CANVAS (hero) ---------- */
-var cv=$('#aurora'),ctx=cv?cv.getContext('2d'):null,blobs=[],stars=[],AC={};
-function auroraTheme(){
-  var dark=html.getAttribute('data-theme')==='dark';
-  AC.alpha=dark?.55:.32;
-  AC.star=dark?'rgba(180,200,255,':'rgba(37,99,235,';
-  AC.colors=dark?
-    [[91,155,255],[167,139,250],[52,211,153]]:
-    [[37,99,235],[124,58,237],[245,158,11]];
-}
-function sizeCv(){
-  if(!cv)return;
-  var r=cv.parentElement.getBoundingClientRect();
-  cv.width=r.width*devicePixelRatio;cv.height=r.height*devicePixelRatio;
-}
-function initAurora(){
-  if(!ctx)return;
-  auroraTheme();sizeCv();
-  blobs=[];stars=[];
-  for(var i=0;i<3;i++){
-    blobs.push({x:Math.random(),y:Math.random()*.7,r:.33+Math.random()*.25,dx:(Math.random()-.5)*.0011,dy:(Math.random()-.5)*.0008,c:i});
-  }
-  for(var j=0;j<70;j++){
-    stars.push({x:Math.random(),y:Math.random(),r:Math.random()*1.6+.4,tw:Math.random()*Math.PI*2,sp:.008+Math.random()*.02});
-  }
-}
-var rafOn=true;
-function drawAurora(){
-  if(!ctx){return}
-  if(rafOn&&!document.hidden){
-    var W=cv.width,H=cv.height;
-    ctx.clearRect(0,0,W,H);
-    blobs.forEach(function(b){
-      b.x+=b.dx;b.y+=b.dy;
-      if(b.x<-.2||b.x>1.2)b.dx*=-1;
-      if(b.y<-.2||b.y>1)b.dy*=-1;
-      var c=AC.colors[b.c%AC.colors.length];
-      var g=ctx.createRadialGradient(b.x*W,b.y*H,0,b.x*W,b.y*H,b.r*Math.max(W,H));
-      g.addColorStop(0,'rgba('+c[0]+','+c[1]+','+c[2]+','+(AC.alpha*.30)+')');
-      g.addColorStop(1,'rgba('+c[0]+','+c[1]+','+c[2]+',0)');
-      ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
-    });
-    stars.forEach(function(s){
-      s.tw+=s.sp;
-      var a=(Math.sin(s.tw)+1)/2*.7+.15;
-      ctx.beginPath();
-      ctx.arc(s.x*W,s.y*H,s.r*devicePixelRatio,0,Math.PI*2);
-      ctx.fillStyle=AC.star+(a*AC.alpha)+')';
-      ctx.fill();
-    });
-  }
-  requestAnimationFrame(drawAurora);
-}
-if(cv){
-  initAurora();drawAurora();
-  window.addEventListener('resize',function(){sizeCv()});
-  if(io){var hio=new IntersectionObserver(function(es){es.forEach(function(en){rafOn=en.isIntersecting})});hio.observe(cv)}
-}
-
-/* ---------- 10. 3D TILT on project cards ---------- */
-$$('.proj-card').forEach(function(c){
-  c.addEventListener('mousemove',function(e){
-    var r=c.getBoundingClientRect();
-    var x=(e.clientX-r.left)/r.width-0.5, y=(e.clientY-r.top)/r.height-0.5;
-    c.style.transform='perspective(700px) rotateY('+(x*6)+'deg) rotateX('+(-y*6)+'deg) translateY(-3px)';
-  });
-  c.addEventListener('mouseleave',function(){c.style.transform=''});
-});
-
-/* ---------- 11. BACK TO TOP ---------- */
-var fab=$('#toTop');
-if(fab){
-  window.addEventListener('scroll',function(){fab.classList.toggle('show',window.scrollY>500)},{passive:true});
-  fab.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
-}
-
-/* ---------- 12. sendPrompt-safe no-op guard ---------- */
 })();
-
 </script>
 </body>
 </html>
