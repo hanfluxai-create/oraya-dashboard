@@ -1,0 +1,259 @@
+{
+  "schema": "oraya.dailybrief/v1",
+  "generated_at": "2026-06-26T16:46:48.269Z",
+  "date_label": "Fri · Jun 26",
+  "edition": "AM",
+  "day_number": 167,
+  "phase": "Launch Week close",
+  "headline": "Three lanes, zero overlap — WALK INTO ENVISION HONDA MILPITAS · 1 PM PT.",
+  "source": "index.html · Daily Tasks board (May 28 (Thu))",
+  "live_url": "https://oraya-dashboard.vercel.app/brief/",
+  "hq_url": "https://oraya-dashboard.vercel.app/",
+  "spotlight": [
+    {
+      "icon": "🤝",
+      "title": "WALK INTO ENVISION HONDA MILPITAS · 1 PM PT",
+      "who": "Frankie",
+      "detail": "suited up, fresh haircut, iPad with the Oraya-branded dealership deck. Ask for Greg (introduced you on phone yesterday) then GSM Mo. Reciprocity opener: \"I'm semi-interested in the Prologue hybrid — mind if I poke around while we talk?\" — lower the sales-resistance, demo the system on iPad once warm. Calendar event already created with location pinned + Chitraksh on as optional."
+    },
+    {
+      "icon": "🛠",
+      "title": "Push v12.0 dashboard (this update) live",
+      "who": "Chitraksh",
+      "detail": "main HQ + linked Lead-Gen Dashboard + new Real Estate section + Lead-Gen tab. Vercel auto-deploys on push."
+    },
+    {
+      "icon": "🤖",
+      "title": "v12.0 dashboard sweep",
+      "who": "CTO-Claude",
+      "detail": "this update: title/banner/hero/countdown refreshed for Day 138; Real Estate (P3) section added; Lead-Gen section added with top-bar link; Voice AI section refreshed for v126/v15; Insurance section refreshed for backend-LIVE state; auto-pushed via PAT to hanfluxai-create/oraya-dashboard."
+    }
+  ],
+  "blockers": [
+    {
+      "label": "EIN",
+      "scope": "Shared",
+      "detail": "lines open 8 AM PT; Chitraksh handles 8-11 AM India-side rotation; Frankie picks up post-day-job. Backup: file SS-4 via fax for guaranteed 4-business-day turnaround."
+    }
+  ],
+  "metrics": [
+    {
+      "k": "Day",
+      "v": "167"
+    },
+    {
+      "k": "Open tasks",
+      "v": "30"
+    },
+    {
+      "k": "Lanes",
+      "v": "3"
+    }
+  ],
+  "lanes": [
+    {
+      "key": "frankie",
+      "name": "Frankie",
+      "role": "CEO · Field",
+      "accent": "emerald",
+      "tasks": [
+        {
+          "lead": "WALK INTO ENVISION HONDA MILPITAS · 1 PM PT",
+          "detail": "suited up, fresh haircut, iPad with the Oraya-branded dealership deck. Ask for Greg (introduced you on phone yesterday) then GSM Mo. Reciprocity opener: \"I'm semi-interested in the Prologue hybrid — mind if I poke around while we talk?\" — lower the sales-resistance, demo the system on iPad once warm. Calendar event already created with location pinned + Chitraksh on as optional.",
+          "tag": "FIRST DEALERSHIP APPT",
+          "tagType": "green"
+        },
+        {
+          "lead": "Test outbound v126 + inbound v15 end-to-end",
+          "detail": "on at least 2 fresh test scenarios · pretend-flow on inbound: voicemail callback → opt-in → calendar slot. Confirm calendar event, email confirmation, SMS — all three — land on each test.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "EIN check the certified-mail tracker",
+          "detail": "(mailed May 22) · expected Thursday or Friday landing. The moment it hits, A2P submits.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "Plug Mom's policy from daughter's mother",
+          "detail": "the manufactured $3K of ad-budget cash. Theresa policies cancelled with grace given her son's passing — don't disturb. Day-job checks running parallel.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "Pull up the Real Estate P3 visual reference",
+          "detail": "with Chitraksh on the next sync · lock the deal-card UI design (comparables + ARV pie chart + urgency countdown). Plan for Mom + Art handoff once P2 generates first dollar.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "Lock Mac Mini purchase timing",
+          "detail": "back-end of month. Frankie's card on amazon.in with monitor (per Chitraksh's request). Coordinate Zoom unbox/setup. \"Hold me to it — you should have it in the next 7 days.\"",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "Pick a window for the Chitraksh-parents intro",
+          "detail": "before 11am or after 8pm Frankie-time. Cup-of-coffee energy, not pitch.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "4:30 AM block discipline — resume tomorrow.",
+          "detail": "May 23-26 slip-then-recover. Fixed block is the rule, not the suggestion.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "Test the inbound agent edited opener tonight",
+          "detail": "confirm the outbound-snippet ported in worked correctly. If clean, tomorrow morning kick off the first 60-lead outbound batch.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "Carry-over (still active):",
+          "detail": "Marketing Retainer + Meta ads next-out once A2P approves · Pizza Hut lesson logged (over-transparency = system risk) · military-couple compare-meeting still need to book if you want to retain.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "IRS call (parallel)",
+          "detail": "lines open 8 AM PT; Chitraksh handles 8-11 AM India-side rotation; Frankie picks up post-day-job. Backup: file SS-4 via fax for guaranteed 4-business-day turnaround.",
+          "tag": "EIN BLOCKER",
+          "tagType": "red"
+        }
+      ]
+    },
+    {
+      "key": "chitraksh",
+      "name": "Chitraksh",
+      "role": "CTO · Build",
+      "accent": "cyan",
+      "tasks": [
+        {
+          "lead": "Push v12.0 dashboard (this update) live",
+          "detail": "main HQ + linked Lead-Gen Dashboard + new Real Estate section + Lead-Gen tab. Vercel auto-deploys on push.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "Watch the Envision Honda walk-in",
+          "detail": "Chitraksh on standby in case Frankie needs a live G-Meet pull-in for live demo or live Q&A. Have outbound voice agent on demo-mode ready to dial Frankie's phone for in-person playback.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "Build the dynamic Oraya dealership deck",
+          "detail": "from the Mercedes offer letter · Oraya UI / logo / color scheme · capability matrix · deliverables on PDF for Frankie's iPad.",
+          "tag": "FRANKIE NOTE",
+          "tagType": "orange"
+        },
+        {
+          "lead": "Ship the $60 enrichment bake-off",
+          "detail": "$20 each on ATTOM + BatchData + PropertyRadar · same TX new-homeowner pull across all three · compare data quality + cold-outreach conversion · pick the winner.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "Verify outbound v126 + inbound v15 backend",
+          "detail": "on 5 fresh test calls · confirm calendar / email / SMS / DNC / admin log all firing on each · spot-check the digit-conversion fix on at least 3 \"spoken digit\" emails.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "Real Estate P3 architecture spec",
+          "detail": "port the single-prompt agent (archived from P2 fork) into the investor-blast prototype · ingest the Oraya site clone visual as the deal-card UI reference · scaffold a Postgres schema for the investor DB + the seller-contract DB.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "IRS call rotation 8-11 AM PT",
+          "detail": "(8:30 PM-11:30 PM IST) · ride out auto-disconnects, retry until a live agent picks up · certified-mail track running parallel.",
+          "tag": "EIN BLOCKER",
+          "tagType": "red"
+        },
+        {
+          "lead": "Twin Mind transcript → dashboard auto-update pipeline",
+          "detail": "complete the webhook so post-block dashboard updates push automatically without manual edit-loop.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "FBN filing (California)",
+          "detail": "\"Oraya Insurance Group\" trade name vs. legal entity; file with operating county; publish in adjudicated newspaper for 4 consecutive weeks; bake receipt into the A2P package.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "RPA for free registered-agent address",
+          "detail": "queue providers, prepare SoS filing, synchronized public-facing address flip the moment A2P approves.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "Stand up the CEO sub-agent on the Mac Mini",
+          "detail": "when it arrives · first sub-agent online: dashboard. Then legal / engineer / marketing / lead-gen + follow-up one per shipping week.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "Cancelled / dropped:",
+          "detail": "day-trading agent (Frankie + Chitraksh aligned May 27 — revenue potential lower than P2/P3/voice, back-tests don't translate to live).",
+          "tag": "",
+          "tagType": ""
+        }
+      ]
+    },
+    {
+      "key": "ctoclaude",
+      "name": "CTO-Claude",
+      "role": "Autonomous",
+      "accent": "violet",
+      "tasks": [
+        {
+          "lead": "v12.0 dashboard sweep",
+          "detail": "this update: title/banner/hero/countdown refreshed for Day 138; Real Estate (P3) section added; Lead-Gen section added with top-bar link; Voice AI section refreshed for v126/v15; Insurance section refreshed for backend-LIVE state; auto-pushed via PAT to hanfluxai-create/oraya-dashboard.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "Ingested transcripts:",
+          "detail": "May 20-21 \"Voice Agent Debugging / Mortgage Protection Script Rework / Texas Homeowner Lead Strategy\"; May 23-24 \"Claude Rate-Limit Outage / Daily Sync / Mortgage-Insurance Agent Script Testing / EIN Follow-up\"; May 26-28 \"Voice AI Launch Fixes / Insurance Inbound Testing / Dealership Outreach Strategy\".",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "Email digit-conversion patch script",
+          "detail": "apply_email_digit_fix_2026-05-28.py drafted + applied on outbound v126; parity patch apply_inbound_parity_fix_2026-05-28.py applied on inbound v15. Pre/post snapshots saved in projects/p2-insurance/retell/snapshots/.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "Memory updated:",
+          "detail": "\"Email digit handling rule\" memory file noted as shipped v126 (2026-05-28). Voice-flow surgical-editing rule honored (str.replace only, never wholesale rewrite).",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "Inbox + WhatsApp monitor",
+          "detail": "auto-flag EIN-related IRS communication (USPS certified-mail delivery), Envision Honda follow-up from Greg/Mo, Theresa cancellation processing, Mom's policy through daughter's mother.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "Multi-model fallback rule still in force",
+          "detail": "ChatGPT + Gemini on shadow during Anthropic outages.",
+          "tag": "",
+          "tagType": ""
+        },
+        {
+          "lead": "No permission-asking on routine tasks",
+          "detail": "(max-autonomy rule holds).",
+          "tag": "",
+          "tagType": ""
+        }
+      ]
+    }
+  ]
+}

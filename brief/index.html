@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#04060d" />
+<title>Oraya HQ · Daily Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#04060d; --ink:#eef2ff; --sub:#9aa7c7; --muted:#6b7896;
+    --glass:rgba(255,255,255,.045); --glass-2:rgba(255,255,255,.07);
+    --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.14);
+    --emerald:#34d399; --emerald-g:#10b98155;
+    --cyan:#38bdf8;   --cyan-g:#0ea5e955;
+    --violet:#c084fc; --violet-g:#a855f755;
+    --gold:#f5c451;
+    --tag-green:#34d399; --tag-red:#fb7185; --tag-orange:#fbbf24; --tag-gray:#94a3b8;
+    --r:18px; --maxw:1280px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  canvas#bg{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;display:block}
+  .vignette{position:fixed;inset:0;z-index:1;pointer-events:none;
+    background:
+      radial-gradient(120% 80% at 50% -10%, rgba(56,189,248,.10), transparent 60%),
+      radial-gradient(90% 70% at 110% 10%, rgba(168,85,247,.10), transparent 55%),
+      radial-gradient(100% 90% at 50% 120%, rgba(4,6,13,.85), rgba(4,6,13,.0) 50%),
+      linear-gradient(180deg, rgba(4,6,13,.35), rgba(4,6,13,.55))}
+  .wrap{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;
+    padding:26px clamp(16px,4vw,40px) 60px}
+
+  /* ---------- top bar ---------- */
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:30px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .mark{width:38px;height:38px;border-radius:11px;position:relative;flex:0 0 auto;
+    background:conic-gradient(from 210deg,#34d399,#38bdf8,#a855f7,#34d399);
+    box-shadow:0 0 26px rgba(56,189,248,.45);animation:spin 14s linear infinite}
+  .mark::after{content:"";position:absolute;inset:3px;border-radius:8px;background:#070b16}
+  .mark span{position:absolute;inset:0;display:grid;place-items:center;font-family:'Space Grotesk';
+    font-weight:700;font-size:16px;color:#dbeafe;z-index:2}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .brand b{font-family:'Space Grotesk';font-weight:700;letter-spacing:.5px;font-size:15px}
+  .brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;margin-top:1px}
+  .clock{display:flex;align-items:center;gap:10px;font-variant-numeric:tabular-nums}
+  .edition{font-family:'Space Grotesk';font-weight:600;font-size:12px;letter-spacing:1.5px;
+    padding:7px 13px;border-radius:999px;border:1px solid var(--line-2);
+    background:var(--glass);backdrop-filter:blur(12px);color:#dbeafe}
+  .edition .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--emerald);
+    box-shadow:0 0 10px var(--emerald);margin-right:7px;vertical-align:middle;animation:pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .now{font-size:12px;color:var(--sub)}
+
+  /* ---------- hero ---------- */
+  .hero{margin-bottom:26px}
+  .kicker{font-family:'Space Grotesk';font-size:12px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--cyan);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .kicker::before{content:"";width:26px;height:1px;background:linear-gradient(90deg,var(--cyan),transparent)}
+  h1.headline{font-family:'Space Grotesk';font-weight:700;line-height:1.12;margin:0 0 16px;
+    font-size:clamp(26px,4.6vw,46px);letter-spacing:-.5px;max-width:18ch;
+    background:linear-gradient(180deg,#ffffff,#aebfe6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .metarow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .chip{font-size:12.5px;color:var(--sub);padding:6px 12px;border-radius:999px;
+    border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(10px)}
+  .chip b{color:var(--ink);font-weight:600}
+
+  /* ---------- blocker banner ---------- */
+  .blocker{display:flex;gap:14px;align-items:flex-start;margin:22px 0 30px;padding:16px 18px;border-radius:var(--r);
+    border:1px solid rgba(251,113,133,.32);background:linear-gradient(180deg,rgba(251,113,133,.12),rgba(251,113,133,.04));
+    box-shadow:0 0 0 1px rgba(251,113,133,.06),0 18px 50px -28px rgba(251,113,133,.5)}
+  .blocker .bi{font-size:20px;filter:drop-shadow(0 0 8px rgba(251,113,133,.6));line-height:1.2}
+  .blocker .bt{font-family:'Space Grotesk';font-weight:600;color:#fecdd3;font-size:14px;margin-bottom:3px;letter-spacing:.3px}
+  .blocker .bd{color:#fbcfe8;opacity:.85;font-size:13px;line-height:1.5}
+  .blocker .bscope{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#fda4af;
+    border:1px solid rgba(251,113,133,.4);border-radius:6px;padding:2px 7px;margin-left:8px;vertical-align:middle}
+
+  /* ---------- section label ---------- */
+  .slabel{font-family:'Space Grotesk';font-size:12px;letter-spacing:2.5px;text-transform:uppercase;
+    color:var(--muted);margin:6px 0 14px;display:flex;align-items:center;gap:12px}
+  .slabel::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+  /* ---------- spotlight ---------- */
+  .spot{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:34px}
+  .scard{position:relative;padding:18px;border-radius:var(--r);overflow:hidden;
+    border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(14px);
+    transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s}
+  .scard:hover{transform:translateY(-4px);border-color:var(--line-2)}
+  .scard .ic{font-size:24px;margin-bottom:12px;display:block;filter:drop-shadow(0 4px 12px rgba(0,0,0,.5))}
+  .scard h3{font-family:'Space Grotesk';font-weight:600;font-size:15px;margin:0 0 6px;letter-spacing:.2px}
+  .scard .who{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:9px}
+  .scard p{margin:0;font-size:13px;line-height:1.55;color:var(--sub)}
+  .scard::before{content:"";position:absolute;inset:0;border-radius:var(--r);padding:1px;
+    background:linear-gradient(140deg,rgba(245,196,81,.5),transparent 45%);
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.7}
+
+  /* ---------- lanes ---------- */
+  .lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+  .lane{position:relative;border-radius:var(--r);overflow:hidden;
+    border:1px solid var(--line);background:linear-gradient(180deg,var(--glass-2),var(--glass));
+    backdrop-filter:blur(16px)}
+  .lane::before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:var(--accent);
+    box-shadow:0 0 22px 1px var(--accent-g);opacity:.95}
+  .lane-h{display:flex;align-items:center;gap:13px;padding:18px 18px 14px}
+  .avatar{width:44px;height:44px;border-radius:13px;flex:0 0 auto;display:grid;place-items:center;
+    font-family:'Space Grotesk';font-weight:700;font-size:17px;color:#04060d;background:var(--accent);
+    box-shadow:0 8px 22px -8px var(--accent),inset 0 0 0 1px rgba(255,255,255,.25)}
+  .lane-h .nm{font-family:'Space Grotesk';font-weight:600;font-size:16px;letter-spacing:.2px}
+  .lane-h .rl{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:2px}
+  .load{margin-left:auto;text-align:right}
+  .load .n{font-family:'Space Grotesk';font-weight:700;font-size:26px;line-height:1;color:var(--accent)}
+  .load .l{font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+  .tasks{list-style:none;margin:0;padding:4px 14px 16px}
+  .task{padding:13px 12px;border-radius:13px;margin-bottom:7px;border:1px solid transparent;
+    transition:background .25s,border-color .25s;cursor:default}
+  .task:hover{background:rgba(255,255,255,.035);border-color:var(--line)}
+  .task .ld{font-weight:600;font-size:13.5px;line-height:1.4;color:#e7ecff;display:block;margin-bottom:4px}
+  .task .dt{font-size:12.5px;line-height:1.55;color:var(--sub)}
+  .task.done .ld{color:var(--muted)}
+  .tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
+    padding:3px 8px;border-radius:6px;margin-top:8px;vertical-align:middle}
+  .tag.green{color:#062e21;background:var(--tag-green)}
+  .tag.red{color:#3b0a14;background:var(--tag-red)}
+  .tag.orange{color:#3a2606;background:var(--tag-orange)}
+  .tag.gray{color:#10151f;background:var(--tag-gray)}
+  .lane.emerald{--accent:var(--emerald);--accent-g:var(--emerald-g)}
+  .lane.cyan{--accent:var(--cyan);--accent-g:var(--cyan-g)}
+  .lane.violet{--accent:var(--violet);--accent-g:var(--violet-g)}
+
+  /* ---------- footer ---------- */
+  footer{margin-top:42px;padding-top:22px;border-top:1px solid var(--line);
+    display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px}
+  .cta{font-family:'Space Grotesk';font-weight:600;font-size:13px;color:#04060d;background:linear-gradient(90deg,#34d399,#38bdf8);
+    padding:11px 20px;border-radius:999px;box-shadow:0 12px 30px -12px rgba(56,189,248,.7);
+    transition:transform .25s,box-shadow .25s}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 16px 38px -12px rgba(56,189,248,.9)}
+
+  /* ---------- entrance animation ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:900px){
+    .spot{grid-template-columns:1fr;gap:11px}
+    .lanes{grid-template-columns:1fr;gap:14px}
+    h1.headline{font-size:clamp(24px,7vw,34px);max-width:100%}
+    .topbar{margin-bottom:22px}
+    .clock .now{display:none}
+  }
+  @media(max-width:480px){
+    .wrap{padding:18px 15px 48px}
+    .brand small{letter-spacing:1.8px}
+    .mark{width:34px;height:34px}
+    .scard,.lane-h{padding-left:15px;padding-right:15px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .mark{animation:none}.edition .dot{animation:none}
+    .reveal{transition:none;opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div class="vignette"></div>
+
+<div class="wrap">
+  <div class="topbar reveal">
+    <div class="brand">
+      <div class="mark"><span>O</span></div>
+      <div><b>ORAYA HQ</b><small>Daily Brief</small></div>
+    </div>
+    <div class="clock">
+      <span class="now" id="now"></span>
+      <span class="edition"><span class="dot"></span><span id="edition">AM EDITION</span></span>
+    </div>
+  </div>
+
+  <div class="hero reveal">
+    <div class="kicker" id="kicker">Launch Week · Close</div>
+    <h1 class="headline" id="headline">—</h1>
+    <div class="metarow" id="metarow"></div>
+  </div>
+
+  <div id="blockerHost"></div>
+
+  <div class="slabel reveal">Today’s Spotlight</div>
+  <div class="spot" id="spot"></div>
+
+  <div class="slabel reveal">Lane Loads · who does what, right now</div>
+  <div class="lanes" id="lanes"></div>
+
+  <footer class="reveal">
+    <div>Generated <span id="genstamp">—</span> · Source: <span id="src">index.html · Daily Tasks</span> · Three lanes, zero overlap.</div>
+    <a class="cta" id="openlive" href="#">Open the live HQ dashboard →</a>
+  </footer>
+</div>
+
+<!-- ============ embedded fallback data (overridden by ./brief_data.json when hosted) ============ -->
+<script id="seed" type="application/json">
+{"schema":"oraya.dailybrief/v1","generated_at":"2026-06-26T16:46:48.269Z","date_label":"Fri · Jun 26","edition":"AM","day_number":167,"phase":"Launch Week close","headline":"Three lanes, zero overlap — WALK INTO ENVISION HONDA MILPITAS · 1 PM PT.","source":"index.html · Daily Tasks board (May 28 (Thu))","live_url":"https://oraya-dashboard.vercel.app/brief/","hq_url":"https://oraya-dashboard.vercel.app/","spotlight":[{"icon":"🤝","title":"WALK INTO ENVISION HONDA MILPITAS · 1 PM PT","who":"Frankie","detail":"suited up, fresh haircut, iPad with the Oraya-branded dealership deck. Ask for Greg (introduced you on phone yesterday) then GSM Mo. Reciprocity opener: \"I'm semi-interested in the Prologue hybrid — mind if I poke around while we talk?\" — lower the sales-resistance, demo the system on iPad once warm. Calendar event already created with location pinned + Chitraksh on as optional."},{"icon":"🛠","title":"Push v12.0 dashboard (this update) live","who":"Chitraksh","detail":"main HQ + linked Lead-Gen Dashboard + new Real Estate section + Lead-Gen tab. Vercel auto-deploys on push."},{"icon":"🤖","title":"v12.0 dashboard sweep","who":"CTO-Claude","detail":"this update: title/banner/hero/countdown refreshed for Day 138; Real Estate (P3) section added; Lead-Gen section added with top-bar link; Voice AI section refreshed for v126/v15; Insurance section refreshed for backend-LIVE state; auto-pushed via PAT to hanfluxai-create/oraya-dashboard."}],"blockers":[{"label":"EIN","scope":"Shared","detail":"lines open 8 AM PT; Chitraksh handles 8-11 AM India-side rotation; Frankie picks up post-day-job. Backup: file SS-4 via fax for guaranteed 4-business-day turnaround."}],"metrics":[{"k":"Day","v":"167"},{"k":"Open tasks","v":"30"},{"k":"Lanes","v":"3"}],"lanes":[{"key":"frankie","name":"Frankie","role":"CEO · Field","accent":"emerald","tasks":[{"lead":"WALK INTO ENVISION HONDA MILPITAS · 1 PM PT","detail":"suited up, fresh haircut, iPad with the Oraya-branded dealership deck. Ask for Greg (introduced you on phone yesterday) then GSM Mo. Reciprocity opener: \"I'm semi-interested in the Prologue hybrid — mind if I poke around while we talk?\" — lower the sales-resistance, demo the system on iPad once warm. Calendar event already created with location pinned + Chitraksh on as optional.","tag":"FIRST DEALERSHIP APPT","tagType":"green"},{"lead":"Test outbound v126 + inbound v15 end-to-end","detail":"on at least 2 fresh test scenarios · pretend-flow on inbound: voicemail callback → opt-in → calendar slot. Confirm calendar event, email confirmation, SMS — all three — land on each test.","tag":"","tagType":""},{"lead":"EIN check the certified-mail tracker","detail":"(mailed May 22) · expected Thursday or Friday landing. The moment it hits, A2P submits.","tag":"","tagType":""},{"lead":"Plug Mom's policy from daughter's mother","detail":"the manufactured $3K of ad-budget cash. Theresa policies cancelled with grace given her son's passing — don't disturb. Day-job checks running parallel.","tag":"","tagType":""},{"lead":"Pull up the Real Estate P3 visual reference","detail":"with Chitraksh on the next sync · lock the deal-card UI design (comparables + ARV pie chart + urgency countdown). Plan for Mom + Art handoff once P2 generates first dollar.","tag":"","tagType":""},{"lead":"Lock Mac Mini purchase timing","detail":"back-end of month. Frankie's card on amazon.in with monitor (per Chitraksh's request). Coordinate Zoom unbox/setup. \"Hold me to it — you should have it in the next 7 days.\"","tag":"","tagType":""},{"lead":"Pick a window for the Chitraksh-parents intro","detail":"before 11am or after 8pm Frankie-time. Cup-of-coffee energy, not pitch.","tag":"","tagType":""},{"lead":"4:30 AM block discipline — resume tomorrow.","detail":"May 23-26 slip-then-recover. Fixed block is the rule, not the suggestion.","tag":"","tagType":""},{"lead":"Test the inbound agent edited opener tonight","detail":"confirm the outbound-snippet ported in worked correctly. If clean, tomorrow morning kick off the first 60-lead outbound batch.","tag":"","tagType":""},{"lead":"Carry-over (still active):","detail":"Marketing Retainer + Meta ads next-out once A2P approves · Pizza Hut lesson logged (over-transparency = system risk) · military-couple compare-meeting still need to book if you want to retain.","tag":"","tagType":""},{"lead":"IRS call (parallel)","detail":"lines open 8 AM PT; Chitraksh handles 8-11 AM India-side rotation; Frankie picks up post-day-job. Backup: file SS-4 via fax for guaranteed 4-business-day turnaround.","tag":"EIN BLOCKER","tagType":"red"}]},{"key":"chitraksh","name":"Chitraksh","role":"CTO · Build","accent":"cyan","tasks":[{"lead":"Push v12.0 dashboard (this update) live","detail":"main HQ + linked Lead-Gen Dashboard + new Real Estate section + Lead-Gen tab. Vercel auto-deploys on push.","tag":"","tagType":""},{"lead":"Watch the Envision Honda walk-in","detail":"Chitraksh on standby in case Frankie needs a live G-Meet pull-in for live demo or live Q&A. Have outbound voice agent on demo-mode ready to dial Frankie's phone for in-person playback.","tag":"","tagType":""},{"lead":"Build the dynamic Oraya dealership deck","detail":"from the Mercedes offer letter · Oraya UI / logo / color scheme · capability matrix · deliverables on PDF for Frankie's iPad.","tag":"FRANKIE NOTE","tagType":"orange"},{"lead":"Ship the $60 enrichment bake-off","detail":"$20 each on ATTOM + BatchData + PropertyRadar · same TX new-homeowner pull across all three · compare data quality + cold-outreach conversion · pick the winner.","tag":"","tagType":""},{"lead":"Verify outbound v126 + inbound v15 backend","detail":"on 5 fresh test calls · confirm calendar / email / SMS / DNC / admin log all firing on each · spot-check the digit-conversion fix on at least 3 \"spoken digit\" emails.","tag":"","tagType":""},{"lead":"Real Estate P3 architecture spec","detail":"port the single-prompt agent (archived from P2 fork) into the investor-blast prototype · ingest the Oraya site clone visual as the deal-card UI reference · scaffold a Postgres schema for the investor DB + the seller-contract DB.","tag":"","tagType":""},{"lead":"IRS call rotation 8-11 AM PT","detail":"(8:30 PM-11:30 PM IST) · ride out auto-disconnects, retry until a live agent picks up · certified-mail track running parallel.","tag":"EIN BLOCKER","tagType":"red"},{"lead":"Twin Mind transcript → dashboard auto-update pipeline","detail":"complete the webhook so post-block dashboard updates push automatically without manual edit-loop.","tag":"","tagType":""},{"lead":"FBN filing (California)","detail":"\"Oraya Insurance Group\" trade name vs. legal entity; file with operating county; publish in adjudicated newspaper for 4 consecutive weeks; bake receipt into the A2P package.","tag":"","tagType":""},{"lead":"RPA for free registered-agent address","detail":"queue providers, prepare SoS filing, synchronized public-facing address flip the moment A2P approves.","tag":"","tagType":""},{"lead":"Stand up the CEO sub-agent on the Mac Mini","detail":"when it arrives · first sub-agent online: dashboard. Then legal / engineer / marketing / lead-gen + follow-up one per shipping week.","tag":"","tagType":""},{"lead":"Cancelled / dropped:","detail":"day-trading agent (Frankie + Chitraksh aligned May 27 — revenue potential lower than P2/P3/voice, back-tests don't translate to live).","tag":"","tagType":""}]},{"key":"ctoclaude","name":"CTO-Claude","role":"Autonomous","accent":"violet","tasks":[{"lead":"v12.0 dashboard sweep","detail":"this update: title/banner/hero/countdown refreshed for Day 138; Real Estate (P3) section added; Lead-Gen section added with top-bar link; Voice AI section refreshed for v126/v15; Insurance section refreshed for backend-LIVE state; auto-pushed via PAT to hanfluxai-create/oraya-dashboard.","tag":"","tagType":""},{"lead":"Ingested transcripts:","detail":"May 20-21 \"Voice Agent Debugging / Mortgage Protection Script Rework / Texas Homeowner Lead Strategy\"; May 23-24 \"Claude Rate-Limit Outage / Daily Sync / Mortgage-Insurance Agent Script Testing / EIN Follow-up\"; May 26-28 \"Voice AI Launch Fixes / Insurance Inbound Testing / Dealership Outreach Strategy\".","tag":"","tagType":""},{"lead":"Email digit-conversion patch script","detail":"apply_email_digit_fix_2026-05-28.py drafted + applied on outbound v126; parity patch apply_inbound_parity_fix_2026-05-28.py applied on inbound v15. Pre/post snapshots saved in projects/p2-insurance/retell/snapshots/.","tag":"","tagType":""},{"lead":"Memory updated:","detail":"\"Email digit handling rule\" memory file noted as shipped v126 (2026-05-28). Voice-flow surgical-editing rule honored (str.replace only, never wholesale rewrite).","tag":"","tagType":""},{"lead":"Inbox + WhatsApp monitor","detail":"auto-flag EIN-related IRS communication (USPS certified-mail delivery), Envision Honda follow-up from Greg/Mo, Theresa cancellation processing, Mom's policy through daughter's mother.","tag":"","tagType":""},{"lead":"Multi-model fallback rule still in force","detail":"ChatGPT + Gemini on shadow during Anthropic outages.","tag":"","tagType":""},{"lead":"No permission-asking on routine tasks","detail":"(max-autonomy rule holds).","tag":"","tagType":""}]}]}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* =========================================================================
+   ORAYA DAILY BRIEF — render + WebGL constellation
+   ========================================================================= */
+(function(){
+  "use strict";
+  const $ = (s,r=document)=>r.querySelector(s);
+  const el = (t,c,h)=>{const n=document.createElement(t);if(c)n.className=c;if(h!=null)n.innerHTML=h;return n;};
+  const esc = s => String(s==null?"":s).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+
+  /* ---------- load data: try live JSON, fall back to embedded seed ---------- */
+  function seed(){ try{ return JSON.parse($("#seed").textContent); }catch(e){ return null; } }
+  async function loadData(){
+    try{
+      const r = await fetch("./brief_data.json", {cache:"no-store"});
+      if(r.ok){ const d = await r.json(); if(d && d.lanes) return d; }
+    }catch(e){/* local file:// or offline — use seed */}
+    return seed();
+  }
+
+  /* ---------- render ---------- */
+  function render(d){
+    if(!d){ return; }
+    const accentMap = {emerald:"emerald",cyan:"cyan",violet:"violet"};
+    $("#kicker").textContent = d.phase || "Daily Brief";
+    $("#headline").textContent = d.headline || "";
+    $("#edition").textContent = (d.edition||"AM") + " EDITION";
+    $("#src").textContent = d.source || "index.html · Daily Tasks";
+    $("#genstamp").textContent = fmtStamp(d.generated_at);
+    if(d.live_url){ $("#openlive").href = d.live_url; }
+
+    // meta chips
+    const mr = $("#metarow"); mr.innerHTML="";
+    mr.appendChild(el("span","chip",`<b>${esc(d.date_label||"")}</b>`));
+    if(d.day_number) mr.appendChild(el("span","chip",`Day <b>${esc(d.day_number)}</b>`));
+    (d.metrics||[]).forEach(m=> mr.appendChild(el("span","chip",`${esc(m.k)} <b>${esc(m.v)}</b>`)));
+
+    // blocker(s)
+    const bh = $("#blockerHost"); bh.innerHTML="";
+    (d.blockers||[]).forEach(b=>{
+      const node = el("div","blocker reveal");
+      node.innerHTML = `<div class="bi">⛔</div><div>
+        <div class="bt">${esc(b.label)} blocker<span class="bscope">${esc(b.scope||"shared")}</span></div>
+        <div class="bd">${esc(b.detail)}</div></div>`;
+      bh.appendChild(node);
+    });
+
+    // spotlight
+    const sp = $("#spot"); sp.innerHTML="";
+    (d.spotlight||[]).forEach(s=>{
+      const c = el("div","scard reveal");
+      c.innerHTML = `<span class="ic">${esc(s.icon||"✦")}</span>
+        <h3>${esc(s.title)}</h3><div class="who">${esc(s.who||"")}</div><p>${esc(s.detail||"")}</p>`;
+      sp.appendChild(c);
+    });
+
+    // lanes
+    const ln = $("#lanes"); ln.innerHTML="";
+    (d.lanes||[]).forEach(lane=>{
+      const acc = accentMap[lane.accent] || "cyan";
+      const card = el("div",`lane ${acc} reveal`);
+      const initials = (lane.name||"?").replace(/^CTO-/,'').slice(0,1).toUpperCase();
+      let tasksHtml = "";
+      (lane.tasks||[]).forEach(t=>{
+        const tag = t.tag ? `<span class="tag ${esc(t.tagType||'gray')}">${esc(t.tag)}</span>` : "";
+        const done = /dropped|cancelled|shipped/i.test(t.tagType==='gray'?t.tag:'') ? "done":"";
+        tasksHtml += `<li class="task ${done}"><span class="ld">${esc(t.lead)}</span>
+          <span class="dt">${esc(t.detail||"")}</span>${tag}</li>`;
+      });
+      card.innerHTML = `
+        <div class="lane-h">
+          <div class="avatar">${esc(initials)}</div>
+          <div><div class="nm">${esc(lane.name)}</div><div class="rl">${esc(lane.role||"")}</div></div>
+          <div class="load"><div class="n" data-count="${(lane.tasks||[]).length}">0</div><div class="l">tasks</div></div>
+        </div>
+        <ul class="tasks">${tasksHtml}</ul>`;
+      ln.appendChild(card);
+    });
+
+    requestAnimationFrame(reveal);
+    countUp();
+  }
+
+  function fmtStamp(iso){
+    if(!iso) return new Date().toLocaleString();
+    const dt = new Date(iso); if(isNaN(dt)) return iso;
+    return dt.toLocaleString(undefined,{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+  }
+
+  /* ---------- entrance reveal (staggered) ---------- */
+  function reveal(){
+    const items=[...document.querySelectorAll('.reveal')];
+    items.forEach((n,i)=> setTimeout(()=> n.classList.add('in'), 60+i*55));
+  }
+  /* ---------- count-up load numbers ---------- */
+  function countUp(){
+    document.querySelectorAll('.load .n').forEach(node=>{
+      const target=+node.dataset.count||0; let cur=0;
+      const step=Math.max(1,Math.round(target/18));
+      const t=setInterval(()=>{cur+=step; if(cur>=target){cur=target;clearInterval(t);} node.textContent=cur;},32);
+    });
+  }
+
+  /* ---------- live clock ---------- */
+  function tick(){
+    const n=new Date();
+    $("#now").textContent = n.toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'}) +
+      "  ·  " + n.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'});
+  }
+  setInterval(tick,1000); tick();
+
+  /* =======================================================================
+     WebGL constellation — three drifting colour clusters (Oraya lanes)
+     ======================================================================= */
+  function constellation(){
+    const canvas = $("#bg");
+    const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+    if(!window.THREE){ canvas.style.background="radial-gradient(70% 60% at 50% 20%,#0b1226,#04060d)"; return; }
+
+    const mobile = innerWidth < 760;
+    const COUNT = reduce ? 0 : (mobile ? 64 : 150);
+    const LINK  = mobile ? 13 : 16;          // link distance
+    const DPRCAP= mobile ? 1.6 : 2;
+
+    const renderer = new THREE.WebGLRenderer({canvas, antialias:!mobile, alpha:true, powerPreference:"high-performance"});
+    renderer.setPixelRatio(Math.min(devicePixelRatio||1, DPRCAP));
+    renderer.setSize(innerWidth, innerHeight);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(62, innerWidth/innerHeight, 0.1, 400);
+    camera.position.z = 62;
+
+    const PAL = [ new THREE.Color('#34d399'), new THREE.Color('#38bdf8'), new THREE.Color('#c084fc') ];
+    const pos = new Float32Array(COUNT*3);
+    const vel = new Float32Array(COUNT*3);
+    const col = new Float32Array(COUNT*3);
+    const cluster = new Int8Array(COUNT);
+    const RX=88, RY=54, RZ=34;
+    for(let i=0;i<COUNT;i++){
+      const c=i%3; cluster[i]=c;
+      // bias each cluster horizontally so the three streams read as three lanes
+      const bias=(c-1)*42;
+      pos[i*3]  = bias + (Math.random()*2-1)*30;
+      pos[i*3+1]= (Math.random()*2-1)*RY;
+      pos[i*3+2]= (Math.random()*2-1)*RZ;
+      vel[i*3]  = (Math.random()*2-1)*0.05;
+      vel[i*3+1]= (Math.random()*2-1)*0.05;
+      vel[i*3+2]= (Math.random()*2-1)*0.04;
+      const cc=PAL[c]; col[i*3]=cc.r; col[i*3+1]=cc.g; col[i*3+2]=cc.b;
+    }
+
+    // soft round sprite for glowing points
+    const tex = (()=>{ const s=64,cv=document.createElement('canvas');cv.width=cv.height=s;
+      const g=cv.getContext('2d');const rg=g.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);
+      rg.addColorStop(0,'rgba(255,255,255,1)');rg.addColorStop(.25,'rgba(255,255,255,.85)');
+      rg.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=rg;g.fillRect(0,0,s,s);
+      const t=new THREE.CanvasTexture(cv);return t;})();
+
+    const pGeo=new THREE.BufferGeometry();
+    pGeo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+    pGeo.setAttribute('color',new THREE.BufferAttribute(col,3));
+    const pMat=new THREE.PointsMaterial({size:mobile?2.0:2.4,map:tex,vertexColors:true,transparent:true,
+      opacity:.92,depthWrite:false,blending:THREE.AdditiveBlending,sizeAttenuation:true});
+    const points=new THREE.Points(pGeo,pMat); scene.add(points);
+
+    // line buffer (preallocated)
+    const MAXSEG = COUNT*6;
+    const lpos=new Float32Array(MAXSEG*3), lcol=new Float32Array(MAXSEG*3);
+    const lGeo=new THREE.BufferGeometry();
+    lGeo.setAttribute('position',new THREE.BufferAttribute(lpos,3).setUsage(THREE.DynamicDrawUsage));
+    lGeo.setAttribute('color',new THREE.BufferAttribute(lcol,3).setUsage(THREE.DynamicDrawUsage));
+    const lMat=new THREE.LineBasicMaterial({vertexColors:true,transparent:true,opacity:.5,
+      depthWrite:false,blending:THREE.AdditiveBlending});
+    const lines=new THREE.LineSegments(lGeo,lMat); scene.add(lines);
+
+    let px=0,py=0,tx=0,ty=0;
+    const onMove=(x,y)=>{ tx=(x/innerWidth*2-1); ty=(y/innerHeight*2-1); };
+    addEventListener('pointermove',e=>onMove(e.clientX,e.clientY),{passive:true});
+    addEventListener('deviceorientation',e=>{ if(e.gamma!=null){ tx=Math.max(-1,Math.min(1,e.gamma/40)); ty=Math.max(-1,Math.min(1,(e.beta-40)/40)); } },{passive:true});
+
+    const L2=LINK*LINK;
+    function frame(){
+      // drift + wrap
+      for(let i=0;i<COUNT;i++){
+        let a=i*3;
+        pos[a]+=vel[a]; pos[a+1]+=vel[a+1]; pos[a+2]+=vel[a+2];
+        const bias=(cluster[i]-1)*42;
+        if(pos[a] < bias-46 || pos[a] > bias+46) vel[a]*=-1;
+        if(pos[a+1]<-RY||pos[a+1]>RY) vel[a+1]*=-1;
+        if(pos[a+2]<-RZ||pos[a+2]>RZ) vel[a+2]*=-1;
+      }
+      pGeo.attributes.position.needsUpdate=true;
+
+      // links (neighbours within LINK)
+      let s=0;
+      for(let i=0;i<COUNT && s<MAXSEG-2;i++){
+        const ax=pos[i*3],ay=pos[i*3+1],az=pos[i*3+2];
+        for(let j=i+1;j<COUNT && s<MAXSEG-2;j++){
+          const dx=ax-pos[j*3],dy=ay-pos[j*3+1],dz=az-pos[j*3+2];
+          const d2=dx*dx+dy*dy+dz*dz;
+          if(d2<L2){
+            const f=1-d2/L2;
+            lpos[s*3]=ax;lpos[s*3+1]=ay;lpos[s*3+2]=az;
+            lpos[(s+1)*3]=pos[j*3];lpos[(s+1)*3+1]=pos[j*3+1];lpos[(s+1)*3+2]=pos[j*3+2];
+            const r=(col[i*3]+col[j*3])*.5*f, g=(col[i*3+1]+col[j*3+1])*.5*f, b=(col[i*3+2]+col[j*3+2])*.5*f;
+            lcol[s*3]=r;lcol[s*3+1]=g;lcol[s*3+2]=b;
+            lcol[(s+1)*3]=r;lcol[(s+1)*3+1]=g;lcol[(s+1)*3+2]=b;
+            s+=2;
+          }
+        }
+      }
+      lGeo.setDrawRange(0,s);
+      lGeo.attributes.position.needsUpdate=true;
+      lGeo.attributes.color.needsUpdate=true;
+
+      // parallax camera
+      px+=(tx-px)*.03; py+=(ty-py)*.03;
+      camera.position.x = px*10;
+      camera.position.y = -py*7;
+      scene.rotation.y += 0.0006;
+      camera.lookAt(0,0,0);
+      renderer.render(scene,camera);
+      raf=requestAnimationFrame(frame);
+    }
+    let raf;
+    if(COUNT>0){ raf=requestAnimationFrame(frame); }
+    else { renderer.render(scene,camera); }
+
+    addEventListener('resize',()=>{ renderer.setSize(innerWidth,innerHeight);
+      camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix(); },{passive:true});
+    document.addEventListener('visibilitychange',()=>{
+      if(document.hidden){ if(raf)cancelAnimationFrame(raf); raf=null; }
+      else if(COUNT>0 && !raf){ raf=requestAnimationFrame(frame); }
+    });
+  }
+
+  /* ---------- boot ---------- */
+  loadData().then(d=>{ render(d); });
+  constellation();
+})();
+</script>
+</body>
+</html>
