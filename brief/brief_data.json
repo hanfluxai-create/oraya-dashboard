@@ -1,9 +1,9 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-06-26T17:28:54.800Z",
-  "date_label": "Fri · Jun 26",
+  "generated_at": "2026-06-27T16:25:37.044Z",
+  "date_label": "Sat · Jun 27",
   "edition": "AM",
-  "day_number": 167,
+  "day_number": 168,
   "phase": "Launch Week close",
   "headline": "Three lanes, zero overlap — WALK INTO ENVISION HONDA MILPITAS · 1 PM PT.",
   "source": "index.html · Daily Tasks board (May 28 (Thu))",
@@ -105,7 +105,7 @@
   "metrics": [
     {
       "k": "Day",
-      "v": "167"
+      "v": "168"
     },
     {
       "k": "Open tasks",
@@ -381,5 +381,37 @@
         }
       ]
     }
-  ]
+  ],
+  "cofounder": {
+    "date": "2026-06-26",
+    "scanned_at": "2026-06-26T18:10:00Z",
+    "done": [
+      {
+        "what": "Built the Daily Brief pipeline + classified all 30 board tasks by project & part",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Published the live brief board to Vercel (/brief/) and shipped the clean email design",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Stood up the AI-cofounder worker + 3 scheduled tasks (cofounder 06:08, AM brief 06:30, PM brief 19:30 IST)",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Updated HQ memory with the Daily Brief system + cofounder loop",
+        "who": "CTO-Claude"
+      }
+    ],
+    "waiting": [
+      {
+        "what": "n8n: hit 'Execute workflow' once to confirm the first real auto-send",
+        "who": "Chitraksh"
+      },
+      {
+        "what": "Delete the old dark-theme Gmail draft — the new look auto-drafts each morning",
+        "who": "Chitraksh"
+      }
+    ]
+  }
 }
