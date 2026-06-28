@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-06-28T13:45:00.000Z",
+  "generated_at": "2026-06-28T14:05:00.000Z",
   "date_label": "Sun · Jun 28",
-  "edition": "AM",
+  "edition": "PM",
   "day_number": 169,
-  "phase": "Autonomy Era · 5 taps from live",
-  "headline": "10 autonomous cycles, every lane built — the whole company now reduces to 5 founder taps. Fastest first move: launch the zero-spend B2B HR lane.",
-  "source": "index.html · Jun 28 cockpit board + autoloop state (cycle 10)",
+  "phase": "Autonomy Era · clearing the launch gates",
+  "headline": "Five founder taps stand between three built lanes and first revenue — Frankie's PT morning clears them, starting with the zero-spend B2B HR lane.",
+  "source": "index.html · Daily Tasks board (Jun 28 · Autonomy Era cockpit)",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -42,7 +42,7 @@
       "code": "P2",
       "color": "#2563eb",
       "blurb": "AI life-insurance funnel: data → outreach → AI calls → licensed close.",
-      "count": 11
+      "count": 9
     },
     {
       "key": "hq",
@@ -50,56 +50,45 @@
       "code": "HQ",
       "color": "#7c3aed",
       "blurb": "The dashboard, automations & AI agents that run the company itself.",
-      "count": 5
-    },
-    {
-      "key": "ops",
-      "label": "Ops",
-      "code": "OPS",
-      "color": "#64748b",
-      "blurb": "Money, hardware, family & day-to-day running of the business.",
-      "count": 1
-    },
-    {
-      "key": "realestate",
-      "label": "Real Estate",
-      "code": "P3",
-      "color": "#16a34a",
-      "blurb": "Investor / seller real-estate lead engine (next project, in design).",
-      "count": 0
+      "count": 9
     }
   ],
   "spotlight": [
     {
-      "icon": "✅",
-      "title": "Clear the 5 founder taps — every lane is built and waiting",
+      "icon": "🤝",
+      "title": "Launch the B2B HR lane — zero spend, ~30 min",
       "who": "Frankie",
-      "detail": "The Autoloop has authored all three lanes; forward motion now reduces to five approvals, shortest-path first: (1) launch the zero-spend B2B HR lane, (2) fund + approve the Lob postcard, (3) fill the launch values once, (4) refresh the dead ATTOM key, (5) fund BatchData ~$25.",
+      "detail": "The lowest-friction first conversation. 09_b2b_hr_lane is built and cited — 6 HR leaders pre-researched. Confirm each is still in-role, reveal the work email (≤6 Apollo credits), load the 3-touch CAN-SPAM sequence, then approve before send. No broker registration, no Lob funds, no TCPA — it reaches real HR people today.",
       "project": "insurance",
-      "area": "Go-live approvals"
+      "area": "B2B HR lane"
     },
     {
-      "icon": "🎬",
-      "title": "Ship cinematic demo v3 + the ad-agent",
-      "who": "Chitraksh",
-      "detail": "Stand up the marketing ad-agent skill and cut cinematic demo v3 from the Jun 27-28 call's hybrid spec — the next brand film for orayalabs.ai, DOM scenes on audio cues.",
+      "icon": "📬",
+      "title": "Fund + approve the Lob postcard — fastest booked appt",
+      "who": "Frankie",
+      "detail": "~$50-70, 15 min. Open + fund a Lob account and approve 08_outreach/homeowner_postcard_directmail.md — mails the 77 TIER1 leads, each QR-attributable. No email enrichment, zero TCPA risk. Shortest path to a first booked appointment.",
+      "project": "insurance",
+      "area": "Direct mail"
+    },
+    {
+      "icon": "🔑",
+      "title": "Fill the launch values once — unblocks all 3 lanes",
+      "who": "Frankie",
+      "detail": "cp 03_integrations/launch_config.template.env launch_config.env, fill the 20 blanks, run apply_launch_config.py. Shared tokens light up every lane at once. Free + reversible — sending/publishing still waits on the approvals above.",
       "project": "hq",
-      "area": "Brand / Marketing"
-    },
-    {
-      "icon": "📠",
-      "title": "EIN fax watch → A2P submits the moment it lands",
-      "who": "Both founders",
-      "detail": "EIN re-faxed to the IRS; reply expected by return fax in ~8 business days. The instant it hits, the A2P 10DLC package submits and the SMS / outbound-call lanes open.",
-      "project": "insurance",
-      "area": "Compliance & Legal"
+      "area": "Integrations"
     }
   ],
   "blockers": [
     {
       "label": "EIN",
       "scope": "Shared",
-      "detail": "Re-faxed to the IRS; reply expected by return fax in ~8 business days. A2P 10DLC submits the moment it lands — until then SMS / outbound stay gated. Backup: SS-4 by fax for a guaranteed 4-business-day turnaround."
+      "detail": "Re-filed via fax — ~8-day turnaround. The moment it lands, A2P submits and the SMS/outbound-calling lane opens. Until then those stay gated — but today's two launch lanes (B2B HR email + Lob postcard) need no EIN, so the revenue motion isn't blocked."
+    },
+    {
+      "label": "Launch gates",
+      "scope": "Frankie + Chitraksh",
+      "detail": "All three lanes are built and merge-ready; the sole bottleneck is the 5 founder taps. Frankie: approve the B2B HR lane, fund+approve the Lob postcard, fill the launch values. Chitraksh: refresh the dead ATTOM key (trial 401s) and fund BatchData (~$25) to skip-trace the 77 HOF leads."
     }
   ],
   "metrics": [
@@ -112,12 +101,8 @@
       "v": "5"
     },
     {
-      "k": "Autoloop cycles",
-      "v": "10"
-    },
-    {
-      "k": "Voice",
-      "v": "v128 + v15 LIVE"
+      "k": "Lanes built",
+      "v": "3"
     }
   ],
   "lanes": [
@@ -128,44 +113,44 @@
       "accent": "emerald",
       "tasks": [
         {
-          "lead": "Launch the B2B HR lane — the zero-spend first conversation",
-          "detail": "No data-broker registration, no Lob funds, no TCPA exposure (it's B2B CAN-SPAM email to HR). 6 HR leaders are already researched + cited — Razon/RNDC, Myles/KBR, Boone/eBay, Russell/Cloudflare, Prabhakar/Atlassian, Withycombe/Snap. Confirm each is still in role, paste LinkedIn, reveal the work email (≤6 Apollo credits), then load the 3-touch sequence and send. Runbook: 09_b2b_hr_lane/B2B_GO_LIVE_RUNBOOK.md.",
-          "tag": "SHORTEST PATH",
+          "lead": "Launch the B2B HR lane (09_b2b_hr_lane)",
+          "detail": "Lowest-friction first conversation, ~30 min, ≤6 Apollo credits. 6 HR leaders pre-researched + cited; confirm still-in-role, reveal work email, load the 3-touch CAN-SPAM sequence, approve before send. No broker reg, no Lob funds, no TCPA.",
+          "tag": "LAUNCH TODAY",
           "tagType": "green",
           "project": "insurance",
           "area": "B2B HR lane"
         },
         {
-          "lead": "Fund + approve the Lob postcard (~$50-70, 15 min)",
-          "detail": "Fastest path to a first booked appointment: open + fund a Lob account and approve 08_outreach/homeowner_postcard_directmail.md — mails the 77 TIER1 prime leads, each carrying a QR lead_id so a booked appt traces back to this exact batch. Needs no email enrichment and carries zero TCPA risk.",
-          "tag": "FIRST APPOINTMENT",
+          "lead": "Fund + approve the Lob postcard",
+          "detail": "08_outreach/homeowner_postcard_directmail.md — open + fund a Lob account, approve the creative; mails the 77 TIER1 leads, each QR-attributable. ~$50-70, 15 min. Fastest path to a first booked appointment; zero TCPA risk.",
+          "tag": "FIRST APPT",
           "tagType": "green",
           "project": "insurance",
           "area": "Direct mail"
         },
         {
-          "lead": "Fill the launch values once — unblocks all 3 lanes",
-          "detail": "The opt-in page, homeowner outreach and B2B HR lane share the same {{CONFIG}} tokens. One command: cp 03_integrations/launch_config.template.env launch_config.env, fill the 20 annotated blanks (license # / NPN / business name / URLs / Retell + Jornaya ids), then python3 03_integrations/apply_launch_config.py. Free + reversible.",
-          "tag": "UNBLOCKS 3 LANES",
+          "lead": "Fill the launch values once",
+          "detail": "cp 03_integrations/launch_config.template.env launch_config.env → fill the 20 blanks → run apply_launch_config.py. Shared tokens unblock all 3 lanes at once. Free + reversible.",
+          "tag": "UNBLOCKS ALL 3",
           "tagType": "orange",
-          "project": "insurance",
-          "area": "Go-live config"
+          "project": "hq",
+          "area": "Integrations"
         },
         {
-          "lead": "Refresh the ATTOM API key (1 min)",
-          "detail": "The trial key returns 401 Unauthorized. Get a new key at api.developer.attomdata.com and overwrite .oraya-credentials/attom_api_key. Unblocks the new-homeowner data pull at the top of the funnel.",
-          "tag": "KEY DEAD 401",
+          "lead": "EIN fax watch",
+          "detail": "Re-filed via fax, ~8-day turnaround. The moment it lands, A2P submits and the SMS/calling lane opens.",
+          "tag": "EIN BLOCKER",
           "tagType": "red",
           "project": "insurance",
-          "area": "Lead-gen data"
+          "area": "Compliance & Legal"
         },
         {
-          "lead": "Fund BatchData ~$25",
-          "detail": "Skip-traces the 77 HOF leads to append emails and switch on the cold-email lane. Token already created + tested.",
+          "lead": "Approve before any send",
+          "detail": "Sending/publishing on every lane still waits on founder sign-off — that's the only gate left once the launch values are filled.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
-          "area": "Lead-gen data"
+          "area": "Ops"
         }
       ]
     },
@@ -176,104 +161,112 @@
       "accent": "cyan",
       "tasks": [
         {
-          "lead": "v14.0 dashboard — Autonomy Era — shipped",
-          "detail": "Global refresh to Day 169: milestone banner, overview cockpit (new P4 Design-System card, Autoloop + 5-taps KPIs), and the Lead-Gen / Insurance / Next-Plays / Daily-Tasks cockpits rewired to current. Every prior record preserved; auto-pushed to main → Vercel.",
-          "tag": "SHIPPED",
-          "tagType": "green",
+          "lead": "Refresh the ATTOM API key (1 min)",
+          "detail": "Trial key returns 401. Grab a new key at api.developer.attomdata.com → overwrite .oraya-credentials/attom_api_key. Unblocks the new-homeowner data pull at the top of funnel.",
+          "tag": "1-MIN FIX",
+          "tagType": "orange",
+          "project": "insurance",
+          "area": "Lead-gen"
+        },
+        {
+          "lead": "Fund BatchData (~$25)",
+          "detail": "Skip-trace the 77 HOF leads → appends emails → turns on the cold-email lane. Token already created + tested.",
+          "tag": "",
+          "tagType": "",
+          "project": "insurance",
+          "area": "Lead-gen"
+        },
+        {
+          "lead": "Ad-agent skill",
+          "detail": "Build the autonomous ad-generation agent — the next CTO build block once the launch gates clear.",
+          "tag": "",
+          "tagType": "",
+          "project": "hq",
+          "area": "Build"
+        },
+        {
+          "lead": "Cinematic demo v3",
+          "detail": "Ship the hybrid spec from the Jun 27-28 call — next iteration of the orayalabs.ai launch film.",
+          "tag": "",
+          "tagType": "",
+          "project": "hq",
+          "area": "Build"
+        },
+        {
+          "lead": "v14 dashboard — keep additive",
+          "detail": "Autonomy Era cockpit + verbatim record layer live (v14.1, b90949d → Vercel). Update both layers on new data; never delete a record card.",
+          "tag": "",
+          "tagType": "",
           "project": "hq",
           "area": "Dashboard / Infra"
         },
         {
-          "lead": "Build the ad-agent skill",
-          "detail": "Stand up the marketing ad-agent from the Jun 27-28 call's hybrid spec — the autonomous creative / ad lane that runs alongside the Autoloop.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Marketing / Agents"
-        },
-        {
-          "lead": "Cut cinematic demo v3",
-          "detail": "Next iteration of the orayalabs.ai launch film, built from the Jun 27-28 transcript's hybrid spec — DOM scenes on audio cues, ElevenLabs VO.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Brand / Marketing"
-        },
-        {
-          "lead": "Founder portfolio",
-          "detail": "Progress the personal / founder portfolio site alongside the HQ build.",
-          "tag": "",
-          "tagType": "",
-          "project": "ops",
-          "area": "Ops / Personal"
-        },
-        {
           "lead": "FBN filing (California)",
-          "detail": "\"Oraya Insurance Group\" trade name vs. legal entity; file with the operating county; publish in an adjudicated newspaper 4 consecutive weeks; bake the receipt into the A2P package.",
+          "detail": "\"Oraya Insurance Group\" trade name; file with the operating county, publish 4 consecutive weeks, bake the receipt into the A2P package.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
           "area": "Compliance & Legal"
         },
         {
-          "lead": "EIN fax watch",
-          "detail": "Re-faxed to the IRS; watch for the return fax (~8 days). The moment it lands, A2P submits.",
-          "tag": "EIN",
-          "tagType": "red",
-          "project": "insurance",
-          "area": "Compliance & Legal"
+          "lead": "Portfolio",
+          "detail": "Keep the personal/portfolio track moving alongside the build lane.",
+          "tag": "",
+          "tagType": "",
+          "project": "hq",
+          "area": "Build"
         }
       ]
     },
     {
       "key": "ctoclaude",
       "name": "CTO-Claude",
-      "role": "Autonomous · Autoloop",
+      "role": "Autonomous",
       "accent": "violet",
       "tasks": [
         {
-          "lead": "Autoloop LIVE — 10 cycles since Jun 27",
-          "detail": "Headless claude -p driver with goals / state / guardrails on a launchd cadence (09:00 + 21:00 PT). 10 cycles run, each shipping a verified, reversible deliverable that writes back its own evidence.",
-          "tag": "LIVE",
-          "tagType": "green",
+          "lead": "Autoloop live — 09:00 + 21:00 PT",
+          "detail": "10 cycles done. Builds the lanes, self-verifies, syncs the dashboard + state, and writes this brief twice a day. Fully autonomous since Jun 27.",
+          "tag": "",
+          "tagType": "",
           "project": "hq",
           "area": "Autonomy"
         },
         {
-          "lead": "Built the consumer funnel end-to-end",
-          "detail": "TCPA opt-in landing page (07_optin_landing, 13/13 compliance markers), homeowner outreach package (08_outreach — zero-TCPA postcard + CAN-SPAM email sequence), and a Lob merge of 77/77 TIER1 leads, each with a QR for appointment attribution.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Funnel build"
-        },
-        {
-          "lead": "Opened the B2B layoff→HR referral lane (09)",
-          "detail": "The only lane that launches with zero spend / compliance gates. Researched + cited 6 senior HR leaders and pre-filled the merge CSV — turning the founder's go-live into a confirm-and-send.",
+          "lead": "Cycle 6 shipped the B2B HR lane",
+          "detail": "Stood up 09_b2b_hr_lane — the only lane that launches with zero spend and zero compliance gates. 6 HR leaders researched + cited, 3-touch CAN-SPAM sequence drafted, waiting on Frankie's approve-to-send.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
           "area": "B2B HR lane"
         },
         {
-          "lead": "Built fill-once launch-config",
-          "detail": "One .env stamps 20 shared tokens into all three lanes; --check audits coverage and flags drift; it only ever writes local files — never sends, publishes, or deletes.",
+          "lead": "AM cofounder sweep done",
+          "detail": "Inbox scanned (0 action items — only automated notices), transcripts checked (none since May 18), dashboard pushed (v14.1, b90949d → Vercel), memory updated, 0 drafts needed.",
+          "tag": "",
+          "tagType": "",
+          "project": "hq",
+          "area": "Autonomy"
+        },
+        {
+          "lead": "Caught the dead ATTOM key",
+          "detail": "Trial key 401s — flagged to Chitraksh with the 1-minute fix. Top-of-funnel data pull stays paused until the new key lands.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
-          "area": "Go-live config"
+          "area": "Lead-gen"
         },
         {
-          "lead": "Self-policed its own promises",
-          "detail": "Proved it cannot run Apollo unattended, then made the contact-pull founder-executable; caught the ATTOM trial key returning 401 and corrected the source of truth. Net: every lane is built, merge-ready and compliance-checked.",
+          "lead": "Verified the 5 gates are the sole bottleneck",
+          "detail": "Every lane underneath is built + merge-ready; no overnight inbox signal cleared any gate. The company is one founder-morning away from launch.",
           "tag": "",
           "tagType": "",
-          "project": "insurance",
-          "area": "Verification"
+          "project": "hq",
+          "area": "Autonomy"
         },
         {
-          "lead": "Twice-daily Daily Brief + dashboard / state sync",
-          "detail": "This brief, plus keeping the dashboard, cofounder log and state files honest. Max-autonomy rule holds — no permission-asking on routine tasks.",
+          "lead": "Twice-daily Daily Brief",
+          "detail": "AM + PM editions auto-generated, published to oraya-dashboard.vercel.app/brief/, and dropped as a Gmail draft for both founders.",
           "tag": "",
           "tagType": "",
           "project": "hq",
@@ -284,20 +277,50 @@
   ],
   "cofounder": {
     "date": "2026-06-28",
-    "scanned_at": "2026-06-28T13:45:00Z",
+    "scanned_at": "2026-06-28T13:47:59Z",
     "done": [
-      { "what": "Autoloop went LIVE Jun 27 — a headless claude -p driver with goals / state / guardrails on a 09:00 + 21:00 PT cadence — and has run 10 self-verifying cycles, each shipping a reversible deliverable with its own written-back evidence", "who": "CTO-Claude / Autoloop" },
-      { "what": "Built the consumer funnel end-to-end: TCPA opt-in landing page (13/13 compliance markers), homeowner outreach package (zero-TCPA postcard + CAN-SPAM email sequence), and a Lob merge of 77/77 TIER1 leads, each QR-attributable to a booked appointment", "who": "CTO-Claude" },
-      { "what": "Opened the B2B layoff→HR referral lane (09) — the only lane that launches with zero spend/compliance gates — and researched + cited 6 senior HR leaders (RNDC, KBR, eBay, Cloudflare, Atlassian, Snap), pre-filling the merge CSV so go-live is confirm-and-send", "who": "CTO-Claude" },
-      { "what": "Built fill-once launch-config: a single .env stamps 20 shared tokens into all three lanes (--check audits coverage, writes local files only) — so one founder input unblocks the opt-in page, homeowner outreach and B2B HR lane at once", "who": "CTO-Claude" },
-      { "what": "Self-policed: proved it cannot run Apollo unattended and made the contact-pull founder-executable; caught the ATTOM trial key returning 401 and corrected the source of truth. Net: every lane is built, merge-ready and compliance-checked", "who": "CTO-Claude" }
+      {
+        "what": "Ran the autonomous AM cofounder sweep ~30 min ahead of the brief — all five duties executed end-to-end (inbox, transcripts, dashboard, drafts, memory)",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Scanned the inbox (last 24–48h): clean, 0 action items — only automated notices (Google, n8n, Fax.Plus, Anthropic). No EIN/IRS, A2P, Envision/Greg/Mo, cancellation (Theresa / Mom's policy), or new lead/opt-in traffic",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Checked for new meeting / WhatsApp transcripts — none since the May 18 Retell snapshots, so the Daily Tasks board was left unchanged this pass",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Appended a dated record card to the dashboard timeline + marked the cockpit, then pushed live (v14.1, commit b90949d → Vercel). Additive only — no record card deleted",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Verified the 5 founder gates are still the sole bottleneck — no inbox signal cleared any overnight; every lane underneath remains built and merge-ready",
+        "who": "CTO-Claude"
+      }
     ],
     "waiting": [
-      { "what": "LOWEST-FRICTION first conversation (~30 min, ≤6 Apollo credits): launch the B2B HR lane (09_b2b_hr_lane) — no data-broker registration, no Lob funds, no TCPA. The 6 HR leaders are pre-researched + cited; confirm each is still in role, reveal the work email, load the 3-touch CAN-SPAM sequence, send. Approve before sending — it reaches real HR people", "who": "Frankie" },
-      { "what": "FASTEST first booked appointment (~$50-70, 15 min): open + fund a Lob account and approve the postcard at 08_outreach/homeowner_postcard_directmail.md — mails the 77 TIER1 prime leads, each QR-attributable. Needs no email enrichment and carries zero TCPA risk", "who": "Frankie" },
-      { "what": "Fill the launch values once — unblocks all 3 lanes (they share the same tokens). cp 03_integrations/launch_config.template.env launch_config.env, fill the 20 annotated blanks, then run apply_launch_config.py. Free + reversible; sending / publishing still needs the approvals above", "who": "Frankie" },
-      { "what": "Refresh the ATTOM API key (1 min) — the trial key returns 401 Unauthorized. Get a new key at api.developer.attomdata.com and overwrite .oraya-credentials/attom_api_key. Unblocks the new-homeowner data pull (top of funnel)", "who": "Chitraksh" },
-      { "what": "Fund BatchData ~$25 to skip-trace the 77 HOF leads (appends emails → turns on the cold-email lane). Token already created + tested", "who": "Chitraksh" }
+      {
+        "what": "LOWEST-FRICTION first conversation (~30 min, ≤6 Apollo credits): launch the B2B HR lane (09_b2b_hr_lane) — no broker registration, no Lob funds, no TCPA. 6 HR leaders pre-researched + cited; confirm still-in-role, reveal work email, load the 3-touch CAN-SPAM sequence, then approve before sending — it reaches real HR people",
+        "who": "Frankie"
+      },
+      {
+        "what": "FASTEST first booked appointment (~$50-70, 15 min): open + fund a Lob account and approve the postcard at 08_outreach/homeowner_postcard_directmail.md — mails the 77 TIER1 leads, each QR-attributable. Needs no email enrichment, zero TCPA risk",
+        "who": "Frankie"
+      },
+      {
+        "what": "Fill the launch values once — unblocks all 3 lanes (shared tokens). cp 03_integrations/launch_config.template.env launch_config.env, fill the 20 blanks, run apply_launch_config.py. Free + reversible; sending/publishing still needs the approvals above",
+        "who": "Frankie"
+      },
+      {
+        "what": "Refresh the ATTOM API key (1 min) — the trial key returns 401. New key at api.developer.attomdata.com → overwrite .oraya-credentials/attom_api_key. Unblocks the new-homeowner data pull (top of funnel)",
+        "who": "Chitraksh"
+      },
+      {
+        "what": "Fund BatchData ~$25 to skip-trace the 77 HOF leads (appends emails → turns on the cold-email lane). Token already created + tested",
+        "who": "Chitraksh"
+      }
     ]
   }
 }
