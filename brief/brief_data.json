@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-06-28T14:05:00.000Z",
-  "date_label": "Sun · Jun 28",
+  "generated_at": "2026-06-29T18:23:39.767Z",
+  "date_label": "Mon · Jun 29",
   "edition": "PM",
-  "day_number": 169,
+  "day_number": 170,
   "phase": "Autonomy Era · clearing the launch gates",
-  "headline": "Five founder taps stand between three built lanes and first revenue — Frankie's PT morning clears them, starting with the zero-spend B2B HR lane.",
-  "source": "index.html · Daily Tasks board (Jun 28 · Autonomy Era cockpit)",
+  "headline": "PT morning, Day 170: the B2B HR lane is now one tap from send — its Apollo contact-pull was pre-staged overnight. The same 5 founder taps still gate first revenue; start with the zero-spend HR email.",
+  "source": "index.html · Autonomy Era cockpit (Jun 28 board) · Jun 29 cofounder sweep + state cycle 7",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -56,9 +56,9 @@
   "spotlight": [
     {
       "icon": "🤝",
-      "title": "Launch the B2B HR lane — zero spend, ~30 min",
+      "title": "Launch the B2B HR lane — zero spend, now one tap from send",
       "who": "Frankie",
-      "detail": "The lowest-friction first conversation. 09_b2b_hr_lane is built and cited — 6 HR leaders pre-researched. Confirm each is still in-role, reveal the work email (≤6 Apollo credits), load the 3-touch CAN-SPAM sequence, then approve before send. No broker registration, no Lob funds, no TCPA — it reaches real HR people today.",
+      "detail": "The lowest-friction first conversation. 09_b2b_hr_lane is built + cited, and overnight the Apollo.io auto-fill was pre-staged — pulling the 6 pre-researched HR leaders is now push-button (≤6 credits) instead of a 2-3 hr manual hunt. Confirm each is still in-role, load the 3-touch CAN-SPAM sequence, then approve before send. No broker registration, no Lob funds, no TCPA — it reaches real HR people today.",
       "project": "insurance",
       "area": "B2B HR lane"
     },
@@ -88,13 +88,13 @@
     {
       "label": "Launch gates",
       "scope": "Frankie + Chitraksh",
-      "detail": "All three lanes are built and merge-ready; the sole bottleneck is the 5 founder taps. Frankie: approve the B2B HR lane, fund+approve the Lob postcard, fill the launch values. Chitraksh: refresh the dead ATTOM key (trial 401s) and fund BatchData (~$25) to skip-trace the 77 HOF leads."
+      "detail": "All three lanes are built and merge-ready; the sole bottleneck is the 5 founder taps — and this morning's AM sweep reconfirmed nothing cleared them overnight. Frankie: approve the B2B HR lane (Apollo pull now pre-staged), fund+approve the Lob postcard, fill the launch values. Chitraksh: refresh the dead ATTOM key (trial 401s) and fund BatchData (~$25) to skip-trace the 77 HOF leads."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "169"
+      "v": "170"
     },
     {
       "k": "Founder taps",
@@ -114,7 +114,7 @@
       "tasks": [
         {
           "lead": "Launch the B2B HR lane (09_b2b_hr_lane)",
-          "detail": "Lowest-friction first conversation, ~30 min, ≤6 Apollo credits. 6 HR leaders pre-researched + cited; confirm still-in-role, reveal work email, load the 3-touch CAN-SPAM sequence, approve before send. No broker reg, no Lob funds, no TCPA.",
+          "detail": "Lowest-friction first conversation, ~30 min. The Apollo.io auto-fill is now pre-staged — pulling the 6 cited HR leaders is push-button (≤6 credits) vs a 2-3 hr manual hunt. Confirm still-in-role, load the 3-touch CAN-SPAM sequence, approve before send. No broker reg, no Lob funds, no TCPA.",
           "tag": "LAUNCH TODAY",
           "tagType": "green",
           "project": "insurance",
@@ -233,16 +233,16 @@
           "area": "Autonomy"
         },
         {
-          "lead": "Cycle 6 shipped the B2B HR lane",
-          "detail": "Stood up 09_b2b_hr_lane — the only lane that launches with zero spend and zero compliance gates. 6 HR leaders researched + cited, 3-touch CAN-SPAM sequence drafted, waiting on Frankie's approve-to-send.",
+          "lead": "Cycles 6-7: B2B HR lane shipped + Apollo auto-fill pre-staged",
+          "detail": "Cycle 6 stood up 09_b2b_hr_lane — the only lane that launches with zero spend and zero compliance gates (6 HR leaders researched + cited, 3-touch CAN-SPAM sequence). Cycle 7 pre-staged the Apollo.io auto-fill, so the contact pull is now push-button. Waiting on Frankie's approve-to-send.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
           "area": "B2B HR lane"
         },
         {
-          "lead": "AM cofounder sweep done",
-          "detail": "Inbox scanned (0 action items — only automated notices), transcripts checked (none since May 18), dashboard pushed (v14.1, b90949d → Vercel), memory updated, 0 drafts needed.",
+          "lead": "Jun 29 AM cofounder sweep done",
+          "detail": "Jun 29 inbox scanned (0 action items — only an Anthropic privacy notice from Jun 26), transcripts checked (none since May 18), dashboard pushed (v14 → Vercel), memory updated, 0 drafts needed.",
           "tag": "",
           "tagType": "",
           "project": "hq",
@@ -258,7 +258,7 @@
         },
         {
           "lead": "Verified the 5 gates are the sole bottleneck",
-          "detail": "Every lane underneath is built + merge-ready; no overnight inbox signal cleared any gate. The company is one founder-morning away from launch.",
+          "detail": "Reconfirmed this morning: every lane underneath is built + merge-ready; no overnight inbox signal cleared any gate. The company is one founder-morning away from launch.",
           "tag": "",
           "tagType": "",
           "project": "hq",
