@@ -276,15 +276,15 @@
     }
   ],
   "cofounder": {
-    "date": "2026-06-28",
-    "scanned_at": "2026-06-28T13:47:59Z",
+    "date": "2026-06-29",
+    "scanned_at": "2026-06-29T13:05:00Z",
     "done": [
       {
-        "what": "Ran the autonomous AM cofounder sweep ~30 min ahead of the brief — all five duties executed end-to-end (inbox, transcripts, dashboard, drafts, memory)",
+        "what": "Ran the Jun 29 AM cofounder sweep ahead of the brief — all five duties executed end-to-end (inbox, transcripts, dashboard, drafts, memory)",
         "who": "CTO-Claude"
       },
       {
-        "what": "Scanned the inbox (last 24–48h): clean, 0 action items — only automated notices (Google, n8n, Fax.Plus, Anthropic). No EIN/IRS, A2P, Envision/Greg/Mo, cancellation (Theresa / Mom's policy), or new lead/opt-in traffic",
+        "what": "Scanned the inbox: clean, 0 action items — only an automated Anthropic privacy-policy notice (Jun 26, outside the 24h window). No EIN/IRS, A2P, Envision/Greg/Mo, cancellation (Theresa / Mom's policy), or new lead/opt-in traffic",
         "who": "CTO-Claude"
       },
       {
@@ -292,7 +292,11 @@
         "who": "CTO-Claude"
       },
       {
-        "what": "Appended a dated record card to the dashboard timeline + marked the cockpit, then pushed live (v14.1, commit b90949d → Vercel). Additive only — no record card deleted",
+        "what": "Appended a dated record card to the dashboard timeline + marked the cockpit, then pushed live (v14 → Vercel). Additive only — no record card deleted",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Pre-staged the Apollo.io auto-fill for the B2B HR lane (cycle 7) — the 6-HR-leader contact pull is now push-button instead of a 2-3 hr manual LinkedIn+Hunter hunt",
         "who": "CTO-Claude"
       },
       {
@@ -302,7 +306,7 @@
     ],
     "waiting": [
       {
-        "what": "LOWEST-FRICTION first conversation (~30 min, ≤6 Apollo credits): launch the B2B HR lane (09_b2b_hr_lane) — no broker registration, no Lob funds, no TCPA. 6 HR leaders pre-researched + cited; confirm still-in-role, reveal work email, load the 3-touch CAN-SPAM sequence, then approve before sending — it reaches real HR people",
+        "what": "LOWEST-FRICTION first conversation (~30 min, ≤6 Apollo credits): launch the B2B HR lane (09_b2b_hr_lane) — no broker registration, no Lob funds, no TCPA. 6 HR leaders pre-researched + cited, Apollo contact-pull now pre-staged; confirm still-in-role, reveal work email, load the 3-touch CAN-SPAM sequence, then approve before sending — it reaches real HR people",
         "who": "Frankie"
       },
       {
