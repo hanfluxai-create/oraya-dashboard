@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-06-30T16:01:56.178Z",
-  "date_label": "Tue · Jun 30",
+  "generated_at": "2026-07-01T14:06:43.740Z",
+  "date_label": "Wed · Jul 1",
   "edition": "PM",
-  "day_number": 171,
+  "day_number": 172,
   "phase": "Autonomy Era · clearing the launch gates",
-  "headline": "PT morning, Day 171 — June's last day. The autoloop reached cycle 10 and, for the first time, stopped building: every lane is merge-ready and nothing was left worth adding. First revenue now hangs entirely on the same 5 founder taps — start with the zero-spend B2B HR email.",
-  "source": "index.html · Autonomy Era cockpit · Jun 30 PM read — no overnight deltas (autoloop paused at cycle 10; no new transcripts since May 18; inbox clean since Jun 29 AM sweep)",
+  "headline": "PT morning, Day 172 — first day of July, first day of Q3. Nothing shipped overnight because nothing needs to: the build has stood finished at cycle 10 for three days straight, and the one thing that carried from June into the new quarter is the same five founder taps. Cleanest opening move for the month — the zero-spend B2B HR email: ~30 min, no EIN, no funds.",
+  "source": "index.html · Autonomy Era cockpit · Jul 1 PM read — no deltas since Jun 30 PM: autoloop frozen-complete at cycle 10 (launchd scheduler erroring 'Operation not permitted', so no cycle 11 either way); no transcripts since May 18; inbox clean (only automated Anthropic/Google notices). Every lane stays built + merge-ready; the 5 founder taps are still the sole bottleneck.",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -72,29 +72,29 @@
     },
     {
       "icon": "🔑",
-      "title": "Fill the launch values once — unblocks all 3 lanes",
-      "who": "Frankie",
-      "detail": "cp 03_integrations/launch_config.template.env launch_config.env, fill the 20 blanks, run apply_launch_config.py. Shared tokens light up every lane at once (cycle-10 infra). Free + reversible — sending/publishing still waits on the approvals above.",
-      "project": "hq",
-      "area": "Integrations"
+      "title": "Two-minute CTO unblocks — refresh the dead ATTOM key + fund BatchData",
+      "who": "Chitraksh",
+      "detail": "While Frankie launches the HR lane: grab a fresh ATTOM key (trial 401s, 1 min) and fund BatchData (~$25) to skip-trace the 77 HOF leads. Together they turn on the top-of-funnel homeowner data pull and the cold-email lane — the two lowest-effort unblocks on the board, and the only two taps that aren't Frankie's.",
+      "project": "insurance",
+      "area": "Lead-gen"
     }
   ],
   "blockers": [
     {
       "label": "EIN",
       "scope": "Shared",
-      "detail": "Re-filed via fax — ~8-day turnaround. The moment it lands, A2P submits and the SMS/outbound-calling lane opens. Until then those stay gated — but today's two launch lanes (B2B HR email + Lob postcard) need no EIN, so the revenue motion isn't blocked."
+      "detail": "Re-filed via fax (~8 business-day turnaround) — the reply window opens later this week. The moment it lands, A2P submits and the SMS/outbound-calling lane opens. Until then those stay gated — but today's two launch lanes (B2B HR email + Lob postcard) need no EIN, so the revenue motion isn't blocked."
     },
     {
       "label": "Launch gates",
       "scope": "Frankie + Chitraksh",
-      "detail": "All three lanes are built and merge-ready — and that's now the whole story: the autoloop reached cycle 10 and deliberately stopped adding build, because the sole bottleneck is the 5 founder taps, not the code. Frankie: approve the B2B HR lane (Apollo pull pre-staged), fund+approve the Lob postcard, fill the launch values. Chitraksh: refresh the dead ATTOM key (trial 401s) and fund BatchData (~$25) to skip-trace the 77 HOF leads."
+      "detail": "All three lanes are built and merge-ready — and after three days with no new build cycle, that IS the whole story: the sole bottleneck is the 5 founder taps, not the code. Frankie: approve the B2B HR lane (Apollo pull pre-staged), fund+approve the Lob postcard, fill the launch values (one command). Chitraksh: refresh the dead ATTOM key (trial 401s, 1 min) and fund BatchData (~$25) to skip-trace the 77 HOF leads."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "171"
+      "v": "172"
     },
     {
       "k": "Founder taps",
@@ -138,7 +138,7 @@
         },
         {
           "lead": "EIN fax watch",
-          "detail": "Re-filed via fax, ~8-day turnaround. The moment it lands, A2P submits and the SMS/calling lane opens.",
+          "detail": "Re-filed via fax (~8 business days) — reply window opens later this week. The moment it lands, A2P submits and the SMS/calling lane opens.",
           "tag": "EIN BLOCKER",
           "tagType": "red",
           "project": "insurance",
@@ -258,7 +258,7 @@
         },
         {
           "lead": "Verified the 5 gates are the sole bottleneck",
-          "detail": "Re-read this PM: no new inbox signal, no transcripts since May 18, no overnight cycle — every lane underneath stays built + merge-ready. The company is one founder-morning away from launch.",
+          "detail": "Re-read this Jul 1 PM: inbox clean (only automated Anthropic/Google notices), no transcripts since May 18, and the build has now held finished at cycle 10 for three days (the launchd loop is erroring 'Operation not permitted', but there's nothing left worth building anyway). Every lane underneath stays merge-ready — the company is one founder-morning from launch.",
           "tag": "",
           "tagType": "",
           "project": "hq",
