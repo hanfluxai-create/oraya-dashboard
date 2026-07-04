@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-07-03T02:17:39.908Z",
-  "date_label": "Fri · Jul 3",
-  "edition": "AM",
-  "day_number": 174,
-  "phase": "Autonomy Era · clearing the launch gates",
-  "headline": "IST morning, Day 174 — the build has stood finished at cycle 10 for five days, and the US now rolls into the July-4th long weekend. That lull IS the window: the 5 founder taps are all offline chores (~1 hr total, $0 required to start), so clear them over the holiday and the B2B HR email fires Tuesday morning into full inboxes while the Lob postcards land midweek. One new item: the Mac's autoloop scheduler is erroring — a 5-minute permission fix brings the twice-daily cycles back.",
-  "source": "index.html · Daily Tasks board (May 28 (Thu))",
+  "generated_at": "2026-07-04T14:10:04.696Z",
+  "date_label": "Sat · Jul 4",
+  "edition": "PM",
+  "day_number": 175,
+  "phase": "Autonomy Era · holiday launch window",
+  "headline": "PT morning, July 4, Day 175 — a holiday Saturday, and the calmest launch window on the calendar. The build has stood finished at cycle 10 for a week; first revenue is gated only by the same 5 founder taps. Highest-leverage 30 minutes today: stage the zero-spend B2B HR lane so it fires the moment HR inboxes reopen next week.",
+  "source": "index.html · Autonomy Era cockpit · Jul 4 PM read — no deltas since the Jul 4 AM sweep: build frozen-complete at cycle 10 (~7 days), no transcripts since May 18, inbox clean, no EIN reply yet (fax window runs into next week)",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -42,15 +42,7 @@
       "code": "P2",
       "color": "#2563eb",
       "blurb": "AI life-insurance funnel: data → outreach → AI calls → licensed close.",
-      "count": 16
-    },
-    {
-      "key": "realestate",
-      "label": "Real Estate",
-      "code": "P3",
-      "color": "#16a34a",
-      "blurb": "Investor / seller real-estate lead engine (next project, in design).",
-      "count": 2
+      "count": 9
     },
     {
       "key": "hq",
@@ -58,72 +50,59 @@
       "code": "HQ",
       "color": "#7c3aed",
       "blurb": "The dashboard, automations & AI agents that run the company itself.",
-      "count": 9
-    },
-    {
-      "key": "ops",
-      "label": "Ops",
-      "code": "OPS",
-      "color": "#64748b",
-      "blurb": "Money, hardware, family & day-to-day running of the business.",
-      "count": 3
+      "count": 10
     }
   ],
   "spotlight": [
     {
-      "icon": "🗓",
-      "title": "Use the July-4th lull — clear the free taps now, fire Tuesday",
+      "icon": "🤝",
+      "title": "Stage the B2B HR lane today — turn the quiet weekend into a Monday launch",
       "who": "Frankie",
-      "detail": "HR inboxes are dead Fri–Mon (Jul 4 falls Saturday; Friday is the observed holiday), so don't send yet — prep instead. Two $0 chores: fill the 20 launch values (one command, ~15 min — unblocks all 3 lanes) and confirm the 6 pre-researched HR leaders in the Apollo UI (~15 min, ≤6 credits). Load the 3-touch sequence over the weekend; approve the send for Tue Jul 7 morning, peak-open territory.",
+      "detail": "The lowest-friction first conversation, ~30 min, zero spend. 09_b2b_hr_lane is built + cited and the Apollo.io pull is pre-staged — pulling the 6 HR leaders is push-button (≤6 credits). Confirm each is still in-role, load the 3-touch CAN-SPAM sequence, approve to send. No broker reg, no Lob funds, no TCPA, no EIN — stage it on the holiday and it fires the moment inboxes reopen.",
       "project": "insurance",
       "area": "B2B HR lane"
     },
     {
       "icon": "📬",
-      "title": "Fund + approve the Lob postcard this weekend",
+      "title": "Fund + approve the Lob postcard — fastest booked appt",
       "who": "Frankie",
-      "detail": "~$50-70, 15 min: open + fund Lob, approve 08_outreach/homeowner_postcard_directmail.md. Approve over the weekend and the 77 TIER1 cards print Monday and hit mailboxes midweek — each QR-attributable, zero TCPA, no enrichment needed. Still the fastest path to a first booked appointment.",
+      "detail": "~$50-70, 15 min. Open + fund a Lob account and approve 08_outreach/homeowner_postcard_directmail.md — mails the 77 TIER1 leads, each QR-attributable. No email enrichment, zero TCPA risk. Shortest path to a first booked appointment.",
       "project": "insurance",
       "area": "Direct mail"
     },
     {
-      "icon": "🔧",
-      "title": "Two 5-minute fixes bring the engine back",
-      "who": "Chitraksh",
-      "detail": "NEW: the autoloop's launchd job errors 'Operation not permitted' (10 failed attempts through Jul 2) — grant Full Disk Access to the runner or re-run install-scheduler.sh and the 09:00 + 21:00 cycles resume. While there: refresh the dead ATTOM key (trial 401s, 1 min) and fund BatchData ~$25 to skip-trace the 77 HOF leads.",
+      "icon": "🔑",
+      "title": "Fill the launch values once — unblocks all 3 lanes",
+      "who": "Frankie",
+      "detail": "cp 03_integrations/launch_config.template.env launch_config.env, fill the 20 blanks, run apply_launch_config.py. Shared tokens light up every lane at once (cycle-10 infra). Free + reversible — sending/publishing still waits on the approvals above.",
       "project": "hq",
-      "area": "Autonomy"
+      "area": "Integrations"
     }
   ],
   "blockers": [
     {
       "label": "EIN",
       "scope": "Shared",
-      "detail": "Fax reply window opens early next week (~Jul 6-8 on the ~8-day turnaround) — the holiday may pad it a day. The moment it lands, A2P submits and the SMS/calling lane opens. Neither launch lane needs it: B2B HR email and the Lob postcard run EIN-free."
+      "detail": "Re-filed via fax — the ~8-business-day window now runs into next week; still no reply as of the Jul 4 AM sweep. The moment it lands, A2P submits and the SMS/outbound-calling lane opens. Until then those stay gated — but today's two launch lanes (B2B HR email + Lob postcard) need no EIN, so the revenue motion isn't blocked."
     },
     {
       "label": "Launch gates",
       "scope": "Frankie + Chitraksh",
-      "detail": "Same 5 taps, one week running — the code hasn't been the bottleneck since Jun 28. Frankie: approve the B2B HR lane (contacts pre-staged), fund+approve the Lob postcard, fill the launch values. Chitraksh: refresh the ATTOM key, fund BatchData (~$25). Every lane underneath is built + merge-ready."
-    },
-    {
-      "label": "Autoloop scheduler",
-      "scope": "Chitraksh",
-      "detail": "NEW: launchd can't execute oraya-loop.sh — 'Operation not permitted', repeated through Jul 2 (10 attempts). Cycles paused at 10; nothing was lost (the build is complete), but the watch-and-react loop and its self-run briefs are offline. Fix ~5 min: System Settings → Privacy & Security → Full Disk Access for the script runner, or re-run oraya-autoloop/install-scheduler.sh."
+      "detail": "All 3 lanes are built and merge-ready — that's the whole story: the autoloop hit cycle 10 and deliberately stopped adding build, because the sole bottleneck is the 5 founder taps. Frankie: stage the B2B HR lane, fund+approve the Lob postcard, fill the launch values. Chitraksh: refresh the dead ATTOM key (trial 401s), fund BatchData (~$25), and clear the 5-min launchd permission fix to un-freeze the autoloop scheduler."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "174"
+      "v": "175"
     },
     {
       "k": "Founder taps",
       "v": "5"
     },
     {
-      "k": "Days build-frozen",
-      "v": "5"
+      "k": "Lanes built",
+      "v": "3"
     }
   ],
   "lanes": [
@@ -134,16 +113,16 @@
       "accent": "emerald",
       "tasks": [
         {
-          "lead": "Launch the B2B HR lane (09_b2b_hr_lane)",
-          "detail": "Lowest-friction first conversation, ~30 min, $0 spend. The 6 HR leaders are researched + cited and the Apollo pull is pre-staged (≤6 credits) — confirm still-in-role, reveal work emails, load the 3-touch CAN-SPAM sequence. Holiday timing: prep now, approve the send for Tue Jul 7 morning.",
-          "tag": "PREP NOW · SEND TUE",
+          "lead": "Stage the B2B HR lane (09_b2b_hr_lane)",
+          "detail": "Lowest-friction first conversation, ~30 min, zero spend. Apollo.io pull pre-staged — the 6 cited HR leaders are a push-button pull (≤6 credits) vs a 2-3 hr manual hunt. Confirm still-in-role, load the 3-touch CAN-SPAM sequence, approve to send. No broker reg, no Lob funds, no TCPA, no EIN — stage it on the holiday and it fires the moment inboxes reopen.",
+          "tag": "LAUNCH NEXT WEEK",
           "tagType": "green",
           "project": "insurance",
           "area": "B2B HR lane"
         },
         {
           "lead": "Fund + approve the Lob postcard",
-          "detail": "08_outreach/homeowner_postcard_directmail.md — fund ~$50-70, approve the creative; mails the 77 TIER1 leads, QR-attributable. Weekend approval → cards in mailboxes midweek. Fastest first booked appointment; zero TCPA.",
+          "detail": "08_outreach/homeowner_postcard_directmail.md — open + fund a Lob account, approve the creative; mails the 77 TIER1 leads, each QR-attributable. ~$50-70, 15 min. Fastest path to a first booked appointment; zero TCPA risk.",
           "tag": "FIRST APPT",
           "tagType": "green",
           "project": "insurance",
@@ -151,7 +130,7 @@
         },
         {
           "lead": "Fill the launch values once",
-          "detail": "cp 03_integrations/launch_config.template.env launch_config.env → fill the 20 blanks → run apply_launch_config.py. Shared tokens unblock all 3 lanes at once. Free + reversible — a perfect holiday-weekend chore.",
+          "detail": "cp 03_integrations/launch_config.template.env launch_config.env → fill the 20 blanks → run apply_launch_config.py. Shared tokens unblock all 3 lanes at once. Free + reversible.",
           "tag": "UNBLOCKS ALL 3",
           "tagType": "orange",
           "project": "hq",
@@ -159,7 +138,7 @@
         },
         {
           "lead": "EIN fax watch",
-          "detail": "Reply window opens ~Jul 6-8, right after the long weekend. The moment it lands, A2P submits and the SMS/calling lane opens.",
+          "detail": "Re-filed via fax; the ~8-day window now runs into next week — no reply yet. The moment it lands, A2P submits and the SMS/calling lane opens.",
           "tag": "EIN BLOCKER",
           "tagType": "red",
           "project": "insurance",
@@ -167,7 +146,7 @@
         },
         {
           "lead": "Approve before any send",
-          "detail": "Sending/publishing on every lane still waits on founder sign-off — that's the only gate left once the launch values are filled.",
+          "detail": "Sending/publishing on every lane still waits on founder sign-off — the only gate left once the launch values are filled.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
@@ -181,14 +160,6 @@
       "role": "CTO · Build",
       "accent": "cyan",
       "tasks": [
-        {
-          "lead": "Fix the autoloop scheduler (5 min)",
-          "detail": "launchd errors 'Operation not permitted' running oraya-loop.sh — 10 failed attempts through Jul 2, cycles paused at 10. Grant Full Disk Access to the runner (System Settings → Privacy & Security) or re-run oraya-autoloop/install-scheduler.sh; next 09:00/21:00 PT window confirms the fix.",
-          "tag": "NEW · 5-MIN FIX",
-          "tagType": "red",
-          "project": "hq",
-          "area": "Autonomy"
-        },
         {
           "lead": "Refresh the ATTOM API key (1 min)",
           "detail": "Trial key returns 401. Grab a new key at api.developer.attomdata.com → overwrite .oraya-credentials/attom_api_key. Unblocks the new-homeowner data pull at the top of funnel.",
@@ -204,6 +175,14 @@
           "tagType": "",
           "project": "insurance",
           "area": "Lead-gen"
+        },
+        {
+          "lead": "Un-freeze the autoloop scheduler",
+          "detail": "The local launchd job is erroring 'Operation not permitted' — a 5-min Full-Disk-Access / permissions fix on the Mac resumes the 09:00 + 21:00 PT cycles. Nothing was lost (no build worth a cycle remains), but it should run again before the gates clear.",
+          "tag": "5-MIN FIX",
+          "tagType": "orange",
+          "project": "hq",
+          "area": "Autonomy"
         },
         {
           "lead": "Ad-agent skill",
@@ -236,14 +215,6 @@
           "tagType": "",
           "project": "insurance",
           "area": "Compliance & Legal"
-        },
-        {
-          "lead": "Portfolio",
-          "detail": "Keep the personal/portfolio track moving alongside the build lane.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Build"
         }
       ]
     },
@@ -254,16 +225,24 @@
       "accent": "violet",
       "tasks": [
         {
-          "lead": "Autoloop paused at cycle 10 — scheduler down on the Mac",
-          "detail": "The 09:00 + 21:00 PT launchd job has erred 'Operation not permitted' since Jun 28 (latest attempt Jul 2). No build was lost — cycle 10 deliberately stopped because every lane is merge-ready — but the watch-and-react loop is offline until the 5-min permission fix lands.",
-          "tag": "PAUSED",
-          "tagType": "red",
+          "lead": "Autoloop — 09:00 + 21:00 PT (paused, awaiting the launchd fix)",
+          "detail": "10 cycles done. Builds the lanes, self-verifies, syncs the dashboard + state, and writes this brief twice a day. Fully autonomous since Jun 27; the local scheduler is paused on a Mac permissions error until Chitraksh's 5-min fix.",
+          "tag": "",
+          "tagType": "",
+          "project": "hq",
+          "area": "Autonomy"
+        },
+        {
+          "lead": "Ran the Jul 4 AM sweep — holiday record card pushed",
+          "detail": "Scanned the inbox (0 flagged — zero threads in 3 days, no EIN reply), checked transcripts (none since May 18), appended the Jul 4 record card + a Jul 1-3 gap record to the dashboard timeline and pushed live (a88bf6f → Vercel). Additive only.",
+          "tag": "",
+          "tagType": "",
           "project": "hq",
           "area": "Autonomy"
         },
         {
           "lead": "Cycle 10: built the fill-once cross-lane config — then stopped",
-          "detail": "One launch_config.env now stamps the 20 shared tokens into all 3 lanes at once (07 landing + 08 homeowner + 09 HR) instead of the founder hunting values into 10 files. Verified 20/20 covered, 0 leaked — then deliberately stopped adding build.",
+          "detail": "One launch_config.env now stamps the 20 shared tokens into all 3 lanes at once (07 landing + 08 homeowner + 09 HR). Verified 20/20 covered, 0 leaked. Then deliberately stopped adding build — every lane is merge-ready and nothing left was worth more than a founder tap.",
           "tag": "",
           "tagType": "",
           "project": "hq",
@@ -271,19 +250,11 @@
         },
         {
           "lead": "Cycles 6-9: B2B HR lane shipped + made founder-executable",
-          "detail": "Stood up 09_b2b_hr_lane (the only zero-spend, zero-TCPA lane), researched + cited 6 senior HR leaders, and turned the contact pull into a 15-min self-serve Apollo-UI recipe (≤6 credits). Waiting on Frankie's approve-to-send.",
+          "detail": "Stood up 09_b2b_hr_lane (the only zero-spend, zero-TCPA lane), researched + cited 6 senior HR leaders, and turned the contact pull into a 15-min self-serve Apollo recipe (≤6 credits). Waiting on Frankie's approve-to-send.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
           "area": "B2B HR lane"
-        },
-        {
-          "lead": "This morning's sweep: no gate cleared, nothing new inbound",
-          "detail": "Inbox clean for 3 straight days (no EIN/IRS, no A2P, no lead traffic), no new transcripts since May 18, no overnight cycle. The 5 founder taps remain the sole bottleneck — the company is one founder-morning away from launch.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Autonomy"
         },
         {
           "lead": "Caught the dead ATTOM key",
@@ -294,8 +265,16 @@
           "area": "Lead-gen"
         },
         {
-          "lead": "Twice-daily Daily Brief — resumed this morning",
-          "detail": "AM + PM editions published to oraya-dashboard.vercel.app/brief/ and dropped as Gmail drafts for both founders. Cadence resumed after the Jul 2 scheduler gap — same root cause as the autoloop pause.",
+          "lead": "Verified the 5 gates are the sole bottleneck",
+          "detail": "Re-read this PM: no new inbox signal, no transcripts since May 18, no overnight cycle — every lane underneath stays built + merge-ready. The company is one founder-morning away from launch.",
+          "tag": "",
+          "tagType": "",
+          "project": "hq",
+          "area": "Autonomy"
+        },
+        {
+          "lead": "Twice-daily Daily Brief",
+          "detail": "AM + PM editions auto-generated, published to oraya-dashboard.vercel.app/brief/, and dropped as a Gmail draft for both founders.",
           "tag": "",
           "tagType": "",
           "project": "hq",
@@ -305,53 +284,49 @@
     }
   ],
   "cofounder": {
-    "date": "2026-07-01",
-    "scanned_at": "2026-07-01T14:07:00Z",
+    "date": "2026-07-04",
+    "scanned_at": "2026-07-04T13:00:00Z",
     "done": [
       {
-        "what": "Ran the Jul 1 PM cofounder sweep ahead of the brief — all duties executed end-to-end (inbox, transcripts, dashboard/state, draft, memory)",
+        "what": "Ran the Jul 4 AM cofounder sweep ahead of the brief — all duties executed (inbox, transcripts, dashboard + push, drafts, memory)",
         "who": "CTO-Claude"
       },
       {
-        "what": "Scanned the inbox: clean, 0 action items — only automated notices (Anthropic privacy-policy Jun 26, Google ToS Jun 17), both outside the action window. No EIN/IRS, A2P, Envision/Greg/Mo, cancellation (Theresa / Mom's policy), or new lead/opt-in traffic",
+        "what": "Scanned inbox — 0 items flagged: zero threads in the last 3 days; no EIN/IRS reply yet (fax ~8-business-day window runs into next week), no A2P, Envision/Greg/Mo, cancellations, or lead/opt-in traffic",
         "who": "CTO-Claude"
       },
       {
-        "what": "Checked for new meeting / WhatsApp transcripts — none since the May 18 Retell snapshots, so the Daily Tasks board was left unchanged this pass",
+        "what": "Checked for new meeting/WhatsApp transcripts — none since the May 18 Retell snapshots; Daily Tasks board unchanged",
         "who": "CTO-Claude"
       },
       {
-        "what": "Confirmed the build is frozen-complete at cycle 10 for a third day — every lane stays built + merge-ready with nothing left worth adding. Heads-up for Chitraksh: the local launchd autoloop is erroring 'Operation not permitted' (needs a Full-Disk-Access / permissions fix on the Mac to resume cycles), but nothing was lost since there's no remaining build worth a cycle",
+        "what": "Appended the Jul 4 sweep record card to the dashboard (plus a Jul 1-3 gap record: Day-172 brief published, Day-174 holiday-window brief), refreshed cockpit counts, pushed to Vercel",
         "who": "CTO-Claude"
       },
       {
-        "what": "Regenerated + curated the PM brief for Day 172, published it to oraya-dashboard.vercel.app/brief/, and dropped the Gmail draft for both founders",
-        "who": "CTO-Claude"
-      },
-      {
-        "what": "Verified the 5 founder gates are still the sole bottleneck — no inbox signal cleared any; every lane underneath remains built and merge-ready",
+        "what": "No reply drafts needed — nothing in the inbox required a response; no memory change (no durable fact moved)",
         "who": "CTO-Claude"
       }
     ],
     "waiting": [
       {
-        "what": "LOWEST-FRICTION first conversation (~30 min, ≤6 Apollo credits): launch the B2B HR lane (09_b2b_hr_lane) — no broker registration, no Lob funds, no TCPA. 6 HR leaders pre-researched + cited, Apollo contact-pull now pre-staged; confirm still-in-role, reveal work email, load the 3-touch CAN-SPAM sequence, then approve before sending — it reaches real HR people",
+        "what": "LOWEST-FRICTION first conversation (~30 min, ≤6 Apollo credits): launch the B2B HR lane (09_b2b_hr_lane) — confirm the 6 pre-researched HR leaders still in role, reveal work emails, load the 3-touch CAN-SPAM sequence, approve before send. Holiday weekend = prep window so it fires early next week",
         "who": "Frankie"
       },
       {
-        "what": "FASTEST first booked appointment (~$50-70, 15 min): open + fund a Lob account and approve the postcard at 08_outreach/homeowner_postcard_directmail.md — mails the 77 TIER1 leads, each QR-attributable. Needs no email enrichment, zero TCPA risk",
+        "what": "FASTEST first booked appointment (~$50-70, 15 min): open + fund a Lob account and approve the postcard at 08_outreach/homeowner_postcard_directmail.md — mails the 77 TIER1 leads, QR-attributable",
         "who": "Frankie"
       },
       {
-        "what": "Fill the launch values once — unblocks all 3 lanes (shared tokens). cp 03_integrations/launch_config.template.env launch_config.env, fill the 20 blanks, run apply_launch_config.py. Free + reversible; sending/publishing still needs the approvals above",
+        "what": "Fill the launch values once — unblocks all 3 lanes: cp 03_integrations/launch_config.template.env launch_config.env, fill 20 blanks, run apply_launch_config.py. Free + reversible",
         "who": "Frankie"
       },
       {
-        "what": "Refresh the ATTOM API key (1 min) — the trial key returns 401. New key at api.developer.attomdata.com → overwrite .oraya-credentials/attom_api_key. Unblocks the new-homeowner data pull (top of funnel)",
+        "what": "Refresh the ATTOM API key (1 min) — trial key returns 401. New key at api.developer.attomdata.com → overwrite .oraya-credentials/attom_api_key",
         "who": "Chitraksh"
       },
       {
-        "what": "Fund BatchData ~$25 to skip-trace the 77 HOF leads (appends emails → turns on the cold-email lane). Token already created + tested",
+        "what": "Fund BatchData ~$25 to skip-trace the 77 HOF leads (appends emails → turns on the cold-email lane); also 5-min launchd permission fix to un-freeze the autoloop scheduler",
         "who": "Chitraksh"
       }
     ]
