@@ -1,11 +1,11 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-07-05T01:41:45.227Z",
+  "generated_at": "2026-07-05T14:06:15.980Z",
   "date_label": "Sun · Jul 5",
-  "edition": "AM",
+  "edition": "PM",
   "day_number": 176,
-  "phase": "Autonomy Era · clearing the launch gates",
-  "headline": "Sunday, Day 176 — the last quiet day before Monday reopens HR inboxes and starts the clock on Tuesday's send window. The build has sat finished at cycle 10 for over a week on the same 5 founder taps; today is for clearing them, not queuing them. No new inbox or transcript activity since Friday, and the EIN fax's ~8-business-day reply window closes this week — first revenue is down to arithmetic: 5 taps, then send.",
+  "phase": "Autonomy Era · Frankie's PT morning to clear the launch gates",
+  "headline": "PT morning, Day 176 — Frankie's last quiet window before Monday flips HR inboxes back on. Nothing moved over the long weekend (no inbox or transcript activity since the IST brief), so first revenue is still pure arithmetic: 5 founder taps — and the cheapest one, the zero-EIN, zero-spend B2B HR email, is the single move that turns this Sunday into Monday's first send.",
   "source": "index.html · Daily Tasks board (May 28 (Thu))",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
@@ -72,39 +72,39 @@
   "spotlight": [
     {
       "icon": "🗓",
-      "title": "Last day to stage the B2B HR lane before Monday",
+      "title": "Stage the zero-gate HR email today so it fires Monday morning",
       "who": "Frankie",
-      "detail": "Confirm the 6 pre-researched HR leaders are still in role, reveal work emails, and load the 3-touch CAN-SPAM sequence in Apollo (~30 min, ≤6 credits) — plus the one-command launch_config.env fill that unblocks all 3 lanes (~15 min, free). Get both done today and the send is loaded to fire Tuesday morning, the real peak-open window once Monday's backlog clears.",
-      "project": "insurance",
-      "area": "B2B HR lane"
+      "detail": "The one lane that needs NO EIN and NO spend. ~30 min in Apollo (≤6 of 80 trial credits): confirm the 6 pre-researched People/HR leaders are still in role, reveal their work emails, and load the 3-touch CAN-SPAM sequence from 09_b2b_hr_lane/. Do it today and it sends the instant HR inboxes reopen Monday.",
+      "project": "p2",
+      "area": "b2b-hr-lane"
     },
     {
       "icon": "📬",
-      "title": "Fund + approve the Lob postcard — still the fastest path to a booked appointment",
+      "title": "Fund + approve the Lob postcard — fastest path to a first booked appointment",
       "who": "Frankie",
-      "detail": "~$50-70, 15 min: open + fund a Lob account, approve the postcard at 08_outreach/homeowner_postcard_directmail.md. Approve today and the 77 TIER1 cards print Monday, landing in mailboxes midweek — zero TCPA exposure, no enrichment needed, every card QR-attributable.",
-      "project": "insurance",
-      "area": "Direct mail"
+      "detail": "~$50-70, 15 min: open and fund a Lob account, then approve the postcard at 08_outreach/homeowner_postcard_directmail.md. Approve today and the 77 TIER1 California cards print Monday, each with a per-lead QR so any booked appointment traces back to the exact mailing.",
+      "project": "p2",
+      "area": "outreach"
     },
     {
       "icon": "🔧",
-      "title": "Same two 5-minute fixes, still open",
+      "title": "Clear the two 5-minute fixes so the machine can build again",
       "who": "Chitraksh",
-      "detail": "The autoloop's launchd job has errored since Jun 28 (cycle 10 frozen on 'Operation not permitted') — grant Full Disk Access or re-run install-scheduler.sh to bring the 09:00/21:00 cycles back. While in there: refresh the dead ATTOM key (trial 401s, 1 min) and fund BatchData ~$25 to skip-trace the 77 HOF leads and light up the cold-email lane.",
+      "detail": "The autoloop's launchd job has errored since Jun 28 (cycle 10 frozen on 'Operation not permitted') — grant Full Disk Access or re-run install-scheduler.sh to restart the 09:00/21:00 cadence. Then re-provision the dead ATTOM key (401 since Jun 27) so the homeowner-data lane isn't running blind.",
       "project": "hq",
-      "area": "Autonomy"
+      "area": "autoloop"
     }
   ],
   "blockers": [
     {
       "label": "EIN",
       "scope": "Shared",
-      "detail": "Re-filed via fax on the Jun 27-28 call — ~8-business-day turnaround, closing this week. The moment it lands, A2P submits and SMS/outbound-calling opens. Neither of today's two launch lanes (B2B HR email, Lob postcard) needs EIN, so the revenue motion isn't waiting on it."
+      "detail": "Re-faxed to the IRS on the Jun 27-28 call — ~8-business-day turnaround, window closing this week. Nothing to push; it's a wait. The moment it lands, A2P submits and the SMS + outbound-call gates open."
     },
     {
       "label": "Launch gates",
       "scope": "Frankie + Chitraksh",
-      "detail": "All 3 lanes are built and merge-ready; the autoloop hit cycle 10 over a week ago and deliberately stopped adding build because the only bottleneck left is these 5 taps, not code. Frankie: approve the B2B HR lane, fund+approve the Lob postcard, fill the launch values. Chitraksh: refresh the ATTOM key, fund BatchData, fix the launchd permission error."
+      "detail": "All 3 lanes are built and merge-ready; the autoloop hit cycle 10 over a week ago and deliberately stopped adding build because the only bottleneck left is 5 founder approvals. Pull the cheapest gate first — the HR email needs neither EIN nor spend."
     }
   ],
   "metrics": [
