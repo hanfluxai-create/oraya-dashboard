@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-07-05T14:06:15.980Z",
-  "date_label": "Sun · Jul 5",
+  "generated_at": "2026-07-06T14:06:12.974Z",
+  "date_label": "Mon · Jul 6",
   "edition": "PM",
-  "day_number": 176,
-  "phase": "Autonomy Era · Frankie's PT morning to clear the launch gates",
-  "headline": "PT morning, Day 176 — Frankie's last quiet window before Monday flips HR inboxes back on. Nothing moved over the long weekend (no inbox or transcript activity since the IST brief), so first revenue is still pure arithmetic: 5 founder taps — and the cheapest one, the zero-EIN, zero-spend B2B HR email, is the single move that turns this Sunday into Monday's first send.",
-  "source": "index.html · Daily Tasks board (May 28 (Thu))",
+  "day_number": 177,
+  "phase": "Autonomy Era · Monday reopens the HR inboxes the whole week pointed to",
+  "headline": "PT morning, Day 177 — this is the Monday. The HR inboxes every recent brief pointed to reopened this morning, flipping the cheapest lane from 'stage it for Monday' to 'send it today': the zero-EIN, zero-spend B2B HR email can go out now to the 6 already-researched People leaders. Nothing else moved over the weekend — the same 5 founder taps still gate first revenue — but for the first time the highest-leverage one has no reason left to wait.",
+  "source": "index.html · Daily Tasks cockpit (Jun 28 · Autonomy Era)",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -71,10 +71,10 @@
   ],
   "spotlight": [
     {
-      "icon": "🗓",
-      "title": "Stage the zero-gate HR email today so it fires Monday morning",
+      "icon": "📤",
+      "title": "SEND the zero-gate HR email today — the inboxes reopened this morning",
       "who": "Frankie",
-      "detail": "The one lane that needs NO EIN and NO spend. ~30 min in Apollo (≤6 of 80 trial credits): confirm the 6 pre-researched People/HR leaders are still in role, reveal their work emails, and load the 3-touch CAN-SPAM sequence from 09_b2b_hr_lane/. Do it today and it sends the instant HR inboxes reopen Monday.",
+      "detail": "The one lane that needs NO EIN and NO spend, and the Monday every recent brief pointed to is finally here. ~30 min in Apollo (≤6 of 80 trial credits): confirm the 6 pre-researched People/HR leaders — Razon/RNDC, Myles/KBR, Boone/eBay, Russell/Cloudflare, Prabhakar/Atlassian, Withycombe/Snap — are still in role, reveal their work emails, and fire the 3-touch CAN-SPAM sequence from 09_b2b_hr_lane/. Every hour it waits is a just-reopened HR inbox going cold.",
       "project": "p2",
       "area": "b2b-hr-lane"
     },
@@ -82,15 +82,15 @@
       "icon": "📬",
       "title": "Fund + approve the Lob postcard — fastest path to a first booked appointment",
       "who": "Frankie",
-      "detail": "~$50-70, 15 min: open and fund a Lob account, then approve the postcard at 08_outreach/homeowner_postcard_directmail.md. Approve today and the 77 TIER1 California cards print Monday, each with a per-lead QR so any booked appointment traces back to the exact mailing.",
+      "detail": "~$50-70, 15 min: open and fund a Lob account, then approve the postcard at 08_outreach/homeowner_postcard_directmail.md. Approve today and the 77 TIER1 California cards enter this week's print run, each with a per-lead QR so any booked appointment traces back to the exact mailing.",
       "project": "p2",
       "area": "outreach"
     },
     {
       "icon": "🔧",
-      "title": "Clear the two 5-minute fixes so the machine can build again",
+      "title": "Clear the two 5-minute fixes — the autoloop just failed again at 09:00",
       "who": "Chitraksh",
-      "detail": "The autoloop's launchd job has errored since Jun 28 (cycle 10 frozen on 'Operation not permitted') — grant Full Disk Access or re-run install-scheduler.sh to restart the 09:00/21:00 cadence. Then re-provision the dead ATTOM key (401 since Jun 27) so the homeowner-data lane isn't running blind.",
+      "detail": "The autoloop's launchd job fired again this morning and hit the same 'Operation not permitted' wall — frozen at cycle 10 since Jun 28, now visibly retrying-and-failing twice a day. Grant Full Disk Access or re-run install-scheduler.sh to restart the 09:00/21:00 cadence. Then re-provision the dead ATTOM key (401 since Jun 27) so the homeowner-data lane isn't running blind.",
       "project": "hq",
       "area": "autoloop"
     }
@@ -99,18 +99,18 @@
     {
       "label": "EIN",
       "scope": "Shared",
-      "detail": "Re-faxed to the IRS on the Jun 27-28 call — ~8-business-day turnaround, window closing this week. Nothing to push; it's a wait. The moment it lands, A2P submits and the SMS + outbound-call gates open."
+      "detail": "Re-faxed to the IRS on the Jun 27-28 call — the ~8-business-day window lands mid-week (July 4 counted out), so it's roughly 2 business days from arriving. Nothing to push; it's a wait. The moment it lands, A2P submits and the SMS + outbound-call gates open."
     },
     {
       "label": "Launch gates",
       "scope": "Frankie + Chitraksh",
-      "detail": "All 3 lanes are built and merge-ready; the autoloop hit cycle 10 over a week ago and deliberately stopped adding build because the only bottleneck left is 5 founder approvals. Pull the cheapest gate first — the HR email needs neither EIN nor spend."
+      "detail": "All 3 lanes are built and merge-ready; the autoloop hit cycle 10 over a week ago and deliberately stopped adding build because the only bottleneck left is 5 founder approvals. Pull the cheapest gate first — the HR email needs neither EIN nor spend, and as of this morning its inboxes are open."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "176"
+      "v": "177"
     },
     {
       "k": "Founder taps",
@@ -388,23 +388,23 @@
     }
   ],
   "cofounder": {
-    "date": "2026-07-04",
-    "scanned_at": "2026-07-04T13:00:00Z",
+    "date": "2026-07-06",
+    "scanned_at": "2026-07-06T14:05:00Z",
     "done": [
       {
-        "what": "Ran the Jul 4 AM cofounder sweep ahead of the brief — all duties executed (inbox, transcripts, dashboard + push, drafts, memory)",
+        "what": "Ran the Jul 6 PM cofounder sweep ahead of the brief — inbox scan, live board read, insurance + autoloop state check, brief published, draft dropped",
         "who": "CTO-Claude"
       },
       {
-        "what": "Scanned inbox — 0 items flagged: zero threads in the last 3 days; no EIN/IRS reply yet (fax ~8-business-day window runs into next week), no A2P, Envision/Greg/Mo, cancellations, or lead/opt-in traffic",
+        "what": "Scanned inbox — 0 items flagged: no EIN/IRS reply yet (fax window ~2 business days from landing), no A2P, no Envision/Greg/Mo follow-up, no cancellations, no lead/opt-in traffic",
         "who": "CTO-Claude"
       },
       {
-        "what": "Checked for new meeting/WhatsApp transcripts — none since the May 18 Retell snapshots; Daily Tasks board unchanged",
+        "what": "Checked build + autoloop state: nothing shipped since Jun 28; the autoloop is still frozen at cycle 10 — its launchd job re-fired at 09:00 IST today and failed again ('Operation not permitted'), so the 5-min permission fix is now blocking an actively-retrying scheduler",
         "who": "CTO-Claude"
       },
       {
-        "what": "Appended the Jul 4 sweep record card to the dashboard (plus a Jul 1-3 gap record: Day-172 brief published, Day-174 holiday-window brief), refreshed cockpit counts, pushed to Vercel",
+        "what": "No new meeting/WhatsApp transcripts since the May 18 Retell snapshots; Daily Tasks cockpit unchanged — the AM→PM delta is the calendar, not the board: today is the Monday the week pointed to and HR inboxes are open",
         "who": "CTO-Claude"
       },
       {
@@ -414,7 +414,7 @@
     ],
     "waiting": [
       {
-        "what": "LOWEST-FRICTION first conversation (~30 min, ≤6 Apollo credits): launch the B2B HR lane (09_b2b_hr_lane) — confirm the 6 pre-researched HR leaders still in role, reveal work emails, load the 3-touch CAN-SPAM sequence, approve before send. Holiday weekend = prep window so it fires Tuesday",
+        "what": "LOWEST-FRICTION first conversation (~30 min, ≤6 Apollo credits): the B2B HR lane can SEND today — inboxes reopened this morning. Confirm the 6 pre-researched HR leaders still in role, reveal work emails, load the 3-touch CAN-SPAM sequence, approve before send. No 'stage for later' left — it fires now",
         "who": "Frankie"
       },
       {
@@ -430,7 +430,7 @@
         "who": "Chitraksh"
       },
       {
-        "what": "Fund BatchData ~$25 to skip-trace the 77 HOF leads (appends emails → turns on the cold-email lane); also 5-min launchd permission fix to un-freeze the autoloop scheduler",
+        "what": "Fund BatchData ~$25 to skip-trace the 77 HOF leads (appends emails → turns on the cold-email lane); plus the 5-min launchd permission fix — the autoloop re-failed at 09:00 today, so this now un-freezes an actively-retrying scheduler",
         "who": "Chitraksh"
       }
     ]
