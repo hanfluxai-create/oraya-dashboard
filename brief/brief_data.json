@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-07-06T14:06:12.974Z",
-  "date_label": "Mon · Jul 6",
-  "edition": "PM",
-  "day_number": 177,
-  "phase": "Autonomy Era · Monday reopens the HR inboxes the whole week pointed to",
-  "headline": "PT morning, Day 177 — this is the Monday. The HR inboxes every recent brief pointed to reopened this morning, flipping the cheapest lane from 'stage it for Monday' to 'send it today': the zero-EIN, zero-spend B2B HR email can go out now to the 6 already-researched People leaders. Nothing else moved over the weekend — the same 5 founder taps still gate first revenue — but for the first time the highest-leverage one has no reason left to wait.",
-  "source": "index.html · Daily Tasks cockpit (Jun 28 · Autonomy Era)",
+  "generated_at": "2026-07-07T03:40:37.929Z",
+  "date_label": "Tue · Jul 7",
+  "edition": "AM",
+  "day_number": 178,
+  "phase": "Autonomy era · launch gates",
+  "headline": "IST morning, Day 178 — this is the Tuesday every holiday-week brief pointed at. HR inboxes reopened Monday and no gate moved, so the zero-EIN, zero-spend B2B HR email sits loaded with 6 cited HR leaders waiting on one tap. Two clocks tick underneath: the IRS EIN reply window lands ~Thu-Fri, and the autoloop's 5-minute launchd fix keeps eating a failed 09:00 retry.",
+  "source": "index.html · Daily Tasks board (May 28 (Thu))",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -72,52 +72,57 @@
   "spotlight": [
     {
       "icon": "📤",
-      "title": "SEND the zero-gate HR email today — the inboxes reopened this morning",
+      "title": "Send the B2B HR email — today is the Tuesday",
       "who": "Frankie",
-      "detail": "The one lane that needs NO EIN and NO spend, and the Monday every recent brief pointed to is finally here. ~30 min in Apollo (≤6 of 80 trial credits): confirm the 6 pre-researched People/HR leaders — Razon/RNDC, Myles/KBR, Boone/eBay, Russell/Cloudflare, Prabhakar/Atlassian, Withycombe/Snap — are still in role, reveal their work emails, and fire the 3-touch CAN-SPAM sequence from 09_b2b_hr_lane/. Every hour it waits is a just-reopened HR inbox going cold.",
-      "project": "p2",
-      "area": "b2b-hr-lane"
+      "detail": "~30 min, zero spend, ≤6 Apollo credits, no EIN needed. The 6 HR leaders are researched, cited and pre-filled: RNDC·Razon, KBR·Myles, eBay·Boone, Cloudflare·Russell, Atlassian·Prabhakar, Snap·Withycombe. Confirm each is still in role, reveal the work emails (1 credit each), load the 3-touch CAN-SPAM sequence per 09_b2b_hr_lane/B2B_GO_LIVE_RUNBOOK.md — approve and send. This is the lane every holiday brief staged for this morning.",
+      "project": "insurance",
+      "area": "Outreach"
     },
     {
       "icon": "📬",
-      "title": "Fund + approve the Lob postcard — fastest path to a first booked appointment",
+      "title": "Fund Lob + approve the 77-lead postcard",
       "who": "Frankie",
-      "detail": "~$50-70, 15 min: open and fund a Lob account, then approve the postcard at 08_outreach/homeowner_postcard_directmail.md. Approve today and the 77 TIER1 California cards enter this week's print run, each with a per-lead QR so any booked appointment traces back to the exact mailing.",
-      "project": "p2",
-      "area": "outreach"
+      "detail": "~$50-70 + 15 min — the fastest path to a first booked appointment. 77/77 TIER1 California leads mailable, each with a per-lead QR so a booked appointment traces to the exact mailing. Copy is compliance-checked at 08_outreach/homeowner_postcard_directmail.md; runbook alongside it.",
+      "project": "insurance",
+      "area": "Outreach"
     },
     {
       "icon": "🔧",
-      "title": "Clear the two 5-minute fixes — the autoloop just failed again at 09:00",
+      "title": "Un-freeze the autoloop: 5-min launchd fix + 1-min ATTOM key",
       "who": "Chitraksh",
-      "detail": "The autoloop's launchd job fired again this morning and hit the same 'Operation not permitted' wall — frozen at cycle 10 since Jun 28, now visibly retrying-and-failing twice a day. Grant Full Disk Access or re-run install-scheduler.sh to restart the 09:00/21:00 cadence. Then re-provision the dead ATTOM key (401 since Jun 27) so the homeowner-data lane isn't running blind.",
+      "detail": "The scheduler re-fails every 09:00 (\"Operation not permitted\") while the machine sits frozen-complete at cycle 10 since Jun 28. Grant the launchd permission, then refresh the dead ATTOM key (401) at api.developer.attomdata.com → .oraya-credentials/attom_api_key. Six minutes total returns the company to building itself overnight.",
       "project": "hq",
-      "area": "autoloop"
+      "area": "Dashboard / Infra"
     }
   ],
   "blockers": [
     {
       "label": "EIN",
       "scope": "Shared",
-      "detail": "Re-faxed to the IRS on the Jun 27-28 call — the ~8-business-day window lands mid-week (July 4 counted out), so it's roughly 2 business days from arriving. Nothing to push; it's a wait. The moment it lands, A2P submits and the SMS + outbound-call gates open."
+      "detail": "Re-faxed Jun 27-28 on a live send/receive line; the ~8-business-day reply window lands this week (~Thu-Fri, Jul 9-10). Watch the fax line + inbox — the moment it arrives, A2P submits. The B2B HR email and Lob postcard do NOT wait on it."
     },
     {
       "label": "Launch gates",
-      "scope": "Frankie + Chitraksh",
-      "detail": "All 3 lanes are built and merge-ready; the autoloop hit cycle 10 over a week ago and deliberately stopped adding build because the only bottleneck left is 5 founder approvals. Pull the cheapest gate first — the HR email needs neither EIN nor spend, and as of this morning its inboxes are open."
+      "scope": "Frankie",
+      "detail": "5 founder taps, shortest first: send the B2B HR email (30 min, $0) · fund Lob + approve the postcard (~$50-70) · fill the 20 launch-config values once (unblocks all 3 lanes) · refresh the ATTOM key (Chitraksh, 1 min) · fund BatchData (~$25). Every lane underneath is built and merge-ready."
+    },
+    {
+      "label": "Autoloop scheduler",
+      "scope": "Chitraksh",
+      "detail": "launchd job re-fails daily at 09:00 (\"Operation not permitted\"). The 5-minute permission fix un-freezes an actively-retrying machine stuck at cycle 10 since Jun 28."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "177"
+      "v": "178"
     },
     {
-      "k": "Founder taps",
-      "v": "5"
+      "k": "Open tasks",
+      "v": "30"
     },
     {
-      "k": "Lanes built",
+      "k": "Lanes",
       "v": "3"
     }
   ],
