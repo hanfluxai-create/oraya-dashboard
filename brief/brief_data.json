@@ -1,11 +1,11 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-07-08T02:32:39.543Z",
+  "generated_at": "2026-07-08T15:27:24.004Z",
   "date_label": "Wed · Jul 8",
-  "edition": "AM",
+  "edition": "PM",
   "day_number": 179,
   "phase": "Autonomy era · launch gates",
-  "headline": "IST morning, Day 179 — the zero-EIN, zero-spend B2B HR email is unsent for a third straight business day since HR inboxes reopened Monday. The EIN certified-mail window opens tomorrow (Thu-Fri); the autoloop has now sat frozen at cycle 10 for 10 days on the same unfixed Mac permission.",
+  "headline": "PT morning, Day 179 — the IST workday closed with no gate moved, so the zero-EIN, zero-spend B2B HR email is unsent on its third straight open-inbox morning (Mon-Tue-Wed). This is its last clean window before the EIN certified-mail reply lands tomorrow or Friday and owns Frankie's Thu-Fri. Cheapest first move is unchanged — send the HR email (~30 min, $0). Autoloop still frozen at cycle 10, day 10 on one unfixed Mac permission.",
   "source": "index.html · Daily Tasks board (May 28 (Thu))",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
@@ -72,9 +72,9 @@
   "spotlight": [
     {
       "icon": "📤",
-      "title": "Send the B2B HR email — day 3 of the same ask",
+      "title": "Send the B2B HR email — 3rd open-inbox morning",
       "who": "Frankie",
-      "detail": "~30 min, zero spend, ≤6 Apollo credits, no EIN needed. Monday flipped this lane from stage-it to send-it; it sat unsent through Tuesday and now Wednesday. 6 HR leaders pre-researched and cited: RNDC·Razon, KBR·Myles, eBay·Boone, Cloudflare·Russell, Atlassian·Prabhakar, Snap·Withycombe. Confirm each still in role, reveal the work emails (1 credit each), send the 3-touch CAN-SPAM sequence per 09_b2b_hr_lane/B2B_GO_LIVE_RUNBOOK.md.",
+      "detail": "~30 min, zero spend, ≤6 Apollo credits, no EIN needed. HR inboxes reopened Monday; it sat unsent Mon, Tue, Wed. This is the last clean PT morning before the EIN reply lands (Thu-Fri) and takes over the rest of the week. 6 HR leaders pre-researched and cited: RNDC·Razon, KBR·Myles, eBay·Boone, Cloudflare·Russell, Atlassian·Prabhakar, Snap·Withycombe. Confirm each still in role, reveal the work emails (1 credit each), send the 3-touch CAN-SPAM sequence per 09_b2b_hr_lane/B2B_GO_LIVE_RUNBOOK.md.",
       "project": "insurance",
       "area": "Outreach"
     },
@@ -88,9 +88,9 @@
     },
     {
       "icon": "🔧",
-      "title": "Un-freeze the autoloop — 10 days overdue",
+      "title": "Un-freeze the autoloop — day 10 frozen",
       "who": "Chitraksh",
-      "detail": "launchd re-fails every 09:00/21:00 (\"Operation not permitted\") while the machine has sat frozen-complete at cycle 10 since Jun 28 — 10 days now. Grant the Full Disk Access permission, refresh the dead ATTOM key (401 at api.developer.attomdata.com), and queue the ~$25 BatchData fund. The EIN reply is due the same window — worth a daily check on the fax line too.",
+      "detail": "launchd re-fails every 09:00/21:00 (\"Operation not permitted\" on oraya-loop.sh) while the machine has sat frozen-complete at cycle 10 since Jun 28 — 10 days now. Grant Full Disk Access, refresh the dead ATTOM key (401 at api.developer.attomdata.com), and queue the ~$25 BatchData fund. The EIN reply is due this same window — worth a daily check on the fax line too.",
       "project": "hq",
       "area": "Dashboard / Infra"
     }
@@ -99,17 +99,17 @@
     {
       "label": "EIN",
       "scope": "Shared",
-      "detail": "Re-faxed Jun 27-28 on a live send/receive line; the ~8-business-day reply window opens tomorrow (Thu-Fri, Jul 9-10). Watch the fax line + inbox — the moment it lands, A2P submits. Neither the B2B HR email nor the Lob postcard wait on it."
+      "detail": "Re-faxed Jun 27-28 on a live send/receive line; the ~8-business-day reply window opens tomorrow (Thu-Fri, Jul 9-10). Watch the fax line + inbox — the moment it lands, A2P submits. Neither the B2B HR email nor the Lob postcard waits on it."
     },
     {
       "label": "Launch gates",
       "scope": "Frankie",
-      "detail": "5 founder taps, shortest first: send the B2B HR email (30 min, $0) · fund Lob + approve the postcard (~$50-70) · fill the 20 launch-config values once (unblocks all 3 lanes) · refresh the ATTOM key (Chitraksh, 1 min) · fund BatchData (~$25). Every lane underneath is built and merge-ready — day 3 of the same 5 asks."
+      "detail": "5 founder taps, shortest first: send the B2B HR email (30 min, $0) · fund Lob + approve the postcard (~$50-70) · fill the 20 launch-config values once (unblocks all 3 lanes) · refresh the ATTOM key (Chitraksh, 1 min) · fund BatchData (~$25). Every lane underneath is built and merge-ready — day 3 of the same 5 asks since inboxes reopened."
     },
     {
       "label": "Autoloop scheduler",
       "scope": "Chitraksh",
-      "detail": "launchd job re-fails daily at 09:00 and 21:00 (\"Operation not permitted\"). The 5-minute permission fix un-freezes a machine that's been stuck at cycle 10 for 10 days since Jun 28."
+      "detail": "launchd job re-fails daily at 09:00 and 21:00 (\"Operation not permitted\"). The 5-minute Full Disk Access fix un-freezes a machine stuck at cycle 10 for 10 days since Jun 28."
     }
   ],
   "metrics": [
