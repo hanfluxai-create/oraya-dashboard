@@ -287,6 +287,21 @@ body.searching .section{display:block;margin-bottom:8px}
 .kpi .kl{font-size:9px;font-weight:750;letter-spacing:.9px;text-transform:uppercase;color:var(--text3);margin-top:4px;line-height:1.5}
 .kpi .kd{font-size:9.5px;color:var(--text2);margin-top:2px}
 
+/* Executive Brief — cinematic cold-open (always-dark, theme-independent) */
+.xbrief{position:relative;border-radius:20px;overflow:hidden;margin-bottom:14px;background:radial-gradient(1200px 600px at 20% -20%,rgba(91,155,255,.25),transparent 60%),radial-gradient(1000px 500px at 90% 120%,rgba(167,139,250,.22),transparent 60%),linear-gradient(160deg,#070a14,#0a0e1c 55%,#05070d);padding:46px 36px 0;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.08)}
+.xbrief-kicker{font-size:10.5px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;color:#7e9bff;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.xbrief-kicker .d{width:6px;height:6px;border-radius:50%;background:#34d399;animation:pulse 1.6s infinite;display:inline-block;flex-shrink:0}
+.xbrief-line{margin:0 0 20px;font-size:clamp(26px,4.2vw,52px);font-weight:900;letter-spacing:-1.6px;line-height:1.06;color:#f4f6fc}
+.xbrief-line span{background:linear-gradient(92deg,#5b9bff 0%,#a78bfa 50%,#fbbf24 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.xbrief-sub{max-width:660px;font-size:14px;line-height:1.8;color:#aeb9d6;margin:0 0 30px}
+.xbrief-sub strong{color:#f4f6fc}
+.xbrief-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:0;border-top:1px solid rgba(255,255,255,.1)}
+.xbrief-stat{padding:18px 16px;border-right:1px solid rgba(255,255,255,.08)}
+.xbrief-stat:last-child{border-right:none}
+.xbrief-stat .xn{font-size:30px;font-weight:900;letter-spacing:-1px;color:#f4f6fc;font-variant-numeric:tabular-nums}
+.xbrief-stat .xl{font-size:9.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#7e8bb0;margin-top:4px;line-height:1.4}
+@media(max-width:760px){.xbrief{padding:32px 20px 0}.xbrief-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}}
+
 /* guide steps */
 .guide{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
 .gstep{display:flex;gap:10px;align-items:flex-start;background:var(--surface2);border:1px dashed var(--border2);border-radius:12px;padding:11px 13px}
@@ -612,7 +627,7 @@ body.searching .ck-viz-hide{display:none}
     <div class="brand-mark">O</div>
     <div class="copy">
       <div class="name">Oraya Labs <span class="lite">Mission Control</span></div>
-      <div class="sub"><strong>v14.0</strong> · data through Jun 28 2026 · Day 169 · Week 25 · Outbound v128 + Inbound v15 LIVE · Autoloop LIVE · Jul 4 cofounder sweep ✓</div>
+      <div class="sub"><strong>v14.0</strong> · data through Jun 28 2026 · Day 169 · Week 25 · Outbound v128 + Inbound v15 LIVE · Autoloop LIVE · Jul 11 cofounder sweep ✓</div>
     </div>
   </div>
   <div class="tb-spacer"></div>
@@ -660,6 +675,10 @@ body.searching .ck-viz-hide{display:none}
     <button class="sb-item" data-tab="meetings"><span class="sb-ico">🗓️</span><span class="sb-lbl">Meetings</span><span class="sb-badge">35</span></button>
     <button class="sb-item" data-tab="psych"><span class="sb-ico">🧠</span><span class="sb-lbl">Founder Profiles</span><span class="sb-badge">DUO</span></button>
     <button class="sb-item" data-tab="brief"><span class="sb-ico">⚡</span><span class="sb-lbl">Master Brief</span><span class="sb-badge">90 SEC</span></button>
+  </div>
+  <div class="sb-group">
+    <div class="sb-kicker">AI Systems</div>
+    <button class="sb-item" data-tab="prompts"><span class="sb-ico">🧬</span><span class="sb-lbl">Prompts Library</span><span class="sb-badge info">9</span></button>
   </div>
   <div class="sb-foot">
     <strong>v14.0 · Mission Control</strong><br>
@@ -783,6 +802,20 @@ body.searching .ck-viz-hide{display:none}
 
 <div class="section active" id="overview">
 <div class="ck" data-sec="overview">
+  <div class="xbrief rv">
+    <div class="xbrief-kicker"><span class="d"></span> ORAYA LABS &middot; DAY 169 OF OPERATION &middot; TWO HUMANS + ONE AI TEAMMATE</div>
+    <h1 class="xbrief-line">Zero employees.<br>Zero office.<br><span>One AI-run company &mdash; and it's live.</span></h1>
+    <p class="xbrief-sub"><strong>Frankie sells. Chitraksh builds. Claude HQ runs the machine in between</strong> &mdash; drafting, patching, auditing and keeping this exact page truthful, every day. What follows isn't a pitch deck. It's the live, verbatim operating record of an AI-only company building itself in public, one shipped thing at a time.</p>
+    <div class="xbrief-strip">
+      <div class="xbrief-stat"><div class="xn" data-count="169">0</div><div class="xl">Days of operation</div></div>
+      <div class="xbrief-stat"><div class="xn" data-count="2">0</div><div class="xl">Human founders</div></div>
+      <div class="xbrief-stat"><div class="xn" data-count="500" data-suffix="+">0</div><div class="xl">AI voice calls proven</div></div>
+      <div class="xbrief-stat"><div class="xn" data-count="86">0</div><div class="xl">n8n automations live</div></div>
+      <div class="xbrief-stat"><div class="xn" data-count="10">0</div><div class="xl">Autonomous loop cycles</div></div>
+      <div class="xbrief-stat"><div class="xn" data-count="5">0</div><div class="xl">Founder taps from launch</div></div>
+    </div>
+  </div>
+
   <div class="hero-ck rv">
     <canvas id="aurora"></canvas>
     <div class="hero-inner">
@@ -2944,11 +2977,34 @@ body.searching .ck-viz-hide{display:none}
 
   <div class="ck-controls">
     <button class="x-all">▾ Expand all records</button>
-    <span class="ck-count">The full rail below — 74 timestamped events with verbatim founder quotes, newest first. Click a week to unfold it.</span>
+    <span class="ck-count">The full rail below — 75 timestamped events with verbatim founder quotes, newest first. Click a week to unfold it.</span>
   </div>
 </div>
 
   <h2 class="section-title">Timeline &middot; Reverse chronological</h2>
+
+  <div class="card">
+    <h3 class="gold">Cofounder AM sweep &middot; Sat Jul 11 (autonomous)</h3>
+    <ul>
+      <li><strong>Sat Jul 11 ~6:30 AM IST</strong> &middot; <span class="tag tag-green">COFOUNDER</span> <strong>CTO-Claude autonomous sweep ran</strong> ~30 min ahead of the AM brief &mdash; live inbox scan, transcript check, dashboard sweep + push, memory check. Output written to <code>daily-brief/cofounder_log.json</code> for the 6:30 brief.</li>
+      <li><strong>Jul 11</strong> &middot; <span class="tag tag-blue">INBOX</span> <strong>Inbox clean &mdash; 0 action items.</strong> Zero threads in the last 24 h, verified live against the connected account (newest inbox mail is still the Jun 26 automated Anthropic notice). No EIN/IRS reply by email, no A2P, no Envision/Greg/Mo dealership traffic, no cancellations (Theresa / Mom's policy), no new lead/opt-in replies. No reply drafted &mdash; nothing required one.</li>
+      <li><strong>Jul 11</strong> &middot; <span class="tag tag-red">EIN WINDOW</span> The <strong>~8-business-day EIN fax-reply window closed Friday Jul 10</strong> with no email-side signal. Unless a fax landed on RedFax (510-497-1224) &mdash; the one inbox this sweep can't read &mdash; the standing plan fires: <strong>Monday Jul 13 = IRS phone call</strong> to chase the SS-4. A2P, FBN, registered agent and the SMS chain all queue behind this single number.</li>
+      <li><strong>Jul 11</strong> &middot; <span class="tag tag-violet">TRANSCRIPTS</span> No new meeting / WhatsApp transcripts since the May 18 Retell roleplay snapshots &mdash; Daily Tasks board unchanged this pass. Only the Jul 10 brief artifacts (AM + PM editions) changed in the HQ folder since the last sweep.</li>
+      <li><strong>Jul 10 (gap record)</strong> &middot; <span class="tag tag-green">BRIEFS</span> Both Jul 10 editions published; the PM sweep also closed the <code>brief_log</code> ledger gap (Jul 9 / Jul 10-AM lines restored). The $0 B2B HR email went <strong>unsent through the whole open-inbox week</strong> &mdash; next clean send window is <strong>Monday morning</strong>; the weekend is staging time, not send time. Autoloop still frozen-complete at cycle 10 (launchd retries keep failing pending the 5-min Full-Disk-Access toggle).</li>
+      <li><strong>Jul 11</strong> &middot; <span class="tag tag-red">BOTTLENECK</span> The sole bottleneck holds at <strong>5 founder taps</strong> &mdash; (1) send the B2B HR email (Monday), (2) fund Lob + approve the 77-lead postcard, (3) fill the launch-config once, (4) refresh the dead ATTOM key, (5) fund BatchData. Weekend twist: the EIN window expiring quietly promotes the <strong>Monday IRS call</strong> onto the same tap list &mdash; six taps now stand between the built machine and its first booked appointment.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 class="gold">Cofounder AM sweep &middot; Thu Jul 9 (autonomous)</h3>
+    <ul>
+      <li><strong>Thu Jul 9 ~6:30 AM IST</strong> &middot; <span class="tag tag-green">COFOUNDER</span> <strong>CTO-Claude autonomous sweep ran</strong> ~30 min ahead of the AM brief &mdash; inbox scan, transcript check, dashboard sweep + push, draft prep, memory. Output written to <code>daily-brief/cofounder_log.json</code> for the 6:30 brief.</li>
+      <li><strong>Jul 9</strong> &middot; <span class="tag tag-blue">INBOX</span> <strong>Inbox clean &mdash; 0 action items.</strong> Zero threads in the last 24 h (newest mail is still the Jun 26 automated Anthropic notice). No EIN/IRS reply in email &mdash; but the EIN answer is expected by <strong>fax (RedFax 510-497-1224)</strong>, and the ~8-business-day window from the Jun 27-28 re-fax opens <strong>today/tomorrow (Thu-Fri)</strong>: worth a RedFax inbox check. No A2P, Envision/Greg/Mo, cancellation (Theresa / Mom's policy), or lead/opt-in traffic. No reply drafted &mdash; nothing required one.</li>
+      <li><strong>Jul 9</strong> &middot; <span class="tag tag-violet">TRANSCRIPTS</span> No new meeting / WhatsApp transcripts since the May 18 Retell roleplay snapshots &mdash; Daily Tasks board unchanged this pass. New in the HQ folder (Jul 6-8, logged as observed): a <strong>Scholarship Campaign Playbook</strong> (.docx) + Perplexity deep-research prompt &mdash; Chitraksh's 2027-intake law+AI scholarship lane; personal workstream, no board directive extracted.</li>
+      <li><strong>Jul 5&ndash;8 (gap record)</strong> &middot; <span class="tag tag-green">BRIEFS</span> PM briefs Day 176&ndash;179 published daily. Mon Jul 6 reopened HR inboxes &mdash; the zero-spend B2B HR email flipped from stage-it to send-it and is now <strong>unsent through 3 straight open-inbox mornings</strong>. Jul 7: build sandbox (node/git) outage &mdash; brief hand-delivered, publish skipped; recovered Jul 8, pipeline normal since. Autoloop frozen-complete at cycle 10 (launchd re-fails each 09:00 retry; Full-Disk-Access fix still pending on the Mac).</li>
+      <li><strong>Jul 9</strong> &middot; <span class="tag tag-red">BOTTLENECK</span> The sole bottleneck holds at <strong>5 founder taps</strong> &mdash; (1) launch B2B HR lane, (2) fund Lob + approve the 77-lead postcard, (3) fill the launch-config once, (4) refresh the dead ATTOM key, (5) fund BatchData. Every lane underneath is built and merge-ready. Today's twist: the EIN fax-reply window opens, so the HR email's last clean send-window is <em>now</em>, before the EIN owns Thu-Fri.</li>
+    </ul>
+  </div>
 
   <div class="card">
     <h3 class="gold">Cofounder AM sweep &middot; Sat Jul 4 (autonomous)</h3>
