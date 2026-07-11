@@ -1,11 +1,11 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-07-10T14:07:45.565Z",
-  "date_label": "Fri · Jul 10",
+  "generated_at": "2026-07-11T14:04:31.522Z",
+  "date_label": "Sat · Jul 11",
   "edition": "PM",
-  "day_number": 181,
+  "day_number": 182,
   "phase": "Launch Week close",
-  "headline": "PT morning, Day 181 — this is the window the whole week pointed at. It's Friday, and for the next few hours both deadlines sit in Frankie's hands: check RedFax for the EIN reply, and send the unsent $0 B2B HR email before HR inboxes close for the weekend. The IST side of today passed with nothing moved — clear either tap this morning, or both slide to Monday.",
+  "headline": "Saturday, Day 182 — Frankie's PT morning. The two taps the whole week chased are both parked by the calendar: the IRS is closed until Monday 8 AM PT, and HR inboxes don't reopen until Monday either. That makes today the cleanest window of the week for the three taps that DON'T need business hours — fund Lob and approve the postcard (~$50-70, 15 min, the fastest path to a first booked appointment), stage the $0 HR email so it fires Monday at 8, and clear the 5-min Full-Disk-Access toggle that has left the autoloop frozen 13 days (its 09:02 IST retry failed again this morning).",
   "source": "index.html · Daily Tasks board (May 28 (Thu))",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
@@ -71,51 +71,45 @@
   ],
   "spotlight": [
     {
-      "icon": "📠",
-      "title": "Check RedFax for the EIN reply — the window closes TODAY",
+      "icon": "📮",
+      "title": "The one revenue tap that works on a Saturday: fund Lob, approve the postcard",
       "who": "Frankie",
-      "detail": "The ~8-business-day window from the Jun 27-28 SS-4 re-fax opened Thursday and closes today (Fri). Nothing arrives by email — check the RedFax inbox (510-497-1224) this morning. The moment the EIN lands, A2P submits and the whole compliance chain (FBN → registered agent → SMS) starts moving. No reply by end of day means a Monday IRS call to chase it.",
-      "project": "insurance",
-      "area": "Compliance & Legal"
+      "detail": "Everything else today is calendar-blocked — direct mail is not. ~$50-70 + 15 min: open a Lob account (lob.com), fund it, approve the postcard at 08_outreach/homeowner_postcard_directmail.md. The recipient file is already built — lob_merge_TIER1.csv, 77/77 TIER1 leads mailable, 0 quarantined, each carrying a QR with its own lead_id so a booked appointment is attributable back to this exact batch. No EIN, no A2P, no TCPA exposure, no enrichment spend. Fastest path to a first booked appointment, and it has been sitting one tap away since Jun 27."
     },
     {
-      "icon": "📧",
-      "title": "Send the $0 B2B HR email — last open-inbox morning of the week",
+      "icon": "📠",
+      "title": "Check RedFax, then stage the HR email for a Monday 8 AM send",
       "who": "Frankie",
-      "detail": "Unsent since HR inboxes reopened Monday — four mornings gone (Mon–Thu), and this Friday is the last before the weekend; miss it and it slips to next week. Zero EIN, zero spend, zero TCPA: 6 HR leaders pre-researched + cited (RNDC, KBR, eBay, Cloudflare, Atlassian, Snap), sequence loaded in 09_b2b_hr_lane/. ~30 min: confirm the 6 still in role, reveal work emails (≤6 Apollo credits), send touch 1.",
-      "project": "insurance",
-      "area": "Lead-gen"
+      "detail": "Two short items that turn Monday into a clean double-tap instead of a scramble. (1) RedFax 510-497-1224 — the ~8-business-day window from the Jun 27-28 SS-4 re-fax closed Friday; the fax inbox is live on a weekend even though the IRS is not. If it is empty, Monday 8 AM PT is IRS-call day. (2) Stage the $0 B2B HR email: confirm the 6 pre-researched leaders are still in role (Razon/RNDC, Myles/KBR, Boone/eBay, Russell/Cloudflare, Prabhakar/Atlassian, Withycombe/Snap), reveal their work emails (6 Apollo credits max), load the 3-touch sequence from 09_b2b_hr_lane/. Then it sends itself the moment HR inboxes reopen."
     },
     {
       "icon": "🔓",
-      "title": "5-min Full Disk Access fix — unfreeze the autoloop (day 12)",
+      "title": "Weekend unblock stack — FDA toggle, ATTOM key, BatchData. None need business hours.",
       "who": "Chitraksh",
-      "detail": "The launchd job has re-failed every 09:00/21:00 since Jun 28 ('Operation not permitted' on oraya-loop.sh) — cycle 10 frozen 12 days on a System Settings toggle. It's the tap that restarts the autonomous engine; pair it with the 1-min ATTOM key refresh (401) while you're there.",
-      "project": "hq",
-      "area": "Dashboard / Infra"
+      "detail": "The launchd job re-failed at 09:02 IST this morning — 'Operation not permitted' on oraya-loop.sh — the same macOS denial on every run since Jun 28, and the autoloop is still frozen at cycle 10. (1) 5-min System Settings → Privacy & Security → Full Disk Access → add /bin/bash. (2) 1-min ATTOM key refresh — the trial key 401s; new key at api.developer.attomdata.com, overwrite .oraya-credentials/attom_api_key. (3) ~$25 BatchData fund to skip-trace the 77 HOF leads (token already created and tested) — that switches on the cold-email lane. Optional 4th: fill launch_config.template.env once (20 blanks) — it feeds all three lanes at the same time."
     }
   ],
   "blockers": [
     {
       "label": "EIN",
       "scope": "Shared",
-      "detail": "Fax-reply window from the Jun 27-28 SS-4 re-fax is open NOW and closes today (Fri). Unblock: check the RedFax inbox (510-497-1224) this morning — no reply by end of day means a Monday IRS call to chase it. EIN → A2P → SMS is the longest chain in the company."
+      "detail": "Day 182 · IRS closed until Monday. The ~8-business-day RedFax reply window from the Jun 27-28 SS-4 re-fax closed Friday with nothing visible from this side (inbox live-verified today: zero threads in 72h — though the EIN answer arrives by fax, not email). Unblock path: Frankie checks RedFax 510-497-1224 this weekend; if it is empty, Monday Jul 13, 8 AM PT is the IRS call, with Chitraksh on the 8–11 AM PT (8:30–11:30 PM IST) rotation. A2P → FBN → registered agent → SMS all queue behind this one document."
     },
     {
       "label": "Launch gates",
       "scope": "Shared",
-      "detail": "5 founder taps hold every built lane shut: (1) send B2B HR email — $0, today; (2) fund Lob + approve the 77-lead postcard; (3) fill launch-config once (unblocks 3 lanes); (4) refresh dead ATTOM key; (5) fund BatchData ~$25. Everything underneath is merge-ready."
+      "detail": "5 founder taps still stand between a finished build and first revenue. Three are weekend-executable and are today's spotlight: Lob fund + postcard approve (Frankie, ~$50-70), and the Full-Disk-Access toggle + ATTOM key + BatchData ~$25 (Chitraksh). The other two — the IRS call and the HR email send — are calendar-locked to Monday 8 AM PT, so today is for staging them, not sending."
     },
     {
       "label": "Autoloop scheduler",
       "scope": "Chitraksh",
-      "detail": "Frozen at cycle 10 for 12 days — launchd re-fails each 09:00 ('Operation not permitted'). Unblock: System Settings → Full Disk Access for the runner, 5 min. The scheduler is actively retrying; the fix takes effect at the next 09:00/21:00 tick."
+      "detail": "Day 13 frozen at cycle 10. The 09:02 IST launchd retry failed again this morning — 'Operation not permitted' — the same Full Disk Access denial on every scheduled run since Jun 28. It is a 5-minute fix; until it clears, the company gets zero autonomous build cycles per day."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "181"
+      "v": "182"
     },
     {
       "k": "Open tasks",
@@ -393,45 +387,45 @@
     }
   ],
   "cofounder": {
-    "date": "2026-07-10",
-    "scanned_at": "2026-07-10T14:05:00Z",
+    "date": "2026-07-11",
+    "scanned_at": "2026-07-11T01:05:00Z",
     "done": [
       {
-        "what": "Ran the Jul 10 PM cofounder sweep ahead of Frankie's PT Friday morning — live inbox scan, board + state + autoloop check, PM brief curated, published, and Gmail-drafted end-to-end",
+        "what": "Ran the Sat Jul 11 AM cofounder sweep ~30 min ahead of the 6:30 brief — live inbox scan, transcript check, dashboard record card + cockpit refresh, pushed to Vercel (commit 0f1318d), memory updated",
         "who": "CTO-Claude"
       },
       {
-        "what": "Scanned the connected Oraya inbox over a 5-day window — 0 items flagged: no EIN/IRS or A2P reply by email, no Envision/Greg/Mo dealership follow-up, no cancellations, no new lead/opt-in traffic. The EIN reply comes back via RedFax, not email, so the RedFax inbox (510-497-1224) is the real morning check",
+        "what": "Scanned the connected inbox live (24h window, verified against the account — newest mail is still the Jun 26 Anthropic notice): 0 items flagged. No EIN/IRS email, no A2P, no Envision/Greg/Mo, no cancellations (Theresa / Mom's policy), no lead/opt-in replies. Nothing needed a reply, so zero drafts queued",
         "who": "CTO-Claude"
       },
       {
-        "what": "Board + state unchanged since the AM edition — no new meeting/WhatsApp transcripts; the AM→PM delta is the clock, not the board: the IST side of Friday closed with no gate moved, so both Friday deadlines now sit squarely in Frankie's PT-morning hands",
+        "what": "EIN math: the ~8-business-day fax-reply window from the Jun 27-28 SS-4 re-fax CLOSED Friday with no email-side signal — unless a fax is sitting on RedFax (510-497-1224), Monday Jul 13 is IRS-call day. Logged as a red EIN-WINDOW record on the dashboard",
         "who": "CTO-Claude"
       },
       {
-        "what": "Autoloop still frozen at cycle 10 — state.json unchanged since Jun 28; day 12 frozen. The launchd job keeps re-failing its 09:00/21:00 retry ('Operation not permitted'); a 5-min Full Disk Access toggle is all that stands between a live, actively-retrying scheduler and cycle 11",
+        "what": "No new meeting/WhatsApp transcripts since the May 18 Retell snapshots — Daily Tasks board unchanged; only the Jul 10 brief artifacts moved in the HQ folder since the last sweep",
         "who": "CTO-Claude"
       },
       {
-        "what": "Flagged + restored the brief_log gap — the Jul 9 and Jul 10-AM editions generated their artifacts but no log line was appended; today's PM line closes the gap so the ledger is honest again",
+        "what": "Dashboard: appended the dated Sat Jul 11 record card (inbox / EIN window / transcripts / Jul 10 gap record / bottleneck), refreshed the cockpit sweep marker to Jul 11, pushed — Vercel auto-deploys. Also fixed + memorised the stale /tmp clone gotcha that was blocking cross-session pushes",
         "who": "CTO-Claude"
       }
     ],
     "waiting": [
       {
-        "what": "SEND the $0 B2B HR email — this is the last open-inbox morning of the week; miss it and it slips to Monday. ~30 min, ≤6 Apollo credits: confirm the 6 pre-researched HR leaders (RNDC, KBR, eBay, Cloudflare, Atlassian, Snap) still in role, reveal work emails, send touch 1 from 09_b2b_hr_lane/. Zero EIN, zero spend, zero TCPA",
+        "what": "CHECK RedFax (510-497-1224) for the EIN reply — the fax window closed Friday; if the inbox is empty, Monday Jul 13 = IRS phone call to chase the SS-4. Everything (A2P → FBN → SMS chain) queues behind this",
         "who": "Frankie"
       },
       {
-        "what": "CHECK RedFax (510-497-1224) for the EIN reply — the ~8-business-day window from the Jun 27-28 SS-4 re-fax is open and closes today. The moment it lands, A2P submits and the FBN → registered-agent → SMS chain starts moving. No reply by end of day → Monday IRS call",
+        "what": "SEND the $0 B2B HR email Monday morning — it sat unsent through the whole open-inbox week. ~30 min, ≤6 Apollo credits: confirm the 6 pre-researched HR leaders still in role, reveal work emails, fire touch 1 from 09_b2b_hr_lane/. Weekend = staging time only",
         "who": "Frankie"
       },
       {
-        "what": "FASTEST first booked appointment (~$50-70, 15 min): open + fund a Lob account and approve the postcard at 08_outreach/homeowner_postcard_directmail.md — mails the 77 TIER1 leads, QR-attributable",
+        "what": "FASTEST first booked appointment (~$50-70, 15 min, works on a Saturday): open + fund Lob and approve the postcard at 08_outreach/homeowner_postcard_directmail.md — mails the 77 TIER1 leads, QR-attributable",
         "who": "Frankie"
       },
       {
-        "what": "5-min Full Disk Access fix to unfreeze the autoloop (day 12, cycle 10) + the 1-min ATTOM key refresh while you're in there — trial key returns 401; new key at api.developer.attomdata.com → overwrite .oraya-credentials/attom_api_key",
+        "what": "5-min Full Disk Access toggle to unfreeze the autoloop (frozen at cycle 10 since Jun 28) + the 1-min ATTOM key refresh while you're in there (new key at api.developer.attomdata.com → overwrite .oraya-credentials/attom_api_key)",
         "who": "Chitraksh"
       },
       {
