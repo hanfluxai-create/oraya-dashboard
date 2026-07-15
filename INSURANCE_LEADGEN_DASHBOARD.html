@@ -74,12 +74,54 @@
     <div style="margin-top:10px"><a href="index.html" style="display:inline-block;padding:8px 14px;background:var(--violet-soft);color:var(--violet);border:1px solid var(--violet);border-radius:8px;font-weight:700;text-decoration:none;font-size:12.5px">&larr; Back to Oraya HQ Main Dashboard</a></div>
   </div>
   <div style="text-align:right">
-    <div class="pill info">Last updated: <span id="lastUpdated">2026-05-29</span></div>
+    <div class="pill info">Last updated: <span id="lastUpdated">2026-06-27</span></div>
     <div class="sub" style="margin-top:6px">Source of truth: <code>insurance_leadgen_state.json</code></div>
     <div class="sub" style="margin-top:6px"><span class="pill ok">Outbound v128 LIVE</span> <span class="pill ok">Inbound v15 LIVE</span></div>
     <div class="sub" style="margin-top:6px"><span class="pill violet">1st Dealership Appt &middot; May 28 1pm</span></div>
+    <div class="sub" style="margin-top:6px"><span class="pill warn">Autoloop cycles 1&ndash;3 &middot; homeowner direct-mail lane TURNKEY</span></div>
   </div>
 </header>
+
+<!-- =================== READY-TO-FIRE / AWAITING APPROVAL (autoloop) =================== -->
+<section>
+  <h2>&#9889; Ready-to-Fire &middot; Awaiting Your Approval <span style="font-size:12px;font-weight:500;color:var(--text3)">(this is the only thing blocking a first booked appointment)</span></h2>
+  <div class="card" style="border:1px solid rgba(74,222,128,.35);background:linear-gradient(180deg,rgba(74,222,128,.05),transparent)">
+    <p class="sub" style="margin:0 0 12px">The homeowner direct-mail lane is now <strong>fully turnkey on the Claude side</strong> (copy + Lob-ready recipient file + go-live runbook all built &amp; verified). Everything below is a user spend/compliance gate &mdash; nothing left to author. Sequenced shortest-path-first.</p>
+    <div class="action-row" style="background:rgba(74,222,128,.08);border-radius:8px;padding:12px;border:1px solid rgba(74,222,128,.3)">
+      <span class="priority-pill" style="background:var(--green);color:#0b1020">1</span>
+      <div><strong>Fund a Lob direct-mail account (~$50&ndash;70) + approve the postcard</strong> <span class="pill ok">USER &middot; ~$50-70 + 15 min</span><br>
+      <span class="sub"><strong>Shortest path to a first booked appointment.</strong> The 77 TIER1 prime leads have address but no email &mdash; direct mail needs no enrichment and carries zero TCPA risk. Sign up at <a href="https://lob.com">lob.com</a>, fund ~$50-70, then follow <code>08_outreach/LOB_GO_LIVE_RUNBOOK.md</code>. Recipient file <code>08_outreach/lob_merge_TIER1.csv</code> (77/77 mailable) is ready. Still requires CA data-broker registration (#3) cleared first.</span></div>
+    </div>
+    <div class="action-row" style="margin-top:8px">
+      <span class="priority-pill" style="background:var(--accent);color:#0b1020">2</span>
+      <div><strong>Provide the launch values (fill once, reused everywhere)</strong> <span class="pill info">USER &middot; decision</span><br>
+      <span class="sub">CA producer license # + NPN + producer name, business legal name + mailing address, licensed states, landing/vanity URLs + display phone + unsubscribe URL, privacy/Do-Not-Sell/terms URLs, CRM/form POST URL, Retell web-call agent id + public key, Jornaya account + campaign ids. Lists in <code>07_optin_landing/README.md</code> + <code>08_outreach/README.md</code>. <em>(Note: CA # 4276736 + NPN 20996126 already in backend templates &mdash; confirm these are the marketing values too.)</em></span></div>
+    </div>
+    <div class="action-row" style="margin-top:8px">
+      <span class="priority-pill" style="background:var(--red);color:white">3</span>
+      <div><strong>Refresh the ATTOM API key</strong> <span class="pill bad">USER &middot; 1 min</span><br>
+      <span class="sub">Current trial key returns <strong>401 Unauthorized</strong> (was 200 OK on 2026-05-21 &mdash; expired/revoked). Get a new key at <a href="https://api.developer.attomdata.com/">api.developer.attomdata.com</a>, then overwrite <code>.oraya-credentials/attom_api_key</code>. Unblocks the homeowner data pull (top of funnel).</span></div>
+    </div>
+    <div class="action-row" style="margin-top:8px">
+      <span class="priority-pill" style="background:var(--orange);color:#0b1020">4</span>
+      <div><strong>Fund BatchData ~$20&ndash;30 to unblock skip-trace</strong> <span class="pill warn">USER &middot; ~$25</span><br>
+      <span class="sub">Appends emails to the 77 HOF leads &rarr; enables the cold-email lane. Token already created + tested (403 = insufficient balance, not auth failure). ~$0.15/lookup. Add funds at <a href="https://app.batchdata.com/company/payment">app.batchdata.com/company/payment</a>, then say "go".</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== WHAT'S NEW (autoloop cycles 1-3) =================== -->
+<section>
+  <h2>What's New &middot; Autoloop cycles 1&ndash;3 (2026-06-27)</h2>
+  <div class="card">
+    <ul style="margin:0;padding-left:18px">
+      <li><strong>Homeowner direct-mail lane made TURNKEY + attributable (cycle 3).</strong> Built <code>03_integrations/build_lob_merge_csv.py</code> &rarr; <code>08_outreach/lob_merge_TIER1.csv</code> (<strong>77/77 mailable, 0 quarantined</strong>) in Lob's recipient schema (name / address_line1 / address_city / address_state / address_zip). Each lead carries a stable <code>lead_id</code> (T1-001&hellip;T1-077) baked into its <code>qr_url</code> (<code>?src=postcard&amp;tier=1&amp;lid=&hellip;</code>) so a booked appointment is attributable back to this exact mailing &mdash; feeds the north-star metric. Plus <code>08_outreach/LOB_GO_LIVE_RUNBOOK.md</code> (exact human launch steps).</li>
+      <li><strong>Homeowner outreach package built (cycle 2)</strong> at <code>08_outreach/</code>: <code>homeowner_postcard_directmail.md</code> (Lob/PostGrid mail-merge-ready postcard for the 77 TIER1 leads &mdash; the channel that works FIRST: no email needed, zero TCPA risk) + <code>homeowner_email_sequence.md</code> (3-touch CAN-SPAM sequence for once emails are appended). Before this, outreach copy existed only for the secondary B2B layoff angle.</li>
+      <li><strong>TCPA-compliant opt-in landing page built (cycle 1)</strong> at <code>07_optin_landing/optin_landing_page.html</code> &mdash; click-to-initiate web-voice CTA + PEWC consent + TrustedForm &amp; Jornaya cert capture + producer-license / Do-Not-Sell / CAN-SPAM disclosures. Parses clean, 13/13 compliance markers, 14 launch tokens documented.</li>
+      <li><strong>ATTOM key re-verified DEAD (cycle 1).</strong> Returns <strong>401 Unauthorized</strong> today (was 200 OK on 2026-05-21). Source of truth corrected; queued for user refresh.</li>
+    </ul>
+  </div>
+</section>
 
 <!-- =================== WHAT'S NEW (May 22-28) =================== -->
 <section>
@@ -173,8 +215,8 @@
   <div class="grid grid-2">
 
     <div class="card">
-      <div class="label-row"><h3 style="margin:0">ATTOM Property API</h3><span class="pill ok">CONNECTED ✓</span></div>
-      <p class="sub" style="margin:4px 0 8px">Verified 2026-05-21 (200 OK, 6,513 records returned for Austin ZIP 78701)</p>
+      <div class="label-row"><h3 style="margin:0">ATTOM Property API</h3><span class="pill bad">KEY DEAD &mdash; 401</span></div>
+      <p class="sub" style="margin:4px 0 8px">Was 200 OK on 2026-05-21 (6,513 records, Austin ZIP 78701). <strong>Re-verified 2026-06-27: 401 Unauthorized</strong> &mdash; trial key expired/revoked. <span class="pill warn">User must refresh the key</span> (see Ready-to-Fire #3).</p>
       <div style="margin-top:8px"><strong>Key:</strong> <code>~/Downloads/Oraya HQ Reborn/.oraya-credentials/attom_api_key</code> (chmod 600)</div>
       <div><strong>Endpoint:</strong> <code>api.gateway.attomdata.com/propertyapi/v1.0.0</code></div>
       <div><strong>Auth header:</strong> <code>apikey: &lt;key&gt;</code></div>
@@ -182,8 +224,8 @@
     </div>
 
     <div class="card">
-      <div class="label-row"><h3 style="margin:0">BatchData MCP</h3><span class="pill warn">CONFIGURED — needs OAuth</span></div>
-      <p class="sub" style="margin:4px 0 8px">Dataset config saved 2026-05-21. Tool calls require user to OAuth-reconnect.</p>
+      <div class="label-row"><h3 style="margin:0">BatchData</h3><span class="pill warn">TOKEN READY — needs ~$25 funds</span></div>
+      <p class="sub" style="margin:4px 0 8px">Server-side token created + tested (403 = insufficient balance, <strong>auth works</strong>). Real blocker is now account funding, not OAuth. Skip-trace ~$0.15/lookup; ~$25 covers all 4 HOF tiers. Add funds &rarr; ready_command fires on TIER1 (77 leads). Dataset config (6 add-ons) saved 2026-05-21; MCP reconnect optional.</p>
       <div><strong>Enabled add-ons:</strong> Core Property, Contact Enrichment, Mortgage + Liens, History (Deed), Property Owner Profile, Valuation, Demographics</div>
       <div><strong>Disabled:</strong> Listing Data, Quick Lists, BatchRank, Pre-Foreclosure, Permit Summary</div>
       <div><strong>Always-on:</strong> Address, Phone, Skip Trace</div>
@@ -473,6 +515,21 @@
 <section>
   <h2>Activity Log</h2>
   <div class="card">
+    <div class="timeline-item">
+      <div class="date">2026-06-27 &middot; autoloop cycle 3</div>
+      <div class="act">Homeowner postcard made turnkey + attributable</div>
+      <div class="res">&rarr; Built <code>03_integrations/build_lob_merge_csv.py</code>, generated <code>08_outreach/lob_merge_TIER1.csv</code> (77/77 mailable, 0 quarantined) in Lob's recipient schema, wrote <code>08_outreach/LOB_GO_LIVE_RUNBOOK.md</code>. Each lead stamped with a stable lead_id baked into its QR URL so booked appointments are attributable to this mailing. Verified: 77 rows, 0 missing USPS fields, 0 bad zips, 77 unique ids, all CA. Closes the first item on the postcard pre-send checklist.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026-06-27 &middot; autoloop cycle 2</div>
+      <div class="act">Built the homeowner outreach package (funnel step 3)</div>
+      <div class="res">&rarr; <code>08_outreach/</code>: direct-mail postcard (the channel that works FIRST &mdash; no email needed, zero TCPA risk) + 3-touch CAN-SPAM email sequence + README. All 7 per-lead merge fields verified against the real HOF_CA_TIER1 CSV; compliance markers present in both. Before this, outreach copy existed only for the secondary B2B layoff angle.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026-06-27 &middot; autoloop cycle 1</div>
+      <div class="act">Built TCPA opt-in landing page; re-verified ATTOM key DEAD (401)</div>
+      <div class="res">&rarr; <code>07_optin_landing/optin_landing_page.html</code> &mdash; click-to-initiate web-voice CTA + PEWC consent + TrustedForm/Jornaya cert capture + producer-license/Do-Not-Sell/CAN-SPAM disclosures (parses clean, 13/13 compliance markers, 14 launch tokens). ATTOM re-verify returned 401 (was 200 on 2026-05-21); source of truth corrected, key refresh queued for user.</div>
+    </div>
     <div class="timeline-item">
       <div class="date">2026-05-29</div>
       <div class="act">Opener reframe — Outbound v128 LIVE; Inbound v16 drafted + HELD</div>
