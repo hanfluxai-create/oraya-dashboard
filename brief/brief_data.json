@@ -1,11 +1,11 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-07-14T01:54:50.750Z",
-  "date_label": "Tue · Jul 14",
+  "generated_at": "2026-07-15T10:34:17.393Z",
+  "date_label": "Wed · Jul 15",
   "edition": "AM",
-  "day_number": 185,
+  "day_number": 186,
   "phase": "Launch Week close",
-  "headline": "Tuesday, Day 185 — IST morning, and yesterday was the Monday three weeks of briefs pointed at: IRS call + the $0 HR email, both in Frankie's 8 AM PT window. No result has surfaced anywhere we can see (inbox silent 48h), so today's cheapest truth-finder is a one-line founder report: did either tap fire? Meanwhile the IST lane has its own 6-minute unlock — the Full Disk Access toggle (autoloop day 16 frozen at cycle 10, today's 09:00 retry is the live test) plus the ATTOM key overwrite.",
+  "headline": "Wednesday, Day 186 — the Monday call plan is two days old with no word either way, and the autonomous sweep that should have reported it has been silent since Jul 12. The gap itself is today's news: get a one-line status from Frankie, then clear Chitraksh's 6-minute unlock (autoloop frozen 17 days at cycle 10).",
   "source": "index.html · Daily Tasks board (May 28 (Thu))",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
@@ -71,51 +71,46 @@
   ],
   "spotlight": [
     {
-      "icon": "🔓",
-      "title": "The 6-minute IST unlock: Full Disk Access toggle + ATTOM key",
-      "who": "Chitraksh",
-      "detail": "Autoloop is frozen at cycle 10 for the 16th straight day; every 09:00 IST retry has failed since Jun 28. The fix is a 5-min System Settings toggle — do it before 09:00 and today's retry becomes the live test. While in there: 1-min ATTOM key refresh (new key at api.developer.attomdata.com → overwrite .oraya-credentials/attom_api_key).",
-      "project": "hq",
-      "area": "Dashboard / Infra"
-    },
-    {
-      "icon": "📞",
-      "title": "Close the loop on Monday: did the IRS call and the HR email fire?",
+      "icon": "☎️",
+      "title": "Report what Monday actually did — IRS call + $0 HR email",
       "who": "Frankie",
-      "detail": "Yesterday 8 AM PT both doors opened — the IRS line (RedFax window closed Friday with no reply, so the EIN gets called for) and the HR inboxes that make the $0 B2B email sendable. Inbox shows nothing in 48h, which proves nothing either way. One WhatsApp line settles it; if neither fired, Tuesday 8 AM PT is the identical pair of free taps.",
+      "detail": "Two days since the Monday Jul 13 window when both the IRS chase-call (EIN/SS-4) and the zero-spend B2B HR email were due to fire — no confirmation either way (inbox still silent, and the cofounder sweep that would normally cross-check has itself gone dark since Jul 12). Fastest resolving move: a one-line status update, or fire both now if they didn't happen. A2P → FBN → SMS all still queue behind the EIN call.",
       "project": "insurance",
       "area": "Compliance & Legal"
     },
     {
-      "icon": "💳",
-      "title": "BatchData ~$25 — the cheapest paid unlock still parked",
-      "who": "Chitraksh",
-      "detail": "Token already created and tested; funding skip-traces the 77 HOF TIER1 leads, appends emails, and switches on the cold-email lane. Pairs with Lob (~$50-70, Frankie) for the postcard path to a first booked appointment.",
+      "icon": "📮",
+      "title": "Fund + approve the Lob postcard (~$50-70)",
+      "who": "Frankie",
+      "detail": "Zero dependency on the EIN — the fastest path to a first booked appointment. The mail-merge is already built and QR-attributable (77 TIER1 leads). ~15 minutes at lob.com to fund + approve per 08_outreach/homeowner_postcard_directmail.md.",
       "project": "insurance",
       "area": "Lead-gen"
+    },
+    {
+      "icon": "🔓",
+      "title": "Clear the 6-minute unlock — Full Disk Access + ATTOM key",
+      "who": "Chitraksh",
+      "detail": "Autoloop has now sat frozen at cycle 10 for 17 straight days (since Jun 28) on a launchd permission error — the Full Disk Access toggle is a 5-minute Mac fix. While in there: overwrite the dead ATTOM key (401 since May) at .oraya-credentials/attom_api_key with a fresh one from api.developer.attomdata.com, and fund BatchData (~$25) to unlock skip-trace on the 77 HOF leads.",
+      "project": "hq",
+      "area": "Dashboard / Infra"
     }
   ],
   "blockers": [
     {
-      "label": "EIN",
+      "label": "EIN + Launch gates",
       "scope": "Shared",
-      "detail": "Fax window closed Fri Jul 10 with no reply; Mon Jul 13 was call-day but no outcome has been reported. Until a founder confirms the IRS call result, the A2P → FBN → SMS chain stays parked. Unblock: Frankie reports Monday's result; if no call happened, dial at 8 AM PT today."
+      "detail": "Monday Jul 13's IRS-call + HR-email window has passed with no confirmation either way — inbox silent, and no cofounder sweep since Jul 12 to cross-check. A2P → FBN → SMS and the B2B HR send both still queue behind a founder status-check + action."
     },
     {
-      "label": "Launch gates",
-      "scope": "Frankie",
-      "detail": "Five founder taps still open from the Jun 28 board — B2B HR email ($0), Lob postcard (~$50-70), launch values intake, ATTOM key, BatchData (~$25). Every built lane (07 opt-in, 08 outreach, 09 B2B HR) is waiting on these, not on code."
-    },
-    {
-      "label": "Autoloop scheduler",
-      "scope": "Chitraksh",
-      "detail": "Day 16 frozen at cycle 10. macOS Full Disk Access toggle for the launchd runner — 5 minutes, done once. Today's 09:00 IST retry passes the moment it's granted."
+      "label": "Autonomous reporting gap",
+      "scope": "HQ / CTO-Claude",
+      "detail": "No cofounder sweep logged since Jul 12 (3 days) and the Jul 14 PM brief never ran — two autonomous processes went quiet at once. Worth a 5-minute check that the scheduled tasks are still firing on schedule."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "185"
+      "v": "186"
     },
     {
       "k": "Open tasks",
