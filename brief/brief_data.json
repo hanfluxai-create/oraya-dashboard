@@ -1,438 +1,334 @@
 {
-  "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-07-15T10:34:17.393Z",
-  "date_label": "Wed · Jul 15",
-  "edition": "AM",
-  "day_number": 186,
-  "phase": "Launch Week close",
-  "headline": "Wednesday, Day 186 — the Monday call plan is two days old with no word either way, and the autonomous sweep that should have reported it has been silent since Jul 12. The gap itself is today's news: get a one-line status from Frankie, then clear Chitraksh's 6-minute unlock (autoloop frozen 17 days at cycle 10).",
-  "source": "index.html · Daily Tasks board (May 28 (Thu))",
-  "live_url": "https://oraya-dashboard.vercel.app/brief/",
-  "hq_url": "https://oraya-dashboard.vercel.app/",
-  "projects": {
-    "insurance": {
-      "label": "Insurance",
-      "code": "P2",
-      "color": "#2563eb",
-      "blurb": "AI life-insurance funnel: data → outreach → AI calls → licensed close."
-    },
-    "realestate": {
-      "label": "Real Estate",
-      "code": "P3",
-      "color": "#16a34a",
-      "blurb": "Investor / seller real-estate lead engine (next project, in design)."
-    },
-    "hq": {
-      "label": "HQ / Infra",
-      "code": "HQ",
-      "color": "#7c3aed",
-      "blurb": "The dashboard, automations & AI agents that run the company itself."
-    },
-    "ops": {
-      "label": "Ops",
-      "code": "OPS",
-      "color": "#64748b",
-      "blurb": "Money, hardware, family & day-to-day running of the business."
-    }
+ "schema": "oraya.dailybrief/v1",
+ "generated_at": "2026-07-16T16:29:24.886Z",
+ "date_label": "Thu · Jul 16",
+ "edition": "PM",
+ "day_number": 187,
+ "phase": "Signal board · content-engine week",
+ "headline": "PT morning, Day 187 — the new Signal board reduces the week to one keystone move: post Batch 1 to the LinkedIn pages, and the PhantomBuster gate every outreach waits behind finally opens. Same 8 AM window flips the EIN from waited-on (its window closed Jul 11) to called-in.",
+ "source": "index.html · ORAYA DATA block v15.1 (Signal, updated 2026-07-16)",
+ "live_url": "https://oraya-dashboard.vercel.app/brief/",
+ "hq_url": "https://oraya-dashboard.vercel.app/",
+ "projects": {
+  "insurance": {
+   "label": "Insurance",
+   "code": "P2",
+   "color": "#2563eb",
+   "blurb": "AI life-insurance funnel: data → outreach → AI calls → licensed close."
   },
-  "project_summary": [
-    {
-      "key": "insurance",
-      "label": "Insurance",
-      "code": "P2",
-      "color": "#2563eb",
-      "blurb": "AI life-insurance funnel: data → outreach → AI calls → licensed close.",
-      "count": 16
-    },
-    {
-      "key": "realestate",
-      "label": "Real Estate",
-      "code": "P3",
-      "color": "#16a34a",
-      "blurb": "Investor / seller real-estate lead engine (next project, in design).",
-      "count": 2
-    },
-    {
-      "key": "hq",
-      "label": "HQ / Infra",
-      "code": "HQ",
-      "color": "#7c3aed",
-      "blurb": "The dashboard, automations & AI agents that run the company itself.",
-      "count": 9
-    },
-    {
-      "key": "ops",
-      "label": "Ops",
-      "code": "OPS",
-      "color": "#64748b",
-      "blurb": "Money, hardware, family & day-to-day running of the business.",
-      "count": 3
-    }
-  ],
-  "spotlight": [
-    {
-      "icon": "☎️",
-      "title": "Report what Monday actually did — IRS call + $0 HR email",
-      "who": "Frankie",
-      "detail": "Two days since the Monday Jul 13 window when both the IRS chase-call (EIN/SS-4) and the zero-spend B2B HR email were due to fire — no confirmation either way (inbox still silent, and the cofounder sweep that would normally cross-check has itself gone dark since Jul 12). Fastest resolving move: a one-line status update, or fire both now if they didn't happen. A2P → FBN → SMS all still queue behind the EIN call.",
-      "project": "insurance",
-      "area": "Compliance & Legal"
-    },
-    {
-      "icon": "📮",
-      "title": "Fund + approve the Lob postcard (~$50-70)",
-      "who": "Frankie",
-      "detail": "Zero dependency on the EIN — the fastest path to a first booked appointment. The mail-merge is already built and QR-attributable (77 TIER1 leads). ~15 minutes at lob.com to fund + approve per 08_outreach/homeowner_postcard_directmail.md.",
-      "project": "insurance",
-      "area": "Lead-gen"
-    },
-    {
-      "icon": "🔓",
-      "title": "Clear the 6-minute unlock — Full Disk Access + ATTOM key",
-      "who": "Chitraksh",
-      "detail": "Autoloop has now sat frozen at cycle 10 for 17 straight days (since Jun 28) on a launchd permission error — the Full Disk Access toggle is a 5-minute Mac fix. While in there: overwrite the dead ATTOM key (401 since May) at .oraya-credentials/attom_api_key with a fresh one from api.developer.attomdata.com, and fund BatchData (~$25) to unlock skip-trace on the 77 HOF leads.",
-      "project": "hq",
-      "area": "Dashboard / Infra"
-    }
-  ],
-  "blockers": [
-    {
-      "label": "EIN + Launch gates",
-      "scope": "Shared",
-      "detail": "Monday Jul 13's IRS-call + HR-email window has passed with no confirmation either way — inbox silent, and no cofounder sweep since Jul 12 to cross-check. A2P → FBN → SMS and the B2B HR send both still queue behind a founder status-check + action."
-    },
-    {
-      "label": "Autonomous reporting gap",
-      "scope": "HQ / CTO-Claude",
-      "detail": "No cofounder sweep logged since Jul 12 (3 days) and the Jul 14 PM brief never ran — two autonomous processes went quiet at once. Worth a 5-minute check that the scheduled tasks are still firing on schedule."
-    }
-  ],
-  "metrics": [
-    {
-      "k": "Day",
-      "v": "186"
-    },
-    {
-      "k": "Open tasks",
-      "v": "30"
-    },
-    {
-      "k": "Lanes",
-      "v": "3"
-    }
-  ],
-  "lanes": [
-    {
-      "key": "frankie",
-      "name": "Frankie",
-      "role": "CEO · Field",
-      "accent": "emerald",
-      "tasks": [
-        {
-          "lead": "WALK INTO ENVISION HONDA MILPITAS · 1 PM PT",
-          "detail": "suited up, fresh haircut, iPad with the Oraya-branded dealership deck. Ask for Greg (introduced you on phone yesterday) then GSM Mo. Reciprocity opener: \"I'm semi-interested in the Prologue hybrid — mind if I poke around while we talk?\" — lower the sales-resistance, demo the system on iPad once warm. Calendar event already created with location pinned + Chitraksh on as optional.",
-          "tag": "FIRST DEALERSHIP APPT",
-          "tagType": "green",
-          "project": "insurance",
-          "area": "Dealership"
-        },
-        {
-          "lead": "Test outbound v126 + inbound v15 end-to-end",
-          "detail": "on at least 2 fresh test scenarios · pretend-flow on inbound: voicemail callback → opt-in → calendar slot. Confirm calendar event, email confirmation, SMS — all three — land on each test.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Calling (Voice AI)"
-        },
-        {
-          "lead": "EIN check the certified-mail tracker",
-          "detail": "(mailed May 22) · expected Thursday or Friday landing. The moment it hits, A2P submits.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Compliance & Legal"
-        },
-        {
-          "lead": "Plug Mom's policy from daughter's mother",
-          "detail": "the manufactured $3K of ad-budget cash. Theresa policies cancelled with grace given her son's passing — don't disturb. Day-job checks running parallel.",
-          "tag": "",
-          "tagType": "",
-          "project": "ops",
-          "area": "Ops / Personal"
-        },
-        {
-          "lead": "Pull up the Real Estate P3 visual reference",
-          "detail": "with Chitraksh on the next sync · lock the deal-card UI design (comparables + ARV pie chart + urgency countdown). Plan for Mom + Art handoff once P2 generates first dollar.",
-          "tag": "",
-          "tagType": "",
-          "project": "realestate",
-          "area": "Build"
-        },
-        {
-          "lead": "Lock Mac Mini purchase timing",
-          "detail": "back-end of month. Frankie's card on amazon.in with monitor (per Chitraksh's request). Coordinate Zoom unbox/setup. \"Hold me to it — you should have it in the next 7 days.\"",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Dashboard / Infra"
-        },
-        {
-          "lead": "Pick a window for the Chitraksh-parents intro",
-          "detail": "before 11am or after 8pm Frankie-time. Cup-of-coffee energy, not pitch.",
-          "tag": "",
-          "tagType": "",
-          "project": "ops",
-          "area": "Ops / Personal"
-        },
-        {
-          "lead": "4:30 AM block discipline — resume tomorrow.",
-          "detail": "May 23-26 slip-then-recover. Fixed block is the rule, not the suggestion.",
-          "tag": "",
-          "tagType": "",
-          "project": "ops",
-          "area": "Ops / Personal"
-        },
-        {
-          "lead": "Test the inbound agent edited opener tonight",
-          "detail": "confirm the outbound-snippet ported in worked correctly. If clean, tomorrow morning kick off the first 60-lead outbound batch.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Calling (Voice AI)"
-        },
-        {
-          "lead": "Carry-over (still active):",
-          "detail": "Marketing Retainer + Meta ads next-out once A2P approves · Pizza Hut lesson logged (over-transparency = system risk) · military-couple compare-meeting still need to book if you want to retain.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Compliance & Legal"
-        },
-        {
-          "lead": "IRS call (parallel)",
-          "detail": "lines open 8 AM PT; Chitraksh handles 8-11 AM India-side rotation; Frankie picks up post-day-job. Backup: file SS-4 via fax for guaranteed 4-business-day turnaround.",
-          "tag": "EIN BLOCKER",
-          "tagType": "red",
-          "project": "insurance",
-          "area": "Compliance & Legal"
-        }
-      ]
-    },
-    {
-      "key": "chitraksh",
-      "name": "Chitraksh",
-      "role": "CTO · Build",
-      "accent": "cyan",
-      "tasks": [
-        {
-          "lead": "Push v12.0 dashboard (this update) live",
-          "detail": "main HQ + linked Lead-Gen Dashboard + new Real Estate section + Lead-Gen tab. Vercel auto-deploys on push.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Dashboard / Infra"
-        },
-        {
-          "lead": "Watch the Envision Honda walk-in",
-          "detail": "Chitraksh on standby in case Frankie needs a live G-Meet pull-in for live demo or live Q&A. Have outbound voice agent on demo-mode ready to dial Frankie's phone for in-person playback.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Dealership"
-        },
-        {
-          "lead": "Build the dynamic Oraya dealership deck",
-          "detail": "from the Mercedes offer letter · Oraya UI / logo / color scheme · capability matrix · deliverables on PDF for Frankie's iPad.",
-          "tag": "FRANKIE NOTE",
-          "tagType": "orange",
-          "project": "insurance",
-          "area": "Dealership"
-        },
-        {
-          "lead": "Ship the $60 enrichment bake-off",
-          "detail": "$20 each on ATTOM + BatchData + PropertyRadar · same TX new-homeowner pull across all three · compare data quality + cold-outreach conversion · pick the winner.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Lead-gen"
-        },
-        {
-          "lead": "Verify outbound v126 + inbound v15 backend",
-          "detail": "on 5 fresh test calls · confirm calendar / email / SMS / DNC / admin log all firing on each · spot-check the digit-conversion fix on at least 3 \"spoken digit\" emails.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Calling (Voice AI)"
-        },
-        {
-          "lead": "Real Estate P3 architecture spec",
-          "detail": "port the single-prompt agent (archived from P2 fork) into the investor-blast prototype · ingest the Oraya site clone visual as the deal-card UI reference · scaffold a Postgres schema for the investor DB + the seller-contract DB.",
-          "tag": "",
-          "tagType": "",
-          "project": "realestate",
-          "area": "Build"
-        },
-        {
-          "lead": "IRS call rotation 8-11 AM PT",
-          "detail": "(8:30 PM-11:30 PM IST) · ride out auto-disconnects, retry until a live agent picks up · certified-mail track running parallel.",
-          "tag": "EIN BLOCKER",
-          "tagType": "red",
-          "project": "insurance",
-          "area": "Compliance & Legal"
-        },
-        {
-          "lead": "Twin Mind transcript → dashboard auto-update pipeline",
-          "detail": "complete the webhook so post-block dashboard updates push automatically without manual edit-loop.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Dashboard / Infra"
-        },
-        {
-          "lead": "FBN filing (California)",
-          "detail": "\"Oraya Insurance Group\" trade name vs. legal entity; file with operating county; publish in adjudicated newspaper for 4 consecutive weeks; bake receipt into the A2P package.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Compliance & Legal"
-        },
-        {
-          "lead": "RPA for free registered-agent address",
-          "detail": "queue providers, prepare SoS filing, synchronized public-facing address flip the moment A2P approves.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Compliance & Legal"
-        },
-        {
-          "lead": "Stand up the CEO sub-agent on the Mac Mini",
-          "detail": "when it arrives · first sub-agent online: dashboard. Then legal / engineer / marketing / lead-gen + follow-up one per shipping week.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Dashboard / Infra"
-        },
-        {
-          "lead": "Cancelled / dropped:",
-          "detail": "day-trading agent (Frankie + Chitraksh aligned May 27 — revenue potential lower than P2/P3/voice, back-tests don't translate to live).",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Calling (Voice AI)"
-        }
-      ]
-    },
-    {
-      "key": "ctoclaude",
-      "name": "CTO-Claude",
-      "role": "Autonomous",
-      "accent": "violet",
-      "tasks": [
-        {
-          "lead": "v12.0 dashboard sweep",
-          "detail": "this update: title/banner/hero/countdown refreshed for Day 138; Real Estate (P3) section added; Lead-Gen section added with top-bar link; Voice AI section refreshed for v126/v15; Insurance section refreshed for backend-LIVE state; auto-pushed via PAT to hanfluxai-create/oraya-dashboard.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Dashboard / Infra"
-        },
-        {
-          "lead": "Ingested transcripts:",
-          "detail": "May 20-21 \"Voice Agent Debugging / Mortgage Protection Script Rework / Texas Homeowner Lead Strategy\"; May 23-24 \"Claude Rate-Limit Outage / Daily Sync / Mortgage-Insurance Agent Script Testing / EIN Follow-up\"; May 26-28 \"Voice AI Launch Fixes / Insurance Inbound Testing / Dealership Outreach Strategy\".",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Dashboard / Infra"
-        },
-        {
-          "lead": "Email digit-conversion patch script",
-          "detail": "apply_email_digit_fix_2026-05-28.py drafted + applied on outbound v126; parity patch apply_inbound_parity_fix_2026-05-28.py applied on inbound v15. Pre/post snapshots saved in projects/p2-insurance/retell/snapshots/.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Calling (Voice AI)"
-        },
-        {
-          "lead": "Memory updated:",
-          "detail": "\"Email digit handling rule\" memory file noted as shipped v126 (2026-05-28). Voice-flow surgical-editing rule honored (str.replace only, never wholesale rewrite).",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Dashboard / Infra"
-        },
-        {
-          "lead": "Inbox + WhatsApp monitor",
-          "detail": "auto-flag EIN-related IRS communication (USPS certified-mail delivery), Envision Honda follow-up from Greg/Mo, Theresa cancellation processing, Mom's policy through daughter's mother.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Compliance & Legal"
-        },
-        {
-          "lead": "Multi-model fallback rule still in force",
-          "detail": "ChatGPT + Gemini on shadow during Anthropic outages.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Dashboard / Infra"
-        },
-        {
-          "lead": "No permission-asking on routine tasks",
-          "detail": "(max-autonomy rule holds).",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Dashboard / Infra"
-        }
-      ]
-    }
-  ],
-  "cofounder": {
-    "date": "2026-07-12",
-    "scanned_at": "2026-07-12T01:02:00Z",
-    "done": [
-      {
-        "what": "Ran the Sun Jul 12 AM cofounder sweep ~30 min ahead of the 6:30 brief — live inbox scan, transcript check, dashboard record card + cockpit marker, pushed to Vercel (commit 9c265ff), memory updated",
-        "who": "CTO-Claude"
-      },
-      {
-        "what": "Scanned the connected inbox live: 0 items flagged — verified two ways (24-h and 14-day windows both empty while the account returns ~201 threads, newest still the Jun 26 Anthropic notice, so the quiet is real). No EIN/IRS, no A2P, no Envision/Greg/Mo, no cancellations (Theresa / Mom's policy), no lead/opt-in replies. Nothing needed a reply — zero drafts queued",
-        "who": "CTO-Claude"
-      },
-      {
-        "what": "EIN T-minus-1: still no email-side fax reply — unless a fax is sitting on RedFax (510-497-1224), tomorrow (Mon Jul 13) is IRS-call day for the SS-4. Logged red on the dashboard; A2P → FBN → SMS chain queues behind it",
-        "who": "CTO-Claude"
-      },
-      {
-        "what": "No new meeting/WhatsApp transcripts since the May 18 Retell snapshots — Daily Tasks board unchanged; only the Jul 11 brief artifacts moved in the HQ folder since the last sweep",
-        "who": "CTO-Claude"
-      },
-      {
-        "what": "Dashboard: appended the dated Sun Jul 12 record card (inbox / EIN T-1 / transcripts / Monday stack), refreshed the cockpit sweep marker to Jul 12, pushed (9c265ff). Hit the stale /tmp clone again (perm-denied, other-session owner) — hardened the push to a unique per-session clone dir and memorised the pattern",
-        "who": "CTO-Claude"
-      }
-    ],
-    "waiting": [
-      {
-        "what": "CHECK RedFax (510-497-1224) for the EIN fax reply — if empty, tomorrow Mon Jul 13 = IRS phone call to chase the SS-4. Everything (A2P → FBN → SMS chain) queues behind this",
-        "who": "Frankie"
-      },
-      {
-        "what": "SEND the $0 B2B HR email tomorrow morning (~30 min, ≤6 Apollo credits): confirm the 6 pre-researched HR leaders still in role, reveal work emails, fire touch 1 from 09_b2b_hr_lane/. Today (Sunday) = staging time only",
-        "who": "Frankie"
-      },
-      {
-        "what": "FASTEST first booked appointment (~$50-70, 15 min): open + fund Lob and approve the postcard at 08_outreach/homeowner_postcard_directmail.md — mails the 77 TIER1 leads, QR-attributable",
-        "who": "Frankie"
-      },
-      {
-        "what": "5-min Full Disk Access toggle to unfreeze the autoloop (frozen at cycle 10 since Jun 28) + the 1-min ATTOM key refresh while you're in there (new key at api.developer.attomdata.com → overwrite .oraya-credentials/attom_api_key)",
-        "who": "Chitraksh"
-      },
-      {
-        "what": "Fund BatchData ~$25 to skip-trace the 77 HOF leads (appends emails → turns on the cold-email lane); token already created + tested",
-        "who": "Chitraksh"
-      }
-    ]
+  "realestate": {
+   "label": "Real Estate",
+   "code": "P3",
+   "color": "#16a34a",
+   "blurb": "Investor / seller real-estate lead engine (next project, in design)."
+  },
+  "hq": {
+   "label": "HQ / Infra",
+   "code": "HQ",
+   "color": "#7c3aed",
+   "blurb": "The dashboard, automations & AI agents that run the company itself."
+  },
+  "ops": {
+   "label": "Ops",
+   "code": "OPS",
+   "color": "#64748b",
+   "blurb": "Money, hardware, family & day-to-day running of the business."
   }
+ },
+ "project_summary": [
+  {
+   "key": "insurance",
+   "label": "Insurance",
+   "code": "P2",
+   "color": "#2563eb",
+   "blurb": "AI life-insurance funnel: data → outreach → AI calls → licensed close.",
+   "count": 16
+  },
+  {
+   "key": "realestate",
+   "label": "Real Estate",
+   "code": "P3",
+   "color": "#16a34a",
+   "blurb": "Investor / seller real-estate lead engine (next project, in design).",
+   "count": 2
+  },
+  {
+   "key": "hq",
+   "label": "HQ / Infra",
+   "code": "HQ",
+   "color": "#7c3aed",
+   "blurb": "The dashboard, automations & AI agents that run the company itself.",
+   "count": 9
+  },
+  {
+   "key": "ops",
+   "label": "Ops",
+   "code": "OPS",
+   "color": "#64748b",
+   "blurb": "Money, hardware, family & day-to-day running of the business.",
+   "count": 3
+  }
+ ],
+ "spotlight": [
+  {
+   "icon": "🔓",
+   "title": "Post Batch 1 to the LinkedIn pages — open the outreach gate",
+   "who": "Both",
+   "detail": "The company page is still blank and 'they see that it's blank, then they go away' — a live feed is the hard gate on EVERY PhantomBuster sequence. Batch 1 (~6 reels) was declared ready Jul 12. It's 7:30 PM IST / 7 AM PT (both awake): mutually select the strongest reels, post to the personal + Hanflux/Oraya company pages, and the first Phantom (connect-request vs page-invite) can launch the same day. Search appearances are already +430% on the name alone.",
+   "project": "hq",
+   "area": "Growth / LinkedIn"
+  },
+  {
+   "icon": "📩",
+   "title": "Send the Mercedes re-pitch reply + book the agent-demo call",
+   "who": "Frankie",
+   "detail": "They finally replied and we've owed the response since Jul 10. Weapon is their own chatbot's multi-day delay — attach the timestamped screenshots, pitch voice AI + automation, then book a live call where the Oraya agent itself dials them. Draft the receipts-reply and lock the demo slot.",
+   "project": "hq",
+   "area": "Dealership / Sales"
+  },
+  {
+   "icon": "🎬",
+   "title": "Generate Batch 3 (12–13 reels) + clear the 2-min autoloop fix",
+   "who": "Chitraksh",
+   "detail": "Attach the video-gen MCP to the growth engine and ingest Prompt P10 (Meeting-37 feedback) before generating: 6–7 insurance-vertical reels on Frankie's real Mutual-of-Omaha story, plus the Batch-2 fixes — consultancy voice everywhere, no blank end screens, subtitles off key visuals, new DMS tagline. While in System Settings, clear the autoloop's Full Disk Access toggle — it's been frozen at cycle 10 for 18 days on that one switch.",
+   "project": "hq",
+   "area": "Growth / Build"
+  }
+ ],
+ "blockers": [
+  {
+   "label": "EIN",
+   "scope": "Shared",
+   "detail": "Re-faxed Jun 28; the '~8 business days' window closed Jul 11 and today's sweep still shows zero signal. The wait is over — in the 8 AM PT window, call the IRS EIN line and check RedFax (510-497-1224). It gets chased by phone now, not waited on."
+  },
+  {
+   "label": "Autoloop",
+   "scope": "Chitraksh",
+   "detail": "Frozen at cycle 10 for 18 days on a 2-minute fix: System Settings → Privacy & Security → Full Disk Access for the launchd runner. Every autonomous cycle is stalled behind this one toggle."
+  }
+ ],
+ "metrics": [
+  {
+   "k": "Day",
+   "v": "187"
+  },
+  {
+   "k": "Open tasks",
+   "v": "30"
+  },
+  {
+   "k": "Lanes",
+   "v": "3"
+  }
+ ],
+ "lanes": [
+  {
+   "key": "frankie",
+   "name": "Frankie",
+   "role": "CEO · Field",
+   "accent": "emerald",
+   "tasks": [
+    {
+     "lead": "Post Batch 1 to LinkedIn — personal + company pages",
+     "detail": "The keystone. A live company feed is the hard gate on every PhantomBuster sequence; Batch 1 was declared ready Jul 12. Co-select the reels with Chitraksh (both awake at the PM edition) and post to both pages today.",
+     "tag": "KEYSTONE",
+     "tagType": "green",
+     "project": "hq",
+     "area": "Growth / LinkedIn"
+    },
+    {
+     "lead": "Send the Mercedes re-pitch reply + book the agent-demo call",
+     "detail": "Overdue since Jul 10. Attach their own chatbot's delay screenshots, pitch voice AI + automation, and book a live call where the Oraya agent dials them itself.",
+     "tag": "OVERDUE JUL 10",
+     "tagType": "red",
+     "project": "hq",
+     "area": "Dealership / Sales"
+    },
+    {
+     "lead": "EIN: call the IRS line + check RedFax 510-497-1224",
+     "detail": "8 AM PT window. The ~8-business-day fax window closed Jul 11 with zero signal — stop waiting, chase it by phone this morning.",
+     "tag": "EIN BLOCKER",
+     "tagType": "red",
+     "project": "ops",
+     "area": "Compliance / Formation"
+    },
+    {
+     "lead": "Founder-ad + insurance scripts homework (Fable)",
+     "detail": "Run the P6 combined-founder outline through Fable on the shared account, polish to a final annotated script, and write the P7 insurance brief for Frankie's real Mutual-of-Omaha story. Test Fable 'with everything' vs Opus before it expires Jul 19. Due next session.",
+     "tag": "FABLE EXPIRES JUL 19",
+     "tagType": "red",
+     "project": "hq",
+     "area": "Content / Scripts"
+    },
+    {
+     "lead": "Jharkhand: scan the investor network for a US investor",
+     "detail": "Father's direct CM (Hemant Soren) access is the moat — even $10–20M reportedly gets 'the best deal in the country.' Bring findings to the next sync (agenda a6).",
+     "tag": "",
+     "tagType": "",
+     "project": "hq",
+     "area": "BD / Jharkhand"
+    }
+   ]
+  },
+  {
+   "key": "chitraksh",
+   "name": "Chitraksh",
+   "role": "CTO · Build",
+   "accent": "cyan",
+   "tasks": [
+    {
+     "lead": "Generate Batch 3 (12–13 reels)",
+     "detail": "Attach the video-gen MCP to the growth engine and ingest Prompt P10 (Meeting-37 feedback) first: 6–7 insurance-vertical reels + the Batch-2 fixes (consultancy voice everywhere, no blank end screens, subtitles off key visuals, new DMS tagline).",
+     "tag": "NEXT SESSION",
+     "tagType": "green",
+     "project": "hq",
+     "area": "Growth / Build"
+    },
+    {
+     "lead": "Autoloop: clear the Full Disk Access toggle (2 min)",
+     "detail": "System Settings → Privacy & Security → Full Disk Access for the launchd runner. Frozen at cycle 10 for 18 days on this one switch.",
+     "tag": "18 DAYS FROZEN",
+     "tagType": "red",
+     "project": "hq",
+     "area": "Autoloop / Infra"
+    },
+    {
+     "lead": "Fix the TCPA reel visuals + subtitle layer",
+     "detail": "Copy is approved ('that's fire') and the $1,500/call figure is Stage-A verified — only regenerate visuals and lift the subtitle layer off the key footage. Name the on-screen certifications (open item).",
+     "tag": "",
+     "tagType": "",
+     "project": "hq",
+     "area": "Compliance content"
+    },
+    {
+     "lead": "Regenerate the DMS reel with the approved voice",
+     "detail": "Consultancy-reel voice; have the growth engine propose 2–3 new end-card taglines (the old one was rejected as 'horrible'). Dealership content sits behind insurance for Batch 3.",
+     "tag": "",
+     "tagType": "",
+     "project": "hq",
+     "area": "Dealership content"
+    },
+    {
+     "lead": "Once Batch 1 is posted: pick the first Phantom",
+     "detail": "Connect-request vs page-invite, dealership GMs/CEOs (CA first) using Prompt P8. Can start same day the content goes live — gated only on the LinkedIn post above.",
+     "tag": "GATED ON POST",
+     "tagType": "",
+     "project": "hq",
+     "area": "LinkedIn / Outreach"
+    },
+    {
+     "lead": "Jharkhand landing page + brochure",
+     "detail": "Build the page with the downloadable investor brochure (Frankie's artifact is done). Parked infra debt: ATTOM key (401) + BatchData $0 only matter to the paused p2 consumer funnel.",
+     "tag": "",
+     "tagType": "",
+     "project": "hq",
+     "area": "BD / Jharkhand"
+    }
+   ]
+  },
+  {
+   "key": "ctoclaude",
+   "name": "CTO-Claude",
+   "role": "Autonomous",
+   "accent": "violet",
+   "tasks": [
+    {
+     "lead": "PM Daily Brief — this edition",
+     "detail": "Curated from the v15.1 Signal board (not the frozen v14 auto-parse), published to Vercel, dropped as a Gmail draft, and handed to the n8n SCHEDULE workflow for the real send. First delivered brief since Jul 15 AM — today's AM scaffold generated but was left uncurated/unpublished.",
+     "tag": "THIS EDITION",
+     "tagType": "green",
+     "project": "hq",
+     "area": "Daily Brief"
+    },
+    {
+     "lead": "Cofounder inbox sweep — 4th straight quiet sweep",
+     "detail": "0 flagged threads in 72h+ (newest still Jun 26); nothing needed a reply. EIN escalation is the only open external thread and it's now a phone-chase, not an inbox wait.",
+     "tag": "",
+     "tagType": "",
+     "project": "hq",
+     "area": "Inbox / Ops"
+    },
+    {
+     "lead": "Autoloop re-verified frozen at cycle 10 (day 18)",
+     "detail": "launchd still erroring on Full Disk Access; resumes the moment Chitraksh clears the toggle (see Blockers).",
+     "tag": "",
+     "tagType": "",
+     "project": "hq",
+     "area": "Autoloop / Infra"
+    },
+    {
+     "lead": "Signal DATA block kept current",
+     "detail": "AM sweep shipped v15.1 (EIN escalation noted, w1 refreshed); PM deltas folded into this brief. index.html stays read-only — edits happen only in the DATA block via the patch template.",
+     "tag": "",
+     "tagType": "",
+     "project": "hq",
+     "area": "Dashboard / Infra"
+    },
+    {
+     "lead": "Max-autonomy holds; outward sends stay human-gated",
+     "detail": "No permission-asking on routine tasks. Any send/publish/spend remains incapable without explicit human approval (guardrails).",
+     "tag": "",
+     "tagType": "",
+     "project": "hq",
+     "area": "Doctrine"
+    }
+   ]
+  }
+ ],
+ "cofounder": {
+  "date": "2026-07-15",
+  "scanned_at": "2026-07-15T10:38:01Z",
+  "done": [
+   {
+    "what": "Ran the Wed Jul 15 AM cofounder sweep ~30 min ahead of the 6:30 brief — live inbox scan, transcript check, autoloop log verification, dashboard record card + cockpit marker, pushed to Vercel (commit b74f9ac), memory updated",
+    "who": "CTO-Claude"
+   },
+   {
+    "what": "Scanned the connected inbox live: 0 items flagged, third straight silent sweep — zero threads in the last 72h and zero EIN/IRS/A2P/Envision/Honda/Greg/Mo/Theresa/cancel/opt-in hits across the last 20 days, while the account's in:inbox still returns its normal ~21 threads (newest unchanged since the Jun 26 Anthropic notice, so the quiet is real, not an auth failure). Nothing needed a reply — zero drafts queued",
+    "who": "CTO-Claude"
+   },
+   {
+    "what": "EIN: two full days past Monday Jul 13's standing plan (IRS call and/or RedFax check) with zero email-side confirmation either way — logged red on the dashboard as still open. A2P → FBN → SMS chain stays queued behind it",
+    "who": "CTO-Claude"
+   },
+   {
+    "what": "No new meeting/WhatsApp transcripts since the May 18 Retell snapshots — Daily Tasks board unchanged; only routine daily-brief artifacts (Jul 13-14 editions) moved in the HQ folder since the last sweep",
+    "who": "CTO-Claude"
+   },
+   {
+    "what": "Verified oraya-autoloop/logs/launchd.err.log directly rather than assuming last sweep's note still held: every retry still fails 'Operation not permitted', state.json still untouched since Jun 28 — confirms cycle 10, now day 17 frozen, root cause unchanged",
+    "who": "CTO-Claude"
+   },
+   {
+    "what": "Dashboard: appended the dated Wed Jul 15 record card (inbox / EIN / transcripts / autoloop / bottleneck), refreshed the top-bar cockpit sweep marker to Jul 15, pushed cleanly via a fresh unique /tmp clone (commit b74f9ac) — no stale-clone ownership issue this run",
+    "who": "CTO-Claude"
+   },
+   {
+    "what": "Memory: updated the dashboard-architecture memory's \"latest push\" pointer to v14.2 / b74f9ac with current EIN + autoloop state; re-verified the autoloop memory's Jul 7 TCC/Full-Disk-Access diagnosis is still accurate, so left it unchanged",
+    "who": "CTO-Claude"
+   }
+  ],
+  "waiting": [
+   {
+    "what": "CONFIRM what happened with Monday's EIN plan (IRS call and/or RedFax check at 510-497-1224) — two days later there's still no signal either way; this is now the oldest open blocker (re-fax went out ~Jun 28)",
+    "who": "Frankie"
+   },
+   {
+    "what": "SEND the $0 B2B HR email (~30 min, ≤6 Apollo credits) — still unsent across every open-inbox morning since Jun 30: confirm the 6 pre-researched HR leaders still in role, reveal work emails, fire touch 1 from 09_b2b_hr_lane/",
+    "who": "Frankie"
+   },
+   {
+    "what": "FASTEST first booked appointment (~$50-70, 15 min): open + fund Lob and approve the postcard at 08_outreach/homeowner_postcard_directmail.md — mails the 77 TIER1 leads, QR-attributable",
+    "who": "Frankie"
+   },
+   {
+    "what": "5-min Full Disk Access toggle to unfreeze the autoloop (re-confirmed still frozen at cycle 10, day 17) + the 1-min ATTOM key refresh while you're in there (new key at api.developer.attomdata.com → overwrite .oraya-credentials/attom_api_key)",
+    "who": "Chitraksh"
+   },
+   {
+    "what": "Fund BatchData ~$25 to skip-trace the 77 HOF leads (appends emails → turns on the cold-email lane); token already created + tested",
+    "who": "Chitraksh"
+   }
+  ]
+ }
 }
