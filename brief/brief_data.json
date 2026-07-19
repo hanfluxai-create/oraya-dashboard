@@ -42,7 +42,7 @@
       "code": "P2",
       "color": "#2563eb",
       "blurb": "AI life-insurance funnel: data → outreach → AI calls → licensed close.",
-      "count": 16
+      "count": 2
     },
     {
       "key": "realestate",
@@ -50,7 +50,7 @@
       "code": "P3",
       "color": "#16a34a",
       "blurb": "Investor / seller real-estate lead engine (next project, in design).",
-      "count": 2
+      "count": 0
     },
     {
       "key": "hq",
@@ -58,7 +58,7 @@
       "code": "HQ",
       "color": "#7c3aed",
       "blurb": "The dashboard, automations & AI agents that run the company itself.",
-      "count": 9
+      "count": 14
     },
     {
       "key": "ops",
@@ -66,7 +66,7 @@
       "code": "OPS",
       "color": "#64748b",
       "blurb": "Money, hardware, family & day-to-day running of the business.",
-      "count": 3
+      "count": 1
     }
   ],
   "spotlight": [
