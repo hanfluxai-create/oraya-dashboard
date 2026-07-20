@@ -460,11 +460,12 @@ footer .fv{font-weight:700; color:var(--text2)}
 /* ═══════════ ORAYA DATA — EDIT BELOW THIS LINE ONLY ═══════════ */
 const ORAYA = {
 meta: {
-  version: "15.2", codename: "Signal", updated: "2026-07-19",
-  updatedBy: "CTO-Claude — cofounder AM sweep, Jul 19",
-  subtitle: "Jul 19 — Fable expires TODAY (P6/P7 scripts). 5 gates: LinkedIn, Mercedes, Fable, IRS, launchd. Inbox live-verified quiet (7th).",
+  version: "15.3", codename: "Signal", updated: "2026-07-20",
+  updatedBy: "CTO-Claude — cofounder AM sweep, Jul 20",
+  subtitle: "Jul 20 — Fable access has LAPSED (confirm P6/P7 locked in time). 5 gates: LinkedIn, Mercedes, Fable, IRS, launchd. Inbox live-verified quiet (8th).",
   footer: "Oraya Labs · AI-only company · dashboard is data-driven: edit the DATA block only",
   changelog: [
+    "v15.3 (2026-07-20): Jul 20 AM sweep — Gmail live-verified 0/24h (8th quiet), Fable access now EXPIRED (was 'today' Jul 19), autoloop d24 still frozen at cycle 10. Dashboard push BLOCKED this run — sandbox shell unavailable (infra fault); patch is staged, push queued for next session.",
     "v15.2 (2026-07-19): Jul 19 AM sweep — Gmail live-verified 0/24h (7th quiet), Fable expiry-day flag, autoloop d23; push carries Jul 18+19.",
     "v15.1+ (2026-07-18): Jul 18 AM sweep — inbox 0/24h (6th quiet), transcripts 0, autoloop d22, 5 gates await.",
     "v15.1 (2026-07-16): Cofounder AM sweep — am-sweep-2026-07-16 record card appended; EIN escalation noted (silent since Jun 28 re-fax, window closed Jul 11); w1 note refreshed; 4th straight quiet inbox sweep.",
@@ -502,12 +503,12 @@ fronts: [
   { id:"lawyer-blueprint", name:"Lawyer-marketing blueprint (adsurdly)", status:"parked", one:"'Marketing for lawyers' funnel archived Jul 8 — same play we run: copy blueprint, sell marketing+automation to lawyers.", next:"Revisit after insurance + dealership verticals have traction", owner:"—", detail:"'Too close to home to ignore. We're marketing and you're a lawyer.' Raw, honest ad style noted as the model." }
 ],
 waiting: [
-  { id:"w1", what:"IRS EIN confirmation", who:"IRS", since:"2026-06-28", note:"Re-faxed Jun 28; '~8 business days' window closed Jul 11 — still zero signal at the Jul 19 sweep. Escalate: call IRS EIN line + check RedFax (510-497-1224)." },
+  { id:"w1", what:"IRS EIN confirmation", who:"IRS", since:"2026-06-28", note:"Re-faxed Jun 28; '~8 business days' window closed Jul 11 — still zero signal at the Jul 20 sweep. Escalate: call IRS EIN line + check RedFax (510-497-1224)." },
   { id:"w2", what:"Autoloop unfreeze (launchd Full Disk Access)", who:"Chitraksh (2-min Mac settings fix)", since:"2026-06-28", note:"Frozen at cycle 10. System Settings → Privacy & Security → Full Disk Access for the launchd runner." },
   { id:"w3", what:"Mercedes re-pitch reply (WE owe it)", who:"Both", since:"2026-07-10", note:"Their reply is in; our receipts-reply + agent demo call is the overdue item." },
   { id:"w4", what:"ATTOM API key refresh", who:"Chitraksh", since:"2026-06-27", note:"Trial key returns 401. Re-provision before any homeowner pull." },
   { id:"w5", what:"BatchData balance ~$20–30", who:"Chitraksh", since:"2026-05-21", note:"Token authenticates; skip-trace blocked on $0 balance (~$0.15/lookup)." },
-  { id:"w6", what:"Founder-ad + insurance scripts", who:"Frankie", since:"2026-07-15", note:"P6 outline → Fable polish + P7 brief. Due next session." }
+  { id:"w6", what:"Founder-ad + insurance scripts", who:"Frankie", since:"2026-07-15", note:"P6 outline → Fable polish + P7 brief. Fable access lapsed Jul 19 — confirm scripts were locked before expiry; if not, fall back to Claude Opus via the shared account." }
 ],
 blockers: {
   title:"Compliance gate — NO consumer outreach until cleared",
@@ -532,7 +533,7 @@ pipeline: {
   gate: { label:"LinkedIn outreach gate", open:false, rule:"PhantomBuster launches ONLY after company page has real posted content. 'If that is empty, they're not going to take you serious.'", metrics:"Hanflux AI page search appearances +430% on name alone · connections C:~400/1,000 · F:→1,000–1,500 · seed goal 2,500 combined" }
 },
 tools: [
-  { id:"t1", name:"Fable access", state:"expires TODAY (Jul 19)", note:"Last day — Frankie: lock P6/P7 scripts before it lapses", level:"bad" },
+  { id:"t1", name:"Fable access", state:"EXPIRED (Jul 19)", note:"Lapsed yesterday — confirm P6/P7 scripts were locked before it expired (see Waiting W6)", level:"bad" },
   { id:"t2", name:"Shared Claude account", state:"active", note:"hanfluxai@gmail.com — Frankie logged in (his ChatGPT Pro lapsed)", level:"ok" },
   { id:"t3", name:"PhantomBuster", state:"~2h free exec time", note:"Multi-account rotation; no payment yet", level:"warn" },
   { id:"t4", name:"Outbound v128 + Inbound v15 (Retell)", state:"LIVE", note:"v129/v16 exist as unpublished drafts only", level:"ok" },
@@ -692,6 +693,7 @@ animation/transition style — just flag *when* a visual change should happen an
 *what* it should show; editing happens in post.` }
 ],
 archive: [
+ {"id":"am-sweep-2026-07-20","date":"2026-07-20","title":"Cofounder AM sweep · Jul 20","summary":"Gmail live-verified: 0/24h, 0 watch-list hits — 8th straight quiet sweep (newest mail still Jun 26). No transcripts since May 18. Fable access lapsed yesterday (Jul 19) — P6/P7 script status unconfirmed, tools chip flipped to EXPIRED. Dashboard push BLOCKED this run (sandbox shell infra fault) — patch staged, push queued for next session.","key_facts":["Gmail MCP authenticated in scheduled session — quiet inbox live-verified again","Fable access now EXPIRED (was 'expires today' Jul 19) — Waiting W6 updated to flag confirm-before-fallback","Autoloop day 24 still frozen at cycle 10 (Full Disk Access toggle)","0 drafts queued — nothing needed a reply","Sandbox shell unavailable all run (useradd/bash provisioning error) — content patched via file tools but push-dashboard.sh could not run; needs a retry next session"],"tags":["sweep","inbox-quiet","fable-expiry","push-blocked"]},
  {"id":"am-sweep-2026-07-19","date":"2026-07-19","title":"Cofounder AM sweep · Jul 19","summary":"Gmail live-verified: 0/24h, 0 watch-list hits — 7th quiet sweep (newest mail Jun 26). No transcripts since May 18. Fable access expires TODAY (P6/P7 scripts at risk). Jul 18 patch never pushed; today's push carries both days.","key_facts":["Gmail MCP authenticated in scheduled session — quiet inbox is live-verified again","Fable expiry day Jul 19: tools chip t1 warn→bad","Autoloop day 23 frozen at cycle 10 (Full Disk Access toggle)","0 drafts queued — nothing needed a reply"],"tags":["sweep","inbox-quiet","fable-expiry"]},
  {"id":"am-sweep-2026-07-18","date":"2026-07-18","title":"Cofounder AM sweep · Jul 18","summary":"Inbox quiet sixth straight sweep (0/24h, newest Jun 26). Gmail MCP unavailable in autonomous session (OAuth). No new transcripts since May 18. Autoloop frozen 22 days at cycle 10 (Full Disk Access toggle). 5 founder gates persist: LinkedIn Batch 1 post, Mercedes reply, Fable scripts (exp Jul 19), IRS call, launchd fix.","key_facts":["No flagged items across 24h scan + transcript check","Dashboard ORAYA DATA block surgical-edit only; render frozen","All 4 outreach lanes (postcard/email/B2B-HR/ATTOM) ready-to-fire on compliance gates","Previous sweeps caught ATTOM key dead (401) and BatchData needs $25 funds"],"tags":["sweep","inbox-quiet","compliance-gated"]},
  {"id":"am-sweep-2026-07-16","date":"2026-07-16","title":"Cofounder AM sweep · Jul 16","summary":"Fourth straight silent sweep — inbox 0/24h, 0 watch-list hits/7d, account verified healthy (newest mail still Jun 26). EIN zero signal since Jun 28 re-fax; IRS-call escalation queued. No new transcripts; autoloop still frozen; 0 drafts.","key_facts":["Inbox quiet is real: in:inbox ~21 threads, newest Jun 26","EIN fax window closed Jul 11 — no confirmation either way","Autoloop launchd still 'Operation not permitted'; state.json untouched since Jun 28","Nothing needed a reply — 0 drafts queued"],"tags":["sweep"]},
