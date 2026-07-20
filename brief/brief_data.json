@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-07-19T14:12:04.252Z",
-  "date_label": "Sun · Jul 19",
+  "generated_at": "2026-07-20T14:29:04.210Z",
+  "date_label": "Mon · Jul 20",
   "edition": "PM",
-  "day_number": 190,
+  "day_number": 191,
   "phase": "Growth lane — content gate week",
-  "headline": "The LinkedIn pages went live overnight — no longer blank, so today's move is to post Batch 1 on top and finally open the PhantomBuster gate. Same Sunday desk session runs P6 + P7 through Fable before it dies tonight and sends Mercedes its 9-day-overdue reply; the IRS tap fires tomorrow 8 AM PT.",
-  "source": "index.html · v15.2 Signal DATA block (Jul 19 AM sweep) + LinkedIn-pages-live delta",
+  "headline": "Monday, day 191 — this is the PT morning every brief since Jul 13 has aimed at: the IRS lines open at 8 AM and the EIN stops being waited on. Fable died last night, so P6/P7 are either locked or they move to Opus today — one answer unblocks Batch 3. Batch 1 has now sat postable for 8 days with the whole outreach machine behind it.",
+  "source": "index.html · v15.3 Signal DATA block (Jul 20 AM sweep) + PM deltas (Fable lapsed · v15.3 pushed)",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -42,7 +42,7 @@
       "code": "P2",
       "color": "#2563eb",
       "blurb": "AI life-insurance funnel: data → outreach → AI calls → licensed close.",
-      "count": 2
+      "count": 3
     },
     {
       "key": "realestate",
@@ -58,7 +58,7 @@
       "code": "HQ",
       "color": "#7c3aed",
       "blurb": "The dashboard, automations & AI agents that run the company itself.",
-      "count": 14
+      "count": 12
     },
     {
       "key": "ops",
@@ -66,56 +66,56 @@
       "code": "OPS",
       "color": "#64748b",
       "blurb": "Money, hardware, family & day-to-day running of the business.",
-      "count": 1
+      "count": 0
     }
   ],
   "spotlight": [
     {
-      "icon": "⏳",
-      "title": "Fable's final hours — P6 + P7 today, then it's gone",
+      "icon": "📞",
+      "title": "IRS EIN — the tap fires this morning, 8 AM PT",
+      "who": "Both",
+      "detail": "22 days of silence since the Jun 28 re-fax; the '~8 business day' window closed Jul 11. The EIN is now called for, not waited on. Two moves in the same sitting: dial 1-202-488-3100 the moment lines open (ride the auto-disconnects — Chitraksh can take an 8–11 AM PT rotation from IST) and check RedFax 510-497-1224 for a reply that landed silently. This is the last gate under the whole insurance entity.",
+      "project": "insurance",
+      "area": "Compliance & Legal"
+    },
+    {
+      "icon": "⚡",
+      "title": "Fable is gone — did P6 + P7 get locked, or do they move to Opus?",
       "who": "Frankie",
-      "detail": "This is the last day (Sun Jul 19). Run the founder-ad outline (P6) and the insurance brief (P7) through Fable on the shared account — settle the 'Fable vs Opus with everything' question while you still can — then hand finished scripts to Chitraksh for Batch 3. The scripts were due next session anyway; after tonight the tool is locked out.",
+      "detail": "Access lapsed last night. Every brief for a week pointed at Sunday as the deadline; today is the morning after, and nobody knows the outcome. One line back to Chitraksh settles it: if the founder-ad (P6) and insurance (P7) scripts are finished, Batch 3 starts generating today. If they aren't, redraft them through Claude Opus on the shared hanfluxai@gmail.com account — same day, no tool gap.",
       "project": "hq",
       "area": "Growth"
     },
     {
       "icon": "🔗",
-      "title": "Pages went live — now post Batch 1 to open the gate",
+      "title": "Post Batch 1 — 8 days postable, gating every outreach sequence",
       "who": "Both",
-      "detail": "Overnight both company Pages (Hanflux AI + Oraya AI) went from blank to real — Overview, Specialties and positioning all filled, so the '+430% search appearances but the page is blank' problem is cleared. What's left to fire the keystone: post the 6–7 Batch 1 reels on top, plus give Chitraksh two quick answers — a logo/banner for Oraya AI and a city for Location. Posting is the gate every PhantomBuster sequence waits behind.",
+      "detail": "The pages stopped being the excuse on Jul 19: Hanflux AI and Oraya AI are both filled out. Batch 1's 6–7 reels have been declared ready since Jul 12 and nothing has gone up. Until real content is posted, PhantomBuster cannot launch a single connect request — '+430% search appearances' keeps landing on an empty feed. Select mutually, post to personal + company pages, and the gate opens today.",
       "project": "hq",
       "area": "Growth"
-    },
-    {
-      "icon": "🤝",
-      "title": "Mercedes reply — receipts + demo call, 9 days overdue",
-      "who": "Both",
-      "detail": "Their reply has sat since Jul 10. Build ours on timestamped screenshots of their own chatbot's multi-day delay → pitch voice AI + automation → book a live call where the agent demos itself. It's an email task — clear it in the same Sunday sitting as the Fable scripts before it slides into week three.",
-      "project": "hq",
-      "area": "Dealership"
     }
   ],
   "blockers": [
     {
-      "label": "Fable expiry — end of today",
-      "scope": "Frankie",
-      "detail": "Access lapses tonight (Sun Jul 19). Both scripts — P6 founder-ad + P7 insurance — must go through Fable today; tomorrow the tool is locked."
-    },
-    {
-      "label": "IRS EIN — tap fires tomorrow 8 AM PT",
+      "label": "IRS EIN — 22 days silent, call window opens 8 AM PT",
       "scope": "Both",
-      "detail": "Re-fax window closed Jul 11 with zero signal — the EIN is called-for, not waited-on. Lines closed Sunday; first tap tomorrow 8 AM PT: 1-202-488-3100 (Chitraksh 8–11 rotation) + RedFax 510-497-1224 check."
+      "detail": "Re-faxed Jun 28, window closed Jul 11, zero signal either way. Unblock: 1-202-488-3100 live-agent call (retry through auto-disconnects) + RedFax 510-497-1224 check. Monday is the first open line since Friday."
     },
     {
-      "label": "Autoloop frozen (launchd)",
+      "label": "Fable EXPIRED — P6/P7 script status unknown",
+      "scope": "Frankie",
+      "detail": "Tool lapsed Sun Jul 19. Batch 3 (12–13 reels) cannot start until the founder-ad + insurance scripts exist. Unblock: confirm they were locked before expiry — if not, redraft via Claude Opus on the shared account today."
+    },
+    {
+      "label": "Autoloop frozen — day 24 at cycle 10",
       "scope": "Chitraksh",
-      "detail": "Day 23 frozen at cycle 10 — today's 09:00 IST retry already came and went, still stuck. 2-min fix: System Settings → Privacy & Security → Full Disk Access → enable the launchd runner. Flip it tonight and tomorrow's 09:00 run is the live test of cycle 11."
+      "detail": "The 09:00 IST launchd run has retried and failed daily for 24 days. 2-minute unblock: System Settings → Privacy & Security → Full Disk Access → enable the launchd runner. Flip it and tomorrow's 09:00 run executes cycle 11 unattended."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "190"
+      "v": "191"
     },
     {
       "k": "Gates open",
@@ -134,52 +134,44 @@
       "accent": "emerald",
       "tasks": [
         {
-          "lead": "Run P6 + P7 through Fable — TODAY, final hours",
-          "detail": "Fable access lapses tonight. Founder-ad outline (P6) and insurance brief (P7) through Fable on the shared account; test it 'with everything' vs Opus to settle the tool question, then hand finished scripts to Chitraksh for Batch 3. After tonight: locked out.",
-          "tag": "FABLE DIES TONIGHT",
+          "lead": "IRS EIN call — 8 AM PT, first open line since Friday",
+          "detail": "1-202-488-3100. Expect auto-disconnects; keep redialing until a live agent picks up. Also check RedFax 510-497-1224 — a reply may have landed with no email notice. 22 days of silence since the Jun 28 re-fax; the '~8 business day' window closed Jul 11, so this is a chase, not a wait.",
+          "tag": "EIN BLOCKER",
           "tagType": "red",
+          "project": "insurance",
+          "area": "Compliance & Legal"
+        },
+        {
+          "lead": "Mercedes receipts reply — 10 days overdue, Monday inbox",
+          "detail": "Their reply has sat since Jul 10 and we owe the next move. Build it on timestamped screenshots of their own chatbot's multi-day delay → pitch voice AI + automation → book a live call where the agent demos itself. Monday morning is when their inbox actually gets read; week three starts tomorrow.",
+          "tag": "OVERDUE 10d",
+          "tagType": "red",
+          "project": "hq",
+          "area": "Dealership"
+        },
+        {
+          "lead": "Answer the Fable question in one line",
+          "detail": "Did P6 (founder-ad outline) and P7 (insurance brief) get through Fable before it lapsed last night? Yes → send the finished scripts to Chitraksh and Batch 3 generates today. No → paste both prompts into Claude Opus on the shared hanfluxai@gmail.com account and finish them this morning. Either way, Batch 3 stops waiting today.",
+          "tag": "UNBLOCKS BATCH 3",
+          "tagType": "orange",
           "project": "hq",
           "area": "Growth"
         },
         {
-          "lead": "Post Batch 1 to LinkedIn (with Chitraksh)",
-          "detail": "The pages are no longer blank — About, Specialties and positioning went live this session. Now mutual-select from the 6–7 ready reels and post to your personal + the company pages. This is the keystone every PhantomBuster sequence waits on; Sunday-perfect, no business hours needed.",
-          "tag": "KEYSTONE GATE",
+          "lead": "Select + post Batch 1 with Chitraksh",
+          "detail": "6–7 reels, ready since Jul 12. Mutually pick, then post to personal + company pages (Hanflux AI + Oraya AI, both now filled out). This is the keystone — every PhantomBuster connect and page-invite sequence sits behind it.",
+          "tag": "KEYSTONE",
           "tagType": "green",
           "project": "hq",
           "area": "Growth"
         },
         {
-          "lead": "Send the Mercedes reply + book the demo",
-          "detail": "9 days overdue (since Jul 10). Timestamped screenshots of their own chatbot's delay → pitch voice AI + automation → book the live call where the agent demos itself. Same desk session as the Fable scripts.",
-          "tag": "OVERDUE 9D",
-          "tagType": "orange",
-          "project": "hq",
-          "area": "Dealership"
-        },
-        {
-          "lead": "IRS EIN — tap fires tomorrow 8 AM PT",
-          "detail": "Lines closed Sunday. Monday 8 AM PT: call 1-202-488-3100 and check RedFax 510-497-1224. Re-fax window closed Jul 11 with no signal — this is call-for-it now, not wait-for-it. Tonight: set the alarm.",
-          "tag": "MON 8AM PT",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Compliance & Legal"
-        },
-        {
-          "lead": "Jharkhand: scan your network for a US investor",
-          "detail": "Father's direct CM access (Hemant Soren) is the moat — precedent is Chinese interest at $50–100M per data-center; even $10–20M gets 'the best deal in the country.' Findings feed agenda item a6 at the next sync.",
+          "lead": "Jharkhand: scan the network for a US investor",
+          "detail": "Father's direct access to CM Hemant Soren is the moat — an investor gets the deal plus the optics. Precedent: Chinese interest at $50–100M for one data center; even $10–20M buys 'the best deal in the entire country.' Your artifact is done; Chitraksh builds the landing page + brochure around it.",
           "tag": "",
           "tagType": "",
           "project": "hq",
           "area": "BD"
-        },
-        {
-          "lead": "4:30 AM block discipline — hold the line.",
-          "detail": "Fixed morning block is the rule, not the suggestion.",
-          "tag": "",
-          "tagType": "",
-          "project": "ops",
-          "area": "Ops / Personal"
         }
       ]
     },
@@ -187,91 +179,75 @@
       "key": "chitraksh",
       "name": "Chitraksh",
       "role": "CTO · Build",
-      "accent": "cyan",
+      "accent": "violet",
       "tasks": [
         {
-          "lead": "Flip Full Disk Access — tonight, before tomorrow's 09:00 run",
-          "detail": "Autoloop frozen 23 days at cycle 10; today's 09:00 IST retry already came and went still stuck. System Settings → Privacy & Security → Full Disk Access → enable the launchd runner — 2 minutes. Flip it tonight and tomorrow's scheduled run becomes the live test of cycle 11.",
-          "tag": "2-MIN · TEST AT 09:00",
-          "tagType": "red",
+          "lead": "Full Disk Access toggle — 2 minutes, 24 days frozen",
+          "detail": "System Settings → Privacy & Security → Full Disk Access → enable the launchd runner. The autoloop has retried at 09:00 IST every day since Jun 28 and failed on this one permission. Flip it tonight and tomorrow's run executes cycle 11 with zero further input — guardrails.md governs the run as always.",
+          "tag": "2-MIN FIX",
+          "tagType": "orange",
           "project": "hq",
           "area": "Dashboard / Infra"
         },
         {
-          "lead": "Finish the LinkedIn pages + post Batch 1 (with Frankie)",
-          "detail": "About + Specialties + positioning are filled on both Pages. Two answers left to fully finish: a logo/banner for Oraya AI and a real city for Location on both (LinkedIn requires City + Country). Then mutual-select the reels and post — the gate that unblocks every PhantomBuster sequence and the precondition for picking the first Phantom (agenda a5).",
-          "tag": "KEYSTONE GATE",
-          "tagType": "green",
-          "project": "hq",
-          "area": "Growth"
-        },
-        {
-          "lead": "Attach video-gen MCP → generate Batch 3",
-          "detail": "Wire the video-gen MCP into the growth engine, ingest Prompt P10 (Meeting-37 feedback), generate Batch 3 (12–13 reels: 6–7 insurance + Batch-2 fixes). The founder-ad + insurance cuts land the moment Frankie's P6/P7 scripts arrive from Fable.",
+          "lead": "Attach the video-gen MCP + ingest P10 for Batch 3",
+          "detail": "Batch 3 target is 12–13 reels: 6–7 insurance-vertical plus a revised pass of Batch 2 (consultancy voice everywhere, no blank end screens, subtitle layer off key visuals, new DMS tagline). The moment Frankie's P6/P7 answer lands, generation can start.",
           "tag": "",
           "tagType": "",
           "project": "hq",
           "area": "Growth"
         },
         {
-          "lead": "Batch 2 fixes queued (Mtg 37)",
-          "detail": "Consultancy-reel voice standardized across all reels; TCPA reel subtitle/visual overlap fixed; DMS reel regenerated with approved voice + 2–3 new tagline proposals; no blank end screens.",
+          "lead": "Finish LinkedIn setup: logo/banner + Location",
+          "detail": "Both Pages have real Overview, Specialties and positioning as of Jul 19. Outstanding on both: a logo and banner for Oraya AI, and a real city in the Location field. Small, but it is the first thing a dealership GM sees when a connect request lands.",
           "tag": "",
           "tagType": "",
           "project": "hq",
           "area": "Growth"
         },
         {
-          "lead": "Jharkhand landing page + brochure",
-          "detail": "Investor landing page with the downloadable brochure (Frankie's artifact is done). Father's political access is the pitch.",
+          "lead": "Re-provision ATTOM + fund BatchData",
+          "detail": "ATTOM trial key has returned 401 since Jun 27; BatchData's token authenticates but the balance is $0 (~$0.15/lookup, needs ~$20–30). Neither can be used for consumer outreach until the compliance gate clears — but both should be live so the lane is ready the day it does.",
+          "tag": "",
+          "tagType": "",
+          "project": "insurance",
+          "area": "Lead-gen"
+        },
+        {
+          "lead": "Jharkhand landing page + downloadable brochure",
+          "detail": "Build around Frankie's finished artifact: a single page an investor can be pointed at, with the brochure as a download. Pairs with his network scan — the page is what turns a warm intro into a real conversation.",
           "tag": "",
           "tagType": "",
           "project": "hq",
           "area": "BD"
-        },
-        {
-          "lead": "IRS call rotation — tomorrow 8–11 AM PT",
-          "detail": "Monday 8–11 AM PT (8:30–11:30 PM IST): ride out auto-disconnects until a live agent picks up. Closed today.",
-          "tag": "MON",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Compliance & Legal"
         }
       ]
     },
     {
-      "key": "ctoclaude",
+      "key": "cto-claude",
       "name": "CTO-Claude",
       "role": "Autonomous",
-      "accent": "violet",
+      "accent": "sky",
       "tasks": [
         {
-          "lead": "Delivered this PM brief — Day 190",
-          "detail": "Curated from the v15.2 Signal board plus today's LinkedIn-pages-live delta, published to Vercel, dropped as a ready-to-send Gmail draft to both founders; the n8n SCHEDULE workflow covers the real send ~15 min after publish.",
+          "lead": "Cleared the stranded v15.3 dashboard push — commit d0d8139",
+          "detail": "This morning's AM sweep patched the dashboard (Jul 20 sweep card, Fable chip flipped to EXPIRED, W1/W6 notes refreshed) but could not push — the sandbox shell was down for the entire run. Shell came back for this PM run and the push went through: the live dashboard is now v15.3 and current, no Chitraksh action needed.",
+          "tag": "AM ITEM CLEARED",
+          "tagType": "green",
+          "project": "hq",
+          "area": "Dashboard / Infra"
+        },
+        {
+          "lead": "Inbox live-verified quiet — 8th straight sweep",
+          "detail": "Gmail OAuth held in the scheduled session: 0 new in 24h, 0 watch-list hits (EIN/IRS/A2P, dealership, cancellations, opt-ins); newest mail still Jun 26. No EIN reply, no Mercedes movement, no new transcripts since May 18. Every open gate is founder-action-bound, not inbox-bound.",
           "tag": "",
           "tagType": "",
           "project": "hq",
           "area": "Dashboard / Infra"
         },
         {
-          "lead": "Pushed dashboard v15.2 this morning (83c8c6e)",
-          "detail": "The AM brief's staged patch is shipped — the 09:00 sweep patched + PUSHED it to Vercel autonomously (commit 83c8c6e), carrying the stranded Jul 18 card and flipping the Fable chip to expires-today. Yesterday's 'awaiting Chitraksh's Mac push' item is cleared.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Dashboard / Infra"
-        },
-        {
-          "lead": "LinkedIn Pages went live this session",
-          "detail": "Both company Pages (Hanflux AI + Oraya AI) filled from blank — Overview, ~10 Specialties, positioning, year founded. Flagged the two remaining founder answers: a logo/banner for Oraya AI and a real city for Location. Posting stays gated on Batch 1 + explicit approval.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Growth"
-        },
-        {
-          "lead": "Inbox live-verified quiet — 7th straight sweep",
-          "detail": "Gmail OAuth worked in the scheduled session: 0 new in 24h, 0 watch-list hits (EIN/IRS, dealership, opt-ins); newest mail still Jun 26. No Mercedes movement, no EIN signal, no new transcripts since May 18. The gates are founder-action-bound, not inbox-bound.",
+          "lead": "Brief published + drafted to both inboxes",
+          "detail": "PM edition rebuilt from the v15.3 Signal board (the frozen v14 auto-parse — Envision Honda / Day 138 / v12.0 dashboard — replaced across headline, spotlight and all three lanes), published to the live page, and dropped as a ready-to-send Gmail draft. n8n SCHEDULE covers the real send.",
           "tag": "",
           "tagType": "",
           "project": "hq",
@@ -279,63 +255,67 @@
         },
         {
           "lead": "Autoloop cycle 11 auto-fires the moment FDA flips",
-          "detail": "The 09:00 IST launchd run retries every day — grant Full Disk Access and cycle 11 executes with no further action. Guardrails.md governs the run as always.",
+          "detail": "Nothing else is needed from either founder — the 09:00 IST launchd job retries daily on its own. Grant Full Disk Access and the next run executes cycle 11 under guardrails.md.",
           "tag": "",
           "tagType": "",
           "project": "hq",
           "area": "Dashboard / Infra"
+        },
+        {
+          "lead": "Compliance gate holds — no consumer outreach",
+          "detail": "All 7 items still open (CA + TX data-broker registration, TX SB 140, TCPA counsel red-team, privacy/Do-Not-Sell page, CCPA assessment, CA producer license line). The voice stack (Outbound v128 + Inbound v15 + Maya post-call) stays live and idle; Oraya's own B2B marketing lane is separate and unaffected.",
+          "tag": "",
+          "tagType": "",
+          "project": "insurance",
+          "area": "Compliance & Legal"
         }
       ]
     }
   ],
   "cofounder": {
-    "date": "2026-07-19",
-    "scanned_at": "2026-07-19T06:25:51Z",
+    "date": "2026-07-20",
+    "scanned_at": "2026-07-20T06:30:00Z",
     "done": [
       {
-        "what": "Inbox scan LIVE (Gmail OAuth worked in scheduled session): 0 new in 24h, 0 watch-list hits (EIN/IRS, A2P, Honda/dealership, cancellations, opt-ins) — 7th straight quiet sweep, account healthy, newest mail still Jun 26.",
+        "what": "Inbox scan LIVE (Gmail OAuth worked in scheduled session): 0 new in 24h, 0 watch-list hits (EIN/IRS/A2P, dealership, cancellations, opt-ins) — 8th straight quiet sweep, newest mail still Jun 26.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Dashboard v15.2 patched (am-sweep-2026-07-19 card, Fable chip → expires-today, w1 EIN note refreshed) and PUSHED to Vercel — commit 83c8c6e, carrying the stranded Jul 18 patch. Yesterday's push item cleared.",
+        "what": "Transcript check: 0 new since May 18 (workspace + email attachments) — board ingest skipped. 0 drafts needed.",
         "who": "CTO-Claude"
       },
       {
-        "what": "LinkedIn company Pages (Hanflux AI + Oraya AI) filled from blank this session — Overview, ~10 Specialties, positioning, year founded 2025. Logo/banner (Oraya AI) + a city for Location flagged to Chitraksh; posting stays gated on Batch 1.",
+        "what": "Dashboard v15.3 patched (am-sweep-2026-07-20 card, Fable chip → EXPIRED, W1/W6 notes refreshed, meta bumped). Push was BLOCKED in the AM run by a sandbox shell outage — RESOLVED in this PM run: pushed as commit d0d8139, live dashboard now current.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Transcript check: 0 new since May 18 (workspace + email attachments) — board ingest skipped. 0 drafts needed — nothing in the 24h scan required a reply.",
+        "what": "Fable access confirmed lapsed Jul 19 — tools chip flipped to EXPIRED and Waiting W6 rewritten from 'run it through Fable' to 'confirm scripts locked, else fall back to Opus'.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Memory updated: LinkedIn-pages note (IDs, relationship, what's filled vs missing) recorded; sandbox push pattern (inline W override + unique mktemp clone) re-verified.",
+        "what": "Memory updated: v15 sweep-runbook integration marked resolved; sandbox bash-outage gotcha logged for future sessions.",
         "who": "CTO-Claude"
       }
     ],
     "waiting": [
       {
-        "what": "TODAY: Fable access expires Sun Jul 19 — lock founder-ad (P6) + insurance (P7) scripts before it lapses",
-        "who": "Frankie"
-      },
-      {
-        "what": "LinkedIn Batch 1 post (personal + company pages) — pages now filled; keystones all PhantomBuster sequences. Ready since Jul 12.",
+        "what": "IRS EIN follow-up: call 1-202-488-3100 or check RedFax 510-497-1224 — 22 days silent, lines open 8 AM PT today",
         "who": "Both"
       },
       {
-        "what": "Finish LinkedIn setup: logo/banner for Oraya AI + a real city for Location on both pages",
-        "who": "Chitraksh"
-      },
-      {
-        "what": "Mercedes re-pitch reply + live agent-demo booking — overdue 9 days (since Jul 10); weapon: delay screenshots",
+        "what": "Confirm P6/P7 scripts were locked before Fable expired Jul 19 — if not, redraft via Claude Opus on the shared account",
         "who": "Frankie"
       },
       {
-        "what": "IRS EIN follow-up: call 1-202-488-3100 or check RedFax 510-497-1224 — fax window closed Jul 11, still zero signal",
+        "what": "LinkedIn Batch 1 post (personal + company pages) — keystones all PhantomBuster sequences; postable since Jul 12",
         "who": "Both"
       },
       {
-        "what": "Full Disk Access toggle for launchd runner (System Settings → Privacy & Security) — 2-min fix, unblocks autoloop cycle 11+ (frozen 23d)",
+        "what": "Mercedes re-pitch reply + live agent-demo booking — overdue 10 days (since Jul 10); weapon: delay screenshots",
+        "who": "Frankie"
+      },
+      {
+        "what": "Full Disk Access toggle for launchd runner (System Settings → Privacy & Security) — 2-min fix, unblocks autoloop cycle 11+ (frozen 24d)",
         "who": "Chitraksh"
       }
     ]
