@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-07-29T09:13:39.145Z",
+  "generated_at": "2026-07-29T14:05:00.000Z",
   "date_label": "Wed · Jul 29",
-  "edition": "AM",
+  "edition": "PM",
   "day_number": 200,
-  "phase": "Day 200 — content gate week, five clocks past a month",
-  "headline": "Day 200 — and the newest of the five open gates is 17 days old. Monday came and went with no brief and no word on whether either tap fired; Jul 27–28 the pipeline itself went dark, which makes today's first job honest reporting and its second job the only three moves that need nobody's permission. Wednesday is a full business day on both sides — the first one a delivered brief has landed on since Jul 20 — so the IRS line is open, HR inboxes are open, Mercedes is reachable, and Batch 1 has been sitting postable for 17 days waiting on two founders and one click.",
-  "source": "index.html · ORAYA DATA v15.4 Signal board (curated AM Jul 29)",
+  "phase": "Day 200 · PM — the autonomy blackout finally has a root cause; five founder gates still open",
+  "headline": "Day 200, PM — Frankie's Wednesday opens on the first genuinely good news in weeks: the reason the autonomy keeps going dark is finally found. The Mac sleeps straight through the 06:00–06:30 IST cron, so all twelve scheduled tasks fire in one catch-up burst the moment it wakes — and that burst ran this morning's AM brief BEFORE the cofounder sweep it was built to read. The fix is no longer 'investigate' but a two-line founder action: keep the Mac awake in the window, or move both crons to a known-awake hour. Everything else is unchanged, and that is the whole point — on a full business Wednesday the three moves that need nobody's permission are still sitting exactly where the AM brief left them: post Batch 1 (17 days idle, the keystone), call the IRS at 8 AM PT (31 days silent), reply to Mercedes (19 days owed). PM inbox re-check: still zero, newest mail Jun 26.",
+  "source": "index.html · ORAYA DATA v15.5 Signal board (curated PM Jul 29 — first edition carrying today's root-cause sweep)",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -72,54 +72,54 @@
   "spotlight": [
     {
       "icon": "🔗",
-      "title": "Post Batch 1 — 17 days postable, third brief in a row naming it",
+      "title": "Post Batch 1 — 17 days postable, the cheapest move on the board",
       "who": "Both",
-      "detail": "6–7 reels declared ready Jul 12. Both Pages (Hanflux AI · Oraya AI) have carried real Overview and positioning copy since Jul 19, so the \"the page is blank so they go away\" problem the whole plan was built around is already solved — the only thing missing is posts. This needs no IRS reply, no Fable, no compliance clearance, no spend and no third party: two founders mutually pick reels and hit post on personal + both company pages. Until it happens every PhantomBuster sequence stays dark — connect-requests to dealership GMs, follow-ups, page-invites, all of it — and PhantomBuster's free tier keeps burning calendar, not execution time. Hanflux is showing +430% search appearances on the name alone with nothing to land on. This is the third consecutive brief to name it the keystone; on Day 200 it is also the cheapest thing on the board.",
+      "detail": "6–7 reels declared ready Jul 12. Both Pages (Hanflux AI · Oraya AI) have carried real Overview and positioning copy since Jul 19, so the 'the page is blank so they go away' problem the whole plan was built around is already solved — the only thing missing is posts. This needs no IRS reply, no Fable, no compliance clearance, no spend and no third party: two founders mutually pick reels and hit post on personal + both company pages. Until it happens every PhantomBuster sequence stays dark — connect-requests to dealership GMs, follow-ups, page-invites, all of it — and the free tier keeps burning calendar, not execution time. Hanflux is showing +430% search appearances on the name alone with nothing to land on. This is the fourth consecutive brief to name it the keystone; on Day 200 it is also the single cheapest thing anyone can do today.",
       "project": "hq",
       "area": "Growth"
     },
     {
       "icon": "📞",
-      "title": "IRS EIN — 31 days silent, and today is a full business day",
+      "title": "Call the IRS EIN line — 31 days silent, 8 AM PT is right now",
       "who": "Frankie",
-      "detail": "Re-faxed Jun 28; the \"~8 business day\" window closed Jul 11 and 14 days of live watch-list searches have returned nothing in either direction. Every brief since Jul 13 has pointed at a Monday 8 AM PT window; Monday Jul 27 passed with no brief published and no founder report, so we still do not know whether the call was ever placed. Wednesday reopens the same door: call the EIN line the moment it opens 8 AM PT (expect auto-disconnects — redial), and check RedFax 510-497-1224 for a reply that may have landed silently. Have the SS-4 details in hand before dialling so the call confirms rather than searches. One line back either way — \"called, here's what they said\" or \"didn't get to it\" — turns 31 days of guessing into a fact the next brief can build on.",
+      "detail": "Re-faxed Jun 28; the '~8 business day' window closed Jul 11 and 14 days of live watch-list searches have returned nothing in either direction (PM inbox re-check today: still zero). Every brief since Jul 13 pointed at a Monday 8 AM PT window; Monday Jul 27 passed with no brief published and no founder report, so we still do not know whether a call was ever placed. This is Frankie's morning and the line is open now: dial 1-202-488-3100 the moment it opens (expect auto-disconnects — redial), SS-4 details in hand so the call confirms rather than searches, then check RedFax 510-497-1224 for a reply that may have landed silently. One line back either way — 'called, here's what they said' or 'didn't get to it' — turns 31 days of guessing into a fact.",
       "project": "ops",
       "area": "Legal / Entity"
     },
     {
-      "icon": "⚙",
-      "title": "Full Disk Access toggle — it failed again at 09:02 IST this morning",
-      "who": "Chitraksh",
-      "detail": "System Settings → Privacy & Security → Full Disk Access → enable the launchd runner. The autoloop retried today and the error log took a fresh line at 09:02 IST: \"oraya-loop.sh: Operation not permitted\" — the same permission, the 31st consecutive day, frozen at cycle 10 since Jun 28. Two minutes flips it and the next 09:00 run executes cycle 11 unattended under guardrails.md with no further founder input, ever. Do it in the same sitting as the second half of this item: diagnose why the brief pipeline went dark Jul 27–28 (and Jul 21–23 before it). That's now two autonomous systems silent, and the reporting layer going quiet is worse than the loop going quiet — it's the one that would have told you.",
-      "project": "hq",
-      "area": "Dashboard / Infra"
+      "icon": "📨",
+      "title": "Send Mercedes the receipts-reply — 19 days owed, and it's a working Wednesday",
+      "who": "Frankie",
+      "detail": "Their reply landed Jul 10 and has sat unanswered for 19 days — the longest-running item where the ball is entirely in our court, no one waiting on us but us. Weapon unchanged and still true: timestamped screenshots of their own chatbot's multi-day response delay → pitch voice AI + automation → ask for a live call where the Oraya agent demos itself by placing it. Wednesday is a working day on a dealership floor; this was queued for 'write Sunday, send Monday' three briefs ago. Write it and send it in the same sitting as the IRS call.",
+      "project": "insurance",
+      "area": "Dealership"
     }
   ],
   "blockers": [
     {
-      "label": "IRS EIN — 31 days silent · line open today 8 AM PT",
+      "label": "IRS EIN — 31 days silent · line open now 8 AM PT",
       "scope": "Frankie",
-      "detail": "Re-faxed Jun 28, window closed Jul 11, zero signal since. Monday's planned call is unconfirmed — no brief ran Jul 27–28 to capture the result. Unblock: dial the EIN line at 8 AM PT with SS-4 details in front of you, then check RedFax 510-497-1224. Report one line either way."
+      "detail": "Re-faxed Jun 28, window closed Jul 11, zero signal since (PM inbox re-check today: still zero). Monday's planned call is unconfirmed — no brief ran Jul 27–28 to capture the result. Unblock: dial 1-202-488-3100 at 8 AM PT with SS-4 details in front of you, then check RedFax 510-497-1224. Report one line either way."
     },
     {
       "label": "Mercedes receipts-reply — 19 days · WE owe THEM",
       "scope": "Frankie",
-      "detail": "Their reply landed Jul 10 and has sat unanswered for 19 days — the longest-running item where the ball is entirely in our court. Weapon unchanged and still true: timestamped screenshots of their own chatbot's multi-day delay → pitch voice AI + automation → ask for a live call where the Oraya agent demos itself by placing it. Wednesday is a working day at a dealership; write it and send it in the same sitting."
+      "detail": "Their reply landed Jul 10 and has sat 19 days — the longest-running item where the ball is entirely in our court. Weapon unchanged: timestamped screenshots of their own chatbot's multi-day delay → pitch voice AI + automation → ask for a live call where the Oraya agent demos itself by placing it. Working Wednesday on a dealership floor; write it and send it."
     },
     {
       "label": "Fable EXPIRED — P6/P7 lock status unknown 10 days",
       "scope": "Frankie",
-      "detail": "Fable lapsed Jul 19 and nobody has said whether the founder-ad outline (P6) and the insurance brief (P7) were locked before it died. Batch 3 (12–13 reels) cannot start without those scripts, which means the growth engine has nothing to generate. Costs one text: locked → send them to Chitraksh and generation begins; not locked → paste both prompts into Claude Opus on the shared hanfluxai@gmail.com account and finish them today."
+      "detail": "Fable lapsed Jul 19 and nobody has said whether the founder-ad outline (P6) and the insurance brief (P7) were locked before it died. Batch 3 (12–13 reels) cannot start without those scripts, so the growth engine has nothing to generate. Costs one text: locked → send them to Chitraksh and generation begins; not locked → paste both prompts into Claude Opus on the shared hanfluxai@gmail.com account and finish them today."
     },
     {
-      "label": "Autoloop frozen — 31 days at cycle 10 · failed again 09:02 IST today",
+      "label": "Autoloop frozen — 31 days at cycle 10 · Full Disk Access, 2 min",
       "scope": "Chitraksh",
-      "detail": "The launchd runner has retried daily since Jun 28 and failed every time on one macOS permission; today's failure is timestamped in oraya-autoloop/logs/launchd.err.log. Full Disk Access, two minutes, unlocks cycle 11 and every cycle after it."
+      "detail": "The launchd runner has retried daily since Jun 28 and failed every time on one macOS permission; today's 09:02 IST failure is timestamped in oraya-autoloop/logs/launchd.err.log ('Operation not permitted'). System Settings → Privacy & Security → Full Disk Access → enable the launchd runner. Two minutes unlocks cycle 11 and every cycle after it."
     },
     {
-      "label": "Brief + sweep pipeline dark Jul 27–28 (second blackout this month)",
+      "label": "Autonomy going dark — ROOT CAUSE FOUND today (scheduler wake window)",
       "scope": "Chitraksh",
-      "detail": "Jul 26 AM was the last curated brief; the Jul 26 PM edition generated a raw skeleton and was never curated, published or logged, and Jul 27–28 produced nothing at all. Same failure shape as Jul 21–23, still undiagnosed. Check the scheduled-task config in the same sitting as the Full Disk Access toggle — a reporting layer that silently skips days is how a missed IRS call goes unnoticed for three days."
+      "detail": "This morning's sweep diagnosed the recurring blackouts (Jul 21–23, Jul 25–28): all 12 scheduled tasks fired in one serialized catch-up burst at 09:12–09:18Z, none at their 06:00/06:30 IST cron — the Mac is asleep through the window, so everything runs late and in registration order. Side effect: that order ran the AM brief BEFORE the cofounder sweep it reads. Fix (founder action, new Waiting W7): keep the Mac awake 00:30–01:15Z (caffeinate / Power Nap / scheduled wake), OR move both brief+sweep crons into a known-awake hour. It is no longer 'diagnose' — it is a two-line change."
     },
     {
       "label": "Consumer funnel — 7 compliance items, all open",
@@ -128,22 +128,10 @@
     }
   ],
   "metrics": [
-    {
-      "k": "Day",
-      "v": "200"
-    },
-    {
-      "k": "Gates open",
-      "v": "5"
-    },
-    {
-      "k": "Oldest gate",
-      "v": "31d"
-    },
-    {
-      "k": "Lanes",
-      "v": "3"
-    }
+    { "k": "Day", "v": "200" },
+    { "k": "Gates open", "v": "5" },
+    { "k": "Oldest gate", "v": "31d" },
+    { "k": "Lanes", "v": "3" }
   ],
   "lanes": [
     {
@@ -154,7 +142,7 @@
       "tasks": [
         {
           "lead": "Call the IRS EIN line at 8 AM PT — 31 days silent",
-          "detail": "Re-faxed Jun 28; the ~8-business-day window closed Jul 11 and 14 days of live inbox watch-list searches have returned nothing either way. Monday's planned call was never confirmed because no brief ran Jul 27–28. Dial the moment lines open, expect auto-disconnects and redial, have the SS-4 details in front of you so the call is a confirmation rather than a search — then check RedFax 510-497-1224 for a reply that may have landed silently. Report one line back either way; 31 days of guessing ends with a sentence.",
+          "detail": "Re-faxed Jun 28; the ~8-business-day window closed Jul 11 and 14 days of live inbox watch-list searches have returned nothing either way (PM re-check today: still zero). Monday's planned call was never confirmed because no brief ran Jul 27–28. Dial 1-202-488-3100 the moment lines open, expect auto-disconnects and redial, have the SS-4 details in front of you so the call is a confirmation not a search — then check RedFax 510-497-1224 for a reply that may have landed silently. Report one line back either way; 31 days of guessing ends with a sentence.",
           "project": "ops",
           "area": "Legal / Entity",
           "tag": "31 DAYS",
@@ -162,7 +150,7 @@
         },
         {
           "lead": "Send the Mercedes receipts-reply — 19 days, we owe them",
-          "detail": "Their reply landed Jul 10. The strategy hasn't changed and hasn't aged badly: timestamped screenshots of their own chatbot's multi-day response delay, then the pitch (voice AI + automation), then the ask — a live call where the Oraya agent demos itself by placing it. This was queued for 'write Sunday, send Monday' three briefs ago and is now the longest-running item where nobody is waiting on us but us. Wednesday is a working day on a dealership floor.",
+          "detail": "Their reply landed Jul 10. The strategy hasn't changed and hasn't aged badly: timestamped screenshots of their own chatbot's multi-day response delay, then the pitch (voice AI + automation), then the ask — a live call where the Oraya agent demos itself by placing it. Queued for 'write Sunday, send Monday' three briefs ago and now the longest-running item where nobody is waiting on us but us. Wednesday is a working day on a dealership floor — same sitting as the IRS call.",
           "project": "insurance",
           "area": "Dealership",
           "tag": "19 DAYS",
@@ -170,7 +158,7 @@
         },
         {
           "lead": "Post Batch 1 with Chitraksh — 17 days postable",
-          "detail": "6–7 reels ready since Jul 12. Mutually pick, then post to personal + both company pages (Hanflux AI 108417292 · Oraya AI 133377633). Zero dependencies — no IRS, no Fable, no compliance, no spend. Every PhantomBuster sequence stays gated until this lands.",
+          "detail": "6–7 reels ready since Jul 12. Mutually pick, then post to personal + both company pages (Hanflux AI 108417292 · Oraya AI 133377633). Zero dependencies — no IRS, no Fable, no compliance, no spend. Every PhantomBuster sequence stays gated until this lands; it is the fourth straight brief to call it the keystone.",
           "project": "hq",
           "area": "Growth",
           "tag": "KEYSTONE",
@@ -203,19 +191,19 @@
       "accent": "sky",
       "tasks": [
         {
-          "lead": "Flip Full Disk Access — 2 minutes, 31 days, failed again this morning",
-          "detail": "System Settings → Privacy & Security → Full Disk Access → enable the launchd runner. Today's 09:02 IST retry wrote another 'Operation not permitted' line to oraya-autoloop/logs/launchd.err.log — the 31st straight failure on the same checkbox since Jun 28. Flip it and the next scheduled run executes autoloop cycle 11 unattended under guardrails.md, with no further founder input required ever again.",
+          "lead": "Apply the scheduler wake-window fix — now diagnosed",
+          "detail": "This morning's sweep found the root cause of the repeat blackouts: the Mac is asleep through the 06:00/06:30 IST cron, so all 12 tasks fire in one catch-up burst on wake (09:12–09:18Z today) in registration order — which ran the AM brief before the sweep it reads and shipped a would-be-stale digest. Two clean options: keep the Mac awake 00:30–01:15Z (caffeinate / Power Nap / scheduled wake), OR move both the brief and sweep crons into an hour the machine is reliably awake. New dashboard Waiting W7. This is the one fix that makes every other autonomous system report on time.",
           "project": "hq",
           "area": "Dashboard / Infra",
-          "tag": "2 MIN FIX",
+          "tag": "NEW · DIAGNOSED",
           "tagType": "red"
         },
         {
-          "lead": "Diagnose the Jul 27–28 pipeline blackout — same sitting",
-          "detail": "Second blackout this month: Jul 21–23 went dark, Jul 24 resumed sweep-only, Jul 25 PM and Jul 26 AM delivered, then Jul 26 PM generated a raw uncurated skeleton and Jul 27–28 produced nothing. Root cause still unfound from the first occurrence. Check the scheduled-task config and whether the same permission problem that freezes the autoloop also starves the brief tasks. A reporting layer that silently skips days is how an unmade IRS call stays invisible for 72 hours.",
+          "lead": "Flip Full Disk Access — 2 minutes, 31 days, failed again this morning",
+          "detail": "System Settings → Privacy & Security → Full Disk Access → enable the launchd runner. Today's 09:02 IST retry wrote another 'Operation not permitted' line to oraya-autoloop/logs/launchd.err.log — the 31st straight failure on the same checkbox since Jun 28. Flip it and the next scheduled run executes autoloop cycle 11 unattended under guardrails.md, no further founder input ever again. Do it in the same sitting as the wake-window fix — they are the two halves of getting autonomy back on its feet.",
           "project": "hq",
           "area": "Dashboard / Infra",
-          "tag": "RECURRING",
+          "tag": "2 MIN FIX",
           "tagType": "red"
         },
         {
@@ -228,7 +216,7 @@
         },
         {
           "lead": "Wire the brief true-send or clear the stacked drafts",
-          "detail": "20+ AM/PM brief drafts have piled up unsent since Jun 28 because the n8n SCHEDULE true-send was never wired — founders only see briefs via the live board or by opening Drafts by hand. Import the SCHEDULE workflow and attach Gmail OAuth, or archive the stale drafts and rely on the published page. Either way, stop the pile growing.",
+          "detail": "24 AM/PM brief drafts have piled up unsent since Jun 26 (counted exactly this morning) because the n8n SCHEDULE true-send was never wired — founders only see briefs via the live board or by opening Drafts by hand. Import the SCHEDULE workflow and attach Gmail OAuth, or archive the stale drafts and rely on the published page. Either way, stop the pile growing — and note the wake-window fix is what makes the SCHEDULE send fire on time once it is wired.",
           "project": "hq",
           "area": "Dashboard / Infra"
         },
@@ -240,7 +228,7 @@
         },
         {
           "lead": "Refresh the ATTOM key + fund BatchData",
-          "detail": "ATTOM trial key has returned 401 for 32 days — re-provision at api.developer.attomdata.com and overwrite .oraya-credentials/attom_api_key. BatchData token authenticates but sits at $0; ~$20–30 unblocks skip-trace on the 77 HOF leads (~$0.15/lookup). Both are top-of-funnel plumbing for a funnel still compliance-gated, so they are cheap to do and not urgent — but the 401 has now outlived the gate it feeds.",
+          "detail": "ATTOM trial key has returned 401 for 32 days — re-provision at api.developer.attomdata.com and overwrite .oraya-credentials/attom_api_key. BatchData token authenticates but sits at $0; ~$20–30 unblocks skip-trace on the 77 HOF leads (~$0.15/lookup). Both are top-of-funnel plumbing for a funnel still compliance-gated — cheap to do, not urgent, but the 401 has now outlived the gate it feeds.",
           "project": "insurance",
           "area": "Data"
         },
@@ -259,32 +247,32 @@
       "accent": "violet",
       "tasks": [
         {
-          "lead": "Inbox live-verified quiet — 12th straight sweep",
-          "detail": "Gmail OAuth held in this scheduled run. Four searches this morning: full inbox 5 days, EIN/IRS/SS-4/RedFax/A2P 14 days, Mercedes/dealership/Greg/Honda/opt-in/lead 14 days, and everything-anywhere 4 days — all returned zero. Newest real inbox mail is still Jun 26. No EIN reply, no Mercedes follow-up, no inbound lead. The silence is now a 14-day verified fact, not an assumption, which is what makes the outbound taps the only things that can move.",
+          "lead": "Inbox re-verified quiet at the PM run — 0 hits",
+          "detail": "Two live Gmail searches this PM edition: full inbox 3 days and the 14-day watch-list (EIN/IRS/RedFax/SS-4/A2P · Mercedes/dealership/opt-in/lead) — both returned zero. Newest real inbox mail is still Jun 26. No EIN reply, no Mercedes follow-up, no inbound lead has landed between the AM sweep and now, so the outbound taps remain the only things that can move the board today.",
           "project": "hq",
           "area": "Monitoring"
         },
         {
-          "lead": "Reported the Jul 27–28 blackout rather than papering over it",
-          "detail": "Found Jul 26 AM was the last curated brief; the Jul 26 PM edition left a raw uncurated skeleton in brief_data.json and was never published or logged, and Jul 27–28 produced nothing at all. This edition restores cadence, logs the gap honestly, and hands the root-cause diagnosis to Chitraksh alongside the Full Disk Access toggle — the two failures may share a permission.",
+          "lead": "This PM brief is the first edition carrying today's root-cause sweep",
+          "detail": "The wake-burst ran the AM brief (09:12Z) before the cofounder sweep (09:18Z) it is designed to read — the exact defect the sweep then diagnosed. This PM edition, running later in the day, is the first to fold in the full Jul 29 finding: the scheduler wake window (Waiting W7) as the reason autonomy keeps going dark, handed to Chitraksh as a concrete two-line fix rather than an open investigation.",
           "project": "hq",
           "area": "Dashboard / Infra"
         },
         {
-          "lead": "Brief rebuilt from the v15.4 Signal board and published",
-          "detail": "The frozen v14 auto-parse (Envision Honda walk-in / Day 138 / v12.0 dashboard push) was fully replaced across headline, spotlight and all three lanes with current truth from the ORAYA DATA block. Published to the live board and dropped as a full-detail Gmail draft to both founders; index.html read-only per protocol.",
+          "lead": "Root cause found + dashboard pushed v15.5, live-verified",
+          "detail": "The AM sweep pinned the repeat blackouts (Jul 21–23, Jul 25–28) to the machine-wake catch-up burst — all 12 tasks stamped 09:12–09:18Z, none at their cron — and patched the dashboard to v15.5 via the template script (7 surgical patches incl. new Waiting W7). Verified before push (node --check OK, ORAYA evaluated live, archive 204→205, decisions untouched, v14 backup byte-identical), pushed clean (commit a9a20f4), Vercel re-fetched and confirmed serving v15.5.",
           "project": "hq",
           "area": "Dashboard / Infra"
         },
         {
           "lead": "Autoloop failure confirmed at the log, not assumed",
-          "detail": "Checked oraya-autoloop/logs/launchd.err.log directly: fresh entry at 09:02 IST today, 'oraya-loop.sh: Operation not permitted'. That is direct evidence the scheduler is alive and firing on time and that the only thing stopping cycle 11 is the macOS Full Disk Access grant — not a broken plist, not a bad path.",
+          "detail": "Checked oraya-autoloop/logs/launchd.err.log directly: fresh entry at 09:02 IST today, 'oraya-loop.sh: Operation not permitted'. Direct evidence the scheduler is alive and firing and that the only thing stopping cycle 11 is the macOS Full Disk Access grant — not a broken plist, not a bad path. Pairs with the wake-window finding: launchd fires, it just fires late and without the permission it needs.",
           "project": "hq",
           "area": "Dashboard / Infra"
         },
         {
-          "lead": "Day-count audit — every clock, Jul 26 AM → Jul 29 AM",
-          "detail": "Batch 1 postable 14 → 17 days · Mercedes owed 16 → 19 days · Fable unconfirmed 7 → 10 days · autoloop frozen 28 → 31 days · EIN silent 28 → 31 days · ATTOM 401 for 32 days. Three days elapsed, three days added to all five, nothing closed. Two of the five (Batch 1, Full Disk Access) needed nobody's permission on any of those days.",
+          "lead": "Day-count audit — every clock still ticking",
+          "detail": "Batch 1 postable 17 days · Mercedes owed 19 days · Fable unconfirmed 10 days · autoloop frozen 31 days · EIN silent 31 days · ATTOM 401 for 32 days · 24 brief drafts stacked unsent since Jun 26. Nothing closed between the AM and PM editions — as expected, the movers are all founder-side and land in Frankie's PT-morning window that is opening now.",
           "project": "hq",
           "area": "Monitoring"
         }
@@ -293,36 +281,40 @@
   ],
   "cofounder": {
     "date": "2026-07-29",
-    "scanned_at": "2026-07-29T09:16:27.644Z",
+    "scanned_at": "2026-07-29T14:05:00.000Z",
     "done": [
       {
-        "what": "Inbox verified LIVE this AM run — four targeted searches (full inbox 5d · EIN/IRS/RedFax/A2P 14d · Mercedes/dealership/opt-in 14d · everything-anywhere 4d) all returned 0. 12th consecutive quiet check; newest real mail still Jun 26.",
+        "what": "PM inbox re-check LIVE — full inbox 3d + the 14-day watch-list both returned 0. 12th consecutive quiet read; newest real mail still Jun 26. Nothing landed between the AM sweep and this PM edition.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Caught and reported a second pipeline blackout: Jul 26 PM generated a raw skeleton that was never curated or published, and Jul 27–28 produced nothing. Jul 26 AM was the last real brief — this edition is the first in ~73h and restores cadence.",
+        "what": "Folded in today's root-cause finding: the recurring blackouts (Jul 21–23, Jul 25–28) are the machine-wake catch-up burst — all 12 tasks fired 09:12–09:18Z, none at their IST cron — and that order ran the AM brief before this sweep. New Waiting W7 = keep the Mac awake in the window or move both crons.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Confirmed the autoloop failure at source rather than assuming it: launchd.err.log took a fresh 'Operation not permitted' line at 09:02 IST today. Scheduler is firing on time; only the Full Disk Access grant is missing.",
+        "what": "Confirmed the autoloop failure at source: launchd.err.log took a fresh 'Operation not permitted' line at 09:02 IST today. Scheduler is firing; only the Full Disk Access grant is missing.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Rebuilt this brief from the v15.4 Signal DATA block — the stale v14 auto-parse (Envision Honda / Day 138 / v12.0) fully replaced across headline, spotlight and all three lanes. index.html read-only per protocol.",
+        "what": "Dashboard is live at v15.5 (AM sweep, commit a9a20f4, Vercel-verified); this PM brief rebuilt from that same v15.5 Signal DATA block — stale v14 auto-parse (Envision Honda / Day 138 / v12.0) fully replaced across headline, spotlight and all three lanes. index.html read-only per protocol.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Day-count audit across the 3-day gap: all five gates aged, none closed. Two of the five needed no permission from anyone on any of those days.",
+        "what": "Counted the unsent Daily Brief drafts exactly: 24 stacked Jun 26 → Jul 29. True-send still not wired (tools chip t5); the wake-window fix is what makes the SCHEDULE send fire on time once imported.",
         "who": "CTO-Claude"
       }
     ],
     "waiting": [
       {
-        "what": "LinkedIn Batch 1 post (personal + both company pages) — postable 17 days, gates every PhantomBuster sequence. Third consecutive brief naming it the keystone.",
+        "what": "Scheduler wake window — keep the Mac awake 00:30–01:15Z (caffeinate / Power Nap / scheduled wake) or move both brief+sweep crons to a known-awake hour. This is why autonomy keeps going dark and why the AM brief read before the sweep.",
+        "who": "Chitraksh"
+      },
+      {
+        "what": "LinkedIn Batch 1 post (personal + both company pages) — postable 17 days, gates every PhantomBuster sequence. Fourth consecutive brief naming it the keystone.",
         "who": "Both"
       },
       {
-        "what": "IRS EIN call at 8 AM PT + RedFax 510-497-1224 check — 31 days silent, Monday's attempt unconfirmed. One line back either way.",
+        "what": "IRS EIN call at 8 AM PT (1-202-488-3100) + RedFax 510-497-1224 check — 31 days silent, Monday's attempt unconfirmed. One line back either way.",
         "who": "Frankie"
       },
       {
@@ -338,11 +330,7 @@
         "who": "Chitraksh"
       },
       {
-        "what": "Diagnose the recurring brief/sweep blackout (Jul 21–23, then Jul 27–28) — may share a permission with the autoloop freeze.",
-        "who": "Chitraksh"
-      },
-      {
-        "what": "Wire the n8n SCHEDULE true-send or archive the 20+ unsent brief drafts stacked since Jun 28.",
+        "what": "Wire the n8n SCHEDULE true-send or archive the 24 unsent brief drafts stacked since Jun 26.",
         "who": "Chitraksh"
       }
     ]
