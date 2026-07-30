@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-07-30T01:08:16.573Z",
+  "generated_at": "2026-07-30T15:20:38.484Z",
   "date_label": "Thu · Jul 30",
-  "edition": "AM",
+  "edition": "PM",
   "day_number": 201,
-  "phase": "Day 201 — cadence restored, and the silence gets a second explanation",
-  "headline": "Twelve straight \"inbox quiet\" sweeps may have been reading the wrong mailbox. This morning's 00:52Z sweep found the connected Gmail bound to orayaassistant@gmail.com — not hanfluxai — which means the IRS confirmation we've counted 32 silent days for, Mercedes' follow-up, and any dealership mail could have landed somewhere nothing watches. That makes today's cheapest move a one-minute mailbox check, not another day of waiting. The good news arrives in the same sweep: cadence is genuinely back — six consecutive tasks fired at their true cron and the sweep ran 28 minutes BEFORE this brief for the first time since Jul 21, so you are reading a same-morning digest instead of a five-day-old one. Thursday is a full business day on both sides and the three permission-free moves have not moved: post Batch 1 (18 days), call the EIN line at 8 AM PT, flip one Mac toggle.",
-  "source": "index.html · ORAYA DATA v15.6 Signal board (curated AM Jul 30)",
+  "phase": "Day 201 PM — the wrong-mailbox finding hardens to fact; the IST day moved nothing",
+  "headline": "PT morning, Day 201 — the mailbox finding just hardened from suspicion to fact. A live inbox check this run reads the Gmail connector as orayaassistant@gmail.com in the recipient field itself, watch-list empty across 14 days, newest mail still Jun 26 — so “the IRS has been silent 32 days” and “Mercedes never replied” are now claims about one inbox nobody chose, not about reality. That makes today's highest-leverage move cost sixty seconds and zero phone calls: open hanfluxai@gmail.com and the founders' own inboxes, search EIN / Mercedes / dealership, and find out whether a gate you've been counting silent days against is already closed. The IST workday closed with nothing moved — insurance funnel unchanged since Jul 15, no new transcripts, every gate one day older — so the same permission-free moves sit exactly where the AM brief left them: post Batch 1 (18 days, the keystone that unlocks every Phantom), send Mercedes its receipts (20 days, a working dealership day), and — only if the mailbox check comes up empty — dial the EIN line at 8 AM PT.",
+  "source": "index.html · ORAYA DATA v15.6 Signal board (curated PM Jul 30)",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -72,39 +72,39 @@
   "spotlight": [
     {
       "icon": "📬",
-      "title": "Confirm which mailbox the watch-list actually lands in — one minute, and it may explain everything",
-      "who": "Chitraksh",
-      "detail": "This morning's sweep found the Gmail connector authenticated as orayaassistant@gmail.com. Every \"inbox quiet\" line in every brief since Jul 15 — twelve consecutive sweeps, 21 threads, newest real mail Jun 26 — describes that mailbox and only that mailbox. If the IRS reply to the Jun 28 re-fax, Mercedes' response thread, or dealership mail from Greg or Mo were addressed to hanfluxai@gmail.com or a founder address, they have been sitting unread while the sweep reported silence. The check itself is trivial: open hanfluxai@gmail.com and the founder inboxes, search EIN / IRS / Mercedes / Envision, and tell the next sweep which address to watch. The cost of skipping it is the expensive part — it is entirely possible that one of the five open gates is already closed and nobody knows. Do this before dialling anyone.",
+      "title": "Check the inbox nobody chose — confirmed this run, and it may already have closed a gate",
+      "who": "Both",
+      "detail": "This morning's suspicion is now a fact you can see: a live search this run returned the Gmail connector's own messages addressed to orayaassistant@gmail.com — the one mailbox every “inbox quiet” line has ever described (13 reads now, 21 threads, newest real mail Jun 26). If the IRS reply to the Jun 28 re-fax, Mercedes' response, or dealership mail from Greg or Mo went to hanfluxai@gmail.com or a founder's own address, it has sat unread while the sweep reported silence — and one of the five open gates may already be closed. The fix is sixty seconds: open hanfluxai@gmail.com and both founder inboxes, search EIN / IRS / Mercedes / Envision, and tell the next sweep which address is authoritative. Do this before dialling anyone — it can turn a 32-day phone-chase into a screenshot.",
       "project": "hq",
       "area": "Ops / Monitoring"
     },
     {
       "icon": "🔗",
-      "title": "Post Batch 1 — 18 days postable, fourth consecutive brief naming it the keystone",
+      "title": "Post Batch 1 — 18 days postable, and the only keystone that needs no one's permission",
       "who": "Both",
-      "detail": "6–7 reels declared ready Jul 12. Both Pages (Hanflux AI 108417292 · Oraya AI 133377633) have carried real Overview and positioning copy since Jul 19, so the \"they see it's blank and then they go away\" problem the entire plan was built around is already solved — the only missing ingredient is posts. This needs no IRS reply, no Fable access, no compliance clearance, no spend and no third party: two founders mutually pick reels and hit post on personal + both company pages. Until it lands every PhantomBuster sequence stays dark — connect-requests to dealership GMs and CEOs, follow-ups, page-invites, all of it — and the free tier's ~2h of execution time keeps expiring as calendar, not work. Hanflux is showing +430% search appearances on the name alone with nothing to land on. Eighteen days is now longer than the gate has existed as an idea.",
+      "detail": "6–7 reels declared ready Jul 12. Both Pages (Hanflux AI 108417292 · Oraya AI 133377633) have carried real Overview and positioning copy since Jul 19, so the “they see it's blank and then they go away” problem the whole plan was built around is already solved — the only missing ingredient is posts. This needs no IRS reply, no Fable access, no compliance clearance, no spend and no third party: two founders mutually pick reels and hit post on personal + both company pages. Until it lands every PhantomBuster sequence stays dark — connect-requests to dealership GMs and CEOs, follow-ups, page-invites, all of it — and the free tier's ~2h of execution time keeps expiring as calendar, not work. Hanflux is showing +430% search appearances on the name alone with nothing to land on.",
       "project": "hq",
       "area": "Growth"
     },
     {
-      "icon": "📞",
-      "title": "IRS EIN — 32 days silent, line open 8 AM PT, and check RedFax before you dial",
+      "icon": "🤝",
+      "title": "Send Mercedes its receipts — 20 days, a working dealership day, the ball entirely in our court",
       "who": "Frankie",
-      "detail": "Re-faxed Jun 28; the \"~8 business day\" window closed Jul 11 and every watch-list search since has returned nothing — with the caveat above, that silence is now less trustworthy, not more. Two Monday 8 AM PT windows (Jul 27, and the Jul 13 plan before it) passed with no confirmed attempt. Thursday reopens the same door: call 1-202-488-3100 the moment lines open, expect auto-disconnects and redial, and have the SS-4 details in front of you so the call confirms rather than searches. Check RedFax 510-497-1224 first — a reply may already be sitting there. One line back either way — \"called, here's what they said\" or \"didn't get to it\" — converts 32 days of guessing into a fact the next brief can build on.",
-      "project": "ops",
-      "area": "Legal / Entity"
+      "detail": "Their reply landed Jul 10 and hits twenty days unanswered today — the longest-running item where nobody is blocking us but us. The weapon hasn't dulled: timestamped screenshots of their own chatbot's multi-day response delay, then the pitch (voice AI + automation), then the ask — a live call where the Oraya agent demos itself by placing it. Thursday PT is a working day on a dealership floor, so a reply written this morning can land while someone is there to read it. This has been queued as 'write it, send it' in five consecutive briefs; it needs no IRS number, no Fable, no spend — only the ten minutes to write it. (First, though, the mailbox check above: their newer reply may already be sitting in hanfluxai.)",
+      "project": "insurance",
+      "area": "Dealership"
     }
   ],
   "blockers": [
     {
-      "label": "Watch-list mailbox unverified — 12 sweeps possibly read the wrong inbox",
+      "label": "Watch-list mailbox — CONFIRMED bound to orayaassistant@gmail.com; founders' inbox unchecked",
       "scope": "Chitraksh",
-      "detail": "NEW this morning. The Gmail connector is bound to orayaassistant@gmail.com; the watch-list (EIN/IRS, A2P, dealership/Envision/Greg/Mo, cancellations, opt-in) has only ever been run against that account. Unblock: check hanfluxai@gmail.com and both founder inboxes for the same terms, then tell CTO-Claude which mailbox is authoritative so the next sweep watches the right one."
+      "detail": "Hardened from suspicion this run: a live inbox search returned the connector's own mail addressed to orayaassistant@gmail.com, so every watch-list sweep (EIN/IRS, A2P, dealership/Envision/Greg/Mo, cancellations, opt-in) has only ever read that one account. Unblock: check hanfluxai@gmail.com and both founder inboxes for the same terms, then tell CTO-Claude which mailbox is authoritative so the monitoring layer watches the right one. Until then, “32 days silent” is a fact about the wrong inbox."
     },
     {
       "label": "IRS EIN — 32 days silent · line open today 8 AM PT",
       "scope": "Frankie",
-      "detail": "Re-faxed Jun 28, window closed Jul 11, no signal since — possibly because we were watching the wrong mailbox. Unblock: RedFax 510-497-1224 first, then dial 1-202-488-3100 at 8 AM PT with SS-4 details in hand. Report one line either way."
+      "detail": "Re-faxed Jun 28, window closed Jul 11, no signal since — possibly because the watch-list was reading orayaassistant, not the account the IRS would reply to. Unblock in order: check hanfluxai + the founder inboxes and RedFax 510-497-1224 first, and only if all three are empty, dial 1-202-488-3100 at 8 AM PT with the SS-4 details in hand. Report one line either way."
     },
     {
       "label": "Mercedes receipts-reply — 20 days · WE owe THEM",
@@ -159,7 +159,7 @@
       "tasks": [
         {
           "lead": "Call the IRS EIN line at 8 AM PT — 32 days silent",
-          "detail": "Re-faxed Jun 28; the ~8-business-day window closed Jul 11. Check RedFax 510-497-1224 first — with this morning's mailbox finding, a reply may have landed somewhere nobody was watching. Then dial 1-202-488-3100 the moment lines open, expect auto-disconnects and redial, and have the SS-4 details in front of you so the call is a confirmation rather than a search. Two Monday windows have now passed with no confirmed attempt. One line back either way ends 32 days of guessing.",
+          "detail": "Re-faxed Jun 28; the ~8-business-day window closed Jul 11. With this run's confirmed finding that the sweep reads orayaassistant@gmail.com, the reply the IRS would send may be in hanfluxai or a founder inbox nobody watched — so check those and RedFax 510-497-1224 FIRST. Only if all are empty, dial 1-202-488-3100 the moment lines open at 8 AM PT, expect auto-disconnects and redial, and have the SS-4 details in front of you so the call confirms rather than searches. One line back either way ends 32 days of guessing.",
           "project": "ops",
           "area": "Legal / Entity",
           "tag": "32 DAYS",
@@ -222,11 +222,11 @@
       "accent": "violet",
       "tasks": [
         {
-          "lead": "Verify the watch-list mailbox — the newest item on the board and the cheapest",
-          "detail": "The Gmail connector authenticates as orayaassistant@gmail.com. Twelve consecutive 'inbox quiet' sweeps describe that mailbox alone, so any EIN, Mercedes or dealership reply addressed to hanfluxai@gmail.com or a founder address has been invisible to the monitoring layer this whole time. Check the same watch-list terms in hanfluxai and both founder inboxes, then tell CTO-Claude which address is authoritative. One of the five open gates may already be closed.",
+          "lead": "Check the founders' real inbox — the binding is confirmed, the answer is not",
+          "detail": "Settled this run: the Gmail connector authenticates as orayaassistant@gmail.com — a live search returned its own mail in the recipient field, so 13 straight “inbox quiet” reads describe that account and only that account. The open half is the one that matters: sign into hanfluxai@gmail.com and both founder inboxes, run the same watch-list terms (EIN/IRS, Mercedes, dealership/Envision/Greg/Mo), and tell CTO-Claude which address is authoritative so the next sweep watches the right one. One of the five open gates may already be closed.",
           "project": "hq",
           "area": "Ops / Monitoring",
-          "tag": "NEW TODAY",
+          "tag": "CONFIRMED",
           "tagType": "amber"
         },
         {
@@ -312,19 +312,19 @@
       "accent": "sky",
       "tasks": [
         {
-          "lead": "Cadence restored — and this brief is the proof",
-          "detail": "The sweep fired at 00:38Z on its real cron, 28 minutes before this brief was due at 01:06Z. That is the designed sweep→brief order for the first time since the Jul 21 regression, which means you are reading a same-morning digest rather than a five-day-old one. Six consecutive tasks have now fired inside their true cron windows since the Jul 29 catch-up burst: ny-briefing 11:49Z, brief-PM 14:03Z, ny-open 14:32Z, ny-late 18:06Z, eod-review 21:34Z, cofounder-worker 00:38Z.",
+          "lead": "PM edition ran on cron — cadence is holding into a second day",
+          "detail": "The sweep→brief order that returned this morning is still intact: brief-PM fired at 14:03Z on its real cron per the recovery count, and this PM edition is generating in its window rather than in a wake-burst. Seven-plus consecutive tasks have now fired inside their true cron windows since the Jul 29 catch-up burst. The caveat from the AM brief stands unchanged — nothing was fixed on the Mac, so one sleep cycle through 00:30–01:15Z re-breaks the chain (W7 stays open).",
           "project": "hq",
           "area": "Monitoring",
           "tag": "ORDER OK",
           "tagType": "green"
         },
         {
-          "lead": "Found the mailbox binding — and did not close W7 to celebrate it",
-          "detail": "The connected Gmail is orayaassistant@gmail.com, not hanfluxai. Reported rather than assumed away: twelve straight quiet sweeps may be a monitoring artefact rather than genuine silence, which changes what 32 days of EIN quiet actually means. W7 also stayed deliberately open — the scheduler works today because the Mac stayed awake, not because anything was fixed.",
+          "lead": "PM live recheck — the mailbox binding is now confirmed, not inferred",
+          "detail": "The AM sweep suspected the connector was orayaassistant@gmail.com; this PM run proved it by searching the mailbox directly and reading orayaassistant@gmail.com straight out of the recipient field of the only two recent messages (both automated notices). That upgrades twelve+ “inbox quiet” sweeps from “genuine silence” to “silence on one unchosen inbox,” which is exactly why the founders' own inbox check is now the cheapest move on the board.",
           "project": "hq",
           "area": "Monitoring",
-          "tag": "NEW FINDING",
+          "tag": "CONFIRMED",
           "tagType": "amber"
         },
         {
@@ -334,8 +334,14 @@
           "area": "Dashboard / Infra"
         },
         {
-          "lead": "Inbox swept live — 0 hits, twelfth consecutive quiet check",
-          "detail": "Gmail OAuth clean this run. Zero watch-list hits across EIN/IRS, A2P, dealership/Envision/Greg/Mo, cancellations and opt-in/lead. 21 inbox threads, newest real mail still Jun 26. Reported with the mailbox caveat attached rather than as another clean bill of health. 0 drafts needed — every item is an automated notice.",
+          "lead": "PM inbox recheck — 0 hits, 13th consecutive quiet read",
+          "detail": "Ran the watch-list live again this run: 0 threads in the last 2 days, 0 across a 14-day EIN / IRS / Mercedes / dealership / Envision / opt-in / unsubscribe search, newest inbox mail still the Jun 26 Anthropic privacy-policy notice. Every hit remains an automated notice — 0 drafts needed — but reported with the confirmed mailbox caveat attached, not as another clean bill of health.",
+          "project": "hq",
+          "area": "Monitoring"
+        },
+        {
+          "lead": "Nothing moved on the IST side — the day added age, not progress",
+          "detail": "Confirmed against the sources rather than assumed: insurance_leadgen_state.json is unchanged since the Jul 15 voice-stack entry (same USER gates — Lob, BatchData, CA data-broker, TCPA counsel), 0 new transcripts since May 18, and no gate closed during the IST workday. So the AM split of who-owns-what carries into Frankie's PT morning intact — EIN 32d, autoloop 32d, ATTOM 401 33d, Mercedes 20d, Batch 1 18d, Fable 11d, each one day older and none done.",
           "project": "hq",
           "area": "Monitoring"
         },
@@ -411,7 +417,7 @@
     ],
     "waiting": [
       {
-        "what": "Confirm which mailbox the watch-list actually lands in — the sweep reads orayaassistant@gmail.com; if IRS/Mercedes/dealership mail goes to hanfluxai or a founder address, 12 quiet sweeps have been checking the wrong inbox",
+        "what": "Check the founders' real inbox — CONFIRMED this run the sweep reads orayaassistant@gmail.com; if IRS/Mercedes/dealership mail lands in hanfluxai or a founder address, 13 quiet reads have watched the wrong one",
         "who": "Chitraksh"
       },
       {
