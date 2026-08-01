@@ -5,8 +5,8 @@
   "edition": "AM",
   "day_number": 203,
   "phase": "Growth Engine ramp — LinkedIn content gate + compliance-blocked P2 funnel",
-  "headline": "Day 203 — the Jul 30 \"cadence restored\" call didn't survive one sleep cycle: Jul 31 shipped zero briefs and zero sweeps, and this AM edition itself landed ~9.5h past its 06:30 IST target — live proof W7 is still broken. Saturday is still a clean no-office-hours window for the three real moves: post LinkedIn Batch 1, send the overdue Mercedes reply, and this time actually fix the scheduler instead of re-declaring it fixed.",
-  "source": "index.html ORAYA DATA block (v15.6 Signal, meta.updated 2026-07-30) — focus/fronts/waiting/tools sections; cofounder digest last refreshed Jul 30 (no Jul 31 sweep ran, stale v14/May-28 auto-parse fully replaced)",
+  "headline": "Day 203 — the Jul 30 \"cadence restored\" call didn't survive one sleep cycle, and it's now API-verified, not just inferred: the Aug 1 cofounder sweep confirms 5 tasks clustered 10:13–10:18Z today (none at their real cron) and that cofounder-worker skipped Jul 31 entirely. Saturday is still a clean no-office-hours window for the three real moves: post LinkedIn Batch 1, send the overdue Mercedes reply, and this time actually fix the scheduler instead of re-declaring it fixed.",
+  "source": "index.html ORAYA DATA block (v15.7 Signal, meta.updated 2026-08-01) — focus/fronts/waiting/tools + archive[am-sweep-2026-08-01]; a fresher cofounder sweep landed mid-session (fired 2 min after this brief's own run) and its findings were folded in on republish. Stale v14/May-28 auto-parse fully replaced.",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -71,7 +71,7 @@
     {
       "label": "Scheduler regression",
       "scope": "Chitraksh",
-      "detail": "Jul 30's \"cadence restored\" call lasted one day — Jul 31 shipped zero brief/sweep activity and this AM edition itself landed ~9.5h past its 06:30 IST target. Unblock: caffeinate/scheduled-wake 00:30–01:15Z IST, or move both crons to a known-awake hour."
+      "detail": "Jul 30's \"cadence restored\" call lasted one day — confirmed via the scheduled-tasks API (non-LLM signal): 5 tasks clustered 10:13–10:18Z today, none at their real morning cron, and cofounder-worker skipped Jul 31 entirely. Unblock: caffeinate/scheduled-wake 00:30–01:15Z IST, or move both crons to a known-awake hour."
     },
     {
       "label": "LinkedIn content gate",
@@ -239,7 +239,7 @@
       "tasks": [
         {
           "lead": "Found today's hardest proof of the W7 regression",
-          "detail": "Jul 31 produced zero brief/sweep activity anywhere in the workspace, and this AM edition itself ran ~9.5h past its 06:30 IST target (published 10:18 UTC / ~15:48 IST). Flagged for Chitraksh rather than absorbed silently.",
+          "detail": "Jul 31 produced zero brief/sweep activity anywhere in the workspace, and this AM edition itself ran ~9.5h past its 06:30 IST target. Independently corroborated minutes later: the Aug 1 cofounder sweep verified the same burst via the scheduled-tasks API (5 tasks, 10:13–10:18Z) and confirmed cofounder-worker skipped Jul 31 entirely. Flagged for Chitraksh rather than absorbed silently.",
           "tag": "REGRESSION FOUND",
           "tagType": "red",
           "project": "hq",
@@ -254,8 +254,8 @@
           "area": "Daily Brief Pipeline"
         },
         {
-          "lead": "Flagged the cofounder digest as stale",
-          "detail": "No fresher cofounder sweep exists past Jul 30 — this edition carries that vintage explicitly rather than presenting it as same-day.",
+          "lead": "Caught and folded in a fresher sweep mid-session",
+          "detail": "The Jul 30 cofounder digest was flagged as stale on first pass; a real Aug 1 sweep then landed 2 minutes after this brief's own scheduled run, so this edition was corrected and republished with the same-day findings instead of shipping the stale ones.",
           "tag": "",
           "tagType": "",
           "project": "hq",
@@ -287,7 +287,7 @@
         },
         {
           "lead": "Publish, draft, and log this edition",
-          "detail": "Push to Vercel, create the Gmail draft to both founders, append the brief_log line. Real send still depends on the n8n SCHEDULE workflow import + Gmail OAuth — 25+ drafts stacked unsent since Jun 26 (webhook_url empty in config.json).",
+          "detail": "Push to Vercel, create the Gmail draft to both founders, append the brief_log line. Real send still depends on the n8n SCHEDULE workflow import + Gmail OAuth — 27 drafts stacked unsent Jun 26→Jul 30, 34 in the mailbox all-in (webhook_url empty in config.json).",
           "tag": "",
           "tagType": "",
           "project": "hq",
@@ -297,30 +297,27 @@
     }
   ],
   "cofounder": {
-    "date": "2026-07-30",
-    "scanned_at": "2026-07-30T00:52:00Z",
+    "date": "2026-08-01",
+    "scanned_at": "2026-08-01T10:18:25Z",
     "done": [
-      { "what": "Cadence is BACK — and this run proves it: the sweep fired at 00:38Z on its real cron and the AM brief is due 01:06Z, so for the first time since the Jul 21 regression the brief is reading a same-morning digest instead of a days-old one.", "who": "CTO-Claude" },
-      { "what": "Counted the recovery precisely: six consecutive scheduled tasks have fired inside their true cron windows since the Jul 29 catch-up burst — ny-briefing 11:49Z, brief-PM 14:03Z, ny-open 14:32Z, ny-late 18:06Z, eod-review 21:34Z, cofounder-worker 00:38Z.", "who": "CTO-Claude" },
-      { "what": "Held W7 open on purpose rather than closing it: nothing was actually fixed on the Mac — it just stayed awake through the window, so one sleep cycle through 00:30-01:15Z re-breaks the whole chain.", "who": "CTO-Claude" },
-      { "what": "Inbox scan LIVE (Gmail OAuth clean): 12th straight quiet sweep — 0 watch-list hits across EIN/IRS, A2P, dealership/Envision/Greg/Mo, cancellations and opt-in/lead. 21 inbox threads, newest real mail still Jun 26.", "who": "CTO-Claude" },
-      { "what": "Found something worth a look: the connected Gmail is orayaassistant@gmail.com, not the hanfluxai account — 12 straight silent sweeps may partly mean this sweep is reading the wrong mailbox, so the IRS/Mercedes/dealership replies could be landing somewhere unwatched.", "who": "CTO-Claude" },
-      { "what": "Re-counted the unsent brief drafts: 25 now stacked Jun 26 → Jul 29 (+1 from the Jul 29 PM edition), 32 drafts in the mailbox all-in — tools chip t5 carries the hard number.", "who": "CTO-Claude" },
-      { "what": "Transcript check: 0 new since May 18 (workspace scan + email attachments) — board ingest skipped, nothing to fold in.", "who": "CTO-Claude" },
-      { "what": "Dashboard patched to v15.6 via a proper bin/_TEMPLATE_dashboard_patch.py copy — 8 surgical patches (meta version/updatedBy/subtitle/changelog, new archive card, W7 recovery note, W1 to 32 days, T5 draft count).", "who": "CTO-Claude" },
-      { "what": "Verified before pushing: node --check OK on the 157K-char script block, ORAYA evaluated live in node (12 keys intact), archive grew by exactly 1 (205→206) with 0 duplicate ids, decisions untouched at 10, v14 backup intact.", "who": "CTO-Claude" },
-      { "what": "Pushed dashboard clean — commit ec73045; live site re-fetched and confirmed serving v15.6 / updated 2026-07-30 with the new sweep card.", "who": "CTO-Claude" },
-      { "what": "0 drafts needed — every inbox item is an automated notice; nothing required a reply this run.", "who": "CTO-Claude" }
+      { "what": "Verified via the scheduled-tasks API (non-LLM signal, not a guess): 5 tasks — london-mid-scan, eod-review, london-briefing-v2, daily-brief-am, cofounder-worker — all clustered 10:13:25Z–10:18:25Z today, none at their designed IST morning cron.", "who": "CTO-Claude" },
+      { "what": "Confirmed cofounder-worker has no run logged for Jul 31 at all — it didn't just run late, it skipped the day entirely before rejoining today's burst.", "who": "CTO-Claude" },
+      { "what": "Sweep→brief order re-inverted: daily-brief-am fired 10:16:26Z, this sweep 10:18:25Z — brief-first again, 2 minutes apart. Jul 30's 'restored' status was a one-night fluke, not a fix.", "who": "CTO-Claude" },
+      { "what": "Inbox scan LIVE: 13th straight quiet sweep, 0 watch-list hits across EIN/IRS, A2P, dealership/Envision/Greg/Mo, cancellations, opt-in/lead. 21 threads unchanged, newest real mail still Jun 26. Mailbox still orayaassistant@gmail.com, not hanfluxai — still unconfirmed.", "who": "CTO-Claude" },
+      { "what": "Recounted the draft stack from scratch instead of carrying the old number forward: 27 unsent Jun 26→Jul 30 (was reported as 25 on Jul 30), 34 in the mailbox all-in — 7 of those pre-date the brief system entirely (Apr 18-29).", "who": "CTO-Claude" },
+      { "what": "Transcript check: 0 new since May 18 — board ingest skipped again, nothing to fold in.", "who": "CTO-Claude" },
+      { "what": "Patched index.html to v15.7 and pushed clean — W7 reopened in substance (not just left open on principle): the underlying Mac-sleep problem is confirmed unfixed, Jul 30 was luck.", "who": "CTO-Claude" },
+      { "what": "0 drafts created — mailbox had zero new mail that needed a reply this run.", "who": "CTO-Claude" }
     ],
     "waiting": [
-      { "what": "Confirm which mailbox the watch-list actually lands in — the sweep reads orayaassistant@gmail.com; if IRS/Mercedes/dealership mail goes to hanfluxai or a founder address, 12 quiet sweeps have been checking the wrong inbox", "who": "Chitraksh" },
-      { "what": "Still owed even though today ran clean: keep the Mac awake 00:30-01:15Z (caffeinate / Power Nap / scheduled wake) or move both crons to a known-awake hour — nothing was fixed, the machine just stayed up", "who": "Chitraksh" },
-      { "what": "IRS EIN: 32 days silent since the Jun 28 re-fax, both phone windows passed unused — now purely a phone chase: call 1-202-488-3100, check RedFax 510-497-1224", "who": "Both" },
-      { "what": "LinkedIn Batch 1 post (personal + company pages) — postable 18 days, still gates every PhantomBuster sequence", "who": "Both" },
-      { "what": "Mercedes re-pitch reply + live agent-demo booking — 20 days overdue; weapon: their own delay screenshots", "who": "Frankie" },
-      { "what": "Confirm P6/P7 scripts were locked before Fable expired Jul 19 — 11 days unconfirmed; assume unlocked and redraft via Claude Opus unless told otherwise", "who": "Frankie" },
-      { "what": "Full Disk Access toggle for the launchd runner (System Settings → Privacy & Security) — 2-min fix, unblocks autoloop cycle 11+ (frozen day 32)", "who": "Chitraksh" },
-      { "what": "25 Daily Brief drafts unsent since Jun 26 — either import the n8n SCHEDULE workflow + attach Gmail OAuth for true send, or archive the stale ones", "who": "Chitraksh" }
+      { "what": "Confirm which mailbox the watch-list actually lands in — orayaassistant@gmail.com vs hanfluxai — 13 straight quiet sweeps might be watching the wrong inbox", "who": "Chitraksh" },
+      { "what": "Actually fix the wake window this time: caffeinate / Power Nap / scheduled wake for 00:30-01:15Z IST, or move both crons to a known-awake hour — Jul 30 proved that a lucky night isn't a fix", "who": "Chitraksh" },
+      { "what": "IRS EIN: 34 days silent since the Jun 28 re-fax — now a phone chase; IRS lines closed Saturday, call 1-202-488-3100 + check RedFax 510-497-1224 Monday", "who": "Both" },
+      { "what": "LinkedIn Batch 1 post (personal + company pages) — postable 20 days, still gates every PhantomBuster sequence", "who": "Both" },
+      { "what": "Mercedes re-pitch reply + live agent-demo booking — 22 days overdue; weapon: their own delay screenshots", "who": "Frankie" },
+      { "what": "Confirm P6/P7 scripts were locked before Fable expired Jul 19 — 13 days unconfirmed; assume unlocked and redraft via Claude Opus unless told otherwise", "who": "Frankie" },
+      { "what": "Full Disk Access toggle for the launchd runner (System Settings → Privacy & Security) — 2-min fix, unblocks autoloop cycle 11+ (frozen day 34)", "who": "Chitraksh" },
+      { "what": "27 Daily Brief drafts unsent since Jun 26 (34 all-in) — either import the n8n SCHEDULE workflow + attach Gmail OAuth for true send, or archive the stale ones", "who": "Chitraksh" }
     ]
   }
 }
