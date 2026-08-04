@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-08-03T16:36:19.793Z",
-  "date_label": "Mon · Aug 3",
-  "edition": "PM",
-  "day_number": 205,
-  "phase": "AURA live · content-gate + scheduler fix",
-  "headline": "AURA is live and one wiring step from booking real appointments — while the three permission-free moves still sit where AM left them: post LinkedIn Batch 1, send the overdue Mercedes reply, fix the scheduler.",
-  "source": "index.html · ORAYA DATA block v15.8 (2026-08-02) + insurance_leadgen_state.json",
+  "generated_at": "2026-08-04T07:36:41.229Z",
+  "date_label": "Tue · Aug 4",
+  "edition": "AM",
+  "day_number": 206,
+  "phase": "Day 206 — scheduler blackout now 2 days deep",
+  "headline": "Day 206 — the cofounder sweep has gone fully dark for two days (last run Aug 2, 10:52Z) and this very AM brief just fired roughly 6.5 hours past its 06:30 IST cron, so W7 has stopped being a daily nuisance and become a multi-day blackout — today's real headline is diagnosing that, not another ground-truth update, because none exists. Underneath, nothing moved on its own: LinkedIn Batch 1 sits at 23 days postable and still gates every PhantomBuster sequence, the Mercedes receipts-reply is 25 days overdue, the IRS EIN line has been silent 37 days, and AURA's last wiring step (n8n workflow import) is unconfirmed for two straight days. Cheapest first move: check the machine's wake/sleep state and the scheduled-tasks log before anything else — if it's still bursting or skipping, no amount of ground-level progress will show up in tomorrow's brief either.",
+  "source": "index.html · ORAYA DATA v15.8 Signal board (Aug 2, newest available) + insurance_leadgen_state.json + cofounder_log.json (Aug 2 sweep, 2 days stale)",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -42,15 +42,7 @@
       "code": "P2",
       "color": "#2563eb",
       "blurb": "AI life-insurance funnel: data → outreach → AI calls → licensed close.",
-      "count": 4
-    },
-    {
-      "key": "realestate",
-      "label": "Real Estate",
-      "code": "P3",
-      "color": "#16a34a",
-      "blurb": "Investor / seller real-estate lead engine (next project, in design).",
-      "count": 0
+      "count": 6
     },
     {
       "key": "hq",
@@ -58,7 +50,7 @@
       "code": "HQ",
       "color": "#7c3aed",
       "blurb": "The dashboard, automations & AI agents that run the company itself.",
-      "count": 12
+      "count": 10
     },
     {
       "key": "ops",
@@ -66,69 +58,64 @@
       "code": "OPS",
       "color": "#64748b",
       "blurb": "Money, hardware, family & day-to-day running of the business.",
-      "count": 2
+      "count": 1
     }
   ],
   "spotlight": [
     {
+      "icon": "🖥️",
+      "title": "Diagnose the 2-day scheduler blackout",
+      "who": "Chitraksh",
+      "detail": "No cofounder sweep has logged since Aug 2 10:52Z, and this AM brief fired ~6.5h past its 06:30 IST cron — worse than the Aug 1/Aug 2 same-day bursts. Check the scheduled-tasks API for lastRunAt timestamps, confirm the Mac didn't sleep through 00:30–01:15Z again, and this time make the fix stick: caffeinate/Power Nap/scheduled wake, or move both crons to a known-awake hour. While in Settings, flip Full Disk Access for the launchd runner — autoloop has been frozen at cycle 10 for 37 days on that same 2-minute toggle.",
+      "project": "hq",
+      "area": "Infra / Scheduler"
+    },
+    {
       "icon": "📣",
-      "title": "Post LinkedIn Batch 1 — personal + company pages",
+      "title": "Post LinkedIn Batch 1 — 23 days postable",
       "who": "Both",
-      "detail": "The keystone. Hanflux AI search appearances are +430% on the name alone, but the page is blank — 'they see that it's blank and then they go away.' Posting real content is the GATE on every PhantomBuster outreach sequence. Mutually select the reels, then post to both personal and company pages today. Zero compliance gate — this is Oraya's own B2B marketing lane.",
+      "detail": "Still the keystone: 'if the page is empty, they're not going to take you serious' — real content gates every PhantomBuster outreach sequence. Mutually select from the Batch-1 reels (declared ready Jul 12) and post to personal + company pages (Hanflux AI + Oraya AI) today.",
       "project": "hq",
       "area": "Growth / LinkedIn"
     },
     {
-      "icon": "🤝",
-      "title": "Send the Mercedes re-pitch reply + book the agent-demo call",
-      "who": "Frankie",
-      "detail": "24 days overdue. They finally replied — the weapon is timestamped screenshots of their own chatbot's multi-day delay. Draft the receipts-reply, pitch voice AI + automation, and have the agent itself call them to book a live demo. 'We're too soft — that is costing us.'",
-      "project": "insurance",
-      "area": "Dealership"
-    },
-    {
       "icon": "🚀",
-      "title": "AURA go-live last mile — wire n8n + domain",
+      "title": "Confirm AURA's last-mile status",
       "who": "Chitraksh",
-      "detail": "The bottom of the funnel is LIVE at aura-frankie-insurance.vercel.app (page + ElevenLabs voice + /api/lead all verified in production Aug 2). Only credentials stand between it and automatic Google Meet bookings: import the 6 n8n workflows per n8n/README.md, set N8N_LEAD_WEBHOOK_URL, connect the custom domain, then activate WF 02 → 01 → 04/05. WF 03 (SMS nudge) + WF 06 (voice calls) STAY INACTIVE until compliance blockers + TCPA counsel clear.",
+      "detail": "As of Aug 2 the live funnel (aura-frankie-insurance.vercel.app) still needed the 6 n8n workflows imported (credentials + REPLACE_* placeholders, activate WF 02 → 01 → 04/05 per n8n/README.md), N8N_LEAD_WEBHOOK_URL set in Vercel, and a custom domain connected. No newer sweep exists to say whether that happened — confirm status before assuming it's done or still open; this remains the shortest path to a first booked appointment.",
       "project": "insurance",
-      "area": "Funnel"
+      "area": "AURA funnel"
     }
   ],
   "blockers": [
     {
-      "label": "IRS EIN",
-      "scope": "Chitraksh",
-      "detail": "36 days silent since the Jun 28 re-fax; the ~8-business-day window closed Jul 11. This is now a phone chase, not a wait — call the IRS EIN line 1-202-488-3100 and check RedFax 510-497-1224."
+      "label": "EIN",
+      "scope": "Shared",
+      "detail": "37 days silent since the Jun 28 re-fax. Phone chase, not a wait: IRS EIN line 1-202-488-3100, RedFax check 510-497-1224. First confirm which mailbox a reply would even land in — the sweep only watches orayaassistant@gmail.com, not hanfluxai (still unconfirmed as of Aug 2)."
     },
     {
-      "label": "Scheduler wake (W7)",
-      "scope": "Chitraksh",
-      "detail": "Autonomy failing DAILY — bursts Aug 1 + Aug 2, blackout Jul 31; Aug 2 PM + Aug 3 AM editions never ran, this PM is the first brief since Aug 2 AM. Fix: keep the Mac awake 00:30-01:15Z (caffeinate / Power Nap / scheduled wake) OR move both crons to a known-awake hour. Top infra fix."
+      "label": "Mercedes",
+      "scope": "Frankie",
+      "detail": "25 days overdue. Their reply is in; ours isn't. Weapon: timestamped screenshots of their own chatbot's multi-day delay → pitch voice AI + automation, then book the call where the agent demos itself."
     },
     {
-      "label": "Mailbox binding",
+      "label": "Scheduler (W7)",
       "scope": "Chitraksh",
-      "detail": "15 straight quiet inbox sweeps — but the Gmail connector reads orayaassistant@gmail.com, not hanfluxai. 60-sec check: confirm IRS / Mercedes / dealership replies aren't sitting unread in hanfluxai or a founder inbox."
-    },
-    {
-      "label": "Autoloop frozen",
-      "scope": "Chitraksh",
-      "detail": "Cycle 10, frozen day 35. 2-min fix: System Settings → Privacy & Security → Full Disk Access for the launchd runner → unblocks cycle 11+."
+      "detail": "Escalated from a same-day burst (Aug 1, Aug 2) to a 2-day silence — no cofounder sweep since Aug 2 10:52Z, and this brief itself fired ~6.5h late. Diagnose before trusting any 'quiet' or 'stable' read from autonomy until it's confirmed fixed."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "205"
+      "v": "206"
     },
     {
-      "k": "Open tasks",
-      "v": "18"
+      "k": "Sweep gap",
+      "v": "2d"
     },
     {
-      "k": "Lanes",
-      "v": "3"
+      "k": "Oldest gate",
+      "v": "37d"
     }
   ],
   "lanes": [
@@ -139,44 +126,52 @@
       "accent": "emerald",
       "tasks": [
         {
-          "lead": "Send the Mercedes re-pitch reply + book the live agent-demo call",
-          "detail": "24 days overdue. Their reply is in; we owe the receipts-reply (timestamped screenshots of their own chatbot's delay) → pitch voice AI + automation → have the agent itself call them to book a demo.",
-          "tag": "OVERDUE",
-          "tagType": "red",
-          "project": "insurance",
-          "area": "Dealership"
-        },
-        {
-          "lead": "Post LinkedIn Batch 1 with Chitraksh (personal + company pages)",
-          "detail": "Mutually select the reels, then post to both. This is the keystone that opens the PhantomBuster gate — Batch 1 was declared ready Jul 12 and has been sitting postable ever since.",
-          "tag": "KEYSTONE",
+          "lead": "Post LinkedIn Batch 1 with Chitraksh",
+          "detail": "Mutually select from the Batch-1 reels (declared ready Jul 12) and post to personal + company pages (Hanflux AI + Oraya AI). Search appearances +430% on a blank page — real content unlocks every PhantomBuster sequence the same day.",
+          "tag": "KEYSTONE · 23 DAYS",
           "tagType": "green",
           "project": "hq",
           "area": "Growth / LinkedIn"
         },
         {
-          "lead": "Lock the founder-ad + insurance scripts (P6 / P7)",
-          "detail": "Fable lapsed Jul 19 — 15 days unconfirmed whether P6/P7 were locked before expiry. Assume unlocked and redraft via Claude Opus on the shared account (hanfluxai@gmail.com) unless you say otherwise. This feeds Batch 3.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Content"
+          "lead": "Send the Mercedes receipts-reply",
+          "detail": "Their reply is in; ours isn't — 25 days. Weapon: timestamped screenshots of their own chatbot's multi-day delay → pitch voice AI + automation, then book the call where the agent demos itself.",
+          "tag": "OVERDUE 25d",
+          "tagType": "red",
+          "project": "insurance",
+          "area": "Dealership"
         },
         {
-          "lead": "IRS EIN phone chase (post-day-job window)",
-          "detail": "36 days silent since the Jun 28 re-fax. Call 1-202-488-3100; Chitraksh runs the 8-11 AM PT / 8:30-11:30 PM IST rotation, you pick up after the day job. Check RedFax 510-497-1224.",
+          "lead": "Redraft P6 founder-ad + P7 insurance scripts via Claude Opus",
+          "detail": "Fable lapsed Jul 19 (16 days) and it's still unconfirmed the scripts were locked first. Treat them as unlocked: run the P6 outline + P7 brief through Claude Opus on the shared account, P12 format (timestamped visual cues, ALONE/BOTH variants).",
+          "tag": "FABLE EXPIRED",
+          "tagType": "orange",
+          "project": "hq",
+          "area": "Content / Batch 3"
+        },
+        {
+          "lead": "Sanity-check AURA's copy + voice",
+          "detail": "The live funnel is built around Frankie the agent: your Mutual-of-Omaha story, your headshot, a voice greeting in your name. Click through aura-frankie-insurance.vercel.app and send fixes before it goes on a custom domain.",
+          "tag": "",
+          "tagType": "",
+          "project": "insurance",
+          "area": "AURA funnel"
+        },
+        {
+          "lead": "Jharkhand: scan network for a US investor",
+          "detail": "Brochure artifact is done; Chitraksh owes the landing page. Precedent: Chinese interest at $50–100M for one data center — father says even $10–20M gets 'the best deal in the entire country.'",
+          "tag": "",
+          "tagType": "",
+          "project": "ops",
+          "area": "BD / Jharkhand"
+        },
+        {
+          "lead": "IRS EIN — call, don't wait",
+          "detail": "37 days silent. EIN line 1-202-488-3100 + RedFax check 510-497-1224. First confirm which mailbox the confirmation would land in — see blockers.",
           "tag": "EIN BLOCKER",
           "tagType": "red",
           "project": "insurance",
           "area": "Compliance & Legal"
-        },
-        {
-          "lead": "Jharkhand: scan your network for a US investor",
-          "detail": "Father's direct political access (CM Hemant Soren) is the moat — precedent is Chinese interest at $50-100M for one data center; even $10-20M gets 'the best deal in the entire country.' Chitraksh builds the landing page + downloadable brochure in parallel.",
-          "tag": "",
-          "tagType": "",
-          "project": "ops",
-          "area": "BD"
         }
       ]
     },
@@ -187,60 +182,60 @@
       "accent": "cyan",
       "tasks": [
         {
-          "lead": "AURA go-live last mile — import n8n workflows + wire env + domain",
-          "detail": "Backend is fully built. Import the 6 workflows per n8n/README.md (fill credentials + REPLACE_* placeholders), set N8N_LEAD_WEBHOOK_URL in Vercel, connect the custom domain, then activate WF 02 (booking) → 01 (lead capture) → 04/05 (inbound chat). WF 03 + WF 06 stay INACTIVE until compliance clears.",
-          "tag": "SHIP",
-          "tagType": "green",
-          "project": "insurance",
-          "area": "Funnel"
-        },
-        {
-          "lead": "Fix the scheduler wake window (W7) — top infra fix",
-          "detail": "Failing daily now, not intermittent: bursts Aug 1 + Aug 2, blackout Jul 31, and Aug 2 PM + Aug 3 AM briefs never ran. Keep the Mac awake 00:30-01:15Z (caffeinate / Power Nap / scheduled wake) or move both crons to a known-awake hour.",
-          "tag": "W7",
+          "lead": "Diagnose the 2-day scheduler blackout",
+          "detail": "No cofounder sweep logged since Aug 2 10:52Z; this brief fired ~6.5h past its 06:30 IST cron. Pull scheduled-tasks lastRunAt timestamps, confirm whether the Mac slept through 00:30–01:15Z again or something broke outright, and make the fix stick this time.",
+          "tag": "TODAY · ESCALATED",
           "tagType": "red",
           "project": "hq",
-          "area": "Infra"
+          "area": "Infra / Scheduler"
         },
         {
-          "lead": "Confirm the watch-list mailbox binding (60 sec)",
-          "detail": "The Gmail connector reads orayaassistant@gmail.com — 15 quiet sweeps may have been checking the wrong inbox. Verify IRS / Mercedes / dealership mail isn't landing unread in hanfluxai or a founder address.",
+          "lead": "Confirm AURA's last-mile status",
+          "detail": "As of Aug 2: import the 6 n8n workflows (n8n/README.md), set N8N_LEAD_WEBHOOK_URL in Vercel, connect the custom domain. Status unconfirmed for 2 days — check before re-doing work that may already be done.",
+          "tag": "SHORTEST PATH TO REVENUE",
+          "tagType": "green",
+          "project": "insurance",
+          "area": "AURA funnel"
+        },
+        {
+          "lead": "Full Disk Access toggle → unfreeze autoloop",
+          "detail": "System Settings → Privacy & Security → Full Disk Access for the launchd runner. Two minutes; autoloop has been frozen at cycle 10 for 37 days on this same toggle.",
+          "tag": "",
+          "tagType": "",
+          "project": "hq",
+          "area": "Autoloop"
+        },
+        {
+          "lead": "Re-check Mac disk space",
+          "detail": "Aug 2 sweep found ~222MB free — ENOSPC already forced the AURA deploy through the REST API instead of the CLI. Unconfirmed since; verify it isn't worse before it stalls a sweep, brief, or git clone mid-write.",
           "tag": "",
           "tagType": "",
           "project": "hq",
           "area": "Infra"
         },
         {
-          "lead": "Free up Mac disk space",
-          "detail": "~222MB free as of Aug 2 — ENOSPC already forced the AURA deploy through the Vercel REST API instead of the local CLI. Clear space before the next build or push.",
-          "tag": "",
-          "tagType": "orange",
-          "project": "ops",
-          "area": "Hardware"
-        },
-        {
-          "lead": "Toggle Full Disk Access for the launchd runner",
-          "detail": "2-min Mac settings fix (System Settings → Privacy & Security → Full Disk Access) unblocks autoloop cycle 11+, frozen at cycle 10 for 35 days.",
+          "lead": "Confirm the Gmail watch-list mailbox",
+          "detail": "The sweep reads orayaassistant@gmail.com. If IRS / Mercedes / dealership replies go to hanfluxai or founder inboxes, 14+ 'quiet' sweeps have been watching the wrong door. 60-second check.",
           "tag": "",
           "tagType": "",
           "project": "hq",
-          "area": "Infra"
+          "area": "Ops"
         },
         {
-          "lead": "Generate Batch 3 (12-13 reels)",
-          "detail": "Attach the video-gen MCP → ingest Prompt P10 feedback → produce 6-7 insurance-vertical reels (Frankie's real Mutual-of-Omaha story) + a revised pass of Batch 2 (consultancy voice everywhere, TCPA subtitles/visuals, DMS voice + new tagline, no blank end screens).",
+          "lead": "Refuel the lead-data rails: ATTOM key + BatchData $20–30",
+          "detail": "ATTOM trial key 401s (re-provision); BatchData token authenticates but sits at $0 (~$0.15/lookup — $20 covers TIER1's 77 leads). Both are prerequisites for the moment compliance clears.",
+          "tag": "",
+          "tagType": "",
+          "project": "insurance",
+          "area": "Lead-gen"
+        },
+        {
+          "lead": "Batch 3 prep: attach video-gen MCP + feed P10",
+          "detail": "Ingest Meeting-37 feedback into the growth engine (consultancy voice everywhere, no blank end screens, subtitle fix, new DMS tagline) and generate the 12–13 reel batch.",
           "tag": "",
           "tagType": "",
           "project": "hq",
-          "area": "Growth / Content"
-        },
-        {
-          "lead": "Wire true-send for the Daily Brief",
-          "detail": "27+ brief drafts stacked unsent since Jun 26. Import the n8n SCHEDULE workflow + attach Gmail OAuth for real send, or archive the stale drafts.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Infra"
+          "area": "Growth engine"
         }
       ]
     },
@@ -251,62 +246,46 @@
       "accent": "violet",
       "tasks": [
         {
-          "lead": "Inbox sweep LIVE — 15th straight quiet sweep",
-          "detail": "0 watch-list hits (EIN/IRS, A2P, Envision/Greg/Mo/dealership, Theresa cancellation, opt-in/lead) across a 3-day window; newest real mail still Jun 26. Caveat carried: the connector reads orayaassistant@gmail.com — binding still unconfirmed (see Chitraksh lane).",
+          "lead": "FLAGGED: 2-day cofounder-sweep blackout",
+          "detail": "No sweep has logged since Aug 2 10:52Z (v15.8), and this AM brief itself fired roughly 6.5 hours past its 06:30 IST cron. This is worse than the Aug 1/Aug 2 same-day bursts — treat as a standing infra alarm, not a one-off, until a fresh sweep confirms the scheduler is healthy again.",
+          "tag": "ESCALATED",
+          "tagType": "red",
+          "project": "hq",
+          "area": "Sweep"
+        },
+        {
+          "lead": "Carrying the Aug 2 sweep as the newest ground truth",
+          "detail": "Dashboard v15.8 pushed clean (commit 5b94a73), live-verified. Inbox: 14th straight quiet sweep as of Aug 2 (0 watch-list hits, newest mail still Jun 26, orayaassistant@ mailbox caveat unresolved). Transcripts: none since May 18. No fresher sweep exists to update any of this today.",
           "tag": "",
           "tagType": "",
           "project": "hq",
-          "area": "Infra"
+          "area": "Ops"
         },
         {
-          "lead": "Published this PM brief (day 205)",
-          "detail": "First edition since Aug 2 AM — Aug 2 PM and Aug 3 AM both missed to the W7 catch-up burst. Curated from the live v15.8 board; the stale v14 auto-parse (Envision Honda / Day 138 / v12.0) was fully replaced across headline + spotlight + all 3 lanes.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Infra"
-        },
-        {
-          "lead": "AURA shipped + verified in production (Aug 2)",
-          "detail": "First customer-facing funnel live at aura-frankie-insurance.vercel.app: page, ElevenLabs voice TTS (3.9k/90k chars used), and /api/lead all confirmed in prod. Hero scene v2 'Guardian Meridian' + the silent-voice AudioContext fix deployed (commit 44c8517).",
+          "lead": "Standing rule: consumer outreach stays gated",
+          "detail": "The p2-insurance consumer funnel remains blocked on compliance items B1–B7 (CA/TX data-broker registration, TCPA counsel, privacy policy, CCPA assessment, license disclosure). Max-autonomy rule holds — no outward-facing send without explicit human approval.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
-          "area": "Funnel"
+          "area": "Compliance"
         },
         {
-          "lead": "Dashboard held at v15.8",
-          "detail": "Aug 2 cofounder sweep pushed clean (commit 5b94a73), live-verified serving v15.8. No Aug 3 sweep ran before this brief — the cofounder digest below is the Aug 2 sweep, inbox line re-verified live this PM.",
+          "lead": "AM brief generation itself",
+          "detail": "Auto-parse still reads the frozen v14 Daily Tasks board (Envision Honda / Day 138 / v12.0 dashboard) — fully replaced this run across headline, spotlight, and all 3 lanes using the v15.8 Signal DATA block, insurance_leadgen_state.json, and cofounder_log.json per the standing curation protocol.",
           "tag": "",
           "tagType": "",
           "project": "hq",
-          "area": "Infra"
-        },
-        {
-          "lead": "Transcripts: 0 new since May 18",
-          "detail": "Workspace scan + no email attachments — board ingest skipped again. insurance_leadgen_state.json unchanged since the Aug 2 Aura-deploy entry.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Infra"
-        },
-        {
-          "lead": "Max-autonomy rule holds; outward actions stay approval-gated",
-          "detail": "Per oraya-autoloop/guardrails.md — no send/publish/spend without explicit human approval. Multi-model fallback (ChatGPT + Gemini on shadow) still in force during Anthropic outages.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Infra"
+          "area": "Daily Brief"
         }
       ]
     }
   ],
   "cofounder": {
-    "date": "2026-08-02 (sweep) · re-verified live 2026-08-03 PM",
+    "date": "2026-08-02",
     "scanned_at": "2026-08-02T10:52:00Z",
     "done": [
       {
-        "what": "Inbox scan LIVE (PM re-verify): 15th straight quiet sweep — 0 watch-list hits across a 3-day window, zero new mail, newest real mail still Jun 26. Carried from the Aug 2 cofounder sweep; no Aug 3 sweep ran before this brief (W7).",
+        "what": "Inbox scan LIVE: 14th straight quiet sweep — 0 watch-list hits (EIN/IRS, A2P, Envision/Greg/Mo/dealership, cancellations incl. Theresa, opt-in/lead) across a 3-day window; zero new mail at all in 48h, newest real mail still Jun 26.",
         "who": "CTO-Claude"
       },
       {
