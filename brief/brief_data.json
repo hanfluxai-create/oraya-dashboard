@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-08-04T07:36:41.229Z",
+  "generated_at": "2026-08-04T14:07:55.436Z",
   "date_label": "Tue · Aug 4",
-  "edition": "AM",
+  "edition": "PM",
   "day_number": 206,
-  "phase": "Day 206 — scheduler blackout now 2 days deep",
-  "headline": "Day 206 — the cofounder sweep has gone fully dark for two days (last run Aug 2, 10:52Z) and this very AM brief just fired roughly 6.5 hours past its 06:30 IST cron, so W7 has stopped being a daily nuisance and become a multi-day blackout — today's real headline is diagnosing that, not another ground-truth update, because none exists. Underneath, nothing moved on its own: LinkedIn Batch 1 sits at 23 days postable and still gates every PhantomBuster sequence, the Mercedes receipts-reply is 25 days overdue, the IRS EIN line has been silent 37 days, and AURA's last wiring step (n8n workflow import) is unconfirmed for two straight days. Cheapest first move: check the machine's wake/sleep state and the scheduled-tasks log before anything else — if it's still bursting or skipping, no amount of ground-level progress will show up in tomorrow's brief either.",
-  "source": "index.html · ORAYA DATA v15.8 Signal board (Aug 2, newest available) + insurance_leadgen_state.json + cofounder_log.json (Aug 2 sweep, 2 days stale)",
+  "phase": "Sweep back · machine stuck, mission unmoved",
+  "headline": "PT morning, Day 206 — the cofounder sweep finally broke its two-day silence (landed 13:15Z, dashboard v15.9) and came back with a verdict: it's the machine, not the mission, that's stuck. Aug 3 went fully dark — the second total blackout after Jul 31 — Aug 4 limped in ~6.5h late, and the new find is that the brief-drafting step has quietly stopped producing drafts since Aug 2 even while the scheduler keeps logging runs. Nothing on the ground moved while autonomy flailed, so Frankie's Tuesday is the same three permission-free taps it was this morning: post LinkedIn Batch 1 (the 23-day keystone that gates every PhantomBuster sequence), send the 25-day-overdue Mercedes reply, and get the scheduler + drafting pipeline actually fixed instead of re-diagnosed.",
+  "source": "index.html · ORAYA DATA v15.9 (2026-08-04) + cofounder_log.json (Aug 4 sweep, 13:15Z) + insurance_leadgen_state.json",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -50,7 +50,7 @@
       "code": "HQ",
       "color": "#7c3aed",
       "blurb": "The dashboard, automations & AI agents that run the company itself.",
-      "count": 10
+      "count": 11
     },
     {
       "key": "ops",
@@ -63,35 +63,35 @@
   ],
   "spotlight": [
     {
-      "icon": "🖥️",
-      "title": "Diagnose the 2-day scheduler blackout",
-      "who": "Chitraksh",
-      "detail": "No cofounder sweep has logged since Aug 2 10:52Z, and this AM brief fired ~6.5h past its 06:30 IST cron — worse than the Aug 1/Aug 2 same-day bursts. Check the scheduled-tasks API for lastRunAt timestamps, confirm the Mac didn't sleep through 00:30–01:15Z again, and this time make the fix stick: caffeinate/Power Nap/scheduled wake, or move both crons to a known-awake hour. While in Settings, flip Full Disk Access for the launchd runner — autoloop has been frozen at cycle 10 for 37 days on that same 2-minute toggle.",
-      "project": "hq",
-      "area": "Infra / Scheduler"
-    },
-    {
       "icon": "📣",
-      "title": "Post LinkedIn Batch 1 — 23 days postable",
+      "title": "Post LinkedIn Batch 1 — personal + company pages",
       "who": "Both",
-      "detail": "Still the keystone: 'if the page is empty, they're not going to take you serious' — real content gates every PhantomBuster outreach sequence. Mutually select from the Batch-1 reels (declared ready Jul 12) and post to personal + company pages (Hanflux AI + Oraya AI) today.",
+      "detail": "Still the keystone, 23 days postable. Hanflux AI search appearances are +430% on the name alone, but the page is blank — 'they see that it's blank and then they go away.' Real content is the GATE on every PhantomBuster outreach sequence. Mutually pick from the Batch-1 reels (declared ready Jul 12) and post to personal + both company pages (Hanflux AI + Oraya AI) today. Zero compliance gate — this is Oraya's own B2B marketing lane.",
       "project": "hq",
       "area": "Growth / LinkedIn"
     },
     {
-      "icon": "🚀",
-      "title": "Confirm AURA's last-mile status",
-      "who": "Chitraksh",
-      "detail": "As of Aug 2 the live funnel (aura-frankie-insurance.vercel.app) still needed the 6 n8n workflows imported (credentials + REPLACE_* placeholders, activate WF 02 → 01 → 04/05 per n8n/README.md), N8N_LEAD_WEBHOOK_URL set in Vercel, and a custom domain connected. No newer sweep exists to say whether that happened — confirm status before assuming it's done or still open; this remains the shortest path to a first booked appointment.",
+      "icon": "🤝",
+      "title": "Send the Mercedes re-pitch reply + book the agent-demo call",
+      "who": "Frankie",
+      "detail": "25 days overdue. Their reply is in; ours isn't. The weapon is timestamped screenshots of their own chatbot's multi-day delay → pitch voice AI + automation → have the agent itself call to book a live demo. 'We're too soft — that is costing us.'",
       "project": "insurance",
-      "area": "AURA funnel"
+      "area": "Dealership"
+    },
+    {
+      "icon": "🖥️",
+      "title": "Fix the scheduler + restore the drafting pipeline (diagnosis is done)",
+      "who": "Chitraksh",
+      "detail": "This afternoon's sweep closed the diagnosis: W7 is two interleaved failure modes — late/clustered bursts (Jul 29, Aug 1, Aug 2, Aug 4) AND full-day blackouts (Jul 31, Aug 3) — and, separately, no new brief draft has been created since Aug 2 despite the scheduler logging runs. Two concrete fixes now, not more diagnosis: keep the Mac awake 00:30-01:15Z (caffeinate / Power Nap / scheduled wake) or move both crons to a known-awake hour; and check why create_draft stopped firing in the headless run (likely Gmail OAuth). While in Settings, flip Full Disk Access for the launchd runner — autoloop is still frozen at cycle 10, day 37, on that same 2-minute toggle.",
+      "project": "hq",
+      "area": "Infra / Scheduler"
     }
   ],
   "blockers": [
     {
-      "label": "EIN",
+      "label": "IRS EIN",
       "scope": "Shared",
-      "detail": "37 days silent since the Jun 28 re-fax. Phone chase, not a wait: IRS EIN line 1-202-488-3100, RedFax check 510-497-1224. First confirm which mailbox a reply would even land in — the sweep only watches orayaassistant@gmail.com, not hanfluxai (still unconfirmed as of Aug 2)."
+      "detail": "37 days silent since the Jun 28 re-fax; the ~8-business-day window closed Jul 11. A phone chase now, not a wait — call the IRS EIN line 1-202-488-3100 and check RedFax 510-497-1224. First confirm which mailbox a reply would even land in — the sweep watches orayaassistant@gmail.com, not hanfluxai (still unconfirmed as of today's sweep)."
     },
     {
       "label": "Mercedes",
@@ -99,9 +99,14 @@
       "detail": "25 days overdue. Their reply is in; ours isn't. Weapon: timestamped screenshots of their own chatbot's multi-day delay → pitch voice AI + automation, then book the call where the agent demos itself."
     },
     {
-      "label": "Scheduler (W7)",
+      "label": "Scheduler + drafting (W7)",
       "scope": "Chitraksh",
-      "detail": "Escalated from a same-day burst (Aug 1, Aug 2) to a 2-day silence — no cofounder sweep since Aug 2 10:52Z, and this brief itself fired ~6.5h late. Diagnose before trusting any 'quiet' or 'stable' read from autonomy until it's confirmed fixed."
+      "detail": "Now confirmed as TWO failure modes: late/clustered bursts (Jul 29, Aug 1, Aug 2, Aug 4) and full-day blackouts (Jul 31, Aug 3) — plus the brief-drafting step has produced no new draft since Aug 2 even though the scheduler logs runs. Keep the Mac awake 00:30-01:15Z or move both crons to a known-awake hour, then re-wire create_draft (Gmail OAuth). Top infra fix."
+    },
+    {
+      "label": "Autoloop frozen",
+      "scope": "Chitraksh",
+      "detail": "Cycle 10, frozen day 37. 2-min fix: System Settings → Privacy & Security → Full Disk Access for the launchd runner → unblocks cycle 11+."
     }
   ],
   "metrics": [
@@ -110,12 +115,12 @@
       "v": "206"
     },
     {
-      "k": "Sweep gap",
-      "v": "2d"
-    },
-    {
       "k": "Oldest gate",
       "v": "37d"
+    },
+    {
+      "k": "Unsent drafts",
+      "v": "29"
     }
   ],
   "lanes": [
@@ -126,52 +131,52 @@
       "accent": "emerald",
       "tasks": [
         {
-          "lead": "Post LinkedIn Batch 1 with Chitraksh",
-          "detail": "Mutually select from the Batch-1 reels (declared ready Jul 12) and post to personal + company pages (Hanflux AI + Oraya AI). Search appearances +430% on a blank page — real content unlocks every PhantomBuster sequence the same day.",
-          "tag": "KEYSTONE · 23 DAYS",
+          "lead": "Post LinkedIn Batch 1 with Chitraksh (personal + company pages)",
+          "detail": "Mutually select the reels (declared ready Jul 12) and post to personal + both company pages (Hanflux AI + Oraya AI). Search appearances +430% on a blank page — real content unlocks every PhantomBuster sequence the same day. This is the keystone; it has sat postable 23 days.",
+          "tag": "KEYSTONE · 23d",
           "tagType": "green",
           "project": "hq",
           "area": "Growth / LinkedIn"
         },
         {
-          "lead": "Send the Mercedes receipts-reply",
-          "detail": "Their reply is in; ours isn't — 25 days. Weapon: timestamped screenshots of their own chatbot's multi-day delay → pitch voice AI + automation, then book the call where the agent demos itself.",
+          "lead": "Send the Mercedes receipts-reply + book the live agent-demo",
+          "detail": "25 days overdue. Their reply is in; we owe the receipts-reply — timestamped screenshots of their own chatbot's multi-day delay → pitch voice AI + automation → have the agent itself call them to book a demo.",
           "tag": "OVERDUE 25d",
           "tagType": "red",
           "project": "insurance",
           "area": "Dealership"
         },
         {
-          "lead": "Redraft P6 founder-ad + P7 insurance scripts via Claude Opus",
-          "detail": "Fable lapsed Jul 19 (16 days) and it's still unconfirmed the scripts were locked first. Treat them as unlocked: run the P6 outline + P7 brief through Claude Opus on the shared account, P12 format (timestamped visual cues, ALONE/BOTH variants).",
+          "lead": "Redraft the founder-ad + insurance scripts (P6 / P7) via Claude Opus",
+          "detail": "Fable lapsed Jul 19 — 16 days unconfirmed whether P6/P7 were locked before expiry. Treat them as unlocked: run the P6 outline + P7 brief through Claude Opus on the shared account, P12 format (timestamped visual cues, ALONE/BOTH variants). Feeds Batch 3.",
           "tag": "FABLE EXPIRED",
           "tagType": "orange",
           "project": "hq",
           "area": "Content / Batch 3"
         },
         {
-          "lead": "Sanity-check AURA's copy + voice",
-          "detail": "The live funnel is built around Frankie the agent: your Mutual-of-Omaha story, your headshot, a voice greeting in your name. Click through aura-frankie-insurance.vercel.app and send fixes before it goes on a custom domain.",
+          "lead": "Sanity-check AURA's copy + voice before the custom domain",
+          "detail": "The live funnel is built around Frankie the agent — your Mutual-of-Omaha story, your headshot, a voice greeting in your name. Click through aura-frankie-insurance.vercel.app and send fixes before it goes on a custom domain.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
           "area": "AURA funnel"
         },
         {
-          "lead": "Jharkhand: scan network for a US investor",
-          "detail": "Brochure artifact is done; Chitraksh owes the landing page. Precedent: Chinese interest at $50–100M for one data center — father says even $10–20M gets 'the best deal in the entire country.'",
-          "tag": "",
-          "tagType": "",
-          "project": "ops",
-          "area": "BD / Jharkhand"
-        },
-        {
           "lead": "IRS EIN — call, don't wait",
-          "detail": "37 days silent. EIN line 1-202-488-3100 + RedFax check 510-497-1224. First confirm which mailbox the confirmation would land in — see blockers.",
+          "detail": "37 days silent. EIN line 1-202-488-3100 + RedFax check 510-497-1224. Chitraksh runs the 8-11 AM PT rotation; you pick up after the day job. First confirm which mailbox a reply lands in — see blockers.",
           "tag": "EIN BLOCKER",
           "tagType": "red",
           "project": "insurance",
           "area": "Compliance & Legal"
+        },
+        {
+          "lead": "Jharkhand: scan your network for a US investor",
+          "detail": "Brochure artifact is done; Chitraksh owes the landing page. Precedent: Chinese interest at $50-100M for one data center — father's direct access (CM Hemant Soren) says even $10-20M gets 'the best deal in the entire country.'",
+          "tag": "",
+          "tagType": "",
+          "project": "ops",
+          "area": "BD / Jharkhand"
         }
       ]
     },
@@ -182,47 +187,47 @@
       "accent": "cyan",
       "tasks": [
         {
-          "lead": "Diagnose the 2-day scheduler blackout",
-          "detail": "No cofounder sweep logged since Aug 2 10:52Z; this brief fired ~6.5h past its 06:30 IST cron. Pull scheduled-tasks lastRunAt timestamps, confirm whether the Mac slept through 00:30–01:15Z again or something broke outright, and make the fix stick this time.",
-          "tag": "TODAY · ESCALATED",
+          "lead": "Fix the scheduler wake + restore brief drafting (W7) — top infra fix",
+          "detail": "Diagnosis is closed as of today's sweep: two failure modes (late bursts Jul 29/Aug 1/Aug 2/Aug 4 + full blackouts Jul 31/Aug 3) and no new brief draft since Aug 2 despite logged runs. Keep the Mac awake 00:30-01:15Z (caffeinate / Power Nap / scheduled wake) or move both crons to a known-awake hour, then check why create_draft stopped firing headless (Gmail OAuth most likely).",
+          "tag": "TODAY · W7",
           "tagType": "red",
           "project": "hq",
           "area": "Infra / Scheduler"
         },
         {
-          "lead": "Confirm AURA's last-mile status",
-          "detail": "As of Aug 2: import the 6 n8n workflows (n8n/README.md), set N8N_LEAD_WEBHOOK_URL in Vercel, connect the custom domain. Status unconfirmed for 2 days — check before re-doing work that may already be done.",
+          "lead": "AURA last mile — confirm status, then wire n8n + domain",
+          "detail": "As of Aug 2 the live funnel (aura-frankie-insurance.vercel.app) still needed the 6 n8n workflows imported (credentials + REPLACE_* placeholders, activate WF 02 → 01 → 04/05 per n8n/README.md), N8N_LEAD_WEBHOOK_URL set in Vercel, and a custom domain. No newer sweep updates this — confirm before re-doing work. WF 03 (SMS) + WF 06 (voice) STAY INACTIVE until compliance + TCPA counsel clear. Shortest path to a first booked appointment.",
           "tag": "SHORTEST PATH TO REVENUE",
           "tagType": "green",
           "project": "insurance",
           "area": "AURA funnel"
         },
         {
-          "lead": "Full Disk Access toggle → unfreeze autoloop",
-          "detail": "System Settings → Privacy & Security → Full Disk Access for the launchd runner. Two minutes; autoloop has been frozen at cycle 10 for 37 days on this same toggle.",
+          "lead": "Toggle Full Disk Access for the launchd runner",
+          "detail": "2-min Mac settings fix (System Settings → Privacy & Security → Full Disk Access) unblocks autoloop cycle 11+, frozen at cycle 10 for 37 days on this same toggle.",
           "tag": "",
           "tagType": "",
           "project": "hq",
           "area": "Autoloop"
         },
         {
-          "lead": "Re-check Mac disk space",
-          "detail": "Aug 2 sweep found ~222MB free — ENOSPC already forced the AURA deploy through the REST API instead of the CLI. Unconfirmed since; verify it isn't worse before it stalls a sweep, brief, or git clone mid-write.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Infra"
-        },
-        {
-          "lead": "Confirm the Gmail watch-list mailbox",
-          "detail": "The sweep reads orayaassistant@gmail.com. If IRS / Mercedes / dealership replies go to hanfluxai or founder inboxes, 14+ 'quiet' sweeps have been watching the wrong door. 60-second check.",
+          "lead": "Confirm the Gmail watch-list mailbox binding (60 sec)",
+          "detail": "The sweep reads orayaassistant@gmail.com. If IRS / Mercedes / dealership replies go to hanfluxai or a founder inbox, 15 straight 'quiet' sweeps have been watching the wrong door.",
           "tag": "",
           "tagType": "",
           "project": "hq",
           "area": "Ops"
         },
         {
-          "lead": "Refuel the lead-data rails: ATTOM key + BatchData $20–30",
+          "lead": "Re-check Mac disk space",
+          "detail": "Aug 2 sweep found ~222MB free — ENOSPC already forced the AURA deploy through the Vercel REST API instead of the CLI. Unconfirmed since; verify it isn't worse before it stalls a sweep, brief, or git clone mid-write.",
+          "tag": "",
+          "tagType": "orange",
+          "project": "hq",
+          "area": "Infra"
+        },
+        {
+          "lead": "Refuel the lead-data rails: ATTOM key + BatchData $20-30",
           "detail": "ATTOM trial key 401s (re-provision); BatchData token authenticates but sits at $0 (~$0.15/lookup — $20 covers TIER1's 77 leads). Both are prerequisites for the moment compliance clears.",
           "tag": "",
           "tagType": "",
@@ -231,7 +236,7 @@
         },
         {
           "lead": "Batch 3 prep: attach video-gen MCP + feed P10",
-          "detail": "Ingest Meeting-37 feedback into the growth engine (consultancy voice everywhere, no blank end screens, subtitle fix, new DMS tagline) and generate the 12–13 reel batch.",
+          "detail": "Ingest Meeting-37 feedback into the growth engine (consultancy voice everywhere, no blank end screens, subtitle fix, new DMS tagline) and generate the 12-13 reel batch.",
           "tag": "",
           "tagType": "",
           "project": "hq",
@@ -246,16 +251,32 @@
       "accent": "violet",
       "tasks": [
         {
-          "lead": "FLAGGED: 2-day cofounder-sweep blackout",
-          "detail": "No sweep has logged since Aug 2 10:52Z (v15.8), and this AM brief itself fired roughly 6.5 hours past its 06:30 IST cron. This is worse than the Aug 1/Aug 2 same-day bursts — treat as a standing infra alarm, not a one-off, until a fresh sweep confirms the scheduler is healthy again.",
-          "tag": "ESCALATED",
-          "tagType": "red",
+          "lead": "Aug 4 sweep LANDED (13:15Z) — this PM carries it; AM couldn't",
+          "detail": "The AM brief fired ~6.5h late in a burst and carried the stale Aug 2 digest. The Aug 4 sweep has since run (v15.9, commit 4932011, live-verified) — this PM edition is the first to carry it. 15th straight quiet inbox sweep: 0 watch-list hits over 72h covering the Aug 3 gap, 21 threads, newest real mail still Jun 26.",
+          "tag": "FRESH",
+          "tagType": "green",
           "project": "hq",
           "area": "Sweep"
         },
         {
-          "lead": "Carrying the Aug 2 sweep as the newest ground truth",
-          "detail": "Dashboard v15.8 pushed clean (commit 5b94a73), live-verified. Inbox: 14th straight quiet sweep as of Aug 2 (0 watch-list hits, newest mail still Jun 26, orayaassistant@ mailbox caveat unresolved). Transcripts: none since May 18. No fresher sweep exists to update any of this today.",
+          "lead": "FLAGGED: Aug 3 full blackout + drafting pipeline silent since Aug 2",
+          "detail": "Aug 3 logged no cofounder-worker run at all (2nd full blackout after Jul 31); Aug 4 rejoined in a ~6.5h-late burst. Separately, 29 brief drafts sit unsent (36 all-in) and NO new draft has appeared since Aug 2 even though the scheduler logs brief runs — the autonomous create_draft step looks broken, flagged for Chitraksh (Gmail OAuth in headless is the prime suspect).",
+          "tag": "ESCALATED",
+          "tagType": "red",
+          "project": "hq",
+          "area": "Infra"
+        },
+        {
+          "lead": "Delivering this PM's Gmail draft BY HAND — a live test of the broken step",
+          "detail": "Because the autonomous drafting has been silent since Aug 2, this PM edition creates the founders' draft manually. If it lands, it confirms the pipeline works when a live session drives it and the gap is specifically the scheduled/headless create_draft — a useful data point logged for the fix.",
+          "tag": "",
+          "tagType": "",
+          "project": "hq",
+          "area": "Daily Brief"
+        },
+        {
+          "lead": "Transcripts: 0 new since May 18; ground truth unchanged",
+          "detail": "Workspace scan + no email attachments — board ingest skipped again. insurance_leadgen_state.json unchanged since the Aug 2 AURA-deploy entry. Every founder gate simply aged +1 day; no new information exists to curate from, so the who-does-what split carries from AM intact.",
           "tag": "",
           "tagType": "",
           "project": "hq",
@@ -263,53 +284,45 @@
         },
         {
           "lead": "Standing rule: consumer outreach stays gated",
-          "detail": "The p2-insurance consumer funnel remains blocked on compliance items B1–B7 (CA/TX data-broker registration, TCPA counsel, privacy policy, CCPA assessment, license disclosure). Max-autonomy rule holds — no outward-facing send without explicit human approval.",
+          "detail": "The p2-insurance consumer funnel remains blocked on compliance items B1-B7 (CA/TX data-broker registration, TCPA counsel, privacy policy, CCPA assessment, license disclosure). Max-autonomy rule holds — no outward-facing send without explicit human approval.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
           "area": "Compliance"
-        },
-        {
-          "lead": "AM brief generation itself",
-          "detail": "Auto-parse still reads the frozen v14 Daily Tasks board (Envision Honda / Day 138 / v12.0 dashboard) — fully replaced this run across headline, spotlight, and all 3 lanes using the v15.8 Signal DATA block, insurance_leadgen_state.json, and cofounder_log.json per the standing curation protocol.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Daily Brief"
         }
       ]
     }
   ],
   "cofounder": {
-    "date": "2026-08-02",
-    "scanned_at": "2026-08-02T10:52:00Z",
+    "date": "2026-08-04",
+    "scanned_at": "2026-08-04T13:15:00Z",
     "done": [
       {
-        "what": "Inbox scan LIVE: 14th straight quiet sweep — 0 watch-list hits (EIN/IRS, A2P, Envision/Greg/Mo/dealership, cancellations incl. Theresa, opt-in/lead) across a 3-day window; zero new mail at all in 48h, newest real mail still Jun 26.",
+        "what": "Inbox scan LIVE: 15th straight quiet sweep — 0 watch-list hits (EIN/IRS, A2P, Envision/Greg/Mo/dealership, cancellations incl. Theresa, opt-in/lead) across a 72h window that covers the Aug 3 gap; 21 inbox threads unchanged, newest real mail still Jun 26.",
         "who": "CTO-Claude"
       },
       {
-        "what": "W7 burst confirmed for a SECOND consecutive day: scheduled-tasks API shows 5 tasks (london-mid, eod-review, london-briefing-v2, daily-brief-am, cofounder-worker) clustered lastRunAt 10:43-10:46Z today, none at their morning cron — the failure is now daily, not intermittent.",
+        "what": "Found via scheduled-tasks API: Aug 3 was a full blackout — no cofounder-worker run logged that day at all (2nd full-day skip after Jul 31). Aug 4 rejoined in a fresh burst: cofounder-worker + daily-brief-am + hanflux-london-briefing-v2 all fired 07:34:55Z-07:34:57Z, ~6.5h after true morning cron, brief still 1s ahead so today's brief again carried the Aug 2 digest.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Order still inverted: daily-brief-am fired 10:44:23Z, this sweep 10:46:23Z — today's brief carried the Aug 1 cofounder log. Unlike Jul 31, no skipped day: late + out-of-order, not dark.",
+        "what": "Transcript check: 0 new since May 18 (workspace scan; zero new mail so no attachments either) — board ingest skipped.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Transcript check: 0 new since May 18 (workspace scan; no email attachments — mailbox had zero new mail) — board ingest skipped.",
+        "what": "Dashboard patched to v15.9 via bin/patch_20260804_cofounder_sweep.py — 8 surgical patches (meta version/updatedBy/subtitle/changelog, new am-sweep archive card, W7 rewrite with the two-failure-mode conclusion, W1 IRS 37d, W6 Fable 16d, T1 Fable note, T5 recounted draft numbers).",
         "who": "CTO-Claude"
       },
       {
-        "what": "Dashboard patched to v15.8 via bin/patch_20260802_cofounder_sweep.py — 8 surgical patches (meta version/updatedBy/subtitle/changelog, new am-sweep archive card, W7 daily-failure note, W1 IRS 35d, W6 Fable 14d).",
+        "what": "Verified before pushing: node --check on the full extracted <script> block (OK), ORAYA evaluated live in a node vm (archive 208->209, +1, 0 dup ids; decisions untouched at 10; waiting/tools counts unchanged at 7/8), index_v14_backup.html byte-identical.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Verified before pushing: ORAYA block evaluated live in a node vm (12 keys intact), archive grew exactly 206→207 with 0 duplicate ids, decisions untouched at 10, v14 backup untouched. (Note: Aug 1's '207' was a raw literal count that includes one non-archive id — vm archive.length is the authoritative number.)",
+        "what": "Pushed dashboard clean — commit 4932011; live site re-fetched ~20s later and confirmed serving v15.9 / updated 2026-08-04.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Pushed dashboard clean — commit 5b94a73; live site re-fetched ~25s later and confirmed serving v15.8 / updated 2026-08-02.",
+        "what": "Draft count recounted directly (not carried forward): 29 unsent Daily Brief drafts Jun 26 to Aug 2, 36 in the mailbox all-in. No new draft has appeared since Aug 2 despite the scheduler logging an Aug 4 brief run — flagged, not diagnosed further.",
         "who": "CTO-Claude"
       },
       {
@@ -317,21 +330,21 @@
         "who": "CTO-Claude"
       },
       {
-        "what": "Memory updated: dashboard architecture note now records W7 as a daily (consecutive-day) burst failure + the vm-vs-literal archive-count gotcha.",
+        "what": "Memory updated: dashboard architecture note now records the Aug 3 blackout + Aug 4 burst and reframes W7 as two interleaved failure modes (late bursts + full-day blackouts), plus the Aug 2/Aug 4 sweep details and verification counts.",
         "who": "CTO-Claude"
       }
     ],
     "waiting": [
       {
-        "what": "W7 is now failing DAILY (bursts Aug 1 + Aug 2, blackout Jul 31): keep the Mac awake 00:30-01:15Z (caffeinate / Power Nap / scheduled wake) or move both crons to a known-awake hour — this is the top infrastructure fix",
+        "what": "W7 has now shown BOTH failure modes twice each: late/clustered bursts (Jul 29, Aug 1, Aug 2, Aug 4) and full blackout days with zero sweep (Jul 31, Aug 3) — keep the Mac awake 00:30-01:15Z (caffeinate / Power Nap / scheduled wake) or move both crons to a known-awake hour; this is now the single biggest infra fix outstanding",
         "who": "Chitraksh"
       },
       {
-        "what": "Confirm which mailbox the watch-list lands in — sweep reads orayaassistant@gmail.com; if IRS/Mercedes/dealership mail goes to hanfluxai or a founder address, 14 quiet sweeps have been checking the wrong inbox",
+        "what": "Confirm which mailbox the watch-list lands in — sweep reads orayaassistant@gmail.com; if IRS/Mercedes/dealership mail goes to hanfluxai or a founder address, 15 quiet sweeps have been checking the wrong inbox",
         "who": "Chitraksh"
       },
       {
-        "what": "IRS EIN: 35 days silent since the Jun 28 re-fax — phone chase: call 1-202-488-3100, check RedFax 510-497-1224",
+        "what": "IRS EIN: 37 days silent since the Jun 28 re-fax — phone chase: call 1-202-488-3100, check RedFax 510-497-1224",
         "who": "Chitraksh"
       },
       {
@@ -339,19 +352,19 @@
         "who": "Both"
       },
       {
-        "what": "Mercedes re-pitch reply + live agent-demo booking — 23 days overdue",
+        "what": "Mercedes re-pitch reply + live agent-demo booking — 25 days overdue",
         "who": "Frankie"
       },
       {
-        "what": "Confirm P6/P7 scripts were locked before Fable expired Jul 19 — 14 days unconfirmed; assume unlocked and redraft via Claude Opus unless told otherwise",
+        "what": "Confirm P6/P7 scripts were locked before Fable expired Jul 19 — 16 days unconfirmed; assume unlocked and redraft via Claude Opus unless told otherwise",
         "who": "Frankie"
       },
       {
-        "what": "Full Disk Access toggle for the launchd runner (System Settings → Privacy & Security) — 2-min fix, unblocks autoloop cycle 11+ (frozen day 35)",
+        "what": "Full Disk Access toggle for the launchd runner (System Settings -> Privacy & Security) — 2-min fix, unblocks autoloop cycle 11+ (frozen day 35+)",
         "who": "Chitraksh"
       },
       {
-        "what": "27+ Daily Brief drafts unsent since Jun 26 (count as of Aug 1, not recounted today) — import the n8n SCHEDULE workflow + attach Gmail OAuth for true send, or archive the stale ones",
+        "what": "29 Daily Brief drafts unsent since Jun 26 (36 all-in), and no new draft since Aug 2 despite the scheduler showing today's brief ran — import the n8n SCHEDULE workflow + attach Gmail OAuth for true send, or check why the brief stopped drafting",
         "who": "Chitraksh"
       }
     ]
