@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-08-08T14:08:06.693Z",
-  "date_label": "Sat · Aug 8",
+  "generated_at": "2026-08-09T14:06:47.683Z",
+  "date_label": "Sun · Aug 9",
   "edition": "PM",
-  "day_number": 210,
-  "phase": "PT morning · T-1 to the Aug 9 ad launch",
-  "headline": "PM edition, Saturday — T-1 to the Aug 9 launch, and for once the machine surfaced a real signal. Ground truth still hasn't moved (state static since Aug 2, board v15.12, no transcripts since May 18), so today is the same three Meeting-38 tasks — but a live inbox read just changed one from theory to urgency: the 'Chitraksh to VC USA' phantom is STILL auto-firing and failing (Aug 7 ×2, Aug 8 ×3, every run dead on the expired li_at cookie, every one auto-paused). That is the exact wrong-shaped tool Meeting 38 said the relationship-first VC lane should never use, and it resumes the instant the cookie is fixed — so the W14 doctrine call now comes BEFORE any repair. The 72-hour verification fuse burned this morning (~08:59Z) with no evidence it was clicked; treat verification as downstream of the doctrine call, not a race. Everything launch-critical is unchanged and unforgiving on T-1: Vercel Analytics ON and the Meta MCP connected before a single dollar moves, every creative stamped with Frankie's NPN + CA licence # + disclaimer, and Frankie's video kit finally in the can. Machine note: today's sweep (00:40Z) and AM brief (01:08Z) both fired on-cron in the right order but neither wrote its artifact — no AM log line, digest still Aug 6 — so the timing is fixed and the headless-write step is the live W7 failure. This PM is the first Aug 8 brief.",
-  "source": "index.html · ORAYA DATA v15.12 (2026-08-06, last board update) + cofounder_log.json (Aug 6 00:45Z sweep — CARRIED; cofounder-worker fired Aug 8 00:40Z per the scheduler but wrote no fresh digest) + insurance_leadgen_state.json (static since Aug 2) + LIVE inbox read (orayaassistant@gmail.com, Aug 8 14:04Z). First Aug 8 brief — the AM edition fired 01:08Z but never published/logged.",
+  "day_number": 211,
+  "phase": "PT morning · T-0 · Aug 9 ad-launch day",
+  "headline": "PT morning, Day 211 — T-0. The launch day the whole sprint aimed at is here, and the honest call on launch morning is GO / NO-GO, not go. Nothing on the board has moved since Aug 2 (state static, board v15.12, no transcripts since May 18, no fresh sweep), so the launch gates stand exactly as the Aug 6 split left them — and the first dollar of the $600 must not spend until all of them are closed: Vercel Analytics live and the Meta MCP connected (or the spend is unmeasurable and hand-driven), and every creative + the landing page stamped with Frankie's NPN + CA producer-licence # + not-guaranteed disclaimer — the exact trio whose absence banned the last account. Fresh from the launch-morning inbox: the 'Chitraksh to VC USA' auto-connect phantom has finally gone quiet — no new failure since Aug 8 10:07Z — and the Aug-5 verify link is now dead (past its 72h fuse, so re-verification restarts from scratch); but the W14 doctrine call is still unmade, and PhantomBuster spent this very morning (09:02Z) marketing the 'Auto Connect' product Meeting 38 said that lane must never use — so decide it OFF before any cookie repair, or the fix just resumes the connects. No Meta/Facebook mail in the box yet; no IRS, no Mercedes. Machine note: today's AM brief fired but wrote only the stale-v14 skeleton — never curated or logged — so this PM is the first real Aug 9 brief (W7 headless-write step, again).",
+  "source": "index.html · ORAYA DATA v15.12 (2026-08-06, last board update) + cofounder_log.json (Aug 6 00:45Z sweep — CARRIED; no fresh sweep since) + insurance_leadgen_state.json (static since Aug 2) + LIVE launch-morning inbox read (orayaassistant@gmail.com, Aug 9 ~09:1xZ). First real Aug 9 brief — the AM edition generated only the stale-v14 skeleton and was never curated/published/logged.",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -63,79 +63,79 @@
   ],
   "spotlight": [
     {
-      "icon": "📈",
-      "title": "Close the pre-spend gate TODAY — Analytics + Meta MCP before a dollar moves",
+      "icon": "🚦",
+      "title": "Pre-spend gate = the launch gate: Analytics + Meta MCP, before dollar one",
       "who": "Chitraksh",
-      "detail": "T-1, and both are still open. Vercel Analytics is NOT enabled: Frankie asked whether anyone visits the site and nobody can answer, and paid traffic without analytics makes the whole $600 unmeasurable — it must land before a dollar spends (free tier answers the question; no overspend needed). Then connect the Meta MCP and walk the campaign structure, or the creatives can't be pushed or monitored programmatically and the budget is driven by hand. These are two of your agreed next-24h three and the two hard technical preconditions for tomorrow. Build discipline carries in: never raise budget >20-25% inside 3-4 days (Andromeda relearns), refresh creatives ~every 15 days.",
+      "detail": "On T-0 these two stop being prep and become the go/no-go itself. Vercel Analytics still isn't confirmed on — Frankie's question, 'is anyone visiting the site?', stays unanswerable, and paid traffic without it makes the whole $600 unmeasurable and un-learnable (the free tier answers the question; no overspend needed). Then connect the Meta MCP and walk the campaign structure, or the creatives can't be pushed or monitored programmatically and the budget is driven by hand. Both must be TRUE before the first dollar moves. Build discipline carries in: never raise budget >20-25% inside 3-4 days (Andromeda relearns), refresh creatives ~every 15 days.",
       "project": "insurance",
       "area": "Ads / Instrumentation"
     },
     {
       "icon": "🎥",
-      "title": "Frankie: land the video kit + hand over the compliance numbers — both still open on T-1",
+      "title": "The anti-ban trio + the video kit — nothing goes live without all three",
       "who": "Frankie",
-      "detail": "Still your whole allocation and it hasn't landed. One 20-24 min session (shirt + tie, iPhone 4K/60fps per the kit) unblocks four things — the founder-ad creative, a creative with your face, the landing-page refresh, and the ElevenLabs voice clone (audio is extracted from the same takes) — then hand the footage to Chitraksh. Five minutes more, and nothing ships without it: your NPN, your CA producer licence number, and the not-guaranteed / rates-vary disclaimer. The old account was banned for exactly their absence — every Batch-1 creative and the landing page must carry all three before Aug 9.",
+      "detail": "Five minutes that gate the entire launch: your NPN, your CA producer-licence number, and the not-guaranteed / rates-vary disclaimer, on every creative AND the landing page. The old account was banned for exactly their absence — no licence identifiers, a guaranteed-sounding price teaser, an all-text PNG — so on launch day this is the hard compliance gate, not a nicety. And the video kit is still your whole allocation and still hasn't landed: one 20-24 min session (shirt + tie, iPhone 4K/60fps) unblocks the founder-ad creative, a creative with your face, the landing-page refresh and the ElevenLabs voice clone (audio is pulled from the same takes) — then hand the footage to Chitraksh.",
       "project": "insurance",
       "area": "Ads / Creative"
     },
     {
-      "icon": "🛑",
-      "title": "Settle the VC-phantom doctrine call BEFORE touching the cookie — it's still firing",
+      "icon": "✅",
+      "title": "Launch-morning GO / NO-GO — hold the spend if any gate is still open",
       "who": "Both",
-      "detail": "The freshest thing on the board, straight from the live inbox: 'Chitraksh to VC USA' failed again Aug 7 (×2) and Aug 8 (×3) — every run dead on the expired session cookie, every phantom auto-paused. That automated connect sequence is exactly what Meeting 38 said the relationship-first, 12-24-months-pre-raise VC lane should never use, and it is actively retrying. Decide whether it runs at all (recommendation: pause or delete it) BEFORE any cookie repair — a fixed cookie just resumes the thing you said you didn't want. The 72h verification fuse already burned (~08:59Z, no click seen), so verification is downstream of this decision, not a race. And regardless of the cookie: LinkedIn Batch 1 (27 days unposted) still gates every sequence.",
-      "project": "hq",
-      "area": "Growth / LinkedIn"
+      "detail": "The capstone call for today: fire the $600 only when all of the above are closed — Analytics live, Meta MCP connected, compliance furniture on every creative and the landing page, static compliant creatives with no guaranteed-price language. If any is still open at the end of Frankie's morning, HOLD the spend: the $600 doesn't expire, but the account reputation does, and re-earning it after a second ban costs far more than a one-day slip. Same breath, settle W14 — the VC-connect phantom went quiet (no fire since Aug 8 10:07Z) and its verify link is dead, but decide it OFF before any cookie repair, because a fixed cookie just resumes the auto-connects PhantomBuster was marketing to you this very morning. And LinkedIn Batch 1 (28 days unposted) still gates every sequence, cookie or no cookie.",
+      "project": "insurance",
+      "area": "Launch / Go-No-Go"
     }
   ],
   "blockers": [
     {
-      "label": "PhantomBuster — fuse burned, VC phantom still firing",
-      "scope": "Both decide · Chitraksh fixes",
-      "detail": "The 72h verification link expired ~Aug 8 08:59Z with no click seen, so per the board the account now re-verifies from scratch. But the live inbox shows the bigger issue: 'Chitraksh to VC USA' kept auto-firing and failing on the dead li_at cookie — Aug 7 (×2) and Aug 8 (×3), all auto-paused. Settle W14 FIRST (does that phantom run at all — it's the wrong shape for the relationship-first VC lane), THEN repair the cookie / re-verify. Fixing the cookie first just resumes the unwanted auto-connects."
+      "label": "Launch go/no-go — pre-spend gate still open",
+      "scope": "Chitraksh",
+      "detail": "T-0. Vercel Analytics ON + Meta MCP connected are the two hard preconditions for spend, and neither is confirmed. No analytics = the $600 is unmeasurable and 'is anyone visiting the site?' stays unanswerable. No MCP = creatives can't be pushed or monitored programmatically and the campaign is driven by hand. Both must be true before dollar one — this is launch-morning work, not later."
     },
     {
       "label": "Compliance furniture on every creative",
       "scope": "Frankie supplies · both enforce",
-      "detail": "NPN + CA producer licence number + a not-guaranteed/rates-vary disclaimer, on the creative AND the landing page. This is the exact trio whose absence got the last ad account banned. Five minutes of Frankie's time; a hard gate on Aug 9."
-    },
-    {
-      "label": "Vercel Analytics + Meta MCP",
-      "scope": "Chitraksh",
-      "detail": "Both must precede spend. No analytics = the $600 is unmeasurable and 'is anyone visiting the site?' stays unanswerable. No MCP = creatives can't be pushed or monitored programmatically and the campaign is driven by hand. T-1 — this is tonight's work, not tomorrow's."
+      "detail": "NPN + CA producer-licence number + a not-guaranteed/rates-vary disclaimer, on the creative AND the landing page. This is the exact trio whose absence got the last ad account banned. Five minutes of Frankie's time; the hard gate on launch day — nothing ships without all three."
     },
     {
       "label": "Paid ads ARE consumer outreach",
       "scope": "Both — five minutes well spent",
-      "detail": "Worth naming before Aug 9: gates b5 (privacy policy + Do-Not-Sell page) and b7 (producer licence disclosure) bind the ad creative and the landing page, and TCPA binds the moment a lead is dialled. Oraya's own B2B marketing lane stays separate and ungated — this one isn't."
+      "detail": "Worth naming on Aug 9 itself: gates b5 (privacy policy + Do-Not-Sell page) and b7 (producer-licence disclosure) bind the ad creative and the landing page, and TCPA binds the moment a lead is dialled. Oraya's own B2B marketing lane stays separate and ungated — this consumer lane isn't."
+    },
+    {
+      "label": "PhantomBuster — verify link dead, decide W14 before any repair",
+      "scope": "Both decide · Chitraksh fixes",
+      "detail": "The auto-fire finally went quiet — no 'Chitraksh to VC USA' failure since Aug 8 10:07Z — and the Aug-5 verification link is now dead (past its 72h fuse, so the account re-verifies from scratch). But the doctrine call is still owed: that automated connect sequence is the wrong shape for the relationship-first, 12-24-months-pre-raise VC lane (W14). Decide it OFF (pause/delete) BEFORE re-pasting any cookie — a fix just resumes the connects. Ironic proof it's the wrong tool: PhantomBuster marketed its 'Auto Connect' product to the same inbox this morning (09:02Z)."
     },
     {
       "label": "IRS EIN",
       "scope": "Chitraksh",
-      "detail": "41 days silent since the Jun 28 re-fax; the ~8-business-day window closed Jul 11. A phone chase now, not a wait — IRS EIN line 1-202-488-3100, RedFax check 510-497-1224."
+      "detail": "42 days silent since the Jun 28 re-fax; the ~8-business-day window closed Jul 11. A phone chase now, not a wait — IRS EIN line 1-202-488-3100, RedFax check 510-497-1224."
     },
     {
-      "label": "Scheduler (W7) — the failure moved to the write step",
+      "label": "Scheduler (W7) — headless write step",
       "scope": "Chitraksh",
-      "detail": "New read: today the cofounder sweep (00:40Z) and AM brief (01:08Z) both fired on-cron in the correct sweep-first order — timing is healthy — but neither wrote its artifact: no Aug 8 AM line in brief_log.txt and cofounder_log.json is still Aug 6. So the live failure is the headless WRITE/publish step, the same family as the 30+ unsent drafts, not the wake window. Still keep the Mac awake 00:30-01:15Z and stagger the brief ≥45 min after the sweep, but the open question is why a fired headless task doesn't complete its writes."
+      "detail": "Today's AM brief generated only the stale-v14 skeleton (Envision Honda / Day 138 / v12.0), was never curated or logged, and the cofounder sweep hasn't written since Aug 6 — so this PM is the first real Aug 9 brief. Same failure family as the 30+ unsent drafts: a fired headless task that doesn't complete its writes. Keep the Mac awake 00:30-01:15Z and stagger the brief ≥45 min after the sweep, but the open question remains the write/publish step."
     },
     {
       "label": "Mercedes",
       "scope": "Frankie",
-      "detail": "29 days overdue and deliberately not competing with the ads sprint — but their reply is in and ours isn't. When it surfaces: timestamped screenshots of their own chatbot's multi-day delay → pitch voice AI + automation → let the agent itself call to book the demo."
+      "detail": "30 days overdue and deliberately not competing with the ads sprint — but their reply is in and ours isn't. When it surfaces: timestamped screenshots of their own chatbot's multi-day delay → pitch voice AI + automation → let the agent itself call to book the demo."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "210"
+      "v": "211"
     },
     {
       "k": "Ad launch",
-      "v": "T-1"
+      "v": "T-0"
     },
     {
       "k": "Oldest gate",
-      "v": "41d"
+      "v": "42d"
     }
   ],
   "lanes": [
@@ -146,20 +146,28 @@
       "accent": "emerald",
       "tasks": [
         {
+          "lead": "Supply NPN + CA producer-licence # + disclaimer — gates the launch",
+          "detail": "Five minutes, and it gates every single creative plus the landing page on launch day. The old account was banned for the absence of exactly these — no licence identifiers, a guaranteed-sounding price teaser, an all-text PNG. Send the two numbers and confirm the not-guaranteed/rates-vary wording so Chitraksh can stamp Batch 1 before anything spends.",
+          "tag": "5 MIN · GATES THE LAUNCH",
+          "tagType": "red",
+          "project": "insurance",
+          "area": "Compliance"
+        },
+        {
           "lead": "Record the video kit — 4K/60fps, ~20-24 min",
-          "detail": "Still your one job and it still hasn't landed — T-1 now. Shirt + tie, iPhone at 4K/60 per the kit. One session unblocks the founder-ad creative, a creative with your face, the landing-page refresh, and the ElevenLabs voice clone (audio is extracted from these same takes). Hand the footage to Chitraksh when done.",
+          "detail": "Still your one job and it still hasn't landed — T-0 now. Shirt + tie, iPhone at 4K/60 per the kit. One session unblocks the founder-ad creative, a creative with your face, the landing-page refresh, and the ElevenLabs voice clone (audio is extracted from these same takes). Hand the footage to Chitraksh when done.",
           "tag": "STILL OPEN · WHOLE ALLOCATION",
           "tagType": "red",
           "project": "insurance",
           "area": "Ads / Creative"
         },
         {
-          "lead": "Supply NPN + CA producer licence # + disclaimer",
-          "detail": "Five minutes, and it gates every single creative plus the landing page before Aug 9. The old account was banned for the absence of exactly these — no licence identifiers, a guaranteed-sounding price teaser, all-text PNG. Send the two numbers and confirm the not-guaranteed/rates-vary wording so Chitraksh can stamp Batch 1 tonight.",
-          "tag": "5 MIN · GATES EVERY CREATIVE",
-          "tagType": "red",
+          "lead": "GO / NO-GO with Chitraksh before any spend",
+          "detail": "The launch-morning decision is yours together: fire the $600 only if Analytics is live, the Meta MCP is connected, and every creative + the landing page carries the compliance trio. If any is open at the end of your morning, HOLD — the budget doesn't expire, the account reputation does. A one-day slip beats a second ban.",
+          "tag": "LAUNCH CALL",
+          "tagType": "orange",
           "project": "insurance",
-          "area": "Compliance"
+          "area": "Launch / Go-No-Go"
         },
         {
           "lead": "Review the Gemini creative batch with Chitraksh",
@@ -178,17 +186,9 @@
           "area": "Content"
         },
         {
-          "lead": "Cebu ops/supply-chain EA — the follow-up call",
-          "detail": "The Thursday conversation is two days back now. Bucket-warming, not a hire: Cebu, 10 years ops + supply chain + EA, every mutual connection a dealership person. Decide whether to bring Chitraksh in on the next touch — but not at the cost of the three ad tasks on launch eve.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "People"
-        },
-        {
-          "lead": "Mercedes re-pitch reply — 29 days overdue",
-          "detail": "Standing carry-over, deliberately not competing with the ads sprint. Their reply is in; ours isn't. Weapon when you get to it: timestamped screenshots of their own chatbot's multi-day delay → pitch voice AI + automation → book the call where the agent demos itself.",
-          "tag": "OVERDUE 29d",
+          "lead": "Mercedes re-pitch reply — 30 days overdue",
+          "detail": "Standing carry-over, deliberately not competing with the launch. Their reply is in; ours isn't. Weapon when you get to it: timestamped screenshots of their own chatbot's multi-day delay → pitch voice AI + automation → book the call where the agent demos itself.",
+          "tag": "OVERDUE 30d",
           "tagType": "orange",
           "project": "insurance",
           "area": "Dealership"
@@ -203,25 +203,25 @@
       "tasks": [
         {
           "lead": "Enable Vercel Analytics — before a single ad dollar moves",
-          "detail": "T-1. Frankie asked whether anyone is visiting the site and right now nobody can tell. Paid traffic without analytics makes the $600 unmeasurable and un-learnable, so this lands before launch. His own caution logged too: don't overspend on tooling to get it — the free tier answers the question.",
-          "tag": "T-1 · PRE-SPEND",
+          "detail": "T-0. Frankie asked whether anyone is visiting the site and right now nobody can tell. Paid traffic without analytics makes the $600 unmeasurable and un-learnable, so this lands before launch. His own caution logged too: don't overspend on tooling to get it — the free tier answers the question.",
+          "tag": "T-0 · PRE-SPEND",
           "tagType": "red",
           "project": "insurance",
           "area": "Ads / Instrumentation"
         },
         {
           "lead": "Connect the Meta MCP + review campaign structure",
-          "detail": "One of your agreed next-24h three, and a hard precondition for tomorrow. Until it's attached, creatives cannot be pushed or monitored programmatically and the $600 has to be driven by hand. While reviewing: never raise budget >20-25% inside 3-4 days (Andromeda relearning), and plan the ~15-day creative refresh into batch 2.",
-          "tag": "T-1 · NEXT-24H THREE",
+          "detail": "The second hard precondition for spend. Until it's attached, creatives cannot be pushed or monitored programmatically and the $600 has to be driven by hand. While reviewing: never raise budget >20-25% inside 3-4 days (Andromeda relearning), and plan the ~15-day creative refresh into batch 2.",
+          "tag": "T-0 · PRE-SPEND",
           "tagType": "red",
           "project": "insurance",
           "area": "Ads / Instrumentation"
         },
         {
           "lead": "VC phantom — decide it OFF before repairing the cookie",
-          "detail": "New from the live inbox: 'Chitraksh to VC USA' kept firing and failing after Aug 5 too — Aug 7 (×2) and Aug 8 (×3), all on the expired li_at cookie, all auto-paused. It's an automated connect sequence aimed at the lane Meeting 38 defined as relationship-first and 12-24 months pre-raise (W14). Settle with Frankie whether it runs AT ALL and pause/delete it if not — BEFORE re-pasting the cookie, because a fixed cookie just resumes the auto-connects. The 72h verification link already expired ~08:59Z today with no click seen; re-verify only after the doctrine call.",
-          "tag": "DECIDE FIRST · STILL FIRING",
-          "tagType": "red",
+          "detail": "Launch-morning inbox: 'Chitraksh to VC USA' has gone quiet — no new failure since Aug 8 10:07Z — and the 72h verify link is now dead. But it's still an automated connect sequence aimed at the lane Meeting 38 defined as relationship-first and 12-24 months pre-raise (W14). Settle with Frankie whether it runs AT ALL and pause/delete it BEFORE re-pasting a cookie, because a fix just resumes the auto-connects — PhantomBuster literally marketed its 'Auto Connect' product to the inbox this morning. Re-verify only after the doctrine call.",
+          "tag": "DECIDE FIRST · WENT QUIET",
+          "tagType": "orange",
           "project": "hq",
           "area": "Growth / LinkedIn"
         },
@@ -243,7 +243,7 @@
         },
         {
           "lead": "Scheduler (W7) — chase the write step, not the wake window",
-          "detail": "Today's evidence flips the diagnosis: the sweep (00:40Z) and AM brief (01:08Z) both fired on-cron in the right order, yet neither wrote its artifact — no Aug 8 AM brief_log line, cofounder_log.json still Aug 6. So the live failure is the headless WRITE/publish step (same family as the 30+ unsent drafts), not the wake timing. Keep the Mac awake 00:30-01:15Z and stagger the brief ≥45 min after the sweep, but the real open question is why a fired headless task doesn't finish its writes.",
+          "detail": "Evidence holds: fired headless tasks aren't completing their writes — today's AM brief wrote only the stale-v14 skeleton and never logged, and the cofounder sweep hasn't written since Aug 6. Same family as the 30+ unsent drafts. Keep the Mac awake 00:30-01:15Z and stagger the brief ≥45 min after the sweep, but the real open question is why a fired headless task doesn't finish its writes.",
           "tag": "WRITE-STEP FAILURE",
           "tagType": "orange",
           "project": "hq",
@@ -251,24 +251,24 @@
         },
         {
           "lead": "Autoloop Full Disk Access — the 2-minute toggle",
-          "detail": "Frozen at cycle 10, day 41. System Settings → Privacy & Security → Full Disk Access → the launchd runner. Cheapest unfreeze in the building; it just keeps not getting done.",
+          "detail": "Frozen at cycle 10, day 42. System Settings → Privacy & Security → Full Disk Access → the launchd runner. Cheapest unfreeze in the building; it just keeps not getting done.",
           "tag": "",
           "tagType": "",
           "project": "ops",
           "area": "Infra / Autoloop"
         },
         {
-          "lead": "IRS EIN phone chase — 41 days silent",
+          "lead": "IRS EIN phone chase — 42 days silent",
           "detail": "Re-faxed Jun 28; the ~8-business-day window closed Jul 11 and the Mon Jul 27 phone window passed unused. Not a wait any more: IRS EIN line 1-202-488-3100, and check RedFax at 510-497-1224 for a delivery receipt.",
-          "tag": "41d",
+          "tag": "42d",
           "tagType": "orange",
           "project": "hq",
           "area": "Entity / Legal"
         },
         {
-          "lead": "LinkedIn Batch 1 — still unposted at 27 days",
+          "lead": "LinkedIn Batch 1 — still unposted at 28 days",
           "detail": "Standing carry-over that the PhantomBuster mess doesn't remove: real posted content is the GATE on every sequence, cookie or no cookie. Hanflux AI search appearances are +430% on a blank page — 'they see that it's blank and then they go away.' Zero compliance gate; this is Oraya's own B2B marketing lane.",
-          "tag": "KEYSTONE · 27d",
+          "tag": "KEYSTONE · 28d",
           "tagType": "orange",
           "project": "hq",
           "area": "Growth / LinkedIn"
@@ -282,24 +282,24 @@
       "accent": "violet",
       "tasks": [
         {
-          "lead": "Shipped this PM brief — first Aug 8 edition",
-          "detail": "The AM brief task fired 01:08Z per the scheduler but never published or logged (no Aug 8 AM line in brief_log.txt), so this PM is the first Aug 8 brief. Generated PM, curated to the live v15.12 board + a live inbox read, published to the brief page, drafted to both inboxes, logged. Full-detail build — no ~100-char truncation — so the auto-send carries the phone numbers and exact steps.",
+          "lead": "Shipped this PM brief — first real Aug 9 edition",
+          "detail": "Today's AM brief generated only the stale-v14 skeleton (Envision Honda / Day 138 / v12.0), was never curated, published, or logged — so this PM is the first real Aug 9 brief. Generated PM, curated to the live v15.12 board + a launch-morning inbox read, published to the brief page, drafted to both inboxes, logged. Full-detail build — no ~100-char truncation — so the auto-send carries the phone numbers and exact steps.",
           "tag": "SHIPPED",
           "tagType": "green",
           "project": "ops",
           "area": "Daily Brief"
         },
         {
-          "lead": "Live inbox read caught the VC phantom still firing",
-          "detail": "This PM didn't just carry the Aug 6 digest — a live read of orayaassistant@gmail.com (Aug 8 14:04Z) found 'Chitraksh to VC USA' failing again on Aug 7 (×2) and Aug 8 (×3), all dead-cookie / auto-paused, and the 72h verification fuse expired ~08:59Z with no click seen. That's why W14 is escalated in today's spotlight and blockers: the wrong-shaped tool is actively retrying against the relationship-first VC lane.",
+          "lead": "Launch-morning inbox read: the VC phantom went quiet",
+          "detail": "A live read of orayaassistant@gmail.com (Aug 9 ~09:1xZ) found NO new 'Chitraksh to VC USA' failure since Aug 8 10:07Z — the auto-fire has stopped for now — and the Aug-5 verify link is now dead (past its 72h fuse). The only new mail today is a PhantomBuster MARKETING drip (09:02Z) pushing 'Auto Connect' — noise, and an on-the-nose reminder of exactly the tool-shape W14 rejects. No Meta/Facebook mail in the box yet; no IRS, no Mercedes.",
           "tag": "NEW FINDING",
           "tagType": "orange",
           "project": "hq",
           "area": "Sweep / Inbox"
         },
         {
-          "lead": "Sweep fired but wrote no fresh digest — W7 refined",
-          "detail": "cofounder-worker fired 00:40Z today (on-cron, ahead of the 01:08Z AM brief — correct order), but cofounder_log.json is still the Aug 6 00:45Z sweep. So the 'overnight' section below is CARRIED and the live W7 failure is the headless write step, not the wake window or cadence. Ground truth is unchanged regardless.",
+          "lead": "Digest still Aug 6 — carried, W7 write-step",
+          "detail": "No cofounder sweep has written since the Aug 6 00:45Z run, so the 'overnight' section below is CARRIED. The live W7 failure remains the headless write step, not the wake window or cadence. Ground truth is unchanged regardless.",
           "tag": "CARRIED DIGEST",
           "tagType": "orange",
           "project": "hq",
@@ -307,7 +307,7 @@
         },
         {
           "lead": "Ground truth unchanged — it's the machine, not the mission",
-          "detail": "insurance_leadgen_state.json static since Aug 2, no transcripts since May 18, board unchanged since the Aug 6 push. So today's who-does-what is the Aug 6 split with the clock advanced to T-1 — not a new plan, and no new task invented (3-per-15-hours holds).",
+          "detail": "insurance_leadgen_state.json static since Aug 2, no transcripts since May 18, board unchanged since the Aug 6 push. So launch-day who-does-what is the Aug 6 split with the clock advanced to T-0 — not a new plan, and no new task invented (3-per-15-hours holds). The mission is ready; the gates are the founders' to close.",
           "tag": "",
           "tagType": "",
           "project": "hq",
