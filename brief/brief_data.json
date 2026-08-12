@@ -359,15 +359,15 @@
     ],
     "waiting": [
       {
-        "what": "PhantomBuster: re-paste the LinkedIn session cookie AND click the verification email before ~Aug 8 08:59Z — after that the link dies and the account needs re-verifying from scratch, one day before ads go live",
+        "what": "PhantomBuster [RE-CLOCKED Aug 12]: the Aug-5 verification link is long dead (72h fuse burned Aug 8), so the account needs re-verifying from scratch — and the li_at cookie is still expired. Do NOT repair either until the VC-phantom doctrine call below is made, or the fix simply resumes the connects.",
         "who": "Chitraksh"
       },
       {
-        "what": "Decide whether 'Chitraksh to VC USA' should run at all — an automated connect phantom is the wrong shape for the relationship-first VC lane you described in Meeting 38. Answer this before fixing the cookie, not after",
+        "what": "Decide whether 'Chitraksh to VC USA' should run at all — an automated connect phantom is the wrong shape for the relationship-first VC lane you described in Meeting 38. Answer this before fixing the cookie, not after. [RE-CLOCKED Aug 12: it failed again Aug 10 20:20Z; quiet since, but that is auto-paused, not decided.]",
         "who": "Both"
       },
       {
-        "what": "Enable Vercel Analytics before a single ad dollar moves — T-3 to launch, and without it the $600 is unmeasurable and Frankie's question (is anyone visiting the site?) stays unanswerable",
+        "what": "Enable Vercel Analytics before a single ad dollar moves — [RE-CLOCKED Aug 12: this is T+3, not T-3; the date passed with no evidence of spend] without it the $600 is unmeasurable and Frankie's question (is anyone visiting the site?) stays unanswerable.",
         "who": "Chitraksh"
       },
       {
@@ -387,21 +387,22 @@
         "who": "Frankie"
       },
       {
-        "what": "COMPLIANCE FLAG, five minutes well spent before Aug 9: paid consumer ads ARE consumer outreach, so gates b5 (privacy policy + Do-Not-Sell) and b7 (producer licence disclosure) bind the creative and the landing page, and TCPA binds the moment a lead is dialled. The B2B marketing lane is separate; this one is not",
+        "what": "COMPLIANCE FLAG, five minutes well spent before ANY spend [RE-CLOCKED Aug 12 — originally written 'before Aug 9']: paid consumer ads ARE consumer outreach, so gates b5 (privacy policy + Do-Not-Sell) and b7 (producer licence disclosure) bind the creative and the landing page, and TCPA binds the moment a lead is dialled. The B2B marketing lane is separate; this one is not.",
         "who": "Both"
       },
       {
-        "what": "W7 scheduler fix still owed despite two good mornings: keep the Mac awake 00:30-01:15Z (caffeinate / Power Nap / scheduled wake) or move both crons to a known-awake hour, and stagger the brief at least 45 min after the sweep",
+        "what": "W7 scheduler fix still owed — [RE-CLOCKED Aug 12: the 'two good mornings' that line was written after did not hold; Aug 11 was a full blackout and this AM fired ~17h late] keep the Mac awake 00:30-01:15Z (caffeinate / Power Nap / scheduled wake) or move both crons to a known-awake hour, and stagger the brief at least 45 min after the sweep.",
         "who": "Chitraksh"
       },
       {
-        "what": "IRS EIN: 39 days silent since the Jun 28 re-fax — a phone chase now, not a wait. 1-202-488-3100, RedFax 510-497-1224",
+        "what": "IRS EIN: 45 days silent since the Jun 28 re-fax [RE-CLOCKED Aug 12, was 39d] — a phone chase now, not a wait. 1-202-488-3100, RedFax 510-497-1224.",
         "who": "Chitraksh"
       },
       {
         "what": "Standing carry-overs, deliberately not competing with the ads sprint: LinkedIn Batch 1 post (still gates every PhantomBuster sequence, cookie or no cookie), Mercedes re-pitch reply, launchd Full Disk Access for the autoloop",
         "who": "Both"
       }
-    ]
+    ],
+    "note": "Aug 6 00:45Z sweep — CARRIED (no sweep has written in 6 days, W7). Lines asserting dates or counters have been re-clocked to Aug 12 and marked; the underlying findings are the Aug 6 sweep's."
   }
 }
