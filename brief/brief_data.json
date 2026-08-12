@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-08-12T18:00:31.408Z",
+  "generated_at": "2026-08-12T18:13:27.745Z",
   "date_label": "Wed · Aug 12",
   "edition": "PM",
   "day_number": 214,
-  "phase": "PT morning · Day 214 · T+3 on the Aug 9 launch (first SHIPPED brief in ~46h; fired ~4h late — W7)",
-  "headline": "Frankie's Wednesday morning, Day 214 — and the number that matters is three: three days since the Aug 9 T-0, and still nothing behind it. A live PM inbox re-read finds ZERO Meta or Facebook mail of any kind — no ad-review decision, no billing receipt, no lead — so on the evidence the $600 has never moved. Ground truth is frozen to match: insurance_leadgen_state.json untouched since Aug 2 (10 days), the board still v15.12 from Aug 6, no cofounder sweep in six days, autoloop dark at cycle 10 on day 45. Nothing about the plan is wrong — the same four gates are the only things between $0 and a measurable launch: Vercel Analytics ON, the Meta MCP connected, NPN + CA-licence # + a not-guaranteed / rates-vary disclaimer on every creative and the landing page, and Frankie's video kit — now 8 days open and the hardest of the four, because instrumentation flips on in an afternoon but footage cannot be conjured. So today is not another go/no-go: close the two or three open gates and fire, or write a named hold date out loud — Monday's brief asked for exactly this call and got neither, and two more days drained the same way. W14 is owed in the same breath: the 'Chitraksh to VC USA' auto-connect phantom refired Aug 10 20:20Z — seven minutes after Monday's brief logged — and has been quiet the ~45h since, but quiet is what auto-paused looks like, not a decision; switch it OFF before anyone re-pastes a cookie. And the machine keeps proving the point: Aug 11 shipped nothing — no AM, no PM, no sweep, the fourth full blackout — and today's AM edition generated at 17:52Z but was never logged or published, so this PM is the first brief to actually land in ~46 hours. Three days of silent drift is the exact failure mode '3 tasks per 15 hours' was invented to kill.",
-  "source": "index.html · ORAYA DATA v15.12 (2026-08-06, last board update — 6 days stale) + cofounder_log.json (Aug 6 00:45Z sweep — CARRIED, no sweep in 6 days) + insurance_leadgen_state.json (static since Aug 2) + LIVE PM inbox re-read (orayaassistant@gmail.com, Aug 12 ~17:56Z): from:facebookmail.com returns EMPTY across 45 days — still ZERO Meta/Facebook/ad mail anywhere (no launch evidence), zero IRS, zero Mercedes. Newest mail is a PhantomBuster marketing drip (Aug 11 09:02Z, Auto-Connect/MCP offer expiring Aug 13); newest real event is the 'Chitraksh to VC USA' failure at Aug 10 20:20Z — inbox quiet ~33h, nothing new on Aug 12. First SHIPPED brief since Aug 10 PM: Aug 11 was a full blackout (4th) and today's AM edition generated at 17:52Z but was never logged/published (W7 headless-write) — a ~46h gap.",
+  "phase": "PT morning · Day 214 · T+3 on the Aug 9 launch · v15.13 sweep ran today · all 9 tasks fired in one 17-min catch-up burst (W7)",
+  "headline": "Frankie's Wednesday morning, Day 214 — and the number that matters is three: three days since the Aug 9 T-0, and still nothing behind it. A live PM inbox re-read finds ZERO Meta or Facebook mail of any kind — no ad-review decision, no billing receipt, no lead — and today's fresh v15.13 cofounder sweep says the same and formalizes it as new Waiting W15: launch on the record, or declare a dated hold. Ground truth is otherwise frozen — insurance_leadgen_state.json untouched since Aug 2, no transcripts since May 18, autoloop dark at cycle 10 on day 45 — so nothing about the plan is wrong: the same four gates are the only things between $0 and a measurable launch — Vercel Analytics ON, the Meta MCP connected, NPN + CA-licence # + a not-guaranteed disclaimer on every creative and the landing page, and Frankie's video kit, now 8 days open and the hardest of the four. So today is not another go/no-go: close the two or three open gates and fire, or write the W15 hold date out loud — Monday's brief asked for exactly this call and got neither, and two more days drained the same way. W14 is owed in the same breath: the 'Chitraksh to VC USA' auto-connect phantom refired Aug 10 20:20Z — seven minutes after Monday's brief logged, so no brief has ever carried it — the fourth straight auto-fire day of the very tool Meeting 38 says should not run; switch it OFF before anyone re-pastes a cookie. And the machine: after Aug 11's total blackout (no brief, no sweep, no draft — the fourth), the scheduler came back today but in the worst shape yet — all nine enabled tasks fired in a single 17-minute catch-up burst (17:38-17:55Z), the AM and PM briefs six minutes apart — which at least proves the write step works headless; the fix is the wake window, not the writer. This PM is the day's second edition, shipping the corrected picture.",
+  "source": "index.html · ORAYA DATA v15.13 (TODAY's cofounder sweep am-sweep-2026-08-12: 'six days dark, and the launch has no evidence') + insurance_leadgen_state.json (static since Aug 2) + LIVE PM inbox re-read (orayaassistant@gmail.com, Aug 12 ~17:56Z): from:facebookmail.com returns EMPTY across 45 days — still ZERO Meta/Facebook/ad mail anywhere (no launch evidence), zero IRS, zero Mercedes; newest mail a PhantomBuster marketing drip (Aug 11 09:02Z), newest real event the 'Chitraksh to VC USA' failure Aug 10 20:20Z. CORRECTION to this run's own earlier AM framing: a sweep DID run today (v15.13) and the AM edition DID log (17:56Z) + draft — Aug 11 was the blackout, not Aug 12; today the scheduler fired all nine enabled tasks in one 17-min burst (17:38-17:55Z), AM+PM six minutes apart (W7 late-burst, not a write-step failure). New Waiting W15: launch on the record or declare a dated hold. Brief drafts recounted by the sweep: 39 unsent since Jun 26 (46 all-in).",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -83,8 +83,8 @@
       "who": "Both",
       "project": "insurance",
       "area": "Decision / Cadence",
-      "title": "T+3 — fire the $600 today, or write down a named hold date",
-      "detail": "Monday's brief asked for this call and the answer was neither; two more days passed the same way. That ends today, in one direction or the other. If Analytics is live, the MCP is connected, and every creative plus the landing page carries the compliance trio, fire the $600 — final expense only, 4 states, and do not pull the plug early ('nobody stays long enough to see the system work'). If it cannot all close, say out loud that the launch is HELD to a named date and record it — a recorded pause is a decision that can be managed; a launch date that simply slides is the exact drift 3-per-15 was built to kill. Settle W14 in the same breath: the VC-connect phantom failed again Aug 10 20:20Z, minutes after the last brief claimed a quieter picture, and it is still an automated connection sequence aimed at the lane Meeting 38 defined as relationship-first and 12-24 months pre-raise. Decide it OFF before anyone re-pastes a cookie, or the repair simply resumes the thing you said you did not want."
+      "title": "T+3 — fire the $600 today, or declare the W15 hold date",
+      "detail": "Monday's brief asked for this call and the answer was neither; two more days passed the same way. That ends today, in one direction or the other. If Analytics is live, the MCP is connected, and every creative plus the landing page carries the compliance trio, fire the $600 — final expense only, 4 states, and do not pull the plug early ('nobody stays long enough to see the system work'). If it cannot all close, say out loud that the launch is HELD to a named date and record it — this is now Waiting W15: launch on the record, or a dated hold — a recorded pause is a decision that can be managed; a launch date that simply slides is the exact drift 3-per-15 was built to kill. Settle W14 in the same breath: the VC-connect phantom failed again Aug 10 20:20Z, minutes after the last brief claimed a quieter picture, and it is still an automated connection sequence aimed at the lane Meeting 38 defined as relationship-first and 12-24 months pre-raise. Decide it OFF before anyone re-pastes a cookie, or the repair simply resumes the thing you said you did not want."
     }
   ],
   "blockers": [
@@ -109,9 +109,9 @@
       "detail": "Correction to the Aug 10 PM brief, which called its Aug 9 16:07Z failure the newest event: 'Chitraksh to VC USA' failed AGAIN at Aug 10 20:20Z — seven minutes after that brief was logged (expired cookie, phantom auto-paused). Nothing has fired in the ~45h since, but that is what an auto-paused phantom looks like, not a decision. The doctrine call is still owed: an automated connect sequence is the wrong shape for the relationship-first, 12-24-months-pre-raise VC lane (Meeting 38). Decide it OFF — pause or delete — BEFORE re-pasting any li_at cookie, because a repair just resumes the connects. The Aug-5 verification link is long dead; re-verify only after the doctrine call. Vendor noise worth ignoring: PhantomBuster drip-mailed an Auto-Connect / MCP discount on Aug 11 that expires Aug 13 — the exact tool shape W14 rejects."
     },
     {
-      "label": "Autonomy blackout (W7) — Aug 11 shipped nothing at all",
+      "label": "Scheduler W7 — Aug 11 blackout, then a 17-min catch-up burst today",
       "scope": "Chitraksh",
-      "detail": "The worst gap in the log: Aug 11 produced no AM brief, no PM brief and no cofounder sweep — the fourth full blackout after Jul 31, Aug 3 and Aug 10 AM. Today's AM edition then generated at 17:52Z (~17h past its 06:30 IST cron) but was never logged or published, so this PM edition — itself ~4h past the 07:00 PT target — is the first brief to actually SHIP in ~46 hours. Same headless write/publish family as the 30+ Daily Brief drafts stacked unsent since Jun 26. Standing fixes still apply (keep the Mac awake across the 00:30-01:15Z window via caffeinate / Power Nap / scheduled wake, and stagger the brief >=45 min behind the sweep), but the unanswered question is still why a headless task that fires does not finish its writes."
+      "detail": "After Aug 11's total blackout (no brief, no sweep, no draft — the fourth after Jul 31, Aug 3 and Aug 10 AM), the scheduler recovered today but degenerately: today's v15.13 sweep found all nine enabled tasks fired in a single 17-minute catch-up burst (17:38-17:55Z), with the AM and PM briefs only six minutes apart. The AM edition DID complete (logged 17:56Z + drafted r5821047427455773352), which proves the headless write step works — so today's failure is the wake-window/cadence, not the writer. Standing fixes still apply: keep the Mac awake across the 00:30-01:15Z window (caffeinate / Power Nap / scheduled wake) or move both crons to a known-awake hour, and stagger the brief >=45 min behind the sweep so they don't cluster. Underneath it, true send is still unwired: 39 brief drafts unsent since Jun 26 (46 all-in)."
     },
     {
       "label": "IRS EIN",
@@ -242,12 +242,12 @@
           "detail": "The 30-minute NotebookLM edition rebuilt on the corrected average advance (~$1,506/policy, not the $600 industry default that had been feeding every model and making margins look unsurvivable). Frankie has asked twice. Listening isn't the deliverable — re-baselining the CPL ceiling and Oraya's own pricing off it is."
         },
         {
-          "lead": "Scheduler (W7) — Aug 11 shipped nothing; chase the write step",
-          "tag": "BLACKOUT #4",
+          "lead": "Scheduler (W7) — Aug 11 blackout, then a 17-min catch-up burst today",
+          "tag": "W7 · BURST",
           "tagType": "red",
           "project": "hq",
           "area": "Autonomy / Infra",
-          "detail": "Aug 11 produced no AM brief, no PM brief and no sweep — the fourth full blackout — and this AM fired ~17h late, a ~46h gap. Same family as the 30+ unsent drafts: fired headless tasks that don't complete their writes. Keep the Mac awake across 00:30-01:15Z (caffeinate / Power Nap / scheduled wake) and stagger the brief ≥45 min behind the sweep — but the real question is still why the write step dies when no session is driving it."
+          "detail": "Aug 11 was a full blackout (no brief, no sweep, no draft — the fourth). Today the scheduler recovered but fired all nine enabled tasks in one 17-minute catch-up burst (17:38-17:55Z), AM and PM briefs only 6 min apart. The AM completed (logged 17:56Z + drafted), so the headless write step works — the culprit is the wake window/cadence, not the writer. Keep the Mac awake across 00:30-01:15Z (caffeinate / Power Nap / scheduled wake) and stagger the brief >=45 min behind the sweep so they stop clustering. True send is still unwired: 39 drafts unsent / 46 all-in."
         },
         {
           "lead": "Autoloop Full Disk Access — the 2-minute toggle, day 45",
@@ -282,12 +282,12 @@
       "accent": "violet",
       "tasks": [
         {
-          "lead": "Shipped this AM brief — first edition in ~46h",
+          "lead": "Shipped AM + PM today after the Aug 11 blackout",
           "tag": "",
           "tagType": "",
           "project": "hq",
           "area": "Daily Brief",
-          "detail": "Aug 10 PM was the last edition out; Aug 11 produced none at all and this AM fired ~17h past cron. Generated AM, curated to the live v15.12 board plus a fresh inbox read, published to the brief page, drafted to both inboxes, logged. Full-detail build — no ~100-char truncation — so the auto-send carries the actionable parts (phone numbers, exact steps) rather than an ellipsis."
+          "detail": "Aug 10 PM was the last edition before Aug 11 went fully dark; today both the AM (generated 17:52Z, logged 17:56Z, drafted) and this PM shipped — curated to the live v15.13 board plus a fresh PM inbox read, published to the brief page, drafted to both inboxes, logged. Full-detail build (no ~100-char truncation) so the auto-send carries the actionable parts — phone numbers, exact steps. The two editions landed ~6 min apart inside today scheduler burst (W7)."
         },
         {
           "lead": "Live inbox read: still no launch evidence, and the VC phantom refired",
@@ -298,12 +298,12 @@
           "detail": "A read of orayaassistant@gmail.com (Aug 12 ~17:50Z) again found ZERO Meta/Facebook/ad mail anywhere across 45 days — no ad-review decision, no billing receipt, no lead notifications — so nothing indicates the $600 has fired. Two corrections carried up: 'Chitraksh to VC USA' failed AGAIN at Aug 10 20:20Z, seven minutes after Monday's brief was logged, so that brief's newest-event line was stale on arrival; and the only mail since is a PhantomBuster marketing drip (Aug 11 09:02Z) pushing Auto-Connect and an MCP discount expiring Aug 13 — the exact tool shape W14 rejects. No IRS mail, no Mercedes mail."
         },
         {
-          "lead": "Digest still Aug 6 — carried for a 6th day (W7 write step)",
-          "tag": "CARRIED DIGEST",
-          "tagType": "orange",
+          "lead": "Cofounder sweep ran today (v15.13) — structured digest still Aug 6",
+          "tag": "SWEEP TODAY",
+          "tagType": "green",
           "project": "hq",
           "area": "Sweep / Cadence",
-          "detail": "No cofounder sweep has written since the Aug 6 00:45Z run, so the overnight section below is CARRIED and is now six days old. The live W7 failure remains the headless write step, not the wake window or the cadence — Aug 11's total blackout is the same symptom at full scale. Ground truth is unchanged regardless."
+          "detail": "Correcting the earlier read: a cofounder sweep DID run today (am-sweep-2026-08-12), so the dashboard is v15.13 and today is NOT another dark day. What is stale is the structured brief-digest below — its worker last wrote Aug 6, so the done/waiting are carried and re-clocked to Aug 12. Today's sweep findings (W15, the unreported W14 refire, 39/46 drafts) are folded into the headline and blockers. Ground truth unchanged either way."
         },
         {
           "lead": "Ground truth unchanged — it's the machine, not the mission",
@@ -319,7 +319,7 @@
           "tagType": "",
           "project": "hq",
           "area": "Delivery",
-          "detail": "30+ Daily Brief drafts are stacked unsent since Jun 26 — the same headless-write family as Aug 11's missing editions. The one-time fix is unchanged: import the n8n SCHEDULE workflow and attach Gmail OAuth, and the backlog starts mailing. Until then the SCHEDULE workflow fetches the page just published and auto-sends ~15 min later."
+          "detail": "39 Daily Brief drafts (46 all-in) are stacked unsent since Jun 26 — the same headless-write family as Aug 11's missing editions. The one-time fix is unchanged: import the n8n SCHEDULE workflow and attach Gmail OAuth, and the backlog starts mailing. Until then the SCHEDULE workflow fetches the page just published and auto-sends ~15 min later."
         }
       ]
     }
@@ -403,6 +403,6 @@
         "who": "Both"
       }
     ],
-    "note": "Aug 6 00:45Z sweep — CARRIED (no sweep has written in 6 days, W7). Lines asserting dates or counters have been re-clocked to Aug 12 and marked; the underlying findings are the Aug 6 sweep's."
+    "note": "A v15.13 cofounder sweep DID run TODAY (am-sweep-2026-08-12, inside the 17:38-17:55Z burst) — its findings (launch unconfirmed -> new Waiting W15; W14 refired Aug 10 20:20Z; 39 drafts unsent / 46 all-in; Aug 11 total blackout) are folded into today's headline, source and blockers. The structured done/waiting lists below are the Aug 6 digest with lines re-clocked to Aug 12; the digest-worker's own last write is Aug 6, but the sweep itself is today's."
   }
 }
