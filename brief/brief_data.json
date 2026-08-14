@@ -5,7 +5,7 @@
   "edition": "PM",
   "day_number": 216,
   "phase": "PT morning · Day 216 · T+5 on the Aug 9 launch · W15 now 2 days old and still unanswered · cofounder digest frozen 8 days (Aug 6) · shell + Gmail restored this run — published to Vercel + draft landed (first full ship since Aug 12)",
-  "headline": "Friday morning, Day 216 — five days past the Aug 9 T-0 and still nothing behind it. A live PM read of the mailbox runs from:facebookmail.com across the whole account and comes back EMPTY: no ad-review decision, no billing receipt, no lead — no sign anywhere that the $600 ever moved. Waiting W15 was opened two days ago to force exactly one sentence out of somebody — the launch happened, or the launch is held to a named date — and two mornings later the sentence still is not written; yesterday's brief warned this is precisely how a question becomes furniture, and it is happening in real time. Everything else is frozen: the board at v15.13 (Aug 12), insurance_leadgen_state.json untouched since Aug 2 (12 days), no transcripts since May 18. So today stays deliberately small and unchanged — one sentence, one camera, two switches. The gates behind the launch are cheap and the same ones: the video kit, now ten days against what was budgeted as a single 24-hour session and the true critical path — footage cannot be conjured, the rest closes in an afternoon; Vercel Analytics + the Meta MCP, nine days on two switches that are connections, not builds; and Frankie's NPN + CA licence # + disclaimer, five minutes of numbers still unsupplied. W14 has been quiet ~four days — the VC-connect phantom last failed Aug 10 20:20Z — but quiet is what auto-paused looks like, not what decided looks like: switch it OFF before anyone re-pastes a cookie. Then the machine, and it cuts two ways. The bad: no cofounder sweep has written a digest in eight days (last Aug 6) — W7 has split, the board-write works and the digest-write does not — and delivery is fully stalled, 39 brief drafts unsent since Jun 26 with yesterday's shell-less run landing nothing at all. The good, and it is the first in a week: shell and Gmail both work this run, so this brief actually publishes to Vercel and lands in the inbox — the first fully shipped, published edition since Aug 12.",
+  "headline": "Friday morning, Day 216 — five days past the Aug 9 T-0 and still nothing behind it. A live PM read of the mailbox runs from:facebookmail.com across the whole account and comes back EMPTY: no ad-review decision, no billing receipt, no lead — no sign anywhere that the $600 ever moved. Waiting W15 was opened two days ago to force exactly one sentence out of somebody — the launch happened, or the launch is held to a named date — and two mornings later the sentence still is not written; yesterday's brief warned this is precisely how a question becomes furniture, and it is happening in real time. Everything else is frozen: the board at v15.13 (Aug 12), insurance_leadgen_state.json untouched since Aug 2 (12 days), no transcripts since May 18. So today stays deliberately small and unchanged — one sentence, one camera, two switches. The gates behind the launch are cheap and the same ones: the video kit, now nine days against what was budgeted as a single 24-hour session and the true critical path — footage cannot be conjured, the rest closes in an afternoon; Vercel Analytics + the Meta MCP, nine days on two switches that are connections, not builds; and Frankie's NPN + CA licence # + disclaimer, five minutes of numbers still unsupplied. W14 has been quiet ~four days — the VC-connect phantom last failed Aug 10 20:20Z — but quiet is what auto-paused looks like, not what decided looks like: switch it OFF before anyone re-pastes a cookie. Then the machine, and it cuts two ways. The bad: no cofounder sweep has written a digest in eight days (last Aug 6) — W7 has split, the board-write works and the digest-write does not — and delivery is fully stalled, 39 brief drafts unsent since Jun 26 with yesterday's shell-less run landing nothing at all. The good, and it is the first in a week: shell and Gmail both work this run, so this brief actually publishes to Vercel and lands in the inbox — the first fully shipped, published edition since Aug 12.",
   "source": "index.html · ORAYA DATA v15.13 (Aug 12 sweep; no board update in 2 days) + insurance_leadgen_state.json (static since Aug 2, 12 days) + LIVE PM inbox read (orayaassistant@gmail.com, Aug 14 ~14:05Z): from:facebookmail.com OR from:meta.com returns EMPTY across the whole account — still ZERO Meta/Facebook/ad mail of any kind (no ad-review decision, no billing receipt, no lead notification), zero IRS, zero Mercedes, zero dealership. Newest mail in the box is Wednesday's PhantomBuster 40%-off Auto-Connect drip (Aug 13 09:02Z, offer now expired); the newest real event is still the 'Chitraksh to VC USA' failure at Aug 10 20:20Z, quiet ~4 days. MACHINE FINDING confirmed again from file evidence: cofounder_log.json and cofounder_runs.txt are BOTH still frozen at Aug 6 (8 days) — the sweep's board-write works, its digest-write does not. RUN NOTE: unlike the Aug 13 AM edition (no shell — generator/--sync/push skipped and no draft landed), this session has working shell + network + Gmail, so the generator, --sync and push_brief.sh all ran and the Vercel publish + Gmail draft both completed.",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
@@ -75,8 +75,8 @@
       "who": "Frankie",
       "project": "insurance",
       "area": "Ads / Creative",
-      "title": "The video kit — ten days, and it was budgeted as one",
-      "detail": "On Aug 5 this was agreed as your ENTIRE next-24-hours allocation; it has now consumed ten days, which makes it the hardest gate on the board by a distance — Analytics and the MCP are switches an afternoon closes, footage cannot be conjured. One 20-24 minute session (shirt + tie, iPhone 4K/60fps) is the single source for the founder-ad creative, a face creative, the landing-page refresh and the ElevenLabs voice clone. Nothing downstream of it moves until it is shot."
+      "title": "The video kit — nine days, and it was budgeted as one",
+      "detail": "On Aug 5 this was agreed as your ENTIRE next-24-hours allocation; it has now consumed nine days, which makes it the hardest gate on the board by a distance — Analytics and the MCP are switches an afternoon closes, footage cannot be conjured. One 20-24 minute session (shirt + tie, iPhone 4K/60fps) is the single source for the founder-ad creative, a face creative, the landing-page refresh and the ElevenLabs voice clone. Nothing downstream of it moves until it is shot."
     },
     {
       "icon": "🚦",
@@ -94,9 +94,9 @@
       "detail": "Opened by the Aug 12 sweep to force the call, and this is its second full day. A live PM read of the mailbox (Aug 14) returns EMPTY on from:facebookmail.com across the whole account — no ad-review decision, no billing receipt, no lead notification, nothing — so five days past T-0 there is still no evidence in any system that the $600 moved, and no founder note declaring a hold. Two possible worlds needing opposite responses: if it launched, it launched without Analytics or the Meta MCP and must be instrumented today; if it did not, close the gates and go, or write down a named hold date and the reason. The unacceptable third option is the current one."
     },
     {
-      "label": "Video kit unrecorded — 10 days, the true critical path",
+      "label": "Video kit unrecorded — 9 days, the true critical path",
       "scope": "Frankie",
-      "detail": "Ten days against a one-day allocation. One 20-24 minute session (shirt + tie, iPhone 4K/60fps) is the sole source for the founder-ad creative, a face creative, the landing-page refresh and the ElevenLabs voice clone. Instrumentation closes in an afternoon; footage cannot be conjured. Until it exists there is nothing compliant to launch with — this gates the launch harder than the tooling does, and has done for over a week."
+      "detail": "Nine days against a one-day allocation. One 20-24 minute session (shirt + tie, iPhone 4K/60fps) is the sole source for the founder-ad creative, a face creative, the landing-page refresh and the ElevenLabs voice clone. Instrumentation closes in an afternoon; footage cannot be conjured. Until it exists there is nothing compliant to launch with — this gates the launch harder than the tooling does, and has done for over a week."
     },
     {
       "label": "Pre-spend gate — Analytics + Meta MCP, 9 days unconfirmed",
@@ -159,12 +159,12 @@
           "detail": "The cheapest item on your board and the one that has slid five days. If Analytics is live, the MCP is connected and the compliance trio is on every creative and the page, fire the $600 — final expense only, 4 states, and hold your nerve once it is live ('nobody stays long enough to see the system work'). If it cannot all close today, say out loud that the launch is HELD to a named date, give the reason, and write it down. A recorded pause is a decision. A date that just slides is drift."
         },
         {
-          "lead": "Record the video kit — ten days on a one-day allocation",
-          "tag": "CRITICAL PATH · 10d",
+          "lead": "Record the video kit — nine days on a one-day allocation",
+          "tag": "CRITICAL PATH · 9d",
           "tagType": "red",
           "project": "insurance",
           "area": "Ads / Creative",
-          "detail": "Agreed Aug 5 as your entire next-24h allocation; it has now eaten ten. Shirt + tie, iPhone at 4K/60fps per the kit, ~20-24 min of takes. One session unblocks the founder-ad creative, a creative with your face, the landing-page refresh and the ElevenLabs voice clone (audio extracted from the same takes). Analytics and the MCP can be switched on in an afternoon; footage cannot be conjured — this is the gate that actually needs your day. Hand the footage to Chitraksh the moment it is in the can."
+          "detail": "Agreed Aug 5 as your entire next-24h allocation; it has now eaten nine. Shirt + tie, iPhone at 4K/60fps per the kit, ~20-24 min of takes. One session unblocks the founder-ad creative, a creative with your face, the landing-page refresh and the ElevenLabs voice clone (audio extracted from the same takes). Analytics and the MCP can be switched on in an afternoon; footage cannot be conjured — this is the gate that actually needs your day. Hand the footage to Chitraksh the moment it is in the can."
         },
         {
           "lead": "Send NPN + CA producer-licence # + disclaimer wording — five minutes",
@@ -380,7 +380,7 @@
         "who": "Chitraksh"
       },
       {
-        "what": "Connect the Meta MCP + review the campaign structure — the second pre-spend gate, also eight days open; until it is attached the $600 has to be driven by hand.",
+        "what": "Connect the Meta MCP + review the campaign structure — the second pre-spend gate, also nine days open; until it is attached the $600 has to be driven by hand.",
         "who": "Chitraksh"
       },
       {
