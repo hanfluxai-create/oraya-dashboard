@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-08-16T17:18:57.667Z",
-  "date_label": "Sun · Aug 16",
+  "generated_at": "2026-08-17T16:12:48.028Z",
+  "date_label": "Mon · Aug 17",
   "edition": "PM",
-  "day_number": 218,
-  "phase": "PT morning · Day 218 · T+7 on the Aug 9 launch · W15 four mornings unanswered · SCHEDULER RELAPSED — Aug 15 AM's on-cron health did not hold: Aug 15 PM skipped and Aug 16 AM generated-only (skeleton left on disk, never shipped), so this PM is a session-driven recovery after a ~40h gap · cofounder digest dark 10 days",
-  "headline": "Sunday morning, Day 218, T+7 on the Aug 9 launch — and the machine just answered the question yesterday's brief left open. Aug 15 was hailed as the healthiest scheduling morning since Aug 5-6: the sweep and the brief both fired on cron, in the right order, and the lesson drawn was that the reporting layer was never the bottleneck. Then the two editions since BOTH failed to ship — Aug 15 PM never ran, and Aug 16 AM woke the generator at 01:35Z but never curated, published or logged, leaving a stale May-28 skeleton (Envision Honda, Day 138) sitting on disk as the live data file. One healthy morning was a single swallow, not a spring; W7 is still live, and this PM is a session-driven recovery — the first brief to ship in roughly forty hours. Underneath the machine, the real number has not moved: a live PM read of the mailbox runs from:facebookmail.com OR from:meta.com across the whole account and comes back EMPTY — no ad review, no billing receipt, no lead, seven days past T-0. Zero IRS at 49 days, zero Mercedes at 37. The only thing the inbox has produced since yesterday is another PhantomBuster marketing drip (Aug 15 09:02Z, still unread) pushing 40%-off Auto-Connect that 'ends Aug 18' — a discount on the exact tool shape W14 rejects, and the correct move is to keep ignoring it. W15 — launched, or held to a named date — is now four mornings unwritten, and the last founder decision recorded anywhere in this company is still Aug 5, eleven days ago. Every gate on this board assumes an answer to a question nobody has written down.",
-  "source": "index.html · ORAYA DATA v15.13 (Aug 12 sweep — no board update in 4 days) + insurance_leadgen_state.json (static since Aug 2, 14 days) + LIVE PM inbox read (orayaassistant@gmail.com, Aug 16 ~17:17Z): from:facebookmail.com OR from:meta.com OR from:fb.com returns EMPTY across the whole account — still ZERO Meta/Facebook/ad mail seven days past T-0 (no ad-review decision, no billing receipt, no lead notification), zero IRS, zero Mercedes, zero dealership. Newest mail in the box is a NEW PhantomBuster 40%-off Auto-Connect drip (Aug 15 09:02Z, unread, 'ends Aug 18') — the vendor promo the Aug 15 brief said expired Wednesday has simply been replaced by a fresh one; still the exact Auto-Connect tool shape W14 rejects. Newest real event remains the 'Chitraksh to VC USA' failure at Aug 10 20:20Z, now quiet ~6 days. SHIPPING EVIDENCE (list_drafts + brief_log, read this run): last shipped edition was Aug 15 AM (draft r7498283190523890130 at 01:17Z, brief_log line 01:12Z). No Aug 15 PM draft and no Aug 16 AM draft exist; the on-disk brief_data.json was the Aug 16 AM generator skeleton (generated_at 01:35Z, stale v14 Envision-Honda/Day-138 parse) that was never curated, published or logged — so W7's write/ship step relapsed after a single healthy morning. Live GitHub HEAD before this push was f20286a = the Aug 15 AM commit, confirming the site had served day 217 for ~40h. Draft count now 41 shipped Jun 26 → Aug 15; this PM is the 42nd.",
+  "day_number": 219,
+  "phase": "PT morning · Day 219 · T+8 on the Aug 9 launch · W15 five mornings unanswered · SCHEDULER STILL BROKEN — Aug 16 PM shipped only because a session drove it by hand, then Aug 17 AM dropped entirely (generator never fired: no skeleton, no sweep, no draft); this PM is again a hand-driven recovery · W14 phantom RE-FIRED Aug 17 13:07Z (invalid cookie, auto-paused) · cofounder digest dark 11 days",
+  "headline": "Monday morning, Day 219, T+8 on the Aug 9 launch, and the shape of the week is now unmistakable. Aug 15's single on-cron morning was followed by four broken editions in a row: Aug 15 PM never ran, Aug 16 AM generated a skeleton it never shipped, Aug 16 PM shipped only because a session drove it by hand, and Aug 17 AM then dropped entirely — no generator, no sweep, no draft. This PM is again a recovery driven by hand, which is the whole problem in one sentence: the only briefs reaching you are the ones a human session pushes. Underneath the machine the real number has not moved a millimetre. A live PM read of the mailbox runs from:facebookmail.com OR from:meta.com across the whole account and comes back EMPTY — no ad review, no billing receipt, no lead, eight days past T-0. Zero IRS at 50 days, zero Mercedes at 38. The one thing that DID move is the wrong thing: the 'Chitraksh to VC USA' phantom — the automated VC-connect sequence Meeting 38 said should not exist — woke up and auto-fired again at 13:07Z today, died on the same invalid cookie, and paused itself. So the 'quiet six days' the last brief called auto-paused is now proven: it is not resting, it resumes the instant it can. W15 — launched, or held to a named date — is now five mornings unwritten, and the last founder decision recorded anywhere in this company is still Aug 5, twelve days ago. Every gate on this board is still waiting on one sentence nobody has written down.",
+  "source": "index.html · ORAYA DATA v15.13 (Aug 12 sweep — no board update in 5 days) + insurance_leadgen_state.json (static since Aug 2, 15 days) + LIVE PM inbox read (orayaassistant@gmail.com, Aug 17 ~14:20Z): from:facebookmail.com OR from:meta.com OR from:fb.com OR from:facebook.com returns EMPTY across the whole account — still ZERO Meta/Facebook/ad mail eight days past T-0 (no ad-review decision, no billing receipt, no lead notification), zero IRS, zero Mercedes, zero dealership. NEW REAL EVENT this run: the 'Chitraksh to VC USA' phantom auto-fired AGAIN at Aug 17 13:07Z and failed on an invalid session cookie ('The Phantom has been paused') — so the ~6-day quiet the Aug 16 brief noted is over; it resumes whenever it can reach LinkedIn, which is precisely the W14 doctrine problem. A newer_than:16d read excluding PhantomBuster returns EMPTY, so the ONLY inbound mail across the last 16+ days is PhantomBuster: the fresh Aug 15 40%-off Auto-Connect drip (unread, 'ends Aug 18' = tomorrow) plus today's failure notice. SHIPPING EVIDENCE (list_drafts + brief_log, read this run): last shipped edition was Aug 16 PM (draft r6666973929254853781 at 17:33Z, brief_log line 17:34Z). No Aug 17 AM draft exists and there is no Aug 17 log line; the on-disk brief_data.json this session opened was still the Aug 16 PM day-218 file — so the Aug 17 AM generator never even fired (a full no-run, not a generated-but-unshipped skeleton like Aug 16 AM). Draft count now 42 shipped Jun 26 → Aug 16; this PM is the 43rd.",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -67,41 +67,41 @@
       "who": "Both",
       "project": "insurance",
       "area": "Decision / W15",
-      "title": "W15, fourth morning unwritten — the machine already ran out of excuses",
-      "detail": "Opened Aug 12 to force exactly one sentence: the $600 launched, or the launch is HELD to a named date. Four mornings later it still is not written, and a live PM read (from:facebookmail.com EMPTY across the account) shows no ad review, no billing, no lead seven days past T-0. Yesterday's brief retired the reporting excuse — the scheduler ran on cron and had nothing to report. Today makes the point harder: the machine then dropped the next two editions and this brief had to be driven by hand, and the number underneath is unchanged. The last recorded founder decision in this company is Aug 5, eleven days ago. Thirty seconds, one sentence, written down — every other gate on this board is waiting on it."
+      "title": "W15, fifth morning unwritten — and the only thing that moved was the phantom you didn't want",
+      "detail": "Opened Aug 12 to force exactly one sentence: the $600 launched, or the launch is HELD to a named date. Five mornings later it still is not written, and a live PM read (from:facebookmail.com EMPTY across the account) shows no ad review, no billing, no lead eight days past T-0. The machine's cadence has stopped being an excuse and started being the evidence: Aug 15 PM, Aug 16 AM and Aug 17 AM all failed to ship, and the one automated thing that DID fire on its own this week was the VC phantom Meeting 38 said to kill — it auto-ran again at 13:07Z today and died on a dead cookie. The last recorded founder decision in this company is Aug 5, twelve days ago. Thirty seconds, one sentence, written down — every other gate on this board is waiting on it."
     },
     {
       "icon": "🎥",
       "who": "Frankie",
       "project": "insurance",
       "area": "Ads / Creative",
-      "title": "The video kit — eleven days on a one-day allocation",
-      "detail": "On Aug 5 this was agreed as your ENTIRE next-24-hours allocation. It has now consumed eleven days, which makes it the hardest gate on the board by a distance — Analytics and the MCP are switches an afternoon closes, footage cannot be conjured. One 20-24 minute session (shirt + tie, iPhone 4K/60fps) is the single source for the founder-ad creative, a creative with your face, the landing-page refresh and the ElevenLabs voice clone (audio pulled from the same takes). Nothing downstream of it moves until it is shot — and a quiet Sunday morning is the cheapest recording slot you will get. Hand the footage to Chitraksh the moment it is in the can."
+      "title": "The video kit — twelve days on a one-day allocation",
+      "detail": "On Aug 5 this was agreed as your ENTIRE next-24-hours allocation. It has now consumed twelve days, which makes it the hardest gate on the board by a distance — Analytics and the MCP are switches an afternoon closes, footage cannot be conjured. One 20-24 minute session (shirt + tie, iPhone 4K/60fps) is the single source for the founder-ad creative, a creative with your face, the landing-page refresh and the ElevenLabs voice clone (audio pulled from the same takes). Nothing downstream of it moves until it is shot — and a quiet Monday morning is a cheap recording slot. Hand the footage to Chitraksh the moment it is in the can."
     },
     {
       "icon": "🚦",
       "who": "Chitraksh",
       "project": "insurance",
       "area": "Ads / Instrumentation",
-      "title": "Analytics ON + Meta MCP connected — eleven days on two switches",
-      "detail": "Named as the pre-spend gate on Aug 5 and unconfirmed for eleven days. Neither is a build. Vercel Analytics is a toggle and a redeploy, and until it is live Frankie's question — 'is anyone even visiting the site?' — has no answer; the Meta MCP is a connection, and until it is attached the $600 has to be driven and monitored by hand. If W15's answer turns out to be 'it launched', these two being open means it launched unmeasured. Close both today and the instrumentation half of the launch is done for good — it never has to be a blocker again."
+      "title": "Analytics ON + Meta MCP connected — twelve days on two switches",
+      "detail": "Named as the pre-spend gate on Aug 5 and unconfirmed for twelve days. Neither is a build. Vercel Analytics is a toggle and a redeploy, and until it is live Frankie's question — 'is anyone even visiting the site?' — has no answer; the Meta MCP is a connection, and until it is attached the $600 has to be driven and monitored by hand. If W15's answer turns out to be 'it launched', these two being open means it launched unmeasured. Close both today and the instrumentation half of the launch is done for good — it never has to be a blocker again."
     }
   ],
   "blockers": [
     {
-      "label": "W15 four mornings unanswered — launch on the record, or a dated hold",
+      "label": "W15 five mornings unanswered — launch on the record, or a dated hold",
       "scope": "Both",
-      "detail": "Opened by the Aug 12 sweep to force the call; this is its fourth full morning. A live PM read (Aug 16 ~17:17Z) returns EMPTY on from:facebookmail.com OR from:meta.com across the whole account — no ad-review decision, no billing receipt, no lead notification — so seven days past T-0 there is still no evidence in any system that the $600 moved, and no founder note declaring a hold. The reporting excuse is gone: yesterday the sweep and brief fired on cron and still had nothing to report, and today the machine dropped the next two editions and this brief had to be driven by hand. Two possible worlds needing opposite responses — if it launched, it launched without Analytics or the Meta MCP and must be instrumented today; if it did not, close the gates and go, or write down a named hold date and the reason. The unacceptable third option is the one still running."
+      "detail": "Opened by the Aug 12 sweep to force the call; this is its fifth full morning. A live PM read (Aug 17 ~14:20Z) returns EMPTY on from:facebookmail.com OR from:meta.com across the whole account — no ad-review decision, no billing receipt, no lead notification — so eight days past T-0 there is still no evidence in any system that the $600 moved, and no founder note declaring a hold. The reporting excuse is gone: the machine has now dropped three of the last four editions and this brief had to be driven by hand, and the number underneath is unchanged. Two possible worlds needing opposite responses — if it launched, it launched without Analytics or the Meta MCP and must be instrumented today; if it did not, close the gates and go, or write down a named hold date and the reason. The unacceptable third option is the one still running."
     },
     {
-      "label": "Video kit unrecorded — 11 days, the true critical path",
+      "label": "Video kit unrecorded — 12 days, the true critical path",
       "scope": "Frankie",
-      "detail": "Eleven days against a one-day allocation. One 20-24 minute session (shirt + tie, iPhone 4K/60fps) is the sole source for the founder-ad creative, a face creative, the landing-page refresh and the ElevenLabs voice clone. Instrumentation closes in an afternoon; footage cannot be conjured. Until it exists there is nothing compliant to launch with — this gates the launch harder than the tooling does, and has for a week and a half. A quiet Sunday is the cheapest recording slot on the calendar."
+      "detail": "Twelve days against a one-day allocation. One 20-24 minute session (shirt + tie, iPhone 4K/60fps) is the sole source for the founder-ad creative, a face creative, the landing-page refresh and the ElevenLabs voice clone. Instrumentation closes in an afternoon; footage cannot be conjured. Until it exists there is nothing compliant to launch with — this gates the launch harder than the tooling does, and has for nearly two weeks. A quiet Monday is a cheap recording slot on the calendar."
     },
     {
-      "label": "Pre-spend gate — Analytics + Meta MCP, 11 days unconfirmed",
+      "label": "Pre-spend gate — Analytics + Meta MCP, 12 days unconfirmed",
       "scope": "Chitraksh",
-      "detail": "Both were named as hard preconditions on Aug 5 and neither has been confirmed closed in eleven days — a large part of why T-0 passed. Without Vercel Analytics the spend is unmeasurable and 'is anyone visiting the site?' stays unanswerable; without the Meta MCP attached, creatives are pushed and monitored by hand. Neither is a build; both are connections. Close them, then launch — or the next attempt is as blind as this one was going to be."
+      "detail": "Both were named as hard preconditions on Aug 5 and neither has been confirmed closed in twelve days — a large part of why T-0 passed. Without Vercel Analytics the spend is unmeasurable and 'is anyone visiting the site?' stays unanswerable; without the Meta MCP attached, creatives are pushed and monitored by hand. Neither is a build; both are connections. Close them, then launch — or the next attempt is as blind as this one was going to be."
     },
     {
       "label": "Compliance furniture on every creative + landing page",
@@ -109,38 +109,38 @@
       "detail": "NPN + CA producer-licence # + a not-guaranteed / rates-vary disclaimer, on the creative AND the landing page — the exact trio whose absence got the last account banned (no licence identifiers, a guaranteed-price teaser, an all-text PNG). The CLO note still binds a consumer launch: gates b5 (privacy policy + Do-Not-Sell) and b7 (producer-licence disclosure) apply to the creative and the page, and TCPA binds the moment a lead is dialled. Five minutes of Frankie's time gates the entire batch."
     },
     {
-      "label": "PhantomBuster / W14 — ~6 quiet days is auto-paused, not decided",
+      "label": "PhantomBuster / W14 — it re-fired today; 'quiet' was never a decision",
       "scope": "Both decide · Chitraksh fixes",
-      "detail": "'Chitraksh to VC USA' last failed Aug 10 20:20Z and nothing has fired in the ~6 days since — but that is what an auto-paused phantom looks like, and it will resume the instant a cookie is pasted. The doctrine call is still owed: an automated connect sequence is the wrong instrument for the relationship-first, 12-24-months-pre-raise VC lane Meeting 38 defined. Decide it OFF — pause or delete — BEFORE re-verifying, because the repair simply restarts the thing you said you did not want. The Aug-5 verification link burned its 72h fuse on Aug 8, so the account needs verifying from scratch, not a cookie paste. Vendor noise refreshed, not gone: the 40%-off promo that expired Wednesday has been replaced by a fresh PhantomBuster Auto-Connect drip (Aug 15 09:02Z, unread, 'ends Aug 18') — a discount on precisely the tool shape W14 rejects; letting it lapse un-clicked is again the correct non-action."
+      "detail": "'Chitraksh to VC USA' did not stay quiet: it auto-fired again at Aug 17 13:07Z and died on the same invalid session cookie, pausing itself — which is the whole point. An auto-paused phantom is not a decided one; it resumes the instant it can reach LinkedIn, and today it tried and failed. The doctrine call is still owed and is now urgent: an automated connect sequence is the wrong instrument for the relationship-first, 12-24-months-pre-raise VC lane Meeting 38 defined. Decide it OFF — pause or DELETE — before any re-verification, because repair just restarts the thing you said you did not want, as today proved. The Aug-5 verification link burned its 72h fuse on Aug 8, so the account verifies from scratch now, not a cookie paste. Vendor noise unchanged: the PhantomBuster 40%-off Auto-Connect promo (Aug 15, unread) now 'ends Aug 18' = tomorrow — a discount on precisely the tool shape W14 rejects; letting it lapse un-clicked is again the correct non-action."
     },
     {
-      "label": "Scheduler W7 — one healthy morning didn't hold; Aug 15 PM + Aug 16 AM both failed to ship",
+      "label": "Scheduler W7 — only hand-driven sessions are shipping; Aug 17 AM was a full no-run",
       "scope": "Chitraksh",
-      "detail": "Yesterday's on-cron AM (sweep 00:53Z, brief 01:07Z) was hailed as the healthiest morning since Aug 5-6 — and it was a single swallow. The two editions since BOTH failed to ship: Aug 15 PM never ran, and Aug 16 AM woke the generator at 01:35Z but never curated, published, logged or drafted, leaving the stale May-28 skeleton on disk as the live data file while Vercel served day 217 for ~40 hours. That flips the diagnosis: this is a WRITE/SHIP failure, not a wake-window miss — the machine woke, produced output, and shipped nothing. The digest writer is dark on top of it (cofounder_log.json + cofounder_runs.txt stamped Aug 6, ten days). Stop tuning the wake window; instrument two write steps — the cofounder-worker's, and the brief's own curate→publish→draft→log tail so a generated-but-unshipped skeleton raises an alarm instead of quietly becoming 'today's data.'"
+      "detail": "The pattern since Aug 15's one on-cron morning is now four broken editions: Aug 15 PM never ran, Aug 16 AM generated-but-never-shipped, Aug 16 PM shipped only because a session drove it, and Aug 17 AM dropped entirely — no generator skeleton on disk, no sweep artifact, no draft, no log line, so the AM did not even wake. The only editions reaching the founders are the ones a human session pushes by hand. On top of it the digest writer is dark eleven days (cofounder_log.json + cofounder_runs.txt stamped Aug 6). Stop tuning the wake window; this is a wake AND write/ship reliability problem. Two instrumented alarms are owed: the cofounder-worker's write step, and the brief's own curate→publish→draft→log tail, so a missing or stale edition pages someone instead of silently becoming 'today's data.'"
     },
     {
-      "label": "IRS EIN — 49 days silent",
+      "label": "IRS EIN — 50 days silent",
       "scope": "Chitraksh",
-      "detail": "49 days since the Jun 28 re-fax; the ~8-business-day window closed Jul 11 and every phone window since Jul 27 has passed unused. Not a wait any more — a phone chase: IRS EIN line 1-202-488-3100, and check RedFax at 510-497-1224 for a delivery receipt. Nothing from the IRS has ever appeared in the swept mailbox."
+      "detail": "50 days since the Jun 28 re-fax; the ~8-business-day window closed Jul 11 and every phone window since Jul 27 has passed unused. Not a wait any more — a phone chase: IRS EIN line 1-202-488-3100, and check RedFax at 510-497-1224 for a delivery receipt. Nothing from the IRS has ever appeared in the swept mailbox."
     },
     {
-      "label": "Mercedes re-pitch reply — 37 days overdue",
+      "label": "Mercedes re-pitch reply — 38 days overdue",
       "scope": "Frankie",
-      "detail": "37 days, and deliberately not competing with the ads sprint — but their reply is in and ours is not; the silence is ours. When it gets its turn: timestamped screenshots of their own chatbot's multi-day delay → pitch voice AI + automation → let the agent itself call to book the demo."
+      "detail": "38 days, and deliberately not competing with the ads sprint — but their reply is in and ours is not; the silence is ours. When it gets its turn: timestamped screenshots of their own chatbot's multi-day delay → pitch voice AI + automation → let the agent itself call to book the demo."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "218"
+      "v": "219"
     },
     {
       "k": "Launch",
-      "v": "T+7, no evidence"
+      "v": "T+8, no evidence"
     },
     {
       "k": "Oldest gate",
-      "v": "49d"
+      "v": "50d"
     }
   ],
   "lanes": [
@@ -151,20 +151,20 @@
       "accent": "emerald",
       "tasks": [
         {
-          "lead": "Answer W15 with Chitraksh — launched, or held to a named date (day 4)",
-          "tag": "T+7 · 30 SECONDS",
+          "lead": "Answer W15 with Chitraksh — launched, or held to a named date (day 5)",
+          "tag": "T+8 · 30 SECONDS",
           "tagType": "red",
           "project": "insurance",
           "area": "Decision",
-          "detail": "The cheapest item on your board and the one that has slid seven days. If Analytics is live, the MCP is connected and the compliance trio is on every creative and the page, fire the $600 — final expense only, 4 states, and hold your nerve once it is live ('nobody stays long enough to see the system work'). If it cannot all close today, say out loud that the launch is HELD to a named date, give the reason, and write it down. A recorded pause is a decision. A date that just slides is drift."
+          "detail": "The cheapest item on your board and the one that has slid eight days. If Analytics is live, the MCP is connected and the compliance trio is on every creative and the page, fire the $600 — final expense only, 4 states, and hold your nerve once it is live ('nobody stays long enough to see the system work'). If it cannot all close today, say out loud that the launch is HELD to a named date, give the reason, and write it down. A recorded pause is a decision. A date that just slides is drift."
         },
         {
-          "lead": "Record the video kit — eleven days on a one-day allocation",
-          "tag": "CRITICAL PATH · 11d",
+          "lead": "Record the video kit — twelve days on a one-day allocation",
+          "tag": "CRITICAL PATH · 12d",
           "tagType": "red",
           "project": "insurance",
           "area": "Ads / Creative",
-          "detail": "Agreed Aug 5 as your entire next-24h allocation; it has now eaten eleven. Shirt + tie, iPhone at 4K/60fps per the kit, ~20-24 min of takes. One session unblocks the founder-ad creative, a creative with your face, the landing-page refresh and the ElevenLabs voice clone (audio extracted from the same takes). Analytics and the MCP can be switched on in an afternoon; footage cannot be conjured — this is the gate that actually needs your day. Hand the footage to Chitraksh the moment it is in the can."
+          "detail": "Agreed Aug 5 as your entire next-24h allocation; it has now eaten twelve. Shirt + tie, iPhone at 4K/60fps per the kit, ~20-24 min of takes. One session unblocks the founder-ad creative, a creative with your face, the landing-page refresh and the ElevenLabs voice clone (audio extracted from the same takes). Analytics and the MCP can be switched on in an afternoon; footage cannot be conjured — this is the gate that actually needs your day. Hand the footage to Chitraksh the moment it is in the can."
         },
         {
           "lead": "Send NPN + CA producer-licence # + disclaimer wording — five minutes",
@@ -191,8 +191,8 @@
           "detail": "Not a tooling block: Fable was live-verified on the shared account during Meeting 38 and produced the best output of the night. This is writing time. Redraft the founder-ad and insurance-vertical scripts through Fable or Opus 5 (High) once the video kit is in the can — and not before, so the sprint stays at three."
         },
         {
-          "lead": "Mercedes re-pitch reply — 37 days overdue",
-          "tag": "OVERDUE 37d",
+          "lead": "Mercedes re-pitch reply — 38 days overdue",
+          "tag": "OVERDUE 38d",
           "tagType": "orange",
           "project": "insurance",
           "area": "Dealership",
@@ -207,28 +207,28 @@
       "accent": "cyan",
       "tasks": [
         {
-          "lead": "Enable Vercel Analytics — 11 days named, still unconfirmed",
+          "lead": "Enable Vercel Analytics — 12 days named, still unconfirmed",
           "tag": "PRE-SPEND · BLOCKING",
           "tagType": "red",
           "project": "insurance",
           "area": "Ads / Instrumentation",
-          "detail": "Named as a pre-spend gate on Aug 5 and still not confirmed closed eleven days later — a big part of why T-0 came and went. Frankie asked whether anyone is visiting the site and nobody can tell him; paid traffic without analytics makes the $600 unmeasurable and un-learnable. His caution is logged: do not overspend on tooling to get it — the free tier answers the question. This lands before any dollar moves."
+          "detail": "Named as a pre-spend gate on Aug 5 and still not confirmed closed twelve days later — a big part of why T-0 came and went. Frankie asked whether anyone is visiting the site and nobody can tell him; paid traffic without analytics makes the $600 unmeasurable and un-learnable. His caution is logged: do not overspend on tooling to get it — the free tier answers the question. This lands before any dollar moves."
         },
         {
-          "lead": "Connect the Meta MCP + review campaign structure — 11 days open",
+          "lead": "Connect the Meta MCP + review campaign structure — 12 days open",
           "tag": "PRE-SPEND · BLOCKING",
           "tagType": "red",
           "project": "insurance",
           "area": "Ads / Tooling",
-          "detail": "The second hard precondition, also eleven days open. Until it is attached, creatives cannot be pushed or monitored programmatically and the $600 has to be driven by hand. While reviewing the structure: never raise budget >20-25% inside 3-4 days (Andromeda re-enters learning), and plan the ~15-day creative refresh into batch 2 up front."
+          "detail": "The second hard precondition, also twelve days open. Until it is attached, creatives cannot be pushed or monitored programmatically and the $600 has to be driven by hand. While reviewing the structure: never raise budget >20-25% inside 3-4 days (Andromeda re-enters learning), and plan the ~15-day creative refresh into batch 2 up front."
         },
         {
-          "lead": "VC phantom — decide it OFF before any cookie repair (quiet ≠ decided)",
-          "tag": "W14 · UNDECIDED",
+          "lead": "VC phantom — it re-fired today; decide it OFF before any cookie repair",
+          "tag": "W14 · RE-FIRED TODAY",
           "tagType": "red",
           "project": "hq",
           "area": "LinkedIn / Doctrine",
-          "detail": "Newest failure is still Aug 10 20:20Z and nothing has fired in ~6 days — but that is an auto-paused phantom, not a decision, and it resumes the moment a cookie is pasted. 'Chitraksh to VC USA' is an automated connect sequence pointed at the lane Meeting 38 defined as relationship-first and 12-24 months pre-raise. Settle the doctrine first — pause or delete — then deal with re-verification (the Aug-5 link is long dead; the account verifies from scratch now). Ignore the vendor drip: a fresh PhantomBuster 40%-off Auto-Connect promo landed Aug 15 (unread, 'ends Aug 18') — it replaced the one that expired Wednesday, and it is the exact shape you rejected."
+          "detail": "It did not stay quiet: 'Chitraksh to VC USA' auto-fired again at Aug 17 13:07Z and failed on an invalid session cookie, pausing itself. That is the proof the '~6 quiet days' was never a decision — it resumes whenever it can reach LinkedIn. Settle the doctrine first: this automated connect sequence is pointed at the lane Meeting 38 defined as relationship-first and 12-24 months pre-raise. Pause or DELETE it before touching re-verification (the Aug-5 link is long dead; the account verifies from scratch now) — repair without the decision just restarts today's failure on a loop. Ignore the vendor drip: the PhantomBuster 40%-off Auto-Connect promo (Aug 15, unread) now 'ends Aug 18' tomorrow — the exact shape you rejected."
         },
         {
           "lead": "Generate the Gemini creative batch — Claude writes, Gemini renders",
@@ -247,32 +247,32 @@
           "detail": "The 30-minute NotebookLM edition rebuilt on the corrected average advance (~$1,506/policy, not the $600 industry default that had been feeding every model and making margins look unsurvivable). Frankie has asked twice. Listening is not the deliverable — re-baselining the CPL ceiling and Oraya's own pricing off it is."
         },
         {
-          "lead": "Scheduler W7 — one healthy morning didn't hold: two editions dropped, the writer stayed dark",
+          "lead": "Scheduler W7 — only hand-driven sessions ship; Aug 17 AM was a full no-run",
           "tag": "W7 · RELAPSED / WRITE DARK",
           "tagType": "red",
           "project": "hq",
           "area": "Autonomy / Infra",
-          "detail": "Yesterday's clean, on-cron AM was a single swallow, not spring. The two editions since BOTH failed to ship: Aug 15 PM never ran, and Aug 16 AM woke the generator at 01:35Z but never curated, published, logged or drafted — it left the stale May-28 skeleton (Envision Honda / Day 138) sitting on disk as brief_data.json, and the live site served day 217 for ~40 hours until this session drove a recovery by hand. So this is now demonstrably a WRITE/SHIP bug, not a wake-window miss: the machine woke, produced output, and shipped nothing. The digest writer is still dark on top of it — cofounder_log.json and cofounder_runs.txt both stamped Aug 6, ten days. Two concrete asks, unchanged and now urgent: instrument the cofounder-worker's write step, and instrument the brief's own curate→publish→draft→log tail so a generated-but-unshipped skeleton raises an alarm instead of masquerading as today's data. Stop tuning the wake window."
+          "detail": "Since Aug 15's one on-cron morning the machine has broken four editions running: Aug 15 PM never ran, Aug 16 AM generated a skeleton it never shipped, Aug 16 PM shipped only because a session drove it, and Aug 17 AM dropped entirely — no generator skeleton on disk (the file was still the Aug 16 PM day-218 curate), no sweep, no draft, no log line, so the AM did not even wake. The only editions reaching the founders are the ones a human session pushes. Worse than a wake-window miss and worse than a write/ship miss: today the AM did neither. The digest writer is dark on top of it — cofounder_log.json and cofounder_runs.txt both stamped Aug 6, eleven days. Two concrete asks, unchanged and now urgent: instrument the cofounder-worker's write step, and instrument the brief's own curate→publish→draft→log tail so a missing or stale edition raises an alarm instead of masquerading as today's data. Stop tuning the wake window alone."
         },
         {
-          "lead": "Autoloop Full Disk Access — the 2-minute toggle, day 49",
-          "tag": "49d",
+          "lead": "Autoloop Full Disk Access — the 2-minute toggle, day 50",
+          "tag": "50d",
           "tagType": "orange",
           "project": "ops",
           "area": "Infra / Autoloop",
-          "detail": "Frozen at cycle 10, day 49. System Settings → Privacy & Security → Full Disk Access → the launchd runner. Cheapest unfreeze in the building; it just keeps not getting done."
+          "detail": "Frozen at cycle 10, day 50. System Settings → Privacy & Security → Full Disk Access → the launchd runner. Cheapest unfreeze in the building; it just keeps not getting done."
         },
         {
-          "lead": "IRS EIN phone chase — 49 days silent",
-          "tag": "49d",
+          "lead": "IRS EIN phone chase — 50 days silent",
+          "tag": "50d",
           "tagType": "orange",
           "project": "hq",
           "area": "Entity / Legal",
           "detail": "Re-faxed Jun 28; the ~8-business-day window closed Jul 11 and the Jul 27 phone window passed unused. Not a wait any more: IRS EIN line 1-202-488-3100, and check RedFax at 510-497-1224 for a delivery receipt."
         },
         {
-          "lead": "LinkedIn Batch 1 — still unposted at 35 days",
-          "tag": "KEYSTONE · 35d",
+          "lead": "LinkedIn Batch 1 — still unposted at 36 days",
+          "tag": "KEYSTONE · 36d",
           "tagType": "orange",
           "project": "hq",
           "area": "Marketing / LinkedIn",
@@ -287,36 +287,36 @@
       "accent": "violet",
       "tasks": [
         {
-          "lead": "Live PM inbox read: T+7, still zero Meta mail — only a fresh vendor drip since yesterday",
+          "lead": "Live PM inbox read: T+8, still zero Meta mail — and the W14 phantom re-fired today",
           "tag": "VERIFIED THIS RUN",
           "tagType": "red",
           "project": "hq",
           "area": "Sweep / Evidence",
-          "detail": "A targeted PM read of orayaassistant@gmail.com this run ran from:facebookmail.com OR from:meta.com OR from:fb.com against the whole account and returned EMPTY — no ad-review decision, no billing receipt, no lead notification, no Meta mail of any kind, ever, seven days past T-0. Zero IRS at 49 days, zero Mercedes at 37, zero dealership. The only new mail since the Aug 15 AM brief is another PhantomBuster marketing drip (Aug 15 09:02Z, still unread) hawking 40%-off Auto-Connect that 'ends Aug 18' — so yesterday's '~40h of total silence' no longer holds, but nothing REAL arrived; newest real event is still the 'Chitraksh to VC USA' failure at Aug 10 20:20Z, quiet ~6 days."
+          "detail": "A targeted PM read of orayaassistant@gmail.com this run ran from:facebookmail.com OR from:meta.com OR from:fb.com OR from:facebook.com against the whole account and returned EMPTY — no ad-review decision, no billing receipt, no lead, no Meta mail of any kind, ever, eight days past T-0. Zero IRS at 50 days, zero Mercedes at 38, zero dealership. A newer_than:16d read minus PhantomBuster is also EMPTY, so the only inbound mail in 16+ days is PhantomBuster. NEW this run: the 'Chitraksh to VC USA' phantom auto-fired again at 13:07Z today and failed on an invalid cookie ('paused') — the newest real event is no longer Aug 10, it is a fresh W14 failure a few hours ago, which settles that the phantom was auto-paused, not decided off."
         },
         {
-          "lead": "Correction to yesterday: the reporting layer did NOT hold — it dropped the next two editions",
+          "lead": "Correction to the record: Aug 17 AM was a full no-run, not a generated-only skeleton",
           "tag": "CORRECTION",
           "tagType": "red",
           "project": "hq",
           "area": "Sweep / Cadence",
-          "detail": "Aug 15 AM was logged as the healthiest scheduling morning since Aug 5-6 and used to argue the reporting layer was never the bottleneck. Within 40 hours that reading broke: Aug 15 PM never ran and Aug 16 AM generated a skeleton it never shipped. So the honest picture is unchanged from the six-week pattern — one on-cron morning, then relapse. The distinction that survives: on Aug 15 the timing was genuinely good, and today's failure is squarely the WRITE/SHIP step, not the wake window. Fix the writer, not the alarm clock."
+          "detail": "Yesterday's failure mode was 'generated but not shipped' (a skeleton left on disk). Today's is cleaner and worse: the on-disk brief_data.json this session opened was still the Aug 16 PM day-218 file, so the Aug 17 AM generator never fired at all — no skeleton, no sweep artifact, no draft, no log line. Since Aug 15's one on-cron morning the machine has produced exactly one shipped edition on its own budget (Aug 16 PM, and only because a session drove it). The honest read: cron is delivering neither edition reliably, and the write/ship tail has no alarm."
         },
         {
-          "lead": "Ground truth unchanged — 14 days static",
+          "lead": "Ground truth unchanged — 15 days static",
           "tag": "",
           "tagType": "",
           "project": "hq",
           "area": "State",
-          "detail": "insurance_leadgen_state.json untouched since Aug 2 (14 days), no transcripts since May 18 (90 days), board unchanged since the Aug 12 push (v15.13, 4 days), autoloop dark at cycle 10 on day 49. So today's who-does-what is the Aug 6 split with the clock advanced to T+7 and every gate aged — no new plan, no invented task, per the three-per-fifteen-hours rule. The board is not stale because nobody is writing it; it is stale because nothing has happened to write."
+          "detail": "insurance_leadgen_state.json untouched since Aug 2 (15 days), no transcripts since May 18 (91 days), board unchanged since the Aug 12 push (v15.13, 5 days), autoloop dark at cycle 10 on day 50. So today's who-does-what is the Aug 6 split with the clock advanced to T+8 and every gate aged — no new plan, no invented task, per the three-per-fifteen-hours rule. The board is not stale because nobody is writing it; it is stale because nothing has happened to write."
         },
         {
-          "lead": "Session-driven recovery: generated, curated, published, drafted — first ship in ~40h",
+          "lead": "Session-driven recovery: generated, curated, published, drafted — after a dropped AM",
           "tag": "SHIPPED THIS RUN",
           "tagType": "green",
           "project": "hq",
           "area": "Daily Brief",
-          "detail": "This session had working shell, GitHub (HEAD was f20286a = the Aug 15 AM commit, confirming ~40h of no publish) and Gmail. The PM skeleton was generated, curated from the Aug 15 AM reference advanced to T+7 / day 218 via _curate_pm_aug16.mjs, rebuilt full-detail through _build_full_email.mjs, published to Vercel with push_brief.sh and dropped as a Gmail draft to both founders. It closes the Aug 15 PM + Aug 16 AM gap — but by hand, which is exactly the W7 fix that is still owed."
+          "detail": "This session had working shell, GitHub and Gmail. The PM skeleton was generated (day 219), curated from the Aug 16 PM reference advanced to T+8 / day 219 via _curate_pm_aug17.mjs, rebuilt full-detail through _build_full_email.mjs, published to Vercel with push_brief.sh and dropped as a Gmail draft to both founders. It covers the dropped Aug 17 AM — but by hand, which is exactly the W7 fix still owed."
         },
         {
           "lead": "Real send still rides on n8n — webhook_url empty",
@@ -324,14 +324,14 @@
           "tagType": "",
           "project": "hq",
           "area": "Delivery",
-          "detail": "41 Daily Brief drafts have stacked unsent since Jun 26 — recounted directly via list_drafts this run, Jun 26 through Aug 15 — so this PM is the 42nd. webhook_url is empty, so the n8n SCHEDULE workflow fetches the page just published and auto-sends ~15 min after the push. The standing read is unchanged: either attach Gmail OAuth to the imported n8n SCHEDULE workflow, or accept that the draft in the inbox IS the delivery mechanism and stop counting it as a failure."
+          "detail": "42 Daily Brief drafts have stacked unsent since Jun 26 — recounted directly via list_drafts this run, Jun 26 through Aug 16 — so this PM is the 43rd. webhook_url is empty, so the n8n SCHEDULE workflow fetches the page just published and auto-sends ~15 min after the push. The standing read is unchanged: either attach Gmail OAuth to the imported n8n SCHEDULE workflow, or accept that the draft in the inbox IS the delivery mechanism and stop counting it as a failure."
         }
       ]
     }
   ],
   "cofounder": {
     "date": "2026-08-06",
-    "scanned_at": "2026-08-16T17:26:10.373Z",
+    "scanned_at": "2026-08-17T16:55:30.313Z",
     "done": [
       {
         "what": "Pushed the dashboard — and this one matters: the live site had been serving v15.10, meaning the entire Meeting 38 ingest was written to disk but never deployed. Neither of you could actually see it. Network and the PAT both worked from this session, so v15.11 and v15.12 shipped together (42e25fb).",
@@ -350,7 +350,7 @@
         "who": "CTO-Claude"
       },
       {
-        "what": "Scheduler (W7): reported two consecutive clean mornings at the time. [RE-CLOCKED Aug 14: that reading did not survive — Aug 7-11 produced no sweep at all, Aug 11 was a total blackout, Aug 12 fired all nine tasks in a 17-minute burst, and as of today the sweep's digest-write has been dark ten days even though its board-write works.]",
+        "what": "Scheduler (W7): reported two consecutive clean mornings at the time. [RE-CLOCKED Aug 14: that reading did not survive — Aug 7-11 produced no sweep at all, Aug 11 was a total blackout, Aug 12 fired all nine tasks in a 17-minute burst, and as of today the sweep's digest-write has been dark eleven days even though its board-write works.]",
         "who": "CTO-Claude"
       },
       {
@@ -364,11 +364,11 @@
     ],
     "waiting": [
       {
-        "what": "ANSWER W15 [ADDED Aug 13]: say whether the Aug 9 launch happened. Seven days past T-0, a live inbox read still finds zero Meta mail of any kind, and no note declares a hold. Launched, or held to a named date — one sentence, today, before it becomes the sixteenth thing nobody looks at.",
+        "what": "ANSWER W15 [ADDED Aug 13]: say whether the Aug 9 launch happened. Eight days past T-0, a live inbox read still finds zero Meta mail of any kind, and no note declares a hold. Launched, or held to a named date — one sentence, today, before it becomes the sixteenth thing nobody looks at.",
         "who": "Both"
       },
       {
-        "what": "Record the video kit: shirt + tie, iPhone 4K/60fps, ~20-24 min of takes. One session unblocks the founder ad, a face creative, the landing-page refresh and the ElevenLabs voice clone. [RE-CLOCKED Aug 14: eleven days on what was agreed as a one-day allocation — the hardest gate on the board.]",
+        "what": "Record the video kit: shirt + tie, iPhone 4K/60fps, ~20-24 min of takes. One session unblocks the founder ad, a face creative, the landing-page refresh and the ElevenLabs voice clone. [RE-CLOCKED Aug 14: twelve days on what was agreed as a one-day allocation — the hardest gate on the board.]",
         "who": "Frankie"
       },
       {
@@ -376,19 +376,19 @@
         "who": "Frankie"
       },
       {
-        "what": "Enable Vercel Analytics before a single ad dollar moves — [RE-CLOCKED Aug 14: this is T+7, not T-3; the date passed with the gate still open, eleven days after it was named] without it the $600 is unmeasurable and Frankie's question (is anyone visiting the site?) stays unanswerable.",
+        "what": "Enable Vercel Analytics before a single ad dollar moves — [RE-CLOCKED Aug 14: this is T+8, not T-3; the date passed with the gate still open, twelve days after it was named] without it the $600 is unmeasurable and Frankie's question (is anyone visiting the site?) stays unanswerable.",
         "who": "Chitraksh"
       },
       {
-        "what": "Connect the Meta MCP + review the campaign structure — the second pre-spend gate, also eleven days open; until it is attached the $600 has to be driven by hand.",
+        "what": "Connect the Meta MCP + review the campaign structure — the second pre-spend gate, also twelve days open; until it is attached the $600 has to be driven by hand.",
         "who": "Chitraksh"
       },
       {
-        "what": "Decide whether 'Chitraksh to VC USA' should run at all — an automated connect phantom is the wrong shape for the relationship-first VC lane you described in Meeting 38. Answer this before fixing the cookie, not after. [RE-CLOCKED Aug 14: last failure Aug 10 20:20Z, quiet ~6 days — that is auto-paused, not decided. [RE-CLOCKED Aug 16: the expired promo was replaced by a fresh 40%-off Auto-Connect drip on Aug 15 ('ends Aug 18'), still unread — same rejected shape, same correct non-action.]]",
+        "what": "Decide whether 'Chitraksh to VC USA' should run at all — an automated connect phantom is the wrong shape for the relationship-first VC lane you described in Meeting 38. Answer this before fixing the cookie, not after. [RE-CLOCKED Aug 17: it did NOT stay quiet — the phantom auto-fired again Aug 17 13:07Z and failed on an invalid cookie, pausing itself, which proves 'quiet' was auto-paused, not decided. The Aug 15 40%-off Auto-Connect drip (unread) now 'ends Aug 18' tomorrow — same rejected shape, same correct non-action.]",
         "who": "Both"
       },
       {
-        "what": "PhantomBuster [RE-CLOCKED Aug 14]: the Aug-5 verification link is long dead (72h fuse burned Aug 8), so the account needs re-verifying from scratch — and the li_at cookie is still expired. Do NOT repair either until the VC-phantom doctrine call above is made, or the fix simply resumes the connects.",
+        "what": "PhantomBuster [RE-CLOCKED Aug 14]: the Aug-5 verification link is long dead (72h fuse burned Aug 8), so the account needs re-verifying from scratch — and the li_at cookie is still expired. Do NOT repair either until the VC-phantom doctrine call above is made, or the fix simply resumes the connects. [Aug 17: confirmed live — it tried again at 13:07Z and failed on the same invalid cookie.]",
         "who": "Chitraksh"
       },
       {
@@ -400,18 +400,18 @@
         "who": "Both"
       },
       {
-        "what": "W7 scheduler fix still owed, and it is now two bugs [RE-CLOCKED Aug 14]: the sweep's digest-write has been dark ten days even on days its board-write worked — fix the writer as its own item — and separately keep the Mac awake 00:30-01:15Z (caffeinate / Power Nap / scheduled wake) or move both crons to a known-awake hour, staggering the brief at least 45 min after the sweep.",
+        "what": "W7 scheduler fix still owed, and it is now two bugs [RE-CLOCKED Aug 14]: the sweep's digest-write has been dark eleven days even on days its board-write worked — fix the writer as its own item — and separately keep the Mac awake 00:30-01:15Z (caffeinate / Power Nap / scheduled wake) or move both crons to a known-awake hour, staggering the brief at least 45 min after the sweep.",
         "who": "Chitraksh"
       },
       {
-        "what": "IRS EIN: 49 days silent since the Jun 28 re-fax [RE-CLOCKED Aug 14, was 39d] — a phone chase now, not a wait. 1-202-488-3100, RedFax 510-497-1224.",
+        "what": "IRS EIN: 50 days silent since the Jun 28 re-fax [RE-CLOCKED Aug 14, was 39d] — a phone chase now, not a wait. 1-202-488-3100, RedFax 510-497-1224.",
         "who": "Chitraksh"
       },
       {
-        "what": "Standing carry-overs, deliberately not competing with the ads sprint: LinkedIn Batch 1 post (35 days, still gates every PhantomBuster sequence, cookie or no cookie), Mercedes re-pitch reply (37 days), launchd Full Disk Access for the autoloop (day 49). Also on the calendar: the Cebu ops/supply-chain EA second conversation, still logged as 'Thursday'.",
+        "what": "Standing carry-overs, deliberately not competing with the ads sprint: LinkedIn Batch 1 post (36 days, still gates every PhantomBuster sequence, cookie or no cookie), Mercedes re-pitch reply (38 days), launchd Full Disk Access for the autoloop (day 50). Also on the calendar: the Cebu ops/supply-chain EA second conversation, still logged as 'Thursday'.",
         "who": "Both"
       }
     ],
-    "note": "CARRIED, NOT FRESH — and re-clocked to Aug 16. The Aug 6 cofounder sweep is the last one that actually wrote anything: cofounder_log.json and cofounder_runs.txt are both still stamped Aug 6, ten days cold, even though the scheduled sweep has fired since. So the DONE/WAITING findings below remain the Aug 6 scan's, re-clocked on Aug 12, 14, 15 and again today against dead dates — treat them as history, not this morning's scan. Everything time-sensitive in today's brief — the empty Meta mailbox, the fresh Aug 15 vendor drip, the ~40h ship gap and the 42nd draft — was read live by this PM run, not inherited from the digest."
+    "note": "CARRIED, NOT FRESH — and re-clocked to Aug 17. The Aug 6 cofounder sweep is the last one that actually wrote anything: cofounder_log.json and cofounder_runs.txt are both still stamped Aug 6, eleven days cold, even though the scheduled sweep has fired since. So the DONE/WAITING findings below remain the Aug 6 scan's, re-clocked on Aug 12, 14, 15, 16 and again today against dead dates — treat them as history, not this morning's scan. Everything time-sensitive in today's brief — the empty Meta mailbox, the W14 phantom re-firing at 13:07Z today, the dropped Aug 17 AM and the 43rd draft — was read live by this PM run, not inherited from the digest."
   }
 }
