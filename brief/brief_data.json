@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-08-20T01:10:01.655Z",
-  "date_label": "Thu · Aug 20",
-  "edition": "AM",
-  "day_number": 222,
-  "phase": "Ads LIVE — day 2, zero delivery",
-  "headline": "W15 is answered — and not by either of you. The ads went live Aug 19 at 11:27Z; ten hours later Meta had served 0 impressions and spent $0.00. The campaign is fine. The pixel is starving and two sibling ad accounts are in trouble.",
-  "source": "index.html · ORAYA DATA v15.15 (Aug 19 sweep #2) + FA-ADS watchdog 2026-08-19 21:21Z",
+  "generated_at": "2026-08-21T14:08:11.032Z",
+  "date_label": "Fri · Aug 21",
+  "edition": "PM",
+  "day_number": 223,
+  "phase": "Ads live · day 3 — delivering, but thin (0 bookings)",
+  "headline": "Day 3: the ads are finally delivering — $0.49 a landing-page-view, 3.3% CTR — but 0 booked calls and pacing at ~$5/day, not $40. Today's Friday top-up is a decision, not a reflex.",
+  "source": "index.html ORAYA DATA v15.16 + live Meta Ads read 14:00Z + FA-ADS watchdog (hourly) + inbox · Aug 21",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -42,15 +42,7 @@
       "code": "P2",
       "color": "#2563eb",
       "blurb": "AI life-insurance funnel: data → outreach → AI calls → licensed close.",
-      "count": 12
-    },
-    {
-      "key": "realestate",
-      "label": "Real Estate",
-      "code": "P3",
-      "color": "#16a34a",
-      "blurb": "Investor / seller real-estate lead engine (next project, in design).",
-      "count": 0
+      "count": 14
     },
     {
       "key": "hq",
@@ -58,81 +50,78 @@
       "code": "HQ",
       "color": "#7c3aed",
       "blurb": "The dashboard, automations & AI agents that run the company itself.",
-      "count": 9
-    },
-    {
-      "key": "ops",
-      "label": "Ops",
-      "code": "OPS",
-      "color": "#64748b",
-      "blurb": "Money, hardware, family & day-to-day running of the business.",
-      "count": 2
+      "count": 5
     }
   ],
   "spotlight": [
     {
-      "icon": "🚨",
-      "title": "Open Ads Manager yourself — the one cause the API cannot see",
+      "icon": "💸",
+      "title": "Friday top-up call — fund $800–1,000, or hold",
       "who": "Frankie",
-      "detail": "AURA-Life-02__SAC-Fin__4STATE-LPV (120247577690500018) is ACTIVE, all six ads past review, none disapproved, ads_get_errors returns nothing — and it has served zero impressions in ten hours. The watchdog flagged what an API read cannot confirm: ad account 1612966496183765 (Frankie Alicea Ad Account) is UNSETTLED with an unpaid balance, and 2382992452085682 (Life Insurance Ads) is DISABLED for unusual activity. Neither runs this campaign, but an unsettled balance elsewhere on the same business throttles delivery. Log in, open Account Quality + Billing on all three accounts, settle the balance, screenshot what you see.",
+      "detail": "The $800–1,000 you committed for Friday (→ $1,200–1,600 total) is due today. It changed shape overnight: the account is no longer at $0 — AURA-Life-02 is delivering, but thin ($5.91 spent, pacing ~$5/day against a $40/day budget). Topping up a campaign that is under-pacing buys nothing extra until pacing is fixed. Fund with eyes open, or hold the cash one day and fund after the Aug 22 review.",
       "project": "insurance",
       "area": "Meta ads"
     },
     {
-      "icon": "🔥",
-      "title": "Warm the pixel — the fix has been sitting on disk for two days",
+      "icon": "🔧",
+      "title": "Before tomorrow's review: fix the two account-vs-meeting gaps",
       "who": "Chitraksh",
-      "detail": "Dataset 1710393736844354 has recorded ~23 PageViews in seven days. Three a day. Special Ad Category (financial services) strips out demographic and interest signal, so that starving pixel is very nearly all Meta has to model against — which is the most likely reason it will not bid. This makes two waiting items one item: sign off the 49-page orayalabs.ai rebuild, deploy it, and turn on Vercel Analytics (w10) plus the Meta pixel on every page. AURA-Life-01 already died of this exact disease on the Lead event; LPV is more forgiving but not immune.",
+      "detail": "The LPV/website arm delivers; the LEADFORM arm (AURA-Life-03) is PAUSED, blocked on Meta's Lead Ads Terms of Service — accept the ToS in Business settings to run it. And settle w17: the launch meeting said conversion-pixel optimization, the account reads LANDING_PAGE_VIEWS — confirm which is live, because that is why it paces at ~$5/day not $40.",
       "project": "insurance",
       "area": "Meta ads"
     },
     {
-      "icon": "⚖️",
-      "title": "Six ads are live — is the compliance furniture on them?",
+      "icon": "📊",
+      "title": "Reset the Aug 22 review's numbers — on the record",
       "who": "Both",
-      "detail": "Passing Meta review is not the same as satisfying Cal Ins Code §1725.5(c). Frankie supplies NPN + CA producer license #; Chitraksh verifies the number, the license and a rates-vary disclaimer actually appear on all six creatives and on the landing page. Do it while spend is $0.00 — this is the cheapest hour this will ever cost, and the last ad account died for precisely the opposite (no license identifiers, a guaranteed-price teaser, all-text PNG).",
+      "detail": "Walk in tomorrow with the corrected scorecard, not the launch-night one: runway is ~16 days at $40/day CBO against $650 (w16), not \"6 days\"; real booked calls are 0, not 1 (the watchdog's \"1 booking\" was a pixel Schedule event, corrected); the $358 balance (w18) is still unconfirmed even though real spend is now accruing. A half-finished 16-day test read as a failed 6-day one kills a campaign that is actually working.",
       "project": "insurance",
-      "area": "Compliance & Legal"
+      "area": "Review prep"
     }
   ],
   "blockers": [
     {
-      "label": "Zero delivery — 10h live, 0 impressions, $0.00",
-      "scope": "Shared",
-      "detail": "Campaign, ad set and all six ads read ACTIVE with no errors; bid strategy Highest volume, AUCTION, CBO $40/day, account 1041909723866642 ACTIVE with a valid payment method. Three candidate causes, in order: starving pixel (~3 PageViews/day under Special Ad Category), edit-after-launch review lag (campaign + ad set edited 04:34 PT, six minutes after creation — worth an hour or two, not ten), and the unsettled/disabled sibling ad accounts. Only the third needs a human in Ads Manager."
-    },
-    {
-      "label": "Cold pixel — 3 PageViews/day",
+      "label": "Meta Lead Ads ToS",
       "scope": "Chitraksh",
-      "detail": "The 49-page SEO/AEO rebuild has sat undeployed since Aug 18 and Vercel Analytics (w10) has been open since Aug 5. Deploying the site is now the delivery fix, not a nice-to-have: it is the only lever that feeds the pixel. Lead-event seeding stands at 1 Lead + 1 Schedule in seven days against the 15 needed to switch back to conversion optimization — campaign 120247554618550018 stays parked until then."
+      "detail": "The LEADFORM arm (AURA-Life-03) is PAUSED — Meta requires the Lead Ads Terms of Service accepted in Business settings before it can run. One click unblocks the form-vs-site head-to-head."
     },
     {
-      "label": "Compliance gate 0/7 — now live-fire",
+      "label": "Delivery pacing",
       "scope": "Chitraksh",
-      "detail": "b1–b7 all open. This stopped being theoretical yesterday: b5 (privacy / Do-Not-Sell page) and b7 (CA license # disclosure) bind the creative and the landing page that are running right now, and b4/TCPA binds the moment a lead is dialled."
+      "detail": "AURA-Life-02 serves ~$5/day against a $40/day budget — delivering, not stalled, but a fraction of pace. Confirm the optimization event (w17) + audience so it exits learning; a Special-Ad-Category financial campaign on a ~3-PageView/day pixel throttles on thin signal."
     },
     {
-      "label": "EIN — 54 days silent",
+      "label": "Compliance furniture 0/7 — on LIVE ads",
+      "scope": "Frankie supplies the numbers",
+      "detail": "NPN + CA producer license # + a not-guaranteed/rates-vary disclaimer must appear on every creative and the landing page while real money is now spending. The old account was banned for exactly the opposite."
+    },
+    {
+      "label": "EIN — 55 days silent",
       "scope": "Shared",
-      "detail": "Re-faxed Jun 28; the eight-business-day window closed Jul 11. Every phone window since Jul 27 has passed unused. Call 1-202-488-3100 in the 8–11 AM PT slot and check RedFax 510-497-1224 in parallel."
+      "detail": "IRS EIN line 1-202-488-3100 (lines open 8 AM PT); check RedFax 510-497-1224. Re-faxed Jun 28; the ~8-business-day window closed Jul 11. Every phone window since Jul 27 has passed unused. Gates A2P."
+    },
+    {
+      "label": "Scheduler / W7 — cloud can't reach the Mac",
+      "scope": "Chitraksh",
+      "detail": "Today's meeting-ingest emailed \"did not run — cloud task can't reach the Mac\"; the Aug 20 PM + Aug 21 AM briefs never shipped (last edition was Aug 20 AM). MCP-only tasks (the ads watchdog) ran fine hourly. Fix: keep the Mac awake through the cron windows, or move the brief/ingest to a Mac-side runner."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "222"
+      "v": "223"
     },
     {
-      "k": "Launch",
-      "v": "LIVE · 0 impressions · $0.00"
+      "k": "Ads",
+      "v": "LIVE · day 3"
     },
     {
-      "k": "Pixel",
-      "v": "~3 PageViews/day"
+      "k": "Spend",
+      "v": "$5.91 · $0.49/LPV"
     },
     {
-      "k": "Compliance gate",
-      "v": "0/7 cleared"
+      "k": "Booked calls",
+      "v": "0 real"
     }
   ],
   "lanes": [
@@ -143,60 +132,60 @@
       "accent": "emerald",
       "tasks": [
         {
-          "lead": "Ads Manager, by hand — settle the unpaid balance",
-          "detail": "1612966496183765 (Frankie Alicea Ad Account) is UNSETTLED. 2382992452085682 (Life Insurance Ads) is DISABLED, flagged for unusual activity, all ads paused. The live campaign runs on 1041909723866642, which is clean — but a delinquent balance on the same business is exactly the kind of throttle that never surfaces through the API. Clear it, then read Account Quality on all three.",
-          "tag": "DO FIRST",
-          "tagType": "red",
+          "lead": "Friday top-up — fund $800–1,000 or hold",
+          "detail": "Due today. The account is delivering but under-pacing (~$5/day vs $40). Adding cash to a thin-pacing campaign buys nothing until pacing is fixed — decide fund-now vs fund-after-review.",
+          "tag": "TODAY · MONEY",
+          "tagType": "orange",
           "project": "insurance",
           "area": "Meta ads"
         },
         {
-          "lead": "Hand over NPN + CA producer license # today (w13)",
-          "detail": "Six creatives are serving-eligible right now. The numbers have to be on them and on the landing page, with a rates-vary disclaimer. This is a five-minute message from you and a blocker for everyone else until it arrives.",
-          "tag": "LIVE ADS",
-          "tagType": "red",
+          "lead": "Aug 22 review — walk in with the corrected numbers",
+          "detail": "Runway ~16 days not 6 (w16); 0 real booked calls not 1; $358 balance still unconfirmed (w18). Read the 16-day test as a 16-day test.",
+          "tag": "TOMORROW",
+          "tagType": "green",
+          "project": "insurance",
+          "area": "Review prep"
+        },
+        {
+          "lead": "Video kit — record the 4K/60 founder takes",
+          "detail": "The keystone unblock: one session feeds the founder-ad creative, a face creative, the landing-page refresh and the ElevenLabs voice clone. Shirt + tie, iPhone 4K/60, ~20–24 min. 16 days owed.",
+          "tag": "KEYSTONE",
+          "tagType": "orange",
+          "project": "insurance",
+          "area": "Creative"
+        },
+        {
+          "lead": "Supply the compliance furniture for the live creatives",
+          "detail": "NPN + CA producer license # + not-guaranteed disclaimer for every creative + the landing page — money is spending now, so this is live-fire, not pre-launch.",
+          "tag": "",
+          "tagType": "",
           "project": "insurance",
           "area": "Compliance & Legal"
         },
         {
-          "lead": "Record the video kit (w9) — 15 days owed",
-          "detail": "Still the highest-leverage hour in the company, and now it also feeds the pixel problem: a face creative and a refreshed landing page are what make the site worth landing on. Shirt + tie, iPhone 4K/60fps, ~20–24 min of takes → footage to Chitraksh.",
-          "tag": "15 DAYS OWED",
-          "tagType": "red",
-          "project": "insurance",
-          "area": "Ad creative"
-        },
-        {
-          "lead": "Write the launch on the record (W15 close-out)",
-          "detail": "A watchdog told us the campaign went live, not either founder. One line in the board — went live Aug 19 11:27Z, LPV optimization, $40/day CBO, four states — closes W15 properly and stops the next ten days repeating.",
-          "tag": "W15",
-          "tagType": "orange",
-          "project": "insurance",
-          "area": "Meta ads"
-        },
-        {
-          "lead": "Cebu ops/supply-chain EA — 2nd conversation (w12)",
-          "detail": "Thursday, which is today. 10y ops + supply chain + EA, dealership mutuals read as a green flag. Bucket-warming, not a hire; bring Chitraksh in on the follow-up.",
-          "tag": "TODAY",
-          "tagType": "orange",
-          "project": "ops",
-          "area": "People buckets"
-        },
-        {
-          "lead": "Mercedes re-pitch reply (w3) — 42 days, the silence is ours",
-          "detail": "Their reply is in; we owe the receipts-reply plus an agent demo call. No dealership mail has arrived since — this one is on us.",
+          "lead": "People-bucket touches owed this week",
+          "detail": "Meet Lalit Kumar (20-yr GTM exec) Wed 4 PM; Janica dealership beta is 12 days silent on a 30%/$2,500-per-dept offer — ping her; DM Mohit to set the 3-way Croquis demo with Chitraksh.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
-          "area": "Dealership"
+          "area": "Partnerships"
         },
         {
-          "lead": "Hold the 3-tasks-per-15-hours line (f3)",
-          "detail": "Meeting 38’s real decision, and today is the test: a live campaign generates infinite plausible side-quests. Ads Manager, the licence numbers, the EA call. Nothing else gets invented today.",
-          "tag": "STANDING",
+          "lead": "Listen to the corrected-economics podcast ($1,506 advance)",
+          "detail": "30-min NotebookLM edition on the real advance figure — reframes CPL ceiling + pricing. Then re-baseline the model off it before quoting anyone.",
+          "tag": "",
           "tagType": "",
-          "project": "ops",
-          "area": "Doctrine"
+          "project": "insurance",
+          "area": "Economics"
+        },
+        {
+          "lead": "EIN phone chase — 55 days silent",
+          "detail": "Lines open 8 AM PT; Chitraksh takes the 8–11 AM India rotation, Frankie post-day-job. Backup: SS-4 by fax for a guaranteed 4-business-day turnaround.",
+          "tag": "EIN BLOCKER",
+          "tagType": "red",
+          "project": "insurance",
+          "area": "Compliance & Legal"
         }
       ]
     },
@@ -207,76 +196,60 @@
       "accent": "cyan",
       "tasks": [
         {
-          "lead": "Ship the SEO site — it is now the delivery fix",
-          "detail": "49 static pages have been on disk since Aug 18 waiting on pricing + integrations sign-off. With the pixel at ~3 PageViews/day and Special Ad Category stripping targeting signal, deploying is the single highest-value engineering act available today. Sign off, deploy, and put the Meta pixel plus Vercel Analytics (w10) on every page in the same push.",
-          "tag": "DELIVERY FIX",
-          "tagType": "red",
-          "project": "hq",
-          "area": "Website"
-        },
-        {
-          "lead": "Connect the Meta MCP (w8) — 15 days open",
-          "detail": "The watchdog is reading the account from somewhere; this lane still cannot push a creative or pull a report programmatically. With spend live, hand-driving the campaign is how the $600 gets away from us.",
-          "tag": "PRE-SPEND GATE, LATE",
-          "tagType": "red",
-          "project": "insurance",
-          "area": "Meta ads"
-        },
-        {
-          "lead": "Verify the compliance stamp on all six live creatives",
-          "detail": "Meta approved them; California has not. Once Frankie hands over NPN + licence #, confirm both appear on every creative and on the landing page along with a rates-vary disclaimer — and stand up b5 (privacy / Do-Not-Sell) on the page the ads point at.",
-          "tag": "b5 · b7",
-          "tagType": "red",
-          "project": "insurance",
-          "area": "Compliance & Legal"
-        },
-        {
-          "lead": "Decide the edit-freeze rule before touching the campaign",
-          "detail": "Campaign and ad set were both edited 04:34 PT, six minutes after creation — edits re-enter review and reset learning. If you change anything today, change it once, write down what and when, and then leave it alone long enough to read the result.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Meta ads"
-        },
-        {
-          "lead": "PhantomBuster (t3 · W14) — the trial ended, decide cleanly",
-          "detail": "Trial ended Aug 19 09:03Z, automations paused platform-side, the misfiring VC phantom is inert without payment. No urgency is forcing repair — which is exactly when to settle the doctrine: Meeting 38 made the VC lane relationship-first, 12–24 months ahead of a raise. Let it lapse on purpose, or pay with a written reason.",
-          "tag": "DECIDE, DON’T DRIFT",
+          "lead": "Accept Meta Lead Ads ToS → unblock the LEADFORM arm",
+          "detail": "AURA-Life-03 is PAUSED only because the Lead Ads Terms aren't accepted. Accept in Business settings so the form arm can run head-to-head against the site arm.",
+          "tag": "UNBLOCK",
           "tagType": "orange",
-          "project": "hq",
-          "area": "LinkedIn machine"
+          "project": "insurance",
+          "area": "Meta ads"
         },
         {
-          "lead": "Podcast v2 — the $1,506 economics (w11)",
-          "detail": "Frankie has asked twice. It re-baselines the CPL ceiling — and the moment impressions start, a CPL ceiling is the number you will be judging this campaign against. Listen before the first spend day closes.",
+          "lead": "Confirm the live campaign's optimization event (w17)",
+          "detail": "Meeting said conversion-pixel, account reads LANDING_PAGE_VIEWS. Confirm in Ads Manager — it explains the ~$5/day pacing and decides whether a change is needed before the top-up.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
-          "area": "Economics"
+          "area": "Meta ads"
         },
         {
-          "lead": "W7: keep the win — today the machine ran correctly",
-          "detail": "The cofounder sweep fired 00:39:02Z against its 00:38Z cron and this brief 01:07:40Z against 01:06Z, sweep first, 28 minutes apart — the designed order, on cron, for the first time since Aug 5–6. What is still unfixed is the write race: at brief time the sweep had not yet written its log. Stagger the brief ≥45 min after the sweep and the last symptom goes.",
-          "tag": "ON CRON TODAY",
-          "tagType": "green",
-          "project": "hq",
-          "area": "Scheduler"
+          "lead": "Vercel Analytics on the site before any top-up (w10)",
+          "detail": "Still open — the pre-spend gate the launch skipped. If $800–1,000 goes in today, at least the traffic it buys should be measured.",
+          "tag": "PRE-SPEND GATE",
+          "tagType": "orange",
+          "project": "insurance",
+          "area": "Instrumentation"
         },
         {
-          "lead": "Autoloop unfreeze (w2) — the 2-minute fix, day 54",
-          "detail": "System Settings → Privacy & Security → Full Disk Access for the launchd runner. Frozen at cycle 10.",
+          "lead": "Push dashboard v15.16 live",
+          "detail": "On disk + verified (meeting ingest, +8 waiting items) but the last sweep couldn't push (cloud git proxy refused the repo). One command in your own Terminal: bash \"$HOME/Downloads/Oraya HQ Reborn/push-dashboard.sh\".",
           "tag": "",
           "tagType": "",
           "project": "hq",
-          "area": "Autonomy"
+          "area": "Dashboard / Infra"
         },
         {
-          "lead": "IRS EIN call rotation (w1) — 54 days",
-          "detail": "1-202-488-3100 in the 8–11 AM PT window (8:30 PM IST); check RedFax 510-497-1224 in parallel. Nothing from the IRS has ever arrived in the swept mailbox.",
-          "tag": "EIN BLOCKER",
-          "tagType": "red",
+          "lead": "Attach the Meta MCP for programmatic control (w8)",
+          "detail": "Until it's wired, creatives + monitoring are hand-driven. The watchdog reads via MCP already — mirror that access into the working session.",
+          "tag": "",
+          "tagType": "",
           "project": "insurance",
-          "area": "Compliance & Legal"
+          "area": "Meta ads"
+        },
+        {
+          "lead": "Landing-page + face creative once video-kit footage lands",
+          "detail": "Refresh the LP and cut a Frankie-face creative from the 4K takes; edit the submitted video when recordings arrive.",
+          "tag": "",
+          "tagType": "",
+          "project": "insurance",
+          "area": "Creative"
+        },
+        {
+          "lead": "Autoloop unfreeze — frozen at cycle 10, 55 days",
+          "detail": "System Settings → Privacy & Security → Full Disk Access for the launchd runner. 2-minute Mac fix.",
+          "tag": "",
+          "tagType": "",
+          "project": "hq",
+          "area": "Dashboard / Infra"
         }
       ]
     },
@@ -287,117 +260,144 @@
       "accent": "violet",
       "tasks": [
         {
-          "lead": "Found the launch — W15 answered by evidence",
-          "detail": "An FA-ADS watchdog run emailed hanfluxai@gmail.com at 21:21Z last night: AURA-Life-02__SAC-Fin__4STATE-LPV went ACTIVE 04:27 PT / 11:27 UTC Aug 19. Ten days after the Aug 9 target, the launch exists — and the first thing anyone learned about it came from a machine, not a founder. Eight mornings of \"T+N unconfirmed\" close here.",
-          "tag": "W15 ANSWERED",
-          "tagType": "green",
-          "project": "insurance",
-          "area": "Meta ads"
-        },
-        {
-          "lead": "Read the zero-delivery diagnosis and ranked the causes",
-          "detail": "Clean: bid strategy, buying type, budget, payment method, no errors at any level, six ads past review, frequency 0, spend $0.00 against a $60 kill line. Suspect: pixel 1710393736844354 at ~23 PageViews/7d, the 04:34 PT edit-after-launch, and two sibling ad accounts (one UNSETTLED, one DISABLED). Only the last needs human eyes.",
+          "lead": "FA-ADS watchdog — hourly, all-clear",
+          "detail": "Ran through Aug 20→21 without a kill: campaign delivering at $0.49/LPV, all thresholds clear. Self-corrected two errors on the record: \"1 booked call\" → 0 (it was a pixel Schedule event) and flagged the under-pacing honestly rather than papering it over.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
           "area": "Meta ads"
         },
         {
-          "lead": "W7 datum: first clean, on-cron morning since Aug 5–6",
-          "detail": "cofounder-worker 00:39:02Z (cron 00:38) then this brief 01:07:40Z (cron 01:06) — correct order, 28-minute stagger, no burst. Residual defect logged honestly: at 01:08Z cofounder_log.json was still stamped Aug 19 10:16Z, so this edition carries yesterday’s digest. Timing recovered; the write race has not.",
-          "tag": "ON CRON",
-          "tagType": "green",
-          "project": "hq",
-          "area": "Scheduler"
-        },
-        {
-          "lead": "Flagged a gap in the watchdog’s own run",
-          "detail": "That watchdog session could not read project memory — no project_memory tool exposed, and insurance_ads_division.md / zero_delivery_cold_pixel.md / feedback_legal_gate.md were absent from its disk. It ran on prompt instructions alone, so anything those files encode about cold-pixel handling or the legal gate was not applied. Worth fixing before it makes a call that spends money.",
-          "tag": "ACTION NEEDED",
-          "tagType": "orange",
-          "project": "hq",
-          "area": "Autonomy"
-        },
-        {
-          "lead": "v15.15 sweep shipped + pushed live (bfeda49)",
-          "detail": "8 surgical patches; vm-verified — archive 214→215 cards, 0 duplicate ids, decisions 22, v14 backup md5-intact. Same-day second sweep handled with a suffixed archive id to preserve append-only.",
+          "lead": "This PM brief — advanced from Aug 20 AM",
+          "detail": "Aug 20 PM + Aug 21 AM never shipped (cloud runs can't reach the Mac). Day-counts re-clocked: EIN 55d, autoloop d55, Mercedes 43d, video/Analytics/MetaMCP 16d, transcripts 95d, SEO undeployed 3d.",
           "tag": "",
           "tagType": "",
           "project": "hq",
-          "area": "Dashboard / Infra"
+          "area": "Daily Brief"
         },
         {
-          "lead": "Ground truth unchanged elsewhere",
-          "detail": "insurance_leadgen_state.json untouched since Aug 2 (18 days). No transcripts since May 18 (94 days). Autoloop day 54, frozen at cycle 10. Zero IRS, zero dealership, zero cancellation mail.",
+          "lead": "Meeting ingest — 27 meetings, 125 open actions (Aug 20)",
+          "detail": "Backfill Jun 24–Aug 20 stands; today's scheduled ingest FAILED (cloud-can't-reach-Mac) so the digest is a day stale — carried, and said so.",
           "tag": "",
           "tagType": "",
           "project": "hq",
-          "area": "Autonomy"
+          "area": "Meeting intel"
         },
         {
-          "lead": "Standing watch",
-          "detail": "Daily now that spend is live: campaign delivery + spend vs the $60 kill line · pixel event volume · ad-account status on all three accounts · Meta ad-review and billing mail · IRS/EIN · Mercedes/dealership replies · W7 lastRunAt-vs-cron plus log-write verification.",
+          "lead": "PhantomBuster VC phantom fired AGAIN Aug 21",
+          "detail": "00:02Z, expired cookie, auto-paused; PB now at 99% of monthly execution time. Contradicts the v15.16 \"trial ended → inert\" note — it's still firing. Flag for the doctrine call (w14): decide the VC lane first, then pay or drop.",
           "tag": "",
           "tagType": "",
           "project": "hq",
-          "area": "Autonomy"
+          "area": "Monitoring"
+        },
+        {
+          "lead": "Inbox monitor — Meta signal is watchdog-only",
+          "detail": "Zero IRS (55d), zero dealership, zero lead mail across the swept box; the only Meta-side truth is the hourly watchdog + the live MCP read.",
+          "tag": "",
+          "tagType": "",
+          "project": "insurance",
+          "area": "Monitoring"
         }
       ]
     }
   ],
   "cofounder": {
-    "date": "2026-08-19",
-    "scanned_at": "2026-08-19T10:16:00Z",
-    "note": "Carried digest — the Aug 20 sweep fired on cron at 00:39:02Z but had not yet written cofounder_log.json when this brief was built at 01:08Z. Timing is fixed; the write race is not.",
+    "date": "2026-08-20",
+    "scanned_at": "2026-08-20T21:40:59.364Z",
     "done": [
       {
-        "what": "Launch evidence FOUND: FA-ADS watchdog mail 2026-08-19 21:21Z — AURA-Life-02__SAC-Fin__4STATE-LPV ACTIVE since 11:27Z Aug 19, 9h51m live with 0 impressions, 0 reach, $0.00 spent; six ads past review, no errors at any level",
+        "what": "MEETING INGEST BUILT — the brief had been blind to meetings since 2026-05-18 (duty 2 looked for transcript FILES; every meeting since lives in Fathom + TwinMind). A 00:00Z scheduled task + ingest_meetings.mjs engine now bridge it.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Zero-delivery causes ranked: starving pixel (~23 PageViews/7d, dataset 1710393736844354) under Special Ad Category · edit-after-launch review lag (04:34 PT) · sibling ad accounts 1612966496183765 UNSETTLED and 2382992452085682 DISABLED — the last needs a human in Ads Manager",
+        "what": "Meeting ingest: 27 meetings tracked (+27 new), 125 open actions — Chitraksh 68, Frankie 52",
         "who": "CTO-Claude"
       },
       {
-        "what": "Scanned inbox (3d + full Meta-domain sweep) — 1 new thread beyond the watchdog: PhantomBuster trial ENDED Aug 19 09:03Z, automations paused platform-side, VC phantom now inert without payment; still zero IRS, dealership, cancellation or lead mail",
+        "what": "Backfill Jun 24 – Aug 20: 27 meetings, 225 decisions, 170 actions, 103 money items, 33 prompts. Triaged 25 done + 20 superseded; 125 genuinely open.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Scheduler verified live: cofounder-worker 00:39:02Z (cron 00:38) then daily-brief-am 01:07:40Z (cron 01:06) — first correctly ordered, on-cron morning since Aug 5–6; log-write still lagged the brief",
+        "what": "Dashboard v15.16: +8 meeting-derived waiting items (w16–w23), +8 decisions, +1 archive entry. node --check passed, archive 215→216 with 0 dup ids, v14 backup untouched.",
         "who": "CTO-Claude"
       },
       {
-        "what": "No new transcripts since May 18 — ingest skipped",
+        "what": "Fixed an ordering bug found while building: the cofounder worker overwrites cofounder_log.json 38 min AFTER the ingest runs, so meeting lines would have been eaten every morning. Handoff now goes through meeting_brief_lines.json, which the worker folds in.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Dashboard v15.15 pushed live bfeda49 (8 surgical patches, vm-verified: archive 214→215, 0 dup ids, decisions 22, v14 backup md5-intact)",
+        "what": "Sweep #2 today (10:03Z vs 00:30Z cron — W7 late-burst again; last night's 18:46Z burst-run had already written today's log, so the 01:06Z brief chain held by luck)",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Scanned inbox (24h + 2d) — 1 new thread only: PhantomBuster trial ENDED 09:03Z, automations paused platform-side → the misfiring VC phantom is now inert without payment; zero IRS (53d), dealership, cancellation or lead mail",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Dashboard v15.15: 8 surgical patches (meta, changelog, am-sweep-2026-08-19b card, W14 + t3 trial-ended update, W7 today's datum), vm-verified (archive 214→215, 0 dup ids, decisions 22, v14 backup untouched), PUSHED live bfeda49",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Memory updated: v15.15 entry + same-day-second-sweep suffixed-id rule + PB-trial fact",
         "who": "CTO-Claude"
       }
     ],
     "waiting": [
       {
-        "what": "Ads Manager by hand: settle the UNSETTLED balance on 1612966496183765 and read Account Quality on all three ad accounts — the only zero-delivery cause the API cannot confirm",
+        "what": "Friday funding is TODAY (w19): $800–1,000 promised (→ $1,200–1,600). The account is no longer at $0 — it has spent $5.91 and is delivering thin at ~$5/day. Decide fund-now vs fund-after-the-Aug-22-review.",
         "who": "Frankie"
       },
       {
-        "what": "NPN + CA producer license # + rates-vary disclaimer, on all six live creatives and the landing page (w13 · b7) — six ads are serving-eligible without confirmed compliance furniture",
-        "who": "Frankie supplies, Chitraksh verifies"
+        "what": "Runway math is wrong on the record (w16): launch meeting said $100/day → ~6 days; the account is $40/day CBO against $650 → ~16 days. Correct it out loud before tomorrow's Aug 22 review.",
+        "who": "Frankie + Chitraksh"
       },
       {
-        "what": "Deploy the 49-page orayalabs.ai rebuild + Vercel Analytics + Meta pixel — the pixel is at ~3 PageViews/day and that is the likeliest reason Meta will not bid",
+        "what": "Optimization event disagrees (w17): meeting recorded conversion-pixel; account reads LANDING_PAGE_VIEWS. Now that it IS delivering (thin), this is the pacing question — confirm which is live before changing anything.",
         "who": "Chitraksh"
       },
       {
-        "what": "Connect the Meta MCP (w8) so the campaign can be read and adjusted programmatically instead of by hand",
+        "what": "Lead Ads ToS blocks the form arm: AURA-Life-03 (LEADFORM) is PAUSED until Meta's Lead Ads Terms are accepted in Business settings.",
         "who": "Chitraksh"
       },
       {
-        "what": "W14 · PhantomBuster trial has ended and the phantom is inert — settle VC-lane doctrine, then pay or drop",
+        "what": "$358 Meta balance (w18): agreed if-required Aug 19, never confirmed. Real spend is now accruing so billing works — but the $358 question is still open.",
+        "who": "Frankie"
+      },
+      {
+        "what": "W14 · PhantomBuster is NOT inert: the VC phantom fired again Aug 21 00:02Z (expired cookie) and PB is at 99% monthly execution time. Settle VC-lane doctrine, then pay or drop.",
         "who": "Chitraksh"
       },
       {
-        "what": "W7 last mile: stagger the AM brief ≥45 min after the sweep so the digest is written before the brief reads it",
+        "what": "PUSH v15.16 yourself — index.html is correct + verified on disk; the last sweep couldn't push it. One command: bash \"$HOME/Downloads/Oraya HQ Reborn/push-dashboard.sh\" \"v15.16 — meeting ingest\".",
+        "who": "Chitraksh"
+      },
+      {
+        "what": "Janica dealership beta (w20): 12 days silent on a 30%/$2,500-per-dept partner; the Aug 11–12 follow-up has no meeting in either recorder.",
+        "who": "Frankie"
+      },
+      {
+        "what": "Meet Lalit Kumar (20-year GTM exec), Wednesday 4 PM.",
+        "who": "Frankie"
+      },
+      {
+        "what": "DM Mohit to set the 3-way Croquis demo with Chitraksh (semantic-caching claim: $0.50 → $0.22–0.25/call), then send the invite.",
+        "who": "Frankie"
+      },
+      {
+        "what": "Listen to the corrected-economics podcast ($1,506 advance) before re-baselining pricing.",
+        "who": "Frankie"
+      },
+      {
+        "what": "Record the video kit (iPhone 4K/60) — keystone that unblocks founder-ad + face creative + landing page + voice clone; 16 days owed.",
+        "who": "Frankie"
+      },
+      {
+        "what": "orayalabs.ai SEO/AEO rebuild (49 pages, on disk since Aug 18, 3d undeployed) — sign off pricing + integrations so it can deploy.",
+        "who": "Chitraksh"
+      },
+      {
+        "what": "W7 fix still owed: today's failure was cloud-can't-reach-the-Mac — the brief + meeting-ingest both missed while the MCP-only watchdog ran fine. Move brief/ingest to a Mac-side runner, or keep the Mac awake through the cron windows.",
         "who": "Chitraksh"
       }
     ]
