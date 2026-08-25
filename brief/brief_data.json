@@ -1,6 +1,6 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-08-25T17:44:49.410Z",
+  "generated_at": "2026-08-25T17:46:51.510Z",
   "date_label": "Tue · Aug 25",
   "edition": "PM",
   "day_number": 227,
@@ -132,64 +132,6 @@
       "accent": "emerald",
       "tasks": [
         {
-          "lead": "The Aug 22 review left no trace — hold it or date it",
-          "detail": "Nothing in either inbox, no decision recorded anywhere, and the only Meta-side traffic in 24 hours is the watchdog’s own hourly mail. If the review happened, write the outcome down; if it did not, put a date on it — the numbers now say the real read is ~Aug 31, so a dated review beats a daily one.",
-          "tag": "TODAY",
-          "tagType": "green",
-          "project": "insurance",
-          "area": "Review"
-        },
-        {
-          "lead": "Top-up — the urgency just dropped, decide accordingly",
-          "detail": "The $800–1,000 Friday top-up was framed against a $40/day burn. At ~$15/day the $650 balance covers roughly 40 days, not 16. A top-up is no longer a runway question — it is a “do we want to buy the sample faster” question, which is a different and much less urgent decision. The unconfirmed $358 (w18) is still open either way.",
-          "tag": "MONEY",
-          "tagType": "orange",
-          "project": "insurance",
-          "area": "Meta ads"
-        },
-        {
-          "lead": "Supply the compliance furniture for the six live creatives",
-          "detail": "NPN + CA producer license # + not-guaranteed / rates-vary disclaimer, for every creative and the landing page. Day 5 of live spend, 2,196 impressions served. Nothing here is blocked on anything except the numbers being written down.",
-          "tag": "LIVE-FIRE",
-          "tagType": "red",
-          "project": "insurance",
-          "area": "Compliance"
-        },
-        {
-          "lead": "Video kit — record the 4K/60 founder takes",
-          "detail": "The keystone unblock, 18 days owed: one session feeds the founder-ad creative, a face creative, the landing-page refresh and the ElevenLabs voice clone. The ads are delivering on stock creative right now — this is the single biggest lever on CTR that is entirely in your hands.",
-          "tag": "KEYSTONE",
-          "tagType": "orange",
-          "project": "insurance",
-          "area": "Creative"
-        },
-        {
-          "lead": "People-bucket touches owed",
-          "detail": "Lalit Kumar (20-yr GTM exec) — Wednesday 4 PM. Janica dealership beta now 14 days silent on a 30% / $2,500-per-dept offer — ping her. DM Mohit to set the 3-way Croquis demo with Chitraksh, then send the invite.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "People"
-        },
-        {
-          "lead": "Listen to the corrected-economics podcast ($1,506 advance)",
-          "detail": "30-minute NotebookLM edition on the real advance figure — it reframes the CPL ceiling and the pricing model. At $0.40 a landing-page view the unit maths matter; re-baseline off it before quoting anyone.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Economics"
-        },
-        {
-          "lead": "EIN phone chase — 57 days silent",
-          "detail": "Lines open 8 AM PT; Chitraksh takes the 8–11 AM India rotation, Frankie post-day-job. Backup: SS-4 by fax for a guaranteed 4-business-day turnaround. Gates A2P.",
-          "tag": "EIN BLOCKER",
-          "tagType": "red",
-          "project": "ops",
-          "area": "Entity"
-        }
-      ],
-      "items": [
-        {
           "lead": "Reload the Anthropic API credits — or confirm who holds that billing",
           "detail": "The master unblock: a $0 balance disabled the Oraya org key Aug 23 and took the whole autonomous stack offline with it. Add credits + turn on auto-reload.",
           "tag": "MASTER UNBLOCK",
@@ -230,80 +172,6 @@
       "accent": "cyan",
       "tasks": [
         {
-          "lead": "Wire a CRM / booking source to the funnel",
-          "detail": "The deciding metric is un-computable without it, and the ~$15/day pace gives you until roughly Aug 31 before the sample is decision-grade. Do it inside that window. Anything that writes a booking back to the pixel/funnel counts — the bar is measurable, not elegant.",
-          "tag": "TOP GAP",
-          "tagType": "orange",
-          "project": "insurance",
-          "area": "Instrumentation"
-        },
-        {
-          "lead": "Vercel Analytics on the site (w10) — 18 days owed",
-          "detail": "The pre-spend gate the launch skipped. Real money is buying traffic; at minimum count what it buys. Pairs directly with the CRM task — same afternoon, same purpose.",
-          "tag": "PRE-SPEND GATE",
-          "tagType": "orange",
-          "project": "insurance",
-          "area": "Analytics"
-        },
-        {
-          "lead": "Fix the watchdog email template + give it project memory",
-          "detail": "Three Saturday sends shipped a literal $(cat /tmp/watchdog_email.html) to both founders before being resent corrected. Separately it has now self-reported four runs in a row that it cannot read insurance_ads_division.md / zero_delivery_cold_pixel.md / feedback_legal_gate.md — it is running blind on prompt text. It is our only continuous measurement lane; harden it before it is ever allowed near a spend decision.",
-          "tag": "RELIABILITY",
-          "tagType": "orange",
-          "project": "hq",
-          "area": "Agents"
-        },
-        {
-          "lead": "Reconcile the campaign-to-date spend figure in Ads Manager",
-          "detail": "Watchdog printed “campaign-to-date $24.87 / today $15.11”, which does not reconcile with Saturday mid-morning’s “$24.68 over 3 days”. Either the to-date window is a rolling preset or one of the reads is wrong. Five minutes in Ads Manager settles which number the reviews should quote.",
-          "tag": "VERIFY",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Ads read"
-        },
-        {
-          "lead": "Accept Meta Lead Ads ToS — unblock the form arm",
-          "detail": "AURA-Life-03 stays PAUSED purely on the unaccepted Lead Ads Terms. One click in Business settings restores the form-vs-site head-to-head.",
-          "tag": "UNBLOCK",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Meta ads"
-        },
-        {
-          "lead": "Push dashboard v15.16 live",
-          "detail": "On disk and verified (meeting ingest, +8 waiting items) since Aug 20; the live board still serves v15.15. Cloud sessions can’t reach the repo — one command in your own Terminal: bash \"$HOME/Downloads/Oraya HQ Reborn/push-dashboard.sh\" \"v15.16 — meeting ingest\".",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Dashboard"
-        },
-        {
-          "lead": "orayalabs.ai SEO/AEO rebuild — 5 days undeployed",
-          "detail": "49 static pages / ~31k words sitting in oraya-seo/ while the live site serves 45 characters of text to AI crawlers. Blocked only on sign-off for pricing + integrations, then a Mac-side deploy.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Site"
-        },
-        {
-          "lead": "W7 fix — move brief + ingest to a Mac-side runner",
-          "detail": "Today the timing was right (sweep 00:33Z → brief 01:05Z, on cron, in order) but the sweep wrote no artifacts and meeting-ingest still cannot reach the Mac. MCP-only tasks like the ads watchdog run fine — the failure is specifically filesystem-touching work from cloud sessions.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Scheduler"
-        },
-        {
-          "lead": "Autoloop unfreeze — frozen at cycle 10, 57 days",
-          "detail": "System Settings → Privacy & Security → Full Disk Access for the launchd runner. Two-minute Mac fix, still owed.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Autoloop"
-        }
-      ],
-      "items": [
-        {
           "lead": "Read Ads Manager for Aug 23-25 by hand",
           "detail": "The watchdog is dark, so no kill-gate has run since Saturday. Eyeball spend, delivery, frequency and rejections before funding more. Last good read: $24.91 lifetime, CPL $0.40, all gates clear (Aug 22).",
           "tag": "ADS BLIND",
@@ -343,64 +211,6 @@
       "role": "Autonomous",
       "accent": "violet",
       "tasks": [
-        {
-          "lead": "FA-ADS watchdog — full Saturday captured, pace corrected",
-          "detail": "Hourly through 16:36 PT: $8.51 → $10.36 → $12.19 → $14.08 → $15.11, i.e. ~$0.66/hour and a ~$15–16 day, which corrects yesterday’s $40/day projection. 1,246 impressions today, CPL $0.40, frequency 1.05, six ads ACTIVE with zero rejections, no delivery-blocking errors, R1/R2/R2-account/R3 all untriggered.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Monitoring"
-        },
-        {
-          "lead": "Lead signal re-stated honestly",
-          "detail": "Pixel dataset 1710393736844354 over 7 days: 5 raw Lead events + 1 Schedule. Four Leads (Aug 19–20) and the Schedule are founder-confirmed internal testing and excluded; the single Aug 21 09:00 PT Lead remains unconfirmed and is counted toward nothing. Otherwise a steady PageView trickle consistent with the small daily budget.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Signal"
-        },
-        {
-          "lead": "Self-reported defect: three malformed watchdog sends",
-          "detail": "Saturday 12:36Z, 17:36Z and 23:37Z each shipped an unrendered $(cat /tmp/watchdog_email.html) body to hanfluxai@ and manifestdestiny247@, followed by a corrected resend. Logged here rather than quietly absorbed — escalated into the Chitraksh lane as a template fix.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Agents"
-        },
-        {
-          "lead": "This AM brief — advanced from Aug 22 PM",
-          "detail": "Day-counts re-clocked: EIN 57d, autoloop d57, Mercedes 45d, video kit / Vercel Analytics / Meta MCP 18d, SEO undeployed 5d, Janica 14d. Carries Saturday’s cofounder digest because this morning’s sweep wrote no artifact.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Brief"
-        },
-        {
-          "lead": "Meeting ingest — still cannot reach the Mac",
-          "detail": "The Jun 24–Aug 20 backfill (27 meetings, 125 open actions) stands; the scheduled ingest keeps emailing “did not run”, so the meeting digest is carried, not refreshed.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Meetings"
-        },
-        {
-          "lead": "Inbox monitor — 24 hours, watchdog only",
-          "detail": "Nothing but FA-ADS mail in the last day: zero IRS (57d), zero Mercedes (45d), zero dealership, zero lead mail, zero founder decisions on record. The only Meta-side truth available is the hourly watchdog plus the live MCP read.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Inbox"
-        },
-        {
-          "lead": "PhantomBuster VC phantom — still not inert",
-          "detail": "Last confirmed fire Aug 21 00:02Z (expired cookie, auto-paused) with the account at 99% of monthly execution time. Contradicts the “trial ended → inert” note. Settle the VC-lane doctrine, then pay or drop.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Outreach"
-        }
-      ],
-      "items": [
         {
           "lead": "OFFLINE since Aug 23 — API credits exhausted",
           "detail": "Watchdog, cofounder sweep, meeting-ingest and autoloop all halted when the org key was disabled. Nothing autonomous has run in ~2 days. Resumes only when the balance is restored.",
