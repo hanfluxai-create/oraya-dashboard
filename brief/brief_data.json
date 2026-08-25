@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-08-23T01:35:04.037Z",
-  "date_label": "Sun · Aug 23",
-  "edition": "AM",
-  "day_number": 225,
-  "phase": "Ads live · day 5 — real pace is ~$15/day, not $40",
-  "headline": "The “$40/day” was an extrapolation off one mid-morning number — and the full day disagreed. Aug 22 closed at $15.11 by 4:36 PM PT: real delivery, 1,246 impressions, CPL $0.40, frequency 1.05, every kill gate clear — but a ~$15/day burn, not $40. That is not a failure, it is a different calendar: the ~$150–200 sample floor is now roughly nine days out, not three. The slower burn just handed you the time to wire the CRM before the numbers start mattering. Spend it on that.",
-  "source": "Aug 22 PM brief + live FA-ADS watchdog full-day read (Aug 22 16:36 PT / 23:38Z) + inbox sweep + scheduler API · Aug 23",
+  "generated_at": "2026-08-25T17:44:49.410Z",
+  "date_label": "Tue · Aug 25",
+  "edition": "PM",
+  "day_number": 227,
+  "phase": "Autonomy dark — API credits exhausted (day 227)",
+  "headline": "Autonomy went dark because the meter hit zero. The Oraya API org ran out of credits and Anthropic disabled the key on Aug 23 — so the ads watchdog, the cofounder sweep, meeting-ingest and two whole brief editions simply stopped, and the campaign has now run ~2 days with nobody watching the kill-gates. One bright signal in the wreckage: the booking funnel you kept asking for is finally live and counting — in test. Reload the credits and it all comes back on.",
+  "source": "Aug 23 AM brief (last shipped) advanced +2 editions · inbox sweep 72h (watchdog silent, Claude-API-off email, new booking-funnel digest) · scheduler API · Aug 25 10:33 PT",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -42,7 +42,7 @@
       "color": "#2563eb",
       "blurb": "AI life-insurance funnel: data → outreach → AI calls → licensed close.",
       "key": "insurance",
-      "count": 11
+      "count": 5
     },
     {
       "label": "HQ / Infra",
@@ -50,91 +50,78 @@
       "color": "#7c3aed",
       "blurb": "The dashboard, automations & AI agents that run the company itself.",
       "key": "hq",
-      "count": 11
-    },
-    {
-      "label": "Ops",
-      "code": "OPS",
-      "color": "#64748b",
-      "blurb": "Money, hardware, family & day-to-day running of the business.",
-      "key": "ops",
-      "count": 1
+      "count": 6
     }
   ],
   "spotlight": [
     {
-      "icon": "📉",
-      "title": "Re-date the decision: at ~$15/day the verdict is ~Aug 31, not this week",
-      "who": "Both",
-      "detail": "Yesterday’s brief read $8.51 at 6:35 AM PT and projected the full $40/day. The rest of the day settled it: $10.36 (10:35), $12.19 (13:35), $14.08 (15:36), $15.11 (16:36) — about $0.66/hour, closing near $16. So Aug 22 spent roughly $15, not $40. Everything else is genuinely healthy: 1,246 impressions, CPL $0.40, frequency 1.05, all six ads ACTIVE, zero rejections, zero delivery-blocking errors, R1/R2/R3 all untriggered. The consequence is calendar, not quality — at ~$15/day the ~$150–200 sample floor arrives around Aug 31 rather than mid-week, and the $650 balance stretches ~40 days instead of ~16. Stop reading each morning’s spend as a verdict. One reconciliation flag, not smoothed over: the watchdog printed “campaign-to-date $24.87” alongside “today $15.11”, which does not square with Saturday mid-morning’s “$24.68 over 3 days” — treat the to-date figure as a reporting-window question to resolve in Ads Manager, and trust the daily numbers.",
+      "icon": "🔌",
+      "title": "Reload the Anthropic API credits — it's the master switch",
+      "who": "Both (whoever holds billing)",
+      "detail": "At Aug 23 23:05Z Anthropic disabled the Oraya org's API key: \"out of usage credits.\" That single event explains everything downstream — the FA-ADS watchdog has sent nothing since Aug 22 9:35 PM PT, the cofounder sweep and meeting-ingest stopped writing, and both the Aug 23 PM and Aug 24 editions never shipped (this brief only exists because it runs on a separate session). Add credits and turn on auto-reload so a $0 balance can never again silently switch off every autonomous lane at once. Until that's done, treat all autonomy as offline.",
+      "project": "hq",
+      "area": "Infra / billing"
+    },
+    {
+      "icon": "👁️",
+      "title": "The ads have run ~2 days unwatched — read Ads Manager by hand",
+      "who": "Chitraksh / Frankie",
+      "detail": "With the watchdog dark, no kill-gate has been evaluated since Saturday. Last known-good read: $24.91 lifetime, CPL $0.40, six ads ACTIVE, every gate clear — but that is Aug 22's number. Open Ads Manager and eyeball spend, delivery, frequency and rejections across Aug 23-25 before trusting anything or funding more. If the credits get reloaded (spotlight 1) the watchdog resumes on its own; until then this is a manual read, and the Saturday shell-string email bug is still unfixed for when it restarts.",
       "project": "insurance",
       "area": "Ads read"
     },
     {
-      "icon": "🔌",
-      "title": "Wire a CRM / booking source — you just bought ~9 days to do it",
+      "icon": "📇",
+      "title": "The booking funnel is live and counting — validate it, then feed it real leads",
       "who": "Chitraksh",
-      "detail": "Still the top gap, and now the timing argument is decisive. Cost per booked call is the metric the whole test exists to find, and it is un-computable: the watchdog reported “no CRM source connected” for both booked calls and cost per booked call again last night. The slower burn means the sample will not be decision-grade until roughly Aug 31 — that is the window to instrument the funnel, not a reason to wait. If it is still unwired when spend crosses $150, the review at $150 will be exactly as blind as the review at $25. Pair it with Vercel Analytics (w10, 18 days owed), the pre-spend gate the launch skipped: real money is buying traffic and nothing on our side is counting it.",
+      "detail": "The gap this brief has hammered for a week — \"no CRM, cost-per-booked-call un-measurable\" — just closed in test form. A new daily 'Oraya digest' (flashworkflow) is emitting the exact instrument we needed: Aug 25 shows 2 new in 24h, 4 booked, 15% booking rate, median reply 6 min, 22 SLA-breached, 1 opted-out — end-to-end through F·A Apex's \"policy review\" booking email. Caveat that keeps it honest: today's rows are test leads (\"Launch Testlead\", \"Calfirst Testlead\", CA, closed_lost). So the pipe works; it has never seen a real ad lead. Confirm the field mapping and the 5-minute SLA timer, then make sure the live Meta lead actually flows into it — that is what finally turns cost-per-booked-call into a real number.",
       "project": "insurance",
       "area": "Instrumentation"
-    },
-    {
-      "icon": "⚖️",
-      "title": "Compliance furniture — 0/7, on day 5 of live spend",
-      "who": "Frankie",
-      "detail": "Unchanged and now five days old on money that is actually moving: NPN + CA producer license number + a not-guaranteed / rates-vary disclaimer on every one of the six live creatives and on the landing page. This is the one item where the slower pace buys nothing — exposure is per-impression, and 2,196 impressions have already run. The predecessor account was banned for precisely this omission. Frankie supplies the numbers, Chitraksh places them; it is a same-day task the moment the numbers exist.",
-      "project": "insurance",
-      "area": "Compliance"
     }
   ],
   "blockers": [
     {
-      "label": "No CRM / booking source connected",
-      "scope": "Chitraksh",
-      "detail": "Cost per booked call cannot be evaluated — the watchdog has now flagged it two nights running. The ~$15/day pace pushes the decision-grade sample to roughly Aug 31; that is the deadline to have a booking source wired back to the pixel/funnel, not a reprieve."
+      "label": "API credits exhausted — every autonomous lane is offline",
+      "scope": "Shared (billing)",
+      "detail": "Root cause of the 3-day blackout. Anthropic disabled the Oraya org key Aug 23 23:05Z for a $0 balance. Watchdog, cofounder sweep, meeting-ingest and autoloop are all down until the balance is restored. Reload + enable auto-reload so this can't recur silently."
     },
     {
-      "label": "Compliance furniture 0/7 — on LIVE ads, day 5",
+      "label": "Ads unwatched ~2 days — watchdog silent since Aug 22 9:35 PM PT",
+      "scope": "Chitraksh",
+      "detail": "No kill-gate evaluated since Saturday. Resumes automatically when credits reload; until then a human must read Ads Manager for Aug 23-25. The template bug (shell-string email bodies) also remains unfixed and will resurface on restart."
+    },
+    {
+      "label": "Compliance furniture 0/7 — on LIVE ads",
       "scope": "Frankie supplies the numbers",
-      "detail": "NPN + CA producer license # + not-guaranteed disclaimer on all six creatives and the landing page. 2,196 impressions have already served. Live-fire, not pre-launch — the old account was banned for exactly this."
+      "detail": "NPN + CA producer license # + a not-guaranteed / rates-vary disclaimer on all six live creatives and the landing page. Exposure is per-impression and thousands have already served. The predecessor account was banned for exactly this omission. Frankie supplies the numbers, Chitraksh places them — a same-day task once the numbers exist."
     },
     {
-      "label": "The watchdog is the only measurement lane — and it is misfiring",
-      "scope": "Chitraksh / CTO-Claude",
-      "detail": "Three of Saturday’s hourly emails went to both founders with a literal shell string ($(cat /tmp/watchdog_email.html)) as the body, each needing a corrected resend — 12:36Z, 17:36Z, 23:37Z. And for the fourth run in a row it self-reports it cannot read project memory (no project_memory tool in its environment), so it runs on prompt text alone. It also could not find four campaign IDs in its own scope inside act_1041909723866642. Fix the template and give it memory before it is ever trusted with a spend decision."
+      "label": "Booking test: 22 of 27 leads SLA-breached",
+      "scope": "Chitraksh",
+      "detail": "The new funnel proves the pipe, but the 5-minute response SLA is breaching on 22/27 rows — expected while they're unattended test leads with nobody calling. Confirm that's the whole reason before a real lead arrives, or the first live lead breaches on landing."
     },
     {
-      "label": "EIN — 57 days silent",
+      "label": "EIN — ~59 days silent",
       "scope": "Shared",
-      "detail": "IRS EIN line 1-202-488-3100, lines open 8 AM PT; check RedFax 510-497-1224. Re-faxed Jun 28; the ~8-business-day window closed Jul 11. Every phone window since Jul 27 has passed unused. Gates A2P."
-    },
-    {
-      "label": "Scheduler / W7 — timing recovered, writes still dark",
-      "scope": "Chitraksh",
-      "detail": "Good news first: this is the first on-cron, correctly-ordered morning since Aug 20 — cofounder sweep 00:33:32Z (cron 00:38) then this AM brief 01:05:05Z (cron 01:06), sweep first, 32-minute stagger, no burst. But the sweep produced no artifact: cofounder_log.json is still stamped Aug 22, cofounder_runs.txt still Aug 19, index.html still v15.15 on disk-and-live with v15.16 unpushed. That is the lane-selective mode — the task fires and writes nothing. Today’s digest below is therefore Saturday’s, and says so."
-    },
-    {
-      "label": "Meta Lead Ads ToS — form arm still shelved",
-      "scope": "Chitraksh",
-      "detail": "AURA-Life-03 (LEADFORM, 120247593461110018) confirmed PAUSED. One acceptance click in Business settings unblocks the form-vs-site head-to-head. Low urgency while the site arm delivers, but it is the only way to run the comparison."
+      "detail": "IRS EIN line 1-202-488-3100, lines open 8 AM PT; check RedFax 510-497-1224. Re-faxed Jun 28; the ~8-business-day window closed Jul 11. Every phone window since Jul 27 has passed unused. Gates A2P messaging."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "225"
+      "v": "227"
     },
     {
-      "k": "Ads",
-      "v": "LIVE · day 5"
+      "k": "API org",
+      "v": "OUT OF CREDITS · key off Aug 23"
     },
     {
-      "k": "Aug 22 spend",
-      "v": "$15.11 · CPL $0.40"
+      "k": "Ads watchdog",
+      "v": "SILENT ~2d · last $24.91 lifetime"
     },
     {
-      "k": "Booked calls",
-      "v": "0 · no CRM wired"
+      "k": "Booking funnel",
+      "v": "LIVE in test · 15% book rate"
     }
   ],
   "lanes": [
@@ -199,6 +186,40 @@
           "tagType": "red",
           "project": "ops",
           "area": "Entity"
+        }
+      ],
+      "items": [
+        {
+          "lead": "Reload the Anthropic API credits — or confirm who holds that billing",
+          "detail": "The master unblock: a $0 balance disabled the Oraya org key Aug 23 and took the whole autonomous stack offline with it. Add credits + turn on auto-reload.",
+          "tag": "MASTER UNBLOCK",
+          "tagType": "green",
+          "project": "hq",
+          "area": "Infra / billing"
+        },
+        {
+          "lead": "Hand Chitraksh your NPN + CA producer license #",
+          "detail": "So the not-guaranteed disclaimer can go on all six live creatives and the landing page today. Compliance is 0/7 on ads that are already serving impressions.",
+          "tag": "",
+          "tagType": "",
+          "project": "insurance",
+          "area": "Compliance"
+        },
+        {
+          "lead": "EIN phone chase",
+          "detail": "IRS 1-202-488-3100, lines open 8 AM PT; RedFax 510-497-1224. ~59 days silent — this stopped being a wait six weeks ago. Gates A2P.",
+          "tag": "",
+          "tagType": "",
+          "project": "insurance",
+          "area": "Ops"
+        },
+        {
+          "lead": "Standing carry-overs",
+          "detail": "Mercedes re-pitch reply (we owe it) + record the video kit (unblocks founder creative, face creative, landing page, voice clone). Hold the 3-tasks-per-15-hours line.",
+          "tag": "",
+          "tagType": "",
+          "project": "insurance",
+          "area": "Field"
         }
       ]
     },
@@ -280,6 +301,40 @@
           "project": "hq",
           "area": "Autoloop"
         }
+      ],
+      "items": [
+        {
+          "lead": "Read Ads Manager for Aug 23-25 by hand",
+          "detail": "The watchdog is dark, so no kill-gate has run since Saturday. Eyeball spend, delivery, frequency and rejections before funding more. Last good read: $24.91 lifetime, CPL $0.40, all gates clear (Aug 22).",
+          "tag": "ADS BLIND",
+          "tagType": "amber",
+          "project": "insurance",
+          "area": "Ads read"
+        },
+        {
+          "lead": "Validate the new booking funnel + wire real Meta leads into it",
+          "detail": "The 'Oraya digest' (flashworkflow) now emits booking metrics end-to-end through F·A Apex's policy-review flow — but only on test leads. Confirm field mapping + the 5-min SLA timer, then route the live Meta lead in so cost-per-booked-call becomes real.",
+          "tag": "",
+          "tagType": "",
+          "project": "insurance",
+          "area": "Instrumentation"
+        },
+        {
+          "lead": "Harden the watchdog before it's trusted with a spend decision",
+          "detail": "Fix the shell-string email bodies from Saturday and give it project memory (it self-reported four runs blind to insurance_ads_division.md et al.). Do it now so it's clean when credits reload.",
+          "tag": "",
+          "tagType": "",
+          "project": "hq",
+          "area": "Automation"
+        },
+        {
+          "lead": "Clear the small carry-overs",
+          "detail": "Push v15.16 dashboard (unpushed since Aug 20); accept Meta Lead Ads ToS in Business settings to unshelve the AURA-Life-03 form arm; settle the PhantomBuster VC-phantom doctrine (99% monthly exec time), then pay or drop.",
+          "tag": "",
+          "tagType": "",
+          "project": "hq",
+          "area": "Infra"
+        }
       ]
     },
     {
@@ -343,6 +398,32 @@
           "tagType": "",
           "project": "hq",
           "area": "Outreach"
+        }
+      ],
+      "items": [
+        {
+          "lead": "OFFLINE since Aug 23 — API credits exhausted",
+          "detail": "Watchdog, cofounder sweep, meeting-ingest and autoloop all halted when the org key was disabled. Nothing autonomous has run in ~2 days. Resumes only when the balance is restored.",
+          "tag": "HALTED",
+          "tagType": "red",
+          "project": "hq",
+          "area": "Autonomous"
+        },
+        {
+          "lead": "This PM brief shipped from a separate session",
+          "detail": "Traced the blackout to the Aug 23 23:05Z credit exhaustion, confirmed the watchdog silence and the Aug 23 PM + Aug 24 misses, and surfaced the new booking-funnel signal.",
+          "tag": "",
+          "tagType": "",
+          "project": "hq",
+          "area": "Autonomous"
+        },
+        {
+          "lead": "On reload: resume + backfill",
+          "detail": "First task when credits return is the Aug 23-25 ads delivery backfill so the record isn't blind for three days, then hourly watchdog + nightly sweep + meeting-ingest as normal.",
+          "tag": "",
+          "tagType": "",
+          "project": "hq",
+          "area": "Autonomous"
         }
       ]
     }
