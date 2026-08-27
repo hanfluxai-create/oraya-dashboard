@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-08-26T14:07:21.046Z",
-  "date_label": "Wed · Aug 26",
+  "generated_at": "2026-08-27T14:10:00.000Z",
+  "date_label": "Thu · Aug 27",
   "edition": "PM",
-  "day_number": 228,
-  "phase": "Autonomy: the sweep fired and wrote nothing — one root cause, three dark lanes (day 228 PM)",
-  "headline": "Frankie, you're waking up to two briefs at once — this morning's AM shipped 12.5 hours late, so it lands next to this one. And it got the day's biggest fact wrong: it said the cofounder sweep 'skipped its slot entirely,' but the scheduler shows the sweep fired at 13:36Z — five minutes after the AM looked — and still wrote nothing to your Mac. That is not a fourth outage; it is the same cloud-bridge wall meeting-ingest named at midnight. The sweep, the ingest, and the watchdog are one structural gap, and the fix is to rebuild them as LOCAL tasks — not to reload API credits again. Nothing else moved in the six hours since: the ads are still blind four days on 0/7 compliance, EIN is 59 days silent, and the booking funnel still hasn't seen a real lead. The infra is the whole story today; the rest is waiting on the two of you.",
-  "source": "Aug 26 AM brief (shipped 13:44Z, ~12.5h late) advanced +1 edition · scheduled-tasks API 14:04Z: oraya-cofounder-worker lastRunAt 13:36:57Z (FIRED) but cofounder_log.json still Aug 25 17:33Z (wrote nothing) · inbox sweep 14:04Z = 0 new since the AM's 13:31Z read (newest mail 07:45Z, marketing) · Fathom 0 new Oraya meetings · meeting-ingest self-diagnosis 00:02Z · Aug 26 14:07 UTC",
+  "day_number": 229,
+  "phase": "Autonomy: the AM brief itself fired on cron and wrote nothing — the cloud-bridge now reaches the brief lane (day 229 PM)",
+  "headline": "Frankie — this is the only brief you'll get today, and that's the story. At 12:38 AM UTC the cofounder sweep fired; at 1:09 AM the AM brief fired; both ran exactly on schedule and both wrote nothing to your Mac. Meeting-ingest emailed at 12:03 AM that it couldn't reach the workspace at all — its second night in a row. The only reason you're reading anything is that this PM session happens to have Mac access. So today kills the two theories we kept reaching for: it isn't the scheduler (everything fired on cron, in the right order) and it isn't the API balance (a $0 balance can't explain a task that runs fine and still can't write). It's one thing — the cloud-to-Mac bridge — and the fix is to rebuild the brief pipeline, the sweep and meeting-ingest as LOCAL tasks. Everything else is where it was six hours ago, only older: the ads are blind five days now on 0/7 compliance, EIN is 60 days silent, and the booking funnel logged a fourth straight day of zero real leads.",
+  "source": "Aug 26 PM brief advanced +1 edition (no Aug 27 AM ever wrote — confirmed below) · scheduled-tasks API 14:04Z: oraya-daily-brief-am lastRunAt 2026-08-27T01:09:48Z (FIRED on cron) but no Aug 27 AM board/log/draft exists on the Mac; oraya-cofounder-worker 00:38:51Z (FIRED) but cofounder_log.json still stamped Aug 25 17:33Z; meeting-ingest emailed 'INGEST DID NOT RUN' 00:03Z — 2nd straight night, 'structural, will recur daily' · inbox 2-day sweep 14:04Z: Aug 26 booking digest landed 15:00Z (0 new/4 booked/15%/22 breached), Supabase went Pro (+$25 invoice, +security advisory), zero FA-ADS/IRS/Mercedes/Meta mail · Fathom 0 new meetings · Aug 27 14:10 UTC",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -55,40 +55,40 @@
   ],
   "spotlight": [
     {
-      "icon": "🧭",
-      "title": "The sweep fired at 13:36Z and still wrote nothing — the cloud-bridge is ONE shared root cause, not three outages",
+      "icon": "🌉",
+      "title": "The AM brief itself fired at 01:09Z and wrote nothing — the cloud-bridge gap has reached the brief lane",
       "who": "Chitraksh",
-      "detail": "This is the correction that reframes the whole day. The AM read the scheduler at 13:31Z, saw the cofounder sweep hadn't fired, and called it 'skipped its slot entirely, next attempt tomorrow.' The scheduler now shows it fired five minutes later, at 13:36:57Z — and cofounder_log.json is still stamped Aug 25 17:33Z, so it produced no artifact. That is the exact failure meeting-ingest self-diagnosed at 00:02Z: it runs in an Anthropic cloud container with no bridge to your Mac, so 'Oraya HQ Reborn/daily-brief' is unreachable and every run fails identically. So the sweep, meeting-ingest, and the FA-ADS watchdog are not three separate outages competing for a credit reload — they are one structural gap. This very brief is the proof the fix is narrow: this session read and wrote that same folder all afternoon without a hitch, so the bridge exists for some tasks and not others. Rebuild the cofounder sweep AND meeting-ingest as LOCAL scheduled tasks — that is the master unblock, and it is not billing.",
+      "detail": "This reframes the whole failure. The scheduler shows oraya-daily-brief-am ran at 01:09:48Z and oraya-cofounder-worker at 00:38:51Z — both on cron, sweep first, exactly as designed. Yet the Mac has no Aug 27 AM board, no log line, no draft (the last draft is yesterday's PM), and cofounder_log.json is still stamped Aug 25 17:33Z: both fired and wrote nothing. Meeting-ingest emailed at 00:03Z that it 'could not reach the Mac workspace… structural, will recur daily' — its second straight night. That is three write-lanes due today and zero that reached your Mac. The one lane that worked is this PM session, which has Mac access — which is the whole diagnosis: the bridge is present for some runs and absent for others, and nothing else (timing, credits) explains a task that fires perfectly and still can't write. The fix is unchanged and now unarguable: rebuild the AM brief pipeline, the cofounder sweep and meeting-ingest as LOCAL scheduled tasks. Do not reload credits and call autonomy restored.",
       "project": "hq",
       "area": "Automation"
     },
     {
       "icon": "🚨",
-      "title": "Ads blind FOUR days on 0/7 compliance — open Ads Manager by hand today",
+      "title": "Ads blind FIVE days on 0/7 compliance — read Ads Manager by hand today",
       "who": "Chitraksh / Frankie",
-      "detail": "The watchdog has been silent since Aug 22, 9:35 PM PT — and now we know why it won't self-heal: it's on the wrong side of the same cloud-bridge. Aug 23, 24, 25 and 26 have each served impressions with no kill-gate evaluated: spend, delivery, frequency and rejections are all unverified for four consecutive days, on an account still 0/7 on compliance furniture. Last known-good is Aug 22 — $24.91 lifetime, CPL $0.40, six ads ACTIVE, every gate clear — but that snapshot is now stale by a factor of four. Read Ads Manager by hand this morning; don't wait for the watchdog to come back on its own, because it can't until it's rebuilt local.",
+      "detail": "The FA-ADS watchdog has been silent since Aug 22, 9:35 PM PT, and a fresh two-day inbox sweep returns zero watchdog mail — so Aug 23, 24, 25, 26 and 27 have each served impressions with no kill-gate evaluated: spend, delivery, frequency and rejections are all unverified for five straight days. Last known-good is Aug 22 — $24.91 lifetime, CPL $0.40, six ads ACTIVE, every gate clear — but that snapshot is now stale by a factor of five, and the watchdog is on the wrong side of the same cloud-bridge so it can't self-heal. Open Ads Manager by hand this morning and eyeball the numbers before funding more; the account is still 0/7 on compliance furniture, and the predecessor account was banned for exactly that omission while it kept serving.",
       "project": "insurance",
       "area": "Ads read"
     },
     {
       "icon": "🪪",
-      "title": "The two unblocks only Frankie can clear — NPN + CA license #, and the EIN phone line at 8 AM PT",
+      "title": "The two unblocks only Frankie can clear — NPN + CA license #, and EIN at 60 days",
       "who": "Frankie",
-      "detail": "Neither of these needs Chitraksh or the infra — they've simply sat. (1) Your NPN + CA producer license # is still the only thing between 0/7 and done on all six LIVE creatives and the landing page; it's been over a week while more impressions serve, and the predecessor account was banned for exactly this omission. Hand the numbers to Chitraksh today. (2) EIN is 59 days silent — call the IRS EIN line 1-202-488-3100 the moment it opens at 8 AM PT and check RedFax 510-497-1224; it gates all A2P messaging. PT morning is the window — use it before the day fills up.",
+      "detail": "Neither of these needs Chitraksh or the infra — they've simply sat. (1) Your NPN + CA producer license # is still the only thing between 0/7 and done on all six LIVE creatives and the landing page; over a week untouched while more impressions serve, and the predecessor account was banned for exactly this. Hand the numbers to Chitraksh today. (2) EIN is 60 days silent as of today — a full two months past a normal wait. Call the IRS EIN line 1-202-488-3100 the moment it opens at 8 AM PT and check RedFax 510-497-1224; it gates all A2P messaging. PT morning is the window — use it before the day fills up.",
       "project": "insurance",
       "area": "Compliance / Ops"
     }
   ],
   "blockers": [
     {
-      "label": "Autonomy is a cloud-bridge problem now, not a credit problem",
+      "label": "Autonomy is a cloud-bridge problem — not credits, not scheduler timing",
       "scope": "Shared",
-      "detail": "The sweep fired today (13:36:57Z) and wrote nothing; meeting-ingest self-diagnosed the same wall at 00:02Z. Reloading API credits will not fix a task that runs in a cloud container it cannot reach the Mac from. Rebuild the sweep + ingest as LOCAL tasks — only then is the lane truly restored. Don't declare it fixed off a credit top-up."
+      "detail": "Today every task fired on cron and in the right order (sweep 00:38Z → AM brief 01:09Z → this PM 14:03Z), yet the AM brief and the sweep both wrote nothing to the Mac and meeting-ingest emailed that it couldn't reach the workspace. Timing is fine; the API balance can't explain a task that runs and still can't write. The one variable is the cloud-to-Mac bridge. Rebuild the brief pipeline + sweep + ingest as LOCAL tasks — a credit top-up will not touch this."
     },
     {
-      "label": "Ads unwatched 4 days running (Aug 22 → Aug 26)",
+      "label": "Ads unwatched 5 days running (Aug 22 → Aug 27)",
       "scope": "Chitraksh",
-      "detail": "No kill-gate evaluated since Saturday, and the watchdog can't resume itself. Read Ads Manager by hand — see spotlight."
+      "detail": "No kill-gate evaluated since Saturday, and the watchdog can't resume itself from the wrong side of the bridge. Read Ads Manager by hand — see spotlight."
     },
     {
       "label": "Compliance furniture still 0/7 — on ads that are still live",
@@ -96,21 +96,21 @@
       "detail": "NPN + CA producer license # + a not-guaranteed/rates-vary disclaimer on all six creatives and the landing page — unchanged for over a week while more impressions serve. The predecessor account was banned for exactly this omission."
     },
     {
-      "label": "EIN — 59 days silent",
+      "label": "EIN — 60 days silent",
       "scope": "Shared",
       "detail": "IRS EIN line 1-202-488-3100 (8 AM PT); check RedFax 510-497-1224. Re-faxed Jun 28; every phone window since has passed unused. Gates A2P messaging."
     },
     {
-      "label": "Rebuild the cofounder sweep + meeting-ingest as LOCAL scheduled tasks",
+      "label": "Rebuild the AM brief + cofounder sweep + meeting-ingest as LOCAL scheduled tasks",
       "scope": "Chitraksh",
-      "detail": "Both hit the same cloud-container-can't-reach-the-Mac wall — proven today by a sweep that fired but wrote nothing, and by meeting-ingest's own Aug 26 00:02Z self-report. Retrying won't fix either; only recreating them locally will."
+      "detail": "All three hit the cloud-container-can't-reach-the-Mac wall today: the AM brief and the sweep fired and wrote nothing, and ingest emailed its 2nd straight 'did not run.' Retrying won't fix any of them; only recreating them locally (like this PM session, which has Mac access) will."
     }
   ],
   "metrics": [
-    { "k": "Day", "v": "228" },
-    { "k": "Autonomy", "v": "MIXED · sweep fired 13:36Z, wrote nothing" },
-    { "k": "Ads watchdog", "v": "SILENT 4d · last $24.91 (Aug 22)" },
-    { "k": "Booking funnel", "v": "TEST ONLY · 15% book rate (Aug 25)" }
+    { "k": "Day", "v": "229" },
+    { "k": "Autonomy", "v": "AM brief + sweep fired on cron · wrote nothing" },
+    { "k": "Ads watchdog", "v": "BLIND 5d · last $24.91 (Aug 22)" },
+    { "k": "Booking funnel", "v": "TEST · 0 new, 4 booked (Aug 26)" }
   ],
   "lanes": [
     {
@@ -129,15 +129,15 @@
         },
         {
           "lead": "EIN phone chase — this is your PT-morning window",
-          "detail": "IRS 1-202-488-3100, lines open 8 AM PT; RedFax 510-497-1224. 59 days silent — six-plus weeks past a normal wait. Gates A2P messaging.",
+          "detail": "IRS 1-202-488-3100, lines open 8 AM PT; RedFax 510-497-1224. 60 days silent — a full two months past a normal wait. Gates A2P messaging.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
           "area": "Ops"
         },
         {
-          "lead": "Back the local rebuild — don't buy credits and call autonomy 'fixed'",
-          "detail": "The sweep fired today and still wrote nothing, so a $0 balance was never the whole cause. Support Chitraksh recreating the sweep + ingest as local tasks; a credit reload alone won't bring the measurement lanes back.",
+          "lead": "Back the LOCAL rebuild — don't buy credits and call autonomy 'fixed'",
+          "detail": "The AM brief and the sweep both fired on cron today and still wrote nothing, so a $0 balance was never the whole cause. Support Chitraksh recreating the brief pipeline + sweep + ingest as local tasks; a credit reload alone won't bring the measurement lanes back.",
           "tag": "",
           "tagType": "",
           "project": "hq",
@@ -160,16 +160,16 @@
       "accent": "cyan",
       "tasks": [
         {
-          "lead": "Read Ads Manager for Aug 23-26 by hand",
-          "detail": "Four days blind now, not two, and the watchdog can't self-heal. Eyeball spend, delivery, frequency and rejections before funding more. Last good read: $24.91 lifetime, CPL $0.40, all gates clear (Aug 22).",
-          "tag": "ADS BLIND 4D",
+          "lead": "Read Ads Manager for Aug 23-27 by hand",
+          "detail": "Five days blind now, and the watchdog can't self-heal. Eyeball spend, delivery, frequency and rejections before funding more. Last good read: $24.91 lifetime, CPL $0.40, all gates clear (Aug 22).",
+          "tag": "ADS BLIND 5D",
           "tagType": "amber",
           "project": "insurance",
           "area": "Ads read"
         },
         {
-          "lead": "Rebuild the sweep AND meeting-ingest as local tasks — same root cause",
-          "detail": "Today proved it: the sweep fired at 13:36Z and wrote nothing, exactly like meeting-ingest's 00:02Z self-report. One cloud-bridge gap, two dark lanes. This brief proves the bridge still works for some tasks — make those two into tasks that have it, and the watchdog follows.",
+          "lead": "Rebuild the AM brief + sweep + meeting-ingest as LOCAL tasks — same root cause",
+          "detail": "Today proved it: the AM brief fired 01:09Z, the sweep fired 00:38Z, both wrote nothing; ingest emailed 00:03Z that it couldn't reach the Mac. One cloud-bridge gap, three dark lanes. This PM session had Mac access — clone whatever gives it that, and the watchdog follows.",
           "tag": "ROOT CAUSE",
           "tagType": "amber",
           "project": "hq",
@@ -177,23 +177,23 @@
         },
         {
           "lead": "Validate the booking funnel + wire real Meta leads into it",
-          "detail": "Still test-only (Aug 25: 2 new/24h, 4 booked, 15%, 22 of 27 SLA-breached). Confirm the field mapping + 5-minute SLA timer now, while it's consequence-free, then route the live Meta lead in so cost-per-booked-call becomes a real number.",
+          "detail": "The Aug 26 digest landed at 15:00Z: 0 new/24h, 4 booked, 15%, 22 of 27 SLA-breached, 6-min median — so it runs daily but is IDLE, a fourth straight day with zero real leads. Confirm the field mapping + 5-minute SLA timer now, then route the first live Meta lead in so cost-per-booked-call becomes a real number.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
           "area": "Instrumentation"
         },
         {
-          "lead": "Harden the watchdog before it's trusted with a spend decision",
-          "detail": "Fix the shell-string email bodies from Aug 22 and give it project memory — do it now, while it's down, so it's clean whenever the local rebuild brings it back.",
+          "lead": "Ops: action the Supabase security advisory + the new Pro invoice",
+          "detail": "Supabase upgraded to Pro (Welcome + a $25 invoice #KLFFUZ-00014 due Aug 26) and separately flagged 'security vulnerabilities detected in your projects' (Aug 25). Clear the advisory and confirm the Pro charge is intended. Spacemail Pro is still expired since Aug 24 — renew or let it lapse deliberately.",
           "tag": "",
           "tagType": "",
           "project": "hq",
-          "area": "Automation"
+          "area": "Ops / Infra"
         },
         {
           "lead": "Clear the small carry-overs",
-          "detail": "Push v15.16 dashboard (unpushed since Aug 20); accept Meta Lead Ads ToS to unshelve the AURA-Life-03 form arm; settle the PhantomBuster VC-phantom doctrine, then pay or drop; decide whether meeting-ingest should filter out the two non-Oraya 'Kaliputra Mission' items sitting in its dedupe queue.",
+          "detail": "Harden the watchdog (fix the Aug 22 shell-string email bodies + give it project memory) while it's down; push v15.16 dashboard (unpushed since Aug 20); accept Meta Lead Ads ToS to unshelve the AURA-Life-03 form arm; settle the PhantomBuster VC-phantom doctrine, then pay or drop; decide whether meeting-ingest should filter the non-Oraya 'Kaliputra Mission' test items in its dedupe queue.",
           "tag": "",
           "tagType": "",
           "project": "hq",
@@ -208,24 +208,24 @@
       "accent": "violet",
       "tasks": [
         {
-          "lead": "CORRECTION: the sweep didn't skip — it fired at 13:36Z and wrote nothing",
-          "detail": "The AM read the scheduler at 13:31Z and called the sweep a no-show; it fired five minutes later (13:36:57Z) and left cofounder_log.json frozen at Aug 25. This brief + three trading-desk tasks also fired, and the PM ran on its own cron (14:03Z) while the AM was 12.5h late — so today's W7 shape is 'AM catastrophically late, PM on time,' not a pure burst.",
-          "tag": "CORRECTED",
+          "lead": "What reached the Mac today, and what didn't",
+          "detail": "This PM session reached the workspace and shipped the brief, published the page and dropped the draft. The AM brief (01:09Z) and the cofounder sweep (00:38Z) both fired on cron and wrote nothing; meeting-ingest emailed its 2nd straight 'did not run' (00:03Z). Timing was clean and correctly ordered — the write-bridge is the only failure.",
+          "tag": "CONFIRMED",
           "tagType": "amber",
           "project": "hq",
           "area": "Autonomous"
         },
         {
-          "lead": "One root cause under three dark lanes",
-          "detail": "Sweep, meeting-ingest and the FA-ADS watchdog all hit the cloud-container-no-Mac-bridge wall. The fix is to rebuild them local, not to reload credits — this session read/wrote the workspace fine, proving the bridge is task-specific.",
+          "lead": "One root cause under four dark lanes",
+          "detail": "AM brief, cofounder sweep, meeting-ingest and the FA-ADS watchdog all hit the cloud-container-no-Mac-bridge wall. The fix is to rebuild them local, not to reload credits — this session read/wrote the workspace fine, proving the bridge is per-run, not gone.",
           "tag": "",
           "tagType": "",
           "project": "hq",
           "area": "Autonomous"
         },
         {
-          "lead": "On the first successful LOCAL sweep: resume + backfill",
-          "detail": "First job is the Aug 23-26 ads-delivery backfill so the record isn't blind for four days, then hourly watchdog + nightly sweep + meeting-ingest as normal.",
+          "lead": "On the first successful LOCAL run: backfill, then resume",
+          "detail": "First job is the Aug 23-27 ads-delivery backfill so the record isn't blind for five days, then hourly watchdog + nightly sweep + meeting-ingest as normal.",
           "tag": "",
           "tagType": "",
           "project": "hq",
@@ -237,32 +237,32 @@
   "cofounder": {
     "date": "2026-08-25",
     "scanned_at": "2026-08-25T17:33:00.000Z",
-    "note": "Carried from the Aug 25 17:33Z scan — no fresher digest exists. Today's cofounder sweep fired at 13:36:57Z but wrote no artifact (cofounder_log.json still stamped Aug 25 17:33Z), the same cloud-bridge failure meeting-ingest self-diagnosed at 00:02Z. The done/waiting below are Aug 25's, unchanged.",
+    "note": "Carried from the Aug 25 17:33Z scan — no fresher digest exists. Today's cofounder sweep fired at 00:38:51Z (Aug 27) but wrote no artifact (cofounder_log.json still stamped Aug 25 17:33Z) — the same cloud-bridge failure, now for the third day running, and the AM brief hit it too (fired 01:09Z, wrote nothing). The done/waiting below are Aug 25's, with day-counts brought current in the top waiting item.",
     "done": [
       {
-        "what": "Traced the 3-day autonomy blackout to root cause: the Oraya API org ran out of credits and Anthropic disabled the key at Aug 23 23:05Z. That one event stopped the FA-ADS watchdog (silent since Aug 22 9:35 PM PT), the cofounder sweep, meeting-ingest, and both the Aug 23 PM and Aug 24 brief editions. (PM-day-228 note: the credit exhaustion was real, but today shows it is no longer the only cause — the sweep fired and still wrote nothing.)",
+        "what": "Traced the original autonomy blackout to the Oraya API org running out of credits (Anthropic disabled the key Aug 23 23:05Z). Correction now standing three editions: credits were the FIRST cause, not the only one — since Aug 26 the sweep, the AM brief and meeting-ingest have each fired-or-been-due and still written nothing, which is a cloud-to-Mac bridge failure a reload can't fix.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Confirmed the ads have run with no kill-gate evaluated. Last known-good read is Aug 22: $24.91 lifetime, CPL $0.40, six ads ACTIVE, every gate clear — nothing newer exists because the watchdog is down. As of this PM that is four consecutive blind days (Aug 23/24/25/26).",
+        "what": "Confirmed the ads have run with no kill-gate evaluated. Last known-good read is Aug 22: $24.91 lifetime, CPL $0.40, six ads ACTIVE, every gate clear — nothing newer exists because the watchdog is down. As of this PM that is five consecutive blind days (Aug 23/24/25/26/27).",
         "who": "CTO-Claude"
       },
       {
-        "what": "Found the counter-signal: a new daily 'Oraya digest' (flashworkflow) is live and emitting booking metrics — Aug 25 = 2 new/24h, 4 booked, 15% booking rate, median reply 6 min, 22 SLA-breached, 1 opted-out — the cost-per-booked-call instrument the brief kept demanding, running end-to-end through F·A Apex's policy-review flow on test leads for now. (No Aug 26 digest had landed by 14:04Z.)",
+        "what": "Booking funnel keeps emitting daily but is idle: the Aug 26 'Oraya digest' landed 15:00Z = 0 new/24h, 4 booked, 15% booking rate, 6-min median reply, 22 of 27 SLA-breached, 1 opted-out — a fourth straight day with zero real leads through the F·A Apex policy-review flow (still test-only, never a real ad lead).",
         "who": "CTO-Claude"
       },
       {
-        "what": "Inbox sweep: no IRS/EIN, no Mercedes/dealership, no founder decision on record anywhere; EIN now 59 days silent. Ops note: the Spacemail Pro (spaceship.com) subscription lapsed Aug 24.",
+        "what": "Inbox sweep: still no IRS/EIN (now 60 days), no Mercedes/dealership, no Meta/Facebook ads mail, no founder decision on record. New ops signals: Supabase upgraded to Pro (+$25 invoice, +a security-vulnerabilities advisory), and Spacemail Pro remains lapsed since Aug 24.",
         "who": "CTO-Claude"
       }
     ],
     "waiting": [
       {
-        "what": "TOP (revised): Rebuild the cofounder sweep + meeting-ingest as LOCAL scheduled tasks — the sweep fired today and wrote nothing, so a credit reload alone won't restore the measurement lanes. Reload/enable auto-reload too, but the bridge is the master switch now.",
+        "what": "TOP: Rebuild the AM brief pipeline + cofounder sweep + meeting-ingest as LOCAL scheduled tasks — all three fired-or-were-due today and wrote nothing to the Mac, so a credit reload alone won't restore the measurement lanes. Reload/enable auto-reload too, but the cloud-to-Mac bridge is the master switch now. Live day-counts: ads blind 5 days, EIN 60 days.",
         "who": "Both"
       },
       {
-        "what": "Read Ads Manager for Aug 23-26 by hand — the watchdog can't. No kill-gate has run since Saturday; check spend, delivery, frequency and rejections before funding more.",
+        "what": "Read Ads Manager for Aug 23-27 by hand — the watchdog can't. No kill-gate has run since Saturday; check spend, delivery, frequency and rejections before funding more.",
         "who": "Chitraksh"
       },
       {
@@ -274,7 +274,7 @@
         "who": "Frankie"
       },
       {
-        "what": "EIN, 59 days: call the IRS EIN line 1-202-488-3100 (8 AM PT) and check RedFax 510-497-1224. Gates A2P messaging.",
+        "what": "EIN, 60 days: call the IRS EIN line 1-202-488-3100 (8 AM PT) and check RedFax 510-497-1224. Gates A2P messaging.",
         "who": "Shared"
       },
       {
