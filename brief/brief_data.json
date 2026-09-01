@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-09-01T10:40:00.000Z",
+  "generated_at": "2026-09-01T14:05:00.000Z",
   "date_label": "Tue · Sep 1",
   "edition": "PM",
   "day_number": 234,
   "phase": "Revenue motion is finally live — the $300 Plan is running, watched hourly, and being dialed by hand — but it's running on 0/7 compliance (day 234 PM)",
-  "headline": "Frankie — three days dark on the brief, and the company moved anyway. The \"$300 Plan\" is no longer a mystery campaign; it's the live paid motion, and a rebuilt watchdog now checks it every hour: $141 of $300 spent (47%), about a dozen real leads in from California, Texas, Nevada and Idaho. And you're already working them — the notifier screamed \"SLA breach\" on a lead named Charles and you fired back \"no breach, he came in at 12:02 and I called him at 12:04.\" That's the good news. The bad news hasn't moved a millimeter: compliance is still 0/7, and the two items that actually bite — b3 (Texas telephone-solicitor registration) and b7 (your CA producer-license # on the creatives) — are the exact two the last ad account was banned for, and Texas and California are precisely the states you're now dialing. One lead even arrived stamped \"no TCPA consent — call by hand.\" So the real revenue motion is alive and it is running on zero legal furniture. Today isn't \"should we launch\" — that's answered — it's: put the two numbers in place this week so the calls you're already making are papered, or scope the dialing to states that don't need them until they are. (Quiet second thread: the watchdog got rebuilt and thrives because it only touches cloud APIs — but everything that must write to your Mac is still dark. Meeting-ingest failed again this morning, no AM brief has shipped since Aug 28, and this PM is once again the only brief you'll get. The fix is the one the watchdog already proves: rebuild those as local tasks.)",
-  "source": "No cofounder sweep since Aug 28 (log frozen 00:38Z) · dashboard still v15.17 · meeting_brief_lines.json 12d stale (meeting-ingest emailed another 'cannot reach the Mac workspace' failure Sep 1 00:03Z). This PM brief reconstructed from a live Gmail sweep of hanfluxai@gmail.com: FA-ADS watchdog hourly (latest Sep 1 02:36 PT = $141.19/$300, 47%, 12 form leads, no kills), ~14 $300-Plan lead notifications Aug 27→Sep 1, Frankie's own 'I called him at 12:04' reply Aug 28, booking digest Aug 30 (0 new / 4 booked / 25 breached / 13%). AM+PM briefs, sweep, ingest all still on the broken cloud→Mac bridge · Tue Sep 1 ~10:40 UTC",
+  "headline": "Frankie — three days dark on the brief, and the company moved anyway. The \"$300 Plan\" is no longer a mystery campaign; it's the live paid motion, and a rebuilt watchdog now checks it every hour: $145 of $300 spent (48%), fourteen real leads now in — California, Texas, Nevada, Idaho, and as of this morning New Jersey. And you're already working them — the notifier screamed \"SLA breach\" on a lead named Charles and you fired back \"no breach, he came in at 12:02 and I called him at 12:04.\" That's the good news. The bad news hasn't moved a millimeter: compliance is still 0/7, and the two items that actually bite — b3 (Texas telephone-solicitor registration) and b7 (your CA producer-license # on the creatives) — are the exact two the last ad account was banned for, and Texas and California are precisely the states you're now dialing. One lead even arrived stamped \"no TCPA consent — call by hand.\" So the real revenue motion is alive and it is running on zero legal furniture. Today isn't \"should we launch\" — that's answered — it's: put the two numbers in place this week so the calls you're already making are papered, or scope the dialing to states that don't need them until they are. (Quiet second thread: the watchdog got rebuilt and thrives because it only touches cloud APIs — but everything that must write to your Mac is still dark. Meeting-ingest failed again this morning, no AM brief has shipped since Aug 28, and this PM is once again the only brief you'll get. The fix is the one the watchdog already proves: rebuild those as local tasks.)",
+  "source": "No cofounder sweep since Aug 28 (log frozen 00:38Z) · dashboard still v15.17 · meeting_brief_lines.json 12d stale (meeting-ingest emailed another 'cannot reach the Mac workspace' failure Sep 1 00:03Z). This PM brief reconstructed from a live Gmail sweep of hanfluxai@gmail.com: FA-ADS watchdog hourly (latest Sep 1 6:36 AM PT = $144.76/$300, 48%, 14 form leads, no kills), ~15 $300-Plan lead notifications Aug 27→Sep 1 (newest: Remedios Mallari, NJ, 6:23 AM PT), Frankie's own 'I called him at 12:04' reply Aug 28, booking digest Aug 30 (0 new / 4 booked / 25 breached / 13%). AM+PM briefs, sweep, ingest all still on the broken cloud→Mac bridge · Tue Sep 1 ~14:05 UTC (second pass at the real 7 AM PT PM slot; live board + draft refreshed in place)",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -64,9 +64,9 @@
     },
     {
       "icon": "📞",
-      "title": "A dozen real leads are in and being worked — triage them by state and consent before the next dial",
+      "title": "Fourteen real leads are in and being worked — triage them by state and consent before the next dial",
       "who": "Both",
-      "detail": "~14 lead notifications came in Aug 27→Sep 1 across CA/TX/NV/ID (the watchdog dedupes to 12 form leads), several with phone numbers. That's the first real pipeline the company has ever had — and it needs a rule, not a reflex. Sort the pile: which states are safe to call now, which wait for b3/b7. Honor the one lead ('Charles') that arrived flagged 'No TCPA consent — call by hand, no AI or text.' And note the counter drift: the notifier fired more emails than the watchdog counts leads, so dedupe is still off. Do the sort once, write it down, and every future dial follows it.",
+      "detail": "~15 lead notifications came in Aug 27→Sep 1 across CA/TX/NV/ID/NJ (the watchdog now counts 14 form leads), several with phone numbers — the newest, Remedios Mallari (NJ), landed 6:23 AM PT while dialing continues. That's the first real pipeline the company has ever had — and it needs a rule, not a reflex. Sort the pile: which states are safe to call now, which wait for b3/b7. Honor the one lead ('Charles') that arrived flagged 'No TCPA consent — call by hand, no AI or text.' And note the counter drift: the notifier fired more emails than the watchdog counts leads, so dedupe is still off. Do the sort once, write it down, and every future dial follows it.",
       "project": "insurance",
       "area": "Leads"
     },
@@ -86,9 +86,9 @@
       "detail": "Compliance is still 0/7. b3 (TX telephone-solicitor registration) + b7 (CA producer-license # on all six creatives and the landing page) are the exact omissions that got the predecessor account banned — and real TX/CA leads are being called against them right now. Hand Chitraksh the numbers this week, or scope the dialing to states that don't trigger them until they're placed."
     },
     {
-      "label": "A dozen consumer leads, one flagged 'no TCPA consent' — no written call-vs-hold rule by state",
+      "label": "Fourteen consumer leads, one flagged 'no TCPA consent' — no written call-vs-hold rule by state",
       "scope": "Both",
-      "detail": "~12 real leads (CA/TX/NV/ID) are in and some are already being dialed, but there's no documented policy on which states are safe to call at 0/7 and which wait for b3/b7. One lead arrived stamped 'call by hand, no AI/text.' Write the rule before the next call, not after."
+      "detail": "14 real leads (CA/TX/NV/ID/NJ) are in and some are already being dialed, but there's no documented policy on which states are safe to call at 0/7 and which wait for b3/b7. One lead arrived stamped 'call by hand, no AI/text.' Write the rule before the next call, not after."
     },
     {
       "label": "Watchdog watches money, not compliance — and spams a broken template hourly",
@@ -112,10 +112,22 @@
     }
   ],
   "metrics": [
-    { "k": "Day", "v": "234" },
-    { "k": "$300 Plan leads", "v": "~12 · CA/TX/NV/ID" },
-    { "k": "Compliance", "v": "0/7 · calling live" },
-    { "k": "Ad spend", "v": "$141 / $300 (47%)" }
+    {
+      "k": "Day",
+      "v": "234"
+    },
+    {
+      "k": "$300 Plan leads",
+      "v": "14 · CA/TX/NV/ID/NJ"
+    },
+    {
+      "k": "Compliance",
+      "v": "0/7 · calling live"
+    },
+    {
+      "k": "Ad spend",
+      "v": "$145 / $300 (48%)"
+    }
   ],
   "lanes": [
     {
@@ -133,8 +145,8 @@
           "area": "Compliance"
         },
         {
-          "lead": "Triage the ~12 leads before the next call",
-          "detail": "CA/TX/NV/ID, several with phones. Decide which states you call now vs hold for b3/b7, and keep honoring the 'no TCPA consent — call by hand, no AI/text' flag on the 'Charles' lead. 25 leads are already SLA-breached (uncontacted past the window) per the Aug 30 digest — sort the pile, don't just chase the newest ping.",
+          "lead": "Triage the 14 leads before the next call",
+          "detail": "CA/TX/NV/ID/NJ, several with phones (newest: Remedios Mallari, NJ, 6:23 AM PT). Decide which states you call now vs hold for b3/b7, and keep honoring the 'no TCPA consent — call by hand, no AI/text' flag on the 'Charles' lead. 25 leads are already SLA-breached (uncontacted past the window) per the Aug 30 digest — sort the pile, don't just chase the newest ping.",
           "tag": "LIVE PII",
           "tagType": "orange",
           "project": "insurance",
@@ -241,26 +253,75 @@
   ],
   "cofounder": {
     "date": "2026-09-01",
-    "scanned_at": "2026-09-01T10:40:00.000Z",
-    "note": "No cofounder sweep has written since Aug 28 and meeting-ingest failed again this morning (Sep 1 00:03Z), so this PM brief is reconstructed directly from a live Gmail sweep of hanfluxai@gmail.com plus the on-disk dashboard (still v15.17). Headline change since the last brief: the $300 Plan is now the live paid motion, watched hourly, and the leads are being dialed by hand while compliance is still 0/7.",
+    "scanned_at": "2026-09-01T14:05:00.000Z",
+    "note": "No cofounder sweep has written since Aug 28 and meeting-ingest failed again this morning (Sep 1 00:03Z), so this PM brief is reconstructed directly from a live Gmail sweep of hanfluxai@gmail.com plus the on-disk dashboard (still v15.17). This is the second pass at the real 7 AM PT PM slot (14:05Z) — the 10:40Z board already shipped; this refresh updates it in place with the new NJ lead + current watchdog. Headline change since the last brief: the $300 Plan is now the live paid motion, watched hourly, and the leads are being dialed by hand while compliance is still 0/7.",
     "done": [
-      { "what": "Reconstructed three dark days (Aug 29–Sep 1) from the inbox directly — no autonomous sweep has written since Aug 28, so this brief is rebuilt from live Gmail, not a fresh sweep artifact.", "who": "CTO-Claude" },
-      { "what": "Confirmed the '$300 Plan' is now the company's live paid motion, watched hourly by a rebuilt FA-ADS watchdog: latest run Sep 1 02:36 PT reads $141.19/$300 spent (47%), 12 form leads (~$10 CPL), no kill gates fired, all six ads active — this resolves the Aug 28 'watchdog blind 6 days'.", "who": "CTO-Claude" },
-      { "what": "Counted ~14 '$300 Plan' consumer-lead notifications Aug 27→Sep 1 across CA/TX/NV/ID (Thomas Walker TX, Mary Jane ID, Terry Wattenbarger CA, Larry Bryant CA, Dory Po NV, Marlene Ruth CA, George Brooks NV, Beverly McClintock TX, Francisco Lopez CA + more), several with phone numbers.", "who": "CTO-Claude" },
-      { "what": "Found consumer outreach is ALREADY live: on the Aug 28 'Charles' SLA-breach notice Frankie replied 'no breach — lead came in 12:02 and I called him at 12:04.' Leads are being dialed by hand.", "who": "CTO-Claude" },
-      { "what": "Flagged the collision, unchanged since Aug 28: compliance is still 0/7. b3 (TX solicitor reg) + b7 (CA producer license #) are open — the two the old account was banned for — and TX/CA are the states being called. One lead ('Charles') arrived stamped 'No TCPA consent — call by hand, no AI/text.'", "who": "CTO-Claude" },
-      { "what": "Logged watchdog faults: it green-lights spend with NO compliance/consent gate ('all clear' at 0/7), and double-sends a broken raw-template email (e.g. '$(cat /tmp/watchdog_email.html)', placeholders) then a 'corrected formatting' resend nearly every hour.", "who": "CTO-Claude" },
-      { "what": "Booking funnel still test-only: the Aug 30 'Oraya digest' read 0 new / 4 booked / 25 SLA-breached / 13% booking rate / 6-min median reply. No Aug 31 or Sep 1 digest had landed by this run.", "who": "CTO-Claude" },
-      { "what": "Confirmed the autonomy split: cloud-only tasks thrive (watchdog, notifier, digest); every Mac-writing task is dark — meeting-ingest failed again Sep 1 00:03Z (12d stale), no AM brief since Aug 28, sweep silent since Aug 28, dashboard frozen v15.17.", "who": "CTO-Claude" }
+      {
+        "what": "Reconstructed three dark days (Aug 29–Sep 1) from the inbox directly — no autonomous sweep has written since Aug 28, so this brief is rebuilt from live Gmail, not a fresh sweep artifact.",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Confirmed the '$300 Plan' is now the company's live paid motion, watched hourly by a rebuilt FA-ADS watchdog: latest run Sep 1 6:36 AM PT reads $144.76/$300 spent (48%), 14 form leads (~$10 CPL), no kill gates fired, all six ads active — this resolves the Aug 28 'watchdog blind 6 days'.",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Counted ~15 '$300 Plan' consumer-lead notifications Aug 27→Sep 1 across CA/TX/NV/ID/NJ (Thomas Walker TX, Mary Jane ID, Terry Wattenbarger CA, Larry Bryant CA, Dory Po NV, Marlene Ruth CA, George Brooks NV, Beverly McClintock TX, Francisco Lopez CA + more), several with phone numbers.",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Found consumer outreach is ALREADY live: on the Aug 28 'Charles' SLA-breach notice Frankie replied 'no breach — lead came in 12:02 and I called him at 12:04.' Leads are being dialed by hand.",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Flagged the collision, unchanged since Aug 28: compliance is still 0/7. b3 (TX solicitor reg) + b7 (CA producer license #) are open — the two the old account was banned for — and TX/CA are the states being called. One lead ('Charles') arrived stamped 'No TCPA consent — call by hand, no AI/text.'",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Logged watchdog faults: it green-lights spend with NO compliance/consent gate ('all clear' at 0/7), and double-sends a broken raw-template email (e.g. '$(cat /tmp/watchdog_email.html)', placeholders) then a 'corrected formatting' resend nearly every hour.",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Booking funnel still test-only: the Aug 30 'Oraya digest' read 0 new / 4 booked / 25 SLA-breached / 13% booking rate / 6-min median reply. No Aug 31 or Sep 1 digest had landed by this run.",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Confirmed the autonomy split: cloud-only tasks thrive (watchdog, notifier, digest); every Mac-writing task is dark — meeting-ingest failed again Sep 1 00:03Z (12d stale), no AM brief since Aug 28, sweep silent since Aug 28, dashboard frozen v15.17.",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Second pass at the real 7 AM PT PM slot (14:05Z, on-cron): since the 10:40Z board, picked up 1 new lead — Remedios Mallari (NJ, phone) at 6:23 AM PT — plus the 6:36 AM PT watchdog ($144.76/$300, 48%, 14 form leads, no kills). Refreshed the live board + the single existing Gmail draft IN PLACE rather than sending a second near-identical email.",
+        "who": "CTO-Claude"
+      }
     ],
     "waiting": [
-      { "what": "TOP — the compliance call, now live-fire. Hand Chitraksh your NPN + CA producer-license # for the six creatives + landing page (clears b7) and start TX telephone-solicitor registration (b3) — or scope the calling to states that don't trigger them. You are dialing TX/CA right now at 0/7.", "who": "Frankie (supplies NPN + CA license #)" },
-      { "what": "Rule on the lead pile: which of the ~12 leads get called now vs held until b3/b7 clear, and confirm the 'no TCPA consent / call by hand' flag is being honored (the 'Charles' lead).", "who": "Both" },
-      { "what": "Add a compliance + consent gate to the watchdog so 'all clear' means legally clear, not just under budget — and fix the hourly broken/duplicate sends.", "who": "Chitraksh" },
-      { "what": "Rebuild meeting-ingest + the AM/PM brief + the cofounder sweep as LOCAL tasks — the watchdog proves cloud-only tasks work; Mac-writing tasks don't.", "who": "Chitraksh" },
-      { "what": "Fix lead dedupe + the counter (notifications outnumber the watchdog's 12) and make phone a required form field; route one real lead into the F·A Apex booking flow.", "who": "Chitraksh" },
-      { "what": "Money/security since Aug 26: pay-or-drop Supabase Pro $25 (#KLFFUZ-00014) and Spacemail Pro; approve/decline the GitHub 'Cursor' permission request + Google's unused-OAuth-client deletion.", "who": "Chitraksh" },
-      { "what": "EIN — ~65 days silent. IRS 1-202-488-3100 at 8 AM PT; check RedFax 510-497-1224. Gates all A2P messaging.", "who": "Frankie / IRS" }
+      {
+        "what": "TOP — the compliance call, now live-fire. Hand Chitraksh your NPN + CA producer-license # for the six creatives + landing page (clears b7) and start TX telephone-solicitor registration (b3) — or scope the calling to states that don't trigger them. You are dialing TX/CA right now at 0/7.",
+        "who": "Frankie (supplies NPN + CA license #)"
+      },
+      {
+        "what": "Rule on the lead pile: which of the 14 leads get called now vs held until b3/b7 clear, and confirm the 'no TCPA consent / call by hand' flag is being honored (the 'Charles' lead).",
+        "who": "Both"
+      },
+      {
+        "what": "Add a compliance + consent gate to the watchdog so 'all clear' means legally clear, not just under budget — and fix the hourly broken/duplicate sends.",
+        "who": "Chitraksh"
+      },
+      {
+        "what": "Rebuild meeting-ingest + the AM/PM brief + the cofounder sweep as LOCAL tasks — the watchdog proves cloud-only tasks work; Mac-writing tasks don't.",
+        "who": "Chitraksh"
+      },
+      {
+        "what": "Fix lead dedupe + the counter (notifications outnumber the watchdog's 12) and make phone a required form field; route one real lead into the F·A Apex booking flow.",
+        "who": "Chitraksh"
+      },
+      {
+        "what": "Money/security since Aug 26: pay-or-drop Supabase Pro $25 (#KLFFUZ-00014) and Spacemail Pro; approve/decline the GitHub 'Cursor' permission request + Google's unused-OAuth-client deletion.",
+        "who": "Chitraksh"
+      },
+      {
+        "what": "EIN — ~65 days silent. IRS 1-202-488-3100 at 8 AM PT; check RedFax 510-497-1224. Gates all A2P messaging.",
+        "who": "Frankie / IRS"
+      }
     ]
   }
 }
