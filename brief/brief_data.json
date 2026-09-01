@@ -58,7 +58,7 @@
       "icon": "🪪",
       "title": "Compliance 0/7 is now live-fire — you're dialing TX + CA leads with b3 and b7 still open",
       "who": "Frankie",
-      "detail": "The stakes flipped since Aug 28: this is no longer 'should we launch' — the $300 Plan is running, ~12 real leads are in, and you're calling them by hand. But compliance is still 0/7, and the two open items that bite are b3 (TX telephone-solicitor registration) and b7 (your CA producer-license # on the marketing creatives) — the exact two the predecessor ad account was banned for. The leads you're dialing are in Texas and California, the very jurisdictions those two cover. Two clean paths, pick one this week: hand Chitraksh your NPN + CA producer-license # so the six creatives and the landing page get papered, or scope the calling to states that don't trigger b3/b7 until they're placed. Leaving it 0/7 while dialing TX/CA is the single move that repeats the ban.",
+      "detail": "The stakes flipped since Aug 28: this is no longer 'should we launch' — the $300 Plan is running, ~14 real leads are in, and you're calling them by hand. But compliance is still 0/7, and the two open items that bite are b3 (TX telephone-solicitor registration) and b7 (your CA producer-license # on the marketing creatives) — the exact two the predecessor ad account was banned for. The leads you're dialing are in Texas and California, the very jurisdictions those two cover. Two clean paths, pick one this week: hand Chitraksh your NPN + CA producer-license # so the six creatives and the landing page get papered, or scope the calling to states that don't trigger b3/b7 until they're placed. Leaving it 0/7 while dialing TX/CA is the single move that repeats the ban.",
       "project": "insurance",
       "area": "Compliance"
     },
@@ -74,7 +74,7 @@
       "icon": "🔧",
       "title": "The watchdog is alive but half-blind — it clears spend, not compliance, and double-sends a broken email hourly",
       "who": "Chitraksh",
-      "detail": "The rebuilt FA-ADS watchdog is the recovery win of the week — it runs every hour and has kept the $300 Plan inside every kill gate ($141/$300, no kills, six ads active). But it watches money only: it says 'all clear' while consumer PII flows in at 0/7 compliance, so it can't tell you the one thing that matters most right now. And it's noisy — nearly every hour it sends a broken raw-template email ('$(cat /tmp/watchdog_email.html)', 'DIRECTIVE_PLACEHOLDER') then a 'corrected formatting' resend a minute later. Add a compliance + consent gate so 'all clear' means legally clear, fix the templating, and throttle the cadence.",
+      "detail": "The rebuilt FA-ADS watchdog is the recovery win of the week — it runs every hour and has kept the $300 Plan inside every kill gate ($145/$300, no kills, six ads active). But it watches money only: it says 'all clear' while consumer PII flows in at 0/7 compliance, so it can't tell you the one thing that matters most right now. And it's noisy — nearly every hour it sends a broken raw-template email ('$(cat /tmp/watchdog_email.html)', 'DIRECTIVE_PLACEHOLDER') then a 'corrected formatting' resend a minute later. Add a compliance + consent gate so 'all clear' means legally clear, fix the templating, and throttle the cadence.",
       "project": "insurance",
       "area": "Instrumentation"
     }
@@ -186,7 +186,7 @@
         },
         {
           "lead": "Fix lead dedupe + counter + require phone",
-          "detail": "The notifier fired more emails than the watchdog's 12 counted leads (dedupe still off), and several leads arrived with no phone number — unreachable by the 'call fast' playbook. Make phone a required form field, reconcile the counter against Meta, and route one real lead into the F·A Apex booking flow so cost-per-booked-call becomes a real number.",
+          "detail": "The notifier fired more emails than the watchdog's 14 counted leads (dedupe still off), and several leads arrived with no phone number — unreachable by the 'call fast' playbook. Make phone a required form field, reconcile the counter against Meta, and route one real lead into the F·A Apex booking flow so cost-per-booked-call becomes a real number.",
           "tag": "w25",
           "tagType": "amber",
           "project": "insurance",
@@ -226,7 +226,7 @@
       "tasks": [
         {
           "lead": "What recovered: the FA-ADS watchdog is rebuilt and running hourly",
-          "detail": "It now monitors the $300 Plan every hour — $141/$300 spent (47%), no kill gates fired, all six ads active, 12 form leads at ~$10 CPL. This resolves the Aug 28 'watchdog blind 6 days' blocker and proves the local-rebuild fix works for cloud-reachable tasks.",
+          "detail": "It now monitors the $300 Plan every hour — $145/$300 spent (48%), no kill gates fired, all six ads active, 14 form leads at ~$10 CPL. This resolves the Aug 28 'watchdog blind 6 days' blocker and proves the local-rebuild fix works for cloud-reachable tasks.",
           "tag": "WATCHDOG LIVE",
           "tagType": "green",
           "project": "hq",
@@ -311,7 +311,7 @@
         "who": "Chitraksh"
       },
       {
-        "what": "Fix lead dedupe + the counter (notifications outnumber the watchdog's 12) and make phone a required form field; route one real lead into the F·A Apex booking flow.",
+        "what": "Fix lead dedupe + the counter (notifications outnumber the watchdog's 14) and make phone a required form field; route one real lead into the F·A Apex booking flow.",
         "who": "Chitraksh"
       },
       {
