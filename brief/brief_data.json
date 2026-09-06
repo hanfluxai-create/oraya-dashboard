@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-09-06T13:05:00.000Z",
+  "generated_at": "2026-09-06T14:06:12.994Z",
   "date_label": "Sun · Sep 6",
-  "edition": "AM",
+  "edition": "PM",
   "day_number": 239,
-  "phase": "AM · Sunday, IST — landing late (this edition fired ~12 hours after its window; the Mac batched it on wake). The resume-or-leave-off question the PM brief asked at 7 AM PT was answered six hours later, in the tools: Frankie released \"Phase V2\" of the $300 Plan at 1:00 PM PT Saturday on a brand-new instant form — SMS OTP, state, age, an appointment-time picker and a required consent checkbox — as a $200 tranche over 10 days. The watchdog has run every hour since (17 for 17) and every kill gate is green: V2 spend $56.06 of $200, one lead, lifetime $261.45 and 22 leads. The problem is that one lead. It landed in Meta and never produced a \"NEW LEAD CAPTURED\" email — the form→sheet→n8n→email path did not fire, so an OTP-verified consumer who picked an appointment time is sitting unnotified. That is today's job. Behind it: the \"honest broker\" ad was not edited at release and likely still points at the old no-OTP form; compliance is still 0/7 and the creatives went back live without the CA license #; and HQ has no written record of the V2 plan at all — this brief reconstructed it from the watchdog's emails.",
-  "headline": "Good morning — and apologies for the hour: this AM edition fired about twelve hours late, so it is reaching you at dinner time in Bengaluru rather than breakfast. Here is what happened while it was asleep. The question Saturday's PM brief put to Frankie — resume the $300 Plan or leave it parked — was answered within six hours, and not by email. Frankie, you released Phase V2 at 1:00 PM your time Saturday: a new instant form with SMS OTP, state, age, an appointment-time picker and a required consent checkbox, on a $200 tranche across ten days. That is the most compliance-shaped thing this funnel has ever done, and it is worth saying so. The watchdog caught it ninety minutes later and has run every hour since — seventeen for seventeen — with every kill gate green: V2 spend is $56.06 of the $200, one lead so far, lifetime $261.45 and twenty-two leads. Now the one thing that actually matters today. That one V2 lead is real — an OTP-verified person who chose a time to be called — and it is sitting in Meta with no \"NEW LEAD CAPTURED\" email behind it. The last such email was September 2. The form-to-sheet-to-n8n-to-email path did not fire for the new form, and the watchdog has now said so for four hours running. Frankie: open Leads Center and pull that lead by hand today, and honor the time they picked. Chitraksh: the new form almost certainly has a new form ID that the capture webhook is not subscribed to — fix that path and prove it with one real submit before the next lead lands. Two smaller things behind that. The \"honest broker\" ad was not touched at release and very likely still uses the old form with no OTP; it has delivered nothing so far, but if it does, its leads skip every V2 gate — Frankie, one look in Ads Manager: confirm the form or pause it. And compliance: the consent checkbox is progress, but b3 and b7 are still open and five creatives went back live without the CA license number on them. Last: HQ has no written copy of the V2 plan — the $20-a-day you stated versus the $25 that is live, the ten days, the kill rules — this brief rebuilt all of it from the watchdog's emails. One paragraph in the workspace would let both founders and this brief read from the same page.",
-  "source": "Reconstructed from a live Gmail sweep of hanfluxai@gmail.com through 2026-09-06T12:56Z plus the on-disk workspace. KEY DELTA since the 14:05Z Sep 5 PM board: \"Phase V2\" of the \"$300 Plan\" (120247635234630018) was RELEASED 2026-09-05 ~1:00 PM PT (~20:00Z), described by the watchdog as founder-controlled, on a new instant form with SMS OTP, state, age, appointment-time picker and required consent checkbox; $200 tranche; 10-day phase; founder-stated $20/day vs live $25/day CBO (flagged once, neutrally, not changed); 72h no-touch learning window through 2026-09-08 1:00 PM PT. Watchdog (hourly) healthy: 17 runs 21:39Z Sep 5 → 12:39Z Sep 6, on the hour. Latest (12:39Z, 5:36 AM PT): V2 spend $56.06 (28% of tranche), 549 impressions, CPM $102.11, 13 link clicks, CTR 3.28%, reach 470, freq 1.17, leads 1, CPL $56.06 — R1 V2 CPL kill (>$45) not evaluated below $100 V2 spend; R4 tranche $160 notify / $210 pause OK; R2 daily $13.11 vs $45 OK; R2-account vs $85 OK. Lifetime: $261.45, 4,136 impressions, 117 clicks, CTR 3.65%, 22 leads, CPL $11.88. PIPELINE BREAK: 1 Meta lead since release, 0 \"NEW LEAD CAPTURED IN $300 PLAN\" emails since Sep 2 — flagged at 08:38Z, \"confirmed\" (persisted >2h) at 11:40Z, repeated 12:39Z. Per-ad since release: \"Gap math new\" $15.89 / CTR 4.14% / 1 lead; New Leads Ad …6610018 $32.08 / 0 leads = KILL CANDIDATE named for founder review only; …1350018 $7.77 / 0; …5030018 $0.32 / 0; \"honest broker\" $0 / 0 impressions — ZERO-DELIVERY watch + OPEN FLAG: not edited at release, very likely still bound to OLD form 2146556022872418 (no OTP); watchdog cannot pause it (not a kill gate). Hygiene: AURA-Life-01/02/03 paused; 5 legacy ads paused; no DISAPPROVED/WITH_ISSUES; no unexpected ACTIVE campaign; three active ads all named \"New Leads Ad.\" Booked calls: \"no CRM source connected\" — and the watchdog explicitly ruled the flashworkflow digest OUT as a source (account-wide, not campaign-scoped). Sep 5 digest (15:00Z): 0 new, 4 booked, 25 SLA breached, 30 with contact, 26 unbooked, 13%, 22 partials, 1 opted out. Watchdog defects this cycle: 3 of 17 runs sent a raw template placeholder (\"$(cat …)\", \"FILE:/tmp/…\") and re-sent; the 05:40Z run reported \"6 Meta leads since V2\" while neighbours read 0–1 (counter wobble; 12:39Z reading of 1 is authoritative); every run notes \"no project-memory tool available\" (session_ledger.md, insurance_ads_division.md, leadform_shift.md, feedback_legal_gate.md unreachable). HQ workspace: zero files mention V2/OTP/tranche — no local record of the plan. Compliance 0/7 unchanged since Aug 28 (b3 TX telephone-solicitor reg; b7 CA producer-license # on creatives). No mail from manifestdestiny247@gmail.com since Aug 28 (third tools-not-mailbox action: 9/3 pause, 9/5 V2 release). Autonomy: this AM task fired 12:56Z vs 01:06Z window (~11h50m late, wake-from-sleep batching), ~1h before the PM lane; oraya-autoloop launchd.err.log shows \"oraya-loop.sh: Operation not permitted\" ×5 written since Sep 5 15:00Z; cofounder-sweep log frozen Sep 1; meeting-ingest structurally blocked; dashboard v15.17 9d. Windsor.ai trial ends ~today.",
+  "phase": "Launch Week close",
+  "headline": "Good morning, Frankie — this one reaches you on time, at breakfast on the coast, which the AM edition could not: it fired twelve hours late and landed at your midnight. So start here, because it is the same fact the AM opened on and it has not moved in the right direction. Phase V2 has been live since 1:00 PM Saturday — the new instant form with SMS OTP, state, age, an appointment-time picker and a required consent checkbox, on the $200 tranche. That is the most compliance-shaped thing this funnel has ever shipped and it is worth saying so. The watchdog has now run eighteen hours straight, every kill gate green: V2 spend $56.65 of $200, lifetime $262.04, twenty-two leads. But the single thing that matters today is the same one from this morning, now older: the one V2 lead Meta recorded — a real, OTP-verified person who chose a time to be called — is still sitting in Meta with no \"NEW LEAD CAPTURED\" email behind it, and the gap is now past three hours across six consecutive watchdog runs. The last capture email of any kind was September 2. The form-to-sheet-to-n8n-to-email path did not fire for the new form. Frankie, the one move before your coffee gets cold: open Leads Center, download that lead by hand, and honor the time they picked — speed-to-lead is already gone, the appointment is not. Chitraksh: the new form is almost certainly a new form ID the capture webhook was never subscribed to — wire it, confirm the sheet row, and prove it with one real submit before the next lead lands. Two things behind that, both lighter than they looked this morning. \"Honest broker\" is now confirmed at zero delivery for eighteen hours — past the six-hour threshold — so it is leaking nothing; it stays a form question, not a live risk, until it delivers. And the standing kill candidate, \"New Leads Ad …6610018\" at $32 and zero leads, is real but frozen behind the 72-hour no-touch window that runs to Tuesday 1:00 PM PT — review only, no action. Last and unchanged: compliance is still 0/7 while the campaign dials, HQ still has no written copy of the V2 plan, and there has been no word from you in the mailbox since August 28 — though you have twice acted straight in the tools, so this is a note, not a nag.",
+  "source": "index.html · Daily Tasks board (May 28 (Thu))",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -56,77 +56,77 @@
   "spotlight": [
     {
       "icon": "🚨",
-      "title": "V2 is live and its first lead is stuck — an OTP-verified consumer with a chosen call time is sitting in Meta with no email behind it",
-      "who": "Frankie pulls it by hand · Chitraksh fixes the path",
-      "detail": "Frankie released Phase V2 Saturday 1:00 PM PT on the new form (SMS OTP, state, age, appointment-time picker, consent checkbox). The watchdog has been clean every hour since — $56.06 of the $200 tranche, all gates green. But the one V2 lead Meta recorded never produced a \"NEW LEAD CAPTURED IN $300 PLAN\" email; the last such email was Sep 2, and the watchdog has flagged the break for four consecutive hours. Speed-to-lead is already lost on it; the appointment time they picked may not be. Frankie: Leads Center → download the lead → work it at the time they chose. Chitraksh: the new form is a new form ID the capture webhook (WF01 / api/lead.js) is almost certainly not subscribed to — subscribe it, check the sheet for the row, then prove it with one real submit so the next lead does not vanish the same way.",
+      "title": "The stuck V2 lead is now three-plus hours cold — one OTP-verified consumer with a chosen call time, still stranded in Meta with no email behind it",
+      "who": "Frankie pulls it by hand now · Chitraksh fixes the path today",
+      "detail": "Unchanged since this morning except that it is later. Meta still shows exactly one V2 lead (the \"Gap math new\" ad); Gmail still shows no \"NEW LEAD CAPTURED\" email since Sep 2. The watchdog has now flagged the break across six straight runs (08:38Z → 13:39Z), each confirming the gap has persisted well past two hours — it is now over three. Speed-to-lead on this person is gone; the appointment slot they picked is the only thing left to save. Frankie: Leads Center → download the lead → call at the time they chose, today. Chitraksh: the V2 form is a new form ID the capture webhook (WF01 / api/lead.js) was never subscribed to — subscribe it, confirm the sheet row exists, then fire one real end-to-end submit so the next lead does not vanish the same way. This is the whole ballgame today; everything else can wait behind it.",
       "project": "insurance",
       "area": "Pipeline"
     },
     {
-      "icon": "🧷",
-      "title": "\"honest broker\" was not touched at release and likely still runs the old no-OTP form — confirm it or pause it, one look in Ads Manager",
-      "who": "Frankie",
-      "detail": "The watchdog has repeated it every hour: the \"honest broker\" ad (created 8/26, last edited 8/27) was not edited at the V2 release and very likely still binds the old lead form 2146556022872418 — no OTP, no state, no consent checkbox. It has $0 spend and 0 impressions since release, so nothing has leaked yet — but if CBO starts delivering it, its leads bypass every V2 quality gate. The watchdog cannot pause it (not a kill gate). Also named for your eyes only: \"New Leads Ad …6610018\" at $32.08 / 0 leads is a kill candidate — but the 72h no-touch window runs to Tue 9/8 1:00 PM PT, so leave it unless you decide otherwise. And the budget: you said $20/day, the campaign is at $25/day — pick one.",
-      "project": "insurance",
-      "area": "Ads hygiene"
-    },
-    {
       "icon": "🪪",
-      "title": "The consent checkbox is the first compliance-shaped move in the funnel — but 0/7 is unchanged, and five creatives went back live without the CA license #",
-      "who": "Frankie supplies · Chitraksh scores",
-      "detail": "V2's form now collects a required consent checkbox, an OTP-verified phone, and the caller's state — that is real progress toward TCPA written consent and it should be scored against the seven blockers today (Chitraksh: read the new form against the list and say which, if any, it closes). What it does not do: b7 — the CA producer-license # is still absent from the five active creatives that went live Saturday; b3 — the TX telephone-solicitor registration is still unopened. Frankie: the NPN + CA license # to Chitraksh, open the TX registration, or write the one-line state rule (\"we call NV/ID only until b3/b7 are placed\") — and drop the V2 plan itself (tranche, daily budget, 10 days, kill rules) into the workspace as one paragraph, because HQ currently has no written copy of it.",
+      "title": "Compliance is still 0/7 while the line dials — the consent checkbox is real progress, but b3/b7 are open and five creatives are live without the CA license #",
+      "who": "Frankie supplies NPN + CA license # · Chitraksh scores the new form",
+      "detail": "V2's form now collects a required consent checkbox, an OTP-verified phone and the caller's state — genuinely the first TCPA-written-consent-shaped step this funnel has taken, and Chitraksh should read the new form against the seven blockers today and say which, if any, it closes. What it does not fix: b7, the CA producer-license # is still absent from the five creatives that went live Saturday; b3, the TX telephone-solicitor registration is still unopened. Wednesday's six CA/TX phone leads are now ~5 days old and unpapered. Frankie: the NPN + CA license # to Chitraksh, open the TX registration, or write the one-line state rule (\"call NV/ID only until b3/b7 are placed\"). The paused-then-relaunched window was the cheapest possible time to place these; the campaign is spending again now.",
       "project": "insurance",
       "area": "Compliance"
+    },
+    {
+      "icon": "🧷",
+      "title": "The two ad-hygiene flags both softened overnight — honest broker is confirmed dead-air, the $32 kill candidate is frozen behind the no-touch window",
+      "who": "Frankie (one look, no rush)",
+      "detail": "This morning both read as threats; tonight they read as notes. \"Honest broker\" (created 8/26, last edited 8/27) was not touched at the V2 release and very likely still binds the old no-OTP form 2146556022872418 — but the 13:39Z run confirms it has delivered $0 / 0 impressions for ~18h, past the 6-hour zero-delivery threshold, so it is leaking nothing into the funnel. It stays a form question to close, not a live gate risk. The other: \"New Leads Ad …6610018\" has spent $32.08 for 0 leads and is the watchdog's named kill candidate — but the 72-hour no-touch learning window runs to Tue 9/8 1:00 PM PT, so it is review-only. One thing to actually decide, not urgent: the campaign runs $25/day CBO while your stated V2 plan said $20/day — pick one. And drop the V2 plan (tranche, budget, 10 days, kill rules) into the workspace as one paragraph; HQ still has no written copy of it.",
+      "project": "insurance",
+      "area": "Ads hygiene"
     }
   ],
   "blockers": [
     {
-      "label": "V2 lead pipeline is broken — 1 lead in Meta, 0 \"NEW LEAD CAPTURED\" emails since Sep 2; the new form is not wired to the capture path",
-      "scope": "Chitraksh (fix) · Frankie (pull today by hand)",
-      "detail": "Released Sat 1:00 PM PT on a new OTP instant form. Meta shows 1 V2 lead; Gmail shows no capture email since Sep 2. Watchdog flagged 08:38Z, confirmed 11:40Z (>2h persistence), repeated 12:39Z. Unblock: subscribe the new form ID to the lead webhook (WF01 / api/lead.js), confirm the sheet row, one real test submit end-to-end. Until then: Frankie downloads leads from Leads Center manually and honors the picked appointment time."
+      "label": "V2 lead pipeline still broken — 1 lead in Meta, 0 \"NEW LEAD CAPTURED\" emails since Sep 2; gap now past 3h across 6 watchdog runs",
+      "scope": "Chitraksh (fix today) · Frankie (pull by hand now)",
+      "detail": "Released Sat 1:00 PM PT on a new OTP instant form. Meta shows 1 V2 lead (\"Gap math new\"); Gmail shows no capture email since Sep 2. Watchdog flagged 08:38Z, confirmed 11:40Z, repeated 12:39Z and 13:39Z — persistence now >3h. Unblock: subscribe the new form ID to the lead webhook (WF01 / api/lead.js), confirm the sheet row, one real end-to-end test submit. Until then: Frankie downloads from Leads Center manually and honors the picked appointment time."
     },
     {
-      "label": "\"honest broker\" likely still on the old no-OTP form — if it delivers, its leads skip every V2 gate; watchdog cannot pause it",
-      "scope": "Frankie",
-      "detail": "Not edited at release; $0 / 0 impressions so far. Unblock: confirm the bound form in Ads Manager or pause the ad. Related, review-only: \"New Leads Ad …6610018\" $32.08 / 0 leads named as kill candidate; 72h no-touch window through Tue 9/8 1:00 PM PT. Budget: stated $20/day vs live $25/day CBO — decide which is the plan."
-    },
-    {
-      "label": "Compliance 0/7 unchanged since Aug 28 — and the campaign is live again: five creatives re-launched without the CA license # (b7); TX registration (b3) unopened",
+      "label": "Compliance 0/7 unchanged since Aug 28 while the campaign dials again — five creatives live without the CA license # (b7); TX registration (b3) unopened",
       "scope": "Frankie supplies NPN + CA license # · Chitraksh scores the new form",
-      "detail": "The V2 form's consent checkbox + OTP + state field is the first compliance-shaped step and must be scored against the 7 blockers today. Unblock b7: license # on the five active creatives + landing page. Unblock b3: open the TX telephone-solicitor registration. Or the one-line state rule scoping dialing to states b3/b7 do not cover. Wednesday's six CA/TX phone leads are now ~5 days old."
+      "detail": "The V2 form's consent checkbox + OTP + state field is the first compliance-shaped step and must be scored against the 7 blockers today. Unblock b7: license # on the five active creatives + landing page. Unblock b3: open the TX telephone-solicitor registration. Or the one-line state rule scoping dialing to states b3/b7 do not cover. Wednesday's six CA/TX phone leads are now ~5 days old and unpapered."
     },
     {
-      "label": "Cost per booked call still unmeasurable — watchdog has now ruled the flashworkflow digest OUT as a source (account-wide, not campaign-scoped); Windsor.ai trial ends ~today",
+      "label": "\"honest broker\" form question stays open — but confirmed zero-delivery ~18h, so it is not currently bypassing any V2 gate",
+      "scope": "Frankie (confirm or pause, no rush)",
+      "detail": "Not edited at release; very likely still on old no-OTP form 2146556022872418. 13:39Z run: $0 / 0 impressions since release (~18h, past the 6h zero-delivery threshold) — leaking nothing. Related, review-only: \"New Leads Ad …6610018\" $32.08 / 0 leads named as kill candidate; 72h no-touch window through Tue 9/8 1:00 PM PT. Budget: stated $20/day vs live $25/day CBO — decide which is the plan."
+    },
+    {
+      "label": "Cost per booked call still unmeasurable — no CRM source on any of 18 runs; the flashworkflow digest is ruled out (account-wide, not campaign-scoped); Windsor.ai trial ends ~today",
       "scope": "Chitraksh",
-      "detail": "\"No CRM source connected\" on every one of 17 runs. Sep 5 digest: 0 new / 4 booked / 25 SLA breached / 30 with contact / 26 unbooked / 13% / 22 partials / 1 opted out — usable for account triage, not for this campaign's deciding metric. Unblock: make the sheet the V2 form writes to (once the path is fixed) the campaign-scoped booked source, wire the watchdog to it, and decide Windsor.ai keep/drop today rather than by default."
+      "detail": "\"No CRM booked-call source connected\" on every run. Sep 5 digest: 0 new / 4 booked / 25 SLA breached / 30 with contact / 26 unbooked / 13% / 22 partials / 1 opted out — usable for account triage, not for this campaign's deciding metric. Unblock: once the V2 path is fixed, make the sheet the form writes to the campaign-scoped booked source, wire the watchdog to it, and decide Windsor.ai keep/drop today rather than by default."
     },
     {
-      "label": "HQ has no written record of the V2 plan — tranche, daily budget, 10-day phase and kill rules exist only in the watchdog's project memory, which it could not read this cycle",
+      "label": "HQ still has no written record of the V2 plan — tranche, daily budget, 10-day phase and kill rules exist only in the watchdog's project memory, which it again could not read this run",
       "scope": "Frankie (one paragraph) · Chitraksh (restore watchdog memory)",
-      "detail": "Zero workspace files mention V2/OTP/tranche; this brief reconstructed the plan from 17 watchdog emails. The watchdog itself reports \"no project-memory tool available\" every run (session_ledger.md, insurance_ads_division.md, leadform_shift.md, feedback_legal_gate.md unreachable). Third founder action in the tools with nothing in the mailbox since Aug 28 (9/3 pause, 9/5 release). Unblock: one paragraph in the workspace; restore the watchdog's memory tool."
+      "detail": "Zero workspace files mention V2/OTP/tranche; this brief reconstructed the plan from 18 watchdog emails. The 13:39Z run again reports \"project memory not available this run.\" Frankie has now acted three times in the tools with nothing in the mailbox since Aug 28 (9/3 pause, 9/5 release, the ongoing no-touch discipline). Unblock: one paragraph in the workspace; restore the watchdog's memory tool."
     },
     {
-      "label": "Autonomy: this AM brief fired ~11h50m late (wake batching) and lands an hour before the PM; autoloop launchd is erroring \"Operation not permitted\"; sweep + ingest still blocked; watchdog sent 3 raw-placeholder emails",
+      "label": "Autonomy: AM fired ~12h late this morning; autoloop launchd still erroring \"Operation not permitted\"; sweep + meeting-ingest still blocked; dashboard render 9d frozen",
       "scope": "Chitraksh",
-      "detail": "AM task fired 12:56Z vs 01:06Z window — the Sep 2 wake-from-sleep batching fault, not the cloud→Mac bridge. oraya-autoloop/logs/launchd.err.log: \"oraya-loop.sh: Operation not permitted\" ×5 since Sat — the 09:00/21:00 loop is not executing. Cofounder-sweep log frozen Sep 1; meeting-ingest structurally blocked; dashboard v15.17 9 days. Watchdog: 3 of 17 runs sent \"$(cat …)\" / \"FILE:/tmp/…\" as the body and re-sent; the 05:40Z run misread \"6 V2 leads\" (true count 1). Unblock: keep the Mac awake or move AM to a local task; re-grant the autoloop script; pin the watchdog template path; re-create sweep + ingest device-bound."
+      "detail": "This PM edition fired on-cron ~14:06Z with disk access (the reliable lane). AM fired 12:56Z vs 01:06Z (wake batching). oraya-autoloop/logs/launchd.err.log: \"oraya-loop.sh: Operation not permitted\" — the 09:00/21:00 loop is not executing. Cofounder-sweep log frozen Sep 1; meeting-ingest 16d stale; dashboard ORAYA DATA v15.17 on disk, deployed render older. Unblock: keep the Mac awake or move AM to a local task; re-grant the autoloop script; re-create sweep + ingest device-bound."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "239 · AM · Sun (fired ~12h late)"
+      "v": "239 · PM · Sun (Frankie's morning, on time)"
     },
     {
       "k": "$300 Plan",
-      "v": "PHASE V2 LIVE since Sat 1:00 PM PT · $56.06 / $200 tranche (28%) · 1 lead · gates green 17/17"
+      "v": "PHASE V2 · day 2 of 10 · $56.65 / $200 tranche (28%) · 1 lead · gates green 18/18"
     },
     {
       "k": "Pipeline",
-      "v": "BROKEN — 1 V2 lead in Meta, 0 capture emails since Sep 2 · \"honest broker\" form unconfirmed"
+      "v": "STILL BROKEN — 1 V2 lead in Meta, 0 capture emails since Sep 2 · gap now >3h"
     },
     {
       "k": "Lifetime",
-      "v": "$261.45 · 22 leads · CPL $11.88 · 0/7 compliance · booked: no CRM source"
+      "v": "$262.04 · 22 leads · CPL $11.91 · 0/7 compliance · booked: no CRM source"
     }
   ],
   "lanes": [
@@ -253,7 +253,7 @@
   ],
   "cofounder": {
     "date": "2026-09-06",
-    "scanned_at": "2026-09-06T13:05:00.000Z",
+    "scanned_at": "2026-09-06T14:06:12.994Z",
     "note": "AM edition, fired ~12h late (wake batching). The headline: Frankie answered Saturday's resume-or-off question by releasing Phase V2 at 1:00 PM PT on a new instant form — SMS OTP, state, age, appointment-time picker, required consent checkbox — as a $200 tranche over 10 days. Watchdog healthy 17/17 hourly, all gates green: V2 $56.06 / 1 lead; lifetime $261.45 / 22 leads / CPL $11.88. Today's one job: that single V2 lead is in Meta with no capture email behind it (none since Sep 2) — the new form is not wired to the sheet/n8n/email path. Frankie pulls it by hand and honors its picked time; Chitraksh subscribes the new form ID and proves the path with one real submit. Behind it: \"honest broker\" likely still on the old no-OTP form (confirm or pause); compliance 0/7 with five creatives re-launched without the CA license #; the V2 plan exists only in the watchdog's unreadable memory — HQ needs one paragraph. Autonomy: autoloop launchd erroring \"Operation not permitted\"; sweep + ingest still blocked.",
     "done": [
       {
