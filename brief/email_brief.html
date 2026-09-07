@@ -1,198 +1,427 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light"><title>Oraya HQ · Daily Brief</title></head>
 <body style="margin:0;padding:0;background:#eef1f7">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#eef1f7"><tr><td align="center" style="padding:24px 12px">
-<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#eef1f7">
+  <tr><td align="center" style="padding:24px 12px">
+    <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%">
 
-<tr><td style="background:#fff;border:1px solid #e4e8f0;border-radius:14px;padding:18px">
-  <table role="presentation" width="100%"><tr>
-    <td style="font:800 16px/1 Arial,sans-serif;letter-spacing:.5px;color:#0f172a">ORAYA HQ
-      <span style="font:700 10px/1 Arial,sans-serif;letter-spacing:2.5px;text-transform:uppercase;color:#94a3b8;display:block;margin-top:6px">Daily Brief</span></td>
-    <td align="right"><span style="font:700 11px/1 Arial,sans-serif;color:#2563eb;background:#eff6ff;border:1px solid #bfdbfe;border-radius:999px;padding:7px 12px">PM · Sun · Sep 6</span></td>
-  </tr></table>
-  <div style="font:400 12.5px/1.5 Arial,sans-serif;color:#64748b;margin-top:15px">Everything the team is doing today — <b style="color:#0f172a">who owns it</b>, and <b style="color:#0f172a">which project</b> it belongs to.</div>
-  <div style="font:700 19px/1.35 Arial,sans-serif;color:#0f172a;margin-top:12px">Good morning, Frankie — this one reaches you on time, at breakfast on the coast, which the AM edition could not: it fired twelve hours late and landed at your midnight. So start here, because it is the same fact the AM opened on and it has not moved in the right direction. Phase V2 has been live since 1:00 PM Saturday — the new instant form with SMS OTP, state, age, an appointment-time picker and a required consent checkbox, on the $200 tranche. That is the most compliance-shaped thing this funnel has ever shipped and it is worth saying so. The watchdog has now run eighteen hours straight, every kill gate green: V2 spend $56.65 of $200, lifetime $262.04, twenty-two leads. But the single thing that matters today is the same one from this morning, now older: the one V2 lead Meta recorded — a real, OTP-verified person who chose a time to be called — is still sitting in Meta with no "NEW LEAD CAPTURED" email behind it, and the gap is now past three hours across six consecutive watchdog runs. The last capture email of any kind was September 2. The form-to-sheet-to-n8n-to-email path did not fire for the new form. Frankie, the one move before your coffee gets cold: open Leads Center, download that lead by hand, and honor the time they picked — speed-to-lead is already gone, the appointment is not. Chitraksh: the new form is almost certainly a new form ID the capture webhook was never subscribed to — wire it, confirm the sheet row, and prove it with one real submit before the next lead lands. Two things behind that, both lighter than they looked this morning. "Honest broker" is now confirmed at zero delivery for eighteen hours — past the six-hour threshold — so it is leaking nothing; it stays a form question, not a live risk, until it delivers. And the standing kill candidate, "New Leads Ad …6610018" at $32 and zero leads, is real but frozen behind the 72-hour no-touch window that runs to Tuesday 1:00 PM PT — review only, no action. Last and unchanged: compliance is still 0/7 while the campaign dials, HQ still has no written copy of the V2 plan, and there has been no word from you in the mailbox since August 28 — though you have twice acted straight in the tools, so this is a note, not a nag.</div>
-  <div style="margin-top:13px"><span style="display:inline-block;font:400 12px/1 Arial,sans-serif;color:#475569;border:1px solid #e2e8f0;background:#fff;border-radius:999px;padding:6px 11px;margin:0 6px 6px 0">Day <b style="color:#0f172a">239 · PM · Sun (Frankie's morning, on time)</b></span><span style="display:inline-block;font:400 12px/1 Arial,sans-serif;color:#475569;border:1px solid #e2e8f0;background:#fff;border-radius:999px;padding:6px 11px;margin:0 6px 6px 0">$300 Plan <b style="color:#0f172a">PHASE V2 · day 2 of 10 · $56.65 / $200 tranche (28%) · 1 lead · gates green 18/18</b></span><span style="display:inline-block;font:400 12px/1 Arial,sans-serif;color:#475569;border:1px solid #e2e8f0;background:#fff;border-radius:999px;padding:6px 11px;margin:0 6px 6px 0">Pipeline <b style="color:#0f172a">STILL BROKEN — 1 V2 lead in Meta, 0 capture emails since Sep 2 · gap now &gt;3h</b></span><span style="display:inline-block;font:400 12px/1 Arial,sans-serif;color:#475569;border:1px solid #e2e8f0;background:#fff;border-radius:999px;padding:6px 11px;margin:0 6px 6px 0">Lifetime <b style="color:#0f172a">$262.04 · 22 leads · CPL $11.91 · 0/7 compliance · booked: no CRM source</b></span></div>
-</td></tr>
-<tr><td style="height:13px;font-size:0">&nbsp;</td></tr>
+      <!-- header -->
+      <tr><td style="background:#ffffff;border:1px solid #e4e8f0;border-radius:14px;padding:18px 18px 16px">
+        <table role="presentation" width="100%"><tr>
+          <td style="font:800 16px/1 Arial,sans-serif;letter-spacing:.5px;color:#0f172a">ORAYA HQ
+            <span style="font:700 10px/1 Arial,sans-serif;letter-spacing:2.5px;text-transform:uppercase;color:#94a3b8;display:block;margin-top:6px">Daily Brief</span></td>
+          <td align="right"><span style="font:700 11px/1 Arial,sans-serif;letter-spacing:.5px;color:#2563eb;background:#eff6ff;border:1px solid #bfdbfe;border-radius:999px;padding:7px 12px">AM · Mon · Sep 7</span></td>
+        </tr></table>
+        <div style="font:400 12.5px/1.5 Arial,sans-serif;color:#64748b;margin-top:15px">Everything the team is doing today — <b style="color:#0f172a">who owns it</b>, and <b style="color:#0f172a">which project (and part of it)</b> it belongs to.</div>
+        <div style="font:700 20px/1.32 Arial,sans-serif;color:#0f172a;margin-top:12px">Sep 7: Meta unconfirmed, video kit due, compliance gate still 0/7 on live leads.</div>
+        <div style="margin-top:13px"><span style="display:inline-block;font:400 12px/1 Arial,sans-serif;color:#475569;border:1px solid #e2e8f0;background:#ffffff;border-radius:999px;padding:6px 11px;margin:0 6px 6px 0">Day <b style="color:#0f172a">240</b></span><span style="display:inline-block;font:400 12px/1 Arial,sans-serif;color:#475569;border:1px solid #e2e8f0;background:#ffffff;border-radius:999px;padding:6px 11px;margin:0 6px 6px 0">Open tasks <b style="color:#0f172a">30</b></span><span style="display:inline-block;font:400 12px/1 Arial,sans-serif;color:#475569;border:1px solid #e2e8f0;background:#ffffff;border-radius:999px;padding:6px 11px;margin:0 6px 6px 0">Lanes <b style="color:#0f172a">3</b></span></div>
+      </td></tr>
+      <tr><td style="height:13px;line-height:13px;font-size:0">&nbsp;</td></tr>
 
-<tr><td><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #f97316;border-radius:10px;margin-bottom:8px">
-  <tr><td style="padding:12px 14px">
-    <div style="font:700 13px/1.3 Arial,sans-serif;color:#9a3412">⚠ Blocker · V2 lead pipeline still broken — 1 lead in Meta, 0 "NEW LEAD CAPTURED" emails since Sep 2; gap now past 3h across 6 watchdog runs · Chitraksh (fix today) · Frankie (pull by hand now)</div>
-    <div style="font:400 12.5px/1.5 Arial,sans-serif;color:#7c2d12;margin-top:4px">Released Sat 1:00 PM PT on a new OTP instant form. Meta shows 1 V2 lead ("Gap math new"); Gmail shows no capture email since Sep 2. Watchdog flagged 08:38Z, confirmed 11:40Z, repeated 12:39Z and 13:39Z — persistence now &gt;3h. Unblock: subscribe the new form ID to the lead webhook (WF01 / api/lead.js), confirm the sheet row, one real end-to-end test submit. Until then: Frankie downloads from Leads Center manually and honors the picked appointment time.</div>
-  </td></tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #f97316;border-radius:10px;margin-bottom:8px">
-  <tr><td style="padding:12px 14px">
-    <div style="font:700 13px/1.3 Arial,sans-serif;color:#9a3412">⚠ Blocker · Compliance 0/7 unchanged since Aug 28 while the campaign dials again — five creatives live without the CA license # (b7); TX registration (b3) unopened · Frankie supplies NPN + CA license # · Chitraksh scores the new form</div>
-    <div style="font:400 12.5px/1.5 Arial,sans-serif;color:#7c2d12;margin-top:4px">The V2 form's consent checkbox + OTP + state field is the first compliance-shaped step and must be scored against the 7 blockers today. Unblock b7: license # on the five active creatives + landing page. Unblock b3: open the TX telephone-solicitor registration. Or the one-line state rule scoping dialing to states b3/b7 do not cover. Wednesday's six CA/TX phone leads are now ~5 days old and unpapered.</div>
-  </td></tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #f97316;border-radius:10px;margin-bottom:8px">
-  <tr><td style="padding:12px 14px">
-    <div style="font:700 13px/1.3 Arial,sans-serif;color:#9a3412">⚠ Blocker · "honest broker" form question stays open — but confirmed zero-delivery ~18h, so it is not currently bypassing any V2 gate · Frankie (confirm or pause, no rush)</div>
-    <div style="font:400 12.5px/1.5 Arial,sans-serif;color:#7c2d12;margin-top:4px">Not edited at release; very likely still on old no-OTP form 2146556022872418. 13:39Z run: $0 / 0 impressions since release (~18h, past the 6h zero-delivery threshold) — leaking nothing. Related, review-only: "New Leads Ad …6610018" $32.08 / 0 leads named as kill candidate; 72h no-touch window through Tue 9/8 1:00 PM PT. Budget: stated $20/day vs live $25/day CBO — decide which is the plan.</div>
-  </td></tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #f97316;border-radius:10px;margin-bottom:8px">
-  <tr><td style="padding:12px 14px">
-    <div style="font:700 13px/1.3 Arial,sans-serif;color:#9a3412">⚠ Blocker · Cost per booked call still unmeasurable — no CRM source on any of 18 runs; the flashworkflow digest is ruled out (account-wide, not campaign-scoped); Windsor.ai trial ends ~today · Chitraksh</div>
-    <div style="font:400 12.5px/1.5 Arial,sans-serif;color:#7c2d12;margin-top:4px">"No CRM booked-call source connected" on every run. Sep 5 digest: 0 new / 4 booked / 25 SLA breached / 30 with contact / 26 unbooked / 13% / 22 partials / 1 opted out — usable for account triage, not for this campaign's deciding metric. Unblock: once the V2 path is fixed, make the sheet the form writes to the campaign-scoped booked source, wire the watchdog to it, and decide Windsor.ai keep/drop today rather than by default.</div>
-  </td></tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #f97316;border-radius:10px;margin-bottom:8px">
-  <tr><td style="padding:12px 14px">
-    <div style="font:700 13px/1.3 Arial,sans-serif;color:#9a3412">⚠ Blocker · HQ still has no written record of the V2 plan — tranche, daily budget, 10-day phase and kill rules exist only in the watchdog's project memory, which it again could not read this run · Frankie (one paragraph) · Chitraksh (restore watchdog memory)</div>
-    <div style="font:400 12.5px/1.5 Arial,sans-serif;color:#7c2d12;margin-top:4px">Zero workspace files mention V2/OTP/tranche; this brief reconstructed the plan from 18 watchdog emails. The 13:39Z run again reports "project memory not available this run." Frankie has now acted three times in the tools with nothing in the mailbox since Aug 28 (9/3 pause, 9/5 release, the ongoing no-touch discipline). Unblock: one paragraph in the workspace; restore the watchdog's memory tool.</div>
-  </td></tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #f97316;border-radius:10px;margin-bottom:8px">
-  <tr><td style="padding:12px 14px">
-    <div style="font:700 13px/1.3 Arial,sans-serif;color:#9a3412">⚠ Blocker · Autonomy: AM fired ~12h late this morning; autoloop launchd still erroring "Operation not permitted"; sweep + meeting-ingest still blocked; dashboard render 9d frozen · Chitraksh</div>
-    <div style="font:400 12.5px/1.5 Arial,sans-serif;color:#7c2d12;margin-top:4px">This PM edition fired on-cron ~14:06Z with disk access (the reliable lane). AM fired 12:56Z vs 01:06Z (wake batching). oraya-autoloop/logs/launchd.err.log: "oraya-loop.sh: Operation not permitted" — the 09:00/21:00 loop is not executing. Cofounder-sweep log frozen Sep 1; meeting-ingest 16d stale; dashboard ORAYA DATA v15.17 on disk, deployed render older. Unblock: keep the Mac awake or move AM to a local task; re-grant the autoloop script; re-create sweep + ingest device-bound.</div>
-  </td></tr></table></td></tr>
+      <tr><td>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #f97316;border-radius:10px">
+      <tr><td style="padding:12px 14px">
+        <div style="font:700 13px/1.3 Arial,sans-serif;color:#9a3412">⚠ Blocker · Cloud→Mac bridge down since Aug 28 · Chitraksh</div>
+        <div style="font:400 12.5px/1.5 Arial,sans-serif;color:#7c2d12;margin-top:3px">Meeting-ingest dark 18 days. Cofounder-sweep dark. All Mac-writing tasks in blackout. Aug 28 v15.17 undeployed. Rebuild both as LOCAL tasks and keep Mac awake in the…</div>
+      </td></tr>
+    </table>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #f97316;border-radius:10px">
+      <tr><td style="padding:12px 14px">
+        <div style="font:700 13px/1.3 Arial,sans-serif;color:#9a3412">⚠ Blocker · Compliance gate 0/7 · Shared</div>
+        <div style="font:400 12.5px/1.5 Arial,sans-serif;color:#7c2d12;margin-top:3px">Real leads arriving Aug 27. b3 (TX telephone-solicitor, $200 + $10K bond) + b7 (CA producer license # in every email) are the two that bite now. ATTOM key needs refresh…</div>
+      </td></tr>
+    </table>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #f97316;border-radius:10px">
+      <tr><td style="padding:12px 14px">
+        <div style="font:700 13px/1.3 Arial,sans-serif;color:#9a3412">⚠ Blocker · Meta ad account unconfirmed &amp; uninstrumented · Frankie</div>
+        <div style="font:400 12.5px/1.5 Arial,sans-serif;color:#7c2d12;margin-top:3px">Unlisted campaign '$300 Plan' (120247635234630018) running at $25/day (100% of account spend) outside watchdog. Instant-form route the runbook shelved. No Analytics…</div>
+      </td></tr>
+    </table></td></tr><tr><td style="height:13px;line-height:13px;font-size:0">&nbsp;</td></tr>
 
-<tr><td style="background:#fff;border:1px solid #e4e8f0;border-radius:14px;padding:16px 18px 18px">
-  <div style="font:700 11px/1 Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#94a3b8;margin:0 0 6px">★ Today's focus — start here</div>
-  <table role="presentation" width="100%"><tr><td style="padding:11px 0;border-bottom:1px solid #eef1f7">
-  <div style="font:700 14.5px/1.35 Arial,sans-serif;color:#0f172a">🚨 The stuck V2 lead is now three-plus hours cold — one OTP-verified consumer with a chosen call time, still stranded in Meta with no email behind it</div>
-  <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#475569;margin-top:5px">Unchanged since this morning except that it is later. Meta still shows exactly one V2 lead (the "Gap math new" ad); Gmail still shows no "NEW LEAD CAPTURED" email since Sep 2. The watchdog has now flagged the break across six straight runs (08:38Z → 13:39Z), each confirming the gap has persisted well past two hours — it is now over three. Speed-to-lead on this person is gone; the appointment slot they picked is the only thing left to save. Frankie: Leads Center → download the lead → call at the time they chose, today. Chitraksh: the V2 form is a new form ID the capture webhook (WF01 / api/lead.js) was never subscribed to — subscribe it, confirm the sheet row exists, then fire one real end-to-end submit so the next lead does not vanish the same way. This is the whole ballgame today; everything else can wait behind it.</div>
-  <div style="margin-top:6px;font:600 11px/1.4 Arial,sans-serif;color:#94a3b8"><span style="color:#7c3aed">Frankie pulls it by hand now · Chitraksh fixes the path today</span> &nbsp;·&nbsp; <b style="color:#2563eb">Insurance</b> · Pipeline</div>
-</td></tr><tr><td style="padding:11px 0;border-bottom:1px solid #eef1f7">
-  <div style="font:700 14.5px/1.35 Arial,sans-serif;color:#0f172a">🪪 Compliance is still 0/7 while the line dials — the consent checkbox is real progress, but b3/b7 are open and five creatives are live without the CA license #</div>
-  <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#475569;margin-top:5px">V2's form now collects a required consent checkbox, an OTP-verified phone and the caller's state — genuinely the first TCPA-written-consent-shaped step this funnel has taken, and Chitraksh should read the new form against the seven blockers today and say which, if any, it closes. What it does not fix: b7, the CA producer-license # is still absent from the five creatives that went live Saturday; b3, the TX telephone-solicitor registration is still unopened. Wednesday's six CA/TX phone leads are now ~5 days old and unpapered. Frankie: the NPN + CA license # to Chitraksh, open the TX registration, or write the one-line state rule ("call NV/ID only until b3/b7 are placed"). The paused-then-relaunched window was the cheapest possible time to place these; the campaign is spending again now.</div>
-  <div style="margin-top:6px;font:600 11px/1.4 Arial,sans-serif;color:#94a3b8"><span style="color:#7c3aed">Frankie supplies NPN + CA license # · Chitraksh scores the new form</span> &nbsp;·&nbsp; <b style="color:#2563eb">Insurance</b> · Compliance</div>
-</td></tr><tr><td style="padding:11px 0;border-bottom:1px solid #eef1f7">
-  <div style="font:700 14.5px/1.35 Arial,sans-serif;color:#0f172a">🧷 The two ad-hygiene flags both softened overnight — honest broker is confirmed dead-air, the $32 kill candidate is frozen behind the no-touch window</div>
-  <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#475569;margin-top:5px">This morning both read as threats; tonight they read as notes. "Honest broker" (created 8/26, last edited 8/27) was not touched at the V2 release and very likely still binds the old no-OTP form 2146556022872418 — but the 13:39Z run confirms it has delivered $0 / 0 impressions for ~18h, past the 6-hour zero-delivery threshold, so it is leaking nothing into the funnel. It stays a form question to close, not a live gate risk. The other: "New Leads Ad …6610018" has spent $32.08 for 0 leads and is the watchdog's named kill candidate — but the 72-hour no-touch learning window runs to Tue 9/8 1:00 PM PT, so it is review-only. One thing to actually decide, not urgent: the campaign runs $25/day CBO while your stated V2 plan said $20/day — pick one. And drop the V2 plan (tranche, budget, 10 days, kill rules) into the workspace as one paragraph; HQ still has no written copy of it.</div>
-  <div style="margin-top:6px;font:600 11px/1.4 Arial,sans-serif;color:#94a3b8"><span style="color:#7c3aed">Frankie (one look, no rush)</span> &nbsp;·&nbsp; <b style="color:#2563eb">Insurance</b> · Ads hygiene</div>
-</td></tr></table>
-  <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top:16px"><tr>
-    <td style="background:#2563eb;border-radius:8px"><a href="https://oraya-dashboard.vercel.app/brief/" style="display:inline-block;font:700 13px/1 Arial,sans-serif;color:#fff;text-decoration:none;padding:12px 20px;border-radius:8px">Open the full live board →</a></td>
-  </tr></table>
-</td></tr>
-<tr><td style="height:13px;font-size:0">&nbsp;</td></tr>
+      <tr><td>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #e4e8f0;border-radius:14px">
+      <tr><td style="padding:16px 18px">
+        <div style="font:700 11px/1 Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#94a3b8;margin:0 0 12px">🤖 Your AI cofounder — overnight</div>
+        <div style="font:700 11px/1 Arial,sans-serif;letter-spacing:.5px;color:#166534;margin:0 0 6px">DONE BY ME</div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#16a34a;font-weight:700">✓</span> Checked meeting-ingest status: NOT RUN since Aug 20 (18 days stale). Date in meeting_brief_lines.json is 2026-08-20, blocking transcript ingest. Do not proceed with dashboard sweep until bridge is rebuilt. <span style="color:#94a3b8">· CTO-Claude</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#16a34a;font-weight:700">✓</span> Inbox scan blocked: Gmail MCP requires OAuth auth, unavailable in non-interactive automated mode. <span style="color:#94a3b8">· CTO-Claude</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#16a34a;font-weight:700">✓</span> Dashboard push blocked: Cloud→Mac workspace bridge failure persists per Aug 28 memory. Last dashboard update was 2026-08-28 (v15.17). Do not push without manual authorization. <span style="color:#94a3b8">· CTO-Claude</span></div>
+        <div style="font:700 11px/1 Arial,sans-serif;letter-spacing:.5px;color:#9a3412;margin:14px 0 6px">WAITING ON YOUR TAP</div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#f97316;font-weight:700">→</span> BLOCKER — Rebuild meeting-ingest as LOCAL task. Cloud→Mac bridge is down; every Mac-writing task (meeting ingest, AM/PM brief, cofounder sweep) has been dark since Aug 28. Meeting data now 18 days stale. <span style="color:#94a3b8">· Chitraksh</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#f97316;font-weight:700">→</span> TOP — Compliance gate still 0/7 (b3 TX reg, b7 CA producer license). Consumer outreach live-fire since Aug 27; leads being dialed by hand. Requires immediate NPN + CA license # to paper the creatives. <span style="color:#94a3b8">· Frankie</span></div>
+      </td></tr>
+    </table></td></tr><tr><td style="height:13px;line-height:13px;font-size:0">&nbsp;</td></tr>
 
-<tr><td style="background:#fff;border:1px solid #e4e8f0;border-radius:14px;padding:16px 18px">
-  <div style="font:700 11px/1 Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#94a3b8;margin:0 0 12px">🤖 Your AI cofounder — overnight</div>
-  <div style="font:700 11px/1 Arial,sans-serif;color:#166534;margin:0 0 6px">DONE BY ME</div>
-  <div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#16a34a;font-weight:700">✓</span> Caught the Phase V2 release (Sat 1:00 PM PT / ~20:00Z Sep 5) from the first post-release watchdog run at 21:39Z — six hours after the PM brief asked "resume or leave off." <span style="color:#94a3b8">· CTO-Claude</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#16a34a;font-weight:700">✓</span> Reconstructed the V2 plan HQ has no record of: new OTP instant form (state, age, appointment picker, consent checkbox), $200 tranche, 10 days, $20/day stated vs $25/day live, R1 CPL &gt;$45 after $100 spend, R4 $160 notify / $210 pause, 72h no-touch to Tue 9/8 1:00 PM PT. <span style="color:#94a3b8">· CTO-Claude</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#16a34a;font-weight:700">✓</span> Verified the watchdog is healthy post-release: 17 hourly runs 21:39Z→12:39Z, every gate green, no DISAPPROVED/WITH_ISSUES, account clean (only the $300 Plan active). <span style="color:#94a3b8">· CTO-Claude</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#16a34a;font-weight:700">✓</span> Identified the pipeline break as today's single job: 1 V2 lead in Meta, 0 "NEW LEAD CAPTURED" emails since Sep 2, flagged 08:38Z / confirmed 11:40Z / repeated 12:39Z — likely cause: new form ID not subscribed to the capture webhook. <span style="color:#94a3b8">· CTO-Claude</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#16a34a;font-weight:700">✓</span> Carried the watchdog's open flags: "honest broker" likely on the old no-OTP form (cannot be auto-paused); "New Leads Ad …6610018" $32 / 0 leads kill candidate (review only, inside no-touch); three ads share a name. <span style="color:#94a3b8">· CTO-Claude</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#16a34a;font-weight:700">✓</span> Recorded the watchdog's own defects this cycle: 3 of 17 runs sent a raw template placeholder; the 05:40Z run misread "6 V2 leads" (true 1); every run had no project-memory tool. <span style="color:#94a3b8">· CTO-Claude</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#16a34a;font-weight:700">✓</span> Noted the watchdog explicitly ruled the flashworkflow digest out as a booked-call source (account-wide, not campaign-scoped) — the CRM gap needs a campaign-scoped sheet, not the digest. <span style="color:#94a3b8">· CTO-Claude</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#16a34a;font-weight:700">✓</span> Reported this edition's ~11h50m late fire (12:56Z vs 01:06Z) and the autoloop launchd "Operation not permitted" errors; published the live page and dropped the Gmail draft; took no outward action. <span style="color:#94a3b8">· CTO-Claude</span></div>
-  <div style="font:700 11px/1 Arial,sans-serif;color:#9a3412;margin:14px 0 6px">WAITING ON YOUR TAP</div>
-  <div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#f97316;font-weight:700">→</span> Frankie: download the one V2 lead from Leads Center today and work it at the appointment time they picked (state-rule check first). <span style="color:#94a3b8">· Frankie</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#f97316;font-weight:700">→</span> Frankie: confirm which form "honest broker" is bound to — or pause it; pick $20/day or $25/day; no other edits before Tue 9/8 1:00 PM PT. <span style="color:#94a3b8">· Frankie</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#f97316;font-weight:700">→</span> Frankie: NPN + CA producer-license # (b7) and TX telephone-solicitor registration (b3) — or the one-line state rule; plus one written paragraph of the V2 plan into the workspace. <span style="color:#94a3b8">· Frankie</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#f97316;font-weight:700">→</span> Chitraksh: subscribe the new V2 form ID to the capture webhook (WF01 / api/lead.js), confirm the sheet row, one real end-to-end test submit → "NEW LEAD CAPTURED" email. <span style="color:#94a3b8">· Chitraksh</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#f97316;font-weight:700">→</span> Chitraksh: score the V2 form (consent checkbox + OTP + state) against the 7 compliance blockers; add a b3/b7 gate to the watchdog; written triage of the six ~5-day-old CA/TX leads. <span style="color:#94a3b8">· Chitraksh</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#f97316;font-weight:700">→</span> Chitraksh: campaign-scoped booked-call source (the V2 sheet) wired to the watchdog; Windsor.ai keep/drop today. <span style="color:#94a3b8">· Chitraksh</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#f97316;font-weight:700">→</span> Chitraksh: watchdog template path pinned, memory tool restored, lead-count wobble fixed, ads renamed. <span style="color:#94a3b8">· Chitraksh</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#f97316;font-weight:700">→</span> Chitraksh: autoloop launchd "Operation not permitted" re-granted; AM brief kept on-window (Mac awake or local task); sweep + ingest re-created device-bound. <span style="color:#94a3b8">· Chitraksh</span></div><div style="font:400 13px/1.5 Arial,sans-serif;color:#334155;padding:3px 0"><span style="color:#f97316;font-weight:700">→</span> Shared: Supabase advisory + invoice #KLFFUZ-00014; Spacemail renewal; ATTOM rep; IRS EIN ~70 days silent. <span style="color:#94a3b8">· Shared</span></div>
-</td></tr>
-<tr><td style="height:13px;font-size:0">&nbsp;</td></tr>
+      <!-- today's focus + CTA -->
+      <tr><td style="background:#ffffff;border:1px solid #e4e8f0;border-radius:14px;padding:16px 18px 18px">
+        <div style="font:700 11px/1 Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#94a3b8;margin:0 0 12px">★ Today’s focus — start here</div>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+    <tr><td style="padding:10px 0;border-bottom:1px solid #eef1f7">
+      <div style="font:700 14px/1.35 Arial,sans-serif;color:#0f172a">Meta ads batch 1: State it plainly — launched or held?</div>
+      <div style="margin-top:5px;font:600 11px/1.4 Arial,sans-serif;color:#94a3b8">
+        <span style="color:#059669">Frankie</span> &nbsp;·&nbsp; <b style="color:#2563eb">Insurance</b> · Ads &amp; Marketing</div>
+    </td></tr>
+    <tr><td style="padding:10px 0;border-bottom:1px solid #eef1f7">
+      <div style="font:700 14px/1.35 Arial,sans-serif;color:#0f172a">Record the video kit — unlocks 4 things</div>
+      <div style="margin-top:5px;font:600 11px/1.4 Arial,sans-serif;color:#94a3b8">
+        <span style="color:#059669">Frankie</span> &nbsp;·&nbsp; <b style="color:#2563eb">Insurance</b> · Creative &amp; Copy</div>
+    </td></tr>
+    <tr><td style="padding:10px 0;border-bottom:1px solid #eef1f7">
+      <div style="font:700 14px/1.35 Arial,sans-serif;color:#0f172a">Compliance gate still 0/7 on live TX lead with phone</div>
+      <div style="margin-top:5px;font:600 11px/1.4 Arial,sans-serif;color:#94a3b8">
+        <span style="color:#7c3aed">Shared</span> &nbsp;·&nbsp; <b style="color:#2563eb">Insurance</b> · Compliance &amp; Legal</div>
+    </td></tr></table>
+        <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top:16px"><tr>
+          <td style="background:#2563eb;border-radius:8px"><a href="https://oraya-dashboard.vercel.app/brief/" style="display:inline-block;font:700 13px/1 Arial,sans-serif;color:#ffffff;text-decoration:none;padding:12px 20px;border-radius:8px">Open the full live board →</a></td>
+        </tr></table>
+      </td></tr>
+      <tr><td style="height:13px;line-height:13px;font-size:0">&nbsp;</td></tr>
 
-<tr><td style="background:#fff;border:1px solid #e4e8f0;border-radius:14px;padding:16px 18px 6px">
-  <div style="font:700 11px/1 Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#94a3b8;margin:0 0 4px">Who does what — the full board</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 6px">
-  <tr><td style="padding:10px 0 10px">
-    <table role="presentation" width="100%"><tr>
-      <td><table cellpadding="0" cellspacing="0"><tr>
-        <td style="width:11px;height:11px;background:#059669;border-radius:50%;font-size:0;line-height:11px">&nbsp;</td>
-        <td style="padding-left:9px;font:700 17px/1 Arial,sans-serif;color:#0f172a">Frankie<span style="font:600 11px/1 Arial,sans-serif;color:#94a3b8;padding-left:9px">CEO · Field</span></td>
-      </tr></table></td>
-      <td align="right" style="font:700 13px/1 Arial,sans-serif;color:#059669">4 tasks</td>
-    </tr></table></td></tr>
-  <tr><td style="padding:0 0 8px">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
-    <tr><td style="padding:11px 14px">
-      <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Pull the V2 lead out of Meta by hand today — the pipeline did not deliver it, and they picked a time to be called</div>
-      <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#475569;margin-top:4px">Leads Center → "$300 Plan" → download the one lead since Saturday. It is OTP-verified, consented, and chose an appointment slot — honor that slot. Check its state against the rule before dialing (CA/TX are still the unpapered ones). Then tell Chitraksh what time the lead came in so he can confirm the sheet never got the row.</div>
-      <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Leads</span><span style="display:inline-block;font:700 10px/1 Arial,sans-serif;letter-spacing:.5px;color:#991b1b;background:#fee2e2;padding:4px 8px;border-radius:5px;margin:8px 0 0 6px">TOP — STUCK LEAD</span></div>
+      <!-- legend: projects -->
+      <tr><td style="background:#ffffff;border:1px solid #e4e8f0;border-radius:14px;padding:16px 18px">
+        <div style="font:700 11px/1 Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#94a3b8;margin:0 0 12px">The projects (what each colour means)</div>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+    <tr><td style="padding:6px 0">
+      <table cellpadding="0" cellspacing="0"><tr>
+        <td valign="top" style="width:11px;padding-top:3px"><table cellpadding="0" cellspacing="0"><tr><td style="width:11px;height:11px;background:#2563eb;border-radius:3px;font-size:0;line-height:11px">&nbsp;</td></tr></table></td>
+        <td style="padding-left:10px;font:400 12.5px/1.5 Arial,sans-serif;color:#475569"><b style="color:#0f172a">Insurance</b> <span style="color:#94a3b8">(P2) · 16 today</span> — AI life-insurance funnel: data → outreach → AI calls → licensed close.</td>
+      </tr></table>
     </td></tr>
-  </table></td></tr><tr><td style="padding:0 0 8px">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
-    <tr><td style="padding:11px 14px">
-      <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">One look in Ads Manager: confirm which form "honest broker" uses, or pause it — and pick $20 or $25 a day</div>
-      <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#475569;margin-top:4px">The watchdog cannot pause it and has asked every hour. If it is on the old form (2146556022872418, no OTP), pause it or rebind it to the V2 form. While there: the campaign is at $25/day against the $20/day you stated — say which is the plan. Do not touch anything else before Tue 9/8 1:00 PM PT (72h learning window); "New Leads Ad …6610018" at $32 / 0 leads is named for your review only.</div>
-      <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Ads</span><span style="display:inline-block;font:700 10px/1 Arial,sans-serif;letter-spacing:.5px;color:#9a3412;background:#ffedd5;padding:4px 8px;border-radius:5px;margin:8px 0 0 6px">AD HYGIENE</span></div>
+    <tr><td style="padding:6px 0">
+      <table cellpadding="0" cellspacing="0"><tr>
+        <td valign="top" style="width:11px;padding-top:3px"><table cellpadding="0" cellspacing="0"><tr><td style="width:11px;height:11px;background:#16a34a;border-radius:3px;font-size:0;line-height:11px">&nbsp;</td></tr></table></td>
+        <td style="padding-left:10px;font:400 12.5px/1.5 Arial,sans-serif;color:#475569"><b style="color:#0f172a">Real Estate</b> <span style="color:#94a3b8">(P3) · 2 today</span> — Investor / seller real-estate lead engine (next project, in design).</td>
+      </tr></table>
     </td></tr>
-  </table></td></tr><tr><td style="padding:0 0 8px">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
-    <tr><td style="padding:11px 14px">
-      <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">The campaign is live again without b3/b7 — send the two numbers, open TX, or write the state rule; and put the V2 plan in writing</div>
-      <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#475569;margin-top:4px">Five creatives went live Saturday without the CA producer-license # (b7); the TX telephone-solicitor registration (b3) is still unopened. NPN + CA license # to Chitraksh, or the one-line rule scoping dialing to states b3/b7 do not cover. Also: one paragraph in the workspace with the V2 plan — $200 tranche, daily budget, 10 days, the R1/R4 kill rules — because HQ has no copy and this brief rebuilt it from watchdog emails.</div>
-      <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Compliance</span><span style="display:inline-block;font:700 10px/1 Arial,sans-serif;letter-spacing:.5px;color:#9a3412;background:#ffedd5;padding:4px 8px;border-radius:5px;margin:8px 0 0 6px">LIVE PII</span></div>
+    <tr><td style="padding:6px 0">
+      <table cellpadding="0" cellspacing="0"><tr>
+        <td valign="top" style="width:11px;padding-top:3px"><table cellpadding="0" cellspacing="0"><tr><td style="width:11px;height:11px;background:#7c3aed;border-radius:3px;font-size:0;line-height:11px">&nbsp;</td></tr></table></td>
+        <td style="padding-left:10px;font:400 12.5px/1.5 Arial,sans-serif;color:#475569"><b style="color:#0f172a">HQ / Infra</b> <span style="color:#94a3b8">(HQ) · 9 today</span> — The dashboard, automations &amp; AI agents that run the company itself.</td>
+      </tr></table>
     </td></tr>
-  </table></td></tr><tr><td style="padding:0 0 8px">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
-    <tr><td style="padding:11px 14px">
-      <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Record the video kit — carried</div>
-      <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#475569;margin-top:4px">Carried. Still the single unblock for four thin content lanes; still behind today's three items. V2's own ads will need fresh creative once the 72h window closes — the kit feeds that too.</div>
-      <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Creative</span><span style="display:inline-block;font:700 10px/1 Arial,sans-serif;letter-spacing:.5px;color:#9a3412;background:#ffedd5;padding:4px 8px;border-radius:5px;margin:8px 0 0 6px">CARRIED</span></div>
-    </td></tr>
-  </table></td></tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 6px">
-  <tr><td style="padding:10px 0 10px">
-    <table role="presentation" width="100%"><tr>
-      <td><table cellpadding="0" cellspacing="0"><tr>
-        <td style="width:11px;height:11px;background:#0284c7;border-radius:50%;font-size:0;line-height:11px">&nbsp;</td>
-        <td style="padding-left:9px;font:700 17px/1 Arial,sans-serif;color:#0f172a">Chitraksh<span style="font:600 11px/1 Arial,sans-serif;color:#94a3b8;padding-left:9px">CTO · Build</span></td>
-      </tr></table></td>
-      <td align="right" style="font:700 13px/1 Arial,sans-serif;color:#0284c7">5 tasks</td>
-    </tr></table></td></tr>
-  <tr><td style="padding:0 0 8px">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
-    <tr><td style="padding:11px 14px">
-      <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Fix the V2 form → sheet → n8n → email path today and prove it with one real submit</div>
-      <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#475569;margin-top:4px">Meta has 1 V2 lead; no "NEW LEAD CAPTURED IN $300 PLAN" email since Sep 2. The new OTP form is a new leadgen form ID — the capture webhook (WF01 / api/lead.js / the Meta leadgen subscription) is almost certainly still bound to the old form 2146556022872418. Subscribe the new ID, check whether the sheet got the row, then submit one real test through the OTP form and watch the email fire. Until this works every V2 lead is a manual Leads Center download.</div>
-      <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Pipeline</span><span style="display:inline-block;font:700 10px/1 Arial,sans-serif;letter-spacing:.5px;color:#991b1b;background:#fee2e2;padding:4px 8px;border-radius:5px;margin:8px 0 0 6px">TOP — PIPELINE</span></div>
-    </td></tr>
-  </table></td></tr><tr><td style="padding:0 0 8px">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
-    <tr><td style="padding:11px 14px">
-      <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Score the V2 form against the 7 compliance blockers, and add a b3/b7 gate to the watchdog</div>
-      <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#475569;margin-top:4px">Required consent checkbox + OTP-verified phone + state field — read it against the list and say which of the 7 it closes (TCPA prior-express-written-consent language on the checkbox is the one to check verbatim). Then add a b3/b7 gate to the watchdog so "all clear" stops meaning "compliance not checked." Wednesday's six CA/TX phone leads are ~5 days old — one written triage list.</div>
-      <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Compliance</span><span style="display:inline-block;font:700 10px/1 Arial,sans-serif;letter-spacing:.5px;color:#991b1b;background:#fee2e2;padding:4px 8px;border-radius:5px;margin:8px 0 0 6px">COMPLIANCE</span></div>
-    </td></tr>
-  </table></td></tr><tr><td style="padding:0 0 8px">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
-    <tr><td style="padding:11px 14px">
-      <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Campaign-scoped booked-call source: the watchdog has ruled the digest out — wire the V2 sheet instead; Windsor.ai decide today</div>
-      <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#475569;margin-top:4px">"No CRM source connected" 18 runs running, and it now says explicitly the flashworkflow digest (0 new / 4 booked / 25 breached on Sep 5) is account-wide and cannot be used for cost-per-booked-call. Once the pipeline is fixed the V2 sheet is the natural campaign-scoped source — wire the watchdog to it. Windsor.ai trial ends ~today: keep-and-wire or lapse deliberately, not by default.</div>
-      <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Instrumentation</span><span style="display:inline-block;font:700 10px/1 Arial,sans-serif;letter-spacing:.5px;color:#9a3412;background:#ffedd5;padding:4px 8px;border-radius:5px;margin:8px 0 0 6px">DECIDING METRIC</span></div>
-    </td></tr>
-  </table></td></tr><tr><td style="padding:0 0 8px">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #7c3aed;border-radius:8px">
-    <tr><td style="padding:11px 14px">
-      <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Watchdog hygiene: pin the template path (3 raw-placeholder sends), restore its memory tool, fix the lead-count wobble</div>
-      <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#475569;margin-top:4px">3 of 17 runs went out as "$(cat …)" / "FILE:/tmp/…" and had to re-send; every run reports "no project-memory tool available" so session_ledger.md, insurance_ads_division.md, leadform_shift.md and feedback_legal_gate.md are unread; the 05:40Z run reported "6 V2 leads" when the count was 0–1. Also rename the three "New Leads Ad" ads so per-ad reporting is readable.</div>
-      <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#7c3aed">HQ / Infra</b> · Monitoring</span><span style="display:inline-block;font:700 10px/1 Arial,sans-serif;letter-spacing:.5px;color:#9a3412;background:#ffedd5;padding:4px 8px;border-radius:5px;margin:8px 0 0 6px">w26</span></div>
-    </td></tr>
-  </table></td></tr><tr><td style="padding:0 0 8px">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #7c3aed;border-radius:8px">
-    <tr><td style="padding:11px 14px">
-      <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Autonomy: AM brief fired ~12h late (wake batching); autoloop launchd "Operation not permitted"; sweep + ingest still need device-bound re-creation</div>
-      <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#475569;margin-top:4px">This AM task fired 12:56Z against a 01:06Z window — the wake-from-sleep batching fault seen Sep 2, and it now lands an hour before the PM lane. oraya-autoloop/logs/launchd.err.log shows "oraya-loop.sh: Operation not permitted" ×5 since Saturday — the 09:00/21:00 loop is being denied (re-grant the script / check TCC). Cofounder-sweep log frozen Sep 1; meeting-ingest structurally blocked; dashboard v15.17 9 days. Keep the Mac awake or move AM local.</div>
-      <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#7c3aed">HQ / Infra</b> · Automation</span><span style="display:inline-block;font:700 10px/1 Arial,sans-serif;letter-spacing:.5px;color:#9a3412;background:#ffedd5;padding:4px 8px;border-radius:5px;margin:8px 0 0 6px">AUTONOMY</span></div>
-    </td></tr>
-  </table></td></tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 6px">
-  <tr><td style="padding:10px 0 10px">
-    <table role="presentation" width="100%"><tr>
-      <td><table cellpadding="0" cellspacing="0"><tr>
-        <td style="width:11px;height:11px;background:#64748b;border-radius:50%;font-size:0;line-height:11px">&nbsp;</td>
-        <td style="padding-left:9px;font:700 17px/1 Arial,sans-serif;color:#0f172a">CTO-Claude<span style="font:600 11px/1 Arial,sans-serif;color:#94a3b8;padding-left:9px">Autonomous</span></td>
-      </tr></table></td>
-      <td align="right" style="font:700 13px/1 Arial,sans-serif;color:#64748b">3 tasks</td>
-    </tr></table></td></tr>
-  <tr><td style="padding:0 0 8px">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
-    <tr><td style="padding:11px 14px">
-      <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Caught the V2 release and reconstructed the plan HQ had no record of</div>
-      <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#475569;margin-top:4px">Read all 18 hourly watchdog runs since Saturday 1:00 PM PT and rebuilt Phase V2 — new OTP form, $200 tranche, 10 days, $20 stated vs $25 live, R1 CPL &gt;$45 after $100, R4 $160/$210, 72h no-touch to 9/8 — from the emails alone; zero workspace files mention it. Confirmed the account is clean (only the $300 Plan active; AURA arms and 5 legacy ads paused).</div>
-      <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Sweep</span><span style="display:inline-block;font:700 10px/1 Arial,sans-serif;letter-spacing:.5px;color:#9a3412;background:#ffedd5;padding:4px 8px;border-radius:5px;margin:8px 0 0 6px">DONE</span></div>
-    </td></tr>
-  </table></td></tr><tr><td style="padding:0 0 8px">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
-    <tr><td style="padding:11px 14px">
-      <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Named the stuck lead as the day's single job, not the spend</div>
-      <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#475569;margin-top:4px">Spend is $56 of $200 with every gate green — that is not the story. One OTP-verified, consented consumer who picked a call time has been sitting in Meta un-emailed since the form went live, and the watchdog has said so for over three hours. Put it at the top of both lanes with the likely cause (new form ID not subscribed) and the manual fallback (Leads Center download).</div>
-      <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Judgment</span><span style="display:inline-block;font:700 10px/1 Arial,sans-serif;letter-spacing:.5px;color:#9a3412;background:#ffedd5;padding:4px 8px;border-radius:5px;margin:8px 0 0 6px">DONE</span></div>
-    </td></tr>
-  </table></td></tr><tr><td style="padding:0 0 8px">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #7c3aed;border-radius:8px">
-    <tr><td style="padding:11px 14px">
-      <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Ran on time, published, drafted, held the line</div>
-      <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#475569;margin-top:4px">This PM edition fired on-cron ~14:06Z with disk access and refreshed the whole board to the 06:36 AM PT watchdog read — one hour newer than the AM. Touched no campaign, ad, form, or budget; contacted no lead; cleared no compliance item; spent nothing. The V2 release was Frankie's; every edit inside the 72h window is his.</div>
-      <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#7c3aed">HQ / Infra</b> · Guardrails</span><span style="display:inline-block;font:700 10px/1 Arial,sans-serif;letter-spacing:.5px;color:#9a3412;background:#ffedd5;padding:4px 8px;border-radius:5px;margin:8px 0 0 6px">HELD</span></div>
-    </td></tr>
-  </table></td></tr></table>
-</td></tr>
+    <tr><td style="padding:6px 0">
+      <table cellpadding="0" cellspacing="0"><tr>
+        <td valign="top" style="width:11px;padding-top:3px"><table cellpadding="0" cellspacing="0"><tr><td style="width:11px;height:11px;background:#64748b;border-radius:3px;font-size:0;line-height:11px">&nbsp;</td></tr></table></td>
+        <td style="padding-left:10px;font:400 12.5px/1.5 Arial,sans-serif;color:#475569"><b style="color:#0f172a">Ops</b> <span style="color:#94a3b8">(OPS) · 3 today</span> — Money, hardware, family &amp; day-to-day running of the business.</td>
+      </tr></table>
+    </td></tr></table>
+      </td></tr>
+      <tr><td style="height:13px;line-height:13px;font-size:0">&nbsp;</td></tr>
 
-<tr><td style="padding:16px 6px 4px">
-  <div style="font:400 11px/1.6 Arial,sans-serif;color:#94a3b8">
-    PM edition · day 239 · source: index.html · Daily Tasks board (May 28 (Thu))<br>
-    Autonomous brief from Oraya HQ · <a href="https://oraya-dashboard.vercel.app/brief/" style="color:#2563eb;text-decoration:none">live board</a> · <a href="https://oraya-dashboard.vercel.app/" style="color:#2563eb;text-decoration:none">full HQ dashboard</a>
-  </div>
-</td></tr>
+      <!-- full board by owner -->
+      <tr><td style="background:#ffffff;border:1px solid #e4e8f0;border-radius:14px;padding:16px 18px 6px">
+        <div style="font:700 11px/1 Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#94a3b8;margin:0 0 12px">Who does what — the full board</div>
+        
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 6px">
+      <tr><td style="padding:6px 0 10px">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td><table cellpadding="0" cellspacing="0"><tr>
+            <td style="width:11px;height:11px;background:#059669;border-radius:50%;font-size:0;line-height:11px">&nbsp;</td>
+            <td style="padding-left:9px;font:700 17px/1 Arial,sans-serif;color:#0f172a">Frankie<span style="font:600 11px/1 Arial,sans-serif;color:#94a3b8;padding-left:9px">CEO · Field</span></td>
+          </tr></table></td>
+          <td align="right" style="font:700 13px/1 Arial,sans-serif;color:#059669">11 tasks</td>
+        </tr></table>
+      </td></tr>
+      
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">WALK INTO ENVISION HONDA MILPITAS · 1 PM PT</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">suited up, fresh haircut, iPad with the Oraya-branded dealership deck. Ask for Greg (introduced you on phone…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Dealership</span><span style="display:inline-block;font:700 10px/1 Arial,sans-serif;letter-spacing:.5px;color:#166534;background:#dcfce7;padding:4px 8px;border-radius:5px;margin:8px 0 0 6px">FIRST DEALERSHIP APPT</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Test outbound v126 + inbound v15 end-to-end</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">on at least 2 fresh test scenarios · pretend-flow on inbound: voicemail callback → opt-in → calendar slot. Confirm…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Calling (Voice AI)</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">EIN check the certified-mail tracker</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">(mailed May 22) · expected Thursday or Friday landing. The moment it hits, A2P submits.</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Compliance &amp; Legal</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #64748b;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Plug Mom's policy from daughter's mother</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">the manufactured $3K of ad-budget cash. Theresa policies cancelled with grace given her son's passing — don't…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#64748b">Ops</b> · Ops / Personal</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #16a34a;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Pull up the Real Estate P3 visual reference</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">with Chitraksh on the next sync · lock the deal-card UI design (comparables + ARV pie chart + urgency countdown).…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#16a34a">Real Estate</b> · Build</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #7c3aed;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Lock Mac Mini purchase timing</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">back-end of month. Frankie's card on amazon.in with monitor (per Chitraksh's request). Coordinate Zoom unbox/setup.…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#7c3aed">HQ / Infra</b> · Dashboard / Infra</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #64748b;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Pick a window for the Chitraksh-parents intro</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">before 11am or after 8pm Frankie-time. Cup-of-coffee energy, not pitch.</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#64748b">Ops</b> · Ops / Personal</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #64748b;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">4:30 AM block discipline — resume tomorrow.</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">May 23-26 slip-then-recover. Fixed block is the rule, not the suggestion.</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#64748b">Ops</b> · Ops / Personal</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Test the inbound agent edited opener tonight</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">confirm the outbound-snippet ported in worked correctly. If clean, tomorrow morning kick off the first 60-lead…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Calling (Voice AI)</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Carry-over (still active):</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">Marketing Retainer + Meta ads next-out once A2P approves · Pizza Hut lesson logged (over-transparency = system…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Compliance &amp; Legal</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">IRS call (parallel)</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">lines open 8 AM PT; Chitraksh handles 8-11 AM India-side rotation; Frankie picks up post-day-job. Backup: file SS-4…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Compliance &amp; Legal</span><span style="display:inline-block;font:700 10px/1 Arial,sans-serif;letter-spacing:.5px;color:#991b1b;background:#fee2e2;padding:4px 8px;border-radius:5px;margin:8px 0 0 6px">EIN BLOCKER</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    </table>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 6px">
+      <tr><td style="padding:6px 0 10px">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td><table cellpadding="0" cellspacing="0"><tr>
+            <td style="width:11px;height:11px;background:#0284c7;border-radius:50%;font-size:0;line-height:11px">&nbsp;</td>
+            <td style="padding-left:9px;font:700 17px/1 Arial,sans-serif;color:#0f172a">Chitraksh<span style="font:600 11px/1 Arial,sans-serif;color:#94a3b8;padding-left:9px">CTO · Build</span></td>
+          </tr></table></td>
+          <td align="right" style="font:700 13px/1 Arial,sans-serif;color:#0284c7">12 tasks</td>
+        </tr></table>
+      </td></tr>
+      
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #7c3aed;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Push v12.0 dashboard (this update) live</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">main HQ + linked Lead-Gen Dashboard + new Real Estate section + Lead-Gen tab. Vercel auto-deploys on push.</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#7c3aed">HQ / Infra</b> · Dashboard / Infra</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Watch the Envision Honda walk-in</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">Chitraksh on standby in case Frankie needs a live G-Meet pull-in for live demo or live Q&amp;A. Have outbound voice…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Dealership</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Build the dynamic Oraya dealership deck</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">from the Mercedes offer letter · Oraya UI / logo / color scheme · capability matrix · deliverables on PDF for…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Dealership</span><span style="display:inline-block;font:700 10px/1 Arial,sans-serif;letter-spacing:.5px;color:#9a3412;background:#ffedd5;padding:4px 8px;border-radius:5px;margin:8px 0 0 6px">FRANKIE NOTE</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Ship the $60 enrichment bake-off</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">$20 each on ATTOM + BatchData + PropertyRadar · same TX new-homeowner pull across all three · compare data quality…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Lead-gen</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Verify outbound v126 + inbound v15 backend</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">on 5 fresh test calls · confirm calendar / email / SMS / DNC / admin log all firing on each · spot-check the…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Calling (Voice AI)</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #16a34a;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Real Estate P3 architecture spec</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">port the single-prompt agent (archived from P2 fork) into the investor-blast prototype · ingest the Oraya site…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#16a34a">Real Estate</b> · Build</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">IRS call rotation 8-11 AM PT</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">(8:30 PM-11:30 PM IST) · ride out auto-disconnects, retry until a live agent picks up · certified-mail track…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Compliance &amp; Legal</span><span style="display:inline-block;font:700 10px/1 Arial,sans-serif;letter-spacing:.5px;color:#991b1b;background:#fee2e2;padding:4px 8px;border-radius:5px;margin:8px 0 0 6px">EIN BLOCKER</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #7c3aed;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Twin Mind transcript → dashboard auto-update pipeline</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">complete the webhook so post-block dashboard updates push automatically without manual edit-loop.</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#7c3aed">HQ / Infra</b> · Dashboard / Infra</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">FBN filing (California)</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">&quot;Oraya Insurance Group&quot; trade name vs. legal entity; file with operating county; publish in adjudicated newspaper…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Compliance &amp; Legal</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">RPA for free registered-agent address</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">queue providers, prepare SoS filing, synchronized public-facing address flip the moment A2P approves.</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Compliance &amp; Legal</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #7c3aed;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Stand up the CEO sub-agent on the Mac Mini</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">when it arrives · first sub-agent online: dashboard. Then legal / engineer / marketing / lead-gen + follow-up one…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#7c3aed">HQ / Infra</b> · Dashboard / Infra</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Cancelled / dropped:</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">day-trading agent (Frankie + Chitraksh aligned May 27 — revenue potential lower than P2/P3/voice, back-tests don't…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Calling (Voice AI)</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    </table>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 6px">
+      <tr><td style="padding:6px 0 10px">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td><table cellpadding="0" cellspacing="0"><tr>
+            <td style="width:11px;height:11px;background:#7c3aed;border-radius:50%;font-size:0;line-height:11px">&nbsp;</td>
+            <td style="padding-left:9px;font:700 17px/1 Arial,sans-serif;color:#0f172a">CTO-Claude<span style="font:600 11px/1 Arial,sans-serif;color:#94a3b8;padding-left:9px">Autonomous</span></td>
+          </tr></table></td>
+          <td align="right" style="font:700 13px/1 Arial,sans-serif;color:#7c3aed">7 tasks</td>
+        </tr></table>
+      </td></tr>
+      
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #7c3aed;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">v12.0 dashboard sweep</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">this update: title/banner/hero/countdown refreshed for Day 138; Real Estate (P3) section added; Lead-Gen section…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#7c3aed">HQ / Infra</b> · Dashboard / Infra</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #7c3aed;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Ingested transcripts:</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">May 20-21 &quot;Voice Agent Debugging / Mortgage Protection Script Rework / Texas Homeowner Lead Strategy&quot;; May 23-24…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#7c3aed">HQ / Infra</b> · Dashboard / Infra</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Email digit-conversion patch script</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">apply_email_digit_fix_2026-05-28.py drafted + applied on outbound v126; parity patch…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Calling (Voice AI)</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #7c3aed;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Memory updated:</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">&quot;Email digit handling rule&quot; memory file noted as shipped v126 (2026-05-28). Voice-flow surgical-editing rule…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#7c3aed">HQ / Infra</b> · Dashboard / Infra</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #2563eb;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Inbox + WhatsApp monitor</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">auto-flag EIN-related IRS communication (USPS certified-mail delivery), Envision Honda follow-up from Greg/Mo…</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#2563eb">Insurance</b> · Compliance &amp; Legal</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #7c3aed;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">Multi-model fallback rule still in force</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">ChatGPT + Gemini on shadow during Anthropic outages.</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#7c3aed">HQ / Infra</b> · Dashboard / Infra</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    <tr><td style="padding:0 0 8px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #eef1f7;border-left:4px solid #7c3aed;border-radius:8px">
+        <tr><td style="padding:11px 14px">
+          <div style="font:600 14px/1.4 Arial,sans-serif;color:#0f172a">No permission-asking on routine tasks</div>
+          <div style="font:400 12.5px/1.55 Arial,sans-serif;color:#64748b;margin-top:3px">(max-autonomy rule holds).</div>
+          <div><span style="display:inline-block;font:600 10.5px/1 Arial,sans-serif;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:4px 8px;margin-top:8px"><b style="color:#7c3aed">HQ / Infra</b> · Dashboard / Infra</span></div>
+        </td></tr>
+      </table>
+    </td></tr>
+    </table>
+      </td></tr>
 
-</table></td></tr></table></body></html>
+      <tr><td style="padding:16px 6px 4px">
+        <div style="font:400 11px/1.6 Arial,sans-serif;color:#94a3b8">
+          AM edition · generated 9/7/2026, 6:55:18 AM · source: index.html · Daily Tasks board (May 28 (Thu))<br>
+          Autonomous brief from Oraya HQ · <a href="https://oraya-dashboard.vercel.app/brief/" style="color:#2563eb;text-decoration:none">live board</a> · <a href="https://oraya-dashboard.vercel.app/" style="color:#2563eb;text-decoration:none">full HQ dashboard</a>
+        </div>
+      </td></tr>
+
+    </table>
+  </td></tr>
+</table></body></html>
