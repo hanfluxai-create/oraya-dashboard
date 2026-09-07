@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-09-07T01:25:18.202Z",
+  "generated_at": "2026-09-07T14:06:41.161Z",
   "date_label": "Mon · Sep 7",
-  "edition": "AM",
+  "edition": "PM",
   "day_number": 240,
-  "phase": "Launch Week close",
-  "headline": "Sep 7: Meta unconfirmed, video kit due, compliance gate still 0/7 on live leads.",
-  "source": "index.html · Daily Tasks board (May 28 (Thu))",
+  "phase": "Phase V2 · paused (day 3 of 10)",
+  "headline": "Sep 7 PM — Frankie hit the brakes: the $300 Plan has been PAUSED since 9/6 10:47 AM PT, one minute after the first “no-consent” lead landed. Day 3 of 10, $70 of the $200 tranche spent, a full day dark. Confirm the hold, close b3/b7, then resume — and note the funnel itself now books end-to-end.",
+  "source": "index.html v15.17 board (frozen Aug 28) + FA-ADS WATCHDOG 10:40Z Sep 7 + lead/booking notifications",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -71,59 +71,68 @@
   ],
   "spotlight": [
     {
-      "icon": "💰",
-      "title": "Meta ads batch 1: State it plainly — launched or held?",
-      "who": "Frankie",
-      "detail": "Aug 9 launch date passed with zero record in any system. $600 test budget, final-expense product. If launched, instrument it now (Analytics + Meta MCP) before more money moves unmeasured. If held, close the compliance stamp + creatives and set a real date.",
+      "icon": "⏸️",
+      "title": "Confirm the pause is a deliberate hold — and name the resume trigger",
+      "who": "Frankie (decision) · Chitraksh (consent fix)",
+      "detail": "The one paid motion is halted. Frankie set “$300 Plan” Active→Inactive in Power Editor on 9/6 at 10:47 AM PT — not a watchdog kill gate, a human call, made ~1 minute after the first V2 lead notification arrived flagged “no TCPA consent.” Since then: $0 spend, 0 impressions, 0 leads. That is roughly a full day of the 10-day V2 window gone at zero spend, with $70.07 of the $200 tranche used and ~$130 still unspent. Read most likely as a responsible reflex to the no-consent lead — but the watchdog cannot confirm intent and has no authority to resume it. The move today: Frankie states plainly whether this is an intentional hold and what has to be true to restart (consent handling fixed + b3/b7 placed), because the 10-day clock burns whether or not a dollar moves.",
       "project": "insurance",
-      "area": "Ads & Marketing"
+      "area": "Ads & Spend"
     },
     {
-      "icon": "🎬",
-      "title": "Record the video kit — unlocks 4 things",
-      "who": "Frankie",
-      "detail": "One session = founder ad creative + face-forward creative + landing-page refresh + ElevenLabs voice clone. Shirt + tie, iPhone 4K/60fps, 20-24 min of takes. Hand footage to Chitraksh.",
+      "icon": "🪩",
+      "title": "The brake WAS a compliance signal — b3/b7 still 0/7, and a live call is now booked for Friday",
+      "who": "Frankie (NPN + CA license #) · Chitraksh (state rule)",
+      "detail": "The lead that tripped the pause came in flagged “no TCPA consent — call by hand, no AI/SMS,” which is the funnel behaving correctly. The gap is upstream: b7 (CA producer license # on every creative + landing page) and b3 (TX telephone-solicitor registration, $200 + $10K bond) are still unfiled ~12 days after the first real leads, and five creatives are live without the license #. What makes it concrete today: a score-100 TX test lead ran the full funnel and booked a real slot on Frankie’s calendar for Fri 9/11, 4:30 PM CDT. Before that becomes a real dial — NPN + license # on the creatives, open the TX registration, or write the one-line rule: call NV/ID only until b3/b7 are placed.",
       "project": "insurance",
-      "area": "Creative & Copy"
+      "area": "Compliance"
     },
     {
-      "icon": "🔒",
-      "title": "Compliance gate still 0/7 on live TX lead with phone",
-      "who": "Shared",
-      "detail": "Real consumer leads arrived Aug 27 (Thomas Walker TX, Mary Jane ID, Claudia Nash). Notifications say 'call fast,' but b3 (TX telephone-solicitor reg) and b7 (CA producer license # per Cal Ins Code 1725.5(c)) are unclosed — and TX lead has the phone number. NPN + CA license # must be on every creative before more dials.",
-      "project": "insurance",
-      "area": "Compliance & Legal"
+      "icon": "🔧",
+      "title": "“Pipeline broken” was a false read — the V2 path works; fix the alarm, dedupe, and dual-recipient delivery",
+      "who": "Chitraksh",
+      "detail": "Six straight watchdog runs cried “pipeline break,” but the 10:40Z run found the cause: the capture email switched to a NEW template (“[Lead 80] Mary Grossman, NV … no consent, call by hand”), so the old exact-subject check (“NEW LEAD CAPTURED IN $300 PLAN”) matched nothing. The form→sheet→n8n→email path actually works — today’s score-100 TX test proves capture→book→confirm end-to-end — but it (a) delivered to hanfluxai@ only, not manifestdestiny247@, and (b) can’t be trusted run-to-run. Fix the subject match + dedupe, restore both recipients, and wire a real CRM booked-call source so cost-per-booked-call finally computes (still blank on every run).",
+      "project": "hq",
+      "area": "Instrumentation"
     }
   ],
   "blockers": [
     {
-      "label": "Cloud→Mac bridge down since Aug 28",
+      "label": "$300 Plan paused ~a full day — V2 day 3/10, $70.07/$200 spent, $0 since 9/6 10:47 AM PT",
+      "scope": "Frankie (confirm + resume) · Chitraksh (consent fix)",
+      "detail": "Manual pause via Power Editor, no kill gate fired — ~1 min after the first V2 lead flagged “no TCPA consent.” ~$130 of the tranche and ~a day of the 10-day window unspent. Unblock: Frankie confirms it is a deliberate hold and names the resume trigger; Chitraksh fixes consent capture so it can restart clean."
+    },
+    {
+      "label": "Compliance 0/7 while a live call books for Fri 9/11 — b7 (CA license # on 5 creatives) + b3 (TX reg) unfiled",
+      "scope": "Frankie supplies NPN + CA license # · Chitraksh writes the state rule",
+      "detail": "The no-consent lead that tripped the pause is the funnel working; the gap is upstream. A score-100 TX test booked Frankie for Fri 9/11 4:30 PM CDT. Unblock b7: license # on all 5 active creatives + landing page. Unblock b3: open the TX telephone-solicitor registration. Or scope dialing to NV/ID only until both are placed."
+    },
+    {
+      "label": "Watchdog contradicts itself + under-delivers — 6 “pipeline broken” runs were a stale exact-subject match; capture email reached only 1 of 2 recipients",
       "scope": "Chitraksh",
-      "detail": "Meeting-ingest dark 18 days. Cofounder-sweep dark. All Mac-writing tasks in blackout. Aug 28 v15.17 undeployed. Rebuild both as LOCAL tasks and keep Mac awake in the window."
+      "detail": "The V2 path works (new template “[Lead 80]… no consent”); the alarm didn’t. Cost-per-booked-call still uncomputable — no CRM booked-call source on any run. Unblock: fix the subject/dedupe logic, restore dual-recipient delivery to hanfluxai@ + manifestdestiny247@, and wire the booked-call source."
     },
     {
-      "label": "Compliance gate 0/7",
-      "scope": "Shared",
-      "detail": "Real leads arriving Aug 27. b3 (TX telephone-solicitor, $200 + $10K bond) + b7 (CA producer license # in every email) are the two that bite now. ATTOM key needs refresh; b5 (data-broker regs CA/TX) still pending; counsel red-team queued."
-    },
-    {
-      "label": "Meta ad account unconfirmed & uninstrumented",
-      "scope": "Frankie",
-      "detail": "Unlisted campaign '$300 Plan' (120247635234630018) running at $25/day (100% of account spend) outside watchdog. Instant-form route the runbook shelved. No Analytics gate; lead notification count (7 emails, 4 distinct names) disagrees with Meta count (2 leads)."
+      "label": "“honest broker” form + budget drift — form target unconfirmed, live budget $25/day vs stated $20/day",
+      "scope": "Frankie (confirm/pause) · Chitraksh (budget)",
+      "detail": "“honest broker” ($5.82 spend) can’t be confirmed via API to point at the V2 (OTP) form — assume its leads may bypass the consent gate until confirmed. Live daily budget is $25/day CBO vs the stated $20/day — pick one. Kill candidate “New Leads Ad …610018” ($32.15, 0 leads) is review-only behind the no-touch learning window through Tue 9/8 1 PM PT."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "240"
+      "v": "240 · PM · Mon (Frankie’s morning)"
     },
     {
-      "k": "Open tasks",
-      "v": "30"
+      "k": "$300 Plan",
+      "v": "PAUSED by Frankie 9/6 10:47 AM PT · V2 day 3/10 · $70.07/$200 tranche · $0 since"
     },
     {
-      "k": "Lanes",
-      "v": "3"
+      "k": "Funnel",
+      "v": "Capture→book→confirm VERIFIED — score-100 TX test booked Frankie Fri 9/11 4:30 PM CDT"
+    },
+    {
+      "k": "Lifetime",
+      "v": "$275.46 · 22 leads · CPL $12.52 · 0/7 compliance · booked-call: no CRM source"
     }
   ],
   "lanes": [
@@ -394,29 +403,33 @@
   ],
   "cofounder": {
     "date": "2026-09-07",
-    "scanned_at": "2026-09-07T00:38:00.000Z",
+    "scanned_at": "2026-09-07T14:06:41.161Z",
     "done": [
       {
-        "what": "Checked meeting-ingest status: NOT RUN since Aug 20 (18 days stale). Date in meeting_brief_lines.json is 2026-08-20, blocking transcript ingest. Do not proceed with dashboard sweep until bridge is rebuilt.",
+        "what": "PM brief fired on-cron with disk + Gmail access — read 40+ threads incl. the full FA-ADS watchdog series (Sep 5→7) and the lead/booking notifications. This run reached the mailbox; the AM’s “Gmail MCP blocked” note did not apply today.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Inbox scan blocked: Gmail MCP requires OAuth auth, unavailable in non-interactive automated mode.",
+        "what": "Reconciled the 6-run “pipeline broken” alarm against the 10:40Z watchdog scorecard: the V2 form→sheet→n8n→email path works — it switched template (“[Lead 80]… no consent”) so the old exact-subject check missed it. Not a pipeline break; an alert + dedupe bug + single-recipient delivery.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Dashboard push blocked: Cloud→Mac workspace bridge failure persists per Aug 28 memory. Last dashboard update was 2026-08-28 (v15.17). Do not push without manual authorization.",
+        "what": "Confirmed the $300 Plan is PAUSED (Frankie, manual, 9/6 10:47 AM PT, $0 spend since) and captured the authoritative V2 ($70.07) + lifetime ($275.46 / 22 leads / CPL $12.52) figures. Touched no spend, ads, or sends — outside autonomous authority by rule.",
         "who": "CTO-Claude"
       }
     ],
     "waiting": [
       {
-        "what": "BLOCKER — Rebuild meeting-ingest as LOCAL task. Cloud→Mac bridge is down; every Mac-writing task (meeting ingest, AM/PM brief, cofounder sweep) has been dark since Aug 28. Meeting data now 18 days stale.",
-        "who": "Chitraksh"
+        "what": "Confirm the pause is a deliberate hold and name the resume trigger — day 3 of 10, ~$130 of the $200 tranche and ~a day of the window unspent.",
+        "who": "Frankie"
       },
       {
-        "what": "TOP — Compliance gate still 0/7 (b3 TX reg, b7 CA producer license). Consumer outreach live-fire since Aug 27; leads being dialed by hand. Requires immediate NPN + CA license # to paper the creatives.",
-        "who": "Frankie"
+        "what": "Close b3 (TX telephone-solicitor reg) + b7 (CA license # on the 5 live creatives) before the Fri 9/11 booked call becomes a real dial.",
+        "who": "Shared"
+      },
+      {
+        "what": "Fix the watchdog subject/dedupe + restore dual-recipient delivery (hanfluxai@ + manifestdestiny247@); wire a CRM booked-call source so cost-per-booked-call computes.",
+        "who": "Chitraksh"
       }
     ]
   }
