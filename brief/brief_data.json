@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-09-08T14:07:42.010Z",
-  "date_label": "Tue · Sep 8",
-  "edition": "PM",
-  "day_number": 241,
-  "phase": "Phase V2 · day 4 of 10 · ACTIVE",
-  "headline": "Sep 8 · PM: both real leads the $300 campaign has ever produced — Nadine (TX) and now Linda Hansink (WA) — landed OUTSIDE Frankie's licensed states. The funnel works but points at the wrong map. A third lead never reached the inbox at all, n8n is erroring, and compliance is still 0/7 on day 9.",
-  "source": "Live Gmail sweep (FA-ADS watchdog + lead pipeline, 29 threads, Sep 7 23:08Z → Sep 8 12:08Z). index.html Daily Tasks board is frozen at the May 28 board and was not used for lane content. AM edition verified published to Vercel (live brief_data.json = AM / day 241 / gen 01:09Z).",
+  "generated_at": "2026-09-09T01:16:44.944Z",
+  "date_label": "Wed · Sep 9",
+  "edition": "AM",
+  "day_number": 242,
+  "phase": "Launch Week close",
+  "headline": "Sep 9 · The $200 V2 tranche is at its halfway mark — day 5 of 10, $66.67 spent — and has bought one attributable lead. The two real ones sit untouched outside Frankie's licensed states, and the third is still lost behind a lead form nobody connected to the sheet. Day 10 is a decision date being funded with data the funnel isn't capturing.",
+  "source": "index.html · Daily Tasks board (May 28 (Thu))",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -71,74 +71,79 @@
   ],
   "spotlight": [
     {
-      "icon": "📍",
-      "title": "Both real V2 leads are out of Frankie's licensed area — it's a targeting problem now",
+      "icon": "🧭",
+      "title": "Half the tranche is gone and it is still buying out-of-area leads",
       "who": "Frankie",
-      "detail": "Linda Hansink (WA, +1 425-830-5314, lhansink@yahoo.com) came through the $300 Plan form at 10:03 PM CT Sep 7 — flagged \"WA OUT OF LICENSED AREA,\" exactly like Nadine Dickens (TX, \"NO ONE CAN\") the day before. That's two-for-two: every authentic lead the campaign has produced sits outside the states you can write in. Narrow the form/campaign geo to your licensed states before spending more, and decide refer-out-or-drop on both by hand.",
+      "detail": "V2 is day 5 of 10 with $66.67 of $200 spent ($2.07 yesterday, lifetime $309.36) — and both real leads it has produced, Nadine Dickens (TX, \"NO ONE CAN\") and Linda Hansink (WA, \"OUT OF LICENSED AREA\"), are in states you cannot write in. Neither has been referred out or dropped in writing. Narrow the form/campaign geo to your licensed states today: every dollar past this point buys the same unusable lead, and the day-10 verdict on this tranche is only as honest as the map it was pointed at.",
       "project": "insurance",
       "area": "Meta Ads"
     },
     {
       "icon": "🔌",
-      "title": "A third lead never reached the inbox — n8n is dropping traffic",
+      "title": "The missing lead is a form-to-sheet mapping, not an n8n outage — that is a small fix",
       "who": "Chitraksh",
-      "detail": "The watchdog repeated it all morning (04:09, 07:08, 12:08 Z): a Sep 6 \"Gap math new\" $300-plan lead reached Meta but triggered ZERO n8n runs — the automation never fired for it. Plus 4 failed runs + a 10-hour quiet gap Sep 7. The new form almost certainly has a form ID the capture webhook / \"Meta $300 Plan Leads\" Sheet was never subscribed to. Wire it and prove it with one real submit.",
+      "detail": "The 19:07Z watchdog run narrowed it: n8n's W1 Lead Ingest DID execute successfully around the Sep 6 \"Gap math new\" lead — no crash. So the lead was never handed to it. The V3 lead form is almost certainly not subscribed to the \"Meta $300 Plan Leads\" Google Sheet. Connect the form, then prove it with one real submit end-to-end. Until that closes, Meta counts 3 leads since Sep 5 and the inbox has 2 — you cannot report a cost per lead you cannot count.",
       "project": "hq",
       "area": "Lead pipeline"
     },
     {
       "icon": "🛡",
-      "title": "Compliance still 0/7 — and now it has real names attached",
+      "title": "Compliance 0/7 on day 10 of live dialing — and now it has names",
       "who": "Frankie",
-      "detail": "b3 (TX telephone-solicitor registration) and b7 (CA producer license #) are still open on day 9 of live dialing. The gap used to be abstract; now two real people (Nadine, Linda) are sitting in the funnel it blocks. Close both gates or write the one-line rule scoping who may be dialed — the campaign is barely spending ($0.60 today), so this is the cheapest possible window to fix it.",
+      "detail": "b3 (TX telephone-solicitor registration) and b7 (CA producer license # disclosure) are still open, unchanged since Aug 27 when the first real consumer lead landed. Two named people are now sitting behind that gate while every notification the system sends says \"call fast.\" Spend is trivial right now ($2.07 yesterday) — this is the cheapest window you will ever get to close the gates or put the one-line rule in writing about who may be dialed and by whom.",
       "project": "insurance",
       "area": "Compliance & Legal"
     }
   ],
   "blockers": [
     {
-      "label": "Out-of-area leads",
+      "label": "Geo — campaign points at the wrong map",
       "scope": "Frankie",
-      "detail": "Both real V2 leads flagged out of licensed area: Nadine Dickens (TX, \"NO ONE CAN\") and Linda Hansink (WA, lhansink@yahoo.com). Re-target the form to your licensed states; refer-out-or-drop both before any contact attempt."
+      "detail": "Both real V2 leads out of licensed area (Nadine Dickens TX, Linda Hansink WA). Re-target the form/campaign to licensed states, and decide refer-out-or-drop on both in writing before any contact."
     },
     {
-      "label": "Capture pipeline broken",
+      "label": "V3 form not wired to the sheet",
       "scope": "Chitraksh",
-      "detail": "A Sep 6 \"Gap math new\" $300-plan lead triggered zero n8n runs; 4 failed runs + a 10hr quiet gap Sep 7. The new form ID isn't subscribed to the webhook / Google Sheet. Wire it and prove with one real submit."
+      "detail": "n8n ran fine — the Sep 6 \"Gap math new\" lead never reached it. Subscribe the V3 lead form to the \"Meta $300 Plan Leads\" Sheet / capture webhook and verify with one live submit. 3 Meta leads vs 2 inbox emails since Sep 5."
     },
     {
       "label": "Compliance 0/7",
       "scope": "Frankie",
-      "detail": "TX telephone-solicitor registration (b3) + CA producer license # (b7) still open — day 9 of live dialing, now with two real (if out-of-area) leads behind the gate."
+      "detail": "b3 (TX telephone-solicitor registration, $200 + $10K bond) and b7 (CA producer license #, Cal Ins Code 1725.5(c)) still open on day 10 of live dialing, with two real names in the funnel."
     },
     {
-      "label": "Founder mailbox silent 11+ days",
+      "label": "Day-10 decision has no measurement behind it",
       "scope": "Shared",
-      "detail": "No manifestdestiny247 mail since Aug 28, though Frankie paused (Sep 6 10:47 AM PT) and resumed (Sep 7 8:46 AM PT) the campaign himself — decisions are happening in-tool, not in writing."
+      "detail": "V2 closes at $200 / Sep 15. Booked calls from real ad leads: still zero measured — the CRM sync has been down since Aug 27 and the lead count is disputed between Meta, the inbox and the digest. Decide now what evidence would count as \"keep going\"."
     },
     {
-      "label": "Dashboard + meeting-ingest frozen",
+      "label": "Founder mailbox silent 12 days",
+      "scope": "Shared",
+      "detail": "No manifestdestiny247 mail since Aug 28, though Frankie is clearly active in Ads Manager (paused \"8 doors\" during ad edits Sep 7). Decisions are happening in-tool with no written trail."
+    },
+    {
+      "label": "Autonomous lane wrote nothing again",
       "scope": "Chitraksh",
-      "detail": "index.html still v15.17 (11 days, since Aug 28); meeting_brief_lines.json still Aug 20 (19 days). Today's AM brief DID reach Vercel, so the cloud→Mac bridge is intermittently up — rebuild both as LOCAL tasks and keep the Mac awake."
+      "detail": "The cofounder sweep fired on-cron at 00:33Z today but cofounder_log.json is still Sep 7 — fired-but-did-not-write, the exact bridge signature. index.html frozen at v15.17 (12 days); meeting_brief_lines.json still Aug 20 (20 days). Rebuild both as LOCAL tasks."
     },
     {
       "label": "EIN",
       "scope": "Shared",
-      "detail": "~72 days silent since the Jun 28 re-fax. IRS line 1-202-488-3100, RedFax 510-497-1224 — 8–11 AM PT window."
+      "detail": "~73 days silent since the Jun 28 re-fax. IRS 1-202-488-3100, RedFax 510-497-1224 — 8–11 AM PT window."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "241"
+      "v": "242"
     },
     {
       "k": "V2 spend",
-      "v": "$65.73 / $200 (33%, day 4 of 10)"
+      "v": "$66.67 / $200 (33%, day 5 of 10)"
     },
     {
       "k": "Lifetime spend",
-      "v": "$307.85"
+      "v": "$309.36"
     },
     {
       "k": "Compliance",
@@ -153,36 +158,36 @@
       "accent": "emerald",
       "tasks": [
         {
-          "lead": "Re-target the $300 form to your licensed states",
-          "detail": "Two-for-two real leads (Nadine TX, Linda WA) landed OUT of area — the campaign geo is pointing at states you can't write in. Narrow it before spending more of the tranche.",
-          "tag": "OUT OF AREA",
+          "lead": "Narrow the $300 campaign geo to your licensed states",
+          "detail": "Two-for-two real leads landed out of area. Half the tranche is already spent buying them. Fix the targeting before the second half goes the same way.",
+          "tag": "DO FIRST",
           "tagType": "red",
           "project": "insurance",
           "area": "Meta Ads"
         },
         {
-          "lead": "Refer-out-or-drop: Nadine Dickens + Linda Hansink",
-          "detail": "Both real, both unworkable as-is (TX \"NO ONE CAN\", WA \"OUT OF LICENSED AREA\"). Decide in writing before anyone dials — don't call first and ask later.",
+          "lead": "Refer-out-or-drop Nadine Dickens (TX) + Linda Hansink (WA) — in writing",
+          "detail": "Both real, both unworkable as-is, both still untouched two days on. Write the decision down before anyone dials; do not call first and ask later.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
           "area": "Meta Ads"
         },
         {
-          "lead": "Close b3 (TX) + b7 (CA) compliance gates",
-          "detail": "NPN + CA producer license # + TX telephone-solicitor registration — day 9 of live dialing without them, now with real names in the funnel.",
+          "lead": "Close b3 (TX registration) + b7 (CA producer license #)",
+          "detail": "Day 10 of live consumer dialing with the gate at 0/7. Send the NPN + CA license # and the TX filing status — or write the one-line rule scoping who may be dialed until they clear.",
           "tag": "COMPLIANCE 0/7",
           "tagType": "red",
           "project": "insurance",
           "area": "Compliance & Legal"
         },
         {
-          "lead": "Reply to the brief once, in writing",
-          "detail": "11+ days without a mailbox reply while active in Ads Manager — a one-line answer on b3/b7 + the geo fix unblocks Chitraksh.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Ops"
+          "lead": "Name the day-10 verdict criteria before you get there",
+          "detail": "The tranche closes Sep 15. Say now, in one line, what result would justify a third tranche — otherwise the decision gets made on a feeling and $200.",
+          "tag": "SEP 15",
+          "tagType": "amber",
+          "project": "insurance",
+          "area": "Meta Ads"
         }
       ]
     },
@@ -190,103 +195,103 @@
       "key": "chitraksh",
       "name": "Chitraksh",
       "role": "CTO · Build",
-      "accent": "cyan",
+      "accent": "sky",
       "tasks": [
         {
-          "lead": "Wire the new $300 form to the capture webhook",
-          "detail": "The Sep 6 \"Gap math new\" lead triggered zero n8n runs; the new form ID isn't subscribed to the webhook / \"Meta $300 Plan Leads\" Sheet. Fix it and prove with one real submit.",
-          "tag": "PIPELINE",
-          "tagType": "orange",
-          "project": "hq",
-          "area": "Lead pipeline"
-        },
-        {
-          "lead": "Filter QA test leads out of the digest",
-          "detail": "Sep 7 digest counted 8 new; ≥6 are internal tests (Chitraksh ×4, PREFLIGHT, probes, +template alias \"Larry\"). Booking-rate/SLA numbers are meaningless until these are excluded.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Lead pipeline"
-        },
-        {
-          "lead": "Rebuild meeting-ingest + brief lanes as LOCAL",
-          "detail": "meeting_brief_lines.json frozen Aug 20 (19 days), index.html v15.17 (11 days). AM brief DID publish today — bridge is intermittent, so make these local and keep the Mac awake.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Dashboard / Infra"
-        },
-        {
-          "lead": "IRS EIN call rotation",
-          "detail": "~72 days silent, 8–11 AM PT window; certified-mail track running parallel.",
-          "tag": "EIN BLOCKER",
+          "lead": "Subscribe the V3 lead form to the \"Meta $300 Plan Leads\" Sheet",
+          "detail": "Confirmed narrow diagnosis: n8n W1 ran clean, so the lead never arrived. Wire the form, then prove it with one real end-to-end submit.",
+          "tag": "DO FIRST",
           "tagType": "red",
+          "project": "hq",
+          "area": "Lead pipeline"
+        },
+        {
+          "lead": "Reconcile the three lead counters",
+          "detail": "Meta says 3 since Sep 5, the inbox has 2, the digest reads its own number. Pick one source of truth so cost-per-lead and cost-per-booked-call become computable before Sep 15.",
+          "tag": "",
+          "tagType": "",
+          "project": "hq",
+          "area": "Lead pipeline"
+        },
+        {
+          "lead": "Rebuild meeting-ingest + cofounder sweep as LOCAL tasks",
+          "detail": "The sweep fired on-cron at 00:33Z today and wrote nothing — fired-but-did-not-write again. Meeting data 20 days stale, dashboard 12 days at v15.17.",
+          "tag": "BRIDGE",
+          "tagType": "amber",
+          "project": "hq",
+          "area": "Automation"
+        },
+        {
+          "lead": "Restore the Meta → CRM sync",
+          "detail": "Down since Aug 27. Booked calls from real ad leads is the deciding metric for the tranche and it has never once been measured.",
+          "tag": "",
+          "tagType": "",
           "project": "insurance",
-          "area": "Compliance & Legal"
+          "area": "Meta Ads"
         }
       ]
     },
     {
-      "key": "ctoclaude",
+      "key": "claude",
       "name": "CTO-Claude",
       "role": "Autonomous",
       "accent": "violet",
       "tasks": [
         {
-          "lead": "PM sweep: live Gmail read (Sep 7 23:08Z → Sep 8 12:08Z, 29 threads)",
-          "detail": "Latest watchdog 12:08Z: V2 $65.73/$200 (33%), lifetime $307.85, $0.60 today, campaign ACTIVE, spend within all limits. New real lead Linda Hansink (WA) landed 03:04Z.",
-          "tag": "",
-          "tagType": "",
-          "project": "hq",
-          "area": "Ops"
-        },
-        {
-          "lead": "Flagged: 2 of 2 real leads out of area; a 3rd lost in the pipeline",
-          "detail": "Read the raw captures, not the digest count — both real leads (Nadine TX, Linda WA) are flagged out-of-area, and a Sep 6 lead reached Meta but never fired n8n.",
+          "lead": "Watch the V2 tranche daily to the Sep 15 line",
+          "detail": "Track spend, lead attribution and the inbox-vs-Meta gap each edition; flag the moment the second half starts buying the same out-of-area result.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
-          "area": "Lead pipeline"
+          "area": "Meta Ads"
         },
         {
-          "lead": "Verified AM edition published (bridge up this morning)",
-          "detail": "Live brief_data.json = AM / day 241 / Sep 8 / gen 01:09Z — unlike Sep 7 AM, today's AM reached Vercel. index.html left read-only per project rule (still v15.17).",
+          "lead": "Hold the compliance day-count visible every edition",
+          "detail": "Day 10 today. It does not move off the front page until b3 and b7 close or a written dialing rule replaces them.",
+          "tag": "",
+          "tagType": "",
+          "project": "insurance",
+          "area": "Compliance & Legal"
+        },
+        {
+          "lead": "Publish + verify the brief, take no outward action",
+          "detail": "No lead contact, no campaign/geo/budget change, no compliance claim cleared, no spend — all of those are the founders’ calls.",
           "tag": "",
           "tagType": "",
           "project": "hq",
-          "area": "Dashboard / Infra"
+          "area": "Daily Brief"
         }
       ]
     }
   ],
   "cofounder": {
-    "date": "2026-09-08",
-    "scanned_at": "2026-09-08T14:07:42.010Z",
+    "date": "2026-09-09",
+    "scanned_at": "2026-09-09T01:16:44.944Z",
     "done": [
       {
-        "what": "PM live Gmail sweep (29 threads, Sep 7 23:08Z → Sep 8 12:08Z) — read the latest watchdog run (12:08Z) plus the new lead captures.",
+        "what": "AM live Gmail sweep (Sep 7 13:50Z → Sep 8 22:09Z) — read every watchdog run plus both lead captures and the Sep 8 digest.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Confirmed campaign ACTIVE, spend flat: V2 $65.73/$200 (33%), lifetime $307.85, only $0.60 today; Frankie resumed it himself Sep 7 8:46 AM PT.",
+        "what": "Narrowed the lost-lead diagnosis: the 19:07Z run states n8n W1 Lead Ingest executed successfully — so it is a V3 form → Google Sheet mapping gap, not a workflow failure. Supersedes yesterday’s \"n8n is dropping traffic\" framing.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Read the Linda Hansink (WA) capture in full: \"WA OUT OF LICENSED AREA\", lhansink@yahoo.com — the second real V2 lead, again out of area.",
+        "what": "Spend read live: $2.07 on Sep 8, V2 $66.67 of $200 (day 5 of 10), lifetime $309.36; campaign ACTIVE, no pause limit near. Frankie paused the \"8 doors\" ad himself during edits.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Verified today's AM edition published to Vercel (live brief_data.json = AM / day 241 / gen 01:09Z); index.html left untouched per the read-only rule.",
+        "what": "Verified the cofounder lane fired on-cron 00:33:24Z today yet cofounder_log.json is still dated Sep 7 — lastRunAt advanced, artifact did not. Logged as the bridge signature, not a scheduler fault.",
         "who": "CTO-Claude"
       }
     ],
     "waiting": [
       {
-        "what": "TOP — Compliance 0/7 (b3 TX, b7 CA) AND geo-targeting: both real leads are out of licensed area. Frankie: close the gates + narrow the form geo, or write the one-line dialing rule.",
+        "what": "TOP — Frankie: narrow the campaign geo to licensed states, decide refer-out-or-drop on Nadine + Linda in writing, and close b3/b7 (day 10 at 0/7).",
         "who": "Frankie"
       },
       {
-        "what": "BLOCKER — Chitraksh: wire the new $300 form ID to the capture webhook/Sheet (a Sep 6 lead was lost), and rebuild meeting-ingest + dashboard push as LOCAL (19d / 11d stale).",
+        "what": "BLOCKER — Chitraksh: subscribe the V3 form to the \"Meta $300 Plan Leads\" Sheet and prove it with one live submit; then rebuild meeting-ingest + cofounder sweep as LOCAL tasks.",
         "who": "Chitraksh"
       }
     ]
