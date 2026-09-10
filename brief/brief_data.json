@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-09-10T01:20:31.019Z",
+  "generated_at": "2026-09-10T14:11:55.667Z",
   "date_label": "Thu · Sep 10",
-  "edition": "AM",
+  "edition": "PM",
   "day_number": 243,
   "phase": "Launch Week close",
-  "headline": "Sep 10 · V2 is half-spent on the wrong ads — the two new creatives have taken $0 in two days while 81% of yesterday's money went to an old V1 ad — the Sep 6 lead is still lost after four days and ten alerts, and Frankie's own overnight test just found a second bug: leads that DO land get no welcome email. Compliance stays 0/7 on day 14 of live dialing.",
-  "source": "index.html · Daily Tasks board (May 28 (Thu)) + live watchdog/digest sweep Sep 9 15:10Z–Sep 10 01:08Z + ORAYA DATA block v15.18",
+  "headline": "Sep 10 PM · The lost Sep 6 lead now has a name — Mary Grossman (NV) — and she asked for a call by tomorrow. The cause isn't the Google Sheet everyone's re-flagged for four days: the automation ran fine and silently marked a paying lead “not worth alerting.” Amanda's welcome-email bug still hasn't fired hers either, and V2 keeps feeding an old V1 ad — lifetime climbed $26 since morning while the two new creatives stay near $0. Compliance 0/7, day 14.",
+  "source": "index.html · ORAYA DATA block v15.18 + live watchdog/digest sweep Sep 10 01:08Z–13:08Z (8 FA-ADS runs, Sep 9 digest)",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -36,84 +36,124 @@
     }
   },
   "project_summary": [
-    { "key": "insurance", "label": "Insurance", "code": "P2", "color": "#2563eb", "blurb": "AI life-insurance funnel: data → outreach → AI calls → licensed close.", "count": 16 },
-    { "key": "realestate", "label": "Real Estate", "code": "P3", "color": "#16a34a", "blurb": "Investor / seller real-estate lead engine (next project, in design).", "count": 2 },
-    { "key": "hq", "label": "HQ / Infra", "code": "HQ", "color": "#7c3aed", "blurb": "The dashboard, automations & AI agents that run the company itself.", "count": 9 },
-    { "key": "ops", "label": "Ops", "code": "OPS", "color": "#64748b", "blurb": "Money, hardware, family & day-to-day running of the business.", "count": 3 }
+    {
+      "key": "insurance",
+      "label": "Insurance",
+      "code": "P2",
+      "color": "#2563eb",
+      "blurb": "AI life-insurance funnel: data → outreach → AI calls → licensed close.",
+      "count": 16
+    },
+    {
+      "key": "realestate",
+      "label": "Real Estate",
+      "code": "P3",
+      "color": "#16a34a",
+      "blurb": "Investor / seller real-estate lead engine (next project, in design).",
+      "count": 2
+    },
+    {
+      "key": "hq",
+      "label": "HQ / Infra",
+      "code": "HQ",
+      "color": "#7c3aed",
+      "blurb": "The dashboard, automations & AI agents that run the company itself.",
+      "count": 9
+    },
+    {
+      "key": "ops",
+      "label": "Ops",
+      "code": "OPS",
+      "color": "#64748b",
+      "blurb": "Money, hardware, family & day-to-day running of the business.",
+      "count": 3
+    }
   ],
   "spotlight": [
     {
-      "icon": "💸",
-      "title": "V2 budget is buying the wrong ads — fix the allocation, don't just watch it",
+      "icon": "📞",
+      "title": "The lost Sep 6 lead is a real person — Mary Grossman — and she wants a call by tomorrow",
       "who": "Frankie",
-      "detail": "Two days running, the four new V2 creatives have barely spent: \"8 cups\" and \"captive agent\" sit at $0.00 total. Yesterday's $5.76–$13.68 went 81% to \"honest broker\" — an old V1 ad, not the test you're trying to read — and \"honest broker - Copy\" is still rejected by Meta and hasn't been fixed or deleted. Day 6 of 10, $68.75 of $200 spent, and most of it isn't buying the experiment you think it is. Decide today: fix delivery on the new ads or call the test now, before the back half repeats the front half.",
+      "detail": "The four-day “missing lead” now has a name, a state and a deadline: Mary Grossman (NV) asked for an appointment around Sep 11 — tomorrow — and nobody has reached her. The diagnosis also changed today: the watchdog checked the automation directly and it ran successfully, then silently marked her “not worth alerting” — an alert-suppression bug, not the form→sheet wiring flagged 10+ times since Sep 7. Two calls to make today: (1) whether Mary can be contacted at all with compliance still 0/7 and NV outside licensed area, and (2) point the fix at the “alert admin” step, not the sheet.",
       "project": "insurance",
-      "area": "Meta Ads"
-    },
-    {
-      "icon": "🔌",
-      "title": "The Sep 6 lead is still lost — four days, ten-plus alerts, same unfixed wire",
-      "who": "Chitraksh",
-      "detail": "Meta has counted 3 leads since Sep 5; only 2 ever reached the inbox. The missing one is from the newest ad, \"Gap math new,\" and the watchdog's diagnosis hasn't changed since it was first narrowed: the V3 lead form is almost certainly not connected to the \"Meta $300 Plan Leads\" Google Sheet. This is a five-minute check that has now been repeated in at least ten separate watchdog emails since Sep 7 — the reporting loop works, the fixing loop doesn't. Wire it and prove it with one real submit today.",
-      "project": "hq",
       "area": "Lead pipeline"
     },
     {
       "icon": "🐛",
-      "title": "Frankie's own test just found bug #2: leads that DO land get no welcome email",
+      "title": "Amanda's welcome-email bug is still open — her lead got nothing and still isn't called",
       "who": "Chitraksh",
-      "detail": "Overnight, Frankie ran an end-to-end test on his own email — lead \"AMANDA\" (L-YTCLT0-XC) reached the CRM cleanly at 04:31:59Z, but the W1 workflow never fired the welcome email, and the lead SLA-breached at 83 minutes untouched. This is a different failure from the Sep 6 lead: that one never reached the pipeline at all; this one reached it and the pipeline still dropped it. Two independent break points now confirmed in the same funnel. Fix the welcome-email step and re-submit to prove it, the same way you'll prove the sheet fix.",
+      "detail": "Frankie's own overnight end-to-end test (lead AMANDA, L-YTCLT0-XC) reached the CRM clean at 04:32Z, but the W1 Lead Ingest run logged “success” while never sending the welcome email — SLA breach, and as of 04:06Z she still hadn't been called by hand. This is the second, distinct break point: the funnel drops leads AFTER capture, not only at the form. Open the W1 run internals — the step that reports success without sending — fix it, and re-submit to prove it, the same way you'll prove the alert-suppression fix.",
       "project": "insurance",
       "area": "Calling (Voice AI)"
+    },
+    {
+      "icon": "💸",
+      "title": "V2 is still feeding the old ad — lifetime jumped $26 since morning, the test barely $2",
+      "who": "Frankie",
+      "detail": "Since the AM brief, lifetime spend climbed $325.51 → $351.61 (+$26) while V2 moved only $68.75 → $70.79 (+$2) — almost all the new money went to the old V1 “honest broker” ad again, not the four new creatives you're trying to read (“8 cups” / “captive agent” still ~$0). “honest broker - Copy” is still stuck in Meta review (flagged again 05:07Z). Day 6 of 10 — fix delivery on the new ads or call the test now; don't fund the back half at the same broken split.",
+      "project": "insurance",
+      "area": "Meta Ads"
     }
   ],
   "blockers": [
     {
-      "label": "V2 spend is going to the wrong ad",
+      "label": "Mary Grossman waiting since Sep 6 — decision due today",
       "scope": "Frankie",
-      "detail": "\"8 cups\" + \"captive agent\" at $0 for two days; 81% of Sep 9 spend went to old V1 ad \"honest broker.\" \"honest broker - Copy\" still Meta-rejected — fix or delete it today."
+      "detail": "Real NV lead asked for a call ~Sep 11 (tomorrow); still uncontacted. Contact is gated by compliance 0/7 and NV licensing — decide call / refer / hold in writing before her window passes. Root cause is an alert-suppression bug (see Chitraksh), not the sheet."
     },
     {
-      "label": "Sep 6 lead still unrecovered",
+      "label": "Alert-suppression bug — the real cause of the lost lead",
       "scope": "Chitraksh",
-      "detail": "V3 \"Gap math new\" form likely not wired to the \"Meta $300 Plan Leads\" Sheet. Same fix flagged ≥10 times since Sep 7 — connect it and prove with one live submit."
+      "detail": "Watchdog checked the automation: it ran successfully and marked Mary's lead “not worth alerting.” Fix the “alert admin” step and prove with a live submit. This supersedes the four days of “form not wired to the Sheet” framing."
     },
     {
-      "label": "Welcome-email / SLA bug (new)",
+      "label": "Welcome-email / SLA bug still open",
       "scope": "Chitraksh",
-      "detail": "AMANDA test lead (L-YTCLT0-XC, 04:31:59Z Sep 9) reached the CRM but W1 never sent the welcome email — SLA breach at 83 min. Separate break point from the Sep 6 lead; fix and re-submit to prove."
+      "detail": "AMANDA (L-YTCLT0-XC) reached the CRM 04:32Z but W1 logged “success” with no welcome email sent — SLA breach, still uncalled at 04:06Z. A separate defect from the alert bug; fix the W1 send step and re-submit to prove."
     },
     {
-      "label": "Compliance 0/7 — day 14 of live dialing",
+      "label": "V2 budget still going to the old ad",
       "scope": "Frankie",
-      "detail": "b3 (TX telephone-solicitor registration) + b7 (CA producer license #) still open. Nadine Dickens (TX) and Linda Hansink (WA) remain the two real, out-of-area leads sitting behind this gate, untouched."
+      "detail": "Lifetime +$26 since AM vs V2 +$2 — new creatives ~$0; “honest broker - Copy” still Meta-rejected. Day 6 of 10: fix delivery or call the test."
     },
     {
-      "label": "Booking rate reads 0%, two days running",
+      "label": "Compliance 0/7 — day 14, three real out-of-area leads behind the gate",
+      "scope": "Frankie",
+      "detail": "b3 (TX telephone-solicitor reg) + b7 (CA producer license #) still open. Three real leads — Nadine Dickens (TX), Linda Hansink (WA), Mary Grossman (NV) — sit behind the gate; Mary wants a call tomorrow. Send NPN / CA # / TX status, or write the one-line dialing rule."
+    },
+    {
+      "label": "Booking rate 0%, still measured",
       "scope": "Shared",
-      "detail": "Sep 9 digest: 1 new, 0 booked, 3 SLA breached, 0% booking rate, median reply 135 min. The deciding metric is no longer unmeasurable — it's measured, and it's zero."
+      "detail": "Sep 9 digest: 1 new, 0 booked, 3 SLA breached, 0% booking rate, median reply 135 min. No new digest today — the deciding metric stays measured and reads zero."
     },
     {
       "label": "Founder mailbox silent 13 days",
       "scope": "Shared",
-      "detail": "No manifestdestiny247 mail since Aug 28, though Frankie is active in Ads Manager (paused \"8 doors\" himself Sep 8, 2:23 AM PT). Decisions are happening in-tool with no written trail."
+      "detail": "No manifestdestiny247 mail since Aug 28, though Frankie is active in Ads Manager. Decisions are happening in-tool with no written trail — today's Mary / refer-out calls need to be written down."
     },
     {
       "label": "Meeting ingest + autonomous lane still down",
       "scope": "Chitraksh",
-      "detail": "00:03Z Sep 10 run again — could not reach the Mac workspace. Meeting data now 21 days stale (Aug 20); rebuild ingest + cofounder sweep as LOCAL tasks, not cloud-dependent."
-    },
-    {
-      "label": "EIN",
-      "scope": "Shared",
-      "detail": "~74 days silent since the Jun 28 re-fax. IRS 1-202-488-3100, RedFax 510-497-1224 — 8–11 AM PT window."
+      "detail": "00:03Z Sep 10 run failed again — no Mac bridge; meeting data 21 days stale (Aug 20). Rebuild ingest + cofounder sweep as LOCAL tasks, not cloud-dependent."
     }
   ],
   "metrics": [
-    { "k": "Day", "v": "243" },
-    { "k": "V2 spend", "v": "$68.75 / $200 (34%, day 6 of 10)" },
-    { "k": "Lifetime spend", "v": "$325.51" },
-    { "k": "Compliance", "v": "0/7" }
+    {
+      "k": "Day",
+      "v": "243"
+    },
+    {
+      "k": "V2 spend",
+      "v": "$70.79 / $200 (35%, day 6 of 10)"
+    },
+    {
+      "k": "Lifetime spend",
+      "v": "$351.61  (+$26 since AM)"
+    },
+    {
+      "k": "Compliance",
+      "v": "0/7 · day 14"
+    }
   ],
   "lanes": [
     {
@@ -123,16 +163,24 @@
       "accent": "emerald",
       "tasks": [
         {
-          "lead": "Fix or kill the V2 ad allocation today",
-          "detail": "\"8 cups\" and \"captive agent\" have spent $0 for two straight days while 81% of yesterday's budget went to the old V1 \"honest broker\" ad. Either get the new creatives delivering or stop funding the wrong experiment.",
+          "lead": "Decide on Mary Grossman today",
+          "detail": "Real NV lead from Sep 6 asked for a call ~Sep 11 (tomorrow) and is still uncontacted. Contact is gated by compliance 0/7 and NV licensing — decide call / refer / hold and write it down before her window passes.",
           "tag": "DO FIRST",
           "tagType": "red",
+          "project": "insurance",
+          "area": "Lead pipeline"
+        },
+        {
+          "lead": "Fix or kill the V2 ad allocation",
+          "detail": "Lifetime climbed $26 since morning to the old V1 “honest broker” ad while V2 barely moved; “8 cups” / “captive agent” still ~$0. Day 6 of 10 — get the new creatives delivering or call the test.",
+          "tag": "",
+          "tagType": "",
           "project": "insurance",
           "area": "Meta Ads"
         },
         {
-          "lead": "Delete or fix \"honest broker - Copy\"",
-          "detail": "Still rejected by Meta since Sep 9 morning — idle, cluttering the ad set, not spending.",
+          "lead": "Delete or fix “honest broker - Copy”",
+          "detail": "Still rejected in Meta review (flagged again 05:07Z) — idle, cluttering the ad set, not spending.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
@@ -140,19 +188,19 @@
         },
         {
           "lead": "Close b3 (TX registration) + b7 (CA producer license #)",
-          "detail": "Day 14 of live consumer dialing, gate still 0/7. Send the NPN + CA license # and TX filing status — or write the one-line rule scoping who may be dialed until they clear.",
+          "detail": "Day 14 of live consumer dialing, gate still 0/7. Send the NPN + CA license # + TX filing status — or write the one-line rule scoping who may be dialed until they clear.",
           "tag": "COMPLIANCE 0/7",
           "tagType": "red",
           "project": "insurance",
           "area": "Compliance & Legal"
         },
         {
-          "lead": "Refer-out-or-drop Nadine Dickens (TX) + Linda Hansink (WA) — in writing",
-          "detail": "Both real, both out of licensed area, both still untouched. Write the decision down before anyone dials.",
+          "lead": "Write the out-of-area decision for all three real leads",
+          "detail": "Nadine Dickens (TX), Linda Hansink (WA), Mary Grossman (NV) — all real, all out of licensed area, all untouched. Refer-out or drop, in writing, before anyone dials.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
-          "area": "Meta Ads"
+          "area": "Compliance & Legal"
         }
       ]
     },
@@ -163,8 +211,8 @@
       "accent": "sky",
       "tasks": [
         {
-          "lead": "Wire the V3 form to the \"Meta $300 Plan Leads\" Sheet",
-          "detail": "Same fix flagged ≥10 times since Sep 7. Connect it, then prove with one real end-to-end submit — this closes the Sep 6 missing-lead gap.",
+          "lead": "Fix the alert-suppression step (not the sheet)",
+          "detail": "The Sep 6 lead was lost because the automation marked it “not worth alerting,” not because the form→sheet wire is broken. Point the fix at the “alert admin” step and prove it with one live submit — this recovers the Mary Grossman gap and stops it recurring.",
           "tag": "DO FIRST",
           "tagType": "red",
           "project": "hq",
@@ -172,7 +220,7 @@
         },
         {
           "lead": "Fix the W1 welcome-email step",
-          "detail": "AMANDA (L-YTCLT0-XC) reached the CRM clean at 04:31:59Z Sep 9 but no welcome email fired — SLA breach at 83 min. Different break point from the sheet-wiring bug; fix and re-submit to prove both are closed.",
+          "detail": "AMANDA (L-YTCLT0-XC) reached the CRM clean at 04:32Z but W1 logged “success” and never sent the welcome email — SLA breach. Different break point from the alert bug; fix the send step and re-submit to prove both are closed.",
           "tag": "NEW BUG",
           "tagType": "red",
           "project": "insurance",
@@ -180,15 +228,15 @@
         },
         {
           "lead": "Rebuild meeting-ingest + cofounder sweep as LOCAL tasks",
-          "detail": "00:03Z Sep 10 run failed again — no Mac bridge. Meeting data 21 days stale, cofounder log still dated Sep 9.",
+          "detail": "00:03Z Sep 10 run failed again — no Mac bridge. Meeting data 21 days stale; move these off cloud-dependent scheduling.",
           "tag": "BRIDGE",
           "tagType": "amber",
           "project": "hq",
           "area": "Automation"
         },
         {
-          "lead": "Restore the Meta → CRM sync",
-          "detail": "Booked-call rate is now measured and reads 0% — confirm the sync itself isn't the reason, separate from the lead-routing bugs above.",
+          "lead": "Confirm the Meta→CRM sync isn't why booking reads 0%",
+          "detail": "Booked-call rate is measured and reads 0% two days running — rule out the sync itself, separate from the alert-suppression and welcome-email defects above.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
@@ -203,24 +251,32 @@
       "accent": "violet",
       "tasks": [
         {
-          "lead": "Track the V2 spend-allocation problem each edition",
-          "detail": "Flag whether \"8 cups\"/\"captive agent\" start spending and whether \"honest broker\"'s share of daily budget comes down — until Sep 15.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "Meta Ads"
-        },
-        {
-          "lead": "Hold both pipeline bugs visible until both are proven fixed",
-          "detail": "Sep 6 missing-lead (form→sheet) and the AMANDA welcome-email SLA breach are two separate defects — don't let a fix to one read as closing both.",
+          "lead": "Hold Mary Grossman visible until she's contacted or a written decision is logged",
+          "detail": "A named, real lead with a next-day deadline sitting behind a 0/7 compliance gate — keep it as the top line until it's resolved one way or the other.",
           "tag": "",
           "tagType": "",
           "project": "hq",
           "area": "Lead pipeline"
         },
         {
+          "lead": "Track both pipeline defects separately until each is proven fixed",
+          "detail": "Alert-suppression (lost Mary) and the W1 welcome-email SLA breach are two distinct bugs — don't let a fix to one read as closing both.",
+          "tag": "",
+          "tagType": "",
+          "project": "hq",
+          "area": "Lead pipeline"
+        },
+        {
+          "lead": "Track the V2 spend-allocation problem each edition until Sep 15",
+          "detail": "Flag whether “8 cups” / “captive agent” start spending and whether “honest broker”'s share of daily budget comes down.",
+          "tag": "",
+          "tagType": "",
+          "project": "insurance",
+          "area": "Meta Ads"
+        },
+        {
           "lead": "Keep the compliance day-count on the front page",
-          "detail": "Day 14 today. Stays visible until b3/b7 close or a written dialing rule replaces them.",
+          "detail": "Day 14 today; stays visible until b3/b7 close or a written dialing rule replaces them.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
@@ -228,7 +284,7 @@
         },
         {
           "lead": "Publish + verify the brief, take no outward action",
-          "detail": "No lead contact, no campaign/ad/budget change, no compliance claim cleared, no spend — all founders' calls.",
+          "detail": "No lead contact (Mary, Amanda), no campaign / ad / budget change, no compliance claim cleared, no spend — all founders' calls.",
           "tag": "",
           "tagType": "",
           "project": "hq",
@@ -239,37 +295,41 @@
   ],
   "cofounder": {
     "date": "2026-09-10",
-    "scanned_at": "2026-09-10T01:20:00.000Z",
+    "scanned_at": "2026-09-10T14:12:00.000Z",
     "done": [
       {
-        "what": "AM live Gmail sweep (Sep 9 15:10Z → Sep 10 01:08Z) — read every watchdog run since the Sep 9 PM brief plus the Sep 9 digest and the Sep 10 00:03Z meeting-ingest failure.",
+        "what": "PM live Gmail sweep (Sep 10 01:08Z → 13:08Z) — read all 8 FA-ADS watchdog runs since the AM brief plus the Sep 9 daily digest.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Found a second, distinct pipeline defect: Frankie's own overnight end-to-end test (lead AMANDA, L-YTCLT0-XC, 04:31:59Z) reached the CRM but got no welcome email and SLA-breached at 83 min — confirms the funnel drops leads even after successful capture, not just at the form→sheet step.",
+        "what": "Identified the lost Sep 6 lead as a real person: Mary Grossman (NV), who asked for a call ~Sep 11 (tomorrow) and is still uncontacted (03:07Z run).",
         "who": "CTO-Claude"
       },
       {
-        "what": "Caught the V2 spend-allocation problem: \"8 cups\"/\"captive agent\" at $0 for two days while 81% of Sep 9 spend went to the old V1 \"honest broker\" ad; \"honest broker - Copy\" still Meta-rejected.",
+        "what": "Caught the diagnosis change: the watchdog checked the automation directly — it ran successfully and silently marked Mary “not worth alerting,” so the cause is an alert-suppression bug, NOT the form→sheet wiring re-flagged for four days.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Read spend live: $13.68 on Sep 9, V2 $68.75 of $200 (day 6 of 10), lifetime $325.51; campaign ACTIVE, no pause limit near.",
+        "what": "Confirmed the AMANDA welcome-email bug is still open at 04:06Z — lead reached the CRM, W1 logged success, no welcome email sent, still uncalled.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Confirmed the Sep 6 missing-lead alert has now fired ≥10 times since Sep 7 with no change — reporting loop closed, fixing loop still open.",
+        "what": "Read spend live: lifetime $325.51 → $351.61 (+$26 since AM) while V2 moved only to $70.79 — the old “honest broker” V1 ad is still taking almost all new budget; “honest broker - Copy” still Meta-rejected.",
         "who": "CTO-Claude"
       }
     ],
     "waiting": [
       {
-        "what": "TOP — Frankie: fix or kill the V2 ad allocation (new creatives at $0, budget going to an old V1 ad), close b3/b7 (day 14 at 0/7), and decide refer-out-or-drop on Nadine + Linda.",
+        "what": "TOP — Frankie: decide on Mary Grossman today (call / refer / hold, gated by compliance 0/7 + NV licensing); fix-or-kill the V2 allocation; close b3/b7 (day 14, 0/7).",
         "who": "Frankie"
       },
       {
-        "what": "BLOCKER — Chitraksh: wire the V3 form to the \"Meta $300 Plan Leads\" Sheet AND fix the W1 welcome-email step — two separate proven bugs, prove both closed with live submits; then rebuild meeting-ingest + cofounder sweep as LOCAL tasks.",
+        "what": "BLOCKER — Chitraksh: fix the alert-suppression step AND the W1 welcome-email step (two separate proven defects — prove each with a live submit); then rebuild meeting-ingest + cofounder sweep as LOCAL.",
         "who": "Chitraksh"
+      },
+      {
+        "what": "NOTE — Shared: founder mailbox silent 13 days (no written trail); EIN ~74 days silent since the Jun 28 re-fax.",
+        "who": "Shared"
       }
     ]
   }
