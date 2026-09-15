@@ -172,7 +172,7 @@
         },
         {
           "lead": "Close the compliance gate: b3 (TX reg) + b7 (CA license #)",
-          "detail": "Day 18 of live consumer lead flow, still 0/7. The NV lead sits behind this gate; TX dialing needs the telephone-solicitor registration and CA needs the producer license number.",
+          "detail": "Day 19 of live consumer lead flow, still 0/7. The NV lead sits behind this gate; TX dialing needs the telephone-solicitor registration and CA needs the producer license number.",
           "tag": "COMPLIANCE 0/7",
           "tagType": "red",
           "project": "insurance",
@@ -244,7 +244,7 @@
         },
         {
           "lead": "Wire TurboScribe as a transcript route",
-          "detail": "Meeting ingest is 25 days stale at Aug 20 while TurboScribe keeps producing transcripts. Route them in rather than waiting on the Fathom/TwinMind bridge.",
+          "detail": "Meeting ingest is 26 days stale at Aug 20 while TurboScribe keeps producing transcripts. Route them in rather than waiting on the Fathom/TwinMind bridge.",
           "tag": "",
           "tagType": "",
           "project": "hq",
@@ -268,7 +268,7 @@
         },
         {
           "lead": "Log the scoreboard as uninformative, not as 'nothing happened'",
-          "detail": "Five identical digests in a row is a property of the instrument, not a fact about the funnel. The record says 'unknown until the CRM is read directly' — never 'quiet'.",
+          "detail": "Seven identical digests in a row is a property of the instrument, not a fact about the funnel. The record says 'unknown until the CRM is read directly' — never 'quiet'.",
           "tag": "",
           "tagType": "",
           "project": "hq",
