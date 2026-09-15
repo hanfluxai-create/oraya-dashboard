@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-09-14T14:07:22.296Z",
-  "date_label": "Mon · Sep 14",
+  "generated_at": "2026-09-15T21:02:37.747Z",
+  "date_label": "Tue · Sep 15",
   "edition": "PM",
-  "day_number": 247,
+  "day_number": 248,
   "phase": "Launch Week close",
-  "headline": "Sep 14 PM · Frankie's Monday PT morning is the live window and both DO-FIRST asks are still open on the record — the hand-dial to Mary Grossman and the one-minute CRM read. Nothing moved since the AM brief: zero new inbox mail all day, and today's Sep 14 digest has not fired yet (14:12Z; it lands ~15:00Z on the same lag), so the scoreboard is still stuck on the fifth identical day. The interpreters stay dark and only the clocks grew — FA-ADS watchdog ~93h, spend-sync silent ~72h with zero successes ever. Compliance 0/7 on day 18, one real lead (NV) sitting behind the gate.",
-  "source": "index.html · ORAYA DATA block v15.20 + live Gmail sweep Sep 14 06:40Z → 14:12Z (0 new inbox threads all day; Sep 14 digest not yet fired as of 14:12Z; no SYNC FAILED, no watchdog run, no lead/founder mail since the AM brief)",
+  "headline": "Sep 15 PM · A late edition after the brief itself went quiet — the Sep 15 AM run never completed, so this is the first published brief since Sep 14 PM and it carries the day. The two instruments that can speak said the same thing again: the Sep 14 and Sep 15 digests both landed on time and are digit-for-digit identical, making it the seventh straight identical day. The two that should speak stayed silent longer — FA-ADS watchdog dark ~124h, Meta→CRM spend-sync ~103h with no success notice ever. Mary Grossman's callback is four days past with nothing written on the record; compliance 0/7 on day 19; one real NV lead still behind the gate.",
+  "source": "index.html · ORAYA DATA block v15.20 + live Gmail sweep through Sep 15 20:52Z (Sep 14 digest 15:00:06Z + Sep 15 digest 15:00:09Z, both identical; no SYNC FAILED/success since Sep 11 13:32Z; no watchdog run since Sep 10 17:06Z; no lead/founder mail; new non-funnel: Supabase security alert, Spacemail expiry, Accugene Workspace setup). NOTE: Sep 15 AM edition never completed — live brief sat on Sep 14 PM (day 247) until this run.",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -72,9 +72,9 @@
   "spotlight": [
     {
       "icon": "☎️",
-      "title": "Mary Grossman — Monday is the live window, seventh ask",
+      "title": "Mary Grossman — four days past, close it in writing",
       "who": "Frankie",
-      "detail": "This is Frankie's PT Monday morning: the first true business-day window since the Fri 6:45 PM PT callback lapsed, now into its third day gone. Two consecutive digests (Sep 12, Sep 13) put the miss on the system of record — 0 booked, 3 unbooked, 3 SLA breached. First real $300-Plan lead (NV), NO TCPA consent → hand-dial only +1 805 302 2655. Close it honestly today with one sentence in a lane: called / referred / held. It stays on the record until a human writes it.",
+      "detail": "The Fri 6:45 PM PT callback is now four days gone, and Monday's live business-day window passed with nothing written. Three consecutive digests (Sep 13, 14, 15) put the miss on the system of record — 0 booked, 3 unbooked, 3 SLA breached. First real $300-Plan lead (NV), NO TCPA consent → hand-dial only +1 805 302 2655. Eighth ask: one sentence in a lane — called / referred / held. It stays on the record until a human writes it.",
       "project": "insurance",
       "area": "Lead pipeline"
     },
@@ -82,37 +82,37 @@
       "icon": "🧭",
       "title": "Open the CRM — the one look that settles two dead instruments",
       "who": "Chitraksh",
-      "detail": "Five identical digests mean the scoreboard can no longer tell 'nothing happened' from 'reading a frozen table' — and a sixth is about to print around 15:00Z. One minute in the CRM answers both open unknowns regardless of what the digest says: (a) are there ad-spend rows stamped after Sep 11 13:32Z — w30, the sync question; (b) do the lead rows really show 3 with contact / 3 unbooked / 3 breached, or has the table not been written since Sep 9. Write the two answers into the board; do not infer either from silence.",
+      "detail": "Seven identical digests (Sep 9→15) mean the scoreboard can no longer tell 'nothing happened' from 'reading a frozen table.' One minute in the CRM answers both open unknowns regardless of what the digest prints: (a) are there ad-spend rows stamped after Sep 11 13:32Z — w30, the sync question; (b) do the lead rows really show 3 with contact / 3 unbooked / 3 breached, or has the table not been written since Sep 9. Write the two answers into the board; do not infer either from silence.",
       "project": "hq",
       "area": "Instrumentation"
     },
     {
       "icon": "🔒",
-      "title": "Day 18, 0/7 compliance, and the watchdog is now dark ~93 hours",
+      "title": "Day 19, 0/7 compliance, and the paid motion is running blind ~124h",
       "who": "Frankie",
-      "detail": "Consumer flow went live Aug 27; eighteen days later none of the seven blockers is closed — b3 (TX telephone-solicitor registration) and b7 (CA producer license #) are the two that gate the lead in hand. The FA-ADS watchdog has not run since Sep 10 17:06Z (~93h), so V2 spend (last read ~$72 of the $200 tranche) has had no reader for nearly four days. State the paid motion plainly — keep spending or hold — or restore what the watchdog runs on. Letting it drain by default is the one choice the board cannot accept.",
+      "detail": "Consumer flow went live Aug 27; nineteen days later none of the seven blockers is closed — b3 (TX telephone-solicitor registration) and b7 (CA producer license #) are the two that gate the lead in hand. The FA-ADS watchdog has not run since Sep 10 17:06Z (~124h), so V2 spend (last read ~$72 of the $200 tranche) has had no reader for over five days. State the paid motion plainly — keep spending or hold — or restore what the watchdog runs on. Letting it drain by default is the one choice the board cannot accept.",
       "project": "insurance",
       "area": "Compliance"
     }
   ],
   "blockers": [
     {
-      "label": "Scoreboard frozen · 5th day, 6th about to print",
+      "label": "Scoreboard identical · 7th straight day",
       "scope": "Chitraksh",
-      "detail": "Sep 13 digest (15:00:08Z) is identical to Sep 10, 11, 12: 0 new, 0 booked, 3 breached, 3 with contact, 3 unbooked, 0%, 4 partials, 135 min median reply, 0 opted out. The Sep 14 digest had not fired as of 14:12Z (expected ~15:00Z). The digest is formally uninformative — only a direct CRM read can say whether anything moved."
+      "detail": "The Sep 14 (15:00:06Z) and Sep 15 (15:00:09Z) digests both landed on time and are digit-for-digit identical to Sep 9-13: 0 new, 0 booked, 3 breached, 3 with contact, 3 unbooked, 0%, 4 partials, 135 min median reply, 0 opted out. The digest is formally uninformative — only a direct CRM read can say whether anything actually moved."
     },
     {
       "label": "Mary Grossman",
       "scope": "Frankie",
-      "detail": "First real $300-Plan lead (NV). Callback window (Fri 6:45 PM PT) now into its third day past; Sep 12 + Sep 13 digests both confirm 0 booked / 3 unbooked / 3 SLA breached. No TCPA consent → hand-dial only +1 805 302 2655. Monday is the live window. Owed in writing, seventh ask: called / referred / held."
+      "detail": "Hand-dial only +1 805 302 2655 (NV $300-Plan lead, no TCPA consent). Callback (Fri 6:45 PM PT) now 4 days past; Monday's window missed. Eighth ask: called / referred / held."
     },
     {
-      "label": "FA-ADS watchdog dark ~93h",
+      "label": "FA-ADS watchdog dark ~124h",
       "scope": "Shared",
-      "detail": "No watchdog run since Sep 10 17:06Z. The digest lane fires daily at 15:00Z, so this is one specific lane down, not a blanket credit blackout. V2 spend last read ~$72 of the $200 tranche and has had no interpreter for nearly four days."
+      "detail": "No watchdog run since Sep 10 17:06Z (~5.2 days). The digest lane fires daily at 15:00Z, so this is one specific lane down, not a blanket credit blackout. V2 spend last read ~$72 of the $200 tranche and has had no interpreter for over five days."
     },
     {
-      "label": "Spend sync silent ~72h",
+      "label": "Spend sync silent ~103h",
       "scope": "Chitraksh",
       "detail": "Meta→CRM ad-spend sync 403-failed 14× (Sep 11 00:32Z→13:32Z, egress allowlist) then went quiet — no failure and no success since. It has never sent a success notice, so quiet ≠ fixed. w30: open the CRM, look for spend rows after Sep 11 13:32Z."
     },
@@ -122,29 +122,29 @@
       "detail": "Still never measured. ~$360 lifetime spend, 0 confirmed booked calls, and the feed that would connect the two has been broken since Aug 27 — the day real leads started arriving."
     },
     {
-      "label": "Compliance 0/7 · day 18",
+      "label": "Compliance 0/7 · day 19",
       "scope": "Frankie",
-      "detail": "b3 (TX telephone-solicitor registration) + b7 (CA producer license #) unclosed on day 18 of live consumer lead flow. The one real lead (NV) sits behind this gate while every notification says \"call fast.\""
+      "detail": "b3 (TX telephone-solicitor registration) + b7 (CA producer license #) unclosed on day 19 of live consumer lead flow. The one real lead (NV) sits behind this gate while every notification says \"call fast.\""
     },
     {
-      "label": "Meeting ingest 25d stale",
+      "label": "Meeting ingest 26d stale",
       "scope": "CTO-Claude",
       "detail": "Fathom/TwinMind ingest stuck at Aug 20. Fix is to run the task where a bridge exists and wire TurboScribe as a transcript route — it keeps producing files while the MCP ingest stays dead."
     },
     {
-      "label": "Accugene Workspace billing",
+      "label": "Non-funnel: Supabase security + Accugene Workspace",
       "scope": "Chitraksh",
-      "detail": "Non-funnel, flagged not acted: the Accugene Workspace 1TB storage add-on was suspended Sep 12 for no payment method 31 min after billing info was accepted, and the accugenediagnostics.com Workspace setup mail is still sitting unread. A founder's call; the board only carries it so it does not get lost."
+      "detail": "Flagged not acted: Supabase emailed \"security vulnerabilities detected in your projects\" (Sep 15 15:41Z) — worth a look since the stack rides on it; the accugenediagnostics.com Workspace setup + suspended 1TB add-on is still unresolved; Spacemail Pro lapsed (Sep 15). Founders' calls; the board only carries them so they don't get lost."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "247"
+      "v": "248"
     },
     {
       "k": "Booked calls",
-      "v": "0 · day 18"
+      "v": "0 · day 19"
     },
     {
       "k": "Compliance",
@@ -164,7 +164,7 @@
       "tasks": [
         {
           "lead": "Mary Grossman — write the decision down",
-          "detail": "Window now into its third day past (Fri 6:45 PM PT); Sep 12 and Sep 13 digests both confirm 0 booked / 3 unbooked / 3 breached. No TCPA consent → hand-dial only +1 805 302 2655. Monday is the live window — one sentence in a lane: called / referred / held. Seventh ask.",
+          "detail": "Hand-dial +1 805 302 2655 (no consent). Now 4 days past; Monday missed. Write it in a lane: called / referred / held. Eighth ask.",
           "tag": "DO FIRST",
           "tagType": "red",
           "project": "insurance",
@@ -180,7 +180,7 @@
         },
         {
           "lead": "State the paid motion plainly — keep spending or hold",
-          "detail": "V2 tranche last read ~$72 of $200 before the watchdog went quiet ~93h ago, and cost per booked call has never been measured. Decide explicitly rather than letting the budget drain by default with no interpreter watching it.",
+          "detail": "V2 tranche last read ~$72 of $200 before the watchdog went quiet ~124h ago, and cost per booked call has never been measured. Decide explicitly rather than letting the budget drain by default with no interpreter watching it.",
           "tag": "",
           "tagType": "amber",
           "project": "insurance",
@@ -188,7 +188,7 @@
         },
         {
           "lead": "Restore whatever the watchdog runs on",
-          "detail": "The digest fires daily at 15:00Z but the FA-ADS watchdog has been dark ~93h — a specific lane fault, not a blanket outage. Confirm credits/access and get the interpreter back.",
+          "detail": "The digest fires daily at 15:00Z (Sep 14 + Sep 15 both landed on time) but the FA-ADS watchdog has been dark ~124h — a specific lane fault, not a blanket outage. Confirm credits/access and get the interpreter back.",
           "tag": "",
           "tagType": "amber",
           "project": "hq",
@@ -220,7 +220,7 @@
         },
         {
           "lead": "Chase the FA-ADS watchdog specifically",
-          "detail": "The digest firing on time again (Sep 12 + Sep 13) proves the AI path is not universally dead. Treat the watchdog as its own failure (~93h dark) and find what it is missing — credits, schedule, or a silent crash.",
+          "detail": "The digest firing on time again (Sep 14 + Sep 15 at 15:00Z) proves the AI path is not universally dead. Treat the watchdog as its own failure (~124h dark) and find what it is missing — credits, schedule, or a silent crash.",
           "tag": "",
           "tagType": "amber",
           "project": "hq",
@@ -260,7 +260,7 @@
       "tasks": [
         {
           "lead": "Hold the corrected blackout shape",
-          "detail": "Digest alive (fired Sep 12 and Sep 13 at 15:00Z; Sep 14's expected ~15:00Z), watchdog dark ~93h, sync ambiguous ~72h. Do not let the record slide back to \"all AI lanes dead\" — it is one confirmed-dark lane plus one silence that was never a success signal.",
+          "detail": "Digest alive (fired Sep 14 15:00:06Z + Sep 15 15:00:09Z), watchdog dark ~124h, sync silent ~103h and never once a success. Do not let the record slide back to \"all AI lanes dead\" — it is one confirmed-dark lane plus one silence that was never a success signal.",
           "tag": "",
           "tagType": "amber",
           "project": "hq",
@@ -276,15 +276,15 @@
         },
         {
           "lead": "Hold Mary's window as a miss, not an open task",
-          "detail": "Seventh ask. It stays on the record as an unrecorded outcome until a human writes called / referred / held — it does not quietly age out of the board.",
+          "detail": "Eighth ask. It stays on the record as an unrecorded outcome until a human writes called / referred / held — it does not quietly age out of the board.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
           "area": "Record"
         },
         {
-          "lead": "Ran the PM edition on-cron",
-          "detail": "PM edition generated → curated → synced → published → verified → logged. Eighth consecutive session with a working cloud→Mac bridge; AM chain also completed clean earlier at ~06:35Z.",
+          "lead": "Ran the PM edition (late) after the brief itself went quiet",
+          "detail": "The Sep 15 AM edition never completed — the generator wrote the stale May board into brief_data.json but no curation/publish/log ran, so the live brief + inbox sat on Sep 14 PM (day 247). This late PM (~20:52Z) is the first completed brief since, and carries Sep 15. Chain: generate → curate → sync → publish → verify → log.",
           "tag": "",
           "tagType": "",
           "project": "hq",
@@ -294,35 +294,35 @@
     }
   ],
   "cofounder": {
-    "date": "2026-09-14",
-    "scanned_at": "2026-09-14T14:07:22.296Z",
+    "date": "2026-09-15",
+    "scanned_at": "2026-09-15T21:02:37.747Z",
     "done": [
       {
-        "what": "PM live Gmail sweep (Sep 14 06:40Z → 14:12Z): after:2026/09/14 in:inbox returned zero new threads, plus a targeted sync/watchdog/digest/lead/founder search back to Sep 12 — no new funnel signal since the AM brief.",
+        "what": "Late PM live Gmail sweep through Sep 15 20:52Z (after:2026/09/14 in:inbox + targeted sync/watchdog/digest/lead/founder search back to Sep 13). Only non-funnel mail arrived since the Sep 14 PM brief.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Confirmed today's Sep 14 DAILY DIGEST had NOT fired as of 14:12Z; the last digest on record is still Sep 13 (15:00:08Z), so the scoreboard remains on its fifth identical day. Sep 14's is expected ~15:00Z on the same ~54-min lag.",
+        "what": "Because this ran after 15:00Z, confirmed the digests as fired (not 'expected'): Sep 14 landed 15:00:06Z and Sep 15 landed 15:00:09Z, both digit-for-digit identical to Sep 9-13 — the seventh straight identical day. Scoreboard formally uninformative.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Confirmed NO new ORAYA SYNC FAILED email since Sep 11 13:32Z — the spend-sync alarm is now ~72h silent, still with no success notice ever emitted.",
+        "what": "Confirmed NO new ORAYA SYNC FAILED and no success notice since Sep 11 13:32Z — the spend-sync alarm is now ~103h silent, still with no success ever emitted.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Confirmed the FA-ADS watchdog is still dark: no run since Sep 10 17:06Z (~93h) — the one lane genuinely down while the digest lane works.",
+        "what": "Confirmed the FA-ADS watchdog is still dark: no run since Sep 10 17:06Z (~124h) — the one lane genuinely down while the digest lane fires daily.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Confirmed Mary Grossman still has no recorded outcome anywhere; her Monday PT business-day window is now the live chance to close it. Miss corroborated by two consecutive digests.",
+        "what": "Confirmed Mary Grossman still has no recorded outcome anywhere; Monday's live PT window passed unrecorded, so the miss is now four days deep and corroborated by three consecutive digests.",
         "who": "CTO-Claude"
       },
       {
-        "what": "No founder mail from manifestdestiny247 in the window; no lead mail; no Meta/CRM notices; no new inbox threads at all since the AM brief.",
+        "what": "Flagged (not acted) new non-funnel mail: Supabase 'security vulnerabilities detected in your projects' (Sep 15 15:41Z), Spacemail Pro subscription expired (Sep 15 16:58Z), and more accugenediagnostics.com Workspace setup / 1TB-storage mail (Sep 15 13:10Z). No manifestdestiny247 founder mail; no lead mail; no Meta/CRM notices.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Published and verified the PM brief end-to-end (generate → curate → sync → publish → verify → log).",
+        "what": "Recovered the pipeline: the Sep 15 AM edition never completed, so published this late PM end-to-end (generate → curate → sync → publish → verify → log) to get the brief off Sep 14 PM.",
         "who": "CTO-Claude"
       }
     ],
@@ -332,11 +332,11 @@
         "who": "Chitraksh"
       },
       {
-        "what": "Whether Mary Grossman was called, referred or held — written into a lane. Seventh ask; Monday is the live window.",
+        "what": "Whether Mary Grossman was called, referred or held — written into a lane. Eighth ask; the window is now four days past.",
         "who": "Frankie"
       },
       {
-        "what": "Why the FA-ADS watchdog specifically is down (~93h) when the digest runs fine.",
+        "what": "Why the FA-ADS watchdog specifically is down (~124h) when the digest runs fine.",
         "who": "Chitraksh"
       },
       {
