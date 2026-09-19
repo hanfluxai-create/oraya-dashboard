@@ -1,12 +1,12 @@
 {
   "schema": "oraya.dailybrief/v1",
-  "generated_at": "2026-09-18T14:07:21.013Z",
-  "date_label": "Fri · Sep 18",
-  "edition": "PM",
-  "day_number": 251,
-  "phase": "Post-launch day 22 · 0 booked",
-  "headline": "Sep 18 PM · Frankie's Friday morning, one week to the day since Mary Grossman's missed 6:45 PM PT callback — and unlike the last three cycles the AM actually completed (01:19Z), so this PM refreshes rather than rescues. It lands ~14:05Z, before the 15:00Z digest, so today's scoreboard doesn't exist yet; the last one (Sep 17) was the ninth identical morning, so the number to trust is still whatever the CRM says, not the digest. Nothing underneath moved since dawn: FA-ADS watchdog ~189h dark, Meta→CRM spend-sync ~169h silent with no success ever, compliance 0/7 on day 22, meeting ingest 29d stale. The inbox was near-silent — three non-funnel threads, the loudest being a hard 3-day deletion deadline on the Accugene Google-Workspace trial. Mary is the twelfth ask; Frankie's QuoteAI Drive request is ~33h ungranted.",
-  "source": "index.html · ORAYA DATA block v15.21 (unchanged since Sep 15 14:44Z; the HQ cofounder worker patched only the dashboard shell to v15.22/23 post-AM, no DATA-block delta) + live Gmail sweep through Sep 18 14:04Z. Since the Sep 18 AM brief (01:19Z): only 3 inbox threads, all non-funnel — Google Workspace 'you have 3 days to set up accugenediagnostics.com' (13:10Z, first hard deadline on that thread), a Workspace tips mailer, and the Kaliputra Mission Control 18 Sep digest (separate project, 2 requests >2 days for a decision). Sep 18 digest NOT yet fired (due ~15:00Z); most recent is Sep 17 15:00:07Z, digit-for-digit identical to Sep 9-16 = ninth straight identical day. No FA-ADS watchdog run since Sep 10 17:06Z; no ORAYA SYNC FAILED and no success since Sep 11 13:32Z; no lead mail; no Meta/CRM notices; no new manifestdestiny247 mail — the Sep 17 05:14Z QuoteAI Drive request is still ungranted (~33h).",
+  "generated_at": "2026-09-19T01:30:45.245Z",
+  "date_label": "Sat · Sep 19",
+  "edition": "AM",
+  "day_number": 252,
+  "phase": "Post-launch day 23 · 0 booked",
+  "headline": "Sep 19 AM · Ten identical mornings. The Sep 18 digest fired at 15:00:07Z and is digit-for-digit identical to Sep 9–17 — the tenth straight — so the scoreboard is now formally a decade of one number and cannot be read as a result anymore; only a direct CRM look can say whether the funnel is dead or the table is frozen. It is Saturday in India and Friday evening in California: the compliance offices are closed for two days, which leaves exactly three things that can move this weekend — the one-minute CRM read, the one-minute credit check, and Mary Grossman's hand-dial (thirteenth ask, a week past). The $200 Anthropic charge is now ~27h old with still no FA-ADS watchdog run behind it, so the receipt is empirically not the fix: the watchdog is ~200h dark, the spend sync ~180h silent with no success ever, compliance 0/7 on day 23, meeting ingest 30d stale, Frankie's QuoteAI Drive request ~44h ungranted. One clock added: the Accugene Workspace trial deletes itself in ~2 days.",
+  "source": "index.html · ORAYA DATA block v15.21 (unchanged since Sep 15 14:44Z; dashboard shell at v15.22/23 from the Sep 18 cofounder patch, no DATA-block delta) + live Gmail sweep through Sep 19 01:10Z. Since the Sep 18 PM brief (14:07Z): exactly ONE inbox thread — the Sep 18 digest at 15:00:07Z (0 new / 0 booked / 3 breached / 3 with contact / 3 unbooked / 0% / 4 partials / 135 min / 0 opted out), digit-for-digit identical to Sep 9–17 = tenth straight identical day. Nothing else in ~10h. No FA-ADS watchdog run since Sep 10 17:06Z (~200h) — including none in the ~27h since the Sep 17 22:19Z $200 Anthropic receipt; no ORAYA SYNC FAILED and no success since Sep 11 13:32Z (~180h); no lead mail; no Meta/CRM notices; no manifestdestiny247 mail — the Sep 17 05:14Z QuoteAI Drive request is still ungranted (~44h). No Sep 19 cofounder sweep had run at brief time (last: Sep 18 00:52Z). insurance_leadgen_state.json unchanged (Aug 2).",
   "live_url": "https://oraya-dashboard.vercel.app/brief/",
   "hq_url": "https://oraya-dashboard.vercel.app/",
   "projects": {
@@ -55,80 +55,80 @@
   ],
   "spotlight": [
     {
-      "icon": "☎️",
-      "title": "Mary Grossman — a week to the day, and it's Friday morning again",
-      "who": "Frankie",
-      "detail": "The callback was Fri Sep 11 6:45 PM PT; today is Fri Sep 18, exactly one week later, and it is your PT morning — the live window to actually do it, not just log it. Every business-day window in between passed with nothing written. She is the first real $300-Plan lead (NV, 71, $25-50k final expense, scored 80/100) and carries NO TCPA consent, so hand-dial only: +1 805 302 2655. Twelfth ask, still one sentence in a lane — called / referred / held. It does not age out of this board.",
-      "project": "insurance",
-      "area": "Lead pipeline"
-    },
-    {
       "icon": "🧭",
-      "title": "Open the CRM — nine identical mornings, and the digest still can't tell you what's true",
+      "title": "Ten identical digests — stop reading it, open the CRM",
       "who": "Chitraksh",
-      "detail": "The Sep 17 digest was the ninth digit-for-digit identical morning (Sep 9-17), noise terms included (3 breached, 4 partials, 135 min median). That is a property of the instrument, not a fact about the funnel — it cannot separate a dead funnel from a frozen table. Today's digest is due 15:00Z and will be a tenth if it repeats, but it changes nothing you can act on. One minute in the CRM settles both open unknowns whatever it prints: (a) any ad-spend rows stamped after Sep 11 13:32Z — w30, now ~169h silent; (b) has the lead table been written at all since Sep 9. Write the two answers into the board; infer neither from silence.",
+      "detail": "The Sep 18 digest fired on time (15:00:07Z) and matched Sep 9–17 to the digit, noise terms included (3 breached, 4 partials, 135 min median). Ten straight is no longer a funnel statistic; it is the instrument telling you it is not reading anything. One minute in the CRM — a weekend-safe minute — answers both open unknowns whatever the digest prints: (a) any ad-spend rows stamped after Sep 11 13:32Z (w30, ~180h silent); (b) has the lead table been written at all since Sep 9. Write the two answers into the board. Then the second minute (w32): the Oraya API org's actual credit balance, not the Max plan the $200 receipt renewed.",
       "project": "hq",
       "area": "Instrumentation"
     },
     {
-      "icon": "🔒",
-      "title": "Day 22, 0/7 compliance — and a paid motion that has run unread ~8 days",
+      "icon": "☎️",
+      "title": "Mary Grossman — a week past, and Saturday is a legal call day",
       "who": "Frankie",
-      "detail": "Consumer flow went live Aug 27; twenty-two days later none of the seven blockers is closed, and b3 (TX telephone-solicitor registration) + b7 (CA producer license #) are the two that gate the lead already in hand. The FA-ADS watchdog has not run since Sep 10 17:06Z (~189h / nearly eight days), so V2 spend — last read ~$72 of the $200 tranche — has had no reader for over a week. Last night's confirmation held: the $200 Anthropic charge was the Max 20x plan renewing, not the API org's credit balance, so it is not the blackout clearing. State the paid motion plainly — keep spending or hold. Letting it drain by default, unread, is the one option the board can't accept.",
+      "detail": "The callback was Fri Sep 11 6:45 PM PT; it is now Friday evening Sep 18 in California with nothing written in seven days, and Saturday daytime is a perfectly good final-expense calling window. She is the first real $300-Plan lead (NV, 71, $25–50k final expense, scored 80/100) and carries NO TCPA consent, so hand-dial only: +1 805 302 2655. Thirteenth ask, still one sentence in a lane — called / referred / held. Nothing else in this funnel is a human-shaped task this weekend; this one is.",
+      "project": "insurance",
+      "area": "Lead pipeline"
+    },
+    {
+      "icon": "🔒",
+      "title": "~200h dark, 27h after the receipt — the $200 was not the fix",
+      "who": "Frankie",
+      "detail": "The FA-ADS watchdog has not run since Sep 10 17:06Z (~8.3 days). The Sep 17 22:19Z Anthropic charge is now ~27h old and the watchdog has not fired once behind it — so the Max-plan reading from yesterday is no longer a caution, it is confirmed: that receipt restored nothing. V2 spend — last read ~$72 of the $200 tranche — has run unread for more than a week. Compliance is 0/7 on day 23 and TX/CA offices are shut until Monday, so the one thing you can do this weekend on this front is decide: keep spending or hold. Draining by default, unread, is the option the board can't accept.",
       "project": "insurance",
       "area": "Compliance"
     }
   ],
   "blockers": [
     {
-      "label": "Scoreboard identical · 9th day, 10th due 15:00Z",
+      "label": "Scoreboard identical · 10th straight day (Sep 9–18)",
       "scope": "Chitraksh",
-      "detail": "The most recent digest (Sep 17, 15:00:07Z) is digit-for-digit identical to Sep 9-16: 0 new, 0 booked, 3 breached, 3 with contact, 3 unbooked, 0% booking, 4 partials, 135 min median reply, 0 opted out — nine consecutive identical mornings. Today's digest is due ~15:00Z, ~55 min after this brief; a tenth repeat would change nothing. Nine identical days already make the digest formally uninformative — treat every number on it as unverified until a direct CRM read confirms or refutes it."
+      "detail": "The Sep 18 digest (15:00:07Z) is digit-for-digit identical to Sep 9–17: 0 new, 0 booked, 3 breached, 3 with contact, 3 unbooked, 0% booking, 4 partials, 135 min median reply, 0 opted out — ten consecutive identical mornings, measured, not assumed. The digest is now formally uninformative: treat every number on it as unverified until a direct CRM read confirms or refutes it. Fix afterwards: a freshness stamp (last row written, row count) in its header so a frozen read shows as frozen."
     },
     {
-      "label": "Mary Grossman · one week past",
+      "label": "Mary Grossman · seven days past, 13th ask",
       "scope": "Frankie",
-      "detail": "Hand-dial only +1 805 302 2655 (NV $300-Plan lead, no TCPA consent). The Fri Sep 11 6:45 PM PT callback is exactly one week gone as of this Friday morning; every window since missed with nothing written anywhere. Twelfth ask: called / referred / held."
+      "detail": "Hand-dial only +1 805 302 2655 (NV $300-Plan lead, no TCPA consent). Fri Sep 11 6:45 PM PT window is a full week gone; Saturday daytime PT is a legitimate calling window. Thirteenth ask: called / referred / held — one sentence in a lane."
     },
     {
-      "label": "FA-ADS watchdog dark ~189h · still the only proof that counts",
+      "label": "FA-ADS watchdog dark ~200h · receipt +27h, no run",
       "scope": "Shared",
-      "detail": "No watchdog run since Sep 10 17:06Z (~7.9 days). The digest lane fired on time again yesterday (15:00:07Z), so this is one specific lane down, not a blanket outage. The $200 Anthropic charge (Sep 17 22:19Z) was the Max 20x subscription, a different account object from the Oraya API org whose credits went out Sep 10 — not a restoration. The watchdog firing again is the only real test. V2 spend last read ~$72 of the $200 tranche, unread for over a week."
+      "detail": "No watchdog run since Sep 10 17:06Z (~8.3 days). The digest lane fired on time again (15:00:07Z), so this is one specific lane down, not a blanket outage. The $200 Anthropic charge (Sep 17 22:19Z, Max 20x subscription) is ~27h old with zero watchdog runs since — empirically not a restoration of the Oraya API org. w32 (org credit balance + lastRunAt on both dark lanes) is the one-minute disproof. V2 spend last read ~$72 of the $200 tranche, unread for over a week."
     },
     {
-      "label": "Spend sync silent ~169h",
+      "label": "Spend sync silent ~180h",
       "scope": "Chitraksh",
-      "detail": "Meta→CRM ad-spend sync 403-failed 14× (Sep 11 00:32Z→13:32Z, sandbox egress allowlist) then went quiet — no failure and no success since. It has never once emitted a success notice, so quiet ≠ fixed, and with no spend rows landing, cost per booked call stays unmeasurable (~$360 lifetime, 0 confirmed bookings). w30: open the CRM, look for spend rows after Sep 11 13:32Z."
+      "detail": "Meta→CRM ad-spend sync 403-failed 14× (Sep 11 00:32Z→13:32Z, sandbox egress allowlist) then went quiet — no failure and no success since (~7.5 days). It has never once emitted a success notice, so quiet ≠ fixed, and with no spend rows landing, cost per booked call stays unmeasurable (~$360 lifetime, 0 confirmed bookings). w30: open the CRM, look for spend rows after Sep 11 13:32Z."
     },
     {
-      "label": "Compliance 0/7 · day 22",
+      "label": "Compliance 0/7 · day 23 · offices closed till Monday",
       "scope": "Frankie",
-      "detail": "b3 (TX telephone-solicitor registration) + b7 (CA producer license #) unclosed on day 22 of live consumer lead flow. The one real lead (NV) sits behind this gate while every notification the system sends says \"call fast.\" Restated as this project's own recorded blockers — no statute re-verified this run."
+      "detail": "b3 (TX telephone-solicitor registration) + b7 (CA producer license #) unclosed on day 23 of live consumer lead flow. The one real lead (NV) sits behind this gate while every notification the system sends says \"call fast.\" Weekend: nothing can be filed; Monday: these two first. Restated as this project's own recorded blockers — no statute re-verified this run."
     },
     {
-      "label": "Frankie's Drive request ~33h open — and still not an answer",
+      "label": "Frankie's Drive request ~44h open — still not an answer",
       "scope": "Frankie",
-      "detail": "The Sep 17 05:14Z request for access to claude_23_QUOTEAI_ANNUITY_REVENUE_ENGINE.md is ungranted ~33h later, with no new manifestdestiny247 mail since. It remains the only founder signal in weeks and is a new annuity/QuoteAI revenue idea rather than an answer to any of the four asks with clocks (Mary, the CRM read, the watchdog, keep-or-hold on spend). Granting the doc is a founders' call; the four asks are the ones running."
+      "detail": "The Sep 17 05:14Z request for access to claude_23_QUOTEAI_ANNUITY_REVENUE_ENGINE.md is ungranted ~44h later, with no manifestdestiny247 mail since. It remains the only founder signal in weeks and is a new annuity/QuoteAI revenue idea rather than an answer to any of the four asks with clocks (Mary, the CRM read, the watchdog, keep-or-hold on spend). Granting the doc is a founders' call; the four asks are the ones running."
     },
     {
-      "label": "Meeting ingest 29d stale",
+      "label": "Meeting ingest 30d stale",
       "scope": "CTO-Claude",
-      "detail": "Fathom/TwinMind ingest stuck at Aug 20 and still auto-declined in scheduled sessions (w31 — needs a standing, site-scope approval, not a per-call one; the same gate also refuses Gmail create_draft, so the two reply drafts sit in daily-brief/pending_drafts/ to copy-paste). Wire TurboScribe as a transcript route meanwhile; it keeps producing files while the MCP ingest stays dead."
+      "detail": "Fathom/TwinMind ingest stuck at Aug 20 — a full month today — and still auto-declined in scheduled sessions (w31: needs a standing, site-scope approval, not a per-call one; the same gate refuses Gmail create_draft unattended, so the two reply drafts sit in daily-brief/pending_drafts/ to copy-paste). Wire TurboScribe as a transcript route meanwhile."
     },
     {
-      "label": "Non-funnel: Accugene Workspace deadline + Kaliputra",
+      "label": "Non-funnel: Accugene Workspace deletes in ~2 days + Kaliputra",
       "scope": "Chitraksh",
-      "detail": "Flagged, not acted. NEW today: the Google-Workspace trial for accugenediagnostics.com now has a hard 3-day deletion deadline (Sep 18 13:10Z) — verify the domain or lose the trial. Kaliputra Mission (separate project): the 18 Sep Mission Control digest reports 2 requests waiting more than two days for a decision (following KPM-2026-09-3450 'approved in part' + the new ₹39k KPM-2026-09-1450) and 'no backup ever taken.' Older and still unacted: Android sign-in alert, ATTOM 3rd follow-up, Supabase security, Spacemail Pro expiry."
+      "detail": "Flagged, not acted. The Google-Workspace trial for accugenediagnostics.com is on a hard deletion clock (Sep 18 13:10Z + 3 days ≈ Mon Sep 21 13:10Z) — verify the domain this weekend or lose the trial. Kaliputra Mission (separate project): the 18 Sep Mission Control digest reports 2 requests waiting >2 days for a decision and 'no backup ever taken.' Older and still unacted: Android sign-in alert, ATTOM 3rd follow-up, Supabase security, Spacemail Pro expiry."
     }
   ],
   "metrics": [
     {
       "k": "Day",
-      "v": "251"
+      "v": "252"
     },
     {
       "k": "Booked calls",
-      "v": "0 · day 22"
+      "v": "0 · day 23"
     },
     {
       "k": "Compliance",
@@ -147,32 +147,32 @@
       "accent": "emerald",
       "tasks": [
         {
-          "lead": "Mary Grossman — it's Friday morning, close it",
-          "detail": "Hand-dial +1 805 302 2655 (no TCPA consent). Exactly one week past the Fri Sep 11 window, and this is your live PT morning to actually act. One sentence in a lane: called / referred / held. Twelfth ask.",
+          "lead": "Mary Grossman — Saturday is a call day, close it",
+          "detail": "Hand-dial +1 805 302 2655 (no TCPA consent). A full week past the Fri Sep 11 window; Saturday daytime PT is a legitimate final-expense calling window. One sentence in a lane: called / referred / held. Thirteenth ask.",
           "tag": "DO FIRST",
           "tagType": "red",
           "project": "insurance",
           "area": "Lead pipeline"
         },
         {
-          "lead": "Close the compliance gate: b3 (TX reg) + b7 (CA license #)",
-          "detail": "Day 22 of live consumer lead flow, still 0/7. The NV lead sits behind this gate; TX dialing needs the telephone-solicitor registration and CA needs the producer license number.",
+          "lead": "State the paid motion plainly — keep spending or hold",
+          "detail": "V2 tranche last read ~$72 of $200 before the watchdog went dark ~200h ago; the $200 Anthropic charge is 27h old and the watchdog has not run once since, so it was the Max plan, not the reader coming back. The one weekend-shaped decision on this front: keep or hold. Don't let it drain by default.",
+          "tag": "DECIDE",
+          "tagType": "amber",
+          "project": "insurance",
+          "area": "Ads"
+        },
+        {
+          "lead": "Monday-first: close the compliance gate — b3 (TX reg) + b7 (CA license #)",
+          "detail": "Day 23 of live consumer lead flow, still 0/7, and the offices are closed until Monday. Queue it as Monday's first call: TX telephone-solicitor registration and the CA producer license number are the two that gate the NV lead already in hand.",
           "tag": "COMPLIANCE 0/7",
           "tagType": "red",
           "project": "insurance",
           "area": "Compliance"
         },
         {
-          "lead": "State the paid motion plainly — keep spending or hold",
-          "detail": "V2 tranche last read ~$72 of $200 before the watchdog went quiet ~189h ago, and cost per booked call has never been measured once. The $200 Anthropic charge was the Max plan renewing, not the reader coming back. Decide explicitly rather than letting the budget drain with nothing watching it.",
-          "tag": "",
-          "tagType": "amber",
-          "project": "insurance",
-          "area": "Ads"
-        },
-        {
           "lead": "Grant the QuoteAI doc — then close one of the four asks",
-          "detail": "Your Drive request for claude_23_QUOTEAI_ANNUITY_REVENUE_ENGINE.md has sat ~33h. Grant it and read it, but it is still not an answer to any of the four with clocks: Mary, the CRM read, the watchdog, keep-or-hold on spend. Clear one.",
+          "detail": "Your Drive request for claude_23_QUOTEAI_ANNUITY_REVENUE_ENGINE.md has sat ~44h. Grant it and read it, but it is still not an answer to any of the four with clocks: Mary, the CRM read, the watchdog, keep-or-hold on spend. Clear one.",
           "tag": "",
           "tagType": "amber",
           "project": "insurance",
@@ -180,7 +180,7 @@
         },
         {
           "lead": "Record the video kit",
-          "detail": "One session unblocks four things: founder ad creative, a creative with his face, the landing-page refresh, and the ElevenLabs voice clone. Shirt + tie, iPhone 4K/60fps, ~20-24 min of takes.",
+          "detail": "One weekend session unblocks four things: founder ad creative, a creative with his face, the landing-page refresh, and the ElevenLabs voice clone. Shirt + tie, iPhone 4K/60fps, ~20-24 min of takes.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
@@ -196,7 +196,7 @@
       "tasks": [
         {
           "lead": "Open the CRM and answer two questions in one look",
-          "detail": "(a) w30: any ad-spend rows timestamped after Sep 11 13:32Z? Rows → the 403 cleared; none → the sync task died (~169h silent). (b) Do the lead rows really read 3 with contact / 3 unbooked / 3 breached, or has the table not been written since Sep 9? Nine identical digests make every one of those numbers unverifiable from the digest alone.",
+          "detail": "(a) w30: any ad-spend rows timestamped after Sep 11 13:32Z? Rows → the 403 cleared; none → the sync task died (~180h silent). (b) Do the lead rows really read 3 with contact / 3 unbooked / 3 breached, or has the table not been written since Sep 9? Ten identical digests make every one of those numbers unverifiable from the digest alone.",
           "tag": "DO FIRST",
           "tagType": "red",
           "project": "hq",
@@ -204,31 +204,31 @@
         },
         {
           "lead": "Two-part credit check — org balance, then both lastRunAt (w32)",
-          "detail": "One minute: read the Oraya API org's actual credit balance (NOT the Max plan the $200 receipt renewed), then lastRunAt on the watchdog and the sync. Credits out → one fix restores both dark lanes; credits fine → they're two separate breakages and w29 is still owed in full. The watchdog's ~189h silence is either explained or it's a crash.",
+          "detail": "One minute: read the Oraya API org's actual credit balance (NOT the Max plan the $200 receipt renewed — 27h on, no watchdog run proves the distinction), then lastRunAt on the watchdog and the sync. Credits out → one fix restores both dark lanes; credits fine → two separate breakages and w29 is still owed in full.",
           "tag": "",
           "tagType": "amber",
           "project": "hq",
           "area": "Instrumentation"
         },
         {
-          "lead": "Make the digest able to change",
-          "detail": "Nine identical mornings including the noise terms is the tell. Give the digest a freshness stamp — last row written, row count — in its header, so a frozen read is visible as frozen instead of reprinting as a result. If the CRM read shows the table IS live, then 0% booking is real and is the number the whole motion is judged on.",
-          "tag": "",
+          "lead": "Verify accugenediagnostics.com before the trial deletes (~2 days)",
+          "detail": "Google Workspace will delete the trial ~Mon Sep 21 13:10Z unless the domain is verified. A DNS TXT record and one click; do it before Monday or lose the tenant. Non-funnel, but it is the only hard deadline landing this weekend.",
+          "tag": "DEADLINE",
           "tagType": "amber",
+          "project": "hq",
+          "area": "Ops"
+        },
+        {
+          "lead": "Make the digest able to change",
+          "detail": "Ten identical mornings including the noise terms is the tell. Give the digest a freshness stamp — last row written, row count — in its header, so a frozen read is visible as frozen instead of reprinting as a result. If the CRM read shows the table IS live, then 0% booking is real and is the number the whole motion is judged on.",
+          "tag": "",
+          "tagType": "",
           "project": "insurance",
           "area": "Lead pipeline"
         },
         {
-          "lead": "Fix the AMANDA welcome-email miss",
-          "detail": "Test lead reached the CRM but W1 never sent the welcome email. A lead can currently land and receive nothing — independent of the sync break.",
-          "tag": "",
-          "tagType": "",
-          "project": "insurance",
-          "area": "CRM"
-        },
-        {
           "lead": "Send the two pending drafts + widen the standing approval (w31)",
-          "detail": "Two replies are written and waiting in daily-brief/pending_drafts/ — Gmail create_draft is auto-declined unattended, so copy-paste to send: Frankie (the blackout) and ATTOM (re-provision the 401 trial key, which unblocks w4). Then widen the standing scheduled-session approval to Fathom + TwinMind + Gmail draft-creation so meeting-ingest and draft-replies stop being structurally unrunnable.",
+          "detail": "Two replies are written and waiting in daily-brief/pending_drafts/ — Gmail create_draft is auto-declined unattended, so copy-paste to send: Frankie (the blackout) and ATTOM (re-provision the 401 trial key, which unblocks w4). Then widen the standing scheduled-session approval to Fathom + TwinMind + Gmail draft-creation so meeting-ingest (30d stale today) and draft-replies stop being structurally unrunnable.",
           "tag": "",
           "tagType": "",
           "project": "hq",
@@ -243,24 +243,24 @@
       "accent": "violet",
       "tasks": [
         {
-          "lead": "Ran the PM edition — AM + PM both completed today",
-          "detail": "Unlike Sep 15/16/17 (AM left no artifact, PM carried the day), Sep 18's AM fired on-cron at 01:19Z and this PM refreshes it rather than rescuing the day. Chain held: generate → curate → sync → publish → verify → log, on full disk/shell/git/Gmail/Vercel access.",
+          "lead": "Ran the AM edition on-cron — second straight AM",
+          "detail": "Sep 18 AM fired 01:19Z, Sep 19 AM ~01:12Z: the AM cadence has held two mornings running after the Sep 15/16/17 gap. Chain held: generate → curate → sync → publish → verify → log, on full disk/shell/git/Gmail/Vercel access.",
           "tag": "",
           "tagType": "amber",
           "project": "hq",
           "area": "Daily brief"
         },
         {
-          "lead": "Held the pre-digest posture honestly",
-          "detail": "This PM ran ~14:05Z, before the 15:00Z digest, so it reports the Sep 18 scoreboard as not-yet-fired and the ninth (Sep 17) as the last measured one — no assumed tenth. Recording the measurement, not the guess, is what keeps the identical-day count meaning something.",
+          "lead": "Recorded the tenth identical digest as a measurement",
+          "detail": "Yesterday's PM ran before the 15:00Z digest and deliberately did not assume a tenth; this AM read it — 15:00:07Z, identical to Sep 9–17 — and records ten. The count means something only because it is counted, not projected.",
           "tag": "",
           "tagType": "",
           "project": "hq",
           "area": "Record"
         },
         {
-          "lead": "Held the $200 receipt as spend, not as a fix",
-          "detail": "The Anthropic charge is the Max 20x subscription renewing, not the API org topping up. The Sep 10 receipt was read that careless way once and cleared nothing; the record says the watchdog is dark until the watchdog runs.",
+          "lead": "Held the $200 receipt as spend — now with 27h of evidence",
+          "detail": "The Anthropic charge is the Max 20x subscription renewing. 27h later the watchdog has still not run, which is what the record predicted; the Sep 10 receipt was over-read once and this one was not. The watchdog is dark until the watchdog runs.",
           "tag": "",
           "tagType": "amber",
           "project": "hq",
@@ -268,7 +268,7 @@
         },
         {
           "lead": "Held Mary's window as a miss, not an open task",
-          "detail": "Twelfth ask, one week to the day. It stays on the record as an unrecorded outcome until a human writes called / referred / held — it does not quietly age out of the board.",
+          "detail": "Thirteenth ask, a full week past. It stays on the record as an unrecorded outcome until a human writes called / referred / held — it does not quietly age out of the board.",
           "tag": "",
           "tagType": "",
           "project": "insurance",
@@ -278,66 +278,74 @@
     }
   ],
   "cofounder": {
-    "date": "2026-09-18",
-    "scanned_at": "2026-09-18T14:07:21.013Z",
+    "date": "2026-09-19",
+    "scanned_at": "2026-09-19T01:30:45.245Z",
     "done": [
       {
-        "what": "Live PM Gmail sweep through Sep 18 ~14:04Z (in:inbox after:2026/09/18 + targeted digest/watchdog/SYNC FAILED/adstats/NEW LEAD/Grossman/founder back to Sep 16). Only 3 non-funnel threads arrived since the Sep 18 AM brief; funnel instruments unchanged.",
+        "what": "Live AM Gmail sweep through Sep 19 ~01:10Z (in:inbox after:2026/09/18 + targeted digest/watchdog/FA-ADS/SYNC FAILED/adstats/NEW LEAD/Grossman/founder back to Sep 16). Exactly one thread since the Sep 18 PM brief: the Sep 18 digest. Inbox otherwise silent ~10h.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Confirmed the Sep 18 digest had NOT fired at brief time (~14:04Z); the most recent is Sep 17 15:00:07Z, digit-for-digit identical to Sep 9-16 = ninth straight identical day. Did not assume a tenth — today's is due ~15:00Z.",
+        "what": "Confirmed the Sep 18 digest FIRED at 15:00:07Z — 0 new / 0 booked / 3 breached / 3 with contact / 3 unbooked / 0% / 4 partials / 135 min / 0 opted out — digit-for-digit identical to Sep 9–17 = TENTH straight identical day. Yesterday's PM declined to assume it; this AM measured it.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Confirmed the FA-ADS watchdog is still dark: no run since Sep 10 17:06Z (~189h / ~7.9 days) — the one lane genuinely down while the digest lane fires daily on time.",
+        "what": "Confirmed the FA-ADS watchdog is still dark: no run since Sep 10 17:06Z (~200h / ~8.3 days), including none in the ~27h since the Sep 17 22:19Z $200 Anthropic receipt — the receipt is empirically not a restoration of the API org.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Confirmed NO new ORAYA SYNC FAILED and no success notice since Sep 11 13:32Z — the spend-sync alarm is ~169h (~7 days) silent, still with no success ever emitted in its lifetime.",
+        "what": "Confirmed NO new ORAYA SYNC FAILED and no success notice since Sep 11 13:32Z — the spend-sync alarm is ~180h (~7.5 days) silent, still with no success ever emitted in its lifetime.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Confirmed Mary Grossman still has no recorded outcome anywhere; the callback is exactly one week past as of this Friday morning. Twelfth ask.",
+        "what": "Confirmed Mary Grossman still has no recorded outcome anywhere; the callback is a full week past (Fri Sep 11 6:45 PM PT → Fri Sep 18 evening PT). Thirteenth ask.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Confirmed Frankie's Sep 17 05:14Z Drive request for claude_23_QUOTEAI_ANNUITY_REVENUE_ENGINE.md is still ungranted ~33h later, with no new manifestdestiny247 mail. Flagged, not acted — granting access is a founders' call.",
+        "what": "Confirmed Frankie's Sep 17 05:14Z Drive request for claude_23_QUOTEAI_ANNUITY_REVENUE_ENGINE.md is still ungranted ~44h later, with no manifestdestiny247 mail since. Flagged, not acted — granting access is a founders' call.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Flagged (not acted) new non-funnel mail: a hard 3-day deletion deadline on the accugenediagnostics.com Google-Workspace trial (Sep 18 13:10Z), a Workspace tips mailer, and the Kaliputra Mission Control 18 Sep digest (separate project) reporting 2 requests waiting >2 days for a decision. No lead mail; no Meta/CRM notices; no founder mail.",
+        "what": "Flagged (not acted) the one hard non-funnel deadline landing this weekend: the accugenediagnostics.com Google-Workspace trial deletes ~Mon Sep 21 13:10Z unless the domain is verified. Kaliputra Mission Control 18 Sep digest (separate project) still shows 2 requests >2 days without a decision. No lead mail; no Meta/CRM notices; no founder mail.",
         "who": "CTO-Claude"
       },
       {
-        "what": "AM cadence recovered and held: Sep 18 AM completed at 01:19Z (day 251) — first AM artifact since Sep 14 — and this PM refreshed it rather than carrying the day, the normal two-edition shape for the first time in four days.",
+        "what": "AM cadence held a second straight morning: Sep 18 AM 01:19Z and Sep 19 AM ~01:12Z both on-cron (day 251 → 252), after the Sep 15/16/17 AM gap.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Carried forward the HQ cofounder-worker findings from the 00:52Z scan: the two Claude-powered lanes both dark ~7-8 days while plain automation keeps firing (credit-blackout signature, w32 names the one-minute disproof); Gmail create_draft is also gated unattended (reads pass, writes gate — w31 widened); dashboard patched to v15.22/23 post-AM, waiting 31→32. Two reply drafts staged in pending_drafts/ (Frankie blackout + ATTOM 401 key).",
+        "what": "Noted it is Saturday IST / Friday evening PT: TX and CA compliance offices closed until Monday, so the brief scopes this weekend to the three things that can actually move — the CRM read, the credit check, and Mary's hand-dial — and queues b3/b7 as Monday-first.",
         "who": "CTO-Claude"
       },
       {
-        "what": "Meeting ingest still blocked (Fathom + TwinMind auto-declined in scheduled sessions, w31); meeting_intel.json remains 29 days stale (2026-08-20).",
+        "what": "Carried forward the Sep 18 cofounder-worker findings (no Sep 19 sweep had run at brief time): both Claude-powered lanes dark ~8 days while plain automation fires daily (credit-blackout signature, w32 is the one-minute disproof); Gmail create_draft gated unattended (w31 widened); two reply drafts staged in pending_drafts/ (Frankie blackout + ATTOM 401 key). index.html DATA block unchanged since Sep 15 (v15.21).",
+        "who": "CTO-Claude"
+      },
+      {
+        "what": "Meeting ingest still blocked (Fathom + TwinMind auto-declined in scheduled sessions, w31); meeting_intel.json is 30 days stale today (2026-08-20).",
         "who": "CTO-Claude"
       }
     ],
     "waiting": [
       {
-        "what": "The two-answer CRM read: spend rows after Sep 11 13:32Z (w30) AND whether the lead table has been written since Sep 9. Nine identical digests make this the only informative read left.",
+        "what": "The two-answer CRM read: spend rows after Sep 11 13:32Z (w30) AND whether the lead table has been written since Sep 9. Ten identical digests make this the only informative read left.",
         "who": "Chitraksh"
       },
       {
-        "what": "Two-part credit check (w32, 1 min): the Oraya API org's actual credit balance, then lastRunAt on the watchdog and the sync. One fix for both dark lanes if credits are out; two separate fixes if they aren't. The $200 Max-plan receipt answers neither.",
+        "what": "Two-part credit check (w32, 1 min): the Oraya API org's actual credit balance, then lastRunAt on the watchdog and the sync. 27h after the $200 Max-plan receipt with no watchdog run, the receipt is confirmed to answer neither.",
         "who": "Chitraksh"
       },
       {
-        "what": "Whether Mary Grossman was called, referred or held — written into a lane. Twelfth ask; the window is one week past.",
+        "what": "Whether Mary Grossman was called, referred or held — written into a lane. Thirteenth ask; the window is a full week past and Saturday is callable.",
         "who": "Frankie"
       },
       {
-        "what": "An explicit keep-spending-or-hold call on the V2 tranche while no interpreter is reading it (~189h).",
+        "what": "An explicit keep-spending-or-hold call on the V2 tranche while no interpreter is reading it (~200h).",
         "who": "Frankie"
+      },
+      {
+        "what": "Verify accugenediagnostics.com in Google Workspace before the trial auto-deletes (~Mon Sep 21 13:10Z).",
+        "who": "Chitraksh"
       },
       {
         "what": "Send the two staged replies in pending_drafts/ (Frankie blackout + ATTOM 401 key) and widen the standing scheduled-session approval (Fathom + TwinMind + Gmail draft-creation, w31) so meeting-ingest and draft-replies stop being unrunnable unattended.",
