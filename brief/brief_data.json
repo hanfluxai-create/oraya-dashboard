@@ -203,7 +203,7 @@
           "area": "Instrumentation"
         },
         {
-          "lead": "Verify accugenediagnostics.com before the trial deletes (~36h)",
+          "lead": "Verify accugenediagnostics.com before the trial deletes (~22h, tomorrow)",
           "detail": "Google Workspace deletes the trial ~Mon Sep 21 13:10Z — ~22h out, now inside a single day. A DNS TXT record and one click; do it today, not Monday morning.",
           "tag": "DEADLINE",
           "tagType": "red",
