@@ -212,7 +212,7 @@
         },
         {
           "lead": "Two-part credit check — org balance, then both lastRunAt (w32)",
-          "detail": "Read the Oraya API org's actual credit balance (not the Max plan the 00 receipt renewed — ~88h on with zero watchdog runs confirms the distinction), then lastRunAt on the watchdog (~261h dark) and the sync (~240h silent).",
+          "detail": "Read the Oraya API org's actual credit balance (not the Max plan that the Sep 17 receipt renewed — ~88h on with zero watchdog runs confirms the distinction), then lastRunAt on the watchdog (~261h dark) and the sync (~240h silent).",
           "tag": "",
           "tagType": "amber",
           "project": "hq",
@@ -260,7 +260,7 @@
         },
         {
           "lead": "Held the dark lanes as measured — watchdog ~261h, sync ~240h",
-          "detail": "No FA-ADS run since Sep 10 17:06Z; no ORAYA SYNC signal since Sep 11 13:32Z; the plain digest still fires on time. The $200 Sep 17 receipt is ~88h old with zero watchdog runs behind it — the Max-plan-not-restoration read keeps being confirmed by elapsed time.",
+          "detail": "No FA-ADS run since Sep 10 17:06Z; no ORAYA SYNC signal since Sep 11 13:32Z; the plain digest still fires on time. The Sep 17 receipt (Max 20x) is ~88h old with zero watchdog runs behind it — the Max-plan-not-restoration read keeps being confirmed by elapsed time.",
           "tag": "",
           "tagType": "amber",
           "project": "hq",
